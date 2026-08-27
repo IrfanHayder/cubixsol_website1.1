@@ -1,66 +1,68 @@
-import { FileText, Briefcase, FolderKanban, Mail, MessageSquare, Eye, Users, Layers } from 'lucide-react';
+import { FileText, Briefcase, FolderKanban, Mail, Layers, Package } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
-const stats = [
-  {
-    label: 'Blog Posts',
-    value: '48',
-    sub: '12 published this month',
-    icon: FileText,
-    color: 'from-cyan-500 to-blue-600',
-    bg: 'bg-cyan-50',
-    text: 'text-cyan-700',
-  },
-  {
-    label: 'Services',
-    value: '18',
-    sub: 'All active',
-    icon: Briefcase,
-    color: 'from-violet-500 to-purple-600',
-    bg: 'bg-violet-50',
-    text: 'text-violet-700',
-  },
-  {
-    label: 'Solutions',
-    value: '24',
-    sub: '4 featured',
-    icon: Layers,
-    color: 'from-indigo-500 to-blue-600',
-    bg: 'bg-indigo-50',
-    text: 'text-indigo-700',
-  },
-  {
-    label: 'Projects',
-    value: '36',
-    sub: '8 case studies',
-    icon: FolderKanban,
-    color: 'from-amber-500 to-orange-600',
-    bg: 'bg-amber-50',
-    text: 'text-amber-700',
-  },
-  {
-    label: 'Contact Messages',
-    value: '127',
-    sub: '9 unread',
-    icon: Mail,
-    color: 'from-rose-500 to-red-600',
-    bg: 'bg-rose-50',
-    text: 'text-rose-700',
-  },
-  {
-    label: 'Total Views',
-    value: '18.4k',
-    sub: 'Last 30 days',
-    icon: Eye,
-    color: 'from-emerald-500 to-teal-600',
-    bg: 'bg-emerald-50',
-    text: 'text-emerald-700',
-  },
-];
+export default function AdminStats({ liveStats }) {
+  const [stats, setStats] = useState(liveStats || null);
 
-export default function AdminStats() {
+  useEffect(() => {
+    if (liveStats) {
+      setStats(liveStats);
+      return;
+    }
+    fetch('/api/stats')
+      .then((res) => res.json())
+      .then((data) => setStats(data))
+      .catch((err) => console.error('Failed to fetch stats:', err));
+  }, [liveStats]);
+
+  const cards = [
+    {
+      label: 'Blog Posts',
+      value: stats?.blogsCount ?? 0,
+      sub: `${stats?.blogsCount ?? 0} in database`,
+      icon: FileText,
+      color: 'from-cyan-500 to-blue-600',
+    },
+    {
+      label: 'Services',
+      value: stats?.servicesCount ?? 0,
+      sub: `${stats?.servicesCount ?? 0} active`,
+      icon: Briefcase,
+      color: 'from-violet-500 to-purple-600',
+    },
+    {
+      label: 'Products',
+      value: stats?.productsCount ?? 0,
+      sub: `${stats?.productsCount ?? 0} in database`,
+      icon: Package,
+      color: 'from-pink-500 to-rose-600',
+    },
+    {
+      label: 'Solutions',
+      value: stats?.solutionsCount ?? 0,
+      sub: `${stats?.solutionsCount ?? 0} in database`,
+      icon: Layers,
+      color: 'from-indigo-500 to-blue-600',
+    },
+    {
+      label: 'Projects',
+      value: stats?.projectsCount ?? 0,
+      sub: `${stats?.projectsCount ?? 0} in database`,
+      icon: FolderKanban,
+      color: 'from-amber-500 to-orange-600',
+    },
+    {
+      label: 'Contact Messages',
+      value: stats?.messagesCount ?? 0,
+      sub: `${stats?.messagesCount ?? 0} in database`,
+      icon: Mail,
+      color: 'from-rose-500 to-red-600',
+    },
+  ];
+
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-6 gap-4">
-      {stats.map((s) => {
+      {cards.map((s) => {
         const Icon = s.icon;
         return (
           <div

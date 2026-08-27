@@ -360,14 +360,32 @@ app.post('/api/seed', async (req, res) => {
 // =============================================
 app.get('/api/stats', async (req, res) => {
   try {
-    const [servicesCount, productsCount, industriesCount, projectsCount, solutionsCount] = await Promise.all([
+    const [
+      blogsCount,
+      servicesCount,
+      productsCount,
+      industriesCount,
+      projectsCount,
+      solutionsCount,
+      messagesCount,
+    ] = await Promise.all([
+      Blog.countDocuments(),
       Service.countDocuments(),
       Product.countDocuments(),
       Industry.countDocuments(),
       Project.countDocuments(),
       Solution.countDocuments(),
+      ContactMessage.countDocuments(),
     ]);
-    res.json({ servicesCount, productsCount, industriesCount, projectsCount, solutionsCount });
+    res.json({
+      blogsCount,
+      servicesCount,
+      productsCount,
+      industriesCount,
+      projectsCount,
+      solutionsCount,
+      messagesCount,
+    });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
