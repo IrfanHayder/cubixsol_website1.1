@@ -19,11 +19,7 @@ import AdminTable from '../../components/Admin/AdminTable';
 import AdminForm from '../../components/Admin/AdminForm';
 import { useServices } from '../../context/ServicesContext';
 
-// const API_BASE = '/api';
-
-// Yeh change karo:
-const API_BASE = 'https://cubixsol-backend.up.railway.app/api';
-
+const API_BASE = '/api';
 
 /* -------------------- Toast Notification -------------------- */
 function Toast({ message, type, onClose }) {
