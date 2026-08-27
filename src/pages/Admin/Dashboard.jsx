@@ -18,8 +18,8 @@ import AdminStats from '../../components/Admin/AdminStats';
 import AdminTable from '../../components/Admin/AdminTable';
 import AdminForm from '../../components/Admin/AdminForm';
 import { useServices } from '../../context/ServicesContext';
+import { API_BASE, apiFetch } from '../../utils/api';
 
-const API_BASE = '/api';
 
 /* -------------------- Toast Notification -------------------- */
 function Toast({ message, type, onClose }) {
@@ -409,8 +409,7 @@ function DbSection({ sectionKey, showToast }) {
   const fetchData = useCallback(async () => {
     setLoading(true);
     try {
-      const res = await fetch(`${API_BASE}/${config.endpoint}`);
-      const json = await res.json();
+      const json = await apiFetch(config.endpoint);
       setData(Array.isArray(json) ? json : []);
     } catch (err) {
       console.error(err);
@@ -434,8 +433,7 @@ function DbSection({ sectionKey, showToast }) {
     Promise.all(
       needs.map(async (endpoint) => {
         try {
-          const res = await fetch(`${API_BASE}/${endpoint}`);
-          const json = await res.json();
+          const json = await apiFetch(endpoint);
           return [endpoint, Array.isArray(json) ? json : []];
         } catch {
           return [endpoint, []];
@@ -632,8 +630,7 @@ function DashboardOverview({ showToast, onNavigate }) {
   const [stats, setStats] = useState(null);
 
   useEffect(() => {
-    fetch('/api/stats')
-      .then(r => r.json())
+    apiFetch('stats')
       .then(setStats)
       .catch(() => { });
   }, []);

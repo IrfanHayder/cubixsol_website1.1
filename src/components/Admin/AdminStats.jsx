@@ -1,5 +1,6 @@
 import { FileText, Briefcase, FolderKanban, Mail, Layers, Package } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { apiFetch } from '../../utils/api';
 
 export default function AdminStats({ liveStats, onNavigate }) {
   const [stats, setStats] = useState(liveStats || null);
@@ -9,8 +10,7 @@ export default function AdminStats({ liveStats, onNavigate }) {
       setStats(liveStats);
       return;
     }
-    fetch('/api/stats')
-      .then((res) => res.json())
+    apiFetch('stats')
       .then((data) => setStats(data))
       .catch((err) => console.error('Failed to fetch stats:', err));
   }, [liveStats]);

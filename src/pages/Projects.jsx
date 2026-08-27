@@ -4,6 +4,7 @@ import { ArrowRight, RefreshCw, Sparkles, TrendingUp, Users2 } from 'lucide-reac
 import Breadcrumb from '../components/Breadcrumb';
 import CtaBanner from '../components/CtaBanner';
 import Reveal, { Stagger, StaggerItem } from '../components/Reveal';
+import { apiFetch } from '../utils/api';
 
 const filters = ['All Projects', 'Web Development', 'Mobile Apps', 'E-Commerce', 'SaaS', 'AI Solutions'];
 const techs = ['Laravel', 'PHP', 'React', 'Next.js', 'Vue.js', 'Node.js', 'Flutter', 'AWS'];
@@ -15,10 +16,9 @@ export default function Projects() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/api/projects')
-      .then(res => res.json())
+    apiFetch('projects')
       .then(data => {
-        setProjects(data);
+        setProjects(Array.isArray(data) ? data : []);
         setLoading(false);
       })
       .catch(err => {

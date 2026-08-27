@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const path = require('path');
+const fs = require('fs');
 require('dotenv').config({ path: path.join(__dirname, '.env') });
 
 const Service = require('./models/Service');
@@ -457,8 +458,22 @@ registerCrud(app, 'messages', ContactMessage);
 registerCrud(app, 'media', Media);
 registerCrud(app, 'seo', SeoSetting);
 
+// Fallback 404 handler for any unhandled /api routes (guarantees JSON response, never HTML)
+app.all('/api/*', (req, res) => {
+  res.status(404).json({ message: `API endpoint ${req.originalUrl} not found` });
+});
+
+// Serve static frontend files in production (or if dist folder exists)
+const distPath = path.join(__dirname, '../dist');
+if (fs.existsSync(distPath)) {
+  app.use(express.static(distPath));
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(distPath, 'index.html'));
+  });
+}
 
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+

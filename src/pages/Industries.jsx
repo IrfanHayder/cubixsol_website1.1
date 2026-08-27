@@ -4,16 +4,16 @@ import * as Icons from 'lucide-react';
 import { useState, useEffect } from 'react';
 import CtaBanner from '../components/CtaBanner';
 import Reveal, { Stagger, StaggerItem } from '../components/Reveal';
+import { apiFetch } from '../utils/api';
 
 export default function Industries() {
   const [industries, setIndustries] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/api/industries')
-      .then(res => res.json())
+    apiFetch('industries')
       .then(data => {
-        setIndustries(data);
+        setIndustries(Array.isArray(data) ? data : []);
         setLoading(false);
       })
       .catch(err => {

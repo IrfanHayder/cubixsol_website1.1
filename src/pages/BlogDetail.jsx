@@ -5,6 +5,8 @@ import Breadcrumb from '../components/Breadcrumb';
 import CtaBanner from '../components/CtaBanner';
 import Reveal from '../components/Reveal';
 
+import { apiFetch } from '../utils/api';
+
 export default function BlogDetail() {
   const { slug } = useParams();
   const [post, setPost] = useState(null);
@@ -16,17 +18,14 @@ export default function BlogDetail() {
     setLoading(true);
     setNotFound(false);
 
-    fetch(`/api/blogs/${slug}`)
-      .then(async (res) => {
-        if (res.status === 404) {
-          // try list and find by slug
-          const listRes = await fetch('/api/blogs');
-          const list = await listRes.json();
-          const found = Array.isArray(list) ? list.find((p) => p.slug === slug) : null;
-          return found;
+    apiFetch(`blogs/${slug}`)
+      .catch(async () => {
+        try {
+          const list = await apiFetch('blogs');
+          return Array.isArray(list) ? list.find((p) => p.slug === slug) : null;
+        } catch {
+          return null;
         }
-        if (!res.ok) return null;
-        return res.json();
       })
       .then((data) => {
         if (cancelled) return;

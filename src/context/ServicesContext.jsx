@@ -1,6 +1,8 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 import * as LucideIcons from 'lucide-react';
 
+import { apiFetch } from '../utils/api';
+
 const ServicesContext = createContext(null);
 
 export function resolveIcon(icon) {
@@ -25,9 +27,7 @@ export function ServicesProvider({ children }) {
   const fetchServices = async () => {
     setLoading(true);
     try {
-      const res = await fetch('/api/services');
-      if (!res.ok) throw new Error('Failed to fetch services');
-      const data = await res.json();
+      const data = await apiFetch('services');
       setServices(Array.isArray(data) ? data : []);
       setError(null);
     } catch (err) {

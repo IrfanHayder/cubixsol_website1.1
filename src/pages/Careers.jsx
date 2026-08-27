@@ -3,6 +3,7 @@ import Breadcrumb from '../components/Breadcrumb';
 import CtaBanner from '../components/CtaBanner';
 import { ArrowRight, MapPin, Briefcase } from 'lucide-react';
 import Reveal, { Stagger, StaggerItem } from '../components/Reveal';
+import { apiFetch } from '../utils/api';
 
 const fallbackOpenings = [
   { title: 'Senior Laravel Developer', type: 'Full-time', location: 'Remote / New York' },
@@ -25,8 +26,8 @@ export default function Careers() {
 
   useEffect(() => {
     let cancelled = false;
-    fetch('/api/careers')
-      .then((res) => (res.ok ? res.json() : []))
+    apiFetch('careers')
+      .catch(() => [])
       .then((data) => {
         if (cancelled) return;
         const list = Array.isArray(data)

@@ -4,6 +4,7 @@ import Breadcrumb from '../components/Breadcrumb';
 import CtaBanner from '../components/CtaBanner';
 import { ArrowRight } from 'lucide-react';
 import Reveal, { Stagger, StaggerItem } from '../components/Reveal';
+import { apiFetch } from '../utils/api';
 
 const fallbackPosts = [
   { title: 'How AI Is Reshaping Digital Product Development', tag: 'AI', date: 'Jul 12, 2026', color: 'from-primary-700 to-indigo-900', slug: 'ai-reshaping-digital-product' },
@@ -19,8 +20,8 @@ export default function Blog() {
 
   useEffect(() => {
     let cancelled = false;
-    fetch('/api/blogs')
-      .then((res) => (res.ok ? res.json() : []))
+    apiFetch('blogs')
+      .catch(() => [])
       .then((data) => {
         if (cancelled) return;
         const list = Array.isArray(data)
