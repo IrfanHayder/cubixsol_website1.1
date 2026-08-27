@@ -26,16 +26,8 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-// Serve React build (production)
-const distPath = path.join(__dirname, '../dist');
-app.use(express.static(distPath));
-
-// Connect to MongoDB (fallback to Atlas cluster if process.env.MONGO_URI is missing or pointing to local/railway internal)
-const MONGO_URI = (process.env.MONGO_URI && !process.env.MONGO_URI.includes('railway.internal'))
-  ? process.env.MONGO_URI
-  : 'mongodb+srv://arfanahaider575_db_user:FrrDgAiykGbs3Osi@cluster0.amsegez.mongodb.net/cubixsol?appName=Cluster0';
-
-mongoose.connect(MONGO_URI)
+// Connect to MongoDB
+mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB connected successfully'))
   .catch(err => console.error('MongoDB connection error:', err));
 
@@ -447,11 +439,6 @@ registerCrud(app, 'messages', ContactMessage);
 registerCrud(app, 'media', Media);
 registerCrud(app, 'seo', SeoSetting);
 
-
-// Catch-all: serve React app for any non-API route (React Router support)
-app.get('*', (req, res) => {
-  res.sendFile(path.join(distPath, 'index.html'));
-});
 
 // Start the server
 app.listen(PORT, () => {
