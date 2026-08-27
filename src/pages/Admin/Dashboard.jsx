@@ -628,7 +628,7 @@ const messages = [
   { id: 3, name: 'Omar Farooq', email: 'omar@startup.io', subject: 'AI Solution Quote', date: '19 Aug 2026', status: 'Unread' },
 ];
 
-function DashboardOverview({ showToast }) {
+function DashboardOverview({ showToast, onNavigate }) {
   const [stats, setStats] = useState(null);
 
   useEffect(() => {
@@ -640,7 +640,7 @@ function DashboardOverview({ showToast }) {
 
   return (
     <div className="space-y-6">
-      <AdminStats liveStats={stats} />
+      <AdminStats liveStats={stats} onNavigate={onNavigate} />
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
         <div className="lg:col-span-2 bg-white rounded-2xl border border-gray-100 shadow-card p-5">
@@ -691,13 +691,15 @@ function DashboardOverview({ showToast }) {
         <h3 className="font-bold text-ink mb-4">Quick Actions — Manage Website Content</h3>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
           {Object.entries(SECTION_CONFIGS).map(([key, cfg]) => (
-            <div
+            <button
               key={key}
-              className="flex flex-col items-center gap-2 p-3 rounded-xl border border-gray-100 bg-gray-50 hover:bg-primary-50 hover:border-primary-100 transition cursor-pointer text-center"
+              type="button"
+              onClick={() => onNavigate?.(key)}
+              className="flex flex-col items-center gap-2 p-3 rounded-xl border border-gray-100 bg-gray-50 hover:bg-primary-50 hover:border-primary-100 hover:shadow-sm transition cursor-pointer text-center group"
             >
-              <span className="text-2xl font-extrabold text-primary-600">+</span>
+              <span className="text-2xl font-extrabold text-primary-600 group-hover:scale-110 transition-transform">+</span>
               <span className="text-xs font-semibold text-ink">Add {cfg.label.slice(0, -1)}</span>
-            </div>
+            </button>
           ))}
         </div>
         <p className="text-xs text-gray-400 mt-3">
@@ -787,7 +789,7 @@ export default function AdminDashboard() {
         {/* Page content */}
         <main className="flex-1 p-4 sm:p-6 lg:p-8">
           {active === 'dashboard' ? (
-            <DashboardOverview showToast={showToast} />
+            <DashboardOverview showToast={showToast} onNavigate={setActive} />
           ) : dbSections.includes(active) ? (
             <DbSection key={active} sectionKey={active} showToast={showToast} />
           ) : (

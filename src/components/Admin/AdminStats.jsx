@@ -1,7 +1,7 @@
 import { FileText, Briefcase, FolderKanban, Mail, Layers, Package } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
-export default function AdminStats({ liveStats }) {
+export default function AdminStats({ liveStats, onNavigate }) {
   const [stats, setStats] = useState(liveStats || null);
 
   useEffect(() => {
@@ -17,6 +17,7 @@ export default function AdminStats({ liveStats }) {
 
   const cards = [
     {
+      key: 'blogs',
       label: 'Blog Posts',
       value: stats?.blogsCount ?? 0,
       sub: `${stats?.blogsCount ?? 0} in database`,
@@ -24,6 +25,7 @@ export default function AdminStats({ liveStats }) {
       color: 'from-cyan-500 to-blue-600',
     },
     {
+      key: 'services',
       label: 'Services',
       value: stats?.servicesCount ?? 0,
       sub: `${stats?.servicesCount ?? 0} active`,
@@ -31,6 +33,7 @@ export default function AdminStats({ liveStats }) {
       color: 'from-violet-500 to-purple-600',
     },
     {
+      key: 'products',
       label: 'Products',
       value: stats?.productsCount ?? 0,
       sub: `${stats?.productsCount ?? 0} in database`,
@@ -38,6 +41,7 @@ export default function AdminStats({ liveStats }) {
       color: 'from-pink-500 to-rose-600',
     },
     {
+      key: 'solutions',
       label: 'Solutions',
       value: stats?.solutionsCount ?? 0,
       sub: `${stats?.solutionsCount ?? 0} in database`,
@@ -45,6 +49,7 @@ export default function AdminStats({ liveStats }) {
       color: 'from-indigo-500 to-blue-600',
     },
     {
+      key: 'projects',
       label: 'Projects',
       value: stats?.projectsCount ?? 0,
       sub: `${stats?.projectsCount ?? 0} in database`,
@@ -52,6 +57,7 @@ export default function AdminStats({ liveStats }) {
       color: 'from-amber-500 to-orange-600',
     },
     {
+      key: 'messages',
       label: 'Contact Messages',
       value: stats?.messagesCount ?? 0,
       sub: `${stats?.messagesCount ?? 0} in database`,
@@ -65,19 +71,21 @@ export default function AdminStats({ liveStats }) {
       {cards.map((s) => {
         const Icon = s.icon;
         return (
-          <div
+          <button
             key={s.label}
-            className="bg-white rounded-2xl p-5 border border-gray-100 shadow-card hover:shadow-elev transition-shadow"
+            type="button"
+            onClick={() => onNavigate?.(s.key)}
+            className="bg-white rounded-2xl p-5 border border-gray-100 shadow-card hover:shadow-elev transition-all text-left cursor-pointer group"
           >
             <div className="flex items-start justify-between mb-3">
-              <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${s.color} flex items-center justify-center text-white shadow-sm`}>
+              <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${s.color} flex items-center justify-center text-white shadow-sm group-hover:scale-105 transition-transform`}>
                 <Icon size={20} />
               </div>
             </div>
             <p className="text-2xl font-bold text-ink tracking-tight">{s.value}</p>
             <p className="text-sm font-medium text-ink/80 mt-0.5">{s.label}</p>
             <p className="text-xs text-ink/50 mt-1">{s.sub}</p>
-          </div>
+          </button>
         );
       })}
     </div>
