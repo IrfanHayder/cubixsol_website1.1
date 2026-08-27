@@ -640,26 +640,7 @@ function DashboardOverview({ showToast }) {
 
   return (
     <div className="space-y-6">
-      {/* Live DB stats */}
-      {stats && (
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-          {[
-            { label: 'Services', value: stats.servicesCount, color: 'text-brand-cyan' },
-            { label: 'Products', value: stats.productsCount, color: 'text-brand-purple' },
-            { label: 'Industries', value: stats.industriesCount, color: 'text-emerald-600' },
-            { label: 'Solutions', value: stats.solutionsCount, color: 'text-amber-600' },
-            { label: 'Projects', value: stats.projectsCount, color: 'text-rose-500' },
-          ].map(s => (
-            <div key={s.label} className="bg-white rounded-2xl border border-gray-100 shadow-card p-4">
-              <p className="text-xs text-gray-400 mb-1">{s.label}</p>
-              <p className={`text-3xl font-extrabold ${s.color}`}>{s.value}</p>
-              <p className="text-xs text-gray-400 mt-1">in database</p>
-            </div>
-          ))}
-        </div>
-      )}
-
-      <AdminStats />
+      <AdminStats liveStats={stats} />
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
         <div className="lg:col-span-2 bg-white rounded-2xl border border-gray-100 shadow-card p-5">
