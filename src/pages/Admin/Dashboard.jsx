@@ -19,7 +19,11 @@ import AdminTable from '../../components/Admin/AdminTable';
 import AdminForm from '../../components/Admin/AdminForm';
 import { useServices } from '../../context/ServicesContext';
 
-const API_BASE = '/api';
+// const API_BASE = '/api';
+
+// Yeh change karo:
+const API_BASE = 'https://cubixsol-backend.up.railway.app/api';
+
 
 /* -------------------- Toast Notification -------------------- */
 function Toast({ message, type, onClose }) {
@@ -30,9 +34,8 @@ function Toast({ message, type, onClose }) {
 
   return (
     <div
-      className={`fixed bottom-6 right-6 z-[999] flex items-center gap-3 px-5 py-3.5 rounded-2xl shadow-xl text-white text-sm font-medium animate-in slide-in-from-right duration-300 ${
-        type === 'success' ? 'bg-emerald-600' : 'bg-rose-600'
-      }`}
+      className={`fixed bottom-6 right-6 z-[999] flex items-center gap-3 px-5 py-3.5 rounded-2xl shadow-xl text-white text-sm font-medium animate-in slide-in-from-right duration-300 ${type === 'success' ? 'bg-emerald-600' : 'bg-rose-600'
+        }`}
     >
       {type === 'success' ? <CheckCircle size={18} /> : <XCircle size={18} />}
       {message}
@@ -104,10 +107,12 @@ const SECTION_CONFIGS = {
       { name: 'category', label: 'Category', type: 'select', optionsFrom: 'categories' },
       { name: 'tag', label: 'Tag', type: 'select', optionsFrom: 'tags' },
       { name: 'author', label: 'Author', type: 'select', optionsFrom: 'authors' },
-      { name: 'status', label: 'Status', type: 'select', options: [
-        { value: 'Published', label: 'Published' },
-        { value: 'Draft', label: 'Draft' },
-      ]},
+      {
+        name: 'status', label: 'Status', type: 'select', options: [
+          { value: 'Published', label: 'Published' },
+          { value: 'Draft', label: 'Draft' },
+        ]
+      },
       { name: 'date', label: 'Publish Date (e.g. Jul 12, 2026)' },
       { name: 'coverImage', label: 'Cover Image URL', fullWidth: true },
       { name: 'color', label: 'Gradient (e.g. from-primary-700 to-indigo-900)' },
@@ -291,10 +296,12 @@ const SECTION_CONFIGS = {
       { name: 'email', label: 'Email', required: true },
       { name: 'phone', label: 'Phone' },
       { name: 'subject', label: 'Subject' },
-      { name: 'status', label: 'Status', type: 'select', options: [
-        { value: 'Unread', label: 'Unread' },
-        { value: 'Read', label: 'Read' },
-      ]},
+      {
+        name: 'status', label: 'Status', type: 'select', options: [
+          { value: 'Unread', label: 'Unread' },
+          { value: 'Read', label: 'Read' },
+        ]
+      },
       { name: 'message', label: 'Message', type: 'textarea', fullWidth: true, rows: 5, required: true },
     ],
   },
@@ -311,16 +318,20 @@ const SECTION_CONFIGS = {
       { name: 'title', label: 'Job Title', required: true, fullWidth: true },
       { name: 'department', label: 'Department' },
       { name: 'location', label: 'Location' },
-      { name: 'type', label: 'Type', type: 'select', options: [
-        { value: 'Full-time', label: 'Full-time' },
-        { value: 'Part-time', label: 'Part-time' },
-        { value: 'Contract', label: 'Contract' },
-        { value: 'Remote', label: 'Remote' },
-      ]},
-      { name: 'status', label: 'Status', type: 'select', options: [
-        { value: 'Open', label: 'Open' },
-        { value: 'Closed', label: 'Closed' },
-      ]},
+      {
+        name: 'type', label: 'Type', type: 'select', options: [
+          { value: 'Full-time', label: 'Full-time' },
+          { value: 'Part-time', label: 'Part-time' },
+          { value: 'Contract', label: 'Contract' },
+          { value: 'Remote', label: 'Remote' },
+        ]
+      },
+      {
+        name: 'status', label: 'Status', type: 'select', options: [
+          { value: 'Open', label: 'Open' },
+          { value: 'Closed', label: 'Closed' },
+        ]
+      },
       { name: 'description', label: 'Description', type: 'textarea', fullWidth: true, rows: 5 },
       { name: 'requirements', label: 'Requirements (one per line)', type: 'textarea', fullWidth: true, rows: 4, isArray: true },
     ],
@@ -335,11 +346,13 @@ const SECTION_CONFIGS = {
     ],
     fields: [
       { name: 'title', label: 'Title', required: true },
-      { name: 'type', label: 'Type', type: 'select', options: [
-        { value: 'image', label: 'Image' },
-        { value: 'video', label: 'Video' },
-        { value: 'file', label: 'File' },
-      ]},
+      {
+        name: 'type', label: 'Type', type: 'select', options: [
+          { value: 'image', label: 'Image' },
+          { value: 'video', label: 'Video' },
+          { value: 'file', label: 'File' },
+        ]
+      },
       { name: 'url', label: 'URL', required: true, fullWidth: true },
       { name: 'alt', label: 'Alt Text', fullWidth: true },
     ],
@@ -626,7 +639,7 @@ function DashboardOverview({ showToast }) {
     fetch('/api/stats')
       .then(r => r.json())
       .then(setStats)
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   return (
