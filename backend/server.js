@@ -459,7 +459,7 @@ registerCrud(app, 'media', Media);
 registerCrud(app, 'seo', SeoSetting);
 
 // Fallback 404 handler for any unhandled /api routes (guarantees JSON response, never HTML)
-app.all('/api/*', (req, res) => {
+app.all('/api/{*splat}', (req, res) => {
   res.status(404).json({ message: `API endpoint ${req.originalUrl} not found` });
 });
 
@@ -467,7 +467,7 @@ app.all('/api/*', (req, res) => {
 const distPath = path.join(__dirname, '../dist');
 if (fs.existsSync(distPath)) {
   app.use(express.static(distPath));
-  app.get('*', (req, res) => {
+  app.get(/.*/, (req, res) => {
     res.sendFile(path.join(distPath, 'index.html'));
   });
 }

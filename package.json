@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "dev:all": "concurrently \"node backend/server.js\" \"vite\" --names \"BACKEND,FRONTEND\" --prefix-colors \"cyan,green\"",
+    "share": "concurrently \"node backend/server.js\" \"vite --port 5173\" \"ssh -o StrictHostKeyChecking=no -R 80:localhost:5173 nokey@localhost.run\" --names \"BACKEND,FRONTEND,TUNNEL\" --prefix-colors \"cyan,green,magenta\"",
     "build": "vite build",
     "start": "node backend/server.js",
     "lint": "oxlint",
