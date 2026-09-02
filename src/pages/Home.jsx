@@ -79,10 +79,10 @@ export default function Home() {
           <Reveal direction="right">
             <p className="eyebrow mb-3">Why Choose Cubixsol?</p>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-ink mb-4 tracking-tight">
-              We Deliver More Than Just Solutions
+              Why Startups Choose Cubixsol
             </h2>
-            <p className="text-gray-500 mb-6 text-lg">
-              We are committed to quality, transparency, and long-term partnerships.
+            <p className="text-gray-500 mb-6 text-base sm:text-lg leading-relaxed">
+              As an <strong>offshore software development company</strong>, we give startups access to experienced specialists without the delay and expense of building every role internally. You receive direct communication, clear ownership, and a product team focused on your commercial goals.
             </p>
             <Link to="/about" className="btn-primary">
               Let's Work Together <ArrowRight className="w-4 h-4" />

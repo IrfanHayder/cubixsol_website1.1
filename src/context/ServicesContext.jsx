@@ -2,6 +2,7 @@ import { createContext, useContext, useState, useEffect } from 'react';
 import * as LucideIcons from 'lucide-react';
 
 import { apiFetch } from '../utils/api';
+import { services as defaultServices } from '../data/content';
 
 const ServicesContext = createContext(null);
 
@@ -20,18 +21,25 @@ export function resolveIcon(icon) {
 }
 
 export function ServicesProvider({ children }) {
-  const [services, setServices] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [services, setServices] = useState(defaultServices || []);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   const fetchServices = async () => {
-    setLoading(true);
     try {
       const data = await apiFetch('services');
-      setServices(Array.isArray(data) ? data : []);
+      if (Array.isArray(data) && data.length > 0) {
+        // Merge DB services with any defaults not in DB
+        const dbSlugs = new Set(data.map((d) => d.slug));
+        const merged = [...data, ...(defaultServices || []).filter((s) => !dbSlugs.has(s.slug))];
+        setServices(merged);
+      } else {
+        setServices(defaultServices || []);
+      }
       setError(null);
     } catch (err) {
       console.error('Error fetching services:', err);
+      setServices(defaultServices || []);
       setError(err.message);
     } finally {
       setLoading(false);

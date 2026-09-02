@@ -94,6 +94,7 @@ function AppRoutes() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogDetail />} />
         <Route path="/careers" element={<Careers />} />
+        <Route path="/:slug" element={<ServiceDetail />} />
 
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route

@@ -76,7 +76,7 @@ export default function Services() {
               return (
                 <StaggerItem key={s.slug} hover>
                   <Link
-                    to={`/services/${s.slug}`}
+                    to={`/${s.slug}`}
                     className="group card h-full flex flex-col hover:shadow-elev hover:-translate-y-1.5 transition-all duration-300 !p-5 sm:!p-6"
                   >
                     <span

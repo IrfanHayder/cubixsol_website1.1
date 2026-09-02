@@ -10,7 +10,8 @@ export default function SplitIntro() {
           <Reveal className="lg:col-span-7" direction="right">
             <p className="eyebrow mb-3">Top quality</p>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-ink tracking-tight leading-tight mb-6">
-              Our services make your work more productive
+              {/* Our services make your work more productive */}
+              MVP Development for Startups & Founders
             </h2>
             <p className="text-gray-500 text-lg leading-relaxed mb-4">
               From strategy and design to engineering and growth, we deliver end-to-end digital solutions

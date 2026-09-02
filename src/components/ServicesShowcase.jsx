@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import Reveal, { Stagger, StaggerItem } from './Reveal';
 import { useServices } from '../context/ServicesContext';
@@ -137,9 +138,20 @@ export default function ServicesShowcase() {
         <Reveal className="text-center max-w-3xl mx-auto mb-14">
           <p className="text-sm font-medium text-gray-400 mb-3">Our services</p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-ink tracking-tight leading-tight">
-            We optimize high-impact areas
-            <br className="hidden sm:block" /> of your digital product.
+            {/* We optimize high-impact areas */}
+            Custom Software Development
+            <br className="hidden sm:block" />Company Services
+            {/* of your digital product. */}
           </h2>
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.05 }}
+            className="text-gray-600 text-base sm:text-sm leading-relaxed mb-3 mt-3 mx-auto lg:mx-0"
+          >
+            Our <strong>custom software development services</strong> give businesses the strategy, design, engineering, and technical support required to launch reliable digital products. Each solution is planned around your operational needs instead of forcing your business into a standard template
+
+          </motion.p>
         </Reveal>
 
         {loading ? (
@@ -153,7 +165,7 @@ export default function ServicesShowcase() {
                   <p className="text-sm text-gray-500 leading-relaxed mb-2 flex-1">{s.desc}</p>
                   <ServiceVisual title={s.title} />
                   <Link
-                    to={`/services/${s.slug}`}
+                    to={`/${s.slug}`}
                     className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary-600 opacity-0 group-hover:opacity-100 transition-opacity"
                   >
                     Learn more <ArrowRight className="w-3.5 h-3.5" />

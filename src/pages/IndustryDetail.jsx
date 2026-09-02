@@ -270,7 +270,7 @@ export default function IndustryDetail() {
               return (
                 <StaggerItem key={s.slug} hover>
                   <Link
-                    to={`/services/${s.slug}`}
+                    to={`/${s.slug}`}
                     className="flex items-center gap-3 rounded-xl border border-gray-100 bg-white p-3.5 shadow-sm hover:shadow-card transition h-full"
                   >
                     <span className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 ${s.color}`}>

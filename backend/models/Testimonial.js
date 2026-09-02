@@ -5,5 +5,5 @@ const testimonialSchema = new mongoose.Schema({
   role: { type: String },
   company: { type: String },
   avatar: { type: String },
-}, { timestamps: true });
+}, { timestamps: true, strict: false });
 module.exports = mongoose.model('Testimonial', testimonialSchema);

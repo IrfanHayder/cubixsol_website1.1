@@ -116,9 +116,21 @@ export default function HeroSlider() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.05 }}
-              className="text-gray-600 text-base sm:text-lg leading-relaxed mb-3 max-w-sm mx-auto lg:mx-0"
+              className="text-gray-600 text-base sm:text-lg leading-relaxed mb-3 font-bold max-w-sm mx-auto lg:mx-0"
             >
-              Designing digital products for human connection — that scale with your business.
+              {/* Designing digital products for human connection — that scale with your business. */}
+              Custom Software Development Company for Startups & Growing Businesses
+
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.05 }}
+              className="text-gray-600 text-base sm:text-sm leading-relaxed mb-3 max-w-sm mx-auto lg:mx-0"
+            >
+              Cubixsol is a <strong>custom software development company for startups</strong>  and growing businesses ready to turn bold ideas into dependable digital products. From strategy and design to launch and continuous improvement, we create scalable web, mobile, cloud, and AI products shaped around your users, goals, and budget.
+
             </motion.p>
 
             {/* rotating capability line */}
@@ -155,7 +167,7 @@ export default function HeroSlider() {
                 to="/services"
                 className="inline-flex items-center gap-2 bg-ink text-white font-semibold px-6 py-3 rounded-full hover:bg-ink/90 transition shadow-elev"
               >
-                Find out how <ArrowRight className="w-4 h-4" />
+                {/* Find out how*/}Get a Free Estimate  <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
                 to="/contact"
@@ -175,7 +187,7 @@ export default function HeroSlider() {
               {[
                 ['200+', 'Projects'],
                 ['150+', 'Clients'],
-                ['98%', 'Satisfaction'],
+                ['98%', 'Client Satisfaction'],
               ].map(([val, label]) => (
                 <div key={label} className="text-center lg:text-left">
                   <p className="text-lg sm:text-xl font-extrabold text-ink tracking-tight">{val}</p>

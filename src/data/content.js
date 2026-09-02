@@ -336,18 +336,34 @@ export const services = [
 ];
 
 export const whyChoose = [
-  { icon: Users2, title: 'Experienced Team', desc: 'Skilled professionals with years of industry experience.' },
-  { icon: Clock, title: 'On-Time Delivery', desc: 'We respect deadlines and deliver projects on time, every time.' },
-  { icon: Zap, title: 'Client-Centric Approach', desc: 'We listen, understand, and deliver solutions that fit your needs.' },
-  { icon: ShieldCheck, title: 'Quality & Reliability', desc: 'We ensure the highest quality and reliability in everything we build.' },
+  {
+    icon: Users2,
+    title: 'Experienced Product Team',
+    desc: 'Work with developers, designers, QA specialists, and project managers who understand both technical delivery and product usability.',
+  },
+  {
+    icon: Clock,
+    title: 'On-Time Delivery',
+    desc: 'Defined milestones, realistic schedules, and regular progress updates keep your project focused and reduce avoidable delays.',
+  },
+  {
+    icon: Zap,
+    title: 'Transparent Process',
+    desc: 'You always know what the team is building, what has been completed, and what comes next. There are no hidden workflows or unclear handoffs.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Ongoing Support',
+    desc: 'Our offshore software development company model supports product maintenance, feature improvements, performance optimization, and technical growth after launch.',
+  },
 ];
 
 export const processSteps = [
-  { step: '01', title: 'Discover', desc: 'We understand your goals, requirements, and challenges.' },
-  { step: '02', title: 'Plan', desc: 'We create a strategy and roadmap tailored to you.' },
-  { step: '03', title: 'Design & Develop', desc: 'We design and build scalable, secure, high-performance solutions.' },
-  { step: '04', title: 'Test & Launch', desc: 'We test thoroughly and launch with confidence.' },
-  { step: '05', title: 'Support & Grow', desc: 'We provide ongoing support to help your business grow.' },
+  { step: '01', title: 'Discover', desc: 'We clarify your users, business goals, product requirements, technical challenges, budget, and measures of success.' },
+  { step: '02', title: 'Plan', desc: 'Our team defines the feature scope, suitable technology, project roadmap, responsibilities, milestones, and delivery schedule.' },
+  { step: '03', title: 'Design and Develop', desc: 'Designers create the user experience while developers build the product through structured, reviewable development cycles.' },
+  { step: '04', title: 'Test and Launch', desc: 'We test functionality, usability, compatibility, security, and performance before preparing the product for release.' },
+  { step: '05', title: 'Support and Grow', desc: 'After launch, we monitor the product, resolve issues, study feedback, and help you plan valuable new features.' },
 ];
 export const process = processSteps;
 

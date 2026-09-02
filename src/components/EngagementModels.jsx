@@ -5,26 +5,30 @@ import Reveal, { Stagger, StaggerItem } from './Reveal';
 const models = [
   {
     icon: Briefcase,
-    title: 'Project-Based',
-    desc: 'Fixed scope, clear milestones, and predictable pricing. Ideal when requirements are well-defined.',
+    title: 'Project-Based Development',
+    desc: 'Choose a defined scope, schedule, and budget for a complete software project managed by an experienced team.',
     points: ['Fixed budget & timeline', 'Dedicated project manager', 'Full delivery ownership'],
   },
   {
     icon: Users,
-    title: 'Dedicated Team',
-    desc: 'A long-term team that works as an extension of yours — aligned to your roadmap and culture.',
+    title: 'Dedicated Development Team',
+    desc: 'Add a stable, long-term team that works exclusively on your product and adapts as your priorities change.',
     points: ['Monthly engagement', 'Shared tools & rituals', 'Scale up or down anytime'],
   },
   {
     icon: UserPlus,
     title: 'Staff Augmentation',
-    desc: 'Plug skilled engineers into your existing squad to accelerate delivery without hiring overhead.',
+    desc: (
+      <>
+        Our <strong>staff augmentation services</strong> help you add developers, designers, QA engineers, or other specialists to your existing team. These <strong>staff augmentation services</strong> provide extra technical capacity while you retain control of daily priorities.
+      </>
+    ),
     points: ['Vetted specialists', 'Fast onboarding', 'Flexible duration'],
   },
   {
     icon: Rocket,
-    title: 'MVP & Startup',
-    desc: 'From idea to launch-ready product. We help founders validate, build, and ship the first version.',
+    title: 'MVP and Startup Model',
+    desc: 'Start with product discovery, essential features, rapid development, and a launch plan designed for early validation and future investment.',
     points: ['Lean scope', 'Rapid iterations', 'Investor-ready quality'],
   },
 ];
@@ -38,10 +42,10 @@ export default function EngagementModels() {
             Engagement Models
           </p>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight mb-4">
-            Work with us the way that fits you
+            Hire a Dedicated Development Team
           </h2>
           <p className="text-white/60 text-lg">
-            Flexible partnerships designed around your goals, timeline, and team structure.
+            Choose an engagement model, internal resources, budget, and product stage. Business owners who want to <strong>hire dedicated development team</strong> talent can access our specialists without managing a lengthy recruitment process.
           </p>
         </Reveal>
 
@@ -54,14 +58,14 @@ export default function EngagementModels() {
                 </span>
                 <h3 className="font-bold text-lg mb-2">{m.title}</h3>
                 <p className="text-sm text-white/55 leading-relaxed mb-4">{m.desc}</p>
-                <ul className="space-y-1.5">
+                {/* <ul className="space-y-1.5">
                   {m.points.map((p) => (
                     <li key={p} className="flex items-center gap-2 text-xs text-white/70">
                       <span className="w-1.5 h-1.5 rounded-full bg-primary-400 shrink-0" />
                       {p}
                     </li>
                   ))}
-                </ul>
+                </ul> */}
               </div>
             </StaggerItem>
           ))}

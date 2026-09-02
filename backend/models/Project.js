@@ -6,6 +6,6 @@ const projectSchema = new mongoose.Schema({
   desc: { type: String },
   tag: { type: String },
   color: { type: String }
-}, { timestamps: true });
+}, { timestamps: true, strict: false });
 
 module.exports = mongoose.model('Project', projectSchema);

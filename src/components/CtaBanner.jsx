@@ -11,8 +11,8 @@ export default function CtaBanner() {
           <div className="absolute right-24 bottom-0 w-24 h-24 rounded-2xl bg-white/10 rotate-12 animate-float" style={{ animationDelay: '1s' }} />
           <div className="relative z-10 max-w-xl">
             <p className="text-xs font-bold tracking-widest uppercase text-primary-200 mb-2">Have a Project in Mind?</p>
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-2">Let's Build Something Amazing Together</h3>
-            <p className="text-primary-100 text-sm sm:text-base">Share your idea with us and our experts will help you turn it into a powerful digital solution.</p>
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-2">Ready to Build Your Product? Let’s Talk</h3>
+            <p className="text-primary-100 text-sm sm:text-base">Choose us as your <strong>custom software development company</strong> and move from idea to launch with a clear plan, experienced specialists, and dependable technical support.</p>
           </div>
           <Link to="/contact" className="relative z-10 shrink-0 inline-flex items-center gap-2 bg-white text-primary-700 font-semibold px-6 py-3 rounded-lg hover:bg-primary-50 hover:scale-105 transition-all">
             Get a Free Consultation <ArrowRight className="w-4 h-4" />

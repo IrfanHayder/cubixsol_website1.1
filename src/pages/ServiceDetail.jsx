@@ -28,7 +28,12 @@ export default function ServiceDetail() {
     );
   }
 
-  const service = (Array.isArray(services) ? services : []).find((s) => s.slug === slug);
+  const service = (Array.isArray(services) ? services : []).find(
+    (s) =>
+      s.slug === slug ||
+      (slug === 'graphic-designing' && (s.slug === 'graphic-design' || s.slug === 'graphic-designing')) ||
+      (slug === 'graphic-design' && (s.slug === 'graphic-design' || s.slug === 'graphic-designing'))
+  );
 
   if (!service) return <Navigate to="/services" replace />;
 
@@ -292,7 +297,7 @@ export default function ServiceDetail() {
                 return (
                   <StaggerItem key={s.slug}>
                     <Link
-                      to={`/services/${s.slug}`}
+                      to={`/${s.slug}`}
                       className="block bg-white rounded-2xl border border-gray-100 p-5 shadow-card hover:shadow-elev hover:-translate-y-1 transition-all h-full"
                     >
                       <span

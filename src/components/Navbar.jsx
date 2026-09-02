@@ -166,7 +166,7 @@ export default function Navbar() {
                               return (
                                 <li key={s.slug}>
                                   <NavLink
-                                    to={`/services/${s.slug}`}
+                                    to={`/${s.slug}`}
                                     className="flex items-center gap-2 px-2 py-1.5 rounded-lg hover:bg-primary-50 transition group"
                                   >
                                     <span
@@ -504,7 +504,7 @@ export default function Navbar() {
                   {services.map((s) => (
                     <NavLink
                       key={s.slug}
-                      to={`/services/${s.slug}`}
+                      to={`/${s.slug}`}
                       onClick={() => setOpen(false)}
                       className="block px-3 py-2 text-sm text-gray-600"
                     >

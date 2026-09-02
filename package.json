@@ -4,9 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently \"node backend/server.js\" \"vite\" --names \"BACKEND,FRONTEND\" --prefix-colors \"cyan,green\"",
+    "dev:frontend": "vite",
+    "dev:backend": "node backend/server.js",
     "dev:all": "concurrently \"node backend/server.js\" \"vite\" --names \"BACKEND,FRONTEND\" --prefix-colors \"cyan,green\"",
-    "share": "concurrently \"node backend/server.js\" \"vite --port 5173\" \"ssh -o StrictHostKeyChecking=no -R 80:localhost:5173 nokey@localhost.run\" --names \"BACKEND,FRONTEND,TUNNEL\" --prefix-colors \"cyan,green,magenta\"",
+    "share": "npm run build && concurrently \"node backend/server.js\" \"node tunnel-keeper.cjs\" --names \"SERVER,TUNNEL\" --prefix-colors \"cyan,magenta\"",
     "build": "vite build",
     "start": "node backend/server.js",
     "lint": "oxlint",
