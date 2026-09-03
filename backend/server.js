@@ -316,12 +316,122 @@ async function seedInitialData() {
             },
           ];
           modified = true;
+        } else if (service.slug === 'graphic-designing' || service.slug === 'graphic-design') {
+          service.subServicesTitle = 'Our Graphic Design Services';
+          service.subServicesIntro = 'We deliver professional graphic design services that help businesses build a consistent visual identity, communicate their value clearly, and create polished creative assets across digital and print media.';
+          service.subServicesItems = [
+            {
+              title: 'Brand Identity & Logo Design',
+              desc: 'We design memorable logos, color palettes, typography scales, and brand style guides that establish a cohesive, recognizable identity across all company touchpoints.',
+            },
+            {
+              title: 'UI/UX & Web Design Graphics',
+              desc: 'Engaging website banners, icons, feature illustrations, and user interface visuals designed to improve conversions and user retention.',
+            },
+            {
+              title: 'Marketing & Social Media Creatives',
+              desc: 'Custom social media post templates, ad creatives for Meta/Google, pitch decks, infographics, and campaign graphics built to drive engagement.',
+            },
+            {
+              title: 'Print & Packaging Design',
+              desc: 'Brochures, flyers, business stationery, merchandise, and retail packaging designed with exact print specifications and high-resolution output.',
+            },
+            {
+              title: 'Custom 2D/3D Illustrations',
+              desc: 'Unique digital illustrations and 3D visual elements tailored to your brand narrative, making complex products feel intuitive and premium.',
+            },
+          ];
+          modified = true;
         }
       }
+
+      if ((service.slug === 'graphic-designing' || service.slug === 'graphic-design') && (!Array.isArray(service.whyChooseItems) || service.whyChooseItems.length === 0)) {
+        service.whyChooseTitle = 'Why Choose Cubixsol for Graphic Design?';
+        service.whyChooseIntro = 'We combine artistic excellence with strategic brand thinking to create designs that elevate your company.';
+        service.whyChooseItems = [
+          {
+            title: 'Tailored Brand Alignment',
+            desc: 'Every visual asset is crafted around your unique audience, industry positioning, and business goals.',
+          },
+          {
+            title: 'Multi-Format Production Ready',
+            desc: 'Handoff-ready vector files, responsive web assets, and print-ready deliverables in all required industry formats.',
+          },
+          {
+            title: 'Fast Turnaround with Iterations',
+            desc: 'Structured creative phases with concept exploration, feedback cycles, and clear milestone deliveries.',
+          },
+          {
+            title: 'Unified Design Systems',
+            desc: 'We ensure long-term consistency with complete component libraries, guidelines, and scalable design assets.',
+          },
+        ];
+        modified = true;
+      }
+
+      if ((service.slug === 'graphic-designing' || service.slug === 'graphic-design') && (!Array.isArray(service.serviceProcessSteps) || service.serviceProcessSteps.length === 0)) {
+        service.serviceProcessTitle = 'Our Graphic Design Process';
+        service.serviceProcessSteps = [
+          { stepNumber: '01', title: 'Creative Brief & Research', desc: 'We analyze your brand values, target demographic, competitor landscape, and aesthetic preferences.' },
+          { stepNumber: '02', title: 'Concept Exploration', desc: 'Our designers develop multiple initial directions, mood boards, and sketch concepts for review.' },
+          { stepNumber: '03', title: 'Design Refinement', desc: 'We polish the chosen direction, fine-tuning typography, contrast, spacing, and brand harmony.' },
+          { stepNumber: '04', title: 'Production & Formats', desc: 'We generate all required asset sizes, SVG exports, print bleed setups, and digital variants.' },
+          { stepNumber: '05', title: 'Handoff & Guidelines', desc: 'Delivery of organized source files (Figma, AI, PSD), style documentation, and usage guidelines.' },
+        ];
+        modified = true;
+      }
+
+      if ((service.slug === 'graphic-designing' || service.slug === 'graphic-design') && (!Array.isArray(service.faqs) || service.faqs.length === 0)) {
+        service.faqs = [
+          { q: 'What deliverables do I receive with graphic design projects?', a: 'You receive complete source files (Figma, Adobe Illustrator, Photoshop) alongside optimized production exports (SVG, PNG, WebP, PDF) and style guides.' },
+          { q: 'Can you work within our existing brand guidelines?', a: 'Yes. We can strictly adhere to your existing brand assets and style rules, or help modernize and expand them if needed.' },
+          { q: 'How long does a brand identity or design project take?', a: 'Individual design assets typically take 3-5 days, while complete brand identity and design systems range from 2 to 4 weeks depending on scope.' },
+          { q: 'Do you provide revisions during the design process?', a: 'Yes, we provide structured iterative review stages to ensure the final design meets your exact expectations and standards before sign-off.' },
+          { q: 'Do you design for both digital and print?', a: 'Yes, we prepare high-resolution CMYK print files with bleed margins as well as RGB web-optimized assets.' },
+        ];
+        modified = true;
+      }
+
+      if (service.slug === 'ecommerce-solutions' && (!Array.isArray(service.whyChooseItems) || service.whyChooseItems.length === 0)) {
+        service.whyChooseTitle = 'Why Choose Cubixsol for E-Commerce Development?';
+        service.whyChooseIntro = 'We build scalable, high-converting digital storefronts that turn casual visitors into loyal repeat customers.';
+        service.whyChooseItems = [
+          { title: 'Conversion-Optimized Architecture', desc: 'Fast page speeds, frictionless mobile checkout, and high-converting product pages.' },
+          { title: 'Scalable Catalog & Inventory Sync', desc: 'Engineered to handle high traffic spikes, flash sales, and complex multi-warehouse inventory.' },
+          { title: 'Secure Multi-Gateway Payments', desc: 'Seamless integration with Stripe, PayPal, Apple Pay, Klarna, and local payment providers.' },
+          { title: 'Omnichannel Integration', desc: 'Connect storefronts with ERP, CRM, marketing automation, and 3PL shipping carriers.' },
+        ];
+        modified = true;
+      }
+
+      if (service.slug === 'ecommerce-solutions' && (!Array.isArray(service.serviceProcessSteps) || service.serviceProcessSteps.length === 0)) {
+        service.serviceProcessTitle = 'Our E-Commerce Development Process';
+        service.serviceProcessSteps = [
+          { stepNumber: '01', title: 'Store Strategy & Architecture', desc: 'Requirements gathering, catalog structuring, checkout flow planning, and platform selection.' },
+          { stepNumber: '02', title: 'UI/UX & Storefront Design', desc: 'Mobile-first shopping experience, product discovery, and brand-tailored layouts.' },
+          { stepNumber: '03', title: 'Custom Development & Integrations', desc: 'Storefront coding, payment gateway setup, inventory sync, and custom app features.' },
+          { stepNumber: '04', title: 'Testing & QA', desc: 'Checkout testing, security audit, speed optimization, and cross-browser quality assurance.' },
+          { stepNumber: '05', title: 'Launch & Growth Optimization', desc: 'Go-live execution, analytics tracking setup, and post-launch conversion rate monitoring.' },
+        ];
+        modified = true;
+      }
+
+      if (service.slug === 'ecommerce-solutions' && (!Array.isArray(service.faqs) || service.faqs.length === 0)) {
+        service.faqs = [
+          { q: 'Which ecommerce platform is best for my business?', a: 'We evaluate your catalog size, customization needs, and budget to recommend Shopify, WooCommerce, Next.js headless commerce, or custom Laravel.' },
+          { q: 'Can you migrate my store from another platform?', a: 'Yes, we safely migrate products, customer accounts, order history, and SEO redirects with zero data loss and minimal downtime.' },
+          { q: 'How do you ensure checkout security?', a: 'We implement SSL encryption, PCI-DSS compliant payment gateways, fraud detection, and tokenized transactions.' },
+          { q: 'Can you integrate with our inventory and ERP systems?', a: 'Yes, we build real-time two-way API integrations with ERPs (SAP, NetSuite), CRMs (HubSpot, Salesforce), and 3PL shipping providers.' },
+          { q: 'Do you offer ongoing store maintenance and CRO?', a: 'Yes, we provide ongoing speed optimization, security patches, conversion rate optimization (CRO), and promotional feature rollouts.' },
+        ];
+        modified = true;
+      }
+
       if (modified) {
         await service.save();
       }
     }
+
 
     const solutionsCount = await Solution.countDocuments();
     if (solutionsCount === 0) {
