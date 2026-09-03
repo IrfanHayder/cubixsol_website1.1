@@ -18,10 +18,14 @@ export default function Services() {
     .map((s) => ({
       slug: s.slug,
       title: s.title || s.slug,
+      menuTitle: s.menuTitle,
       desc: s.desc || '',
       color: s.color || 'text-primary-600 bg-primary-50',
       icon: s.icon,
+      heroImage: s.heroImage,
+      gradient: s.gradient,
     }));
+
 
   if (loading) {
     return (
