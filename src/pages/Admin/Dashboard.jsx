@@ -17,6 +17,7 @@ import AdminSidebar from '../../components/Admin/AdminSidebar';
 import AdminStats from '../../components/Admin/AdminStats';
 import AdminTable from '../../components/Admin/AdminTable';
 import AdminForm from '../../components/Admin/AdminForm';
+import MediaManager from '../../components/Admin/MediaManager';
 import { useServices } from '../../context/ServicesContext';
 import { API_BASE, apiFetch } from '../../utils/api';
 
@@ -92,6 +93,7 @@ const SECTION_CONFIGS = {
     label: 'Blog Posts',
     endpoint: 'blogs',
     columns: [
+      { key: 'coverImage', label: 'Cover' },
       { key: 'title', label: 'Title' },
       { key: 'slug', label: 'Slug' },
       { key: 'tag', label: 'Tag' },
@@ -110,7 +112,7 @@ const SECTION_CONFIGS = {
         ]
       },
       { name: 'date', label: 'Publish Date (e.g. Jul 12, 2026)' },
-      { name: 'coverImage', label: 'Cover Image URL', fullWidth: true },
+      { name: 'coverImage', label: 'Cover Image', type: 'image', fullWidth: true },
       { name: 'color', label: 'Gradient (e.g. from-primary-700 to-indigo-900)' },
       { name: 'excerpt', label: 'Excerpt', type: 'textarea', fullWidth: true, rows: 2 },
       { name: 'content', label: 'Full Content', type: 'textarea', fullWidth: true, rows: 8 },
@@ -120,7 +122,7 @@ const SECTION_CONFIGS = {
       { name: 'seo.keywords', label: 'Keywords (comma separated)', fullWidth: true, hint: 'e.g. web design, React, Pakistan' },
       { name: 'seo.ogTitle', label: 'OG Title (Social Share Title)', fullWidth: true, hint: 'Shown on Facebook, WhatsApp, LinkedIn previews.' },
       { name: 'seo.ogDescription', label: 'OG Description (Social Share Desc)', type: 'textarea', rows: 2, fullWidth: true },
-      { name: 'seo.ogImage', label: 'OG Image URL (Social Share Image)', fullWidth: true, hint: 'Recommended: 1200x630px image URL.' },
+      { name: 'seo.ogImage', label: 'OG Image (Social Share Image)', type: 'image', fullWidth: true, hint: 'Recommended: 1200x630px image.' },
       { name: 'seo.canonicalUrl', label: 'Canonical URL', fullWidth: true, hint: 'Optional. Leave blank to auto-use page URL.' },
     ],
   },
@@ -154,6 +156,7 @@ const SECTION_CONFIGS = {
     label: 'Authors',
     endpoint: 'authors',
     columns: [
+      { key: 'avatar', label: 'Avatar' },
       { key: 'name', label: 'Name' },
       { key: 'email', label: 'Email' },
       { key: 'role', label: 'Role' },
@@ -162,7 +165,7 @@ const SECTION_CONFIGS = {
       { name: 'name', label: 'Author Name', required: true },
       { name: 'email', label: 'Email' },
       { name: 'role', label: 'Role (e.g. Editor, Writer)' },
-      { name: 'avatar', label: 'Avatar URL', fullWidth: true },
+      { name: 'avatar', label: 'Avatar / Photo', type: 'image', fullWidth: true },
       { name: 'bio', label: 'Bio', type: 'textarea', fullWidth: true, rows: 3 },
     ],
   },
@@ -170,6 +173,7 @@ const SECTION_CONFIGS = {
     label: 'Services',
     endpoint: 'services',
     columns: [
+      { key: 'heroImage', label: 'Hero Image' },
       { key: 'title', label: 'Title' },
       { key: 'slug', label: 'Slug' },
       { key: 'desc', label: 'Description' },
@@ -181,7 +185,8 @@ const SECTION_CONFIGS = {
       { name: 'icon', label: 'Lucide Icon Name (e.g. Globe, Code2)', required: true },
       { name: 'color', label: 'Color Class (e.g. bg-blue-50 text-blue-600)' },
       { name: 'gradient', label: 'Gradient Classes (e.g. from-blue-500 to-cyan-600)' },
-      { name: 'heroImage', label: 'Hero Image URL', fullWidth: true },
+      { name: 'heroImage', label: 'Hero Image', type: 'image', fullWidth: true },
+      { name: 'whyChooseImage', label: 'Why Choose Us Image', type: 'image', fullWidth: true },
       { name: 'desc', label: 'Short Description', type: 'textarea', fullWidth: true, rows: 2 },
       { name: 'longDesc', label: 'Long Description', type: 'textarea', fullWidth: true, rows: 5 },
       { name: 'features', label: 'Features (one per line)', type: 'textarea', fullWidth: true, rows: 4, isArray: true },
@@ -193,6 +198,7 @@ const SECTION_CONFIGS = {
     label: 'Products',
     endpoint: 'products',
     columns: [
+      { key: 'image', label: 'Image' },
       { key: 'name', label: 'Name' },
       { key: 'title', label: 'Title' },
       { key: 'slug', label: 'Slug' },
@@ -205,7 +211,7 @@ const SECTION_CONFIGS = {
       { name: 'tagline', label: 'Tagline', fullWidth: true },
       { name: 'category', label: 'Category' },
       { name: 'accent', label: 'Accent (Tailwind gradient e.g. from-blue-500 to-cyan-400)' },
-      { name: 'image', label: 'Image URL', fullWidth: true },
+      { name: 'image', label: 'Product Image', type: 'image', fullWidth: true },
       { name: 'externalUrl', label: 'External URL' },
       { name: 'desc', label: 'Description', type: 'textarea', fullWidth: true, rows: 4 },
     ],
@@ -241,6 +247,7 @@ const SECTION_CONFIGS = {
       { name: 'title', label: 'Solution Title', required: true, fullWidth: true },
       { name: 'slug', label: 'Slug', required: true },
       { name: 'category', label: 'Category', required: true },
+      { name: 'image', label: 'Solution Image', type: 'image', fullWidth: true },
       { name: 'desc', label: 'Description', type: 'textarea', fullWidth: true, rows: 5 },
     ],
   },
@@ -248,6 +255,7 @@ const SECTION_CONFIGS = {
     label: 'Projects',
     endpoint: 'projects',
     columns: [
+      { key: 'image', label: 'Image' },
       { key: 'title', label: 'Title' },
       { key: 'client', label: 'Client' },
       { key: 'industry', label: 'Industry' },
@@ -258,6 +266,7 @@ const SECTION_CONFIGS = {
       { name: 'client', label: 'Client Name', required: true },
       { name: 'industry', label: 'Industry', required: true },
       { name: 'year', label: 'Year' },
+      { name: 'image', label: 'Project Screenshot / Image', type: 'image', fullWidth: true },
       { name: 'description', label: 'Description', type: 'textarea', fullWidth: true, rows: 5 },
     ],
   },
@@ -265,6 +274,7 @@ const SECTION_CONFIGS = {
     label: 'Testimonials',
     endpoint: 'testimonials',
     columns: [
+      { key: 'avatar', label: 'Avatar' },
       { key: 'name', label: 'Name' },
       { key: 'role', label: 'Role' },
       { key: 'company', label: 'Company' },
@@ -274,10 +284,11 @@ const SECTION_CONFIGS = {
       { name: 'name', label: 'Client Name', required: true },
       { name: 'role', label: 'Role / Title' },
       { name: 'company', label: 'Company' },
-      { name: 'avatar', label: 'Avatar URL', fullWidth: true },
+      { name: 'avatar', label: 'Avatar / Photo', type: 'image', fullWidth: true },
       { name: 'quote', label: 'Testimonial Quote', type: 'textarea', fullWidth: true, rows: 4, required: true },
     ],
   },
+
   messages: {
     label: 'Contact Messages',
     endpoint: 'messages',
@@ -333,9 +344,10 @@ const SECTION_CONFIGS = {
     ],
   },
   media: {
-    label: 'Media',
+    label: 'Media Library',
     endpoint: 'media',
     columns: [
+      { key: 'url', label: 'Preview' },
       { key: 'title', label: 'Title' },
       { key: 'type', label: 'Type' },
       { key: 'url', label: 'URL' },
@@ -349,7 +361,7 @@ const SECTION_CONFIGS = {
           { value: 'file', label: 'File' },
         ]
       },
-      { name: 'url', label: 'URL', required: true, fullWidth: true },
+      { name: 'url', label: 'Media File', type: 'image', required: true, fullWidth: true },
       { name: 'alt', label: 'Alt Text', fullWidth: true },
     ],
   },
@@ -366,10 +378,11 @@ const SECTION_CONFIGS = {
       { name: 'title', label: 'Meta Title', fullWidth: true },
       { name: 'description', label: 'Meta Description', type: 'textarea', fullWidth: true, rows: 3 },
       { name: 'keywords', label: 'Keywords (comma separated)', fullWidth: true },
-      { name: 'ogImage', label: 'OG Image URL', fullWidth: true },
+      { name: 'ogImage', label: 'OG Image', type: 'image', fullWidth: true },
     ],
   },
 };
+
 
 /* ================== DB SECTION COMPONENT ================== */
 function DbSection({ sectionKey, showToast }) {
@@ -787,12 +800,15 @@ export default function AdminDashboard() {
         <main className="flex-1 p-4 sm:p-6 lg:p-8">
           {active === 'dashboard' ? (
             <DashboardOverview showToast={showToast} onNavigate={setActive} />
+          ) : active === 'media' ? (
+            <MediaManager showToast={showToast} />
           ) : dbSections.includes(active) ? (
             <DbSection key={active} sectionKey={active} showToast={showToast} />
           ) : (
             <div className="text-center py-20 text-gray-400">Section coming soon...</div>
           )}
         </main>
+
       </div>
     </div>
   );

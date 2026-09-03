@@ -49,19 +49,110 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
-// Upload Endpoint
-app.post('/api/upload', upload.single('file'), (req, res) => {
+// Upload Endpoints
+app.post('/api/upload', upload.single('file'), async (req, res) => {
   if (!req.file) {
     return res.status(400).json({ message: 'No file provided' });
   }
   const fileUrl = `/uploads/${req.file.filename}`;
+  const mime = req.file.mimetype || '';
+  const type = mime.startsWith('video/') ? 'video' : mime.startsWith('image/') ? 'image' : 'file';
+  const rawTitle = (req.body.title || req.file.originalname || 'Media').replace(/\.[^/.]+$/, '');
+
+  let mediaDoc = null;
+  try {
+    mediaDoc = await Media.create({
+      title: rawTitle,
+      url: fileUrl,
+      type: req.body.type || type,
+      alt: req.body.alt || rawTitle,
+      size: req.file.size,
+      mimetype: req.file.mimetype,
+    });
+  } catch (err) {
+    console.error('Failed to auto-save Media record in DB:', err);
+  }
+
   res.json({
     url: fileUrl,
     filename: req.file.filename,
     originalName: req.file.originalname,
-    mimetype: req.file.mimetype
+    mimetype: req.file.mimetype,
+    size: req.file.size,
+    media: mediaDoc
   });
 });
+
+app.post('/api/upload/multiple', upload.array('files', 20), async (req, res) => {
+  if (!req.files || req.files.length === 0) {
+    return res.status(400).json({ message: 'No files provided' });
+  }
+
+  const results = [];
+  for (const file of req.files) {
+    const fileUrl = `/uploads/${file.filename}`;
+    const mime = file.mimetype || '';
+    const type = mime.startsWith('video/') ? 'video' : mime.startsWith('image/') ? 'image' : 'file';
+    const rawTitle = file.originalname.replace(/\.[^/.]+$/, '');
+
+    let mediaDoc = null;
+    try {
+      mediaDoc = await Media.create({
+        title: rawTitle,
+        url: fileUrl,
+        type,
+        alt: rawTitle,
+        size: file.size,
+        mimetype: file.mimetype,
+      });
+    } catch (err) {
+      console.error('Failed to save multi-upload Media record:', err);
+    }
+
+    results.push({
+      url: fileUrl,
+      filename: file.filename,
+      originalName: file.originalname,
+      mimetype: file.mimetype,
+      size: file.size,
+      media: mediaDoc
+    });
+  }
+
+  res.json({ files: results });
+});
+
+// Custom Media Delete with physical file cleanup
+app.delete('/api/media/:id', async (req, res) => {
+  try {
+    const idParam = req.params.id;
+    const isObjectId = idParam && idParam.match(/^[0-9a-fA-F]{24}$/);
+    const query = isObjectId ? { _id: idParam } : { slug: idParam };
+    const media = await Media.findOne(query);
+    if (!media) {
+      return res.status(404).json({ message: 'Media not found' });
+    }
+
+    if (media.url && media.url.startsWith('/uploads/')) {
+      const filename = path.basename(media.url);
+      const filePath = path.join(uploadsDir, filename);
+      if (fs.existsSync(filePath)) {
+        try {
+          fs.unlinkSync(filePath);
+        } catch (e) {
+          console.warn('Could not delete physical file:', filePath, e.message);
+        }
+      }
+    }
+
+    await Media.deleteOne({ _id: media._id });
+    res.json({ message: 'Media deleted successfully', deleted: media });
+  } catch (err) {
+    console.error('Error deleting media:', err);
+    res.status(500).json({ message: err.message });
+  }
+});
+
 
 const {
   initialServices,

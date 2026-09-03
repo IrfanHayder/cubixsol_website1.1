@@ -1,5 +1,6 @@
 import { X, ChevronDown, ChevronUp } from 'lucide-react';
 import { useState } from 'react';
+import ImagePickerField from './ImagePickerField';
 
 // Get nested value by dot path: "seo.metaTitle" => values.seo?.metaTitle
 function getNestedValue(obj, path) {
@@ -26,6 +27,24 @@ export default function AdminForm({ title, fields, values, onChange, onSubmit, o
         onChange(field.name, val);
       }
     };
+
+    const isImageField =
+      field.type === 'image' ||
+      ['heroImage', 'image', 'coverImage', 'avatar', 'whyChooseImage', 'ogImage', 'seo.ogImage'].includes(field.name);
+
+    if (isImageField) {
+      return (
+        <ImagePickerField
+          name={field.name}
+          value={value}
+          onChange={handleChange}
+          label={field.label}
+          placeholder={field.placeholder}
+          hint={field.hint}
+          required={field.required}
+        />
+      );
+    }
 
     if (field.type === 'textarea') {
       return (
@@ -81,6 +100,7 @@ export default function AdminForm({ title, fields, values, onChange, onSubmit, o
       />
     );
   };
+
 
   return (
     <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6 sm:p-8">

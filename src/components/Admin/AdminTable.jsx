@@ -1,6 +1,39 @@
-import { Edit2, Trash2, Eye, MoreHorizontal } from 'lucide-react';
+import { Edit2, Trash2, Eye } from 'lucide-react';
+
 
 export default function AdminTable({ columns, data, onEdit, onDelete, onView }) {
+  const renderCell = (col, row) => {
+    if (col.render) return col.render(row);
+    const val = row[col.key];
+    if (val === null || val === undefined || val === '') return <span className="text-ink/30">—</span>;
+
+    const isImageKey = ['image', 'heroImage', 'avatar', 'coverImage', 'whyChooseImage', 'thumbnail'].includes(col.key);
+    const isMediaUrl = typeof val === 'string' && (val.startsWith('/uploads/') || (val.startsWith('http') && val.match(/\.(jpeg|jpg|gif|png|webp|svg)($|\?)/i)));
+
+    if (isImageKey || isMediaUrl) {
+      return (
+        <div className="flex items-center gap-2.5">
+          <div className="w-10 h-10 rounded-xl overflow-hidden bg-gray-100 border border-gray-200 shrink-0 shadow-xs flex items-center justify-center">
+            <img
+              src={val}
+              alt=""
+              className="w-full h-full object-cover"
+              onError={(e) => {
+                e.currentTarget.onerror = null;
+                e.currentTarget.src = 'https://placehold.co/100x100?text=Img';
+              }}
+            />
+          </div>
+          <span className="text-xs text-ink/70 font-mono truncate max-w-[140px]" title={val}>
+            {val.split('/').pop()}
+          </span>
+        </div>
+      );
+    }
+
+    return val;
+  };
+
   return (
     <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
       <div className="overflow-x-auto">
@@ -22,12 +55,13 @@ export default function AdminTable({ columns, data, onEdit, onDelete, onView }) 
           </thead>
           <tbody className="divide-y divide-gray-50">
             {data.map((row, idx) => (
-              <tr key={row.id || idx} className="hover:bg-gray-50/50 transition-colors">
+              <tr key={row.id || row._id || idx} className="hover:bg-gray-50/50 transition-colors">
                 {columns.map((col) => (
                   <td key={col.key} className="px-5 py-4 text-ink/90">
-                    {col.render ? col.render(row) : row[col.key]}
+                    {renderCell(col, row)}
                   </td>
                 ))}
+
                 <td className="px-5 py-4">
                   <div className="flex items-center justify-end gap-1.5">
                     {onView && (
