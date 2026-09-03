@@ -13,6 +13,7 @@ const serviceMenuGroups = [
       'mobile-app-development',
       'ios-development',
       'android-development',
+      'android',
     ],
   },
   {
@@ -30,6 +31,7 @@ const serviceMenuGroups = [
       'cloud-solutions',
       'devops',
       'data-migration-services',
+      'data-migration',
       'ai-development',
     ],
   },
@@ -37,8 +39,11 @@ const serviceMenuGroups = [
     title: 'Design & Growth',
     slugs: [
       'ui-ux-design',
+      'graphic-designing',
       'graphic-design',
       'ecommerce-solutions',
+      'ecommerce-development',
+      'ecommerce',
       'digital-marketing',
     ],
   },
@@ -48,20 +53,55 @@ import logo from '../assets/logo.svg';
 
 export default function Navbar() {
   const { services, resolveIcon } = useServices();
-  const serviceBySlug = Object.fromEntries(services.map((s) => [s.slug, s]));
+
+  const serviceBySlug = {};
+  services.forEach((s) => {
+    if (s && s.slug) {
+      serviceBySlug[s.slug] = s;
+      if (s.slug === 'graphic-designing') serviceBySlug['graphic-design'] = s;
+      if (s.slug === 'graphic-design') serviceBySlug['graphic-designing'] = s;
+      if (s.slug === 'ecommerce-solutions') {
+        serviceBySlug['ecommerce'] = s;
+        serviceBySlug['ecommerce-development'] = s;
+      }
+      if (s.slug === 'data-migration-services') serviceBySlug['data-migration'] = s;
+      if (s.slug === 'android-development') serviceBySlug['android'] = s;
+    }
+  });
 
   const dynamicMenuGroups = services.length > 0 ? (() => {
-    const predefinedSlugs = new Set(serviceMenuGroups.flatMap(g => g.slugs));
-    const uncategorizedServices = services.filter(s => s && s.slug && !predefinedSlugs.has(s.slug));
+    const matchedSlugs = new Set();
+    const groups = serviceMenuGroups.map(group => {
+      const list = [];
+      group.slugs.forEach(slug => {
+        const found = serviceBySlug[slug];
+        if (found && !matchedSlugs.has(found.slug)) {
+          matchedSlugs.add(found.slug);
+          list.push(found);
+        }
+      });
+      return {
+        ...group,
+        servicesList: list
+      };
+    });
 
-    const groups = serviceMenuGroups.map(group => ({
-      ...group,
-      servicesList: group.slugs.map(slug => serviceBySlug[slug]).filter(Boolean)
-    }));
-
-    uncategorizedServices.forEach((s, idx) => {
-      const groupIdx = idx % groups.length;
-      groups[groupIdx].servicesList.push(s);
+    const uncategorized = services.filter(s => s && s.slug && !matchedSlugs.has(s.slug));
+    uncategorized.forEach((s) => {
+      const text = `${s.slug} ${s.title}`.toLowerCase();
+      if (text.includes('design') || text.includes('graphic') || text.includes('brand') || text.includes('marketing') || text.includes('commerce')) {
+        const targetGroup = groups.find(g => g.title.includes('Design')) || groups[groups.length - 1];
+        targetGroup.servicesList.push(s);
+      } else if (text.includes('cloud') || text.includes('ai') || text.includes('data') || text.includes('devops')) {
+        const targetGroup = groups.find(g => g.title.includes('Cloud')) || groups[2];
+        targetGroup.servicesList.push(s);
+      } else if (text.includes('app') || text.includes('mobile') || text.includes('ios') || text.includes('android')) {
+        const targetGroup = groups.find(g => g.title.includes('Build')) || groups[0];
+        targetGroup.servicesList.push(s);
+      } else {
+        const targetGroup = groups.find(g => g.title.includes('Engineering')) || groups[1];
+        targetGroup.servicesList.push(s);
+      }
     });
 
     return groups;
@@ -69,6 +109,7 @@ export default function Navbar() {
     ...group,
     servicesList: group.slugs.map(slug => serviceBySlug[slug]).filter(Boolean)
   }));
+
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
