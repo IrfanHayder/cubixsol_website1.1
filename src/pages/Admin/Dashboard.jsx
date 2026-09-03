@@ -214,11 +214,17 @@ const SECTION_CONFIGS = {
       { name: 'tech', label: 'Tech Stack (one per line)', type: 'textarea', fullWidth: true, rows: 3, isArray: true },
       { name: 'outcomes', label: 'Outcomes (one per line)', type: 'textarea', fullWidth: true, rows: 3, isArray: true },
       { name: 'faqsText', label: 'FAQs (Format: Question | Answer, one per line)', type: 'textarea', fullWidth: true, rows: 6, isCustomArray: 'faqs' },
+      { name: 'ctaBannerEyebrow', label: 'Bottom Banner Eyebrow (e.g. READY TO GROW?)' },
+      { name: 'ctaBannerTitle', label: 'Bottom Banner Title (e.g. Ready to Build Your Web App?)', fullWidth: true },
+      { name: 'ctaBannerDesc', label: 'Bottom Banner Description', type: 'textarea', fullWidth: true, rows: 3 },
+      { name: 'ctaBannerButtonText', label: 'Bottom Banner Button Text (e.g. Get a Free Consultation)' },
+      { name: 'ctaBannerButtonLink', label: 'Bottom Banner Button Link (e.g. /contact or #service-inquiry)' },
       { name: 'seo.metaTitle', label: 'SEO Meta Title', fullWidth: true },
       { name: 'seo.metaDescription', label: 'SEO Meta Description', type: 'textarea', fullWidth: true, rows: 2 },
       { name: 'seo.keywords', label: 'SEO Keywords', fullWidth: true },
     ],
   },
+
 
   products: {
     label: 'Products',
