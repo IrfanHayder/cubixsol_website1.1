@@ -1,8 +1,7 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 import * as LucideIcons from 'lucide-react';
-
 import { apiFetch } from '../utils/api';
-import { services as defaultServices } from '../data/content';
+
 
 const ServicesContext = createContext(null);
 
@@ -45,25 +44,43 @@ export function resolveIcon(icon) {
 
 
 export function ServicesProvider({ children }) {
-  const [services, setServices] = useState(defaultServices || []);
-  const [loading, setLoading] = useState(false);
+  // Read cache from localStorage on initial render for instant 0ms load with zero flicker
+  const [services, setServices] = useState(() => {
+    try {
+      const cached = localStorage.getItem('cubixsol_services_cache');
+      if (cached) {
+        const parsed = JSON.parse(cached);
+        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+      }
+    } catch (_) {}
+    return [];
+  });
+
+  const [loading, setLoading] = useState(() => {
+    try {
+      const cached = localStorage.getItem('cubixsol_services_cache');
+      if (cached) {
+        const parsed = JSON.parse(cached);
+        if (Array.isArray(parsed) && parsed.length > 0) return false;
+      }
+    } catch (_) {}
+    return true;
+  });
+
   const [error, setError] = useState(null);
 
   const fetchServices = async () => {
     try {
       const data = await apiFetch('services');
       if (Array.isArray(data) && data.length > 0) {
-        // Merge DB services with any defaults not in DB
-        const dbSlugs = new Set(data.map((d) => d.slug));
-        const merged = [...data, ...(defaultServices || []).filter((s) => !dbSlugs.has(s.slug))];
-        setServices(merged);
-      } else {
-        setServices(defaultServices || []);
+        setServices(data);
+        try {
+          localStorage.setItem('cubixsol_services_cache', JSON.stringify(data));
+        } catch (_) {}
       }
       setError(null);
     } catch (err) {
-      console.error('Error fetching services:', err);
-      setServices(defaultServices || []);
+      console.error('Error fetching services from MongoDB:', err);
       setError(err.message);
     } finally {
       setLoading(false);
@@ -75,11 +92,14 @@ export function ServicesProvider({ children }) {
   }, []);
 
   return (
-    <ServicesContext.Provider value={{ services, loading, error, refreshServices: fetchServices, resolveIcon }}>
+    <ServicesContext.Provider
+      value={{ services, loading, error, refreshServices: fetchServices, resolveIcon }}
+    >
       {children}
     </ServicesContext.Provider>
   );
 }
+
 
 export function useServices() {
   const ctx = useContext(ServicesContext);

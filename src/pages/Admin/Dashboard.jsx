@@ -175,25 +175,51 @@ const SECTION_CONFIGS = {
     columns: [
       { key: 'heroImage', label: 'Hero Image' },
       { key: 'title', label: 'Title' },
+      { key: 'menuTitle', label: 'Menu Title' },
       { key: 'slug', label: 'Slug' },
       { key: 'desc', label: 'Description' },
       { key: 'icon', label: 'Icon' },
     ],
     fields: [
-      { name: 'title', label: 'Service Title', required: true, fullWidth: true },
+      { name: 'title', label: 'Service Title (H1 Page Title)', required: true, fullWidth: true },
+      { name: 'menuTitle', label: 'Menu / Dropdown Title (Short name for Navbar e.g. E-Commerce Solutions, Graphic Design)', fullWidth: true, hint: 'Leave blank to use full Service Title in menu' },
       { name: 'slug', label: 'Slug (e.g. web-development)', required: true },
-      { name: 'icon', label: 'Lucide Icon Name (e.g. Globe, Code2)', required: true },
+      { name: 'icon', label: 'Lucide Icon Name or Uploaded Image URL (e.g. Globe, /uploads/...svg)', required: true },
       { name: 'color', label: 'Color Class (e.g. bg-blue-50 text-blue-600)' },
       { name: 'gradient', label: 'Gradient Classes (e.g. from-blue-500 to-cyan-600)' },
+      { name: 'heroSubtitle', label: 'Hero Subtitle', fullWidth: true },
       { name: 'heroImage', label: 'Hero Image', type: 'image', fullWidth: true },
       { name: 'whyChooseImage', label: 'Why Choose Us Image', type: 'image', fullWidth: true },
-      { name: 'desc', label: 'Short Description', type: 'textarea', fullWidth: true, rows: 2 },
-      { name: 'longDesc', label: 'Long Description', type: 'textarea', fullWidth: true, rows: 5 },
-      { name: 'features', label: 'Features (one per line)', type: 'textarea', fullWidth: true, rows: 4, isArray: true },
+      { name: 'desc', label: 'Short Description (Cards & Menu preview)', type: 'textarea', fullWidth: true, rows: 2 },
+      { name: 'longDesc', label: 'Long Description (Hero intro)', type: 'textarea', fullWidth: true, rows: 4 },
+      { name: 'additionalParagraph', label: 'Additional Intro Paragraph (Extended overview)', type: 'textarea', fullWidth: true, rows: 4 },
+      { name: 'ctaPrimaryText', label: 'Primary CTA Button Text (e.g. Start Your Project)' },
+      { name: 'ctaSecondaryText', label: 'Secondary CTA Button Text (e.g. See related work)' },
+      { name: 'features', label: 'Capabilities (one per line)', type: 'textarea', fullWidth: true, rows: 4, isArray: true },
+      { name: 'subServicesTitle', label: 'Sub-Services Section Title', fullWidth: true },
+      { name: 'subServicesIntro', label: 'Sub-Services Intro Text', type: 'textarea', fullWidth: true, rows: 2 },
+      { name: 'subServicesText', label: 'Sub-Services Items (Format: Title | Description, one per line)', type: 'textarea', fullWidth: true, rows: 6, isCustomArray: 'subServicesItems' },
+      { name: 'whyChooseTitle', label: 'Why Choose Us Section Title', fullWidth: true },
+      { name: 'whyChooseIntro', label: 'Why Choose Us Intro Text', type: 'textarea', fullWidth: true, rows: 2 },
+      { name: 'whyChooseText', label: 'Why Choose Us Items (Format: Title | Description, one per line)', type: 'textarea', fullWidth: true, rows: 5, isCustomArray: 'whyChooseItems' },
+      { name: 'serviceProcessTitle', label: 'Process Section Title', fullWidth: true },
+      { name: 'serviceProcessText', label: 'Process Steps (Format: 01 | Title | Description, one per line)', type: 'textarea', fullWidth: true, rows: 5, isCustomArray: 'serviceProcessSteps' },
+      { name: 'businessTypesTitle', label: 'Business Types Section Title', fullWidth: true },
+      { name: 'businessTypesIntro', label: 'Business Types Intro Text', type: 'textarea', fullWidth: true, rows: 2 },
+      { name: 'businessTypesText', label: 'Business Types Items (Format: Title | Description, one per line)', type: 'textarea', fullWidth: true, rows: 5, isCustomArray: 'businessTypesItems' },
+      { name: 'pricingSectionTitle', label: 'Pricing Section Title', fullWidth: true },
+      { name: 'pricingSectionText', label: 'Pricing Section Text', type: 'textarea', fullWidth: true, rows: 3 },
+      { name: 'techTitle', label: 'Tech Stack Section Title', fullWidth: true },
+      { name: 'techDesc', label: 'Tech Stack Description', type: 'textarea', fullWidth: true, rows: 4 },
       { name: 'tech', label: 'Tech Stack (one per line)', type: 'textarea', fullWidth: true, rows: 3, isArray: true },
       { name: 'outcomes', label: 'Outcomes (one per line)', type: 'textarea', fullWidth: true, rows: 3, isArray: true },
+      { name: 'faqsText', label: 'FAQs (Format: Question | Answer, one per line)', type: 'textarea', fullWidth: true, rows: 6, isCustomArray: 'faqs' },
+      { name: 'seo.metaTitle', label: 'SEO Meta Title', fullWidth: true },
+      { name: 'seo.metaDescription', label: 'SEO Meta Description', type: 'textarea', fullWidth: true, rows: 2 },
+      { name: 'seo.keywords', label: 'SEO Keywords', fullWidth: true },
     ],
   },
+
   products: {
     label: 'Products',
     endpoint: 'products',
@@ -401,9 +427,45 @@ function DbSection({ sectionKey, showToast }) {
   // Convert array fields to/from newline format
   const parseArrayFields = (values) => {
     const parsed = { ...values };
-    config.fields.forEach(f => {
+    (config.fields || []).forEach((f) => {
       if (f.isArray && typeof parsed[f.name] === 'string') {
-        parsed[f.name] = parsed[f.name].split('\n').map(s => s.trim()).filter(Boolean);
+        parsed[f.name] = parsed[f.name]
+          .split('\n')
+          .map((s) => s.trim())
+          .filter(Boolean);
+      }
+      if (f.isCustomArray && typeof parsed[f.name] === 'string') {
+        const lines = parsed[f.name]
+          .split('\n')
+          .map((s) => s.trim())
+          .filter(Boolean);
+        if (f.isCustomArray === 'faqs') {
+          parsed.faqs = lines
+            .map((line) => {
+              const [q, ...rest] = line.split('|');
+              return { q: q.trim(), a: rest.join('|').trim() };
+            })
+            .filter((i) => i.q && i.a);
+        } else if (f.isCustomArray === 'serviceProcessSteps') {
+          parsed.serviceProcessSteps = lines
+            .map((line, idx) => {
+              const parts = line.split('|').map((s) => s.trim());
+              if (parts.length >= 3) {
+                return { stepNumber: parts[0], title: parts[1], desc: parts.slice(2).join('|') };
+              } else if (parts.length === 2) {
+                return { stepNumber: `0${idx + 1}`, title: parts[0], desc: parts[1] };
+              }
+              return { stepNumber: `0${idx + 1}`, title: parts[0], desc: '' };
+            })
+            .filter((i) => i.title);
+        } else {
+          parsed[f.isCustomArray] = lines
+            .map((line) => {
+              const [title, ...rest] = line.split('|');
+              return { title: title.trim(), desc: rest.join('|').trim() };
+            })
+            .filter((i) => i.title);
+        }
       }
     });
     return parsed;
@@ -411,13 +473,28 @@ function DbSection({ sectionKey, showToast }) {
 
   const stringifyArrayFields = (item) => {
     const stringified = { ...item };
-    config.fields.forEach(f => {
+    (config.fields || []).forEach((f) => {
       if (f.isArray && Array.isArray(stringified[f.name])) {
         stringified[f.name] = stringified[f.name].join('\n');
+      }
+      if (f.isCustomArray) {
+        const arr = stringified[f.isCustomArray];
+        if (Array.isArray(arr) && arr.length > 0) {
+          if (f.isCustomArray === 'faqs') {
+            stringified[f.name] = arr.map((i) => `${i.q} | ${i.a}`).join('\n');
+          } else if (f.isCustomArray === 'serviceProcessSteps') {
+            stringified[f.name] = arr
+              .map((i) => `${i.stepNumber || '01'} | ${i.title} | ${i.desc}`)
+              .join('\n');
+          } else {
+            stringified[f.name] = arr.map((i) => `${i.title} | ${i.desc}`).join('\n');
+          }
+        }
       }
     });
     return stringified;
   };
+
 
   const fetchData = useCallback(async () => {
     setLoading(true);

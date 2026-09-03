@@ -175,8 +175,9 @@ export default function Navbar() {
                                       <IconComponent className="w-3.5 h-3.5" />
                                     </span>
                                     <span className="text-[12px] font-semibold text-ink group-hover:text-primary-700 leading-snug">
-                                      {s.title}
+                                      {s.menuTitle || s.title}
                                     </span>
+
                                   </NavLink>
                                 </li>
                               );
@@ -508,9 +509,10 @@ export default function Navbar() {
                       onClick={() => setOpen(false)}
                       className="block px-3 py-2 text-sm text-gray-600"
                     >
-                      {s.title}
+                      {s.menuTitle || s.title}
                     </NavLink>
                   ))}
+
                 </div>
               )}
 
