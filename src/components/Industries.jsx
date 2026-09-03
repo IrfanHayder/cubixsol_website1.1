@@ -110,22 +110,25 @@ export default function Industries() {
               <StaggerItem key={ind.slug || ind.title}>
                 <Link
                   to={linkUrl}
-                  className="group relative bg-white rounded-3xl border border-gray-100/90 p-6 sm:p-7 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.04)] hover:shadow-[0_22px_45px_-12px_rgba(30,27,75,0.12)] hover:border-primary-200 hover:-translate-y-1.5 transition-all duration-300 h-full flex flex-col justify-between overflow-hidden"
+                  className="group relative bg-white rounded-3xl border border-gray-100/90 p-6 sm:p-7 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.04)] hover:shadow-[0_22px_45px_-12px_rgba(0,164,216,0.15)] hover:border-cyan-200 hover:-translate-y-1.5 transition-all duration-300 h-full flex flex-col justify-between overflow-hidden"
                 >
-                  {/* Subtle top-right glow decoration */}
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-primary-400/10 via-cyan-400/5 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                  {/* Subtle top-right cyan glow decoration */}
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-cyan-400/20 via-sky-400/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                   <div>
-                    {/* Icon container with animated scale & glow */}
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary-50 via-violet-50 to-primary-100/60 border border-primary-100/80 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:rotate-3 group-hover:bg-primary-gradient group-hover:border-primary-400 group-hover:shadow-lg group-hover:shadow-primary-500/25 transition-all duration-300 shrink-0">
+                    {/* Icon container with brand cyan-blue gradient, larger size and smooth animation */}
+                    <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-sky-50 via-cyan-50 to-blue-50/80 border border-cyan-100/90 flex items-center justify-center mb-5 group-hover:bg-gradient-to-br group-hover:from-[#00a4d8] group-hover:via-[#0284c7] group-hover:to-[#0369a1] group-hover:border-transparent group-hover:shadow-xl group-hover:shadow-[#00a4d8]/35 group-hover:ring-4 group-hover:ring-cyan-100/70 group-hover:scale-110 group-hover:-translate-y-1 group-hover:rotate-2 transition-all duration-300 ease-out shrink-0 overflow-hidden">
+                      {/* Ambient hover light reflection */}
+                      <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+
                       <DynamicIcon
                         icon={ind.icon}
                         title={ind.title}
-                        className="w-7 h-7 object-contain transition-transform duration-300 group-hover:scale-110"
+                        className="w-8 h-8 sm:w-9 sm:h-9 object-contain text-[#00a4d8] group-hover:text-white transition-all duration-300 ease-out group-hover:scale-115 group-hover:-rotate-2 group-hover:brightness-0 group-hover:invert group-hover:drop-shadow-[0_2px_8px_rgba(255,255,255,0.8)]"
                       />
                     </div>
 
-                    <h3 className="font-extrabold text-ink text-lg sm:text-xl mb-2 group-hover:text-primary-600 transition-colors duration-300">
+                    <h3 className="font-extrabold text-ink text-lg sm:text-xl mb-2 group-hover:text-[#00a4d8] transition-colors duration-300">
                       {ind.title}
                     </h3>
 
@@ -135,14 +138,15 @@ export default function Industries() {
                   </div>
 
                   <div className="pt-6 mt-4 border-t border-gray-100/80 flex items-center justify-between">
-                    <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-primary-600 group-hover:text-primary-700 transition-colors">
+                    <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#00a4d8] group-hover:text-[#0284c7] transition-colors">
                       Explore
                       <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1.5" />
                     </span>
 
-                    <span className="w-2 h-2 rounded-full bg-primary-200 group-hover:bg-primary-500 transition-colors" />
+                    <span className="w-2 h-2 rounded-full bg-cyan-200 group-hover:bg-[#00a4d8] transition-colors" />
                   </div>
                 </Link>
+
               </StaggerItem>
             );
           })}

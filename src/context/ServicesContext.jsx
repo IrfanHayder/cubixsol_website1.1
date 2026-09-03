@@ -11,7 +11,30 @@ export function resolveIcon(icon) {
     let Comp = null;
     if (typeof icon === 'function') Comp = icon;
     else if (icon && typeof icon === 'object' && icon.$$typeof) Comp = icon;
-    else if (typeof icon === 'string' && icon.trim()) Comp = LucideIcons[icon];
+    else if (typeof icon === 'string' && icon.trim()) {
+      const isUrl =
+        icon.startsWith('/uploads/') ||
+        icon.startsWith('http://') ||
+        icon.startsWith('https://') ||
+        icon.startsWith('data:') ||
+        icon.includes('/') ||
+        /\.(svg|png|jpg|jpeg|webp|gif)($|\?)/i.test(icon);
+
+      if (isUrl) {
+        return function CustomImageIcon(props) {
+          return (
+            <img
+              src={icon}
+              alt=""
+              {...props}
+              className={`${props.className || 'w-6 h-6'} object-contain`}
+              loading="lazy"
+            />
+          );
+        };
+      }
+      Comp = LucideIcons[icon];
+    }
     if (typeof Comp === 'function') return Comp;
     if (Comp && typeof Comp === 'object' && Comp.$$typeof) return Comp;
   } catch (_) {
@@ -19,6 +42,7 @@ export function resolveIcon(icon) {
   }
   return LucideIcons.Globe;
 }
+
 
 export function ServicesProvider({ children }) {
   const [services, setServices] = useState(defaultServices || []);

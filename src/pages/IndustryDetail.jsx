@@ -11,6 +11,8 @@ import CtaBanner from '../components/CtaBanner';
 import ServiceInquiryForm from '../components/ServiceInquiryForm';
 import EducationIndustrySections from '../components/EducationIndustrySections';
 import Reveal, { Stagger, StaggerItem } from '../components/Reveal';
+import DynamicIcon from '../components/DynamicIcon';
+
 
 const approach = [
   { icon: Target, title: 'Domain-first discovery', body: 'We learn your regulations, users, and constraints before proposing stack or scope.' },
@@ -347,23 +349,28 @@ export default function IndustryDetail() {
           <Reveal className="mb-5">
             <h2 className="text-xl sm:text-2xl font-extrabold text-ink">Explore more industries</h2>
           </Reveal>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5">
             {others.map((o) => {
-              const OIcon = Icons[o.icon] || Icons.Building2;
               return (
                 <Link
                   key={o.slug}
                   to={`/industries/${o.slug}`}
-                  className="rounded-xl border border-gray-100 p-4 hover:shadow-card hover:border-primary-100 transition flex flex-col sm:flex-row gap-2 sm:gap-3 items-start sm:items-center"
+                  className="group rounded-2xl border border-gray-100/90 bg-white p-4 hover:shadow-card hover:border-primary-200 hover:-translate-y-1 transition-all duration-300 flex flex-col sm:flex-row gap-3 items-start sm:items-center"
                 >
-                  <span className="w-9 h-9 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center shrink-0">
-                    <OIcon className="w-4 h-4" />
+                  <span className="w-11 h-11 rounded-xl bg-gradient-to-br from-sky-50 to-cyan-50 border border-cyan-100/80 text-[#00a4d8] flex items-center justify-center shrink-0 group-hover:bg-gradient-to-br group-hover:from-[#00a4d8] group-hover:via-[#0284c7] group-hover:to-[#0369a1] group-hover:border-transparent group-hover:shadow-md group-hover:shadow-[#00a4d8]/30 group-hover:scale-105 group-hover:rotate-2 transition-all duration-300">
+                    <DynamicIcon
+                      icon={o.icon}
+                      title={o.title}
+                      className="w-6 h-6 object-contain text-[#00a4d8] group-hover:text-white group-hover:brightness-0 group-hover:invert transition-all duration-300"
+                    />
                   </span>
-                  <span className="font-semibold text-ink text-sm leading-snug">{o.title}</span>
+                  <span className="font-bold text-ink text-sm leading-snug group-hover:text-[#00a4d8] transition-colors">{o.title}</span>
+
                 </Link>
               );
             })}
           </div>
+
         </section>
       )}
 
