@@ -201,7 +201,7 @@ export default function ServiceDetail() {
                   <img
                     src={service.heroImage}
                     alt={service.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full"
                     loading="eager"
                     decoding="async"
                     width={1000}
@@ -518,11 +518,10 @@ export default function ServiceDetail() {
                   return (
                     <div
                       key={faq.q || idx}
-                      className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
-                        isOpen
+                      className={`rounded-2xl border transition-all duration-200 overflow-hidden ${isOpen
                           ? 'border-cyan-200 bg-sky-50/40 shadow-sm'
                           : 'border-gray-100 bg-white hover:border-gray-200'
-                      }`}
+                        }`}
                     >
                       <button
                         type="button"
@@ -536,9 +535,8 @@ export default function ServiceDetail() {
                           {faq.q}
                         </span>
                         <ChevronDown
-                          className={`w-5 h-5 text-gray-400 shrink-0 transition-transform duration-300 ${
-                            isOpen ? 'rotate-180 text-[#00a4d8]' : ''
-                          }`}
+                          className={`w-5 h-5 text-gray-400 shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180 text-[#00a4d8]' : ''
+                            }`}
                         />
                       </button>
 

@@ -62,12 +62,12 @@ export default function ServicesShowcase() {
 
                   <div>
                     {/* Real Service Image */}
-                    <div className="relative mt-2 rounded-2xl overflow-hidden aspect-[16/10] bg-gray-100 border border-gray-100 shadow-sm group-hover:shadow-md transition-all duration-300">
+                    <div className="relative mt-2 rounded-2xl overflow-hidden aspect-[16/10] shadow-sm group-hover:shadow-md transition-all duration-300">
                       {s.heroImage ? (
                         <img
                           src={s.heroImage}
                           alt={s.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                          className="w-full h-full group-hover:scale-105 transition-transform duration-500 ease-out"
                           loading="lazy"
                         />
                       ) : (
