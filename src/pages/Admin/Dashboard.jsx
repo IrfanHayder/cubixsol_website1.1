@@ -206,7 +206,17 @@ const SECTION_CONFIGS = {
       { name: 'subServicesText', label: 'Sub-Services Items (Format: Title | Description, one per line)', type: 'textarea', fullWidth: true, rows: 6, isCustomArray: 'subServicesItems' },
       { name: 'whyChooseTitle', label: 'Why Choose Us Section Title', fullWidth: true },
       { name: 'whyChooseIntro', label: 'Why Choose Us Intro Text', type: 'textarea', fullWidth: true, rows: 2 },
+      {
+        name: 'whyChooseText',
+        label: 'Why Choose Us Items (Format: Title | Description, one per line)',
+        type: 'textarea',
+        fullWidth: true,
+        rows: 6,
+        hint: 'Example: Performance-Focused Development | We use clean code, optimized assets, responsive layouts...',
+        isCustomArray: 'whyChooseItems',
+      },
       { name: 'serviceProcessTitle', label: 'Process Section Title', fullWidth: true },
+
       { name: 'serviceProcessIntro', label: 'Process Section Intro Text', type: 'textarea', fullWidth: true, rows: 2 },
       {
         name: 'serviceProcessText',
@@ -457,24 +467,38 @@ function DbSection({ sectionKey, showToast }) {
           .filter(Boolean);
       }
       if (f.isCustomArray && typeof parsed[f.name] === 'string') {
-        const lines = parsed[f.name]
-          .split('\n')
-          .map((s) => s.trim())
-          .filter(Boolean);
+        const raw = parsed[f.name];
+        const rawLines = raw.split(/\r?\n/);
+
         if (f.isCustomArray === 'faqs') {
-          parsed.faqs = lines
-            .map((line) => {
-              const [q, ...rest] = line.split('|');
-              return { q: q.trim(), a: rest.join('|').trim() };
-            })
-            .filter((i) => i.q && i.a);
+          const items = [];
+          let current = null;
+          rawLines.forEach((line) => {
+            const trimmed = line.trim();
+            if (!trimmed) return;
+            if (trimmed.includes('|')) {
+              if (current && current.q && current.a) items.push(current);
+              const [q, ...rest] = trimmed.split('|');
+              current = { q: q.trim(), a: rest.join('|').trim() };
+            } else if (current) {
+              current.a = current.a ? `${current.a}\n\n${trimmed}` : trimmed;
+            }
+          });
+          if (current && current.q && current.a) items.push(current);
+          parsed.faqs = items;
         } else if (f.isCustomArray === 'serviceProcessSteps') {
-          parsed.serviceProcessSteps = lines
-            .map((line, idx) => {
-              const parts = line.split('|').map((s) => s.trim());
+          const items = [];
+          let current = null;
+          rawLines.forEach((line) => {
+            const trimmed = line.trim();
+            if (!trimmed) return;
+            if (trimmed.includes('|')) {
+              if (current && current.title) items.push(current);
+              const parts = trimmed.split('|').map((s) => s.trim());
+              const idx = items.length;
               if (parts.length >= 5) {
                 const points = parts[4].split(';').map((p) => p.trim()).filter(Boolean);
-                return {
+                current = {
                   stepNumber: parts[0] || `0${idx + 1}`,
                   title: parts[1],
                   desc: parts[2],
@@ -483,7 +507,7 @@ function DbSection({ sectionKey, showToast }) {
                 };
               } else if (parts.length === 4) {
                 const isImg = parts[3].startsWith('http') || parts[3].startsWith('/uploads') || parts[3].includes('/');
-                return {
+                current = {
                   stepNumber: parts[0] || `0${idx + 1}`,
                   title: parts[1],
                   desc: parts[2],
@@ -491,20 +515,35 @@ function DbSection({ sectionKey, showToast }) {
                   points: !isImg ? parts[3].split(';').map((p) => p.trim()).filter(Boolean) : [],
                 };
               } else if (parts.length === 3) {
-                return { stepNumber: parts[0] || `0${idx + 1}`, title: parts[1], desc: parts[2], image: '', points: [] };
+                current = { stepNumber: parts[0] || `0${idx + 1}`, title: parts[1], desc: parts[2], image: '', points: [] };
               } else if (parts.length === 2) {
-                return { stepNumber: `0${idx + 1}`, title: parts[0], desc: parts[1], image: '', points: [] };
+                current = { stepNumber: `0${idx + 1}`, title: parts[0], desc: parts[1], image: '', points: [] };
+              } else {
+                current = { stepNumber: `0${idx + 1}`, title: parts[0], desc: '', image: '', points: [] };
               }
-              return { stepNumber: `0${idx + 1}`, title: parts[0], desc: '', image: '', points: [] };
-            })
-            .filter((i) => i.title);
+            } else if (current) {
+              current.desc = current.desc ? `${current.desc}\n\n${trimmed}` : trimmed;
+            }
+          });
+          if (current && current.title) items.push(current);
+          parsed.serviceProcessSteps = items;
         } else {
-          parsed[f.isCustomArray] = lines
-            .map((line) => {
-              const [title, ...rest] = line.split('|');
-              return { title: title.trim(), desc: rest.join('|').trim() };
-            })
-            .filter((i) => i.title);
+          // subServicesItems, whyChooseItems, businessTypesItems
+          const items = [];
+          let current = null;
+          rawLines.forEach((line) => {
+            const trimmed = line.trim();
+            if (!trimmed) return;
+            if (trimmed.includes('|')) {
+              if (current && current.title) items.push(current);
+              const [title, ...rest] = trimmed.split('|');
+              current = { title: title.trim(), desc: rest.join('|').trim() };
+            } else if (current) {
+              current.desc = current.desc ? `${current.desc}\n\n${trimmed}` : trimmed;
+            }
+          });
+          if (current && current.title) items.push(current);
+          parsed[f.isCustomArray] = items;
         }
       }
     });
@@ -521,7 +560,7 @@ function DbSection({ sectionKey, showToast }) {
         const arr = stringified[f.isCustomArray];
         if (Array.isArray(arr) && arr.length > 0) {
           if (f.isCustomArray === 'faqs') {
-            stringified[f.name] = arr.map((i) => `${i.q} | ${i.a}`).join('\n');
+            stringified[f.name] = arr.map((i) => `${i.q} | ${i.a}`).join('\n\n');
           } else if (f.isCustomArray === 'serviceProcessSteps') {
             stringified[f.name] = arr
               .map((i) => {
@@ -535,9 +574,9 @@ function DbSection({ sectionKey, showToast }) {
                 }
                 return `${stepNum} | ${title} | ${desc}`;
               })
-              .join('\n');
+              .join('\n\n');
           } else {
-            stringified[f.name] = arr.map((i) => `${i.title} | ${i.desc}`).join('\n');
+            stringified[f.name] = arr.map((i) => `${i.title} | ${i.desc}`).join('\n\n');
           }
         }
       }

@@ -6,6 +6,7 @@ import Breadcrumb from '../components/Breadcrumb';
 import CtaBanner from '../components/CtaBanner';
 import Reveal, { Stagger, StaggerItem } from '../components/Reveal';
 import { useServices } from '../context/ServicesContext';
+import { formatInline } from '../utils/formatText';
 
 const steps = Array.isArray(processSteps) ? processSteps : [];
 const reasons = Array.isArray(whyChoose) ? whyChoose : [];
@@ -91,7 +92,9 @@ export default function Services() {
                     <h2 className="font-bold text-ink text-lg mb-2 group-hover:text-primary-600 transition-colors">
                       {s.title}
                     </h2>
-                    <p className="text-sm text-gray-500 leading-relaxed flex-1 mb-4">{s.desc}</p>
+                    <p className="text-sm text-gray-500 leading-relaxed flex-1 mb-4">
+                      {formatInline(s.desc)}
+                    </p>
                     <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary-600">
                       Learn more
                       <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />

@@ -29,21 +29,34 @@ import SuccessStories from '../components/SuccessStories';
 import DynamicIcon from '../components/DynamicIcon';
 import { useServices } from '../context/ServicesContext';
 import { useSEO } from '../utils/seo';
+import { formatText, FormatRichText } from '../utils/formatText';
 
-function formatText(text) {
+export function normalizeServiceSlug(slug) {
+  if (!slug) return '';
+  const s = String(slug).toLowerCase().trim();
+  if (s.startsWith('ios')) return 'ios';
+  if (s.startsWith('android')) return 'android';
+  if (s.startsWith('data-migration') || s.startsWith('database-migration')) return 'data-migration';
+  if (s.startsWith('graphic-design')) return 'graphic-design';
+  if (s.startsWith('ecommerce') || s.startsWith('e-commerce')) return 'ecommerce';
+  if (s.startsWith('api-development') || s.startsWith('api-integration') || s === 'api') return 'api';
+  if (s.startsWith('web-dev')) return 'web-development';
+  if (s.startsWith('cloud')) return 'cloud';
+  if (s.startsWith('laravel')) return 'laravel';
+  if (s.startsWith('php')) return 'php';
+  if (s.startsWith('cms')) return 'cms';
+  if (s.startsWith('devops')) return 'devops';
+  if (s.startsWith('ui-ux') || s.startsWith('uiux')) return 'ui-ux';
+  if (s.startsWith('ai-') || s === 'ai') return 'ai';
+  if (s.startsWith('mobile-app') || s.startsWith('mobile-dev') || s === 'mobile') return 'mobile';
+  if (s.startsWith('digital-market') || s === 'marketing') return 'marketing';
+  return s;
+}
 
-  if (!text) return null;
-  const parts = text.split(/(\*\*[^*]+\*\*)/g);
-  return parts.map((part, i) => {
-    if (part.startsWith('**') && part.endsWith('**')) {
-      return (
-        <strong key={i} className="font-bold text-ink">
-          {part.slice(2, -2)}
-        </strong>
-      );
-    }
-    return part;
-  });
+export function isServiceSlugMatch(routeSlug, serviceSlug) {
+  if (!routeSlug || !serviceSlug) return false;
+  if (routeSlug === serviceSlug) return true;
+  return normalizeServiceSlug(routeSlug) === normalizeServiceSlug(serviceSlug);
 }
 
 export default function ServiceDetail() {
@@ -61,17 +74,14 @@ export default function ServiceDetail() {
   }
 
   const service = (Array.isArray(services) ? services : []).find(
-    (s) =>
-      s.slug === slug ||
-      (slug === 'graphic-designing' && (s.slug === 'graphic-design' || s.slug === 'graphic-designing')) ||
-      (slug === 'graphic-design' && (s.slug === 'graphic-design' || s.slug === 'graphic-designing')) ||
-      (slug === 'ecommerce-solutions' && (s.slug === 'ecommerce' || s.slug === 'ecommerce-solutions' || s.slug === 'ecommerce-development')) ||
-      (slug === 'ecommerce-development' && (s.slug === 'ecommerce' || s.slug === 'ecommerce-solutions' || s.slug === 'ecommerce-development'))
+    (s) => s && s.slug && isServiceSlugMatch(slug, s.slug)
   );
 
   if (!service) return <Navigate to="/services" replace />;
 
-  const others = (Array.isArray(services) ? services : []).filter((s) => s.slug !== slug).slice(0, 3);
+  const others = (Array.isArray(services) ? services : [])
+    .filter((s) => s && s.slug && !isServiceSlugMatch(slug, s.slug))
+    .slice(0, 3);
   const IconComponent = resolveIcon(service.icon);
   const features = Array.isArray(service?.features) ? service.features : [];
   const tech = Array.isArray(service.tech) ? service.tech : [];
@@ -89,13 +99,14 @@ export default function ServiceDetail() {
     heroImage: service?.heroImage,
   });
 
-  const isUx = slug === 'ui-ux-design';
-
-  const isMobile = slug === 'mobile-app-development';
-  const isIos = slug === 'ios-development';
-  const isAndroid = slug === 'android-development';
+  const normSlug = normalizeServiceSlug(slug);
+  const isUx = normSlug === 'ui-ux';
+  const isMobile = normSlug === 'mobile';
+  const isIos = normSlug === 'ios';
+  const isAndroid = normSlug === 'android';
   const isAppJourney = isMobile || isIos || isAndroid;
-  const isDevOps = slug === 'devops' || slug === 'cloud-solutions';
+  const isDevOps = normSlug === 'devops' || normSlug === 'cloud';
+
 
   const scrollToForm = (e) => {
     e.preventDefault();
@@ -139,14 +150,14 @@ export default function ServiceDetail() {
               </p>
             )}
 
-            <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-4 max-w-xl">
-              {formatText(service.longDesc || service.desc)}
-            </p>
+            <div className="text-gray-600 text-base sm:text-lg leading-relaxed mb-4 max-w-xl">
+              <FormatRichText text={service.longDesc || service.desc} />
+            </div>
 
             {service.additionalParagraph && (
-              <p className="text-gray-500 text-sm sm:text-base leading-relaxed mb-8 max-w-xl">
-                {formatText(service.additionalParagraph)}
-              </p>
+              <div className="text-gray-500 text-sm sm:text-base leading-relaxed mb-8 max-w-xl">
+                <FormatRichText text={service.additionalParagraph} />
+              </div>
             )}
 
             <div className="flex flex-wrap gap-3">
@@ -249,9 +260,9 @@ export default function ServiceDetail() {
                   {service.subServicesTitle || 'Our Specialized Services'}
                 </h2>
                 {service.subServicesIntro && (
-                  <p className="text-gray-500 text-base leading-relaxed">
-                    {formatText(service.subServicesIntro)}
-                  </p>
+                  <div className="text-gray-500 text-base leading-relaxed">
+                    <FormatRichText text={service.subServicesIntro} />
+                  </div>
                 )}
               </Reveal>
 
@@ -266,9 +277,9 @@ export default function ServiceDetail() {
                         <h3 className="font-extrabold text-ink text-lg sm:text-xl mb-2.5 group-hover:text-[#00a4d8] transition-colors">
                           {sub.title}
                         </h3>
-                        <p className="text-sm text-gray-500 leading-relaxed">
-                          {formatText(sub.desc)}
-                        </p>
+                        <div className="text-sm text-gray-500 leading-relaxed">
+                          <FormatRichText text={sub.desc} />
+                        </div>
                       </div>
                     </div>
                   </StaggerItem>
@@ -289,7 +300,9 @@ export default function ServiceDetail() {
                   <StaggerItem key={f} hover>
                     <div className="bg-white rounded-2xl border border-gray-100 p-4 sm:p-5 shadow-card flex gap-3.5 h-full hover:-translate-y-0.5 hover:shadow-elev hover:border-cyan-100 transition-all">
                       <CheckCircle2 className="w-5 h-5 text-[#00a4d8] shrink-0 mt-0.5" />
-                      <p className="text-sm font-semibold text-ink leading-relaxed">{f}</p>
+                      <div className="text-sm font-semibold text-ink leading-relaxed">
+                        {formatText(f)}
+                      </div>
                     </div>
                   </StaggerItem>
                 ))}
@@ -306,9 +319,9 @@ export default function ServiceDetail() {
                   {service.whyChooseTitle || `Why Choose Cubixsol for ${service.title}?`}
                 </h2>
                 {service.whyChooseIntro && (
-                  <p className="text-gray-500 text-base leading-relaxed">
-                    {formatText(service.whyChooseIntro)}
-                  </p>
+                  <div className="text-gray-500 text-base leading-relaxed">
+                    <FormatRichText text={service.whyChooseIntro} />
+                  </div>
                 )}
               </Reveal>
 
@@ -323,9 +336,9 @@ export default function ServiceDetail() {
                         <h3 className="text-lg font-extrabold text-ink mb-2">
                           {item.title}
                         </h3>
-                        <p className="text-sm text-gray-500 leading-relaxed">
-                          {formatText(item.desc)}
-                        </p>
+                        <div className="text-sm text-gray-500 leading-relaxed">
+                          <FormatRichText text={item.desc} />
+                        </div>
                       </div>
                     </StaggerItem>
                   ))}
@@ -351,9 +364,9 @@ export default function ServiceDetail() {
                       {service.serviceProcessTitle || 'Our Structured Process'}
                     </h2>
                     {service.serviceProcessIntro && (
-                      <p className="text-sm sm:text-base text-gray-500 leading-relaxed">
-                        {formatText(service.serviceProcessIntro)}
-                      </p>
+                      <div className="text-sm sm:text-base text-gray-500 leading-relaxed">
+                        <FormatRichText text={service.serviceProcessIntro} />
+                      </div>
                     )}
                   </Reveal>
 
@@ -368,9 +381,9 @@ export default function ServiceDetail() {
                             <h3 className="font-extrabold text-ink text-base mb-2">
                               {step.title}
                             </h3>
-                            <p className="text-xs text-gray-500 leading-relaxed">
-                              {formatText(step.desc)}
-                            </p>
+                            <div className="text-xs text-gray-500 leading-relaxed">
+                              <FormatRichText text={step.desc} />
+                            </div>
                           </div>
                         </div>
                       </StaggerItem>
@@ -391,9 +404,9 @@ export default function ServiceDetail() {
                   {service.businessTypesTitle || 'Solutions for Your Industry & Business'}
                 </h2>
                 {service.businessTypesIntro && (
-                  <p className="text-gray-500 text-base leading-relaxed">
-                    {formatText(service.businessTypesIntro)}
-                  </p>
+                  <div className="text-gray-500 text-base leading-relaxed">
+                    <FormatRichText text={service.businessTypesIntro} />
+                  </div>
                 )}
               </Reveal>
 
@@ -407,9 +420,9 @@ export default function ServiceDetail() {
                       <h3 className="font-extrabold text-ink text-lg mb-2">
                         {item.title}
                       </h3>
-                      <p className="text-sm text-gray-500 leading-relaxed">
-                        {formatText(item.desc)}
-                      </p>
+                      <div className="text-sm text-gray-500 leading-relaxed">
+                        <FormatRichText text={item.desc} />
+                      </div>
                     </div>
                   </StaggerItem>
                 ))}
@@ -426,9 +439,9 @@ export default function ServiceDetail() {
                   {service.techTitle || 'Technologies we use'}
                 </h2>
                 {service.techDesc && (
-                  <p className="text-sm sm:text-base text-gray-500 leading-relaxed mb-6 whitespace-pre-line">
-                    {service.techDesc}
-                  </p>
+                  <div className="text-sm sm:text-base text-gray-500 leading-relaxed mb-6">
+                    <FormatRichText text={service.techDesc} />
+                  </div>
                 )}
                 <div className="flex flex-wrap gap-2">
                   {tech.map((t) => (
@@ -454,7 +467,7 @@ export default function ServiceDetail() {
                       className="flex items-center gap-3 p-4 rounded-2xl bg-gray-50/80 border border-gray-100 text-sm font-semibold text-ink"
                     >
                       <span className="w-2.5 h-2.5 rounded-full bg-[#00a4d8] shrink-0" />
-                      {o}
+                      {formatText(o)}
                     </div>
                   ))}
                 </div>
@@ -469,9 +482,9 @@ export default function ServiceDetail() {
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-ink mb-3">
                   {service.pricingSectionTitle || 'Transparent, Value-Focused Pricing'}
                 </h2>
-                <p className="text-gray-600 text-base leading-relaxed mb-6 max-w-3xl">
-                  {formatText(service.pricingSectionText)}
-                </p>
+                <div className="text-gray-600 text-base leading-relaxed mb-6 max-w-3xl">
+                  <FormatRichText text={service.pricingSectionText} />
+                </div>
                 <a
                   href={isAppJourney ? '#app-journey' : '#service-inquiry'}
                   onClick={scrollToForm}
@@ -568,7 +581,7 @@ export default function ServiceDetail() {
 
                       {isOpen && (
                         <div className="px-5 sm:px-6 pb-5 pt-1 text-sm sm:text-base text-gray-600 leading-relaxed border-t border-gray-100/60">
-                          {formatText(faq.a)}
+                          <FormatRichText text={faq.a} />
                         </div>
                       )}
                     </div>

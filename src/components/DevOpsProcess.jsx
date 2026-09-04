@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Reveal, { Stagger, StaggerItem } from './Reveal';
+import { formatText, FormatRichText } from '../utils/formatText';
 
 const steps = [
   {
@@ -76,21 +77,6 @@ const steps = [
       'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&h=560&q=70',
   },
 ];
-
-function formatText(text) {
-  if (!text) return null;
-  const parts = text.split(/(\*\*[^*]+\*\*)/g);
-  return parts.map((part, i) => {
-    if (part.startsWith('**') && part.endsWith('**')) {
-      return (
-        <strong key={i} className="font-bold text-ink">
-          {part.slice(2, -2)}
-        </strong>
-      );
-    }
-    return part;
-  });
-}
 
 function StepRow({ step, index }) {
   const reverse = index % 2 === 1;

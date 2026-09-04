@@ -1,21 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import Reveal from './Reveal';
-
-function formatText(text) {
-  if (!text) return null;
-  const parts = text.split(/(\*\*[^*]+\*\*)/g);
-  return parts.map((part, i) => {
-    if (part.startsWith('**') && part.endsWith('**')) {
-      return (
-        <strong key={i} className="font-bold text-white">
-          {part.slice(2, -2)}
-        </strong>
-      );
-    }
-    return part;
-  });
-}
+import { formatInline } from '../utils/formatText';
 
 export default function CtaBanner({
   eyebrow = 'Have a Project in Mind?',
@@ -44,7 +30,7 @@ export default function CtaBanner({
             </h3>
             {desc && (
               <p className="text-cyan-50 text-sm sm:text-base leading-relaxed">
-                {formatText(desc)}
+                {formatInline(desc, { strongClass: 'font-bold text-white' })}
               </p>
             )}
           </div>

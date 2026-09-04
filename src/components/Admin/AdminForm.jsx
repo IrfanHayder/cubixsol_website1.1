@@ -1,6 +1,7 @@
 import { X, ChevronDown, ChevronUp } from 'lucide-react';
 import { useState } from 'react';
 import ImagePickerField from './ImagePickerField';
+import RichTextareaField from './RichTextareaField';
 
 // Get nested value by dot path: "seo.metaTitle" => values.seo?.metaTitle
 function getNestedValue(obj, path) {
@@ -48,14 +49,16 @@ export default function AdminForm({ title, fields, values, onChange, onSubmit, o
 
     if (field.type === 'textarea') {
       return (
-        <textarea
+        <RichTextareaField
           name={field.name}
           value={value}
-          onChange={(e) => handleChange(e.target.value)}
-          rows={field.rows || 4}
+          onChange={handleChange}
+          label={field.label}
           placeholder={field.placeholder}
+          rows={field.rows || 4}
           required={field.required}
-          className="w-full px-4 py-2.5 rounded-xl border border-gray-200 bg-gray-50/50 focus:bg-white focus:border-brand-cyan focus:ring-2 focus:ring-brand-cyan/20 outline-none transition-all text-sm resize-y"
+          hint={field.hint}
+          field={field}
         />
       );
     }

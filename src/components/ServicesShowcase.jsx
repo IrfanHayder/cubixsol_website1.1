@@ -4,6 +4,7 @@ import { ArrowRight } from 'lucide-react';
 import Reveal, { Stagger, StaggerItem } from './Reveal';
 import DynamicIcon from './DynamicIcon';
 import { useServices } from '../context/ServicesContext';
+import { formatInline } from '../utils/formatText';
 
 export default function ServicesShowcase() {
 
@@ -56,7 +57,7 @@ export default function ServicesShowcase() {
                       {s.title}
                     </h3>
                     <p className="text-sm text-gray-500 leading-relaxed mb-4 line-clamp-3">
-                      {s.desc}
+                      {formatInline(s.desc)}
                     </p>
                   </div>
 
