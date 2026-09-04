@@ -28,8 +28,10 @@ import DevOpsProcess from '../components/DevOpsProcess';
 import SuccessStories from '../components/SuccessStories';
 import DynamicIcon from '../components/DynamicIcon';
 import { useServices } from '../context/ServicesContext';
+import { useSEO } from '../utils/seo';
 
 function formatText(text) {
+
   if (!text) return null;
   const parts = text.split(/(\*\*[^*]+\*\*)/g);
   return parts.map((part, i) => {
@@ -78,9 +80,17 @@ export default function ServiceDetail() {
   const whyChooseItems = Array.isArray(service.whyChooseItems) ? service.whyChooseItems : [];
   const processSteps = Array.isArray(service.serviceProcessSteps) ? service.serviceProcessSteps : [];
   const businessTypes = Array.isArray(service.businessTypesItems) ? service.businessTypesItems : [];
-  const faqs = Array.isArray(service.faqs) ? service.faqs : [];
+  const faqs = Array.isArray(service?.faqs) ? service.faqs : [];
+
+  useSEO(service?.seo, {
+    title: service?.title,
+    description: service?.desc || service?.longDesc,
+    keywords: `${service?.title}, ${features.slice(0, 4).join(', ')}, Cubixsol`,
+    heroImage: service?.heroImage,
+  });
 
   const isUx = slug === 'ui-ux-design';
+
   const isMobile = slug === 'mobile-app-development';
   const isIos = slug === 'ios-development';
   const isAndroid = slug === 'android-development';
@@ -326,35 +336,51 @@ export default function ServiceDetail() {
 
           {/* Delivery Process Roadmap Section (if provided) */}
           {processSteps.length > 0 && (
-            <section id="process" className="scroll-mt-28 py-12 lg:py-16 border-t border-gray-100">
-              <Reveal className="max-w-3xl mb-10">
-                <p className="eyebrow mb-2">Methodology</p>
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink tracking-tight">
-                  {service.serviceProcessTitle || 'Our Structured Process'}
-                </h2>
-              </Reveal>
+            <div id="process" className="scroll-mt-28">
+              {processSteps.some((s) => (s.image && s.image.trim()) || (Array.isArray(s.points) && s.points.length > 0)) ? (
+                <DevOpsProcess
+                  steps={processSteps}
+                  title={service.serviceProcessTitle || 'Our Structured Process'}
+                  intro={service.serviceProcessIntro}
+                />
+              ) : (
+                <section className="py-12 lg:py-16 border-t border-gray-100">
+                  <Reveal className="max-w-3xl mb-10">
+                    <p className="eyebrow mb-2">Methodology</p>
+                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink tracking-tight mb-2">
+                      {service.serviceProcessTitle || 'Our Structured Process'}
+                    </h2>
+                    {service.serviceProcessIntro && (
+                      <p className="text-sm sm:text-base text-gray-500 leading-relaxed">
+                        {formatText(service.serviceProcessIntro)}
+                      </p>
+                    )}
+                  </Reveal>
 
-              <Stagger className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4" staggerDelay={0.05}>
-                {processSteps.map((step, idx) => (
-                  <StaggerItem key={step.title || idx}>
-                    <div className="relative bg-white rounded-3xl border border-gray-100 p-5 sm:p-6 shadow-card hover:shadow-elev hover:border-cyan-200 transition-all h-full flex flex-col justify-between">
-                      <div>
-                        <span className="inline-block px-3 py-1 rounded-full bg-gradient-to-r from-sky-50 to-cyan-50 border border-cyan-100 text-[#00a4d8] font-black text-xs mb-4">
-                          {step.stepNumber || `0${idx + 1}`}
-                        </span>
-                        <h3 className="font-extrabold text-ink text-base mb-2">
-                          {step.title}
-                        </h3>
-                        <p className="text-xs text-gray-500 leading-relaxed">
-                          {formatText(step.desc)}
-                        </p>
-                      </div>
-                    </div>
-                  </StaggerItem>
-                ))}
-              </Stagger>
-            </section>
+                  <Stagger className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4" staggerDelay={0.05}>
+                    {processSteps.map((step, idx) => (
+                      <StaggerItem key={step.title || idx}>
+                        <div className="relative bg-white rounded-3xl border border-gray-100 p-5 sm:p-6 shadow-card hover:shadow-elev hover:border-cyan-200 transition-all h-full flex flex-col justify-between">
+                          <div>
+                            <span className="inline-block px-3 py-1 rounded-full bg-gradient-to-r from-sky-50 to-cyan-50 border border-cyan-100 text-[#00a4d8] font-black text-xs mb-4">
+                              {step.stepNumber || `0${idx + 1}`}
+                            </span>
+                            <h3 className="font-extrabold text-ink text-base mb-2">
+                              {step.title}
+                            </h3>
+                            <p className="text-xs text-gray-500 leading-relaxed">
+                              {formatText(step.desc)}
+                            </p>
+                          </div>
+                        </div>
+                      </StaggerItem>
+                    ))}
+                  </Stagger>
+                </section>
+              )}
+            </div>
           )}
+
 
           {/* Business Types Section (if provided) */}
           {businessTypes.length > 0 && (

@@ -77,6 +77,21 @@ const steps = [
   },
 ];
 
+function formatText(text) {
+  if (!text) return null;
+  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+  return parts.map((part, i) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      return (
+        <strong key={i} className="font-bold text-ink">
+          {part.slice(2, -2)}
+        </strong>
+      );
+    }
+    return part;
+  });
+}
+
 function StepRow({ step, index }) {
   const reverse = index % 2 === 1;
   const ref = useRef(null);
@@ -84,8 +99,11 @@ function StepRow({ step, index }) {
     target: ref,
     offset: ['start end', 'end start'],
   });
-  const yImg = useTransform(scrollYProgress, [0, 1], [40, -40]);
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.4, 1, 1, 0.4]);
+  const yImg = useTransform(scrollYProgress, [0, 1], [30, -30]);
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.5, 1, 1, 0.5]);
+
+  const stepNumber = step.stepNumber || step.num || `0${index + 1}`;
+  const points = Array.isArray(step.points) ? step.points : [];
 
   return (
     <div ref={ref} className="relative grid lg:grid-cols-2 gap-8 lg:gap-14 items-center py-10 lg:py-14">
@@ -94,19 +112,25 @@ function StepRow({ step, index }) {
         style={{ y: yImg, opacity }}
         className={`${reverse ? 'lg:order-2' : 'lg:order-1'}`}
       >
-        <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-elev aspect-[4/3] bg-gray-100">
-          <img
-            src={step.image}
-            alt={step.title}
-            className="w-full h-full object-cover"
-            loading="lazy"
-            decoding="async"
-            width={800}
-            height={560}
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-ink/30 via-transparent to-transparent" />
-          <span className="absolute bottom-4 left-4 bg-white/95 text-ink text-xs font-bold px-3 py-1.5 rounded-full shadow">
-            Step {step.num}
+        <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-elev aspect-[4/3] bg-gray-100 border border-gray-100">
+          {step.image ? (
+            <img
+              src={step.image}
+              alt={step.title}
+              className="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
+              width={800}
+              height={560}
+            />
+          ) : (
+            <div className="w-full h-full bg-gradient-to-br from-sky-50 to-cyan-100/60 flex items-center justify-center p-8 text-center">
+              <span className="text-4xl font-black text-[#00a4d8]/40">Step {stepNumber}</span>
+            </div>
+          )}
+          <div className="absolute inset-0 bg-gradient-to-t from-ink/30 via-transparent to-transparent pointer-events-none" />
+          <span className="absolute bottom-4 left-4 bg-white/95 backdrop-blur text-ink text-xs font-bold px-3 py-1.5 rounded-full shadow-md">
+            Step {stepNumber}
           </span>
         </div>
       </motion.div>
@@ -119,26 +143,34 @@ function StepRow({ step, index }) {
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         className={`${reverse ? 'lg:order-1' : 'lg:order-2'}`}
       >
-        <p className="text-xs font-bold tracking-widest uppercase text-primary-500 mb-2">
-          Step {step.num.replace(/^0/, '')}
+        <p className="text-xs font-bold tracking-widest uppercase text-[#00a4d8] mb-2">
+          Step {stepNumber.replace(/^0+/, '') || index + 1}
         </p>
         <h3 className="text-xl sm:text-2xl font-extrabold text-ink mb-3">{step.title}</h3>
-        <p className="text-sm text-gray-500 leading-relaxed mb-5">{step.desc}</p>
-        <p className="text-xs font-bold tracking-wide uppercase text-gray-400 mb-2">We work on</p>
-        <ul className="space-y-2">
-          {step.points.map((pt) => (
-            <li key={pt} className="flex items-start gap-2.5 text-sm text-gray-600">
-              <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary-500 shrink-0" />
-              {pt}
-            </li>
-          ))}
-        </ul>
+        <p className="text-sm text-gray-500 leading-relaxed mb-5">{formatText(step.desc)}</p>
+        {points.length > 0 && (
+          <>
+            <p className="text-xs font-bold tracking-wide uppercase text-gray-400 mb-2">We work on</p>
+            <ul className="space-y-2">
+              {points.map((pt) => (
+                <li key={pt} className="flex items-start gap-2.5 text-sm text-gray-600">
+                  <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#00a4d8] shrink-0" />
+                  <span>{formatText(pt)}</span>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
       </motion.div>
     </div>
   );
 }
 
-export default function DevOpsProcess() {
+export default function DevOpsProcess({
+  steps: passedSteps = [],
+  title = 'Our 5-step Process',
+  intro = 'A structured path from assessment to ongoing support after deployment — so releases stay fast and systems stay stable.',
+}) {
   const lineRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: lineRef,
@@ -146,19 +178,22 @@ export default function DevOpsProcess() {
   });
   const lineHeight = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
 
+  const activeSteps = Array.isArray(passedSteps) && passedSteps.length > 0 ? passedSteps : steps;
+
+
   return (
-    <section className="relative py-14 lg:py-20 bg-white overflow-hidden">
+    <section className="relative py-14 lg:py-20 bg-white overflow-hidden border-t border-gray-100">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal className="text-center max-w-2xl mx-auto mb-10 lg:mb-14">
           <p className="eyebrow mb-2">How we deliver</p>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink tracking-tight mb-4">
-            Our 5-step{' '}
-            <span className="bg-clip-text text-transparent bg-primary-gradient">DevOps process</span>
+            {formatText(title)}
           </h2>
-          <p className="text-sm sm:text-base text-gray-500 leading-relaxed">
-            A structured path from assessing your environment to ongoing support after deployment —
-            so releases stay fast and systems stay stable.
-          </p>
+          {intro && (
+            <p className="text-sm sm:text-base text-gray-500 leading-relaxed">
+              {formatText(intro)}
+            </p>
+          )}
         </Reveal>
 
         {/* Timeline */}
@@ -166,24 +201,24 @@ export default function DevOpsProcess() {
           {/* vertical line — desktop */}
           <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 -translate-x-1/2 w-px bg-gray-100">
             <motion.div
-              className="absolute top-0 left-0 w-full bg-primary-gradient origin-top rounded-full"
+              className="absolute top-0 left-0 w-full bg-gradient-to-b from-[#00a4d8] to-[#0284c7] origin-top rounded-full"
               style={{ height: lineHeight }}
             />
           </div>
 
           {/* dots on center line */}
           <div className="hidden lg:flex absolute left-1/2 top-0 bottom-0 -translate-x-1/2 flex-col justify-around pointer-events-none py-16">
-            {steps.map((s) => (
+            {activeSteps.map((s, idx) => (
               <span
-                key={s.num}
-                className="w-3.5 h-3.5 rounded-full border-2 border-primary-500 bg-white shadow-sm"
+                key={s.stepNumber || s.num || idx}
+                className="w-3.5 h-3.5 rounded-full border-2 border-[#00a4d8] bg-white shadow-sm"
               />
             ))}
           </div>
 
           <div className="space-y-2 lg:space-y-0">
-            {steps.map((step, i) => (
-              <StepRow key={step.num} step={step} index={i} />
+            {activeSteps.map((step, i) => (
+              <StepRow key={step.stepNumber || step.num || i} step={step} index={i} />
             ))}
           </div>
         </div>
@@ -191,3 +226,4 @@ export default function DevOpsProcess() {
     </section>
   );
 }
+

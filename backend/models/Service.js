@@ -27,11 +27,15 @@ const serviceSchema = new mongoose.Schema({
     desc: { type: String }
   }],
   serviceProcessTitle: { type: String },
+  serviceProcessIntro: { type: String },
   serviceProcessSteps: [{
     stepNumber: { type: String },
     title: { type: String },
-    desc: { type: String }
+    desc: { type: String },
+    image: { type: String },
+    points: [{ type: String }],
   }],
+
   subServicesTitle: { type: String },
   subServicesIntro: { type: String },
   subServicesItems: [{

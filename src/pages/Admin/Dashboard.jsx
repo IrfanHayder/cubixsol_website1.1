@@ -87,6 +87,17 @@ function StatusBadge({ status }) {
   );
 }
 
+/* ================== COMMON SEO FIELDS ================== */
+const commonSeoFields = [
+  { name: 'seo.metaTitle', label: 'SEO Meta Title', fullWidth: true, hint: 'Ideal: 50-60 characters.' },
+  { name: 'seo.metaDescription', label: 'SEO Meta Description', type: 'textarea', rows: 2, fullWidth: true, hint: 'Ideal: 150-160 characters. Shown in Google results.' },
+  { name: 'seo.keywords', label: 'SEO Keywords (comma separated)', fullWidth: true, hint: 'e.g. web development, React, Pakistan' },
+  { name: 'seo.ogTitle', label: 'OG Title (Social Share Title)', fullWidth: true, hint: 'Shown on Facebook, WhatsApp, LinkedIn previews.' },
+  { name: 'seo.ogDescription', label: 'OG Description (Social Share Desc)', type: 'textarea', rows: 2, fullWidth: true },
+  { name: 'seo.ogImage', label: 'OG Image (Social Share Image)', type: 'image', fullWidth: true, hint: 'Recommended: 1200x630px image.' },
+  { name: 'seo.canonicalUrl', label: 'Canonical URL', fullWidth: true, hint: 'Optional. Leave blank to auto-use page URL.' },
+];
+
 /* ================== SECTION CONFIGS ================== */
 const SECTION_CONFIGS = {
   blogs: {
@@ -116,16 +127,10 @@ const SECTION_CONFIGS = {
       { name: 'color', label: 'Gradient (e.g. from-primary-700 to-indigo-900)' },
       { name: 'excerpt', label: 'Excerpt', type: 'textarea', fullWidth: true, rows: 2 },
       { name: 'content', label: 'Full Content', type: 'textarea', fullWidth: true, rows: 8 },
-      // ── SEO Fields (prefixed seo. → nested object in DB) ──
-      { name: 'seo.metaTitle', label: 'Meta Title', fullWidth: true, hint: 'Ideal: 50-60 characters. Default: post title.' },
-      { name: 'seo.metaDescription', label: 'Meta Description', type: 'textarea', rows: 2, fullWidth: true, hint: 'Ideal: 150-160 characters. Shown in Google results.' },
-      { name: 'seo.keywords', label: 'Keywords (comma separated)', fullWidth: true, hint: 'e.g. web design, React, Pakistan' },
-      { name: 'seo.ogTitle', label: 'OG Title (Social Share Title)', fullWidth: true, hint: 'Shown on Facebook, WhatsApp, LinkedIn previews.' },
-      { name: 'seo.ogDescription', label: 'OG Description (Social Share Desc)', type: 'textarea', rows: 2, fullWidth: true },
-      { name: 'seo.ogImage', label: 'OG Image (Social Share Image)', type: 'image', fullWidth: true, hint: 'Recommended: 1200x630px image.' },
-      { name: 'seo.canonicalUrl', label: 'Canonical URL', fullWidth: true, hint: 'Optional. Leave blank to auto-use page URL.' },
+      ...commonSeoFields,
     ],
   },
+
   categories: {
     label: 'Categories',
     endpoint: 'categories',
@@ -201,9 +206,18 @@ const SECTION_CONFIGS = {
       { name: 'subServicesText', label: 'Sub-Services Items (Format: Title | Description, one per line)', type: 'textarea', fullWidth: true, rows: 6, isCustomArray: 'subServicesItems' },
       { name: 'whyChooseTitle', label: 'Why Choose Us Section Title', fullWidth: true },
       { name: 'whyChooseIntro', label: 'Why Choose Us Intro Text', type: 'textarea', fullWidth: true, rows: 2 },
-      { name: 'whyChooseText', label: 'Why Choose Us Items (Format: Title | Description, one per line)', type: 'textarea', fullWidth: true, rows: 5, isCustomArray: 'whyChooseItems' },
       { name: 'serviceProcessTitle', label: 'Process Section Title', fullWidth: true },
-      { name: 'serviceProcessText', label: 'Process Steps (Format: 01 | Title | Description, one per line)', type: 'textarea', fullWidth: true, rows: 5, isCustomArray: 'serviceProcessSteps' },
+      { name: 'serviceProcessIntro', label: 'Process Section Intro Text', type: 'textarea', fullWidth: true, rows: 2 },
+      {
+        name: 'serviceProcessText',
+        label: 'Process Steps (Format: Step# | Title | Description | ImageURL (optional) | Points separated by ; (optional))',
+        type: 'textarea',
+        fullWidth: true,
+        rows: 7,
+        hint: 'Example: 01 | Assessment | We thoroughly analyze... | https://images.unsplash.com/... | SDLC Review; Infrastructure Assessment; Business Expectation Mapping',
+        isCustomArray: 'serviceProcessSteps',
+      },
+
       { name: 'businessTypesTitle', label: 'Business Types Section Title', fullWidth: true },
       { name: 'businessTypesIntro', label: 'Business Types Intro Text', type: 'textarea', fullWidth: true, rows: 2 },
       { name: 'businessTypesText', label: 'Business Types Items (Format: Title | Description, one per line)', type: 'textarea', fullWidth: true, rows: 5, isCustomArray: 'businessTypesItems' },
@@ -219,12 +233,9 @@ const SECTION_CONFIGS = {
       { name: 'ctaBannerDesc', label: 'Bottom Banner Description', type: 'textarea', fullWidth: true, rows: 3 },
       { name: 'ctaBannerButtonText', label: 'Bottom Banner Button Text (e.g. Get a Free Consultation)' },
       { name: 'ctaBannerButtonLink', label: 'Bottom Banner Button Link (e.g. /contact or #service-inquiry)' },
-      { name: 'seo.metaTitle', label: 'SEO Meta Title', fullWidth: true },
-      { name: 'seo.metaDescription', label: 'SEO Meta Description', type: 'textarea', fullWidth: true, rows: 2 },
-      { name: 'seo.keywords', label: 'SEO Keywords', fullWidth: true },
+      ...commonSeoFields,
     ],
   },
-
 
   products: {
     label: 'Products',
@@ -246,6 +257,7 @@ const SECTION_CONFIGS = {
       { name: 'image', label: 'Product Image', type: 'image', fullWidth: true },
       { name: 'externalUrl', label: 'External URL' },
       { name: 'desc', label: 'Description', type: 'textarea', fullWidth: true, rows: 4 },
+      ...commonSeoFields,
     ],
   },
   industries: {
@@ -265,6 +277,7 @@ const SECTION_CONFIGS = {
       { name: 'desc', label: 'Full Description', type: 'textarea', fullWidth: true, rows: 5 },
       { name: 'points', label: 'Key Points (one per line)', type: 'textarea', fullWidth: true, rows: 4, isArray: true },
       { name: 'servicesWeOffer', label: 'Services We Offer (one per line)', type: 'textarea', fullWidth: true, rows: 3, isArray: true },
+      ...commonSeoFields,
     ],
   },
   solutions: {
@@ -281,6 +294,7 @@ const SECTION_CONFIGS = {
       { name: 'category', label: 'Category', required: true },
       { name: 'image', label: 'Solution Image', type: 'image', fullWidth: true },
       { name: 'desc', label: 'Description', type: 'textarea', fullWidth: true, rows: 5 },
+      ...commonSeoFields,
     ],
   },
   projects: {
@@ -300,8 +314,10 @@ const SECTION_CONFIGS = {
       { name: 'year', label: 'Year' },
       { name: 'image', label: 'Project Screenshot / Image', type: 'image', fullWidth: true },
       { name: 'description', label: 'Description', type: 'textarea', fullWidth: true, rows: 5 },
+      ...commonSeoFields,
     ],
   },
+
   testimonials: {
     label: 'Testimonials',
     endpoint: 'testimonials',
@@ -456,12 +472,30 @@ function DbSection({ sectionKey, showToast }) {
           parsed.serviceProcessSteps = lines
             .map((line, idx) => {
               const parts = line.split('|').map((s) => s.trim());
-              if (parts.length >= 3) {
-                return { stepNumber: parts[0], title: parts[1], desc: parts.slice(2).join('|') };
+              if (parts.length >= 5) {
+                const points = parts[4].split(';').map((p) => p.trim()).filter(Boolean);
+                return {
+                  stepNumber: parts[0] || `0${idx + 1}`,
+                  title: parts[1],
+                  desc: parts[2],
+                  image: parts[3],
+                  points,
+                };
+              } else if (parts.length === 4) {
+                const isImg = parts[3].startsWith('http') || parts[3].startsWith('/uploads') || parts[3].includes('/');
+                return {
+                  stepNumber: parts[0] || `0${idx + 1}`,
+                  title: parts[1],
+                  desc: parts[2],
+                  image: isImg ? parts[3] : '',
+                  points: !isImg ? parts[3].split(';').map((p) => p.trim()).filter(Boolean) : [],
+                };
+              } else if (parts.length === 3) {
+                return { stepNumber: parts[0] || `0${idx + 1}`, title: parts[1], desc: parts[2], image: '', points: [] };
               } else if (parts.length === 2) {
-                return { stepNumber: `0${idx + 1}`, title: parts[0], desc: parts[1] };
+                return { stepNumber: `0${idx + 1}`, title: parts[0], desc: parts[1], image: '', points: [] };
               }
-              return { stepNumber: `0${idx + 1}`, title: parts[0], desc: '' };
+              return { stepNumber: `0${idx + 1}`, title: parts[0], desc: '', image: '', points: [] };
             })
             .filter((i) => i.title);
         } else {
@@ -490,7 +524,17 @@ function DbSection({ sectionKey, showToast }) {
             stringified[f.name] = arr.map((i) => `${i.q} | ${i.a}`).join('\n');
           } else if (f.isCustomArray === 'serviceProcessSteps') {
             stringified[f.name] = arr
-              .map((i) => `${i.stepNumber || '01'} | ${i.title} | ${i.desc}`)
+              .map((i) => {
+                const stepNum = i.stepNumber || '01';
+                const title = i.title || '';
+                const desc = i.desc || '';
+                const image = i.image || '';
+                const points = Array.isArray(i.points) ? i.points.join('; ') : '';
+                if (image || points) {
+                  return `${stepNum} | ${title} | ${desc} | ${image} | ${points}`;
+                }
+                return `${stepNum} | ${title} | ${desc}`;
+              })
               .join('\n');
           } else {
             stringified[f.name] = arr.map((i) => `${i.title} | ${i.desc}`).join('\n');
@@ -500,6 +544,7 @@ function DbSection({ sectionKey, showToast }) {
     });
     return stringified;
   };
+
 
 
   const fetchData = useCallback(async () => {
