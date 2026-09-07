@@ -64,6 +64,19 @@ export default function ServiceDetail() {
   const { services, loading, resolveIcon } = useServices();
   const [openFaq, setOpenFaq] = useState(null);
 
+  const service = (Array.isArray(services) ? services : []).find(
+    (s) => s && s.slug && isServiceSlugMatch(slug, s.slug)
+  );
+
+  const features = Array.isArray(service?.features) ? service.features : [];
+
+  useSEO(service?.seo, {
+    title: service?.title,
+    description: service?.desc || service?.longDesc,
+    keywords: `${service?.title || ''}, ${features.slice(0, 4).join(', ')}, Cubixsol`,
+    heroImage: service?.heroImage,
+  });
+
   if (loading) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[50vh] gap-3 text-gray-400">
@@ -73,17 +86,12 @@ export default function ServiceDetail() {
     );
   }
 
-  const service = (Array.isArray(services) ? services : []).find(
-    (s) => s && s.slug && isServiceSlugMatch(slug, s.slug)
-  );
-
   if (!service) return <Navigate to="/services" replace />;
 
   const others = (Array.isArray(services) ? services : [])
     .filter((s) => s && s.slug && !isServiceSlugMatch(slug, s.slug))
     .slice(0, 3);
   const IconComponent = resolveIcon(service.icon);
-  const features = Array.isArray(service?.features) ? service.features : [];
   const tech = Array.isArray(service.tech) ? service.tech : [];
   const outcomes = Array.isArray(service.outcomes) ? service.outcomes : [];
   const subServices = Array.isArray(service.subServicesItems) ? service.subServicesItems : [];
@@ -91,13 +99,6 @@ export default function ServiceDetail() {
   const processSteps = Array.isArray(service.serviceProcessSteps) ? service.serviceProcessSteps : [];
   const businessTypes = Array.isArray(service.businessTypesItems) ? service.businessTypesItems : [];
   const faqs = Array.isArray(service?.faqs) ? service.faqs : [];
-
-  useSEO(service?.seo, {
-    title: service?.title,
-    description: service?.desc || service?.longDesc,
-    keywords: `${service?.title}, ${features.slice(0, 4).join(', ')}, Cubixsol`,
-    heroImage: service?.heroImage,
-  });
 
   const normSlug = normalizeServiceSlug(slug);
   const isUx = normSlug === 'ui-ux';
