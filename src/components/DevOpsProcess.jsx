@@ -88,7 +88,7 @@ function StepRow({ step, index }) {
   const yImg = useTransform(scrollYProgress, [0, 1], [30, -30]);
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.5, 1, 1, 0.5]);
 
-  const stepNumber = step.stepNumber || step.num || `0${index + 1}`;
+  const stepNumber = String(step.stepNumber || step.num || `0${index + 1}`);
   const points = Array.isArray(step.points) ? step.points : [];
 
   return (

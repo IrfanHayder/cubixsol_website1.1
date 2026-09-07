@@ -20,6 +20,7 @@ import AdminForm from '../../components/Admin/AdminForm';
 import MediaManager from '../../components/Admin/MediaManager';
 import { useServices } from '../../context/ServicesContext';
 import { API_BASE, apiFetch } from '../../utils/api';
+import { parseCustomListItems, parseProcessSteps } from '../../utils/formatText';
 
 
 /* -------------------- Toast Notification -------------------- */
@@ -189,7 +190,7 @@ const SECTION_CONFIGS = {
       { name: 'title', label: 'Service Title (H1 Page Title)', required: true, fullWidth: true },
       { name: 'menuTitle', label: 'Menu / Dropdown Title (Short name for Navbar e.g. E-Commerce Solutions, Graphic Design)', fullWidth: true, hint: 'Leave blank to use full Service Title in menu' },
       { name: 'slug', label: 'Slug (e.g. web-development)', required: true },
-      { name: 'icon', label: 'Lucide Icon Name or Uploaded Image URL (e.g. Globe, /uploads/...svg)', required: true },
+      { name: 'icon', label: 'Service Icon (Image/SVG from Media Library or Lucide Icon Name)', type: 'image', required: true, fullWidth: true, hint: 'Select an SVG/Image from Media Library, upload a new SVG file, or enter a Lucide icon name' },
       { name: 'color', label: 'Color Class (e.g. bg-blue-50 text-blue-600)' },
       { name: 'gradient', label: 'Gradient Classes (e.g. from-blue-500 to-cyan-600)' },
       { name: 'heroSubtitle', label: 'Hero Subtitle', fullWidth: true },
@@ -282,7 +283,7 @@ const SECTION_CONFIGS = {
     fields: [
       { name: 'title', label: 'Industry Name', required: true },
       { name: 'slug', label: 'Slug (e.g. healthcare)', required: true },
-      { name: 'icon', label: 'Lucide Icon Name (e.g. HeartPulse, GraduationCap)' },
+      { name: 'icon', label: 'Industry Icon (Image/SVG or Lucide Icon Name)', type: 'image', fullWidth: true, hint: 'Select an SVG/Image from Media Library or enter a Lucide icon name' },
       { name: 'short', label: 'Short Description', type: 'textarea', fullWidth: true, rows: 2 },
       { name: 'desc', label: 'Full Description', type: 'textarea', fullWidth: true, rows: 5 },
       { name: 'points', label: 'Key Points (one per line)', type: 'textarea', fullWidth: true, rows: 4, isArray: true },
@@ -467,83 +468,10 @@ function DbSection({ sectionKey, showToast }) {
           .filter(Boolean);
       }
       if (f.isCustomArray && typeof parsed[f.name] === 'string') {
-        const raw = parsed[f.name];
-        const rawLines = raw.split(/\r?\n/);
-
-        if (f.isCustomArray === 'faqs') {
-          const items = [];
-          let current = null;
-          rawLines.forEach((line) => {
-            const trimmed = line.trim();
-            if (!trimmed) return;
-            if (trimmed.includes('|')) {
-              if (current && current.q && current.a) items.push(current);
-              const [q, ...rest] = trimmed.split('|');
-              current = { q: q.trim(), a: rest.join('|').trim() };
-            } else if (current) {
-              current.a = current.a ? `${current.a}\n\n${trimmed}` : trimmed;
-            }
-          });
-          if (current && current.q && current.a) items.push(current);
-          parsed.faqs = items;
-        } else if (f.isCustomArray === 'serviceProcessSteps') {
-          const items = [];
-          let current = null;
-          rawLines.forEach((line) => {
-            const trimmed = line.trim();
-            if (!trimmed) return;
-            if (trimmed.includes('|')) {
-              if (current && current.title) items.push(current);
-              const parts = trimmed.split('|').map((s) => s.trim());
-              const idx = items.length;
-              if (parts.length >= 5) {
-                const points = parts[4].split(';').map((p) => p.trim()).filter(Boolean);
-                current = {
-                  stepNumber: parts[0] || `0${idx + 1}`,
-                  title: parts[1],
-                  desc: parts[2],
-                  image: parts[3],
-                  points,
-                };
-              } else if (parts.length === 4) {
-                const isImg = parts[3].startsWith('http') || parts[3].startsWith('/uploads') || parts[3].includes('/');
-                current = {
-                  stepNumber: parts[0] || `0${idx + 1}`,
-                  title: parts[1],
-                  desc: parts[2],
-                  image: isImg ? parts[3] : '',
-                  points: !isImg ? parts[3].split(';').map((p) => p.trim()).filter(Boolean) : [],
-                };
-              } else if (parts.length === 3) {
-                current = { stepNumber: parts[0] || `0${idx + 1}`, title: parts[1], desc: parts[2], image: '', points: [] };
-              } else if (parts.length === 2) {
-                current = { stepNumber: `0${idx + 1}`, title: parts[0], desc: parts[1], image: '', points: [] };
-              } else {
-                current = { stepNumber: `0${idx + 1}`, title: parts[0], desc: '', image: '', points: [] };
-              }
-            } else if (current) {
-              current.desc = current.desc ? `${current.desc}\n\n${trimmed}` : trimmed;
-            }
-          });
-          if (current && current.title) items.push(current);
-          parsed.serviceProcessSteps = items;
+        if (f.isCustomArray === 'serviceProcessSteps') {
+          parsed.serviceProcessSteps = parseProcessSteps(parsed[f.name]);
         } else {
-          // subServicesItems, whyChooseItems, businessTypesItems
-          const items = [];
-          let current = null;
-          rawLines.forEach((line) => {
-            const trimmed = line.trim();
-            if (!trimmed) return;
-            if (trimmed.includes('|')) {
-              if (current && current.title) items.push(current);
-              const [title, ...rest] = trimmed.split('|');
-              current = { title: title.trim(), desc: rest.join('|').trim() };
-            } else if (current) {
-              current.desc = current.desc ? `${current.desc}\n\n${trimmed}` : trimmed;
-            }
-          });
-          if (current && current.title) items.push(current);
-          parsed[f.isCustomArray] = items;
+          parsed[f.isCustomArray] = parseCustomListItems(parsed[f.name]);
         }
       }
     });

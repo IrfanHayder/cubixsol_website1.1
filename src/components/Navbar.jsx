@@ -213,7 +213,7 @@ export default function Navbar() {
                                     <span
                                       className={`w-7 h-7 rounded-md flex items-center justify-center shrink-0 ${s.color || 'text-primary-600 bg-primary-50'}`}
                                     >
-                                      <IconComponent className="w-3.5 h-3.5" />
+                                      <IconComponent className="w-4.5 h-4.5 object-contain" />
                                     </span>
                                     <span className="text-[12px] font-semibold text-ink group-hover:text-primary-700 leading-snug">
                                       {s.menuTitle || s.title}
@@ -543,16 +543,22 @@ export default function Navbar() {
                   >
                     All services
                   </NavLink>
-                  {services.map((s) => (
-                    <NavLink
-                      key={s.slug}
-                      to={`/${s.slug}`}
-                      onClick={() => setOpen(false)}
-                      className="block px-3 py-2 text-sm text-gray-600"
-                    >
-                      {s.menuTitle || s.title}
-                    </NavLink>
-                  ))}
+                  {services.map((s) => {
+                    const IconComponent = resolveIcon(s.icon);
+                    return (
+                      <NavLink
+                        key={s.slug}
+                        to={`/${s.slug}`}
+                        onClick={() => setOpen(false)}
+                        className="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50/50 rounded-lg transition"
+                      >
+                        <span className={`w-6 h-6 rounded-md flex items-center justify-center shrink-0 ${s.color || 'text-primary-600 bg-primary-50'}`}>
+                          <IconComponent className="w-3.5 h-3.5 object-contain" />
+                        </span>
+                        <span>{s.menuTitle || s.title}</span>
+                      </NavLink>
+                    );
+                  })}
 
                 </div>
               )}

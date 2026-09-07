@@ -7,17 +7,18 @@ export default function AdminTable({ columns, data, onEdit, onDelete, onView }) 
     const val = row[col.key];
     if (val === null || val === undefined || val === '') return <span className="text-ink/30">—</span>;
 
-    const isImageKey = ['image', 'heroImage', 'avatar', 'coverImage', 'whyChooseImage', 'thumbnail'].includes(col.key);
+    const isImageKey = ['image', 'heroImage', 'avatar', 'coverImage', 'whyChooseImage', 'thumbnail', 'icon'].includes(col.key);
     const isMediaUrl = typeof val === 'string' && (val.startsWith('/uploads/') || (val.startsWith('http') && val.match(/\.(jpeg|jpg|gif|png|webp|svg)($|\?)/i)));
 
     if (isImageKey || isMediaUrl) {
+      const isSvg = typeof val === 'string' && val.endsWith('.svg');
       return (
         <div className="flex items-center gap-2.5">
-          <div className="w-10 h-10 rounded-xl overflow-hidden bg-gray-100 border border-gray-200 shrink-0 shadow-xs flex items-center justify-center">
+          <div className="w-10 h-10 rounded-xl overflow-hidden bg-white border border-gray-200 shrink-0 shadow-xs flex items-center justify-center p-1">
             <img
               src={val}
               alt=""
-              className="w-full h-full object-cover"
+              className={`w-full h-full ${isSvg ? 'object-contain' : 'object-cover'}`}
               onError={(e) => {
                 e.currentTarget.onerror = null;
                 e.currentTarget.src = 'https://placehold.co/100x100?text=Img';

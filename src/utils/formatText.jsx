@@ -206,4 +206,153 @@ export function FormatRichText({
   );
 }
 
+/**
+ * Flexibly parses multiline custom list items from strings or arrays.
+ * Supports:
+ * - "Title | Description"
+ * - "- Title: Description"
+ * - "Title: Description"
+ * - "- **Title**: Description" / "- **Title:** Description"
+ * - "1. Title: Description" / "1. Title | Description"
+ * - Multiline continuations
+ */
+export function parseCustomListItems(input) {
+  if (!input) return [];
+  if (Array.isArray(input)) {
+    if (input.length > 0 && typeof input[0] === 'object' && input[0] !== null) {
+      const valid = input.filter((item) => (item.title && String(item.title).trim()) || (item.desc && String(item.desc).trim()) || (item.q && String(item.q).trim()));
+      if (valid.length > 0) return valid;
+    }
+    input = input.join('\n');
+  }
+  if (typeof input !== 'string') return [];
+
+  const rawLines = input.split(/\r?\n/);
+  const items = [];
+  let current = null;
+
+  rawLines.forEach((line) => {
+    const trimmed = line.trim();
+    if (!trimmed) return;
+
+    let matchedTitle = null;
+    let matchedDesc = null;
+
+    if (trimmed.includes('|')) {
+      const parts = trimmed.split('|');
+      matchedTitle = parts[0];
+      matchedDesc = parts.slice(1).join('|');
+    } else {
+      // Look for bullet / number prefix + optional bold + separator (: or - or – or —) + desc
+      const colonMatch = trimmed.match(/^[-*•\d+.)\s]*(?:\*\*(.*?)\*\*[:]?|(.*?))(?:\s*[:–—]\s+|\s+-\s+)(.*)$/);
+      if (colonMatch) {
+        matchedTitle = (colonMatch[1] || colonMatch[2] || '').trim();
+        matchedDesc = (colonMatch[3] || '').trim();
+      }
+    }
+
+    if (matchedTitle !== null && matchedTitle.trim()) {
+      if (current && (current.title || current.q || current.desc)) {
+        items.push(current);
+      }
+      const cleanTitle = matchedTitle
+        .replace(/^[-*•\d+.)\s]+/, '')
+        .replace(/^\*\*|\*\*$/g, '')
+        .trim();
+      current = {
+        title: cleanTitle,
+        desc: matchedDesc ? matchedDesc.trim() : '',
+        q: cleanTitle,
+        a: matchedDesc ? matchedDesc.trim() : '',
+      };
+    } else if (current) {
+      current.desc = current.desc ? `${current.desc}\n\n${trimmed}` : trimmed;
+      current.a = current.a ? `${current.a}\n\n${trimmed}` : trimmed;
+    } else {
+      const cleanLine = trimmed.replace(/^[-*•\d+.)\s]+/, '').trim();
+      current = { title: cleanLine, desc: '', q: cleanLine, a: '' };
+    }
+  });
+
+  if (current && (current.title || current.q || current.desc)) {
+    items.push(current);
+  }
+
+  return items;
+}
+
+/**
+ * Parses process steps from string or array
+ */
+export function parseProcessSteps(input) {
+  if (!input) return [];
+  if (Array.isArray(input)) {
+    if (input.length > 0 && typeof input[0] === 'object' && input[0] !== null) {
+      const valid = input.filter((item) => item.title && String(item.title).trim());
+      if (valid.length > 0) return valid;
+    }
+    input = input.join('\n');
+  }
+  if (typeof input !== 'string') return [];
+
+  const rawLines = input.split(/\r?\n/);
+  const items = [];
+  let current = null;
+
+  rawLines.forEach((line) => {
+    const trimmed = line.trim();
+    if (!trimmed) return;
+
+    if (trimmed.includes('|')) {
+      if (current && current.title) items.push(current);
+      const parts = trimmed.split('|').map((s) => s.trim());
+      const idx = items.length;
+      if (parts.length >= 5) {
+        const points = parts[4].split(';').map((p) => p.trim()).filter(Boolean);
+        current = {
+          stepNumber: parts[0] || `0${idx + 1}`,
+          title: parts[1],
+          desc: parts[2],
+          image: parts[3],
+          points,
+        };
+      } else if (parts.length === 4) {
+        const isImg = parts[3].startsWith('http') || parts[3].startsWith('/uploads') || parts[3].includes('/');
+        current = {
+          stepNumber: parts[0] || `0${idx + 1}`,
+          title: parts[1],
+          desc: parts[2],
+          image: isImg ? parts[3] : '',
+          points: !isImg ? parts[3].split(';').map((p) => p.trim()).filter(Boolean) : [],
+        };
+      } else if (parts.length === 3) {
+        current = { stepNumber: parts[0] || `0${idx + 1}`, title: parts[1], desc: parts[2], image: '', points: [] };
+      } else if (parts.length === 2) {
+        current = { stepNumber: `0${idx + 1}`, title: parts[0], desc: parts[1], image: '', points: [] };
+      } else {
+        current = { stepNumber: `0${idx + 1}`, title: parts[0], desc: '', image: '', points: [] };
+      }
+    } else {
+      const match = trimmed.match(/^[-*•\d+.)\s]*(\d+)?[\s.)\-–—]*(?:\*\*(.*?)\*\*[:]?|(.*?))(?:\s*[:–—]\s+|\s+-\s+)(.*)$/);
+      if (match) {
+        if (current && current.title) items.push(current);
+        const idx = items.length;
+        const stepNum = match[1] ? (match[1].length === 1 ? `0${match[1]}` : match[1]) : `0${idx + 1}`;
+        const title = (match[2] || match[3] || '').replace(/^\*\*|\*\*$/g, '').trim();
+        const desc = (match[4] || '').trim();
+        current = { stepNumber: stepNum, title, desc, image: '', points: [] };
+      } else if (current) {
+        current.desc = current.desc ? `${current.desc}\n\n${trimmed}` : trimmed;
+      } else {
+        const clean = trimmed.replace(/^[-*•\d+.)\s]+/, '').trim();
+        const idx = items.length;
+        current = { stepNumber: `0${idx + 1}`, title: clean, desc: '', image: '', points: [] };
+      }
+    }
+  });
+
+  if (current && current.title) items.push(current);
+  return items;
+}
+
 export default FormatRichText;

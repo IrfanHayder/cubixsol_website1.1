@@ -31,7 +31,7 @@ import { useServices } from '../context/ServicesContext';
 import { useSEO } from '../utils/seo';
 import { formatText, FormatRichText } from '../utils/formatText';
 
-export function normalizeServiceSlug(slug) {
+function normalizeServiceSlug(slug) {
   if (!slug) return '';
   const s = String(slug).toLowerCase().trim();
   if (s.startsWith('ios')) return 'ios';
@@ -53,7 +53,7 @@ export function normalizeServiceSlug(slug) {
   return s;
 }
 
-export function isServiceSlugMatch(routeSlug, serviceSlug) {
+function isServiceSlugMatch(routeSlug, serviceSlug) {
   if (!routeSlug || !serviceSlug) return false;
   if (routeSlug === serviceSlug) return true;
   return normalizeServiceSlug(routeSlug) === normalizeServiceSlug(serviceSlug);
@@ -105,7 +105,6 @@ export default function ServiceDetail() {
   const isIos = normSlug === 'ios';
   const isAndroid = normSlug === 'android';
   const isAppJourney = isMobile || isIos || isAndroid;
-  const isDevOps = normSlug === 'devops' || normSlug === 'cloud';
 
 
   const scrollToForm = (e) => {
@@ -350,7 +349,7 @@ export default function ServiceDetail() {
           {/* Delivery Process Roadmap Section (if provided) */}
           {processSteps.length > 0 && (
             <div id="process" className="scroll-mt-28">
-              {processSteps.some((s) => (s.image && s.image.trim()) || (Array.isArray(s.points) && s.points.length > 0)) ? (
+              {processSteps.some((s) => (typeof s.image === 'string' && s.image.trim()) || (Array.isArray(s.points) && s.points.length > 0)) ? (
                 <DevOpsProcess
                   steps={processSteps}
                   title={service.serviceProcessTitle || 'Our Structured Process'}
@@ -512,11 +511,7 @@ export default function ServiceDetail() {
               <AndroidHighlights />
             </div>
           )}
-          {isDevOps && (
-            <div id="devops-process" className="scroll-mt-28 -mx-4 sm:mx-0">
-              <DevOpsProcess />
-            </div>
-          )}
+
           {isUx && (
             <div id="ux-services" className="scroll-mt-28 -mx-4 sm:-mx-6 lg:mx-0">
               <ServiceSubTabs />

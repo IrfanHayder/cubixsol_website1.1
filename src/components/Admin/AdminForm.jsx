@@ -31,7 +31,7 @@ export default function AdminForm({ title, fields, values, onChange, onSubmit, o
 
     const isImageField =
       field.type === 'image' ||
-      ['heroImage', 'image', 'coverImage', 'avatar', 'whyChooseImage', 'ogImage', 'seo.ogImage'].includes(field.name);
+      ['heroImage', 'image', 'coverImage', 'avatar', 'whyChooseImage', 'ogImage', 'seo.ogImage', 'icon'].includes(field.name);
 
     if (isImageField) {
       return (
