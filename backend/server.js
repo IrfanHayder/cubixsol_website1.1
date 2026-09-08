@@ -22,6 +22,7 @@ const SeoSetting = require('./models/SeoSetting');
 const Team = require('./models/Team');
 const Faq = require('./models/Faq');
 const SiteSetting = require('./models/SiteSetting');
+const PageContent = require('./models/PageContent');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -170,6 +171,7 @@ const {
   initialCareers,
   initialSiteSettings,
   initialSeoSettings,
+  initialPages,
 } = require('./seedData');
 
 // Connect to MongoDB & Seed Default Content if Empty
@@ -526,6 +528,12 @@ async function seedInitialData() {
     if (seoSettingsCount === 0 && initialSeoSettings && initialSeoSettings.length > 0) {
       await SeoSetting.insertMany(initialSeoSettings);
       console.log('Seeded initial SeoSettings data');
+    }
+
+    const pagesCount = await PageContent.countDocuments();
+    if (pagesCount === 0 && initialPages && initialPages.length > 0) {
+      await PageContent.insertMany(initialPages);
+      console.log('Seeded initial Pages data');
     }
   } catch (err) {
     console.error('Error seeding initial data:', err);
@@ -1080,6 +1088,65 @@ app.post('/api/site-settings/:key', async (req, res) => {
       { upsert: true, returnDocument: 'after' }
     );
     res.json(updated);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+});
+
+// =============================================
+// PAGE CONTENT CRUD
+// =============================================
+app.get('/api/pages', async (req, res) => {
+  try {
+    const pages = await PageContent.find().sort({ slug: 1 });
+    res.json(pages);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
+app.get('/api/pages/:slug', async (req, res) => {
+  try {
+    let page = await PageContent.findOne({ slug: req.params.slug });
+    if (!page && req.params.slug === 'services') {
+      const defaultData = initialPages.find((p) => p.slug === 'services');
+      if (defaultData) {
+        page = await PageContent.create(defaultData);
+      }
+    }
+    if (!page) return res.status(404).json({ message: 'Page not found' });
+    res.json(page);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
+app.put('/api/pages/:slug', async (req, res) => {
+  try {
+    const data = { ...req.body };
+    delete data._id;
+    delete data.__v;
+    const slug = req.params.slug;
+    const updated = await PageContent.findOneAndUpdate(
+      { slug },
+      { $set: data },
+      { new: true, upsert: true, returnDocument: 'after' }
+    );
+    res.json(updated);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+});
+
+app.post('/api/pages', async (req, res) => {
+  try {
+    const data = { ...req.body };
+    const page = await PageContent.findOneAndUpdate(
+      { slug: data.slug },
+      { $set: data },
+      { new: true, upsert: true, returnDocument: 'after' }
+    );
+    res.status(201).json(page);
   } catch (err) {
     res.status(400).json({ message: err.message });
   }

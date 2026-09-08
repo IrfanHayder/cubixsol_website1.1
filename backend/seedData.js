@@ -3846,6 +3846,168 @@ const initialSiteSettings = [];
 
 const initialSeoSettings = [];
 
+const initialPages = [
+  {
+    slug: 'services',
+    title: 'Services',
+    heroEyebrow: 'Our Services',
+    heroTitle: 'Powerful digital solutions that drive real results',
+    heroDesc: 'Strategy, design, engineering and growth — under one roof. Pick a service to see how we deliver, or tell us your goal and we will map the right path.',
+    heroBadges: ['Modern stack', 'Scalable & secure', 'Transparent delivery'],
+
+    processEyebrow: 'Our Process',
+    processTitle: 'Our Proven Development Process',
+    processIntro: '',
+    processSteps: [
+      {
+        step: '01',
+        title: 'Discover',
+        desc: 'We clarify your business goals, users, requirements, technical constraints, budget, and success criteria.'
+      },
+      {
+        step: '02',
+        title: 'Plan',
+        desc: 'Our team defines the scope, technology, architecture, priorities, milestones, and delivery roadmap.'
+      },
+      {
+        step: '03',
+        title: 'Design and Develop',
+        desc: 'Designers create the user experience while developers build, review, and integrate each product component.'
+      },
+      {
+        step: '04',
+        title: 'Test and Launch',
+        desc: 'We test functionality, usability, compatibility, security, and performance before managing a controlled deployment.'
+      },
+      {
+        step: '05',
+        title: 'Support',
+        desc: 'After launch, we monitor performance, resolve issues, deliver updates, and help your product evolve.'
+      }
+    ],
+
+    whyChooseEyebrow: 'Why Choose Us',
+    whyChooseTitle: 'Why Businesses Choose Cubixsol',
+    whyChooseIntro: 'Businesses **outsource custom software development services** to us when they need specialized expertise without expanding every internal function. You can expect a clear scope, practical recommendations, visible progress, quality assurance, and continued post-launch support.',
+    whyChooseItems: [
+      {
+        title: 'Business-first planning',
+        desc: 'We connect technical decisions to user needs, operational requirements, and commercial goals.'
+      },
+      {
+        title: 'Cross-functional expertise',
+        desc: 'Developers, designers, QA specialists, consultants, and marketers collaborate throughout delivery.'
+      },
+      {
+        title: 'Enterprise-ready thinking',
+        desc: 'Our **custom enterprise software development services** prioritize scalability, integrations, maintainability, and long-term product performance.'
+      },
+      {
+        title: 'Transparent execution',
+        desc: 'Defined milestones, regular communication, testing, and documented feedback keep the project moving in the right direction.'
+      }
+    ],
+
+    engagementEyebrow: 'Engagement Models',
+    engagementTitle: 'Flexible Engagement Models, Including Staff Augmentation',
+    engagementIntro: '',
+    engagementItems: [
+      {
+        title: 'Project-Based Development',
+        desc: 'Choose a defined scope, timeline, and delivery plan for a website, application, integration, migration, or digital campaign.'
+      },
+      {
+        title: 'Dedicated Team',
+        desc: 'Secure a consistent multidisciplinary team that works exclusively or primarily on your product and long-term roadmap.'
+      },
+      {
+        title: 'Staff Augmentation Services',
+        desc: 'Fill specific skill gaps, increase delivery capacity, or add specialists to an existing team while retaining direct project control.'
+      },
+      {
+        title: 'MVP and Startup Development',
+        desc: 'Validate an idea quickly with focused features, rapid feedback, controlled costs, and a roadmap for future product growth.'
+      }
+    ],
+
+    industriesEyebrow: 'Industries',
+    industriesTitle: 'Industries We Serve',
+    industriesIntro: 'Cubixsol adapts its technology and delivery approach to the workflows, users, and compliance needs of different sectors.',
+    industriesItems: [
+      {
+        title: 'Education',
+        desc: 'Learning platforms, student portals, and administrative systems'
+      },
+      {
+        title: 'Travel',
+        desc: 'Booking platforms, integrations, and customer applications'
+      },
+      {
+        title: 'Healthcare',
+        desc: 'Patient-facing tools and operational software'
+      },
+      {
+        title: 'FinTech',
+        desc: 'Secure financial platforms and payment integrations'
+      },
+      {
+        title: 'E-commerce',
+        desc: 'Online stores, marketplaces, and retail automation'
+      },
+      {
+        title: 'SaaS',
+        desc: 'Subscription platforms and cloud-based business products'
+      }
+    ],
+
+    ctaEyebrow: 'Ready to Start?',
+    ctaTitle: 'Ready to Start Your Project? Let’s Talk',
+    ctaDesc: 'Move from idea to execution with reliable **custom software development services** built around your users, operations, and growth plans.',
+    ctaButtonText: 'Discuss Your Project',
+    ctaButtonLink: '/contact',
+
+    faqEyebrow: 'FAQ',
+    faqTitle: 'Frequently Asked Questions',
+    faqIntro: '',
+    faqs: [
+      {
+        q: 'How much do custom software development services cost?',
+        a: 'Cost depends on the project’s features, technical complexity, integrations, platforms, timeline, and team requirements. We review your scope before providing a customized estimate.'
+      },
+      {
+        q: 'How long does a software development project take?',
+        a: 'A focused MVP may take considerably less time than a multi-platform enterprise system. After discovery, we provide a roadmap with realistic phases, milestones, and delivery estimates.'
+      },
+      {
+        q: 'Which Cubixsol service should I choose?',
+        a: 'Start with the outcome, not the technology. Share the problem you need to solve, and our team will recommend the appropriate service, platform, and engagement model.'
+      },
+      {
+        q: 'Does Cubixsol provide post-launch support?',
+        a: 'Yes. Support can include issue resolution, performance monitoring, security updates, feature improvements, integrations, optimization, and ongoing product maintenance.'
+      },
+      {
+        q: 'Do you work with both startups and enterprises?',
+        a: 'Yes. Startups can use MVP development to validate ideas, while established businesses can engage Cubixsol for modernization, integrations, dedicated teams, and enterprise platforms.'
+      },
+      {
+        q: 'How can I find custom software development services near me?',
+        a: 'Location should not be your only selection criterion. Compare relevant experience, communication, technical capability, delivery process, and post-launch support. Our experts collaborate with clients through remote and regional teams.'
+      }
+    ],
+
+    seo: {
+      metaTitle: 'Software Development & IT Consulting Services | Cubixsol',
+      metaDescription: 'Explore Cubixsol’s full suite of custom web development, mobile apps, AI products, cloud DevOps, and UI/UX design services designed to scale your business.',
+      keywords: 'custom software development, web development, mobile apps, AI development, cloud devops, ui ux design, cubixsol services',
+      ogTitle: 'Software Development & IT Consulting Services | Cubixsol',
+      ogDescription: 'Explore Cubixsol’s full suite of custom web development, mobile apps, AI products, cloud DevOps, and UI/UX design services designed to scale your business.',
+      ogImage: '',
+      canonicalUrl: ''
+    }
+  }
+];
+
 module.exports = {
   initialServices,
   initialSolutions,
@@ -3862,4 +4024,5 @@ module.exports = {
   initialCareers,
   initialSiteSettings,
   initialSeoSettings,
+  initialPages,
 };

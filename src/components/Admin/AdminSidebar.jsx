@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import {
   LayoutDashboard,
+  LayoutTemplate,
   FileText,
   FolderOpen,
   Tags,
@@ -29,6 +30,7 @@ const navItems = [
   { id: 'tags', label: 'Tags', icon: Tags, live: true },
   { id: 'authors', label: 'Authors', icon: Users, live: true },
   { id: 'services', label: 'Services', icon: Briefcase, live: true },
+  { id: 'services-page', label: 'Services Page Content', icon: LayoutTemplate, live: true },
   { id: 'solutions', label: 'Solutions', icon: Layers, live: true },
   { id: 'industries', label: 'Industries', icon: Building2, live: true },
   { id: 'products', label: 'Products', icon: Package, live: true },

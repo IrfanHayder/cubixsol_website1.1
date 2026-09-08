@@ -18,6 +18,7 @@ import AdminStats from '../../components/Admin/AdminStats';
 import AdminTable from '../../components/Admin/AdminTable';
 import AdminForm from '../../components/Admin/AdminForm';
 import MediaManager from '../../components/Admin/MediaManager';
+import ServicesPageEditor from '../../components/Admin/ServicesPageEditor';
 import { useServices } from '../../context/ServicesContext';
 import { API_BASE, apiFetch } from '../../utils/api';
 import { parseCustomListItems, parseProcessSteps } from '../../utils/formatText';
@@ -181,6 +182,7 @@ const SECTION_CONFIGS = {
     columns: [
       { key: 'heroImage', label: 'Hero Image' },
       { key: 'title', label: 'Title' },
+      { key: 'cardTitle', label: 'Card Title' },
       { key: 'menuTitle', label: 'Menu Title' },
       { key: 'slug', label: 'Slug' },
       { key: 'desc', label: 'Description' },
@@ -188,6 +190,7 @@ const SECTION_CONFIGS = {
     ],
     fields: [
       { name: 'title', label: 'Service Title (H1 Page Title)', required: true, fullWidth: true },
+      { name: 'cardTitle', label: 'Service Card Title (Title shown on /services page card & cards grid)', fullWidth: true, hint: 'Short title for /services cards (e.g. Mobile App Development). Leave blank to use full Service Title.' },
       { name: 'menuTitle', label: 'Menu / Dropdown Title (Short name for Navbar e.g. E-Commerce Solutions, Graphic Design)', fullWidth: true, hint: 'Leave blank to use full Service Title in menu' },
       { name: 'slug', label: 'Slug (e.g. web-development)', required: true },
       { name: 'icon', label: 'Service Icon (Image/SVG from Media Library or Lucide Icon Name)', type: 'image', required: true, fullWidth: true, hint: 'Select an SVG/Image from Media Library, upload a new SVG file, or enter a Lucide icon name' },
@@ -897,6 +900,8 @@ export default function AdminDashboard() {
             <DashboardOverview showToast={showToast} onNavigate={setActive} />
           ) : active === 'media' ? (
             <MediaManager showToast={showToast} />
+          ) : active === 'services-page' ? (
+            <ServicesPageEditor showToast={showToast} />
           ) : dbSections.includes(active) ? (
             <DbSection key={active} sectionKey={active} showToast={showToast} />
           ) : (

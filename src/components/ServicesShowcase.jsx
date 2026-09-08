@@ -54,7 +54,7 @@ export default function ServicesShowcase() {
                     </div>
 
                     <h3 className="text-lg sm:text-xl font-extrabold text-ink mb-2 group-hover:text-[#00a4d8] transition-colors">
-                      {s.title}
+                      {s.cardTitle || s.title}
                     </h3>
                     <p className="text-sm text-gray-500 leading-relaxed mb-4 line-clamp-3">
                       {formatInline(s.desc)}

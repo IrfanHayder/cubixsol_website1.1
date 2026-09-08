@@ -5,6 +5,7 @@ const serviceSchema = new mongoose.Schema({
   slug: { type: String, required: true, unique: true },
   heroImage: { type: String },
   title: { type: String, required: true },
+  cardTitle: { type: String },
   menuTitle: { type: String },
   desc: { type: String },
   color: { type: String },

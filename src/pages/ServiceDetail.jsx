@@ -620,7 +620,7 @@ export default function ServiceDetail() {
                         <OtherIcon className="w-5 h-5 object-contain" />
                       </span>
                       <h3 className="font-extrabold text-ink mb-1.5 group-hover:text-[#00a4d8] transition-colors">
-                        {s.title}
+                        {s.cardTitle || s.title}
                       </h3>
                       <p className="text-xs text-gray-500 leading-relaxed line-clamp-2">
                         {s.desc}
