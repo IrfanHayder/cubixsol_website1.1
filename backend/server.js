@@ -159,6 +159,17 @@ const {
   initialSolutions,
   initialProducts,
   initialIndustries,
+  initialProjects,
+  initialTeam,
+  initialFaqs,
+  initialTestimonials,
+  initialBlogs,
+  initialAuthors,
+  initialCategories,
+  initialTags,
+  initialCareers,
+  initialSiteSettings,
+  initialSeoSettings,
 } = require('./seedData');
 
 // Connect to MongoDB & Seed Default Content if Empty
@@ -452,52 +463,69 @@ async function seedInitialData() {
     }
 
     const projectsCount = await Project.countDocuments();
-    if (projectsCount === 0) {
-      await Project.insertMany([
-        { title: 'HomeHub', category: 'Web Development', desc: 'A real estate platform for buying, renting and selling properties with advanced search.', tag: 'Web Development', color: 'from-slate-800 to-slate-950' },
-        { title: 'TaskFlow SaaS', category: 'SaaS', desc: 'A comprehensive project management SaaS for teams to plan, collaborate and deliver.', tag: 'SaaS', color: 'from-indigo-500 to-blue-600' },
-        { title: 'Pawfect Foods', category: 'E-Commerce', desc: 'An e-commerce store for premium pet food and accessories with seamless shopping.', tag: 'E-Commerce', color: 'from-amber-200 to-orange-300' },
-        { title: 'FinGo Mobile App', category: 'Mobile Apps', desc: 'A personal finance app for budgeting, tracking expenses and achieving financial goals.', tag: 'Mobile Apps', color: 'from-blue-600 to-cyan-500' },
-        { title: 'InsightAI', category: 'AI Solutions', desc: 'AI-powered analytics platform that transforms data into actionable business insights.', tag: 'AI Solutions', color: 'from-slate-900 to-purple-950' },
-        { title: 'MediCare Plus', category: 'Web Development', desc: 'A healthcare platform connecting patients with doctors and managing appointments.', tag: 'Healthcare', color: 'from-sky-100 to-blue-200' },
-      ]);
+    if (projectsCount === 0 && initialProjects && initialProjects.length > 0) {
+      await Project.insertMany(initialProjects);
       console.log('Seeded initial Projects data');
     }
 
     const teamCount = await Team.countDocuments();
-    if (teamCount === 0) {
-      await Team.insertMany([
-        { name: 'Fahad Nadeem', role: 'CEO & Founder' },
-        { name: 'Usman Tariq', role: 'CTO' },
-        { name: 'Ayesha Khan', role: 'UI/UX Director' },
-        { name: 'Abdul Rehman', role: 'Lead Developer' },
-        { name: 'Hina Batool', role: 'Project Manager' },
-      ]);
+    if (teamCount === 0 && initialTeam && initialTeam.length > 0) {
+      await Team.insertMany(initialTeam);
       console.log('Seeded initial Team data');
     }
 
     const faqCount = await Faq.countDocuments();
-    if (faqCount === 0) {
-      await Faq.insertMany([
-        { q: 'How quickly will you respond to my inquiry?', a: 'We typically respond to all inquiries within 24 business hours. Urgent requests get prioritized the same day.' },
-        { q: 'Do you offer free consultations?', a: 'Yes. We offer a free, no-obligation consultation to discuss goals, timeline, and whether we are the right fit.' },
-        { q: 'Which engagement model should I choose?', a: 'If scope is clear, project-based works best. For ongoing product work, dedicated teams or staff augmentation are usually more efficient. We help you pick during the discovery call.' },
-        { q: 'What does a typical timeline look like?', a: 'MVPs often ship in 6–12 weeks. Larger platforms take longer and are broken into milestones so you see progress early.' },
-        { q: 'Can you help with ongoing support after delivery?', a: 'Yes. We offer maintenance and support packages — bug fixes, performance monitoring, and feature iterations.' },
-        { q: 'Do you work with startups and enterprises?', a: 'Both. We have helped early-stage founders launch MVPs and larger teams scale existing products with dedicated squads.' },
-      ]);
+    if (faqCount === 0 && initialFaqs && initialFaqs.length > 0) {
+      await Faq.insertMany(initialFaqs);
       console.log('Seeded initial FAQs data');
     }
 
     const testCount = await Testimonial.countDocuments();
-    if (testCount === 0) {
-      await Testimonial.insertMany([
-        { quote: 'Cubixsol felt less like a vendor and more like an extension of our own team. They shipped fast without cutting corners on quality.', name: 'Sarah Malik', role: 'Founder, HomeHub' },
-        { quote: 'Their AI automation work cut our manual ops time by 40%. Communication was clear from kickoff to launch.', name: 'James Carter', role: 'COO, TaskFlow SaaS' },
-        { quote: 'We came in with a rough idea and left with a polished, scalable product. The Cubixsol team asked the right questions early on.', name: 'Ayesha Raza', role: 'CEO, Pawfect Foods' },
-        { quote: 'On-time, on-budget, and genuinely invested in our growth. Our conversion rate jumped within weeks of launch.', name: 'Daniel Osei', role: 'Marketing Director, FinGo' },
-      ]);
+    if (testCount === 0 && initialTestimonials && initialTestimonials.length > 0) {
+      await Testimonial.insertMany(initialTestimonials);
       console.log('Seeded initial Testimonials data');
+    }
+
+    const authorsCount = await Author.countDocuments();
+    if (authorsCount === 0 && initialAuthors && initialAuthors.length > 0) {
+      await Author.insertMany(initialAuthors);
+      console.log('Seeded initial Authors data');
+    }
+
+    const categoriesCount = await Category.countDocuments();
+    if (categoriesCount === 0 && initialCategories && initialCategories.length > 0) {
+      await Category.insertMany(initialCategories);
+      console.log('Seeded initial Categories data');
+    }
+
+    const tagsCount = await Tag.countDocuments();
+    if (tagsCount === 0 && initialTags && initialTags.length > 0) {
+      await Tag.insertMany(initialTags);
+      console.log('Seeded initial Tags data');
+    }
+
+    const blogsCount = await Blog.countDocuments();
+    if (blogsCount === 0 && initialBlogs && initialBlogs.length > 0) {
+      await Blog.insertMany(initialBlogs);
+      console.log('Seeded initial Blogs data');
+    }
+
+    const careersCount = await Career.countDocuments();
+    if (careersCount === 0 && initialCareers && initialCareers.length > 0) {
+      await Career.insertMany(initialCareers);
+      console.log('Seeded initial Careers data');
+    }
+
+    const siteSettingsCount = await SiteSetting.countDocuments();
+    if (siteSettingsCount === 0 && initialSiteSettings && initialSiteSettings.length > 0) {
+      await SiteSetting.insertMany(initialSiteSettings);
+      console.log('Seeded initial SiteSettings data');
+    }
+
+    const seoSettingsCount = await SeoSetting.countDocuments();
+    if (seoSettingsCount === 0 && initialSeoSettings && initialSeoSettings.length > 0) {
+      await SeoSetting.insertMany(initialSeoSettings);
+      console.log('Seeded initial SeoSettings data');
     }
   } catch (err) {
     console.error('Error seeding initial data:', err);
