@@ -60,12 +60,12 @@ function StepCircle({ step, large = false }) {
 
 export default function JourneyPath() {
   return (
-    <section className="py-20 lg:py-28 bg-white overflow-hidden relative">
+    <section className="py-12 lg:py-16 bg-white overflow-hidden relative">
       <div className="absolute top-16 right-1/4 w-16 h-10 rounded-full bg-sky-100/60 blur-sm pointer-events-none" />
       <div className="absolute top-24 right-1/3 w-10 h-6 rounded-full bg-sky-50/80 blur-sm pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Reveal className="text-center mb-14">
+        <Reveal className="text-center mb-10">
           <p className="eyebrow mb-3">How ideas become products</p>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-ink tracking-tight">
             From strategy to shipped work

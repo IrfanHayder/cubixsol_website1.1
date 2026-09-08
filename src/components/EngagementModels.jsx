@@ -35,9 +35,9 @@ const models = [
 
 export default function EngagementModels() {
   return (
-    <section className="bg-ink text-white py-20 lg:py-28">
+    <section className="bg-ink text-white py-14 lg:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Reveal className="text-center max-w-2xl mx-auto mb-14">
+        <Reveal className="text-center max-w-2xl mx-auto mb-10">
           <p className="text-xs font-bold tracking-widest uppercase text-primary-300 mb-3">
             Engagement Models
           </p>

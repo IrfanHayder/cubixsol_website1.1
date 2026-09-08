@@ -4,7 +4,7 @@ import Reveal from './Reveal';
 
 export default function SplitIntro() {
   return (
-    <section className="bg-gray-50 py-20 lg:py-24">
+    <section className="bg-gray-50 py-12 lg:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
           <Reveal className="lg:col-span-7" direction="right">

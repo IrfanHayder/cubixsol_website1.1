@@ -80,13 +80,13 @@ export default function Industries() {
   }, []);
 
   return (
-    <section className="relative bg-[#f8fafc] py-20 lg:py-28 overflow-hidden">
+    <section className="relative bg-[#f8fafc] py-14 lg:py-18 overflow-hidden">
       {/* Background ambient lighting */}
       <div className="pointer-events-none absolute top-0 right-1/4 w-96 h-96 bg-primary-400/10 rounded-full blur-3xl" />
       <div className="pointer-events-none absolute bottom-0 left-1/4 w-96 h-96 bg-cyan-400/10 rounded-full blur-3xl" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Reveal className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
+        <Reveal className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
           <div className="max-w-xl">
             <div className="inline-flex items-center gap-2 bg-primary-50 border border-primary-100/80 px-3 py-1 rounded-full text-xs font-bold text-primary-700 mb-3 shadow-xs">
               <Sparkles className="w-3.5 h-3.5 text-primary-500 animate-pulse" />

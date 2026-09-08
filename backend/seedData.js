@@ -1,4 +1,4 @@
-// Auto-generated seed data from current live database
+// Auto-generated complete seed data from live MongoDB database
 const initialServices = [
   {
     "seo": {
@@ -172,10 +172,10 @@ const initialServices = [
     "slug": "data-migration",
     "heroImage": "/uploads/media-1788760355428-88132272.svg",
     "title": "Data Migration Services for Businesses",
-    "desc": "Move your business data to a new database, cloud platform, application, or website with minimal disruption.",
+    "desc": "Move applications, websites, databases, and business data to modern platforms while protecting data integrity and minimising operational disruption.",
     "color": "text-sky-600 bg-sky-50",
     "gradient": "from-sky-500 to-blue-600",
-    "longDesc": "Cubixsol provides data migration services for planning, data transfer, testing, validation, and post-migration support. Our team reviews your systems and requirements before creating a clear migration plan for your project.\n",
+    "longDesc": "Move your business data to a new database, cloud platform, application, or website with minimal disruption.\n\nCubixsol provides data migration services for planning, data transfer, testing, validation, and post-migration support. Our team reviews your systems and requirements before creating a clear migration plan for your project.\n",
     "features": [
       "Software Migration",
       "Website Migration",
@@ -202,23 +202,33 @@ const initialServices = [
     "faqs": [
       {
         "q": "How much do data migration services cost?",
-        "a": "Data migration costs depend on the amount of data, number of systems, data quality, migration method, integrations, and technical complexity. A simple database migration may need less work than a project involving several applications, legacy systems, or large datasets. We review your requirements before providing an estimate."
+        "a": "Data migration costs depend on the amount of data, number of systems, data quality, migration method, integrations, and technical complexity. A simple database migration may need less work than a project involving several applications, legacy systems, or large datasets. We review your requirements before providing an estimate.",
+        "title": "How much do data migration services cost?",
+        "desc": "Data migration costs depend on the amount of data, number of systems, data quality, migration method, integrations, and technical complexity. A simple database migration may need less work than a project involving several applications, legacy systems, or large datasets. We review your requirements before providing an estimate."
       },
       {
         "q": "Can you migrate data without downtime?",
-        "a": "Some migrations can be completed with little or no downtime, depending on the systems and migration method. We review your current environment and business requirements before selecting a suitable approach. Careful planning, testing, and staged migration can help reduce disruption."
+        "a": "Some migrations can be completed with little or no downtime, depending on the systems and migration method. We review your current environment and business requirements before selecting a suitable approach. Careful planning, testing, and staged migration can help reduce disruption.",
+        "title": "Can you migrate data without downtime?",
+        "desc": "Some migrations can be completed with little or no downtime, depending on the systems and migration method. We review your current environment and business requirements before selecting a suitable approach. Careful planning, testing, and staged migration can help reduce disruption."
       },
       {
         "q": "How do you keep data safe during migration?",
-        "a": "Data safety is considered throughout the migration process. We review the source and target environments, plan the transfer, test the migration, and check the results. Backups, access controls, secure transfer methods, and other safeguards can also be included based on your project requirements."
+        "a": "Data safety is considered throughout the migration process. We review the source and target environments, plan the transfer, test the migration, and check the results. Backups, access controls, secure transfer methods, and other safeguards can also be included based on your project requirements.",
+        "title": "How do you keep data safe during migration?",
+        "desc": "Data safety is considered throughout the migration process. We review the source and target environments, plan the transfer, test the migration, and check the results. Backups, access controls, secure transfer methods, and other safeguards can also be included based on your project requirements."
       },
       {
         "q": "How long does data migration take?",
-        "a": "Migration time depends on the amount of data, number of systems, data quality, integrations, testing requirements, and target environment. A smaller migration may take less time than a project involving several systems or complex data structures. We provide a clearer timeline after reviewing the project scope."
+        "a": "Migration time depends on the amount of data, number of systems, data quality, integrations, testing requirements, and target environment. A smaller migration may take less time than a project involving several systems or complex data structures. We provide a clearer timeline after reviewing the project scope.",
+        "title": "How long does data migration take?",
+        "desc": "Migration time depends on the amount of data, number of systems, data quality, integrations, testing requirements, and target environment. A smaller migration may take less time than a project involving several systems or complex data structures. We provide a clearer timeline after reviewing the project scope."
       },
       {
         "q": "What happens if something goes wrong during migration?",
-        "a": "A rollback plan can help return systems to their previous state if a serious issue occurs. We identify possible risks during planning and test the migration before launch. Rollback options are planned according to your systems, data, and business requirements."
+        "a": "A rollback plan can help return systems to their previous state if a serious issue occurs. We identify possible risks during planning and test the migration before launch. Rollback options are planned according to your systems, data, and business requirements.",
+        "title": "What happens if something goes wrong during migration?",
+        "desc": "A rollback plan can help return systems to their previous state if a serious issue occurs. We identify possible risks during planning and test the migration before launch. Rollback options are planned according to your systems, data, and business requirements."
       }
     ],
     "techDesc": "Our technology stack can include AWS DMS, ETL tools, SQL, Python, and cloud platforms. We choose the tools based on your source system, target environment, data structure, migration method, and technical requirements.\n\nETL tools can help extract, transform, and load data. SQL and Python can support data processing, checks, and migration tasks. AWS DMS can support database migration where it suits the project.\n",
@@ -268,45 +278,65 @@ const initialServices = [
     "subServicesItems": [
       {
         "title": "Our Data Migration Services",
-        "desc": "Our team supports different types of data migration, from individual databases and websites to projects involving several systems. Each service covers the technical work needed to move and check your data in the new environment."
+        "desc": "Our team supports different types of data migration, from individual databases and websites to projects involving several systems. Each service covers the technical work needed to move and check your data in the new environment.",
+        "q": "Our Data Migration Services",
+        "a": "Our team supports different types of data migration, from individual databases and websites to projects involving several systems. Each service covers the technical work needed to move and check your data in the new environment."
       },
       {
         "title": "Database Migration Services",
-        "desc": "We move databases between servers, platforms, and environments while keeping business data accurate and accessible. Our team reviews the existing database, prepares the data, manages the transfer, and checks the new environment. Database migration can involve schema changes, data conversion, compatibility checks, and connections with other systems. We review these requirements before the migration starts."
+        "desc": "We move databases between servers, platforms, and environments while keeping business data accurate and accessible. Our team reviews the existing database, prepares the data, manages the transfer, and checks the new environment. Database migration can involve schema changes, data conversion, compatibility checks, and connections with other systems. We review these requirements before the migration starts.",
+        "q": "Database Migration Services",
+        "a": "We move databases between servers, platforms, and environments while keeping business data accurate and accessible. Our team reviews the existing database, prepares the data, manages the transfer, and checks the new environment. Database migration can involve schema changes, data conversion, compatibility checks, and connections with other systems. We review these requirements before the migration starts."
       },
       {
         "title": "Cloud Migration Services",
-        "desc": "We help businesses move data and workloads to cloud platforms based on their technical and business requirements. Our team reviews data volume, security needs, application connections, infrastructure, and business operations before planning the move. Cloud migration can also involve moving data from older or on-premises systems. We manage the required transfer, testing, and validation stages before the new environment is put into use."
+        "desc": "We help businesses move data and workloads to cloud platforms based on their technical and business requirements. Our team reviews data volume, security needs, application connections, infrastructure, and business operations before planning the move. Cloud migration can also involve moving data from older or on-premises systems. We manage the required transfer, testing, and validation stages before the new environment is put into use.",
+        "q": "Cloud Migration Services",
+        "a": "We help businesses move data and workloads to cloud platforms based on their technical and business requirements. Our team reviews data volume, security needs, application connections, infrastructure, and business operations before planning the move. Cloud migration can also involve moving data from older or on-premises systems. We manage the required transfer, testing, and validation stages before the new environment is put into use."
       },
       {
         "title": "App & Website Migration",
-        "desc": "We migrate application and website data when a business moves to a new platform, hosting environment, or technology stack. The work can include user records, website content, databases, settings, and other important information. Our team checks the new environment before launch to find missing data, broken connections, configuration problems, or other issues that may affect the application or website."
+        "desc": "We migrate application and website data when a business moves to a new platform, hosting environment, or technology stack. The work can include user records, website content, databases, settings, and other important information. Our team checks the new environment before launch to find missing data, broken connections, configuration problems, or other issues that may affect the application or website.",
+        "q": "App & Website Migration",
+        "a": "We migrate application and website data when a business moves to a new platform, hosting environment, or technology stack. The work can include user records, website content, databases, settings, and other important information. Our team checks the new environment before launch to find missing data, broken connections, configuration problems, or other issues that may affect the application or website."
       },
       {
         "title": "SEO Migration",
-        "desc": "Website changes can affect search rankings when URLs, page structures, domains, or platforms change. Our SEO migration service helps keep important search elements in place during the move. We can manage URL mapping, redirects, metadata checks, content reviews, and other technical checks needed during a website migration. These steps help reduce avoidable traffic and ranking problems."
+        "desc": "Website changes can affect search rankings when URLs, page structures, domains, or platforms change. Our SEO migration service helps keep important search elements in place during the move. We can manage URL mapping, redirects, metadata checks, content reviews, and other technical checks needed during a website migration. These steps help reduce avoidable traffic and ranking problems.",
+        "q": "SEO Migration",
+        "a": "Website changes can affect search rankings when URLs, page structures, domains, or platforms change. Our SEO migration service helps keep important search elements in place during the move. We can manage URL mapping, redirects, metadata checks, content reviews, and other technical checks needed during a website migration. These steps help reduce avoidable traffic and ranking problems."
       },
       {
         "title": "Data Validation & Testing",
-        "desc": "Moving data is only one part of a successful migration. Our team checks whether the transferred data is complete, accurate, and usable in the new environment. We compare records, test important functions, review system connections, and look for missing, duplicated, damaged, or incorrectly mapped data. Testing helps confirm that the new system is ready for normal business use."
+        "desc": "Moving data is only one part of a successful migration. Our team checks whether the transferred data is complete, accurate, and usable in the new environment. We compare records, test important functions, review system connections, and look for missing, duplicated, damaged, or incorrectly mapped data. Testing helps confirm that the new system is ready for normal business use.",
+        "q": "Data Validation & Testing",
+        "a": "Moving data is only one part of a successful migration. Our team checks whether the transferred data is complete, accurate, and usable in the new environment. We compare records, test important functions, review system connections, and look for missing, duplicated, damaged, or incorrectly mapped data. Testing helps confirm that the new system is ready for normal business use."
       }
     ],
     "whyChooseItems": [
       {
         "title": "Quality-Focused Migration",
-        "desc": "We focus on accurate data transfer, careful planning, testing, and validation. Each stage is reviewed to help reduce errors and maintain data quality throughout the migration."
+        "desc": "We focus on accurate data transfer, careful planning, testing, and validation. Each stage is reviewed to help reduce errors and maintain data quality throughout the migration.",
+        "q": "Quality-Focused Migration",
+        "a": "We focus on accurate data transfer, careful planning, testing, and validation. Each stage is reviewed to help reduce errors and maintain data quality throughout the migration."
       },
       {
         "title": "Planned Delivery",
-        "desc": "Clear milestones keep the project organised and make progress easier to review. Any changes to the project scope are discussed before work continues."
+        "desc": "Clear milestones keep the project organised and make progress easier to review. Any changes to the project scope are discussed before work continues.",
+        "q": "Planned Delivery",
+        "a": "Clear milestones keep the project organised and make progress easier to review. Any changes to the project scope are discussed before work continues."
       },
       {
         "title": "Transparent Communication",
-        "desc": "You receive clear updates about completed work, current tasks, upcoming milestones, and possible risks. Our team keeps communication simple so you can make informed decisions throughout the project."
+        "desc": "You receive clear updates about completed work, current tasks, upcoming milestones, and possible risks. Our team keeps communication simple so you can make informed decisions throughout the project.",
+        "q": "Transparent Communication",
+        "a": "You receive clear updates about completed work, current tasks, upcoming milestones, and possible risks. Our team keeps communication simple so you can make informed decisions throughout the project."
       },
       {
         "title": "Ongoing Technical Support",
-        "desc": "Our work does not have to end after the migration is complete. We can continue helping with validation, troubleshooting, system changes, and other technical needs after launch."
+        "desc": "Our work does not have to end after the migration is complete. We can continue helping with validation, troubleshooting, system changes, and other technical needs after launch.",
+        "q": "Ongoing Technical Support",
+        "a": "Our work does not have to end after the migration is complete. We can continue helping with validation, troubleshooting, system changes, and other technical needs after launch."
       }
     ],
     "menuTitle": "Data Migration",
@@ -320,7 +350,8 @@ const initialServices = [
     "faqsText": "How much do data migration services cost? | Data migration costs depend on the amount of data, number of systems, data quality, migration method, integrations, and technical complexity. A simple database migration may need less work than a project involving several applications, legacy systems, or large datasets. We review your requirements before providing an estimate.\n\nCan you migrate data without downtime? | Some migrations can be completed with little or no downtime, depending on the systems and migration method. We review your current environment and business requirements before selecting a suitable approach. Careful planning, testing, and staged migration can help reduce disruption.\n\nHow do you keep data safe during migration? | Data safety is considered throughout the migration process. We review the source and target environments, plan the transfer, test the migration, and check the results. Backups, access controls, secure transfer methods, and other safeguards can also be included based on your project requirements.\n\nHow long does data migration take? | Migration time depends on the amount of data, number of systems, data quality, integrations, testing requirements, and target environment. A smaller migration may take less time than a project involving several systems or complex data structures. We provide a clearer timeline after reviewing the project scope.\n\nWhat happens if something goes wrong during migration? | A rollback plan can help return systems to their previous state if a serious issue occurs. We identify possible risks during planning and test the migration before launch. Rollback options are planned according to your systems, data, and business requirements.",
     "ctaPrimaryText": "Start a Project",
     "ctaSecondaryText": "Get a Free Estimate",
-    "whyChooseText": "Quality-Focused Migration | We focus on accurate data transfer, careful planning, testing, and validation. Each stage is reviewed to help reduce errors and maintain data quality throughout the migration.\n\nPlanned Delivery | Clear milestones keep the project organised and make progress easier to review. Any changes to the project scope are discussed before work continues.\n\nTransparent Communication | You receive clear updates about completed work, current tasks, upcoming milestones, and possible risks. Our team keeps communication simple so you can make informed decisions throughout the project.\n\nOngoing Technical Support | Our work does not have to end after the migration is complete. We can continue helping with validation, troubleshooting, system changes, and other technical needs after launch."
+    "whyChooseText": "Quality-Focused Migration | We focus on accurate data transfer, careful planning, testing, and validation. Each stage is reviewed to help reduce errors and maintain data quality throughout the migration.\n\nPlanned Delivery | Clear milestones keep the project organised and make progress easier to review. Any changes to the project scope are discussed before work continues.\n\nTransparent Communication | You receive clear updates about completed work, current tasks, upcoming milestones, and possible risks. Our team keeps communication simple so you can make informed decisions throughout the project.\n\nOngoing Technical Support | Our work does not have to end after the migration is complete. We can continue helping with validation, troubleshooting, system changes, and other technical needs after launch.",
+    "cardTitle": "Data Migration"
   },
   {
     "seo": {
@@ -506,7 +537,7 @@ const initialServices = [
     "slug": "cms-development",
     "heroImage": "/uploads/media-1788760355423-686594247.svg",
     "title": "CMS Development",
-    "desc": "WordPress, Shopify, Magento, and more — CMS builds that are fast to manage and ready to grow.",
+    "desc": "We build a flexible CMS around your workflows, publishing requirements, integrations, and approval processes, so your team can manage content without technical bottlenecks. ",
     "color": "text-violet-600 bg-violet-50",
     "gradient": "from-violet-500 to-purple-600",
     "longDesc": "We build and customize content platforms so your team can publish, sell, and iterate without fighting the CMS. From WordPress and Shopify to Magento, BigCommerce, Joomla, and OpenCart — clean themes, solid plugins, and performance that holds up.",
@@ -543,7 +574,8 @@ const initialServices = [
     "ctaBannerTitle": "Ready for a Scalable CMS Solution?",
     "serviceProcessSteps": [],
     "subServicesItems": [],
-    "whyChooseItems": []
+    "whyChooseItems": [],
+    "cardTitle": "CMS Development"
   },
   {
     "seo": {
@@ -559,7 +591,7 @@ const initialServices = [
     "slug": "api-development-and-integration",
     "heroImage": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&h=750&q=70",
     "title": "API Development & Integration Services",
-    "desc": "Connect your applications, platforms, and business systems with reliable APIs built for your specific requirements.",
+    "desc": "Connect applications, data, payment gateways, and third-party platforms through secure custom APIs and dependable system integrations.",
     "color": "text-indigo-600 bg-indigo-50",
     "gradient": "from-indigo-500 to-violet-600",
     "longDesc": "Connect your applications, platforms, and business systems with reliable APIs built for your specific requirements. Cubixsol provides API development services for businesses seeking secure data exchange, custom integrations, payment connections, and dependable digital products.",
@@ -589,23 +621,33 @@ const initialServices = [
     "faqs": [
       {
         "q": "How much does API development cost?",
-        "a": "API development costs depend on the project scope, API complexity, integrations, security requirements, and existing systems. A simple API usually needs less development work than a project connecting several third-party platforms. Cubixsol can review your requirements and provide a project-specific estimate."
+        "a": "API development costs depend on the project scope, API complexity, integrations, security requirements, and existing systems. A simple API usually needs less development work than a project connecting several third-party platforms. Cubixsol can review your requirements and provide a project-specific estimate.",
+        "title": "How much does API development cost?",
+        "desc": "API development costs depend on the project scope, API complexity, integrations, security requirements, and existing systems. A simple API usually needs less development work than a project connecting several third-party platforms. Cubixsol can review your requirements and provide a project-specific estimate."
       },
       {
         "q": "How long does API development take?",
-        "a": "The timeline depends on the API features, integrations, testing requirements, and technical complexity. A simple API may take less time than a larger integration involving several systems. We can review your requirements first and provide a realistic project timeline."
+        "a": "The timeline depends on the API features, integrations, testing requirements, and technical complexity. A simple API may take less time than a larger integration involving several systems. We can review your requirements first and provide a realistic project timeline.",
+        "title": "How long does API development take?",
+        "desc": "The timeline depends on the API features, integrations, testing requirements, and technical complexity. A simple API may take less time than a larger integration involving several systems. We can review your requirements first and provide a realistic project timeline."
       },
       {
         "q": "What is the difference between REST and GraphQL?",
-        "a": "REST uses different endpoints to handle resources and works well for many common API projects. GraphQL lets applications request the specific data they need through a single API interface. The right choice depends on your application, data structure, frontend requirements, and existing technology."
+        "a": "REST uses different endpoints to handle resources and works well for many common API projects. GraphQL lets applications request the specific data they need through a single API interface. The right choice depends on your application, data structure, frontend requirements, and existing technology.",
+        "title": "What is the difference between REST and GraphQL?",
+        "desc": "REST uses different endpoints to handle resources and works well for many common API projects. GraphQL lets applications request the specific data they need through a single API interface. The right choice depends on your application, data structure, frontend requirements, and existing technology."
       },
       {
         "q": "How do you secure an API?",
-        "a": "API security can include authentication, authorisation, access controls, input validation, secure connections, and proper error handling. We consider security during API planning and development so the required controls are part of the solution from the start."
+        "a": "API security can include authentication, authorisation, access controls, input validation, secure connections, and proper error handling. We consider security during API planning and development so the required controls are part of the solution from the start.",
+        "title": "How do you secure an API?",
+        "desc": "API security can include authentication, authorisation, access controls, input validation, secure connections, and proper error handling. We consider security during API planning and development so the required controls are part of the solution from the start."
       },
       {
         "q": "Can you integrate third-party APIs with an existing application?",
-        "a": "Yes. We can connect existing applications with payment providers, SaaS platforms, databases, and other third-party services. We first review your current application and integration requirements, then plan and develop the required connection."
+        "a": "Yes. We can connect existing applications with payment providers, SaaS platforms, databases, and other third-party services. We first review your current application and integration requirements, then plan and develop the required connection.",
+        "title": "Can you integrate third-party APIs with an existing application?",
+        "desc": "Yes. We can connect existing applications with payment providers, SaaS platforms, databases, and other third-party services. We first review your current application and integration requirements, then plan and develop the required connection."
       }
     ],
     "techDesc": "We select technologies based on your application, existing systems, security needs, and integration requirements. Our API technology stack includes REST, GraphQL, Node.js, OAuth, Stripe, and Postman for building, connecting, testing, and managing API solutions.",
@@ -617,85 +659,109 @@ const initialServices = [
     "ctaBannerTitle": "Ready to Start Your Project?",
     "serviceProcessSteps": [
       {
-        "points": [],
         "stepNumber": "01",
         "title": "Discover",
-        "desc": "We review your application, existing systems, data requirements, users, and integration goals."
+        "desc": "We review your application, existing systems, data requirements, users, and integration goals.",
+        "image": "",
+        "points": []
       },
       {
-        "points": [],
         "stepNumber": "02",
         "title": "Plan",
-        "desc": "We define the API structure, endpoints, data flow, authentication, and technical requirements"
+        "desc": "We define the API structure, endpoints, data flow, authentication, and technical requirements",
+        "image": "",
+        "points": []
       },
       {
-        "points": [],
         "stepNumber": "03",
         "title": "Build",
-        "desc": "Our team develops the API or integration according to the agreed project requirements."
+        "desc": "Our team develops the API or integration according to the agreed project requirements.",
+        "image": "",
+        "points": []
       },
       {
-        "points": [],
         "stepNumber": "04",
         "title": "Test",
-        "desc": "We test requests, responses, authentication, error handling, security, and integration flows."
+        "desc": "We test requests, responses, authentication, error handling, security, and integration flows.",
+        "image": "",
+        "points": []
       },
       {
-        "points": [],
         "stepNumber": "05",
         "title": "Launch & Support",
-        "desc": "We help move the solution into production and provide support for updates, fixes, and future changes."
+        "desc": "We help move the solution into production and provide support for updates, fixes, and future changes.",
+        "image": "",
+        "points": []
       }
     ],
     "subServicesItems": [
       {
         "title": "Custom API Development",
-        "desc": "We build custom APIs for web applications, mobile apps, SaaS products, and internal business systems. Our team plans the API structure, endpoints, data flow, authentication, and business logic based on your project requirements."
+        "desc": "We build custom APIs for web applications, mobile apps, SaaS products, and internal business systems. Our team plans the API structure, endpoints, data flow, authentication, and business logic based on your project requirements.",
+        "q": "Custom API Development",
+        "a": "We build custom APIs for web applications, mobile apps, SaaS products, and internal business systems. Our team plans the API structure, endpoints, data flow, authentication, and business logic based on your project requirements."
       },
       {
         "title": "API Integration",
-        "desc": "Connect your application with third-party platforms, SaaS tools, databases, and other business systems. Our API development and integration services help different systems share data and perform actions within a single connected workflow."
+        "desc": "Connect your application with third-party platforms, SaaS tools, databases, and other business systems. Our API development and integration services help different systems share data and perform actions within a single connected workflow.",
+        "q": "API Integration",
+        "a": "Connect your application with third-party platforms, SaaS tools, databases, and other business systems. Our API development and integration services help different systems share data and perform actions within a single connected workflow."
       },
       {
         "title": "Payment Gateways",
-        "desc": "Connect payment providers such as Stripe with your website or application. We handle API connections for payment requests, transaction responses, payment status updates, and other required payment events."
+        "desc": "Connect payment providers such as Stripe with your website or application. We handle API connections for payment requests, transaction responses, payment status updates, and other required payment events.",
+        "q": "Payment Gateways",
+        "a": "Connect payment providers such as Stripe with your website or application. We handle API connections for payment requests, transaction responses, payment status updates, and other required payment events."
       },
       {
         "title": "Webhooks",
-        "desc": "Webhooks let your application receive updates when an event happens in another system. We can set up webhook connections for payments, transactions, account changes, and other events requiring an automatic response."
+        "desc": "Webhooks let your application receive updates when an event happens in another system. We can set up webhook connections for payments, transactions, account changes, and other events requiring an automatic response.",
+        "q": "Webhooks",
+        "a": "Webhooks let your application receive updates when an event happens in another system. We can set up webhook connections for payments, transactions, account changes, and other events requiring an automatic response."
       },
       {
         "title": "API Security",
-        "desc": "Keep your API and connected data protected with suitable security controls. We work with authentication, authorisation, access controls, input validation, secure connections, and error handling as part of the API development process."
+        "desc": "Keep your API and connected data protected with suitable security controls. We work with authentication, authorisation, access controls, input validation, secure connections, and error handling as part of the API development process.",
+        "q": "API Security",
+        "a": "Keep your API and connected data protected with suitable security controls. We work with authentication, authorisation, access controls, input validation, secure connections, and error handling as part of the API development process."
       }
     ],
     "whyChooseItems": [
       {
         "title": "Quality-Focused Development",
-        "desc": "We build APIs around your product requirements and technical setup. Clean architecture, reliable data handling, proper testing, and clear documentation help keep the API easier to manage."
+        "desc": "We build APIs around your product requirements and technical setup. Clean architecture, reliable data handling, proper testing, and clear documentation help keep the API easier to manage.",
+        "q": "Quality-Focused Development",
+        "a": "We build APIs around your product requirements and technical setup. Clean architecture, reliable data handling, proper testing, and clear documentation help keep the API easier to manage."
       },
       {
         "title": "On-Time Delivery",
-        "desc": "Clear requirements and defined project stages help keep development organised. You can see what is being worked on and what comes next during the project."
+        "desc": "Clear requirements and defined project stages help keep development organised. You can see what is being worked on and what comes next during the project.",
+        "q": "On-Time Delivery",
+        "a": "Clear requirements and defined project stages help keep development organised. You can see what is being worked on and what comes next during the project."
       },
       {
         "title": "Transparent Communication",
-        "desc": "You should know what is happening during development. We keep communication clear and explain important technical decisions without unnecessary complexity."
+        "desc": "You should know what is happening during development. We keep communication clear and explain important technical decisions without unnecessary complexity.",
+        "q": "Transparent Communication",
+        "a": "You should know what is happening during development. We keep communication clear and explain important technical decisions without unnecessary complexity."
       },
       {
         "title": "Ongoing Support",
-        "desc": "APIs often need updates when applications or connected services change. Cubixsol can help with maintenance, integration updates, technical issues, and future improvements after launch."
+        "desc": "APIs often need updates when applications or connected services change. Cubixsol can help with maintenance, integration updates, technical issues, and future improvements after launch.",
+        "q": "Ongoing Support",
+        "a": "APIs often need updates when applications or connected services change. Cubixsol can help with maintenance, integration updates, technical issues, and future improvements after launch."
       }
     ],
     "ctaPrimaryText": "Start a Project",
     "ctaSecondaryText": "Free Estimate",
-    "faqsText": "How much does API development cost? | API development costs depend on the project scope, API complexity, integrations, security requirements, and existing systems. A simple API usually needs less development work than a project connecting several third-party platforms. Cubixsol can review your requirements and provide a project-specific estimate.\nHow long does API development take? | The timeline depends on the API features, integrations, testing requirements, and technical complexity. A simple API may take less time than a larger integration involving several systems. We can review your requirements first and provide a realistic project timeline.\nWhat is the difference between REST and GraphQL? | REST uses different endpoints to handle resources and works well for many common API projects. GraphQL lets applications request the specific data they need through a single API interface. The right choice depends on your application, data structure, frontend requirements, and existing technology.\nHow do you secure an API? | API security can include authentication, authorisation, access controls, input validation, secure connections, and proper error handling. We consider security during API planning and development so the required controls are part of the solution from the start.\nCan you integrate third-party APIs with an existing application? | Yes. We can connect existing applications with payment providers, SaaS platforms, databases, and other third-party services. We first review your current application and integration requirements, then plan and develop the required connection.",
-    "serviceProcessText": "01 | Discover | We review your application, existing systems, data requirements, users, and integration goals.\n02 | Plan | We define the API structure, endpoints, data flow, authentication, and technical requirements\n03 | Build | Our team develops the API or integration according to the agreed project requirements.\n04 | Test | We test requests, responses, authentication, error handling, security, and integration flows.\n05 | Launch & Support | We help move the solution into production and provide support for updates, fixes, and future changes.",
+    "faqsText": "How much does API development cost? | API development costs depend on the project scope, API complexity, integrations, security requirements, and existing systems. A simple API usually needs less development work than a project connecting several third-party platforms. Cubixsol can review your requirements and provide a project-specific estimate.\n\nHow long does API development take? | The timeline depends on the API features, integrations, testing requirements, and technical complexity. A simple API may take less time than a larger integration involving several systems. We can review your requirements first and provide a realistic project timeline.\n\nWhat is the difference between REST and GraphQL? | REST uses different endpoints to handle resources and works well for many common API projects. GraphQL lets applications request the specific data they need through a single API interface. The right choice depends on your application, data structure, frontend requirements, and existing technology.\n\nHow do you secure an API? | API security can include authentication, authorisation, access controls, input validation, secure connections, and proper error handling. We consider security during API planning and development so the required controls are part of the solution from the start.\n\nCan you integrate third-party APIs with an existing application? | Yes. We can connect existing applications with payment providers, SaaS platforms, databases, and other third-party services. We first review your current application and integration requirements, then plan and develop the required connection.",
+    "serviceProcessText": "01 | Discover | We review your application, existing systems, data requirements, users, and integration goals.\n\n02 | Plan | We define the API structure, endpoints, data flow, authentication, and technical requirements\n\n03 | Build | Our team develops the API or integration according to the agreed project requirements.\n\n04 | Test | We test requests, responses, authentication, error handling, security, and integration flows.\n\n05 | Launch & Support | We help move the solution into production and provide support for updates, fixes, and future changes.",
     "serviceProcessTitle": "Our API Development Process",
-    "subServicesText": "Custom API Development | We build custom APIs for web applications, mobile apps, SaaS products, and internal business systems. Our team plans the API structure, endpoints, data flow, authentication, and business logic based on your project requirements.\nAPI Integration | Connect your application with third-party platforms, SaaS tools, databases, and other business systems. Our API development and integration services help different systems share data and perform actions within a single connected workflow.\nPayment Gateways | Connect payment providers such as Stripe with your website or application. We handle API connections for payment requests, transaction responses, payment status updates, and other required payment events.\nWebhooks | Webhooks let your application receive updates when an event happens in another system. We can set up webhook connections for payments, transactions, account changes, and other events requiring an automatic response.\nAPI Security | Keep your API and connected data protected with suitable security controls. We work with authentication, authorisation, access controls, input validation, secure connections, and error handling as part of the API development process.",
+    "subServicesText": "Custom API Development | We build custom APIs for web applications, mobile apps, SaaS products, and internal business systems. Our team plans the API structure, endpoints, data flow, authentication, and business logic based on your project requirements.\n\nAPI Integration | Connect your application with third-party platforms, SaaS tools, databases, and other business systems. Our API development and integration services help different systems share data and perform actions within a single connected workflow.\n\nPayment Gateways | Connect payment providers such as Stripe with your website or application. We handle API connections for payment requests, transaction responses, payment status updates, and other required payment events.\n\nWebhooks | Webhooks let your application receive updates when an event happens in another system. We can set up webhook connections for payments, transactions, account changes, and other events requiring an automatic response.\n\nAPI Security | Keep your API and connected data protected with suitable security controls. We work with authentication, authorisation, access controls, input validation, secure connections, and error handling as part of the API development process.",
     "subServicesTitle": "Our API Development & Integration Services",
-    "whyChooseText": "Quality-Focused Development | We build APIs around your product requirements and technical setup. Clean architecture, reliable data handling, proper testing, and clear documentation help keep the API easier to manage.\nOn-Time Delivery | Clear requirements and defined project stages help keep development organised. You can see what is being worked on and what comes next during the project.\nTransparent Communication | You should know what is happening during development. We keep communication clear and explain important technical decisions without unnecessary complexity.\nOngoing Support | APIs often need updates when applications or connected services change. Cubixsol can help with maintenance, integration updates, technical issues, and future improvements after launch.",
-    "whyChooseTitle": ""
+    "whyChooseText": "Quality-Focused Development | We build APIs around your product requirements and technical setup. Clean architecture, reliable data handling, proper testing, and clear documentation help keep the API easier to manage.\n\nOn-Time Delivery | Clear requirements and defined project stages help keep development organised. You can see what is being worked on and what comes next during the project.\n\nTransparent Communication | You should know what is happening during development. We keep communication clear and explain important technical decisions without unnecessary complexity.\n\nOngoing Support | APIs often need updates when applications or connected services change. Cubixsol can help with maintenance, integration updates, technical issues, and future improvements after launch.",
+    "whyChooseTitle": "",
+    "cardTitle": "API Development Services"
   },
   {
     "seo": {
@@ -711,10 +777,10 @@ const initialServices = [
     "slug": "digital-marketing",
     "heroImage": "/uploads/media-1788760355439-537523465.svg",
     "title": "Digital Marketing Services",
-    "desc": "Cubixsol provides **digital marketing services** to attract qualified traffic, generate stronger leads, and improve customer acquisition across search, paid media, social platforms, and email.",
+    "desc": "Looking for digital marketing services near me? We provide SEO, content, social media, email, and paid advertising through flexible, affordable digital marketing services.",
     "color": "text-amber-600 bg-amber-50",
     "gradient": "from-amber-500 to-yellow-600",
-    "longDesc": "Growth channels that compound. Technical SEO, paid campaigns and content systems aligned to your funnel — measured by leads and revenue, not vanity metrics.",
+    "longDesc": "Cubixsol provides **digital marketing services** to attract qualified traffic, generate stronger leads, and improve customer acquisition across search, paid media, social platforms, and email.\n\nGrowth channels that compound. Technical SEO, paid campaigns and content systems aligned to your funnel — measured by leads and revenue, not vanity metrics.",
     "features": [
       "Search Engine Optimization (SEO)",
       "Social Media Marketing",
@@ -738,23 +804,33 @@ const initialServices = [
     "faqs": [
       {
         "q": "How much do digital marketing services cost?",
-        "a": "Cost depends on the channels, market competition, campaign scope, advertising budget, and level of support required. After the initial audit, Cubixsol recommends a practical scope and explains the cost before work begins."
+        "a": "Cost depends on the channels, market competition, campaign scope, advertising budget, and level of support required. After the initial audit, Cubixsol recommends a practical scope and explains the cost before work begins.",
+        "title": "How much do digital marketing services cost?",
+        "desc": "Cost depends on the channels, market competition, campaign scope, advertising budget, and level of support required. After the initial audit, Cubixsol recommends a practical scope and explains the cost before work begins."
       },
       {
         "q": "How long does digital marketing take to produce results?",
-        "a": "Paid campaigns may start generating traffic and leads soon after launch, while SEO and content usually need more time to build momentum. Timelines also depend on your starting position, competition, budget, and offer."
+        "a": "Paid campaigns may start generating traffic and leads soon after launch, while SEO and content usually need more time to build momentum. Timelines also depend on your starting position, competition, budget, and offer.",
+        "title": "How long does digital marketing take to produce results?",
+        "desc": "Paid campaigns may start generating traffic and leads soon after launch, while SEO and content usually need more time to build momentum. Timelines also depend on your starting position, competition, budget, and offer."
       },
       {
         "q": "Should I invest in SEO or PPC?",
-        "a": "SEO supports long-term organic visibility, while PPC can capture demand more quickly. Many businesses benefit from using both: paid campaigns create immediate reach while SEO develops a sustainable acquisition channel."
+        "a": "SEO supports long-term organic visibility, while PPC can capture demand more quickly. Many businesses benefit from using both: paid campaigns create immediate reach while SEO develops a sustainable acquisition channel.",
+        "title": "Should I invest in SEO or PPC?",
+        "desc": "SEO supports long-term organic visibility, while PPC can capture demand more quickly. Many businesses benefit from using both: paid campaigns create immediate reach while SEO develops a sustainable acquisition channel."
       },
       {
         "q": "What reporting will I receive?",
-        "a": "Reports focus on the metrics connected to your goals, including qualified traffic, conversions, lead quality, acquisition cost, sales, and return on investment. We also explain what changed and what happens next."
+        "a": "Reports focus on the metrics connected to your goals, including qualified traffic, conversions, lead quality, acquisition cost, sales, and return on investment. We also explain what changed and what happens next.",
+        "title": "What reporting will I receive?",
+        "desc": "Reports focus on the metrics connected to your goals, including qualified traffic, conversions, lead quality, acquisition cost, sales, and return on investment. We also explain what changed and what happens next."
       },
       {
         "q": "Do you require long-term contracts?",
-        "a": "Engagement terms depend on the selected services and campaign needs. We define the scope, deliverables, reporting schedule, and contract terms upfront so you can make an informed decision."
+        "a": "Engagement terms depend on the selected services and campaign needs. We define the scope, deliverables, reporting schedule, and contract terms upfront so you can make an informed decision.",
+        "title": "Do you require long-term contracts?",
+        "desc": "Engagement terms depend on the selected services and campaign needs. We define the scope, deliverables, reporting schedule, and contract terms upfront so you can make an informed decision."
       }
     ],
     "techDesc": "We select technologies according to the project’s functionality, performance requirements, integrations, and future roadmap.\n\nThe goal is not to use the newest technology for its own sake. It is to choose a dependable stack that fits your product, supports maintainability, and avoids unnecessary technical complexity.",
@@ -799,45 +875,65 @@ const initialServices = [
     "subServicesItems": [
       {
         "title": "Search Engine Optimization",
-        "desc": "Our digital marketing and SEO services include technical audits, keyword strategy, on-page optimization, content planning, internal linking, and performance tracking. These digital marketing SEO services focus on sustainable traffic and qualified inquiries rather than rankings with little commercial value."
+        "desc": "Our digital marketing and SEO services include technical audits, keyword strategy, on-page optimization, content planning, internal linking, and performance tracking. These digital marketing SEO services focus on sustainable traffic and qualified inquiries rather than rankings with little commercial value.",
+        "q": "Search Engine Optimization",
+        "a": "Our digital marketing and SEO services include technical audits, keyword strategy, on-page optimization, content planning, internal linking, and performance tracking. These digital marketing SEO services focus on sustainable traffic and qualified inquiries rather than rankings with little commercial value."
       },
       {
         "title": "PPC and Google Ads",
-        "desc": "Reach high-intent prospects through carefully structured paid search and display campaigns. We manage targeting, ad copy, landing-page alignment, conversion tracking, bid strategy, and ongoing testing to reduce wasted spend and improve return on ad investment."
+        "desc": "Reach high-intent prospects through carefully structured paid search and display campaigns. We manage targeting, ad copy, landing-page alignment, conversion tracking, bid strategy, and ongoing testing to reduce wasted spend and improve return on ad investment.",
+        "q": "PPC and Google Ads",
+        "a": "Reach high-intent prospects through carefully structured paid search and display campaigns. We manage targeting, ad copy, landing-page alignment, conversion tracking, bid strategy, and ongoing testing to reduce wasted spend and improve return on ad investment."
       },
       {
         "title": "Social Media Marketing",
-        "desc": "We build a consistent presence on the platforms your audience actually uses. Our team plans content, manages publishing, supports paid social campaigns, and reviews engagement data to strengthen awareness and create demand."
+        "desc": "We build a consistent presence on the platforms your audience actually uses. Our team plans content, manages publishing, supports paid social campaigns, and reviews engagement data to strengthen awareness and create demand.",
+        "q": "Social Media Marketing",
+        "a": "We build a consistent presence on the platforms your audience actually uses. Our team plans content, manages publishing, supports paid social campaigns, and reviews engagement data to strengthen awareness and create demand."
       },
       {
         "title": "Content Marketing",
-        "desc": "Give potential customers useful answers at every stage of their journey. We develop content strategies for service pages, landing pages, blogs, lead magnets, and campaign assets that support search visibility, authority, and conversions."
+        "desc": "Give potential customers useful answers at every stage of their journey. We develop content strategies for service pages, landing pages, blogs, lead magnets, and campaign assets that support search visibility, authority, and conversions.",
+        "q": "Content Marketing",
+        "a": "Give potential customers useful answers at every stage of their journey. We develop content strategies for service pages, landing pages, blogs, lead magnets, and campaign assets that support search visibility, authority, and conversions."
       },
       {
         "title": "Email Marketing",
-        "desc": "We help businesses re-engage subscribers and past customers to encourage repeat purchases.  We create segmented campaigns, automated sequences, promotional emails, and retention flows designed around the actions you want recipients to take."
+        "desc": "We help businesses re-engage subscribers and past customers to encourage repeat purchases.  We create segmented campaigns, automated sequences, promotional emails, and retention flows designed around the actions you want recipients to take.",
+        "q": "Email Marketing",
+        "a": "We help businesses re-engage subscribers and past customers to encourage repeat purchases.  We create segmented campaigns, automated sequences, promotional emails, and retention flows designed around the actions you want recipients to take."
       },
       {
         "title": "Local SEO",
-        "desc": "Our local digital marketing services cover location targeting, Google Business Profile optimization, local landing pages, citation consistency, reviews, and local search reporting. Businesses comparing digital marketing services near me can assess our approach through a focused audit and clear campaign plan. For organizations seeking DC digital marketing services, we develop campaigns based on local audience behavior and market demand."
+        "desc": "Our local digital marketing services cover location targeting, Google Business Profile optimization, local landing pages, citation consistency, reviews, and local search reporting. Businesses comparing digital marketing services near me can assess our approach through a focused audit and clear campaign plan. For organizations seeking DC digital marketing services, we develop campaigns based on local audience behavior and market demand.",
+        "q": "Local SEO",
+        "a": "Our local digital marketing services cover location targeting, Google Business Profile optimization, local landing pages, citation consistency, reviews, and local search reporting. Businesses comparing digital marketing services near me can assess our approach through a focused audit and clear campaign plan. For organizations seeking DC digital marketing services, we develop campaigns based on local audience behavior and market demand."
       }
     ],
     "whyChooseItems": [
       {
-        "title": "**Results-focused strategies:**",
-        "desc": "Every recommendation supports a defined traffic, lead, sales, or retention goal."
+        "title": "Results-focused strategies:**",
+        "desc": "Every recommendation supports a defined traffic, lead, sales, or retention goal.",
+        "q": "Results-focused strategies:**",
+        "a": "Every recommendation supports a defined traffic, lead, sales, or retention goal."
       },
       {
-        "title": "**Transparent communication:**",
-        "desc": "You receive clear updates on completed work, campaign performance, and next priorities."
+        "title": "Transparent communication:**",
+        "desc": "You receive clear updates on completed work, campaign performance, and next priorities.",
+        "q": "Transparent communication:**",
+        "a": "You receive clear updates on completed work, campaign performance, and next priorities."
       },
       {
-        "title": "**A dedicated team:**",
-        "desc": "Specialists across search, paid media, content, social, and analytics work toward the same objectives."
+        "title": "A dedicated team:**",
+        "desc": "Specialists across search, paid media, content, social, and analytics work toward the same objectives.",
+        "q": "A dedicated team:**",
+        "a": "Specialists across search, paid media, content, social, and analytics work toward the same objectives."
       },
       {
-        "title": "**ROI-focused decisions: **",
-        "desc": "Budget shifts and campaign changes are guided by evidence, not assumptions or vanity metrics."
+        "title": "ROI-focused decisions: **",
+        "desc": "Budget shifts and campaign changes are guided by evidence, not assumptions or vanity metrics.",
+        "q": "ROI-focused decisions: **",
+        "a": "Budget shifts and campaign changes are guided by evidence, not assumptions or vanity metrics."
       }
     ],
     "ctaPrimaryText": "Get a Free Marketing Audit",
@@ -861,30 +957,41 @@ const initialServices = [
     "businessTypesItems": [
       {
         "title": "Small Businesses",
-        "desc": "Our **digital marketing services for small businesses** prioritize the channels most likely to generate near-term value. Focused campaigns, practical budgets, and clear reporting help smaller teams compete without paying for activity they do not need."
+        "desc": "Our **digital marketing services for small businesses** prioritize the channels most likely to generate near-term value. Focused campaigns, practical budgets, and clear reporting help smaller teams compete without paying for activity they do not need.",
+        "q": "Small Businesses",
+        "a": "Our **digital marketing services for small businesses** prioritize the channels most likely to generate near-term value. Focused campaigns, practical budgets, and clear reporting help smaller teams compete without paying for activity they do not need."
       },
       {
         "title": "B2B Companies",
-        "desc": "Our **B2B digital marketing services** connect search, content, paid media, and lead nurturing with longer sales cycles. Campaigns target relevant decision-makers and support the journey from initial research to sales conversation."
+        "desc": "Our **B2B digital marketing services** connect search, content, paid media, and lead nurturing with longer sales cycles. Campaigns target relevant decision-makers and support the journey from initial research to sales conversation.",
+        "q": "B2B Companies",
+        "a": "Our **B2B digital marketing services** connect search, content, paid media, and lead nurturing with longer sales cycles. Campaigns target relevant decision-makers and support the journey from initial research to sales conversation."
       },
       {
         "title": "Financial Services",
-        "desc": "**Digital marketing for financial services** requires credibility, careful messaging, and close attention to platform and industry requirements. We create campaigns that explain complex offers clearly while supporting trust, lead quality, and responsible customer acquisition."
+        "desc": "**Digital marketing for financial services** requires credibility, careful messaging, and close attention to platform and industry requirements. We create campaigns that explain complex offers clearly while supporting trust, lead quality, and responsible customer acquisition.",
+        "q": "Financial Services",
+        "a": "**Digital marketing for financial services** requires credibility, careful messaging, and close attention to platform and industry requirements. We create campaigns that explain complex offers clearly while supporting trust, lead quality, and responsible customer acquisition."
       },
       {
         "title": "E-Commerce Brands",
-        "desc": "Our **ecommerce digital marketing services** combine product-focused SEO, paid acquisition, remarketing, email automation, and conversion insights. The goal is to attract purchase-ready shoppers, recover missed sales, and increase customer value over time."
+        "desc": "Our **ecommerce digital marketing services** combine product-focused SEO, paid acquisition, remarketing, email automation, and conversion insights. The goal is to attract purchase-ready shoppers, recover missed sales, and increase customer value over time.",
+        "q": "E-Commerce Brands",
+        "a": "Our **ecommerce digital marketing services** combine product-focused SEO, paid acquisition, remarketing, email automation, and conversion insights. The goal is to attract purchase-ready shoppers, recover missed sales, and increase customer value over time."
       },
       {
         "title": "Home Service Providers",
-        "desc": "Our approach to **home services digital marketing** focuses on local intent, service-area visibility, calls, quote requests, and booked jobs. SEO, paid search, and location-focused landing pages help customers find the right service when demand is highest."
+        "desc": "Our approach to **home services digital marketing** focuses on local intent, service-area visibility, calls, quote requests, and booked jobs. SEO, paid search, and location-focused landing pages help customers find the right service when demand is highest.",
+        "q": "Home Service Providers",
+        "a": "Our approach to **home services digital marketing** focuses on local intent, service-area visibility, calls, quote requests, and booked jobs. SEO, paid search, and location-focused landing pages help customers find the right service when demand is highest."
       }
     ],
     "businessTypesTitle": "Digital Marketing for Your Business",
     "pricingSectionText": "**Affordable digital marketing services** should reduce unnecessary spending without cutting the work that drives performance. Cubixsol recommends channels and deliverables according to your goals, competitive environment, and available budget, then explains where the investment goes. Agencies can also use our **white-label digital marketing services** to expand delivery capacity while keeping client relationships and branding under their control.",
     "pricingSectionTitle": "Affordable, Transparent Pricing",
     "ctaBannerEyebrow": "SCALE YOUR QUALIFIED TRAFFIC",
-    "businessTypesText": "Small Businesses | Our **digital marketing services for small businesses** prioritize the channels most likely to generate near-term value. Focused campaigns, practical budgets, and clear reporting help smaller teams compete without paying for activity they do not need.\n\nB2B Companies | Our **B2B digital marketing services** connect search, content, paid media, and lead nurturing with longer sales cycles. Campaigns target relevant decision-makers and support the journey from initial research to sales conversation.\n\nFinancial Services | **Digital marketing for financial services** requires credibility, careful messaging, and close attention to platform and industry requirements. We create campaigns that explain complex offers clearly while supporting trust, lead quality, and responsible customer acquisition.\n\nE-Commerce Brands | Our **ecommerce digital marketing services** combine product-focused SEO, paid acquisition, remarketing, email automation, and conversion insights. The goal is to attract purchase-ready shoppers, recover missed sales, and increase customer value over time.\n\nHome Service Providers | Our approach to **home services digital marketing** focuses on local intent, service-area visibility, calls, quote requests, and booked jobs. SEO, paid search, and location-focused landing pages help customers find the right service when demand is highest."
+    "businessTypesText": "Small Businesses | Our **digital marketing services for small businesses** prioritize the channels most likely to generate near-term value. Focused campaigns, practical budgets, and clear reporting help smaller teams compete without paying for activity they do not need.\n\nB2B Companies | Our **B2B digital marketing services** connect search, content, paid media, and lead nurturing with longer sales cycles. Campaigns target relevant decision-makers and support the journey from initial research to sales conversation.\n\nFinancial Services | **Digital marketing for financial services** requires credibility, careful messaging, and close attention to platform and industry requirements. We create campaigns that explain complex offers clearly while supporting trust, lead quality, and responsible customer acquisition.\n\nE-Commerce Brands | Our **ecommerce digital marketing services** combine product-focused SEO, paid acquisition, remarketing, email automation, and conversion insights. The goal is to attract purchase-ready shoppers, recover missed sales, and increase customer value over time.\n\nHome Service Providers | Our approach to **home services digital marketing** focuses on local intent, service-area visibility, calls, quote requests, and booked jobs. SEO, paid search, and location-focused landing pages help customers find the right service when demand is highest.",
+    "cardTitle": "Digital Marketing Services"
   },
   {
     "seo": {
@@ -1681,7 +1788,7 @@ const initialServices = [
     "slug": "ui-ux-designing",
     "heroImage": "/uploads/media-1788439771583-988230600.svg",
     "title": "UI/UX Design Services for Web and Mobile Applications ",
-    "desc": "Turn your website, app, or digital product idea into a clear and easy-to-use experience.",
+    "desc": "Transform complex user journeys into accessible, engaging interfaces through user research, wireframes, interactive prototypes, and usability-focused product design.",
     "color": "text-pink-500 bg-pink-50",
     "gradient": "from-pink-500 to-fuchsia-600",
     "longDesc": "Turn your website, app, or digital product idea into a clear and easy-to-use experience. Cubixsol provides UI/UX design services for websites, web apps, mobile apps, and digital products. Our team handles user research, wireframes, interface design, prototyping, testing, and design handoff. We help businesses plan clear user flows, organize content, and create consistent interfaces across their products.",
@@ -1810,15 +1917,16 @@ const initialServices = [
     ],
     "ctaPrimaryText": "Start a Project",
     "ctaSecondaryText": "Get a Free Estimate",
-    "faqsText": "How much do UI/UX design services cost? | The cost depends on the product type, number of screens, design complexity, research needs, and project scope. A simple website usually requires less design work than a large web application or mobile app with multiple user flows. We review your requirements before providing an estimate.\nWhat is the UI/UX design process? | Our process includes five main stages: Discover, Plan, Build, Test, and Launch and Support. The work included in each stage depends on your product, existing designs, features, and project requirements.\nWhat is the difference between UI/UX design and development? | UX design covers how users move through a product and complete tasks. UI design covers the visual parts of the interface, such as layouts, buttons, forms, and other elements. Development turns the approved design into a working website, app, or digital product.\nHow many design revisions do you offer? | Revision rounds depend on the project scope and service agreed at the start. We discuss the revision process before work begins so you know what is included in your project.\nWhat will I receive when the project is complete? | Your deliverables depend on the work agreed for the project. They may include user flows, wireframes, UI designs, clickable prototypes, design system components, and final design files for development. We confirm the final deliverables before the project begins.",
+    "faqsText": "How much do UI/UX design services cost? | The cost depends on the product type, number of screens, design complexity, research needs, and project scope. A simple website usually requires less design work than a large web application or mobile app with multiple user flows. We review your requirements before providing an estimate.\n\nWhat is the UI/UX design process? | Our process includes five main stages: Discover, Plan, Build, Test, and Launch and Support. The work included in each stage depends on your product, existing designs, features, and project requirements.\n\nWhat is the difference between UI/UX design and development? | UX design covers how users move through a product and complete tasks. UI design covers the visual parts of the interface, such as layouts, buttons, forms, and other elements. Development turns the approved design into a working website, app, or digital product.\n\nHow many design revisions do you offer? | Revision rounds depend on the project scope and service agreed at the start. We discuss the revision process before work begins so you know what is included in your project.\n\nWhat will I receive when the project is complete? | Your deliverables depend on the work agreed for the project. They may include user flows, wireframes, UI designs, clickable prototypes, design system components, and final design files for development. We confirm the final deliverables before the project begins.",
     "menuTitle": "UI/UX",
     "serviceProcessIntro": "1. **Discover**\nWe start by understanding your product, users, business goals, main features, and current design issues. Early discovery helps us define what the design needs to solve.\n2. **Plan**\nOur team maps user flows, organises information, and plans the main screens. We may create wireframes to agree on the layout and structure before detailed design begins.\n3. **Build**\nWe create the interface designs, reusable components, and prototypes based on the approved plan. Each screen follows the same design rules to keep the product consistent.\n4. **Test**\nWe review important screens and user flows to find issues that could make the product difficult to use. We then make the required design changes based on testing and feedback.\n5. **Launch and Support**\nWe prepare the final design files and supporting information for your development team. We can also support new screens, feature updates, and design changes after the initial project.",
     "serviceProcessTitle": "Our UI/UX Design Process",
     "subServicesIntro": "Our UI/UX design team works on new products, existing applications, and redesign projects. Each service can support a specific design need or form part of a wider product design project.",
-    "subServicesText": "UI Design | We design the visual parts of your product, including layouts, buttons, menus, forms, typography, and other interface elements. Each screen is planned around the information users need and the actions they need to take. Our team also keeps common elements consistent across screens so users can move through the product more easily.\nUX Research | We review your users, business goals, product requirements, and existing user experience before detailed design begins. Research can help identify confusing steps, missing information, and problems in the current user flow. Our findings help shape the structure of the product and guide later design decisions.\nWeb App Design | We design web applications such as SaaS platforms, dashboards, customer portals, and business tools. Our team plans the navigation, layouts, forms, tables, and other screens around the tasks users need to complete. Each part of the interface is organized to help users find information and complete actions without unnecessary steps.\nMobile App Design | Our mobile app design services cover screen layouts, navigation, user flows, buttons, forms, and touch-based interactions. We consider the smaller screen size and how users interact with the app on mobile devices. We can design a new mobile application or improve an existing app where users face navigation or usability problems.\nDesign Systems | We create reusable design components, styles, and patterns for your product. A design system gives designers and developers a shared set of rules for creating consistent screens and features. It also makes future design work easier when your product needs new screens or updates.\nPrototyping | We create clickable prototypes to show how users will move through your product. Prototypes can cover a single feature, a group of screens, or a complete user flow. You can review the proposed experience before development starts and make changes before the final design is handed over.",
+    "subServicesText": "UI Design | We design the visual parts of your product, including layouts, buttons, menus, forms, typography, and other interface elements. Each screen is planned around the information users need and the actions they need to take. Our team also keeps common elements consistent across screens so users can move through the product more easily.\n\nUX Research | We review your users, business goals, product requirements, and existing user experience before detailed design begins. Research can help identify confusing steps, missing information, and problems in the current user flow. Our findings help shape the structure of the product and guide later design decisions.\n\nWeb App Design | We design web applications such as SaaS platforms, dashboards, customer portals, and business tools. Our team plans the navigation, layouts, forms, tables, and other screens around the tasks users need to complete. Each part of the interface is organized to help users find information and complete actions without unnecessary steps.\n\nMobile App Design | Our mobile app design services cover screen layouts, navigation, user flows, buttons, forms, and touch-based interactions. We consider the smaller screen size and how users interact with the app on mobile devices. We can design a new mobile application or improve an existing app where users face navigation or usability problems.\n\nDesign Systems | We create reusable design components, styles, and patterns for your product. A design system gives designers and developers a shared set of rules for creating consistent screens and features. It also makes future design work easier when your product needs new screens or updates.\n\nPrototyping | We create clickable prototypes to show how users will move through your product. Prototypes can cover a single feature, a group of screens, or a complete user flow. You can review the proposed experience before development starts and make changes before the final design is handed over.",
     "subServicesTitle": "Our UI/UX Design Services",
-    "whyChooseText": "Quality-Focused Design | We focus on clear layouts, simple navigation, consistent interfaces, and practical user flows. Each screen has a clear purpose and supports the tasks users need to complete.\nPlanned Delivery | We divide the work into clear stages so you can review progress throughout the project. If requirements change, we discuss the effect on the design scope and delivery plan before moving forward.\nTransparent Communication | You receive clear updates on completed work, current tasks, upcoming steps, and any issues that need your input. Regular communication keeps the project aligned with your requirements.\nOngoing Design Support | Your design needs can change as your product grows. We can support new features, additional screens, design updates, and changes to your existing design system after the initial project.",
-    "whyChooseTitle": "Why Choose Cubixsol?"
+    "whyChooseText": "Quality-Focused Design | We focus on clear layouts, simple navigation, consistent interfaces, and practical user flows. Each screen has a clear purpose and supports the tasks users need to complete.\n\nPlanned Delivery | We divide the work into clear stages so you can review progress throughout the project. If requirements change, we discuss the effect on the design scope and delivery plan before moving forward.\n\nTransparent Communication | You receive clear updates on completed work, current tasks, upcoming steps, and any issues that need your input. Regular communication keeps the project aligned with your requirements.\n\nOngoing Design Support | Your design needs can change as your product grows. We can support new features, additional screens, design updates, and changes to your existing design system after the initial project.",
+    "whyChooseTitle": "Why Choose Cubixsol?",
+    "cardTitle": "UI UX Design Services"
   },
   {
     "seo": {
@@ -2149,7 +2257,7 @@ const initialServices = [
     "slug": "mobile-app-development",
     "heroImage": "/uploads/media-1788439771557-360010811.svg",
     "title": "Mobile App Development Services Built Around Your Business Goals",
-    "desc": "Cubixsol provides end-to-end mobile app development services to turn your app idea into a reliable digital product.",
+    "desc": "Launch native or cross-platform applications for iOS and Android with intuitive interfaces, reliable performance, and scalable architecture.",
     "color": "text-emerald-600 bg-emerald-50",
     "gradient": "from-emerald-500 to-teal-600",
     "longDesc": "Cubixsol provides end-to-end mobile app development services to turn your app idea into a reliable digital product. We cover product planning, interface design, development, testing, launch, and ongoing improvement.",
@@ -2223,41 +2331,59 @@ const initialServices = [
     "subServicesItems": [
       {
         "title": "iOS App Development",
-        "desc": "We develop iPhone and iPad applications with Swift and Apple-native technologies. Our developers create intuitive interfaces, stable functionality, and secure integrations while following Apple’s technical and App Store requirements."
+        "desc": "We develop iPhone and iPad applications with Swift and Apple-native technologies. Our developers create intuitive interfaces, stable functionality, and secure integrations while following Apple’s technical and App Store requirements.",
+        "q": "iOS App Development",
+        "a": "We develop iPhone and iPad applications with Swift and Apple-native technologies. Our developers create intuitive interfaces, stable functionality, and secure integrations while following Apple’s technical and App Store requirements."
       },
       {
         "title": "Android App Development",
-        "desc": "Our Android developers build applications for smartphones, tablets, and other Android devices. We use Kotlin and modern Android frameworks to support strong performance, broad device compatibility, and maintainable code."
+        "desc": "Our Android developers build applications for smartphones, tablets, and other Android devices. We use Kotlin and modern Android frameworks to support strong performance, broad device compatibility, and maintainable code.",
+        "q": "Android App Development",
+        "a": "Our Android developers build applications for smartphones, tablets, and other Android devices. We use Kotlin and modern Android frameworks to support strong performance, broad device compatibility, and maintainable code."
       },
       {
         "title": "MVP App Development",
-        "desc": "We help startups and product teams convert ideas into focused minimum viable products. The process prioritises essential features, validates key assumptions, and creates a practical foundation for future releases without overloading the first version."
+        "desc": "We help startups and product teams convert ideas into focused minimum viable products. The process prioritises essential features, validates key assumptions, and creates a practical foundation for future releases without overloading the first version.",
+        "q": "MVP App Development",
+        "a": "We help startups and product teams convert ideas into focused minimum viable products. The process prioritises essential features, validates key assumptions, and creates a practical foundation for future releases without overloading the first version."
       },
       {
         "title": "Cross-Platform App Development",
-        "desc": "Our cross platform app development services help businesses reach iOS and Android users through a coordinated codebase. This approach can reduce duplicate development work, simplify feature management, and support a consistent experience across both platforms."
+        "desc": "Our cross platform app development services help businesses reach iOS and Android users through a coordinated codebase. This approach can reduce duplicate development work, simplify feature management, and support a consistent experience across both platforms.",
+        "q": "Cross-Platform App Development",
+        "a": "Our cross platform app development services help businesses reach iOS and Android users through a coordinated codebase. This approach can reduce duplicate development work, simplify feature management, and support a consistent experience across both platforms."
       },
       {
         "title": "Mobile Apps for Fintech and Healthcare",
-        "desc": "Our fintech mobile app development services support products such as digital wallets, payment platforms, financial dashboards, lending systems, and account management apps. We plan each solution around secure data handling, dependable integrations, clear user journeys, and applicable compliance requirements."
+        "desc": "Our fintech mobile app development services support products such as digital wallets, payment platforms, financial dashboards, lending systems, and account management apps. We plan each solution around secure data handling, dependable integrations, clear user journeys, and applicable compliance requirements.",
+        "q": "Mobile Apps for Fintech and Healthcare",
+        "a": "Our fintech mobile app development services support products such as digital wallets, payment platforms, financial dashboards, lending systems, and account management apps. We plan each solution around secure data handling, dependable integrations, clear user journeys, and applicable compliance requirements."
       }
     ],
     "whyChooseItems": [
       {
         "title": "Quality-Focused Development",
-        "desc": "Code reviews, structured testing, and clear technical standards help us create stable applications that remain easier to maintain and improve."
+        "desc": "Code reviews, structured testing, and clear technical standards help us create stable applications that remain easier to maintain and improve.",
+        "q": "Quality-Focused Development",
+        "a": "Code reviews, structured testing, and clear technical standards help us create stable applications that remain easier to maintain and improve."
       },
       {
         "title": "Organised, On-Time Delivery",
-        "desc": "Defined milestones and focused development cycles keep the project moving. Regular progress reviews help identify delays early and protect delivery priorities."
+        "desc": "Defined milestones and focused development cycles keep the project moving. Regular progress reviews help identify delays early and protect delivery priorities.",
+        "q": "Organised, On-Time Delivery",
+        "a": "Defined milestones and focused development cycles keep the project moving. Regular progress reviews help identify delays early and protect delivery priorities."
       },
       {
         "title": "Transparent Communication",
-        "desc": "You receive clear updates on scope, progress, technical decisions, and upcoming work. Our team discusses changes before they affect the budget or timeline."
+        "desc": "You receive clear updates on scope, progress, technical decisions, and upcoming work. Our team discusses changes before they affect the budget or timeline.",
+        "q": "Transparent Communication",
+        "a": "You receive clear updates on scope, progress, technical decisions, and upcoming work. Our team discusses changes before they affect the budget or timeline."
       },
       {
         "title": "Ongoing Technical Support",
-        "desc": "Launch marks the start of continuous product improvement. We can monitor the application, resolve issues, update dependencies, improve performance, and develop new features as user needs change."
+        "desc": "Launch marks the start of continuous product improvement. We can monitor the application, resolve issues, update dependencies, improve performance, and develop new features as user needs change.",
+        "q": "Ongoing Technical Support",
+        "a": "Launch marks the start of continuous product improvement. We can monitor the application, resolve issues, update dependencies, improve performance, and develop new features as user needs change."
       }
     ],
     "serviceProcessText": "01 | Discover | We define the product goals, target users, essential features, technical requirements, and success measures.\n\n02 | Plan | Our team maps user journeys, project scope, system architecture, delivery milestones, and required integrations.\n\n03 | Build | Designers and developers create the interface, application logic, APIs, and backend systems through organised development cycles.\n\n04 | Test | We test functionality, usability, compatibility, performance, and security across relevant devices and operating-system versions.\n\n05 | Launch and Support | Our team prepares the application for release, supports store submission, monitors performance, and plans future improvements.",
@@ -2266,7 +2392,8 @@ const initialServices = [
     "subServicesTitle": "Our Mobile App Development Services",
     "whyChooseText": "Quality-Focused Development | Code reviews, structured testing, and clear technical standards help us create stable applications that remain easier to maintain and improve.\n\nOrganised, On-Time Delivery | Defined milestones and focused development cycles keep the project moving. Regular progress reviews help identify delays early and protect delivery priorities.\n\nTransparent Communication | You receive clear updates on scope, progress, technical decisions, and upcoming work. Our team discusses changes before they affect the budget or timeline.\n\nOngoing Technical Support | Launch marks the start of continuous product improvement. We can monitor the application, resolve issues, update dependencies, improve performance, and develop new features as user needs change.",
     "whyChooseTitle": "Why Choose Cubixsol?",
-    "menuTitle": "Mobile App"
+    "menuTitle": "Mobile App",
+    "cardTitle": "Mobile App Development"
   },
   {
     "seo": {
@@ -2285,7 +2412,7 @@ const initialServices = [
     "desc": "Turn your idea into a fast, secure, and scalable digital product with Cubixsol's custom web development services. We design and develop responsive websites, e-commerce platforms, and web applications personalized to your users, business goals, and technical requirements.",
     "color": "text-blue-600 bg-blue-50",
     "gradient": "from-blue-500 to-cyan-600",
-    "longDesc": "We deliver custom website development services across the entire development lifecycle. We plan your project, design the user experience, develop the frontend and backend, test every feature, deploy the website, and provide ongoing support. We build each solution around your business operations and your customers’ needs without limiting you to a restrictive template. ",
+    "longDesc": "Turn your idea into a fast, secure, and scalable digital product with Cubixsol's custom web development services. We design and develop responsive websites, e-commerce platforms, and web applications personalized to your users, business goals, and technical requirements.\n\nWe deliver custom website development services across the entire development lifecycle. We plan your project, design the user experience, develop the frontend and backend, test every feature, deploy the website, and provide ongoing support. We build each solution around your business operations and your customers’ needs without limiting you to a restrictive template. ",
     "features": [
       "Responsive & mobile-first layouts",
       "SEO-friendly architecture",
@@ -2309,77 +2436,100 @@ const initialServices = [
     "faqs": [
       {
         "q": "How much does custom web development cost?",
-        "a": "The cost depends on the website’s size, design complexity, required features, integrations, content needs, and technology stack. A focused business website costs less than a custom portal, e-commerce platform, or SaaS application."
+        "a": "The cost depends on the website’s size, design complexity, required features, integrations, content needs, and technology stack. A focused business website costs less than a custom portal, e-commerce platform, or SaaS application.",
+        "title": "How much does custom web development cost?",
+        "desc": "The cost depends on the website’s size, design complexity, required features, integrations, content needs, and technology stack. A focused business website costs less than a custom portal, e-commerce platform, or SaaS application."
       },
       {
         "q": "How long does it take to develop a custom website?",
-        "a": "A focused business website may take approximately four to eight weeks, while a complex web application can require several months. The timeline depends on scope, feedback cycles, integrations, content readiness, testing requirements, and the speed of approvals."
+        "a": "A focused business website may take approximately four to eight weeks, while a complex web application can require several months. The timeline depends on scope, feedback cycles, integrations, content readiness, testing requirements, and the speed of approvals.",
+        "title": "How long does it take to develop a custom website?",
+        "desc": "A focused business website may take approximately four to eight weeks, while a complex web application can require several months. The timeline depends on scope, feedback cycles, integrations, content readiness, testing requirements, and the speed of approvals."
       },
       {
         "q": "Which technologies do you use for web development?",
-        "a": "We work with technologies such as React, Next.js, TypeScript, Node.js, Laravel, WordPress, APIs, databases, and AWS. We recommend the stack after reviewing your functionality, performance requirements, existing systems, and long-term plans."
+        "a": "We work with technologies such as React, Next.js, TypeScript, Node.js, Laravel, WordPress, APIs, databases, and AWS. We recommend the stack after reviewing your functionality, performance requirements, existing systems, and long-term plans.",
+        "title": "Which technologies do you use for web development?",
+        "desc": "We work with technologies such as React, Next.js, TypeScript, Node.js, Laravel, WordPress, APIs, databases, and AWS. We recommend the stack after reviewing your functionality, performance requirements, existing systems, and long-term plans."
       },
       {
         "q": "Do you provide website maintenance after launch?",
-        "a": "Yes. Post-launch support can include security updates, bug fixes, performance monitoring, backups, feature improvements, content changes, and compatibility updates."
+        "a": "Yes. Post-launch support can include security updates, bug fixes, performance monitoring, backups, feature improvements, content changes, and compatibility updates.",
+        "title": "Do you provide website maintenance after launch?",
+        "desc": "Yes. Post-launch support can include security updates, bug fixes, performance monitoring, backups, feature improvements, content changes, and compatibility updates."
       },
       {
         "q": "Should I choose a custom website or a template?",
-        "a": "A template may work for a simple website with standard requirements and a limited budget. Custom development is the stronger choice when you need unique functionality, integrations, greater design control, scalability, or workflows that templates cannot support effectively."
+        "a": "A template may work for a simple website with standard requirements and a limited budget. Custom development is the stronger choice when you need unique functionality, integrations, greater design control, scalability, or workflows that templates cannot support effectively.",
+        "title": "Should I choose a custom website or a template?",
+        "desc": "A template may work for a simple website with standard requirements and a limited budget. Custom development is the stronger choice when you need unique functionality, integrations, greater design control, scalability, or workflows that templates cannot support effectively."
       }
     ],
     "techDesc": "We select technologies according to the project’s functionality, performance requirements, integrations, and future roadmap. Our web development stack includes React, Next.js, TypeScript, Node.js, Laravel, WordPress, relational and non-relational databases, REST APIs, and AWS cloud infrastructure.\n\nThe goal is not to use the newest technology for its own sake. It is to choose a dependable stack that fits your product, supports maintainability, and avoids unnecessary technical complexity.",
     "techTitle": "Technologies We Use",
-    "faqsText": "How much does custom web development cost? | The cost depends on the website’s size, design complexity, required features, integrations, content needs, and technology stack. A focused business website costs less than a custom portal, e-commerce platform, or SaaS application.\nHow long does it take to develop a custom website? | A focused business website may take approximately four to eight weeks, while a complex web application can require several months. The timeline depends on scope, feedback cycles, integrations, content readiness, testing requirements, and the speed of approvals.\nWhich technologies do you use for web development? | We work with technologies such as React, Next.js, TypeScript, Node.js, Laravel, WordPress, APIs, databases, and AWS. We recommend the stack after reviewing your functionality, performance requirements, existing systems, and long-term plans.\nDo you provide website maintenance after launch? | Yes. Post-launch support can include security updates, bug fixes, performance monitoring, backups, feature improvements, content changes, and compatibility updates.\nShould I choose a custom website or a template? | A template may work for a simple website with standard requirements and a limited budget. Custom development is the stronger choice when you need unique functionality, integrations, greater design control, scalability, or workflows that templates cannot support effectively.",
+    "faqsText": "How much does custom web development cost? | The cost depends on the website’s size, design complexity, required features, integrations, content needs, and technology stack. A focused business website costs less than a custom portal, e-commerce platform, or SaaS application.\n\nHow long does it take to develop a custom website? | A focused business website may take approximately four to eight weeks, while a complex web application can require several months. The timeline depends on scope, feedback cycles, integrations, content readiness, testing requirements, and the speed of approvals.\n\nWhich technologies do you use for web development? | We work with technologies such as React, Next.js, TypeScript, Node.js, Laravel, WordPress, APIs, databases, and AWS. We recommend the stack after reviewing your functionality, performance requirements, existing systems, and long-term plans.\n\nDo you provide website maintenance after launch? | Yes. Post-launch support can include security updates, bug fixes, performance monitoring, backups, feature improvements, content changes, and compatibility updates.\n\nShould I choose a custom website or a template? | A template may work for a simple website with standard requirements and a limited budget. Custom development is the stronger choice when you need unique functionality, integrations, greater design control, scalability, or workflows that templates cannot support effectively.",
     "whyChooseItems": [
       {
         "title": "Performance-Focused Development",
-        "desc": "We use clean code, optimized assets, responsive layouts, and practical performance testing to create websites that load quickly and work smoothly across devices."
+        "desc": "We use clean code, optimized assets, responsive layouts, and practical performance testing to create websites that load quickly and work smoothly across devices.",
+        "q": "Performance-Focused Development",
+        "a": "We use clean code, optimized assets, responsive layouts, and practical performance testing to create websites that load quickly and work smoothly across devices."
       },
       {
         "title": "Security Built into Development",
-        "desc": "We prioritize security throughout the project rather than treating it as an afterthought. We implement secure authentication, access permissions, data-handling practices, dependency management, and deployment controls based on your solution’s requirements."
+        "desc": "We prioritize security throughout the project rather than treating it as an afterthought. We implement secure authentication, access permissions, data-handling practices, dependency management, and deployment controls based on your solution’s requirements.",
+        "q": "Security Built into Development",
+        "a": "We prioritize security throughout the project rather than treating it as an afterthought. We implement secure authentication, access permissions, data-handling practices, dependency management, and deployment controls based on your solution’s requirements."
       },
       {
         "title": "SEO-Ready Foundations",
-        "desc": "Your website is developed with clean structure, responsive design, crawlable content, metadata controls, and performance fundamentals. These technical foundations make it easier for your SEO strategy to produce results after launch."
+        "desc": "Your website is developed with clean structure, responsive design, crawlable content, metadata controls, and performance fundamentals. These technical foundations make it easier for your SEO strategy to produce results after launch.",
+        "q": "SEO-Ready Foundations",
+        "a": "Your website is developed with clean structure, responsive design, crawlable content, metadata controls, and performance fundamentals. These technical foundations make it easier for your SEO strategy to produce results after launch."
       },
       {
         "title": "Structured, Transparent Delivery",
-        "desc": "Clear milestones, defined deliverables, regular progress updates, and staged reviews keep the project moving and reduce avoidable surprises. You know what is being developed, what has been completed, and what comes next."
+        "desc": "Clear milestones, defined deliverables, regular progress updates, and staged reviews keep the project moving and reduce avoidable surprises. You know what is being developed, what has been completed, and what comes next.",
+        "q": "Structured, Transparent Delivery",
+        "a": "Clear milestones, defined deliverables, regular progress updates, and staged reviews keep the project moving and reduce avoidable surprises. You know what is being developed, what has been completed, and what comes next."
       }
     ],
     "whyChooseTitle": "Why Choose Cubixsol for Web Development?",
     "serviceProcessSteps": [
       {
-        "points": [],
         "stepNumber": "01",
         "title": "Discovery",
-        "desc": "We clarify your goals, target users, technical requirements, required integrations, project scope, and measures of success."
+        "desc": "We clarify your goals, target users, technical requirements, required integrations, project scope, and measures of success.",
+        "image": "",
+        "points": []
       },
       {
-        "points": [],
         "stepNumber": "02",
         "title": "Design",
-        "desc": "Our team plans the user journey, information architecture, wireframes, and interface design before development begins."
+        "desc": "Our team plans the user journey, information architecture, wireframes, and interface design before development begins.",
+        "image": "",
+        "points": []
       },
       {
-        "points": [],
         "stepNumber": "03",
         "title": "Development",
-        "desc": "Frontend and backend developers convert the approved designs and requirements into a functional, scalable web solution."
+        "desc": "Frontend and backend developers convert the approved designs and requirements into a functional, scalable web solution.",
+        "image": "",
+        "points": []
       },
       {
-        "points": [],
         "stepNumber": "04",
         "title": "Testing",
-        "desc": "We test functionality, responsiveness, browser compatibility, accessibility, performance, integrations, and security before release."
+        "desc": "We test functionality, responsiveness, browser compatibility, accessibility, performance, integrations, and security before release.",
+        "image": "",
+        "points": []
       },
       {
-        "points": [],
         "stepNumber": "05",
         "title": "Launch and Support",
-        "desc": "After deployment, we monitor the website, resolve launch issues, and provide ongoing maintenance or development support when required."
+        "desc": "After deployment, we monitor the website, resolve launch issues, and provide ongoing maintenance or development support when required.",
+        "image": "",
+        "points": []
       }
     ],
     "serviceProcessTitle": "Our Web Development Process",
@@ -2387,35 +2537,47 @@ const initialServices = [
     "subServicesItems": [
       {
         "title": "Custom Websites",
-        "desc": "Build a website shaped around your brand, audience, and business objectives. Our custom websites include responsive layouts, intuitive navigation, scalable architecture, content management capabilities, and integrations with the tools your team already uses."
+        "desc": "Build a website shaped around your brand, audience, and business objectives. Our custom websites include responsive layouts, intuitive navigation, scalable architecture, content management capabilities, and integrations with the tools your team already uses.",
+        "q": "Custom Websites",
+        "a": "Build a website shaped around your brand, audience, and business objectives. Our custom websites include responsive layouts, intuitive navigation, scalable architecture, content management capabilities, and integrations with the tools your team already uses."
       },
       {
         "title": "Web Application Development Services",
-        "desc": "Our **web application development services** turn complex ideas and business processes into secure, user-friendly digital products. We develop customer portals, SaaS platforms, internal dashboards, booking systems, workflow tools, and other browser-based applications with functionality customized to your requirements."
+        "desc": "Our **web application development services** turn complex ideas and business processes into secure, user-friendly digital products. We develop customer portals, SaaS platforms, internal dashboards, booking systems, workflow tools, and other browser-based applications with functionality customized to your requirements.",
+        "q": "Web Application Development Services",
+        "a": "Our **web application development services** turn complex ideas and business processes into secure, user-friendly digital products. We develop customer portals, SaaS platforms, internal dashboards, booking systems, workflow tools, and other browser-based applications with functionality customized to your requirements."
       },
       {
         "title": "Ecommerce Web Development Services",
-        "desc": "Our **ecommerce web development services** help businesses create convenient and reliable online shopping experiences. We build product catalogs, secure checkout flows, payment integrations, inventory features, customer accounts, order-management systems, and mobile-responsive storefronts designed to support conversions and growth."
+        "desc": "Our **ecommerce web development services** help businesses create convenient and reliable online shopping experiences. We build product catalogs, secure checkout flows, payment integrations, inventory features, customer accounts, order-management systems, and mobile-responsive storefronts designed to support conversions and growth.",
+        "q": "Ecommerce Web Development Services",
+        "a": "Our **ecommerce web development services** help businesses create convenient and reliable online shopping experiences. We build product catalogs, secure checkout flows, payment integrations, inventory features, customer accounts, order-management systems, and mobile-responsive storefronts designed to support conversions and growth."
       },
       {
         "title": "Frontend Development Services with React",
-        "desc": "Our **frontend development services** focus on creating fast, accessible, and responsive user interfaces. Through our **React development services**, we build reusable components, interactive features, and consistent experiences that work smoothly across modern browsers, screen sizes, and devices."
+        "desc": "Our **frontend development services** focus on creating fast, accessible, and responsive user interfaces. Through our **React development services**, we build reusable components, interactive features, and consistent experiences that work smoothly across modern browsers, screen sizes, and devices.",
+        "q": "Frontend Development Services with React",
+        "a": "Our **frontend development services** focus on creating fast, accessible, and responsive user interfaces. Through our **React development services**, we build reusable components, interactive features, and consistent experiences that work smoothly across modern browsers, screen sizes, and devices."
       },
       {
         "title": "Backend Development Services and APIs",
-        "desc": "Our **backend development services** provide the secure foundation behind your website or application. We develop databases, APIs, authentication systems, business logic, third-party integrations, and administrative tools that keep your platform reliable, maintainable, and ready to scale."
+        "desc": "Our **backend development services** provide the secure foundation behind your website or application. We develop databases, APIs, authentication systems, business logic, third-party integrations, and administrative tools that keep your platform reliable, maintainable, and ready to scale.",
+        "q": "Backend Development Services and APIs",
+        "a": "Our **backend development services** provide the secure foundation behind your website or application. We develop databases, APIs, authentication systems, business logic, third-party integrations, and administrative tools that keep your platform reliable, maintainable, and ready to scale."
       },
       {
         "title": "CMS Development",
-        "desc": "Manage your website without relying on a developer for every content update. We build and customize WordPress, headless CMS, and other content-management solutions that give your team control while preserving performance, security, and design consistency."
+        "desc": "Manage your website without relying on a developer for every content update. We build and customize WordPress, headless CMS, and other content-management solutions that give your team control while preserving performance, security, and design consistency.",
+        "q": "CMS Development",
+        "a": "Manage your website without relying on a developer for every content update. We build and customize WordPress, headless CMS, and other content-management solutions that give your team control while preserving performance, security, and design consistency."
       }
     ],
     "subServicesTitle": "Our Custom Web Development Services",
     "businessTypesItems": [],
     "businessTypesText": "",
-    "serviceProcessText": "01 | Discovery | We clarify your goals, target users, technical requirements, required integrations, project scope, and measures of success.\n02 | Design | Our team plans the user journey, information architecture, wireframes, and interface design before development begins.\n03 | Development | Frontend and backend developers convert the approved designs and requirements into a functional, scalable web solution.\n04 | Testing | We test functionality, responsiveness, browser compatibility, accessibility, performance, integrations, and security before release.\n05 | Launch and Support | After deployment, we monitor the website, resolve launch issues, and provide ongoing maintenance or development support when required.",
-    "subServicesText": "Custom Websites | Build a website shaped around your brand, audience, and business objectives. Our custom websites include responsive layouts, intuitive navigation, scalable architecture, content management capabilities, and integrations with the tools your team already uses.\nWeb Application Development Services | Our **web application development services** turn complex ideas and business processes into secure, user-friendly digital products. We develop customer portals, SaaS platforms, internal dashboards, booking systems, workflow tools, and other browser-based applications with functionality customized to your requirements.\nEcommerce Web Development Services | Our **ecommerce web development services** help businesses create convenient and reliable online shopping experiences. We build product catalogs, secure checkout flows, payment integrations, inventory features, customer accounts, order-management systems, and mobile-responsive storefronts designed to support conversions and growth.\nFrontend Development Services with React | Our **frontend development services** focus on creating fast, accessible, and responsive user interfaces. Through our **React development services**, we build reusable components, interactive features, and consistent experiences that work smoothly across modern browsers, screen sizes, and devices.\nBackend Development Services and APIs | Our **backend development services** provide the secure foundation behind your website or application. We develop databases, APIs, authentication systems, business logic, third-party integrations, and administrative tools that keep your platform reliable, maintainable, and ready to scale.\nCMS Development | Manage your website without relying on a developer for every content update. We build and customize WordPress, headless CMS, and other content-management solutions that give your team control while preserving performance, security, and design consistency.",
-    "whyChooseText": "Performance-Focused Development | We use clean code, optimized assets, responsive layouts, and practical performance testing to create websites that load quickly and work smoothly across devices.\nSecurity Built into Development | We prioritize security throughout the project rather than treating it as an afterthought. We implement secure authentication, access permissions, data-handling practices, dependency management, and deployment controls based on your solution’s requirements.\nSEO-Ready Foundations | Your website is developed with clean structure, responsive design, crawlable content, metadata controls, and performance fundamentals. These technical foundations make it easier for your SEO strategy to produce results after launch.\nStructured, Transparent Delivery | Clear milestones, defined deliverables, regular progress updates, and staged reviews keep the project moving and reduce avoidable surprises. You know what is being developed, what has been completed, and what comes next.",
+    "serviceProcessText": "01 | Discovery | We clarify your goals, target users, technical requirements, required integrations, project scope, and measures of success.\n\n02 | Design | Our team plans the user journey, information architecture, wireframes, and interface design before development begins.\n\n03 | Development | Frontend and backend developers convert the approved designs and requirements into a functional, scalable web solution.\n\n04 | Testing | We test functionality, responsiveness, browser compatibility, accessibility, performance, integrations, and security before release.\n\n05 | Launch and Support | After deployment, we monitor the website, resolve launch issues, and provide ongoing maintenance or development support when required.",
+    "subServicesText": "Custom Websites | Build a website shaped around your brand, audience, and business objectives. Our custom websites include responsive layouts, intuitive navigation, scalable architecture, content management capabilities, and integrations with the tools your team already uses.\n\nWeb Application Development Services | Our **web application development services** turn complex ideas and business processes into secure, user-friendly digital products. We develop customer portals, SaaS platforms, internal dashboards, booking systems, workflow tools, and other browser-based applications with functionality customized to your requirements.\n\nEcommerce Web Development Services | Our **ecommerce web development services** help businesses create convenient and reliable online shopping experiences. We build product catalogs, secure checkout flows, payment integrations, inventory features, customer accounts, order-management systems, and mobile-responsive storefronts designed to support conversions and growth.\n\nFrontend Development Services with React | Our **frontend development services** focus on creating fast, accessible, and responsive user interfaces. Through our **React development services**, we build reusable components, interactive features, and consistent experiences that work smoothly across modern browsers, screen sizes, and devices.\n\nBackend Development Services and APIs | Our **backend development services** provide the secure foundation behind your website or application. We develop databases, APIs, authentication systems, business logic, third-party integrations, and administrative tools that keep your platform reliable, maintainable, and ready to scale.\n\nCMS Development | Manage your website without relying on a developer for every content update. We build and customize WordPress, headless CMS, and other content-management solutions that give your team control while preserving performance, security, and design consistency.",
+    "whyChooseText": "Performance-Focused Development | We use clean code, optimized assets, responsive layouts, and practical performance testing to create websites that load quickly and work smoothly across devices.\n\nSecurity Built into Development | We prioritize security throughout the project rather than treating it as an afterthought. We implement secure authentication, access permissions, data-handling practices, dependency management, and deployment controls based on your solution’s requirements.\n\nSEO-Ready Foundations | Your website is developed with clean structure, responsive design, crawlable content, metadata controls, and performance fundamentals. These technical foundations make it easier for your SEO strategy to produce results after launch.\n\nStructured, Transparent Delivery | Clear milestones, defined deliverables, regular progress updates, and staged reviews keep the project moving and reduce avoidable surprises. You know what is being developed, what has been completed, and what comes next.",
     "ctaBannerButtonText": "Get a Free Consultation",
     "ctaBannerDesc": "Choose us as your **custom web development company** and move from idea to launch with a clear plan, experienced specialists, and dependable technical support.",
     "ctaBannerEyebrow": "HAVE A WEB PROJECT IN MIND?",
@@ -2435,180 +2597,10 @@ const initialSolutions = [
       "steps": []
     },
     "bullets": [],
-    "title": "Data Engineering",
-    "slug": "data-engineering",
-    "desc": "Pipelines, warehouses, and reliable data platforms.",
-    "group": "Data Solutions",
-    "faqs": []
-  },
-  {
-    "practices": {
-      "items": []
-    },
-    "impact": {
-      "rows": []
-    },
-    "process": {
-      "steps": []
-    },
-    "bullets": [],
-    "title": "BI & Data Analytics",
-    "slug": "bi-data-analytics",
-    "desc": "Dashboards and insights that drive decisions.",
-    "group": "Data Solutions",
-    "faqs": []
-  },
-  {
-    "practices": {
-      "items": []
-    },
-    "impact": {
-      "rows": []
-    },
-    "process": {
-      "steps": []
-    },
-    "bullets": [],
-    "title": "Data Governance and Security",
-    "slug": "data-governance-security",
-    "desc": "Policies, access control, and data quality.",
-    "group": "Data Solutions",
-    "faqs": []
-  },
-  {
-    "practices": {
-      "items": []
-    },
-    "impact": {
-      "rows": []
-    },
-    "process": {
-      "steps": []
-    },
-    "bullets": [],
-    "title": "Data Migration",
-    "slug": "data-migration",
-    "desc": "Safe moves between systems with minimal downtime.",
-    "group": "Data Solutions",
-    "faqs": []
-  },
-  {
-    "practices": {
-      "items": []
-    },
-    "impact": {
-      "rows": []
-    },
-    "process": {
-      "steps": []
-    },
-    "bullets": [],
-    "title": "Data Scraping",
-    "slug": "data-scraping",
-    "desc": "Ethical collection and structuring of web data.",
-    "group": "Data Solutions",
-    "faqs": []
-  },
-  {
-    "practices": {
-      "items": []
-    },
-    "impact": {
-      "rows": []
-    },
-    "process": {
-      "steps": []
-    },
-    "bullets": [],
     "title": "Oracle AI Data Platform",
     "slug": "oracle-aidp",
     "desc": "AIDP assessment, migration, and Oracle data platform engineering.",
     "group": "Data Solutions",
-    "faqs": []
-  },
-  {
-    "practices": {
-      "items": []
-    },
-    "impact": {
-      "rows": []
-    },
-    "process": {
-      "steps": []
-    },
-    "bullets": [],
-    "title": "Agentic AI",
-    "slug": "agentic-ai",
-    "desc": "Autonomous agents that plan and execute workflows. ghthhjkukudkdydkkkddkdku",
-    "group": "Artificial Intelligence",
-    "faqs": []
-  },
-  {
-    "practices": {
-      "items": []
-    },
-    "impact": {
-      "rows": []
-    },
-    "process": {
-      "steps": []
-    },
-    "bullets": [],
-    "title": "Deep Learning",
-    "slug": "deep-learning",
-    "desc": "Models for vision, speech, and complex prediction.",
-    "group": "Artificial Intelligence",
-    "faqs": []
-  },
-  {
-    "practices": {
-      "items": []
-    },
-    "impact": {
-      "rows": []
-    },
-    "process": {
-      "steps": []
-    },
-    "bullets": [],
-    "title": "Generative AI",
-    "slug": "generative-ai",
-    "desc": "LLMs and generative tools tailored to your domain.",
-    "group": "Artificial Intelligence",
-    "faqs": []
-  },
-  {
-    "practices": {
-      "items": []
-    },
-    "impact": {
-      "rows": []
-    },
-    "process": {
-      "steps": []
-    },
-    "bullets": [],
-    "title": "Predictive Analysis",
-    "slug": "predictive-analysis",
-    "desc": "Forecasting demand, risk, and customer behavior.",
-    "group": "Artificial Intelligence",
-    "faqs": []
-  },
-  {
-    "practices": {
-      "items": []
-    },
-    "impact": {
-      "rows": []
-    },
-    "process": {
-      "steps": []
-    },
-    "bullets": [],
-    "title": "Sentiment Analysis",
-    "slug": "sentiment-analysis",
-    "desc": "Understand customer voice at scale.",
-    "group": "Artificial Intelligence",
     "faqs": []
   },
   {
@@ -2674,10 +2666,218 @@ const initialSolutions = [
       "steps": []
     },
     "bullets": [],
+    "title": "Data Scraping",
+    "slug": "data-scraping",
+    "desc": "Ethical collection and structuring of web data.",
+    "group": "Data Solutions",
+    "faqs": []
+  },
+  {
+    "practices": {
+      "items": []
+    },
+    "impact": {
+      "rows": []
+    },
+    "process": {
+      "steps": []
+    },
+    "bullets": [],
     "title": "AI Consulting",
     "slug": "ai-consulting",
     "desc": "Strategy, readiness, and roadmap for AI adoption.",
     "group": "Artificial Intelligence",
+    "faqs": []
+  },
+  {
+    "practices": {
+      "items": []
+    },
+    "impact": {
+      "rows": []
+    },
+    "process": {
+      "steps": []
+    },
+    "bullets": [],
+    "title": "Customer Segmentation",
+    "slug": "customer-segmentation",
+    "desc": "Smarter audiences for campaigns and personalization.",
+    "group": "E-Commerce",
+    "faqs": []
+  },
+  {
+    "practices": {
+      "items": []
+    },
+    "impact": {
+      "rows": []
+    },
+    "process": {
+      "steps": []
+    },
+    "bullets": [],
+    "title": "Generative AI",
+    "slug": "generative-ai",
+    "desc": "LLMs and generative tools tailored to your domain.",
+    "group": "Artificial Intelligence",
+    "faqs": []
+  },
+  {
+    "practices": {
+      "items": []
+    },
+    "impact": {
+      "rows": []
+    },
+    "process": {
+      "steps": []
+    },
+    "bullets": [],
+    "title": "AI SEO Auditor",
+    "slug": "ai-seo-auditor",
+    "desc": "Paste a URL or page HTML — get a prioritised SEO health score covering title, meta, headings, mobile signals, and accessibility basics. testing dyuttythj",
+    "externalUrl": "/tools/ai-seo-auditor",
+    "group": "Accessibility Tools",
+    "faqs": []
+  },
+  {
+    "practices": {
+      "items": []
+    },
+    "impact": {
+      "rows": []
+    },
+    "process": {
+      "steps": []
+    },
+    "bullets": [],
+    "title": "Data Engineering",
+    "slug": "data-engineering",
+    "desc": "Pipelines, warehouses, and reliable data platforms.",
+    "group": "Data Solutions",
+    "faqs": []
+  },
+  {
+    "practices": {
+      "items": []
+    },
+    "impact": {
+      "rows": []
+    },
+    "process": {
+      "steps": []
+    },
+    "bullets": [],
+    "title": "Voice Commerce",
+    "slug": "voice-commerce",
+    "desc": "Voice-driven shopping and ordering experiences.",
+    "group": "E-Commerce",
+    "faqs": []
+  },
+  {
+    "practices": {
+      "items": []
+    },
+    "impact": {
+      "rows": []
+    },
+    "process": {
+      "steps": []
+    },
+    "bullets": [],
+    "title": "JPG to PDF",
+    "slug": "jpg-to-pdf",
+    "desc": "Turn JPG files into polished PDF documents.",
+    "externalUrl": "https://jpg2pdf.io/",
+    "group": "Accessibility Tools",
+    "faqs": []
+  },
+  {
+    "practices": {
+      "items": []
+    },
+    "impact": {
+      "rows": []
+    },
+    "process": {
+      "steps": []
+    },
+    "bullets": [],
+    "title": "Data Migration",
+    "slug": "data-migration",
+    "desc": "Safe moves between systems with minimal downtime.",
+    "group": "Data Solutions",
+    "faqs": []
+  },
+  {
+    "practices": {
+      "items": []
+    },
+    "impact": {
+      "rows": []
+    },
+    "process": {
+      "steps": []
+    },
+    "bullets": [],
+    "title": "JPGA PDF",
+    "slug": "jpg-a-pdf",
+    "desc": "Convert JPG images to PDF quickly online.",
+    "externalUrl": "https://jpgapdf.io/",
+    "group": "Accessibility Tools",
+    "faqs": []
+  },
+  {
+    "practices": {
+      "items": []
+    },
+    "impact": {
+      "rows": []
+    },
+    "process": {
+      "steps": []
+    },
+    "bullets": [],
+    "title": "Data Governance and Security",
+    "slug": "data-governance-security",
+    "desc": "Policies, access control, and data quality.",
+    "group": "Data Solutions",
+    "faqs": []
+  },
+  {
+    "practices": {
+      "items": []
+    },
+    "impact": {
+      "rows": []
+    },
+    "process": {
+      "steps": []
+    },
+    "bullets": [],
+    "title": "Deep Learning",
+    "slug": "deep-learning",
+    "desc": "Models for vision, speech, and complex prediction.",
+    "group": "Artificial Intelligence",
+    "faqs": []
+  },
+  {
+    "practices": {
+      "items": []
+    },
+    "impact": {
+      "rows": []
+    },
+    "process": {
+      "steps": []
+    },
+    "bullets": [],
+    "title": "Image to Text",
+    "slug": "image-to-text",
+    "desc": "Free OCR — extract text from images in 200+ languages.",
+    "externalUrl": "https://imagetotext.best/",
+    "group": "Accessibility Tools",
     "faqs": []
   },
   {
@@ -2725,45 +2925,10 @@ const initialSolutions = [
       "steps": []
     },
     "bullets": [],
-    "title": "Voice Commerce",
-    "slug": "voice-commerce",
-    "desc": "Voice-driven shopping and ordering experiences.",
-    "group": "E-Commerce",
-    "faqs": []
-  },
-  {
-    "practices": {
-      "items": []
-    },
-    "impact": {
-      "rows": []
-    },
-    "process": {
-      "steps": []
-    },
-    "bullets": [],
-    "title": "Customer Segmentation",
-    "slug": "customer-segmentation",
-    "desc": "Smarter audiences for campaigns and personalization.",
-    "group": "E-Commerce",
-    "faqs": []
-  },
-  {
-    "practices": {
-      "items": []
-    },
-    "impact": {
-      "rows": []
-    },
-    "process": {
-      "steps": []
-    },
-    "bullets": [],
-    "title": "Image to Text",
-    "slug": "image-to-text",
-    "desc": "Free OCR — extract text from images in 200+ languages.",
-    "externalUrl": "https://imagetotext.best/",
-    "group": "Accessibility Tools",
+    "title": "BI & Data Analytics",
+    "slug": "bi-data-analytics",
+    "desc": "Dashboards and insights that drive decisions.",
+    "group": "Data Solutions",
     "faqs": []
   },
   {
@@ -2795,11 +2960,10 @@ const initialSolutions = [
       "steps": []
     },
     "bullets": [],
-    "title": "JPGA PDF",
-    "slug": "jpg-a-pdf",
-    "desc": "Convert JPG images to PDF quickly online.",
-    "externalUrl": "https://jpgapdf.io/",
-    "group": "Accessibility Tools",
+    "title": "Predictive Analysis",
+    "slug": "predictive-analysis",
+    "desc": "Forecasting demand, risk, and customer behavior.",
+    "group": "Artificial Intelligence",
     "faqs": []
   },
   {
@@ -2813,11 +2977,10 @@ const initialSolutions = [
       "steps": []
     },
     "bullets": [],
-    "title": "JPG to PDF",
-    "slug": "jpg-to-pdf",
-    "desc": "Turn JPG files into polished PDF documents.",
-    "externalUrl": "https://jpg2pdf.io/",
-    "group": "Accessibility Tools",
+    "title": "Agentic AI",
+    "slug": "agentic-ai",
+    "desc": "Autonomous agents that plan and execute workflows. ghthhjkukudkdydkkkddkdku",
+    "group": "Artificial Intelligence",
     "faqs": []
   },
   {
@@ -2831,86 +2994,72 @@ const initialSolutions = [
       "steps": []
     },
     "bullets": [],
-    "title": "AI SEO Auditor",
-    "slug": "ai-seo-auditor",
-    "desc": "Paste a URL or page HTML — get a prioritised SEO health score covering title, meta, headings, mobile signals, and accessibility basics. testing dyuttythj",
-    "externalUrl": "/tools/ai-seo-auditor",
-    "group": "Accessibility Tools",
+    "title": "Sentiment Analysis",
+    "slug": "sentiment-analysis",
+    "desc": "Understand customer voice at scale.",
+    "group": "Artificial Intelligence",
     "faqs": []
   }
 ];
 
 const initialProducts = [
   {
-    "slug": "workstream",
-    "name": "Workstream",
-    "title": "The All-in-One Management Tool Built for Enterprise Needs",
-    "tagline": "Simplify workflows by 50%, boost communication, and empower employees — one platform.",
-    "desc": "Streamline team operations and approvals with customizable workflows and real-time tracking.",
-    "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&h=750&q=80",
-    "accent": "from-blue-100 to-sky-50",
-    "heroTheme": "navy",
-    "layout": "B",
+    "slug": "fix-alert",
+    "name": "FixAlert",
+    "title": "Real-time Maintenance Reporting",
+    "tagline": "Report issues. Dispatch teams. Close the loop — from any site.",
+    "desc": "Instantly report and resolve infrastructure issues with a centralized, mobile-friendly system.",
+    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&h=750&q=80",
+    "accent": "from-orange-100 to-amber-50",
+    "heroTheme": "orange",
+    "layout": "A",
     "stats": [
       [
-        "50%",
-        "Less process friction"
+        "40%",
+        "Faster response"
       ],
       [
         "2x",
-        "Faster approvals"
+        "Issues closed"
       ],
       [
-        "1",
-        "Source of truth"
+        "1 app",
+        "Field + office"
       ]
     ],
     "challenges": [
       {
-        "title": "Drowning in paperwork?",
-        "body": "Leave, expenses, and training requests pile up across tools and inboxes."
+        "title": "Scattered tickets",
+        "body": "Issues live in chats, email, and spreadsheets — nothing is the source of truth."
       },
       {
-        "title": "Unclear ownership",
-        "body": "Teams chase updates instead of shipping work."
+        "title": "Slow handoffs",
+        "body": "Field teams wait on unclear ownership while downtime grows."
       },
       {
-        "title": "Tool sprawl",
-        "body": "HR, ops, and finance each run a different stack — nothing talks."
-      }
-    ],
-    "answers": [
-      {
-        "title": "Cost efficiency",
-        "body": "One modular suite covers HR and ops workflows so you are not paying for five partial tools."
-      },
-      {
-        "title": "Security & access",
-        "body": "SSO-ready design with role-based access for every module."
-      },
-      {
-        "title": "Scalability",
-        "body": "Turn modules on as you grow — from leave and expenses to training and analytics."
+        "title": "No visibility",
+        "body": "Managers cannot see open work, SLAs, or recurring problem sites."
       }
     ],
     "steps": [
       {
-        "title": "Effortless setup",
-        "body": "Sign in, invite teams, and go — no heavy configuration theater."
+        "title": "Capture on site",
+        "body": "Mobile report with photos, location, and priority in seconds."
       },
       {
-        "title": "Modular features",
-        "body": "Pick project logs, training, leave, expenses, and more."
+        "title": "Route smartly",
+        "body": "Auto-assign by skill, zone, or severity."
       },
       {
-        "title": "Streamlined workflow",
-        "body": "Automate repetitive approvals and reminders."
+        "title": "Resolve & verify",
+        "body": "Close with evidence and optional sign-off."
       },
       {
-        "title": "Powerful insights",
-        "body": "See capacity, bottlenecks, and completion in one place."
+        "title": "Learn patterns",
+        "body": "Dashboards show hotspots and repeat failures."
       }
-    ]
+    ],
+    "answers": []
   },
   {
     "slug": "hirestream",
@@ -2971,59 +3120,121 @@ const initialProducts = [
     "answers": []
   },
   {
-    "slug": "fix-alert",
-    "name": "FixAlert",
-    "title": "Real-time Maintenance Reporting",
-    "tagline": "Report issues. Dispatch teams. Close the loop — from any site.",
-    "desc": "Instantly report and resolve infrastructure issues with a centralized, mobile-friendly system.",
-    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&h=750&q=80",
-    "accent": "from-orange-100 to-amber-50",
-    "heroTheme": "orange",
-    "layout": "A",
+    "slug": "image-to-text",
+    "name": "Image to Text",
+    "title": "Free Online OCR — Extract Text from Images",
+    "tagline": "Upload an image, get editable text. 200+ languages, privacy-first, no signup.",
+    "desc": "Professional OCR that converts JPG, PNG, PDF, HEIC and 70+ formats into accurate, editable text. Free, no registration, files auto-deleted after recognition.",
+    "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&h=750&q=80",
+    "accent": "from-sky-100 to-blue-50",
+    "heroTheme": "navy",
+    "layout": "B",
+    "externalUrl": "https://imagetotext.best/",
+    "category": "accessibility",
     "stats": [
       [
-        "40%",
-        "Faster response"
+        "200+",
+        "Languages"
       ],
       [
-        "2x",
-        "Issues closed"
+        "70+",
+        "Formats"
       ],
       [
-        "1 app",
-        "Field + office"
+        "99%",
+        "OCR accuracy"
       ]
     ],
     "challenges": [
       {
-        "title": "Scattered tickets",
-        "body": "Issues live in chats, email, and spreadsheets — nothing is the source of truth."
+        "title": "Locked text in images",
+        "body": "Screenshots and scans are hard to copy, search, or edit."
       },
       {
-        "title": "Slow handoffs",
-        "body": "Field teams wait on unclear ownership while downtime grows."
+        "title": "Privacy concerns",
+        "body": "Many OCR tools keep your uploads longer than you expect."
       },
       {
-        "title": "No visibility",
-        "body": "Managers cannot see open work, SLAs, or recurring problem sites."
+        "title": "Language limits",
+        "body": "Global teams need more than English-only recognition."
       }
     ],
     "steps": [
       {
-        "title": "Capture on site",
-        "body": "Mobile report with photos, location, and priority in seconds."
+        "title": "Upload image",
+        "body": "Drag, browse, or paste — JPG, PNG, PDF, HEIC and more."
       },
       {
-        "title": "Route smartly",
-        "body": "Auto-assign by skill, zone, or severity."
+        "title": "AI recognition",
+        "body": "OCR runs with multi-language detection."
       },
       {
-        "title": "Resolve & verify",
-        "body": "Close with evidence and optional sign-off."
+        "title": "Copy or download",
+        "body": "Get clean text in seconds."
       },
       {
-        "title": "Learn patterns",
-        "body": "Dashboards show hotspots and repeat failures."
+        "title": "Auto cleanup",
+        "body": "Files are removed after processing for privacy."
+      }
+    ],
+    "answers": []
+  },
+  {
+    "slug": "jpg-a-pdf",
+    "name": "JPGA PDF",
+    "title": "Convert JPG Images to PDF Online",
+    "tagline": "Fast JPG → PDF conversion in the browser — simple and reliable.",
+    "desc": "Turn one or more JPG images into a clean PDF document. Ideal for forms, scans, and sharing files that need a universal format.",
+    "image": "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=1200&h=750&q=80",
+    "accent": "from-orange-100 to-amber-50",
+    "heroTheme": "orange",
+    "layout": "C",
+    "externalUrl": "https://jpgapdf.io/",
+    "category": "accessibility",
+    "stats": [
+      [
+        "JPG",
+        "to PDF"
+      ],
+      [
+        "Quick",
+        "Export"
+      ],
+      [
+        "No",
+        "Install"
+      ]
+    ],
+    "challenges": [
+      {
+        "title": "Format friction",
+        "body": "Recipients ask for PDF while you only have JPGs."
+      },
+      {
+        "title": "Desktop software",
+        "body": "Installing converters for a one-off task is overkill."
+      },
+      {
+        "title": "Quality loss",
+        "body": "Poor tools squash image quality in the PDF."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Select JPG",
+        "body": "Upload the image(s) you want in the PDF."
+      },
+      {
+        "title": "Convert",
+        "body": "Generate a PDF in moments."
+      },
+      {
+        "title": "Download",
+        "body": "Save and share the file anywhere."
+      },
+      {
+        "title": "Done",
+        "body": "No account required for standard use."
       }
     ],
     "answers": []
@@ -3100,181 +3311,61 @@ const initialProducts = [
     ]
   },
   {
-    "slug": "image-to-text",
-    "name": "Image to Text",
-    "title": "Free Online OCR — Extract Text from Images",
-    "tagline": "Upload an image, get editable text. 200+ languages, privacy-first, no signup.",
-    "desc": "Professional OCR that converts JPG, PNG, PDF, HEIC and 70+ formats into accurate, editable text. Free, no registration, files auto-deleted after recognition.",
-    "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&h=750&q=80",
-    "accent": "from-sky-100 to-blue-50",
-    "heroTheme": "navy",
+    "slug": "ai-seo-auditor",
+    "name": "AI SEO Auditor",
+    "title": "AI-Powered SEO Auditor",
+    "tagline": "Scan your site for SEO issues, content gaps, and technical fixes — guided by AI.",
+    "desc": "Cubixsol AI SEO Auditor reviews pages for technical SEO, on-page signals, and prioritised recommendations so teams know what to fix first.",
+    "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=1200&h=750&q=80",
+    "accent": "from-emerald-100 to-teal-50",
+    "heroTheme": "teal",
     "layout": "B",
-    "externalUrl": "https://imagetotext.best/",
+    "externalUrl": "/tools/ai-seo-auditor",
     "category": "accessibility",
     "stats": [
       [
-        "200+",
-        "Languages"
-      ],
-      [
-        "70+",
-        "Formats"
-      ],
-      [
-        "99%",
-        "OCR accuracy"
-      ]
-    ],
-    "challenges": [
-      {
-        "title": "Locked text in images",
-        "body": "Screenshots and scans are hard to copy, search, or edit."
-      },
-      {
-        "title": "Privacy concerns",
-        "body": "Many OCR tools keep your uploads longer than you expect."
-      },
-      {
-        "title": "Language limits",
-        "body": "Global teams need more than English-only recognition."
-      }
-    ],
-    "steps": [
-      {
-        "title": "Upload image",
-        "body": "Drag, browse, or paste — JPG, PNG, PDF, HEIC and more."
-      },
-      {
-        "title": "AI recognition",
-        "body": "OCR runs with multi-language detection."
-      },
-      {
-        "title": "Copy or download",
-        "body": "Get clean text in seconds."
-      },
-      {
-        "title": "Auto cleanup",
-        "body": "Files are removed after processing for privacy."
-      }
-    ],
-    "answers": []
-  },
-  {
-    "slug": "reescrever-texto",
-    "name": "Reescrever Texto",
-    "title": "Rewrite Text for Clarity and Style",
-    "tagline": "Improve tone, readability, and structure without losing your meaning.",
-    "desc": "Online text rewriting tool to refine drafts, simplify language, and produce clearer copy for work, study, or publishing.",
-    "image": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1200&h=750&q=80",
-    "accent": "from-violet-100 to-purple-50",
-    "heroTheme": "violet",
-    "layout": "A",
-    "externalUrl": "https://reescrevertexto.io/",
-    "category": "accessibility",
-    "stats": [
-      [
-        "Fast",
-        "Rewrites"
+        "AI",
+        "Page analysis"
       ],
       [
         "Clear",
-        "Tone control"
+        "Priorities"
       ],
       [
-        "Web",
-        "Ready"
+        "Action",
+        "Checklists"
       ]
     ],
     "challenges": [
       {
-        "title": "Rough drafts",
-        "body": "Ideas are there, but wording is hard to polish by hand."
+        "title": "Unknown issues",
+        "body": "Rankings slip while technical and content problems stay buried."
       },
       {
-        "title": "Inconsistent voice",
-        "body": "Emails, posts, and docs need a consistent style."
+        "title": "Noisy reports",
+        "body": "Generic audit tools dump hundreds of alerts with little prioritisation."
       },
       {
-        "title": "Time pressure",
-        "body": "Rewriting from scratch slows every delivery."
+        "title": "Slow iteration",
+        "body": "Teams need a short list of high-impact fixes, not a 50-page PDF."
       }
     ],
     "steps": [
       {
-        "title": "Paste your text",
-        "body": "Drop in the paragraph or document section you want improved."
+        "title": "Enter your URL",
+        "body": "Point the auditor at the site or key landing pages."
       },
       {
-        "title": "Rewrite",
-        "body": "Generate a clearer version while keeping intent."
+        "title": "AI scan",
+        "body": "Technical, content, and on-page signals are evaluated together."
       },
       {
-        "title": "Adjust",
-        "body": "Tweak until the tone fits your audience."
+        "title": "Prioritised report",
+        "body": "See what matters most — severity and effort side by side."
       },
       {
-        "title": "Use anywhere",
-        "body": "Copy into docs, CMS, or chat."
-      }
-    ],
-    "answers": []
-  },
-  {
-    "slug": "jpg-a-pdf",
-    "name": "JPGA PDF",
-    "title": "Convert JPG Images to PDF Online",
-    "tagline": "Fast JPG → PDF conversion in the browser — simple and reliable.",
-    "desc": "Turn one or more JPG images into a clean PDF document. Ideal for forms, scans, and sharing files that need a universal format.",
-    "image": "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=1200&h=750&q=80",
-    "accent": "from-orange-100 to-amber-50",
-    "heroTheme": "orange",
-    "layout": "C",
-    "externalUrl": "https://jpgapdf.io/",
-    "category": "accessibility",
-    "stats": [
-      [
-        "JPG",
-        "to PDF"
-      ],
-      [
-        "Quick",
-        "Export"
-      ],
-      [
-        "No",
-        "Install"
-      ]
-    ],
-    "challenges": [
-      {
-        "title": "Format friction",
-        "body": "Recipients ask for PDF while you only have JPGs."
-      },
-      {
-        "title": "Desktop software",
-        "body": "Installing converters for a one-off task is overkill."
-      },
-      {
-        "title": "Quality loss",
-        "body": "Poor tools squash image quality in the PDF."
-      }
-    ],
-    "steps": [
-      {
-        "title": "Select JPG",
-        "body": "Upload the image(s) you want in the PDF."
-      },
-      {
-        "title": "Convert",
-        "body": "Generate a PDF in moments."
-      },
-      {
-        "title": "Download",
-        "body": "Save and share the file anywhere."
-      },
-      {
-        "title": "Done",
-        "body": "No account required for standard use."
+        "title": "Fix & recheck",
+        "body": "Work the checklist and re-run to confirm progress."
       }
     ],
     "answers": []
@@ -3340,68 +3431,315 @@ const initialProducts = [
     "answers": []
   },
   {
-    "slug": "ai-seo-auditor",
-    "name": "AI SEO Auditor",
-    "title": "AI-Powered SEO Auditor",
-    "tagline": "Scan your site for SEO issues, content gaps, and technical fixes — guided by AI.",
-    "desc": "Cubixsol AI SEO Auditor reviews pages for technical SEO, on-page signals, and prioritised recommendations so teams know what to fix first.",
-    "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=1200&h=750&q=80",
-    "accent": "from-emerald-100 to-teal-50",
-    "heroTheme": "teal",
-    "layout": "B",
-    "externalUrl": "/tools/ai-seo-auditor",
+    "slug": "reescrever-texto",
+    "name": "Reescrever Texto",
+    "title": "Rewrite Text for Clarity and Style",
+    "tagline": "Improve tone, readability, and structure without losing your meaning.",
+    "desc": "Online text rewriting tool to refine drafts, simplify language, and produce clearer copy for work, study, or publishing.",
+    "image": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1200&h=750&q=80",
+    "accent": "from-violet-100 to-purple-50",
+    "heroTheme": "violet",
+    "layout": "A",
+    "externalUrl": "https://reescrevertexto.io/",
     "category": "accessibility",
     "stats": [
       [
-        "AI",
-        "Page analysis"
+        "Fast",
+        "Rewrites"
       ],
       [
         "Clear",
-        "Priorities"
+        "Tone control"
       ],
       [
-        "Action",
-        "Checklists"
+        "Web",
+        "Ready"
       ]
     ],
     "challenges": [
       {
-        "title": "Unknown issues",
-        "body": "Rankings slip while technical and content problems stay buried."
+        "title": "Rough drafts",
+        "body": "Ideas are there, but wording is hard to polish by hand."
       },
       {
-        "title": "Noisy reports",
-        "body": "Generic audit tools dump hundreds of alerts with little prioritisation."
+        "title": "Inconsistent voice",
+        "body": "Emails, posts, and docs need a consistent style."
       },
       {
-        "title": "Slow iteration",
-        "body": "Teams need a short list of high-impact fixes, not a 50-page PDF."
+        "title": "Time pressure",
+        "body": "Rewriting from scratch slows every delivery."
       }
     ],
     "steps": [
       {
-        "title": "Enter your URL",
-        "body": "Point the auditor at the site or key landing pages."
+        "title": "Paste your text",
+        "body": "Drop in the paragraph or document section you want improved."
       },
       {
-        "title": "AI scan",
-        "body": "Technical, content, and on-page signals are evaluated together."
+        "title": "Rewrite",
+        "body": "Generate a clearer version while keeping intent."
       },
       {
-        "title": "Prioritised report",
-        "body": "See what matters most — severity and effort side by side."
+        "title": "Adjust",
+        "body": "Tweak until the tone fits your audience."
       },
       {
-        "title": "Fix & recheck",
-        "body": "Work the checklist and re-run to confirm progress."
+        "title": "Use anywhere",
+        "body": "Copy into docs, CMS, or chat."
       }
     ],
     "answers": []
+  },
+  {
+    "slug": "workstream",
+    "name": "Workstream",
+    "title": "The All-in-One Management Tool Built for Enterprise Needs",
+    "tagline": "Simplify workflows by 50%, boost communication, and empower employees — one platform.",
+    "desc": "Streamline team operations and approvals with customizable workflows and real-time tracking.",
+    "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&h=750&q=80",
+    "accent": "from-blue-100 to-sky-50",
+    "heroTheme": "navy",
+    "layout": "B",
+    "stats": [
+      [
+        "50%",
+        "Less process friction"
+      ],
+      [
+        "2x",
+        "Faster approvals"
+      ],
+      [
+        "1",
+        "Source of truth"
+      ]
+    ],
+    "challenges": [
+      {
+        "title": "Drowning in paperwork?",
+        "body": "Leave, expenses, and training requests pile up across tools and inboxes."
+      },
+      {
+        "title": "Unclear ownership",
+        "body": "Teams chase updates instead of shipping work."
+      },
+      {
+        "title": "Tool sprawl",
+        "body": "HR, ops, and finance each run a different stack — nothing talks."
+      }
+    ],
+    "answers": [
+      {
+        "title": "Cost efficiency",
+        "body": "One modular suite covers HR and ops workflows so you are not paying for five partial tools."
+      },
+      {
+        "title": "Security & access",
+        "body": "SSO-ready design with role-based access for every module."
+      },
+      {
+        "title": "Scalability",
+        "body": "Turn modules on as you grow — from leave and expenses to training and analytics."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Effortless setup",
+        "body": "Sign in, invite teams, and go — no heavy configuration theater."
+      },
+      {
+        "title": "Modular features",
+        "body": "Pick project logs, training, leave, expenses, and more."
+      },
+      {
+        "title": "Streamlined workflow",
+        "body": "Automate repetitive approvals and reminders."
+      },
+      {
+        "title": "Powerful insights",
+        "body": "See capacity, bottlenecks, and completion in one place."
+      }
+    ]
   }
 ];
 
 const initialIndustries = [
+  {
+    "testimonial": {
+      "quote": "Field and office teams finally saw the same status in real time.",
+      "name": "Fleet Manager",
+      "role": "Regional logistics"
+    },
+    "slug": "logistics",
+    "title": "Logistics",
+    "icon": "/uploads/media-1788421050308-313091127.svg",
+    "short": "Tracking, dispatch, and operations visibility on the move.",
+    "desc": "Logistics software for dispatch, tracking, and partner coordination — mobile-friendly field tools and control-tower dashboards.",
+    "points": [
+      "Dispatch & routing support",
+      "Shipment tracking UX",
+      "Partner portals",
+      "Ops dashboards"
+    ],
+    "servicesWeOffer": [],
+    "workAreas": [],
+    "productsBuilt": [],
+    "caseStudies": []
+  },
+  {
+    "testimonial": {
+      "quote": "Cubixsol delivered a clean payment experience without cutting corners on controls.",
+      "name": "CTO",
+      "role": "Fintech startup"
+    },
+    "slug": "fintech",
+    "title": "Finance & Fintech",
+    "icon": "/uploads/media-1788421050295-842693555.svg",
+    "short": "Payments, dashboards, and compliant financial products.",
+    "desc": "From customer-facing finance apps to internal risk and reporting tools, we help fintech and finance teams ship secure, auditable software that moves money and data with clarity.",
+    "points": [
+      "Payment & wallet flows",
+      "KYC-friendly onboarding",
+      "Admin & risk dashboards",
+      "API-first integrations"
+    ],
+    "servicesWeOffer": [],
+    "workAreas": [],
+    "productsBuilt": [],
+    "caseStudies": []
+  },
+  {
+    "testimonial": {
+      "quote": "They balanced usability for clinicians with the compliance constraints we cannot ignore.",
+      "name": "Operations Manager",
+      "role": "Health services provider"
+    },
+    "slug": "healthcare",
+    "title": "Healthcare",
+    "icon": "/uploads/media-1788421050303-234659715.svg",
+    "short": "Secure patient experiences and clinical operations software.",
+    "desc": "We design and engineer healthcare software with privacy and reliability in mind — patient portals, scheduling, telehealth flows, and internal clinical tools that reduce friction for staff and patients.",
+    "points": [
+      "Patient portals",
+      "Appointment & care workflows",
+      "HIPAA-minded practices",
+      "Integrations with existing systems"
+    ],
+    "servicesWeOffer": [],
+    "workAreas": [],
+    "productsBuilt": [],
+    "caseStudies": []
+  },
+  {
+    "testimonial": {
+      "quote": "They thought in product metrics, not just tickets closed.",
+      "name": "Founder",
+      "role": "B2B SaaS"
+    },
+    "slug": "saas",
+    "title": "SaaS",
+    "icon": "/uploads/media-1788421050317-66609444.svg",
+    "short": "Multi-tenant products built to onboard, retain, and scale.",
+    "desc": "We partner with SaaS teams on product engineering — from MVP to scale — with solid tenancy, billing hooks, admin, and customer-facing UX.",
+    "points": [
+      "Multi-tenant architecture",
+      "Onboarding & activation",
+      "Billing integrations",
+      "Admin & analytics"
+    ],
+    "servicesWeOffer": [],
+    "workAreas": [],
+    "productsBuilt": [],
+    "caseStudies": []
+  },
+  {
+    "testimonial": {
+      "quote": "Our conversion and ops visibility improved in the same release cycle.",
+      "name": "Head of Digital",
+      "role": "Retail brand"
+    },
+    "slug": "ecommerce",
+    "title": "E-Commerce",
+    "icon": "/uploads/media-1788421040721-524946062.svg",
+    "short": "Stores, marketplaces, and conversion-focused commerce.",
+    "desc": "We build high-converting storefronts, custom checkout, and commerce backends — with inventory, promotions, and analytics wired for growth.",
+    "points": [
+      "Custom storefronts",
+      "Checkout optimization",
+      "Marketplace features",
+      "OMS & inventory sync"
+    ],
+    "servicesWeOffer": [],
+    "workAreas": [],
+    "productsBuilt": [],
+    "caseStudies": []
+  },
+  {
+    "testimonial": {
+      "quote": "They matched our engineering bar and moved at product speed.",
+      "name": "VP Engineering",
+      "role": "Tech company"
+    },
+    "slug": "technology",
+    "title": "Technology",
+    "icon": "/uploads/media-1788421050320-328223291.svg",
+    "short": "Platforms, developer tools, and internal tech products.",
+    "desc": "For technology companies building platforms or internal tools, we embed as an engineering partner — architecture, delivery, and UI that matches product standards.",
+    "points": [
+      "Platform features",
+      "Internal tools",
+      "API products",
+      "Design systems"
+    ],
+    "servicesWeOffer": [],
+    "workAreas": [],
+    "productsBuilt": [],
+    "caseStudies": []
+  },
+  {
+    "testimonial": {
+      "quote": "Peak season held up — and the booking UX stayed simple.",
+      "name": "Digital Manager",
+      "role": "Hospitality group"
+    },
+    "slug": "travel",
+    "title": "Travel & Hospitality",
+    "icon": "/uploads/media-1788421050341-423557658.svg",
+    "short": "Booking journeys and guest experiences that convert.",
+    "desc": "Booking flows, supplier integrations, and guest apps for travel and hospitality brands that need reliability at peak demand. this is checkingrfgreg fefewfewefewf",
+    "points": [
+      "Booking & availability",
+      "Supplier APIs",
+      "Guest mobile experiences",
+      "Loyalty hooks"
+    ],
+    "servicesWeOffer": [],
+    "workAreas": [],
+    "productsBuilt": [],
+    "caseStudies": []
+  },
+  {
+    "testimonial": {
+      "quote": "Listings and leads finally lived in one system our agents actually use.",
+      "name": "Sales Director",
+      "role": "Property group"
+    },
+    "slug": "real-estate",
+    "title": "Real Estate",
+    "icon": "/uploads/media-1788421050310-764937006.svg",
+    "short": "Listings, portals, and property operations platforms.",
+    "desc": "Property search, agent tools, and operations software for developers and agencies — fast listing experiences and reliable backend workflows.",
+    "points": [
+      "Listing portals",
+      "Agent CRM light flows",
+      "PMS integrations",
+      "Lead routing"
+    ],
+    "servicesWeOffer": [],
+    "workAreas": [],
+    "productsBuilt": [],
+    "caseStudies": []
+  },
   {
     "testimonial": {
       "quote": "Working with Cubixsol felt like gaining a product team, not just a vendor. They understood our learners and shipped with care.",
@@ -3493,182 +3831,6 @@ const initialIndustries = [
       "Analytics and admin dashboards",
       "UI/UX for education products"
     ]
-  },
-  {
-    "testimonial": {
-      "quote": "They balanced usability for clinicians with the compliance constraints we cannot ignore.",
-      "name": "Operations Manager",
-      "role": "Health services provider"
-    },
-    "slug": "healthcare",
-    "title": "Healthcare",
-    "icon": "/uploads/media-1788421050303-234659715.svg",
-    "short": "Secure patient experiences and clinical operations software.",
-    "desc": "We design and engineer healthcare software with privacy and reliability in mind — patient portals, scheduling, telehealth flows, and internal clinical tools that reduce friction for staff and patients.",
-    "points": [
-      "Patient portals",
-      "Appointment & care workflows",
-      "HIPAA-minded practices",
-      "Integrations with existing systems"
-    ],
-    "servicesWeOffer": [],
-    "workAreas": [],
-    "productsBuilt": [],
-    "caseStudies": []
-  },
-  {
-    "testimonial": {
-      "quote": "Cubixsol delivered a clean payment experience without cutting corners on controls.",
-      "name": "CTO",
-      "role": "Fintech startup"
-    },
-    "slug": "fintech",
-    "title": "Finance & Fintech",
-    "icon": "/uploads/media-1788421050295-842693555.svg",
-    "short": "Payments, dashboards, and compliant financial products.",
-    "desc": "From customer-facing finance apps to internal risk and reporting tools, we help fintech and finance teams ship secure, auditable software that moves money and data with clarity.",
-    "points": [
-      "Payment & wallet flows",
-      "KYC-friendly onboarding",
-      "Admin & risk dashboards",
-      "API-first integrations"
-    ],
-    "servicesWeOffer": [],
-    "workAreas": [],
-    "productsBuilt": [],
-    "caseStudies": []
-  },
-  {
-    "testimonial": {
-      "quote": "Our conversion and ops visibility improved in the same release cycle.",
-      "name": "Head of Digital",
-      "role": "Retail brand"
-    },
-    "slug": "ecommerce",
-    "title": "E-Commerce",
-    "icon": "/uploads/media-1788421040721-524946062.svg",
-    "short": "Stores, marketplaces, and conversion-focused commerce.",
-    "desc": "We build high-converting storefronts, custom checkout, and commerce backends — with inventory, promotions, and analytics wired for growth.",
-    "points": [
-      "Custom storefronts",
-      "Checkout optimization",
-      "Marketplace features",
-      "OMS & inventory sync"
-    ],
-    "servicesWeOffer": [],
-    "workAreas": [],
-    "productsBuilt": [],
-    "caseStudies": []
-  },
-  {
-    "testimonial": {
-      "quote": "Listings and leads finally lived in one system our agents actually use.",
-      "name": "Sales Director",
-      "role": "Property group"
-    },
-    "slug": "real-estate",
-    "title": "Real Estate",
-    "icon": "/uploads/media-1788421050310-764937006.svg",
-    "short": "Listings, portals, and property operations platforms.",
-    "desc": "Property search, agent tools, and operations software for developers and agencies — fast listing experiences and reliable backend workflows.",
-    "points": [
-      "Listing portals",
-      "Agent CRM light flows",
-      "PMS integrations",
-      "Lead routing"
-    ],
-    "servicesWeOffer": [],
-    "workAreas": [],
-    "productsBuilt": [],
-    "caseStudies": []
-  },
-  {
-    "testimonial": {
-      "quote": "They thought in product metrics, not just tickets closed.",
-      "name": "Founder",
-      "role": "B2B SaaS"
-    },
-    "slug": "saas",
-    "title": "SaaS",
-    "icon": "/uploads/media-1788421050317-66609444.svg",
-    "short": "Multi-tenant products built to onboard, retain, and scale.",
-    "desc": "We partner with SaaS teams on product engineering — from MVP to scale — with solid tenancy, billing hooks, admin, and customer-facing UX.",
-    "points": [
-      "Multi-tenant architecture",
-      "Onboarding & activation",
-      "Billing integrations",
-      "Admin & analytics"
-    ],
-    "servicesWeOffer": [],
-    "workAreas": [],
-    "productsBuilt": [],
-    "caseStudies": []
-  },
-  {
-    "testimonial": {
-      "quote": "Field and office teams finally saw the same status in real time.",
-      "name": "Fleet Manager",
-      "role": "Regional logistics"
-    },
-    "slug": "logistics",
-    "title": "Logistics",
-    "icon": "/uploads/media-1788421050308-313091127.svg",
-    "short": "Tracking, dispatch, and operations visibility on the move.",
-    "desc": "Logistics software for dispatch, tracking, and partner coordination — mobile-friendly field tools and control-tower dashboards.",
-    "points": [
-      "Dispatch & routing support",
-      "Shipment tracking UX",
-      "Partner portals",
-      "Ops dashboards"
-    ],
-    "servicesWeOffer": [],
-    "workAreas": [],
-    "productsBuilt": [],
-    "caseStudies": []
-  },
-  {
-    "testimonial": {
-      "quote": "Peak season held up — and the booking UX stayed simple.",
-      "name": "Digital Manager",
-      "role": "Hospitality group"
-    },
-    "slug": "travel",
-    "title": "Travel & Hospitality",
-    "icon": "/uploads/media-1788421050341-423557658.svg",
-    "short": "Booking journeys and guest experiences that convert.",
-    "desc": "Booking flows, supplier integrations, and guest apps for travel and hospitality brands that need reliability at peak demand. this is checkingrfgreg fefewfewefewf",
-    "points": [
-      "Booking & availability",
-      "Supplier APIs",
-      "Guest mobile experiences",
-      "Loyalty hooks"
-    ],
-    "servicesWeOffer": [],
-    "workAreas": [],
-    "productsBuilt": [],
-    "caseStudies": []
-  },
-  {
-    "testimonial": {
-      "quote": "They matched our engineering bar and moved at product speed.",
-      "name": "VP Engineering",
-      "role": "Tech company"
-    },
-    "slug": "technology",
-    "title": "Technology",
-    "icon": "/uploads/media-1788421050320-328223291.svg",
-    "short": "Platforms, developer tools, and internal tech products.",
-    "desc": "For technology companies building platforms or internal tools, we embed as an engineering partner — architecture, delivery, and UI that matches product standards.",
-    "points": [
-      "Platform features",
-      "Internal tools",
-      "API products",
-      "Design systems"
-    ],
-    "servicesWeOffer": [],
-    "workAreas": [],
-    "productsBuilt": [],
-    "caseStudies": []
   }
 ];
 
@@ -3681,18 +3843,11 @@ const initialProjects = [
     "color": "from-slate-800 to-slate-950"
   },
   {
-    "title": "TaskFlow SaaS",
-    "category": "SaaS",
-    "desc": "A comprehensive project management SaaS for teams to plan, collaborate and deliver.",
-    "tag": "SaaS",
-    "color": "from-indigo-500 to-blue-600"
-  },
-  {
-    "title": "Pawfect Foods",
-    "category": "E-Commerce",
-    "desc": "An e-commerce store for premium pet food and accessories with seamless shopping.",
-    "tag": "E-Commerce",
-    "color": "from-amber-200 to-orange-300"
+    "title": "MediCare Plus",
+    "category": "Web Development",
+    "desc": "A healthcare platform connecting patients with doctors and managing appointments.",
+    "tag": "Healthcare",
+    "color": "from-sky-100 to-blue-200"
   },
   {
     "title": "FinGo Mobile App",
@@ -3709,26 +3864,25 @@ const initialProjects = [
     "color": "from-slate-900 to-purple-950"
   },
   {
-    "title": "MediCare Plus",
-    "category": "Web Development",
-    "desc": "A healthcare platform connecting patients with doctors and managing appointments.",
-    "tag": "Healthcare",
-    "color": "from-sky-100 to-blue-200"
+    "title": "TaskFlow SaaS",
+    "category": "SaaS",
+    "desc": "A comprehensive project management SaaS for teams to plan, collaborate and deliver.",
+    "tag": "SaaS",
+    "color": "from-indigo-500 to-blue-600"
+  },
+  {
+    "title": "Pawfect Foods",
+    "category": "E-Commerce",
+    "desc": "An e-commerce store for premium pet food and accessories with seamless shopping.",
+    "tag": "E-Commerce",
+    "color": "from-amber-200 to-orange-300"
   }
 ];
 
 const initialTeam = [
   {
-    "name": "Fahad Nadeem",
+    "name": "Noman Ghaffer",
     "role": "CEO & Founder"
-  },
-  {
-    "name": "Usman Tariq",
-    "role": "CTO"
-  },
-  {
-    "name": "Ayesha Khan",
-    "role": "UI/UX Director"
   },
   {
     "name": "Abdul Rehman",
@@ -3737,18 +3891,21 @@ const initialTeam = [
   {
     "name": "Hina Batool",
     "role": "Project Manager"
+  },
+  {
+    "name": "Usman Tariq",
+    "role": "CTO"
+  },
+  {
+    "name": "Ayesha Khan",
+    "role": "UI/UX Director"
   }
 ];
 
 const initialFaqs = [
   {
-    "q": "Which software development engagement model should I choose?",
-    "a": "Choose project-based development for a clearly defined product, a dedicated team for long-term delivery, staff augmentation for internal skill gaps, or the MVP model when you need to validate a new idea quickly.",
-    "category": "General"
-  },
-  {
-    "q": "Does Cubixsol provide post-launch support?",
-    "a": "Yes. Post-launch support can include monitoring, issue resolution, security updates, performance optimization, infrastructure management, feature development, and technical guidance as your product and user base grow.",
+    "q": "Can Cubixsol improve an existing software product?",
+    "a": "Yes. Our team can assess an existing product, identify technical and usability issues, modernize outdated components, add features, improve performance, strengthen security, and prepare the system for future growth.",
     "category": "General"
   },
   {
@@ -3757,8 +3914,8 @@ const initialFaqs = [
     "category": "General"
   },
   {
-    "q": "Can Cubixsol improve an existing software product?",
-    "a": "Yes. Our team can assess an existing product, identify technical and usability issues, modernize outdated components, add features, improve performance, strengthen security, and prepare the system for future growth.",
+    "q": "How long does it take to build a software product?",
+    "a": "A focused MVP often takes several weeks, while a complex platform requires a longer schedule. The final timeline depends on scope, integrations, team size, testing requirements, and feedback cycles. We provide milestones and a realistic delivery plan before development begins.",
     "category": "General"
   },
   {
@@ -3767,8 +3924,13 @@ const initialFaqs = [
     "category": "General"
   },
   {
-    "q": "How long does it take to build a software product?",
-    "a": "A focused MVP often takes several weeks, while a complex platform requires a longer schedule. The final timeline depends on scope, integrations, team size, testing requirements, and feedback cycles. We provide milestones and a realistic delivery plan before development begins.",
+    "q": "Which software development engagement model should I choose?",
+    "a": "Choose project-based development for a clearly defined product, a dedicated team for long-term delivery, staff augmentation for internal skill gaps, or the MVP model when you need to validate a new idea quickly.",
+    "category": "General"
+  },
+  {
+    "q": "Does Cubixsol provide post-launch support?",
+    "a": "Yes. Post-launch support can include monitoring, issue resolution, security updates, performance optimization, infrastructure management, feature development, and technical guidance as your product and user base grow.",
     "category": "General"
   }
 ];
@@ -3848,163 +4010,160 @@ const initialSeoSettings = [];
 
 const initialPages = [
   {
-    slug: 'services',
-    title: 'Services',
-    heroEyebrow: 'Our Services',
-    heroTitle: 'Powerful digital solutions that drive real results',
-    heroDesc: 'Strategy, design, engineering and growth — under one roof. Pick a service to see how we deliver, or tell us your goal and we will map the right path.',
-    heroBadges: ['Modern stack', 'Scalable & secure', 'Transparent delivery'],
-
-    processEyebrow: 'Our Process',
-    processTitle: 'Our Proven Development Process',
-    processIntro: '',
-    processSteps: [
+    "seo": {
+      "metaTitle": "Software Development & IT Consulting Services | Cubixsol",
+      "metaDescription": "Explore Cubixsol’s full suite of custom web development, mobile apps, AI products, cloud DevOps, and UI/UX design services designed to scale your business.",
+      "keywords": "custom software development, web development, mobile apps, AI development, cloud devops, ui ux design, cubixsol services",
+      "ogTitle": "Software Development & IT Consulting Services | Cubixsol",
+      "ogDescription": "Explore Cubixsol’s full suite of custom web development, mobile apps, AI products, cloud DevOps, and UI/UX design services designed to scale your business.",
+      "ogImage": "",
+      "canonicalUrl": ""
+    },
+    "slug": "services",
+    "title": "Services",
+    "heroEyebrow": "Our Services",
+    "heroTitle": "Powerful digital solutions that drive real results",
+    "heroDesc": "Strategy, design, engineering and growth — under one roof. Pick a service to see how we deliver, or tell us your goal and we will map the right path.",
+    "heroBadges": [
+      "Modern stack",
+      "Scalable & secure",
+      "Transparent delivery"
+    ],
+    "processEyebrow": "Our Process",
+    "processTitle": "Our Proven Development Process",
+    "processIntro": "",
+    "processSteps": [
       {
-        step: '01',
-        title: 'Discover',
-        desc: 'We clarify your business goals, users, requirements, technical constraints, budget, and success criteria.'
+        "step": "01",
+        "title": "Discover",
+        "desc": "We clarify your business goals, users, requirements, technical constraints, budget, and success criteria."
       },
       {
-        step: '02',
-        title: 'Plan',
-        desc: 'Our team defines the scope, technology, architecture, priorities, milestones, and delivery roadmap.'
+        "step": "02",
+        "title": "Plan",
+        "desc": "Our team defines the scope, technology, architecture, priorities, milestones, and delivery roadmap."
       },
       {
-        step: '03',
-        title: 'Design and Develop',
-        desc: 'Designers create the user experience while developers build, review, and integrate each product component.'
+        "step": "03",
+        "title": "Design and Develop",
+        "desc": "Designers create the user experience while developers build, review, and integrate each product component."
       },
       {
-        step: '04',
-        title: 'Test and Launch',
-        desc: 'We test functionality, usability, compatibility, security, and performance before managing a controlled deployment.'
+        "step": "04",
+        "title": "Test and Launch",
+        "desc": "We test functionality, usability, compatibility, security, and performance before managing a controlled deployment."
       },
       {
-        step: '05',
-        title: 'Support',
-        desc: 'After launch, we monitor performance, resolve issues, deliver updates, and help your product evolve.'
+        "step": "05",
+        "title": "Support",
+        "desc": "After launch, we monitor performance, resolve issues, deliver updates, and help your product evolve."
       }
     ],
-
-    whyChooseEyebrow: 'Why Choose Us',
-    whyChooseTitle: 'Why Businesses Choose Cubixsol',
-    whyChooseIntro: 'Businesses **outsource custom software development services** to us when they need specialized expertise without expanding every internal function. You can expect a clear scope, practical recommendations, visible progress, quality assurance, and continued post-launch support.',
-    whyChooseItems: [
+    "whyChooseEyebrow": "Why Choose Us",
+    "whyChooseTitle": "Why Businesses Choose Cubixsol",
+    "whyChooseIntro": "Businesses **outsource custom software development services** to us when they need specialized expertise without expanding every internal function. You can expect a clear scope, practical recommendations, visible progress, quality assurance, and continued post-launch support.",
+    "whyChooseItems": [
       {
-        title: 'Business-first planning',
-        desc: 'We connect technical decisions to user needs, operational requirements, and commercial goals.'
+        "title": "Business-first planning",
+        "desc": "We connect technical decisions to user needs, operational requirements, and commercial goals."
       },
       {
-        title: 'Cross-functional expertise',
-        desc: 'Developers, designers, QA specialists, consultants, and marketers collaborate throughout delivery.'
+        "title": "Cross-functional expertise",
+        "desc": "Developers, designers, QA specialists, consultants, and marketers collaborate throughout delivery."
       },
       {
-        title: 'Enterprise-ready thinking',
-        desc: 'Our **custom enterprise software development services** prioritize scalability, integrations, maintainability, and long-term product performance.'
+        "title": "Enterprise-ready thinking",
+        "desc": "Our **custom enterprise software development services** prioritize scalability, integrations, maintainability, and long-term product performance."
       },
       {
-        title: 'Transparent execution',
-        desc: 'Defined milestones, regular communication, testing, and documented feedback keep the project moving in the right direction.'
+        "title": "Transparent execution",
+        "desc": "Defined milestones, regular communication, testing, and documented feedback keep the project moving in the right direction."
       }
     ],
-
-    engagementEyebrow: 'Engagement Models',
-    engagementTitle: 'Flexible Engagement Models, Including Staff Augmentation',
-    engagementIntro: '',
-    engagementItems: [
+    "engagementEyebrow": "Engagement Models",
+    "engagementTitle": "Flexible Engagement Models, Including Staff Augmentation",
+    "engagementIntro": "",
+    "engagementItems": [
       {
-        title: 'Project-Based Development',
-        desc: 'Choose a defined scope, timeline, and delivery plan for a website, application, integration, migration, or digital campaign.'
+        "title": "Project-Based Development",
+        "desc": "Choose a defined scope, timeline, and delivery plan for a website, application, integration, migration, or digital campaign."
       },
       {
-        title: 'Dedicated Team',
-        desc: 'Secure a consistent multidisciplinary team that works exclusively or primarily on your product and long-term roadmap.'
+        "title": "Dedicated Team",
+        "desc": "Secure a consistent multidisciplinary team that works exclusively or primarily on your product and long-term roadmap."
       },
       {
-        title: 'Staff Augmentation Services',
-        desc: 'Fill specific skill gaps, increase delivery capacity, or add specialists to an existing team while retaining direct project control.'
+        "title": "Staff Augmentation Services",
+        "desc": "Fill specific skill gaps, increase delivery capacity, or add specialists to an existing team while retaining direct project control."
       },
       {
-        title: 'MVP and Startup Development',
-        desc: 'Validate an idea quickly with focused features, rapid feedback, controlled costs, and a roadmap for future product growth.'
+        "title": "MVP and Startup Development",
+        "desc": "Validate an idea quickly with focused features, rapid feedback, controlled costs, and a roadmap for future product growth."
       }
     ],
-
-    industriesEyebrow: 'Industries',
-    industriesTitle: 'Industries We Serve',
-    industriesIntro: 'Cubixsol adapts its technology and delivery approach to the workflows, users, and compliance needs of different sectors.',
-    industriesItems: [
+    "industriesEyebrow": "Industries",
+    "industriesTitle": "Industries We Serve",
+    "industriesIntro": "Cubixsol adapts its technology and delivery approach to the workflows, users, and compliance needs of different sectors.",
+    "industriesItems": [
       {
-        title: 'Education',
-        desc: 'Learning platforms, student portals, and administrative systems'
+        "title": "Education",
+        "desc": "Learning platforms, student portals, and administrative systems"
       },
       {
-        title: 'Travel',
-        desc: 'Booking platforms, integrations, and customer applications'
+        "title": "Travel",
+        "desc": "Booking platforms, integrations, and customer applications"
       },
       {
-        title: 'Healthcare',
-        desc: 'Patient-facing tools and operational software'
+        "title": "Healthcare",
+        "desc": "Patient-facing tools and operational software"
       },
       {
-        title: 'FinTech',
-        desc: 'Secure financial platforms and payment integrations'
+        "title": "FinTech",
+        "desc": "Secure financial platforms and payment integrations"
       },
       {
-        title: 'E-commerce',
-        desc: 'Online stores, marketplaces, and retail automation'
+        "title": "E-commerce",
+        "desc": "Online stores, marketplaces, and retail automation"
       },
       {
-        title: 'SaaS',
-        desc: 'Subscription platforms and cloud-based business products'
+        "title": "SaaS",
+        "desc": "Subscription platforms and cloud-based business products"
       }
     ],
-
-    ctaEyebrow: 'Ready to Start?',
-    ctaTitle: 'Ready to Start Your Project? Let’s Talk',
-    ctaDesc: 'Move from idea to execution with reliable **custom software development services** built around your users, operations, and growth plans.',
-    ctaButtonText: 'Discuss Your Project',
-    ctaButtonLink: '/contact',
-
-    faqEyebrow: 'FAQ',
-    faqTitle: 'Frequently Asked Questions',
-    faqIntro: '',
-    faqs: [
+    "ctaEyebrow": "Ready to Start?",
+    "ctaTitle": "Ready to Start Your Project? Let’s Talk",
+    "ctaDesc": "Move from idea to execution with reliable **custom software development services** built around your users, operations, and growth plans.",
+    "ctaButtonText": "Discuss Your Project",
+    "ctaButtonLink": "/contact",
+    "faqEyebrow": "FAQ",
+    "faqTitle": "Frequently Asked Questions",
+    "faqIntro": "",
+    "faqs": [
       {
-        q: 'How much do custom software development services cost?',
-        a: 'Cost depends on the project’s features, technical complexity, integrations, platforms, timeline, and team requirements. We review your scope before providing a customized estimate.'
+        "q": "How much do custom software development services cost?",
+        "a": "Cost depends on the project’s features, technical complexity, integrations, platforms, timeline, and team requirements. We review your scope before providing a customized estimate."
       },
       {
-        q: 'How long does a software development project take?',
-        a: 'A focused MVP may take considerably less time than a multi-platform enterprise system. After discovery, we provide a roadmap with realistic phases, milestones, and delivery estimates.'
+        "q": "How long does a software development project take?",
+        "a": "A focused MVP may take considerably less time than a multi-platform enterprise system. After discovery, we provide a roadmap with realistic phases, milestones, and delivery estimates."
       },
       {
-        q: 'Which Cubixsol service should I choose?',
-        a: 'Start with the outcome, not the technology. Share the problem you need to solve, and our team will recommend the appropriate service, platform, and engagement model.'
+        "q": "Which Cubixsol service should I choose?",
+        "a": "Start with the outcome, not the technology. Share the problem you need to solve, and our team will recommend the appropriate service, platform, and engagement model."
       },
       {
-        q: 'Does Cubixsol provide post-launch support?',
-        a: 'Yes. Support can include issue resolution, performance monitoring, security updates, feature improvements, integrations, optimization, and ongoing product maintenance.'
+        "q": "Does Cubixsol provide post-launch support?",
+        "a": "Yes. Support can include issue resolution, performance monitoring, security updates, feature improvements, integrations, optimization, and ongoing product maintenance."
       },
       {
-        q: 'Do you work with both startups and enterprises?',
-        a: 'Yes. Startups can use MVP development to validate ideas, while established businesses can engage Cubixsol for modernization, integrations, dedicated teams, and enterprise platforms.'
+        "q": "Do you work with both startups and enterprises?",
+        "a": "Yes. Startups can use MVP development to validate ideas, while established businesses can engage Cubixsol for modernization, integrations, dedicated teams, and enterprise platforms."
       },
       {
-        q: 'How can I find custom software development services near me?',
-        a: 'Location should not be your only selection criterion. Compare relevant experience, communication, technical capability, delivery process, and post-launch support. Our experts collaborate with clients through remote and regional teams.'
+        "q": "How can I find custom software development services near me?",
+        "a": "Location should not be your only selection criterion. Compare relevant experience, communication, technical capability, delivery process, and post-launch support. Our experts collaborate with clients through remote and regional teams."
       }
-    ],
-
-    seo: {
-      metaTitle: 'Software Development & IT Consulting Services | Cubixsol',
-      metaDescription: 'Explore Cubixsol’s full suite of custom web development, mobile apps, AI products, cloud DevOps, and UI/UX design services designed to scale your business.',
-      keywords: 'custom software development, web development, mobile apps, AI development, cloud devops, ui ux design, cubixsol services',
-      ogTitle: 'Software Development & IT Consulting Services | Cubixsol',
-      ogDescription: 'Explore Cubixsol’s full suite of custom web development, mobile apps, AI products, cloud DevOps, and UI/UX design services designed to scale your business.',
-      ogImage: '',
-      canonicalUrl: ''
-    }
+    ]
   }
 ];
 

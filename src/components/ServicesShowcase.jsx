@@ -12,9 +12,9 @@ export default function ServicesShowcase() {
   const services = allServices.slice(0, 6);
 
   return (
-    <section className="bg-white py-20 lg:py-28">
+    <section className="bg-white py-14 lg:py-18">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Reveal className="text-center max-w-3xl mx-auto mb-14">
+        <Reveal className="text-center max-w-3xl mx-auto mb-10">
           <p className="text-sm font-medium text-gray-400 mb-3">Our services</p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-ink tracking-tight leading-tight">
             {/* We optimize high-impact areas */}

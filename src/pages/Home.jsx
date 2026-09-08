@@ -28,7 +28,7 @@ export default function Home() {
       <HeroSlider />
 
       {/* 2. Client logos */}
-      <section className="bg-white py-12 border-b border-gray-50">
+      <section className="bg-white py-8 sm:py-10 border-b border-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-center text-xs font-bold tracking-widest text-gray-400 uppercase mb-6">
             Trusted by 200+ Businesses Worldwide
@@ -74,7 +74,7 @@ export default function Home() {
       <EngagementModels />
 
       {/* 15. Why choose */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-18">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <Reveal direction="right">
             <p className="eyebrow mb-3">Why Choose Cubixsol?</p>

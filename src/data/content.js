@@ -378,7 +378,7 @@ export const projects = [
 ];
 
 export const team = [
-  { name: 'Fahad Nadeem', role: 'CEO & Founder' },
+  { name: 'Noman Ghaffer', role: 'CEO & Founder' },
   { name: 'Usman Tariq', role: 'CTO' },
   { name: 'Ayesha Khan', role: 'UI/UX Director' },
   { name: 'Abdul Rehman', role: 'Lead Developer' },

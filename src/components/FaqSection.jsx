@@ -8,7 +8,7 @@ export default function FaqSection() {
   const [open, setOpen] = useState(0);
 
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-18">
       <div className="grid lg:grid-cols-5 gap-12">
         <Reveal className="lg:col-span-2">
           <p className="eyebrow mb-3">FAQ</p>

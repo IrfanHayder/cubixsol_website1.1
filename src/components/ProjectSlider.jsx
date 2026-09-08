@@ -23,7 +23,7 @@ export default function ProjectSlider() {
   };
 
   return (
-    <section className="bg-gray-50 py-20 overflow-hidden">
+    <section className="bg-gray-50 py-14 lg:py-18 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal className="flex flex-col items-center text-center mb-10">
           <p className="eyebrow mb-3">Our Work</p>

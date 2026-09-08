@@ -24,8 +24,8 @@ export default function ProjectEstimator() {
   }, [selected]);
 
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-      <Reveal className="text-center max-w-2xl mx-auto mb-12">
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-18">
+      <Reveal className="text-center max-w-2xl mx-auto mb-8">
         <p className="eyebrow mb-3">Instant Estimate</p>
         <h2 className="text-3xl sm:text-4xl font-extrabold text-ink mb-4">
           Get a Ballpark Project Estimate

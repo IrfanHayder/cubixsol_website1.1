@@ -2,7 +2,7 @@ import Reveal from './Reveal';
 
 export default function AgencyStatement() {
   return (
-    <section className="py-20 lg:py-28 bg-white">
+    <section className="py-12 lg:py-16 bg-white">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <Reveal>
           <p className="eyebrow mb-6">What we do</p>
@@ -16,8 +16,8 @@ export default function AgencyStatement() {
             Cubixsol partners with ambitious teams to design, build and scale products that people love —
             from first sketch to production launch.
           </p>
-          <div className="mt-10 flex flex-col items-center gap-1">
-            <p className="font-bold text-ink">Fahad Nadeem</p>
+          <div className="mt-8 flex flex-col items-center gap-1">
+            <p className="font-bold text-ink">Noman Ghaffer</p>
             <p className="text-sm text-gray-400">CEO &amp; Founder</p>
           </div>
         </Reveal>

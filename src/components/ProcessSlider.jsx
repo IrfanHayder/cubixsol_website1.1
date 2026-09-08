@@ -13,8 +13,8 @@ export default function ProcessSlider() {
   const [activeStep, setActiveStep] = useState(0);
 
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
-      <Reveal className="text-center max-w-2xl mx-auto mb-14">
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-18">
+      <Reveal className="text-center max-w-2xl mx-auto mb-10">
         <p className="eyebrow mb-3">HOW WE WORK</p>
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-ink tracking-tight mb-3">
           Our Proven Development Process

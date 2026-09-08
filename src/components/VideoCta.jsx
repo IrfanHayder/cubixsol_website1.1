@@ -4,7 +4,7 @@ import Reveal from './Reveal';
 
 export default function VideoCta() {
   return (
-    <section className="relative py-24 lg:py-32 overflow-hidden">
+    <section className="relative py-16 lg:py-20 overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
