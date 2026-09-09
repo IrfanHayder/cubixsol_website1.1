@@ -4166,6 +4166,96 @@ const initialPages = [
         "a": "Location should not be your only selection criterion. Compare relevant experience, communication, technical capability, delivery process, and post-launch support. Our experts collaborate with clients through remote and regional teams."
       }
     ]
+  },
+  {
+    "slug": "industries",
+    "title": "Industries",
+    "heroEyebrow": "Where we deliver",
+    "heroTitle": "Industry-Specific Software Development Services",
+    "heroDesc": "Cubixsol provides **industry software development services** to address the operational demands, customer expectations, and technical requirements of your market. We understand your domain and combine that knowledge with product strategy, design, engineering, and system integration to build powerful software that achieves your business goals.",
+    "heroButtonText": "Discuss Your Project",
+    "heroButtonLink": "/contact",
+    "heroBadges": [
+      "Domain-Aware Engineering",
+      "Regulated Compliance (HIPAA, PCI DSS)",
+      "Modern Scalable Architecture",
+      "Custom Third-Party Integrations"
+    ],
+    "builtAroundEyebrow": "Tailored Solutions",
+    "builtAroundTitle": "Software Built Around Your Industry",
+    "builtAroundDesc": "Every industry faces distinct challenges, which is why we develop industry-specific software to address them. We develop each product based on the industry’s users, processes, integrations, security risks, and regulatory requirements. Our specialists deliver industry-focused software solutions across eight key verticals to modernize outdated systems, improve customer experiences, and support future growth.",
+    "builtAroundPoints": [
+      {
+        "title": "User & Workflow Centric",
+        "desc": "Tailored to the specific daily operating workflows of your teams and end users."
+      },
+      {
+        "title": "Security & Regulatory Compliance",
+        "desc": "Built-in protection adhering to HIPAA, PCI DSS, SOC 2, and data privacy regulations."
+      },
+      {
+        "title": "API & Legacy System Integration",
+        "desc": "Interoperable connections with CRM, ERP, payment gateways, and core platforms."
+      },
+      {
+        "title": "Scalable Cloud Architecture",
+        "desc": "Engineered for high traffic volume, fault tolerance, and zero-downtime operations."
+      }
+    ],
+    "industriesSectionEyebrow": "Industries We Serve",
+    "industriesSectionTitle": "Industries We Serve",
+    "industriesSectionIntro": "Our teams combine technical expertise with practical industry knowledge. From regulated healthcare platforms to high-traffic ecommerce stores, we build reliable digital products around the way each business operates.",
+    "domainExpertiseEyebrow": "Strategic Advantage",
+    "domainExpertiseTitle": "Why Domain Expertise Matters",
+    "domainExpertiseParagraphs": [
+      "Software development decisions carry different consequences in every industry. A healthcare platform must protect sensitive patient information, while a fintech product must secure financial transactions. E-commerce and travel platforms must process heavy traffic without disrupting the customer journey.",
+      "We consider industry-specific requirements from the beginning. We assess user roles, business workflows, system dependencies, data security, and relevant standards such as HIPAA and PCI DSS where applicable. Our approach reduces avoidable rework, supports faster decision-making, and produces software suited to real operating conditions rather than generic assumptions."
+    ],
+    "domainExpertisePillars": [
+      {
+        "title": "Context-Driven Architecture",
+        "desc": "Technical decisions tailored to actual industry constraints and user requirements."
+      },
+      {
+        "title": "Security & Compliance from Day 1",
+        "desc": "Built with strict industry standards such as HIPAA, PCI DSS, and data privacy laws."
+      },
+      {
+        "title": "Zero Rework & Fast Delivery",
+        "desc": "Clear understanding of industry workflows prevents costly revisions and speeds rollout."
+      }
+    ],
+    "ctaEyebrow": "Let's Collaborate",
+    "ctaTitle": "Let’s Build Something Amazing Together",
+    "ctaDesc": "Turn your industry knowledge into a digital product that works for your customers and operations. Partner with Cubixsol to plan, design, develop, and scale software built around your market.",
+    "ctaButtonText": "Start Your Project",
+    "ctaButtonLink": "/contact",
+    "faqEyebrow": "FAQ",
+    "faqTitle": "Frequently Asked Questions",
+    "faqIntro": "Explore answers to key questions about our industry-specific software development capabilities.",
+    "faqs": [
+      {
+        "q": "Does Cubixsol have experience with industry-specific software?",
+        "a": "Yes. We build software for healthcare, SaaS, fintech, logistics, real estate, education, ecommerce, and travel businesses. We design the development process around each industry's users, workflows, and technical requirements."
+      },
+      {
+        "q": "Can you integrate the software with our existing systems?",
+        "a": "Yes. We can connect your product with CRM, ERP, payment, accounting, analytics, inventory, communication, and other third-party platforms through available APIs or custom integrations."
+      },
+      {
+        "q": "Can we review relevant project examples?",
+        "a": "Yes. Share your industry and project requirements with our team. We will present the most relevant work, capabilities, or technical approach based on your product goals and confidentiality restrictions."
+      }
+    ],
+    "seo": {
+      "metaTitle": "Industry-Specific Software Development Services | Cubixsol",
+      "metaDescription": "Cubixsol provides industry software development services across healthcare, SaaS, fintech, logistics, real estate, education, ecommerce, and travel.",
+      "keywords": "industry software development, healthcare software, fintech software, saas development, logistics software, real estate software, ecommerce software, education software, travel software, cubixsol",
+      "ogTitle": "Industry-Specific Software Development Services | Cubixsol",
+      "ogDescription": "Cubixsol provides industry software development services across healthcare, SaaS, fintech, logistics, real estate, education, ecommerce, and travel.",
+      "ogImage": "",
+      "canonicalUrl": ""
+    }
   }
 ];
 

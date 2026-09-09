@@ -68,6 +68,17 @@ const pageContentSchema = new mongoose.Schema(
       },
     ],
 
+    contactSectionTitle: { type: String },
+    contactSectionSubtitle: { type: String },
+    mapEmbedUrl: { type: String },
+    highlights: [
+      {
+        icon: { type: String },
+        title: { type: String },
+        desc: { type: String },
+      },
+    ],
+
     seo: {
       metaTitle: { type: String },
       metaDescription: { type: String },

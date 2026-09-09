@@ -1,11 +1,27 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import {
-  Send, MapPin, Mail, Phone, Clock, Zap, Users2, ShieldCheck, Plus, Minus, CheckCircle2, MailPlus,
+  Send,
+  MapPin,
+  Mail,
+  Phone,
+  Clock,
+  Zap,
+  Users2,
+  ShieldCheck,
+  Plus,
+  Minus,
+  CheckCircle2,
+  MailPlus,
+  Loader2,
+  AlertCircle,
 } from 'lucide-react';
 import { faqs } from '../data/content';
 import Breadcrumb from '../components/Breadcrumb';
 import Reveal, { Stagger, StaggerItem } from '../components/Reveal';
+import DynamicIcon from '../components/DynamicIcon';
+import { API_BASE, apiFetch } from '../utils/api';
+import { formatMapEmbedUrl } from '../utils/mapUrl';
 
 const initialForm = { name: '', email: '', phone: '', service: '', subject: '', message: '' };
 
@@ -21,12 +37,100 @@ const serviceOptions = [
   'Other / Not sure',
 ];
 
+const fallbackContactCards = [
+  {
+    title: 'Our Location',
+    desc: '123 Innovation Drive, Suite 501\nNew York, NY 10001, USA',
+    icon: 'MapPin',
+    link: 'https://maps.google.com/maps?q=New%20York%2C%20NY',
+  },
+  {
+    title: 'Email Us',
+    desc: 'hello@cubixsol.com\ninfo@cubixsol.com',
+    icon: 'Mail',
+    link: 'mailto:hello@cubixsol.com',
+  },
+  {
+    title: 'Call Us',
+    desc: '+1 (212) 123-4567\n+1 (212) 987-6543',
+    icon: 'Phone',
+    link: 'tel:+12121234567',
+  },
+  {
+    title: 'Working Hours',
+    desc: 'Mon - Fri: 9:00 AM - 6:00 PM\nSaturday - Sunday: Closed',
+    icon: 'Clock',
+    link: '',
+  },
+];
+
+const fallbackPageData = {
+  heroEyebrow: 'Get In Touch',
+  heroTitle: "Let's Build Something Amazing Together",
+  heroDesc:
+    "Have a project in mind or need expert advice? We'd love to hear from you. Fill out the form and our team will get back to you as soon as possible.",
+  contactSectionTitle: "We're Here to Help",
+  contactSectionSubtitle:
+    'Choose the best way to reach us. Our team is always ready to assist you.',
+  mapEmbedUrl:
+    'https://maps.google.com/maps?q=New%20York%2C%20NY&t=&z=13&ie=UTF8&iwloc=&output=embed',
+  highlights: [
+    { icon: 'Clock', title: 'Quick Response', desc: 'We reply within 24 hours' },
+    { icon: 'Users2', title: 'Expert Support', desc: 'Get help from our experienced team' },
+    { icon: 'ShieldCheck', title: 'Trusted Partner', desc: 'Your success is our priority' },
+  ],
+};
+
 export default function Contact() {
   const [form, setForm] = useState(initialForm);
   const [errors, setErrors] = useState({});
+  const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState(null);
   const [openFaq, setOpenFaq] = useState(0);
+
+  const [contactCards, setContactCards] = useState(fallbackContactCards);
+  const [pageData, setPageData] = useState(fallbackPageData);
+
   const location = useLocation();
+
+  useEffect(() => {
+    let cancelled = false;
+
+    // Fetch dynamic contact cards from MongoDB
+    apiFetch('contact-info')
+      .then((data) => {
+        if (cancelled) return;
+        if (Array.isArray(data) && data.length > 0) {
+          const activeCards = data.filter((c) => !c.status || c.status === 'Active');
+          if (activeCards.length > 0) {
+            setContactCards(activeCards);
+          }
+        }
+      })
+      .catch((err) => console.warn('Could not fetch contact cards:', err.message));
+
+    // Fetch dynamic contact page content & map settings from MongoDB
+    apiFetch('pages/contact')
+      .then((data) => {
+        if (cancelled) return;
+        if (data) {
+          setPageData((prev) => ({
+            ...prev,
+            ...data,
+            highlights:
+              Array.isArray(data.highlights) && data.highlights.length > 0
+                ? data.highlights
+                : prev.highlights,
+          }));
+        }
+      })
+      .catch((err) => console.warn('Could not fetch contact page content:', err.message));
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   useEffect(() => {
     if (location.hash === '#contact-form') {
@@ -41,6 +145,9 @@ export default function Contact() {
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
+    if (errors[e.target.name]) {
+      setErrors({ ...errors, [e.target.name]: null });
+    }
   };
 
   const validate = () => {
@@ -54,13 +161,41 @@ export default function Contact() {
     return errs;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const errs = validate();
     setErrors(errs);
+    setSubmitError(null);
+
     if (Object.keys(errs).length === 0) {
-      setSubmitted(true);
-      setForm(initialForm);
+      setSubmitting(true);
+      try {
+        const res = await fetch(`${API_BASE}/messages`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: form.name,
+            email: form.email,
+            phone: form.phone,
+            subject: `[${form.service}] ${form.subject}`,
+            message: form.message,
+            status: 'Unread',
+          }),
+        });
+
+        if (!res.ok) {
+          const errData = await res.json().catch(() => ({}));
+          throw new Error(errData.message || 'Failed to send message');
+        }
+
+        setSubmitted(true);
+        setForm(initialForm);
+      } catch (err) {
+        console.error(err);
+        setSubmitError(err.message || 'Error submitting message. Please try again.');
+      } finally {
+        setSubmitting(false);
+      }
     }
   };
 
@@ -70,25 +205,40 @@ export default function Contact() {
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16 grid lg:grid-cols-2 gap-10">
         <Reveal direction="right">
-          <p className="eyebrow mb-3">Get In Touch</p>
+          <p className="eyebrow mb-3">{pageData.heroEyebrow || 'Get In Touch'}</p>
           <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight text-ink mb-5">
-            Let's Build Something <span className="bg-clip-text text-transparent bg-primary-gradient">Amazing Together</span>
+            {pageData.heroTitle ? (
+              pageData.heroTitle.includes('Amazing Together') ? (
+                <>
+                  Let's Build Something{' '}
+                  <span className="bg-clip-text text-transparent bg-primary-gradient">
+                    Amazing Together
+                  </span>
+                </>
+              ) : (
+                pageData.heroTitle
+              )
+            ) : (
+              <>
+                Let's Build Something{' '}
+                <span className="bg-clip-text text-transparent bg-primary-gradient">
+                  Amazing Together
+                </span>
+              </>
+            )}
           </h1>
           <p className="text-gray-500 mb-8">
-            Have a project in mind or need expert advice? We'd love to hear from you. Fill out the form and our team will get back to you as soon as possible.
+            {pageData.heroDesc ||
+              "Have a project in mind or need expert advice? We'd love to hear from you. Fill out the form and our team will get back to you as soon as possible."}
           </p>
           <div className="grid sm:grid-cols-3 gap-5">
-            {[
-              [Clock, 'Quick Response', 'We reply within 24 hours'],
-              [Users2, 'Expert Support', 'Get help from our experienced team'],
-              [ShieldCheck, 'Trusted Partner', 'Your success is our priority'],
-            ].map(([Icon, title, desc]) => (
-              <div key={title} className="flex flex-col gap-2">
+            {(pageData.highlights || fallbackPageData.highlights).map((h, i) => (
+              <div key={h.title || i} className="flex flex-col gap-2">
                 <span className="w-9 h-9 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center">
-                  <Icon className="w-4.5 h-4.5" />
+                  <DynamicIcon icon={h.icon || 'ShieldCheck'} className="w-4.5 h-4.5 text-primary-600" />
                 </span>
-                <p className="text-xs font-bold text-ink">{title}</p>
-                <p className="text-xs text-gray-500 leading-snug">{desc}</p>
+                <p className="text-xs font-bold text-ink">{h.title}</p>
+                <p className="text-xs text-gray-500 leading-snug">{h.desc}</p>
               </div>
             ))}
           </div>
@@ -101,25 +251,50 @@ export default function Contact() {
               <CheckCircle2 className="w-4 h-4 shrink-0" /> Thanks! Your message has been sent — we'll be in touch within 24 hours.
             </div>
           )}
+          {submitError && (
+            <div className="mb-5 flex items-center gap-2 bg-rose-50 text-rose-700 text-sm font-medium px-4 py-3 rounded-lg">
+              <AlertCircle className="w-4 h-4 shrink-0" /> {submitError}
+            </div>
+          )}
           <form onSubmit={handleSubmit} noValidate className="space-y-4">
             <div className="grid sm:grid-cols-2 gap-4">
               <Field label="Full Name" required error={errors.name}>
-                <input name="name" value={form.name} onChange={handleChange} placeholder="Enter your full name"
-                  className={inputClass(errors.name)} />
+                <input
+                  name="name"
+                  value={form.name}
+                  onChange={handleChange}
+                  placeholder="Enter your full name"
+                  className={inputClass(errors.name)}
+                />
               </Field>
               <Field label="Email Address" required error={errors.email}>
-                <input name="email" value={form.email} onChange={handleChange} placeholder="Enter your email"
-                  className={inputClass(errors.email)} />
+                <input
+                  name="email"
+                  value={form.email}
+                  onChange={handleChange}
+                  placeholder="Enter your email"
+                  className={inputClass(errors.email)}
+                />
               </Field>
             </div>
             <div className="grid sm:grid-cols-2 gap-4">
               <Field label="Phone Number" error={errors.phone}>
-                <input name="phone" value={form.phone} onChange={handleChange} placeholder="Enter your phone number"
-                  className={inputClass(errors.phone)} />
+                <input
+                  name="phone"
+                  value={form.phone}
+                  onChange={handleChange}
+                  placeholder="Enter your phone number"
+                  className={inputClass(errors.phone)}
+                />
               </Field>
               <Field label="Subject" required error={errors.subject}>
-                <input name="subject" value={form.subject} onChange={handleChange} placeholder="What is this regarding?"
-                  className={inputClass(errors.subject)} />
+                <input
+                  name="subject"
+                  value={form.subject}
+                  onChange={handleChange}
+                  placeholder="What is this regarding?"
+                  className={inputClass(errors.subject)}
+                />
               </Field>
             </div>
             <Field label="Which service are you interested in?" required error={errors.service}>
@@ -136,11 +311,29 @@ export default function Contact() {
               </select>
             </Field>
             <Field label="Message" required error={errors.message}>
-              <textarea name="message" value={form.message} onChange={handleChange} rows={5} placeholder="Tell us about your project or inquiry..."
-                className={inputClass(errors.message)} />
+              <textarea
+                name="message"
+                value={form.message}
+                onChange={handleChange}
+                rows={5}
+                placeholder="Tell us about your project or inquiry..."
+                className={inputClass(errors.message)}
+              />
             </Field>
-            <button type="submit" className="btn-primary w-full justify-center">
-              Send Message <Send className="w-4 h-4" />
+            <button
+              type="submit"
+              disabled={submitting}
+              className="btn-primary w-full justify-center disabled:opacity-70 cursor-pointer"
+            >
+              {submitting ? (
+                <>
+                  <Loader2 className="w-4 h-4 animate-spin" /> Sending Message...
+                </>
+              ) : (
+                <>
+                  Send Message <Send className="w-4 h-4" />
+                </>
+              )}
             </button>
             <p className="text-xs text-gray-400 text-center flex items-center justify-center gap-1.5">
               <ShieldCheck className="w-3.5 h-3.5" /> We respect your privacy. Your information is safe with us.
@@ -152,33 +345,56 @@ export default function Contact() {
       {/* CONTACT INFO + MAP */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 grid lg:grid-cols-2 gap-10">
         <Reveal direction="right">
-          <h2 className="text-2xl font-extrabold text-ink mb-1">We're Here to Help</h2>
-          <p className="text-gray-500 mb-6">Choose the best way to reach us. Our team is always ready to assist you.</p>
+          <h2 className="text-2xl font-extrabold text-ink mb-1">
+            {pageData.contactSectionTitle || "We're Here to Help"}
+          </h2>
+          <p className="text-gray-500 mb-6">
+            {pageData.contactSectionSubtitle ||
+              'Choose the best way to reach us. Our team is always ready to assist you.'}
+          </p>
           <Stagger className="grid sm:grid-cols-2 gap-5" staggerDelay={0.08}>
-            {[
-              [MapPin, 'Our Location', '123 Innovation Drive, Suite 501\nNew York, NY 10001, USA'],
-              [Mail, 'Email Us', 'hello@cubixsol.com\ninfo@cubixsol.com'],
-              [Phone, 'Call Us', '+1 (212) 123-4567\n+1 (212) 987-6543'],
-              [Clock, 'Working Hours', 'Mon - Fri: 9:00 AM - 6:00 PM\nSaturday - Sunday: Closed'],
-            ].map(([Icon, title, desc]) => (
-              <StaggerItem key={title}>
+            {contactCards.map((card, idx) => {
+              const CardInner = (
                 <div className="card !p-5 h-full hover:-translate-y-1 hover:shadow-soft transition-all duration-300">
                   <span className="w-9 h-9 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center mb-3">
-                    <Icon className="w-4.5 h-4.5" />
+                    <DynamicIcon icon={card.icon} className="w-4.5 h-4.5" />
                   </span>
-                  <p className="font-bold text-sm text-ink mb-1">{title}</p>
-                  <p className="text-xs text-gray-500 whitespace-pre-line leading-relaxed">{desc}</p>
+                  <p className="font-bold text-sm text-ink mb-1">{card.title}</p>
+                  <p className="text-xs text-gray-500 whitespace-pre-line leading-relaxed">
+                    {card.desc}
+                  </p>
                 </div>
-              </StaggerItem>
-            ))}
+              );
+
+              return (
+                <StaggerItem key={card._id || card.title || idx}>
+                  {card.link ? (
+                    <a
+                      href={card.link}
+                      target={card.link.startsWith('http') ? '_blank' : undefined}
+                      rel={card.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                      className="block h-full"
+                    >
+                      {CardInner}
+                    </a>
+                  ) : (
+                    CardInner
+                  )}
+                </StaggerItem>
+              );
+            })}
           </Stagger>
         </Reveal>
-        <Reveal direction="left" delay={0.1} className="rounded-2xl overflow-hidden border border-gray-100 shadow-card h-full min-h-[320px] bg-gray-100 relative">
+        <Reveal
+          direction="left"
+          delay={0.1}
+          className="rounded-2xl overflow-hidden border border-gray-100 shadow-card h-full min-h-[320px] bg-gray-100 relative"
+        >
           <iframe
             title="Cubixsol location map"
-            className="w-full h-full min-h-[320px]"
+            className="w-full h-full min-h-[320px] border-0"
             loading="lazy"
-            src="https://maps.google.com/maps?q=New%20York%2C%20NY&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            src={formatMapEmbedUrl(pageData.mapEmbedUrl)}
           />
         </Reveal>
       </section>

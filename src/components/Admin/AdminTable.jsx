@@ -1,5 +1,5 @@
 import { Edit2, Trash2, Eye } from 'lucide-react';
-
+import DynamicIcon from '../DynamicIcon';
 
 export default function AdminTable({ columns, data, onEdit, onDelete, onView }) {
   const renderCell = (col, row) => {
@@ -7,7 +7,20 @@ export default function AdminTable({ columns, data, onEdit, onDelete, onView }) 
     const val = row[col.key];
     if (val === null || val === undefined || val === '') return <span className="text-ink/30">—</span>;
 
-    const isImageKey = ['image', 'heroImage', 'avatar', 'coverImage', 'whyChooseImage', 'thumbnail', 'icon'].includes(col.key);
+    if (col.key === 'icon') {
+      return (
+        <div className="flex items-center gap-2.5">
+          <div className="w-10 h-10 rounded-xl overflow-hidden bg-primary-50 text-primary-600 border border-primary-100/60 shrink-0 shadow-xs flex items-center justify-center p-2">
+            <DynamicIcon icon={val} className="w-5 h-5 text-primary-600" />
+          </div>
+          <span className="text-xs font-semibold text-ink/80 font-mono truncate max-w-[120px]" title={val}>
+            {typeof val === 'string' && val.includes('/') ? val.split('/').pop() : val}
+          </span>
+        </div>
+      );
+    }
+
+    const isImageKey = ['image', 'heroImage', 'avatar', 'coverImage', 'whyChooseImage', 'thumbnail'].includes(col.key);
     const isMediaUrl = typeof val === 'string' && (val.startsWith('/uploads/') || (val.startsWith('http') && val.match(/\.(jpeg|jpg|gif|png|webp|svg)($|\?)/i)));
 
     if (isImageKey || isMediaUrl) {
@@ -29,6 +42,23 @@ export default function AdminTable({ columns, data, onEdit, onDelete, onView }) 
             {val.split('/').pop()}
           </span>
         </div>
+      );
+    }
+
+    if (col.key === 'status') {
+      const isOk = val === 'Active' || val === 'Published' || val === 'Open';
+      return (
+        <span className={`inline-flex px-2.5 py-1 rounded-full text-xs font-semibold ${isOk ? 'bg-emerald-50 text-emerald-700' : 'bg-amber-50 text-amber-700'}`}>
+          {val}
+        </span>
+      );
+    }
+
+    if (typeof val === 'string' && val.includes('\n')) {
+      return (
+        <span className="text-xs text-ink/80 whitespace-pre-line line-clamp-2 max-w-xs block leading-relaxed" title={val}>
+          {val}
+        </span>
       );
     }
 

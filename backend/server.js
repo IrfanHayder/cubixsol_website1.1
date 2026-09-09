@@ -23,6 +23,7 @@ const Team = require('./models/Team');
 const Faq = require('./models/Faq');
 const SiteSetting = require('./models/SiteSetting');
 const PageContent = require('./models/PageContent');
+const ContactInfo = require('./models/ContactInfo');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -535,6 +536,92 @@ async function seedInitialData() {
       await PageContent.insertMany(initialPages);
       console.log('Seeded initial Pages data');
     }
+
+    // Seed default Contact page content if missing
+    const contactPage = await PageContent.findOne({ slug: 'contact' });
+    if (!contactPage) {
+      await PageContent.create({
+        slug: 'contact',
+        title: 'Contact Us',
+        heroEyebrow: 'Get In Touch',
+        heroTitle: "Let's Build Something Amazing Together",
+        heroDesc: "Have a project in mind or need expert advice? We'd love to hear from you. Fill out the form and our team will get back to you as soon as possible.",
+        contactSectionTitle: "We're Here to Help",
+        contactSectionSubtitle: "Choose the best way to reach us. Our team is always ready to assist you.",
+        mapEmbedUrl: "https://maps.google.com/maps?q=New%20York%2C%20NY&t=&z=13&ie=UTF8&iwloc=&output=embed",
+        highlights: [
+          { icon: 'Clock', title: 'Quick Response', desc: 'We reply within 24 hours' },
+          { icon: 'Users2', title: 'Expert Support', desc: 'Get help from our experienced team' },
+          { icon: 'ShieldCheck', title: 'Trusted Partner', desc: 'Your success is our priority' },
+        ],
+      });
+      console.log('Seeded default Contact page settings');
+    }
+
+    // Seed default Industries page content if missing
+    const industriesPage = await PageContent.findOne({ slug: 'industries' });
+    const defaultIndustriesData = initialPages.find((p) => p.slug === 'industries');
+    if (!industriesPage && defaultIndustriesData) {
+      await PageContent.create(defaultIndustriesData);
+      console.log('Seeded default Industries page content');
+    } else if (industriesPage && (!Array.isArray(industriesPage.faqs) || industriesPage.faqs.length < 3)) {
+      // Ensure the 3 FAQs and new sections exist if missing
+      await PageContent.updateOne(
+        { slug: 'industries' },
+        {
+          $set: {
+            faqs: defaultIndustriesData.faqs,
+            builtAroundTitle: industriesPage.builtAroundTitle || defaultIndustriesData.builtAroundTitle,
+            builtAroundDesc: industriesPage.builtAroundDesc || defaultIndustriesData.builtAroundDesc,
+            builtAroundPoints: industriesPage.builtAroundPoints?.length ? industriesPage.builtAroundPoints : defaultIndustriesData.builtAroundPoints,
+            domainExpertiseTitle: industriesPage.domainExpertiseTitle || defaultIndustriesData.domainExpertiseTitle,
+            domainExpertiseParagraphs: industriesPage.domainExpertiseParagraphs?.length ? industriesPage.domainExpertiseParagraphs : defaultIndustriesData.domainExpertiseParagraphs,
+            domainExpertisePillars: industriesPage.domainExpertisePillars?.length ? industriesPage.domainExpertisePillars : defaultIndustriesData.domainExpertisePillars,
+          }
+        }
+      );
+      console.log('Updated Industries page with full FAQs and sections');
+    }
+
+    // Seed default Contact cards if missing
+    const contactInfoCount = await ContactInfo.countDocuments();
+    if (contactInfoCount === 0) {
+      await ContactInfo.insertMany([
+        {
+          title: 'Our Location',
+          desc: '123 Innovation Drive, Suite 501\nNew York, NY 10001, USA',
+          icon: 'MapPin',
+          link: 'https://maps.google.com/maps?q=New%20York%2C%20NY',
+          order: 1,
+          status: 'Active',
+        },
+        {
+          title: 'Email Us',
+          desc: 'hello@cubixsol.com\ninfo@cubixsol.com',
+          icon: 'Mail',
+          link: 'mailto:hello@cubixsol.com',
+          order: 2,
+          status: 'Active',
+        },
+        {
+          title: 'Call Us',
+          desc: '+1 (212) 123-4567\n+1 (212) 987-6543',
+          icon: 'Phone',
+          link: 'tel:+12121234567',
+          order: 3,
+          status: 'Active',
+        },
+        {
+          title: 'Working Hours',
+          desc: 'Mon - Fri: 9:00 AM - 6:00 PM\nSaturday - Sunday: Closed',
+          icon: 'Clock',
+          link: '',
+          order: 4,
+          status: 'Active',
+        },
+      ]);
+      console.log('Seeded initial ContactInfo cards data');
+    }
   } catch (err) {
     console.error('Error seeding initial data:', err);
   }
@@ -927,6 +1014,7 @@ app.get('/api/stats', async (req, res) => {
       projectsCount,
       solutionsCount,
       messagesCount,
+      contactInfoCount,
     ] = await Promise.all([
       Blog.countDocuments(),
       Service.countDocuments(),
@@ -935,6 +1023,7 @@ app.get('/api/stats', async (req, res) => {
       Project.countDocuments(),
       Solution.countDocuments(),
       ContactMessage.countDocuments(),
+      ContactInfo.countDocuments(),
     ]);
     res.json({
       blogsCount,
@@ -944,6 +1033,7 @@ app.get('/api/stats', async (req, res) => {
       projectsCount,
       solutionsCount,
       messagesCount,
+      contactInfoCount,
     });
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -1069,6 +1159,7 @@ registerCrud(app, 'industries', Industry);
 registerCrud(app, 'teams', Team);
 registerCrud(app, 'faqs', Faq);
 registerCrud(app, 'settings', SiteSetting);
+registerCrud(app, 'contact-info', ContactInfo, 'order');
 
 // Key-Value Site Settings Endpoints
 app.get('/api/site-settings/:key', async (req, res) => {
@@ -1110,6 +1201,29 @@ app.get('/api/pages/:slug', async (req, res) => {
     let page = await PageContent.findOne({ slug: req.params.slug });
     if (!page && req.params.slug === 'services') {
       const defaultData = initialPages.find((p) => p.slug === 'services');
+      if (defaultData) {
+        page = await PageContent.create(defaultData);
+      }
+    }
+    if (!page && req.params.slug === 'contact') {
+      page = await PageContent.create({
+        slug: 'contact',
+        title: 'Contact Us',
+        heroEyebrow: 'Get In Touch',
+        heroTitle: "Let's Build Something Amazing Together",
+        heroDesc: "Have a project in mind or need expert advice? We'd love to hear from you. Fill out the form and our team will get back to you as soon as possible.",
+        contactSectionTitle: "We're Here to Help",
+        contactSectionSubtitle: "Choose the best way to reach us. Our team is always ready to assist you.",
+        mapEmbedUrl: "https://maps.google.com/maps?q=New%20York%2C%20NY&t=&z=13&ie=UTF8&iwloc=&output=embed",
+        highlights: [
+          { icon: 'Clock', title: 'Quick Response', desc: 'We reply within 24 hours' },
+          { icon: 'Users2', title: 'Expert Support', desc: 'Get help from our experienced team' },
+          { icon: 'ShieldCheck', title: 'Trusted Partner', desc: 'Your success is our priority' },
+        ],
+      });
+    }
+    if (!page && req.params.slug === 'industries') {
+      const defaultData = initialPages.find((p) => p.slug === 'industries');
       if (defaultData) {
         page = await PageContent.create(defaultData);
       }

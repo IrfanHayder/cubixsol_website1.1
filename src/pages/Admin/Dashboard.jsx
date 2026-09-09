@@ -19,6 +19,8 @@ import AdminTable from '../../components/Admin/AdminTable';
 import AdminForm from '../../components/Admin/AdminForm';
 import MediaManager from '../../components/Admin/MediaManager';
 import ServicesPageEditor from '../../components/Admin/ServicesPageEditor';
+import ContactPageEditor from '../../components/Admin/ContactPageEditor';
+import IndustriesPageEditor from '../../components/Admin/IndustriesPageEditor';
 import { useServices } from '../../context/ServicesContext';
 import { API_BASE, apiFetch } from '../../utils/api';
 import { parseCustomListItems, parseProcessSteps } from '../../utils/formatText';
@@ -441,6 +443,30 @@ const SECTION_CONFIGS = {
       { name: 'description', label: 'Meta Description', type: 'textarea', fullWidth: true, rows: 3 },
       { name: 'keywords', label: 'Keywords (comma separated)', fullWidth: true },
       { name: 'ogImage', label: 'OG Image', type: 'image', fullWidth: true },
+    ],
+  },
+  'contact-info': {
+    label: 'Contact Details',
+    endpoint: 'contact-info',
+    columns: [
+      { key: 'icon', label: 'Icon' },
+      { key: 'title', label: 'Title' },
+      { key: 'desc', label: 'Details / Address' },
+      { key: 'order', label: 'Order' },
+      { key: 'status', label: 'Status' },
+    ],
+    fields: [
+      { name: 'title', label: 'Card Title (e.g. Our Location, Email Us, Call Us, Working Hours)', required: true, fullWidth: true },
+      { name: 'icon', label: 'Icon (Lucide Icon Name like MapPin, Mail, Phone, Clock or Media Image/SVG)', required: true, fullWidth: true, hint: 'Examples: MapPin, Mail, Phone, Clock, Headphones, MessageSquare, Globe, Building2 or select SVG from Media Library' },
+      { name: 'desc', label: 'Details / Content (one item or address per line)', type: 'textarea', rows: 4, required: true, fullWidth: true, hint: 'Multi-line text supported. E.g. 123 Innovation Drive\nNew York, NY 10001, USA' },
+      { name: 'link', label: 'Click Action Link (Optional)', fullWidth: true, hint: 'e.g. mailto:hello@cubixsol.com or tel:+12121234567 or https://maps.google.com/...' },
+      { name: 'order', label: 'Display Order (1, 2, 3, 4...)', type: 'number' },
+      {
+        name: 'status', label: 'Status', type: 'select', options: [
+          { value: 'Active', label: 'Active (Visible on website)' },
+          { value: 'Draft', label: 'Draft (Hidden)' },
+        ]
+      },
     ],
   },
 };
@@ -902,6 +928,13 @@ export default function AdminDashboard() {
             <MediaManager showToast={showToast} />
           ) : active === 'services-page' ? (
             <ServicesPageEditor showToast={showToast} />
+          ) : active === 'contact-page' ? (
+            <ContactPageEditor showToast={showToast} />
+          ) : active === 'industries-page' ? (
+            <IndustriesPageEditor
+              showToast={showToast}
+              onNavigateToIndustriesTable={() => setActive('industries')}
+            />
           ) : dbSections.includes(active) ? (
             <DbSection key={active} sectionKey={active} showToast={showToast} />
           ) : (
