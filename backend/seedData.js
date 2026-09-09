@@ -4024,6 +4024,8 @@ const initialPages = [
     "heroEyebrow": "Our Services",
     "heroTitle": "Powerful digital solutions that drive real results",
     "heroDesc": "Strategy, design, engineering and growth — under one roof. Pick a service to see how we deliver, or tell us your goal and we will map the right path.",
+    "heroButtonText": "Get a Free Project Consultation",
+    "heroButtonLink": "/contact#contact-form",
     "heroBadges": [
       "Modern stack",
       "Scalable & secure",

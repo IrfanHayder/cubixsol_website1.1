@@ -27,6 +27,8 @@ const defaultPageData = {
   heroTitle: 'Powerful digital solutions that drive real results',
   heroDesc:
     'Strategy, design, engineering and growth — under one roof. Pick a service to see how we deliver, or tell us your goal and we will map the right path.',
+  heroButtonText: 'Get a Free Project Consultation',
+  heroButtonLink: '/contact#contact-form',
   heroBadges: ['Modern stack', 'Scalable & secure', 'Transparent delivery'],
 
   processEyebrow: 'Our Process',
@@ -275,15 +277,29 @@ export default function Services() {
               {formatInline(pageData.heroDesc)}
             </p>
           )}
-          {heroBadges.length > 0 && (
-            <div className="flex flex-wrap gap-4 mt-6 text-sm font-medium text-gray-500">
-              {heroBadges.map((badge, idx) => (
-                <span key={idx} className="inline-flex items-center gap-1.5">
-                  <ShieldCheck className="w-4 h-4 text-primary-600" /> {badge}
-                </span>
-              ))}
-            </div>
-          )}
+
+          {/* CTA Action Button & Badges */}
+          <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
+            {pageData.heroButtonText && (
+              <Link
+                to={pageData.heroButtonLink || '/contact#contact-form'}
+                className="btn-primary inline-flex items-center justify-center gap-2.5 self-start shadow-soft hover:shadow-glow hover:-translate-y-0.5 transition-all text-sm font-bold"
+              >
+                <span>{pageData.heroButtonText}</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            )}
+
+            {heroBadges.length > 0 && (
+              <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm font-medium text-gray-500">
+                {heroBadges.map((badge, idx) => (
+                  <span key={idx} className="inline-flex items-center gap-1.5">
+                    <ShieldCheck className="w-4 h-4 text-primary-600 shrink-0" /> {badge}
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
         </Reveal>
       </section>
 

@@ -29,6 +29,8 @@ export default function ServicesPageEditor({ showToast }) {
     heroTitle: 'Powerful digital solutions that drive real results',
     heroDesc:
       'Strategy, design, engineering and growth — under one roof. Pick a service to see how we deliver, or tell us your goal and we will map the right path.',
+    heroButtonText: 'Get a Free Project Consultation',
+    heroButtonLink: '/contact#contact-form',
     heroBadges: ['Modern stack', 'Scalable & secure', 'Transparent delivery'],
 
     processEyebrow: 'Our Process',
@@ -459,6 +461,35 @@ export default function ServicesPageEditor({ showToast }) {
               placeholder="Intro paragraph below the heading..."
               className="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 text-sm focus:border-primary-500 outline-none"
             />
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-4 p-4 rounded-xl bg-primary-50/50 border border-primary-100">
+            <div>
+              <label className="block text-xs font-semibold text-ink/70 mb-1.5">
+                Hero CTA Button Text
+              </label>
+              <input
+                type="text"
+                value={formData.heroButtonText || ''}
+                onChange={(e) => handleChange('heroButtonText', e.target.value)}
+                placeholder="e.g. Get a Free Project Consultation"
+                className="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 bg-white text-sm font-medium focus:border-primary-500 outline-none"
+              />
+              <p className="text-[11px] text-gray-400 mt-1">Text shown inside the Hero action button.</p>
+            </div>
+            <div>
+              <label className="block text-xs font-semibold text-ink/70 mb-1.5">
+                Hero CTA Button Link
+              </label>
+              <input
+                type="text"
+                value={formData.heroButtonLink || ''}
+                onChange={(e) => handleChange('heroButtonLink', e.target.value)}
+                placeholder="e.g. /contact#contact-form or /contact"
+                className="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 bg-white text-sm font-mono focus:border-primary-500 outline-none"
+              />
+              <p className="text-[11px] text-gray-400 mt-1">Target URL (links to contact page contact form).</p>
+            </div>
           </div>
 
           <div>

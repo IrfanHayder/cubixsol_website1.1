@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import {
   Send, MapPin, Mail, Phone, Clock, Zap, Users2, ShieldCheck, Plus, Minus, CheckCircle2, MailPlus,
 } from 'lucide-react';
@@ -25,6 +26,18 @@ export default function Contact() {
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash === '#contact-form') {
+      setTimeout(() => {
+        const el = document.getElementById('contact-form');
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  }, [location]);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -81,7 +94,7 @@ export default function Contact() {
           </div>
         </Reveal>
 
-        <Reveal direction="left" delay={0.1} className="card">
+        <Reveal direction="left" delay={0.1} className="card" id="contact-form">
           <h2 className="font-bold text-lg text-ink mb-5">Send Us a Message</h2>
           {submitted && (
             <div className="mb-5 flex items-center gap-2 bg-emerald-50 text-emerald-700 text-sm font-medium px-4 py-3 rounded-lg">

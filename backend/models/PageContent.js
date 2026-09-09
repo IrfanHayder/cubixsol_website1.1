@@ -7,6 +7,8 @@ const pageContentSchema = new mongoose.Schema(
     heroEyebrow: { type: String },
     heroTitle: { type: String },
     heroDesc: { type: String },
+    heroButtonText: { type: String },
+    heroButtonLink: { type: String },
     heroBadges: [{ type: String }],
 
     processEyebrow: { type: String },
