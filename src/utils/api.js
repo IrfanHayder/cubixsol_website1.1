@@ -12,7 +12,12 @@ export async function apiFetch(endpoint, options = {}) {
     ? endpoint
     : `${API_BASE}${cleanEndpoint}`;
 
-  const res = await fetch(url, options);
+  let res;
+  try {
+    res = await fetch(url, options);
+  } catch (err) {
+    throw new Error(`Cannot connect to backend server. Make sure the server is running on port 5000 (${err.message})`);
+  }
 
   const contentType = res.headers.get('content-type') || '';
   const isJson = contentType.includes('application/json');
