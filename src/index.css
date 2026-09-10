@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  color: #1a1a2e;
+  background: #ffffff;
+}
+
+.eyebrow {
+  @apply text-xs font-bold tracking-widest uppercase text-primary-600;
+}
+
+.btn-primary {
+  @apply inline-flex items-center gap-2 bg-primary-gradient text-white font-semibold px-6 py-3 rounded-lg shadow-soft hover:opacity-90 transition;
+}
+
+.btn-outline {
+  @apply inline-flex items-center gap-2 bg-white text-ink font-semibold px-6 py-3 rounded-lg border border-gray-200 hover:border-primary-300 transition;
+}
+
+.card {
+  @apply bg-white rounded-2xl border border-gray-100 shadow-card p-6;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes blob {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(20px, -30px) scale(1.08); }
+  66% { transform: translate(-16px, 16px) scale(0.94); }
+}
+.animate-blob {
+  animation: blob 12s ease-in-out infinite;
+}
+.animation-delay-2000 { animation-delay: 2s; }
+.animation-delay-4000 { animation-delay: 4s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
