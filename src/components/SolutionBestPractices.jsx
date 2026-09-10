@@ -4,11 +4,18 @@ import { ChevronDown, Sparkles } from 'lucide-react';
 import Reveal from './Reveal';
 import { solutionPractices } from '../data/solutionPractices';
 
-export default function SolutionBestPractices({ slug }) {
-  const data = solutionPractices[slug];
+export default function SolutionBestPractices({ slug, practicesData, solutionTitle }) {
+  const staticData = slug ? solutionPractices[slug] : null;
+  const data = practicesData && Array.isArray(practicesData.items) && practicesData.items.length > 0
+    ? {
+        title: practicesData.title || (solutionTitle ? `Best Practices for ${solutionTitle}` : staticData?.title || 'Best Practices'),
+        intro: practicesData.intro || staticData?.intro || '',
+        items: practicesData.items,
+      }
+    : staticData;
   const [openSet, setOpenSet] = useState(() => new Set([0]));
 
-  if (!data) return null;
+  if (!data || !Array.isArray(data.items) || data.items.length === 0) return null;
 
   const toggle = (i) => {
     setOpenSet((prev) => {
@@ -19,18 +26,20 @@ export default function SolutionBestPractices({ slug }) {
     });
   };
 
+  const titleStr = data.title || 'Best Practices';
+
   return (
     <section className="py-14 lg:py-20 bg-[#f0f6fc]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal className="text-center mb-8 sm:mb-10">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink tracking-tight mb-4">
-            {data.title.split(' ').slice(0, 2).join(' ').includes('Best') ? (
+            {titleStr.includes('Best Practices') ? (
               <>
                 <span className="text-primary-500">Best Practices</span>
-                {data.title.replace(/^Best Practices/, '')}
+                {titleStr.replace(/^Best Practices/, '')}
               </>
             ) : (
-              data.title
+              titleStr
             )}
           </h2>
           {data.intro && (

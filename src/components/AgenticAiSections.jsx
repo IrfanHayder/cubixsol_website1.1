@@ -140,34 +140,52 @@ function StepRow({ step, index }) {
         </p>
         <h3 className="text-xl sm:text-2xl font-extrabold text-ink mb-2">{step.title}</h3>
         <p className="text-sm text-gray-500 leading-relaxed mb-4">{step.desc}</p>
-        <p className="text-xs font-bold tracking-wide uppercase text-gray-400 mb-2">We work on</p>
-        <ul className="space-y-2">
-          {step.points.map((pt) => (
-            <li key={pt} className="flex items-start gap-2.5 text-sm text-gray-600">
-              <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary-500 shrink-0" />
-              {pt}
-            </li>
-          ))}
-        </ul>
+        {Array.isArray(step.points) && step.points.length > 0 && (
+          <>
+            <p className="text-xs font-bold tracking-wide uppercase text-gray-400 mb-2">We work on</p>
+            <ul className="space-y-2">
+              {step.points.map((pt) => (
+                <li key={pt} className="flex items-start gap-2.5 text-sm text-gray-600">
+                  <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary-500 shrink-0" />
+                  {pt}
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
       </motion.div>
     </div>
   );
 }
 
-export function AgenticAiImpact() {
+export function AgenticAiImpact({ impactData, solutionTitle }) {
+  const title = impactData?.title || (solutionTitle ? `Why Leaders Can't Ignore ${solutionTitle}` : "Why Leaders Can't Ignore Agentic AI");
+  const intro = impactData?.intro || (impactData?.intro === '' ? '' : 'GenAI can create ideas, content, and responses — but that is often where it stops. Agentic AI goes further: it acts, decides, and solves problems with more autonomy. For leaders, this is about organizations that sense change, respond faster, and grow with purpose.');
+  const rows = Array.isArray(impactData?.rows) && impactData.rows.length > 0 ? impactData.rows : impactRows;
+
+  if (!rows || rows.length === 0) return null;
+
   return (
     <section className="py-14 lg:py-18 bg-[#f0f6fc]">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal className="mb-8">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink tracking-tight mb-4">
-            Why Leaders Can&apos;t Ignore{' '}
-            <span className="bg-clip-text text-transparent bg-primary-gradient">Agentic AI</span>
+            {title.includes("Why Leaders Can't Ignore") ? (
+              <>
+                Why Leaders Can&apos;t Ignore{' '}
+                <span className="bg-clip-text text-transparent bg-primary-gradient">
+                  {title.replace(/^Why Leaders Can'?t Ignore\s*/i, '') || 'Agentic AI'}
+                </span>
+              </>
+            ) : (
+              title
+            )}
           </h2>
-          <p className="text-sm sm:text-base text-gray-500 leading-relaxed max-w-3xl">
-            GenAI can create ideas, content, and responses — but that is often where it stops. Agentic
-            AI goes further: it acts, decides, and solves problems with more autonomy. For leaders,
-            this is about organizations that sense change, respond faster, and grow with purpose.
-          </p>
+          {intro && (
+            <p className="text-sm sm:text-base text-gray-500 leading-relaxed max-w-3xl">
+              {intro}
+            </p>
+          )}
         </Reveal>
 
         <Reveal delay={0.08}>
@@ -179,9 +197,9 @@ export function AgenticAiImpact() {
             </div>
 
             <div className="divide-y divide-gray-100">
-              {impactRows.map((row, i) => (
+              {rows.map((row, i) => (
                 <div
-                  key={row.area}
+                  key={row.area || i}
                   className={`grid sm:grid-cols-[minmax(140px,0.35fr)_1fr] ${
                     i % 2 === 1 ? 'bg-primary-50/40' : 'bg-white'
                   }`}
@@ -208,7 +226,19 @@ export function AgenticAiImpact() {
   );
 }
 
-export function AgenticAiProcess() {
+export function AgenticAiProcess({ processData, solutionTitle }) {
+  const title = processData?.title || (solutionTitle ? `Our ${solutionTitle} Development Process` : 'Our Agentic AI Development Process');
+  const subtitle = processData?.subtitle || (processData?.subtitle === '' ? '' : 'A collaborative process to design agentic systems that align with your business goals.');
+  
+  const rawSteps = Array.isArray(processData?.steps) && processData.steps.length > 0 ? processData.steps : processSteps;
+  const steps = rawSteps.map((s, idx) => ({
+    num: s.stepNumber || s.num || String(idx + 1).padStart(2, '0'),
+    title: s.title || '',
+    desc: s.desc || '',
+    points: Array.isArray(s.bullets) ? s.bullets : (Array.isArray(s.points) ? s.points : []),
+    image: s.image || processSteps[idx % processSteps.length]?.image || 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&h=560&q=70',
+  }));
+
   const lineRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: lineRef,
@@ -216,19 +246,29 @@ export function AgenticAiProcess() {
   });
   const lineHeight = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
 
+  if (!steps || steps.length === 0) return null;
+
   return (
     <section className="relative py-14 lg:py-20 bg-white overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal className="text-center max-w-2xl mx-auto mb-10 lg:mb-12">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink tracking-tight mb-3">
-            Our Agentic AI{' '}
-            <span className="bg-clip-text text-transparent bg-primary-gradient">
-              Development Process
-            </span>
+            {title.includes('Development Process') ? (
+              <>
+                {title.replace(/Development Process\s*$/i, '')}{' '}
+                <span className="bg-clip-text text-transparent bg-primary-gradient">
+                  Development Process
+                </span>
+              </>
+            ) : (
+              title
+            )}
           </h2>
-          <p className="text-sm sm:text-base text-gray-500 leading-relaxed">
-            A collaborative process to design agentic systems that align with your business goals.
-          </p>
+          {subtitle && (
+            <p className="text-sm sm:text-base text-gray-500 leading-relaxed">
+              {subtitle}
+            </p>
+          )}
         </Reveal>
 
         <div ref={lineRef} className="relative">
@@ -239,7 +279,7 @@ export function AgenticAiProcess() {
             />
           </div>
           <div className="hidden lg:flex absolute left-1/2 top-0 bottom-0 -translate-x-1/2 flex-col justify-around pointer-events-none py-16">
-            {processSteps.map((s) => (
+            {steps.map((s) => (
               <span
                 key={s.num}
                 className="w-3.5 h-3.5 rounded-full border-2 border-primary-500 bg-white shadow-sm"
@@ -248,8 +288,8 @@ export function AgenticAiProcess() {
           </div>
 
           <div>
-            {processSteps.map((step, i) => (
-              <StepRow key={step.num} step={step} index={i} />
+            {steps.map((step, i) => (
+              <StepRow key={step.num || i} step={step} index={i} />
             ))}
           </div>
         </div>

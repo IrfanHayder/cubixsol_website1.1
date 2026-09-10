@@ -2588,37 +2588,397 @@ const initialServices = [
 const initialSolutions = [
   {
     "practices": {
+      "title": "",
+      "intro": "",
       "items": []
     },
     "impact": {
+      "title": "",
+      "intro": "",
       "rows": []
     },
     "process": {
-      "steps": []
+      "title": "Our AI Chatbot Development Process",
+      "subtitle": "Our structured process to plan, develop, test, and deploy reliable AI chatbot solutions.",
+      "steps": [
+        {
+          "stepNumber": "01",
+          "title": "Discover",
+          "desc": "We begin by understanding your customer support process, common customer questions, business requirements, and existing systems. We identify where AI can handle routine work and where human support should remain part of the process.",
+          "bullets": [],
+          "image": "",
+          "_id": "6aa2936c24254065bfd0e82e"
+        },
+        {
+          "stepNumber": "02",
+          "title": "Plan",
+          "desc": "Our team maps the chatbot conversations, required features, integrations, business data, and escalation rules. We also define the information the chatbot can use and the tasks it should complete.",
+          "bullets": [],
+          "image": "",
+          "_id": "6aa2936c24254065bfd0e82f"
+        },
+        {
+          "stepNumber": "03",
+          "title": "Build",
+          "desc": "We develop the chatbot based on the approved plan and connect the required systems and data sources. Conversation flows are built around real customer requests rather than generic responses.",
+          "bullets": [],
+          "image": "",
+          "_id": "6aa2936c24254065bfd0e830"
+        },
+        {
+          "stepNumber": "04",
+          "title": "Test",
+          "desc": "We test the chatbot against common questions, different conversation paths, integrations, and handoff situations. Testing helps us find gaps, improve responses, and confirm the chatbot behaves as expected before launch.",
+          "bullets": [],
+          "image": "",
+          "_id": "6aa2936c24254065bfd0e831"
+        },
+        {
+          "stepNumber": "05",
+          "title": "Deploy",
+          "desc": "Once testing is complete, we deploy the chatbot to the required channels. We monitor how it performs after launch and make changes when customer questions, business information, or support requirements change.",
+          "bullets": [],
+          "image": "",
+          "_id": "6aa2936c24254065bfd0e832"
+        }
+      ]
     },
-    "bullets": [],
     "title": "AI Chatbots & Customer Support",
     "slug": "ai-chatbots-support",
-    "desc": "Conversational support that resolves and escalates smartly.",
+    "desc": "Our team builds AI chatbots, voice assistants, and customer support automations designed to answer common questions, handle routine tasks, and connect with your business systems.",
     "group": "E-Commerce",
-    "faqs": []
+    "bullets": [],
+    "ctaBannerButtonLink": "/contact",
+    "ctaBannerButtonText": "Book a Call",
+    "ctaBannerDesc": "Improve customer support with **AI chatbot development services** built around your business needs. Cubixsol can help you plan the chatbot, connect your existing systems, and set up the right balance between automated and human support.",
+    "ctaBannerEyebrow": "READY TO GET STARTED?",
+    "ctaBannerSecondaryButtonLink": "/contact",
+    "ctaBannerSecondaryButtonText": "Get a Free Assessment",
+    "ctaBannerTitle": "Ready to Get Started?",
+    "ctaPrimaryLink": "/contact",
+    "ctaPrimaryText": "Book a Call",
+    "ctaSecondaryLink": "/contact",
+    "ctaSecondaryText": "Get a Free Assessment",
+    "faqs": [
+      {
+        "q": "How much do AI chatbot development services cost?",
+        "a": "The cost depends on the chatbot's features, integrations, number of channels, business data, and level of automation. A chatbot handling basic FAQs will require less development than one connected to several business systems. We can review your requirements and provide a project estimate."
+      },
+      {
+        "q": "How long does it take to set up an AI chatbot?",
+        "a": "The timeline depends on the scope of the project. A simple support chatbot can be completed faster than a solution requiring several integrations, business data sources, voice support, or complex conversation flows."
+      },
+      {
+        "q": "How accurate are AI chatbots?",
+        "a": "Accuracy depends on the information available to the chatbot, its setup, and testing. RAG can help the chatbot use relevant business information when answering customer questions. We also test common requests and add human handoff options for questions the chatbot should not answer on its own."
+      },
+      {
+        "q": "Which channels can AI chatbots support?",
+        "a": "The available channels depend on your business setup and integration requirements. We can plan chatbot deployment around the channels your customers already use and connect the chatbot to the relevant support systems."
+      },
+      {
+        "q": "Can an AI chatbot escalate issues to a human?",
+        "a": "Yes. Human escalation can be included in the chatbot flow. When a request is too complex or requires personal attention, the chatbot can pass the conversation to a support agent along with relevant customer information."
+      }
+    ],
+    "subServicesIntro": "",
+    "subServicesItems": [
+      {
+        "title": "Support Chatbots",
+        "desc": "Help customers get answers to common questions without waiting for a support agent. Support chatbots can handle FAQs, basic requests, product or service information, and other routine conversations at any time. We can connect the chatbot to your business information so customers receive answers based on your actual products, services, policies, and support content. Clear conversation flows also make it easier for customers to reach the right next step.",
+        "q": "Support Chatbots",
+        "a": "Help customers get answers to common questions without waiting for a support agent. Support chatbots can handle FAQs, basic requests, product or service information, and other routine conversations at any time. We can connect the chatbot to your business information so customers receive answers based on your actual products, services, policies, and support content. Clear conversation flows also make it easier for customers to reach the right next step."
+      },
+      {
+        "title": "Sales Bots",
+        "desc": "Turn website conversations into useful sales opportunities. Sales bots can ask visitors a few relevant questions, understand their requirements, collect contact details, and identify leads ready for your sales team. A sales chatbot can also answer common pre-sales questions, provide relevant information, and hand qualified conversations to a member of your team when a personal discussion is needed.",
+        "q": "Sales Bots",
+        "a": "Turn website conversations into useful sales opportunities. Sales bots can ask visitors a few relevant questions, understand their requirements, collect contact details, and identify leads ready for your sales team. A sales chatbot can also answer common pre-sales questions, provide relevant information, and hand qualified conversations to a member of your team when a personal discussion is needed."
+      },
+      {
+        "title": "Voice Bots",
+        "desc": "Give customers another way to interact with your business. Voice bots can answer common questions, collect information, and handle simple requests through voice-based conversations. Our conversational AI services can support voice interactions where speaking is more convenient than typing. Voice flows can also include clear escalation points so customers can reach a human when the request falls outside the bot's role.",
+        "q": "Voice Bots",
+        "a": "Give customers another way to interact with your business. Voice bots can answer common questions, collect information, and handle simple requests through voice-based conversations. Our conversational AI services can support voice interactions where speaking is more convenient than typing. Voice flows can also include clear escalation points so customers can reach a human when the request falls outside the bot's role."
+      },
+      {
+        "title": "Bot Integration",
+        "desc": "Connect your chatbot to the systems your business already uses. Integrations can include CRM platforms, customer support systems, business databases, and other tools used to manage customer information. A connected chatbot can access relevant information and pass customer details to the right system. Your team spends less time checking different platforms or copying information from one place to another.",
+        "q": "Bot Integration",
+        "a": "Connect your chatbot to the systems your business already uses. Integrations can include CRM platforms, customer support systems, business databases, and other tools used to manage customer information. A connected chatbot can access relevant information and pass customer details to the right system. Your team spends less time checking different platforms or copying information from one place to another."
+      },
+      {
+        "title": "Human Handoff",
+        "desc": "Some customer issues need a person. We build clear escalation points into the chatbot so complex or sensitive requests can reach your support team. The handoff can include relevant conversation details, helping the agent understand the issue before taking over. Customers can continue the conversation instead of starting again from the beginning.",
+        "q": "Human Handoff",
+        "a": "Some customer issues need a person. We build clear escalation points into the chatbot so complex or sensitive requests can reach your support team. The handoff can include relevant conversation details, helping the agent understand the issue before taking over. Customers can continue the conversation instead of starting again from the beginning."
+      }
+    ],
+    "subServicesTitle": "Our AI Chatbots & Customer Support Capabilities",
+    "tech": [
+      "GPT",
+      "Dialogflow",
+      "RAG",
+      "CRM integrations"
+    ],
+    "techDesc": "We use technologies such as GPT, Dialogflow, RAG, and CRM integrations to build AI chatbot solutions. Our team selects the right tools based on your chatbot requirements, business data, customer channels, and existing technology.",
+    "techTitle": "Tools & Tech",
+    "useCasesIntro": "AI chatbots can support customers and internal teams across several common business tasks.",
+    "useCasesItems": [
+      {
+        "title": "/7 Customer Support",
+        "desc": "Answer frequently asked questions outside normal working hours and give customers immediate access to basic support.",
+        "q": "/7 Customer Support",
+        "a": "Answer frequently asked questions outside normal working hours and give customers immediate access to basic support."
+      },
+      {
+        "title": "Lead Qualification",
+        "desc": "Ask visitors relevant questions, collect their details, and identify potential customers before passing suitable leads to your sales team.",
+        "q": "Lead Qualification",
+        "a": "Ask visitors relevant questions, collect their details, and identify potential customers before passing suitable leads to your sales team."
+      },
+      {
+        "title": "Order Tracking",
+        "desc": "Let customers check order information and receive status updates without contacting an agent for every request.",
+        "q": "Order Tracking",
+        "a": "Let customers check order information and receive status updates without contacting an agent for every request."
+      }
+    ],
+    "useCasesTitle": "Use Cases",
+    "whyChooseIntro": "",
+    "whyChooseItems": [
+      {
+        "title": "Practical AI Development",
+        "desc": "We focus on the work your chatbot needs to perform. Our team plans the conversation flow, connects relevant business information, and defines clear points for human support.",
+        "q": "Practical AI Development",
+        "a": "We focus on the work your chatbot needs to perform. Our team plans the conversation flow, connects relevant business information, and defines clear points for human support."
+      },
+      {
+        "title": "Clear Project Planning",
+        "desc": "You know what the chatbot will handle before development begins. Requirements, integrations, conversation flows, testing, and deployment are planned as part of the project.",
+        "q": "Clear Project Planning",
+        "a": "You know what the chatbot will handle before development begins. Requirements, integrations, conversation flows, testing, and deployment are planned as part of the project."
+      },
+      {
+        "title": "Transparent Communication",
+        "desc": "Our team keeps you informed throughout development. We discuss requirements, share progress, and address changes before they affect the final chatbot.",
+        "q": "Transparent Communication",
+        "a": "Our team keeps you informed throughout development. We discuss requirements, share progress, and address changes before they affect the final chatbot."
+      },
+      {
+        "title": "Ongoing Technical Support",
+        "desc": "Customer questions and business processes can change after launch. We can provide ongoing technical support, updates, and improvements to keep your chatbot aligned with your current requirements.",
+        "q": "Ongoing Technical Support",
+        "a": "Customer questions and business processes can change after launch. We can provide ongoing technical support, updates, and improvements to keep your chatbot aligned with your current requirements."
+      }
+    ],
+    "whyChooseTitle": "Why Choose Cubixsol?",
+    "faqsText": "How much do AI chatbot development services cost? | The cost depends on the chatbot's features, integrations, number of channels, business data, and level of automation. A chatbot handling basic FAQs will require less development than one connected to several business systems. We can review your requirements and provide a project estimate.\n\nHow long does it take to set up an AI chatbot? | The timeline depends on the scope of the project. A simple support chatbot can be completed faster than a solution requiring several integrations, business data sources, voice support, or complex conversation flows.\n\nHow accurate are AI chatbots? | Accuracy depends on the information available to the chatbot, its setup, and testing. RAG can help the chatbot use relevant business information when answering customer questions. We also test common requests and add human handoff options for questions the chatbot should not answer on its own.\n\nWhich channels can AI chatbots support? | The available channels depend on your business setup and integration requirements. We can plan chatbot deployment around the channels your customers already use and connect the chatbot to the relevant support systems.\n\nCan an AI chatbot escalate issues to a human? | Yes. Human escalation can be included in the chatbot flow. When a request is too complex or requires personal attention, the chatbot can pass the conversation to a support agent along with relevant customer information.",
+    "impactRowsText": "",
+    "practicesItemsText": "",
+    "processStepsText": "01 | Discover | We begin by understanding your customer support process, common customer questions, business requirements, and existing systems. We identify where AI can handle routine work and where human support should remain part of the process.\n\n02 | Plan | Our team maps the chatbot conversations, required features, integrations, business data, and escalation rules. We also define the information the chatbot can use and the tasks it should complete.\n\n03 | Build | We develop the chatbot based on the approved plan and connect the required systems and data sources. Conversation flows are built around real customer requests rather than generic responses.\n\n04 | Test | We test the chatbot against common questions, different conversation paths, integrations, and handoff situations. Testing helps us find gaps, improve responses, and confirm the chatbot behaves as expected before launch.\n\n05 | Deploy | Once testing is complete, we deploy the chatbot to the required channels. We monitor how it performs after launch and make changes when customer questions, business information, or support requirements change.",
+    "processSubtitle": "Our structured process to plan, develop, test, and deploy reliable AI chatbot solutions.",
+    "processTitle": "Our AI Chatbot Development Process",
+    "subServicesText": "Support Chatbots | Help customers get answers to common questions without waiting for a support agent. Support chatbots can handle FAQs, basic requests, product or service information, and other routine conversations at any time. We can connect the chatbot to your business information so customers receive answers based on your actual products, services, policies, and support content. Clear conversation flows also make it easier for customers to reach the right next step.\n\nSales Bots | Turn website conversations into useful sales opportunities. Sales bots can ask visitors a few relevant questions, understand their requirements, collect contact details, and identify leads ready for your sales team. A sales chatbot can also answer common pre-sales questions, provide relevant information, and hand qualified conversations to a member of your team when a personal discussion is needed.\n\nVoice Bots | Give customers another way to interact with your business. Voice bots can answer common questions, collect information, and handle simple requests through voice-based conversations. Our conversational AI services can support voice interactions where speaking is more convenient than typing. Voice flows can also include clear escalation points so customers can reach a human when the request falls outside the bot's role.\n\nBot Integration | Connect your chatbot to the systems your business already uses. Integrations can include CRM platforms, customer support systems, business databases, and other tools used to manage customer information. A connected chatbot can access relevant information and pass customer details to the right system. Your team spends less time checking different platforms or copying information from one place to another.\n\nHuman Handoff | Some customer issues need a person. We build clear escalation points into the chatbot so complex or sensitive requests can reach your support team. The handoff can include relevant conversation details, helping the agent understand the issue before taking over. Customers can continue the conversation instead of starting again from the beginning.",
+    "useCasesText": "/7 Customer Support | Answer frequently asked questions outside normal working hours and give customers immediate access to basic support.\n\nLead Qualification | Ask visitors relevant questions, collect their details, and identify potential customers before passing suitable leads to your sales team.\n\nOrder Tracking | Let customers check order information and receive status updates without contacting an agent for every request.",
+    "whyChooseText": "Practical AI Development | We focus on the work your chatbot needs to perform. Our team plans the conversation flow, connects relevant business information, and defines clear points for human support.\n\nClear Project Planning | You know what the chatbot will handle before development begins. Requirements, integrations, conversation flows, testing, and deployment are planned as part of the project.\n\nTransparent Communication | Our team keeps you informed throughout development. We discuss requirements, share progress, and address changes before they affect the final chatbot.\n\nOngoing Technical Support | Customer questions and business processes can change after launch. We can provide ongoing technical support, updates, and improvements to keep your chatbot aligned with your current requirements."
   },
   {
     "practices": {
+      "title": "",
+      "intro": "",
       "items": []
     },
     "impact": {
+      "title": "",
+      "intro": "",
       "rows": []
     },
     "process": {
-      "steps": []
+      "title": "How We Deliver AI Consulting Projects",
+      "subtitle": "Our structured methodology to move from initial evaluation to practical AI roadmap and delivery.",
+      "steps": [
+        {
+          "stepNumber": "01",
+          "title": "Discover",
+          "desc": "We start by reviewing your business goals, workflows, systems, data, and current challenges. We also identify tasks where AI may provide a useful improvement.",
+          "bullets": [],
+          "image": "",
+          "_id": "6aa294ec24254065bfd0e8cb"
+        },
+        {
+          "stepNumber": "02",
+          "title": "Design",
+          "desc": "Our team selects suitable use cases and defines how the proposed solution should work. We also identify data needs, integrations, technical requirements, and project scope.",
+          "bullets": [],
+          "image": "",
+          "_id": "6aa294ec24254065bfd0e8cc"
+        },
+        {
+          "stepNumber": "03",
+          "title": "Build",
+          "desc": "Developers create the agreed AI solution, automation, or integration in clear stages. Progress is reviewed during development to keep the work aligned with the agreed requirements.",
+          "bullets": [],
+          "image": "",
+          "_id": "6aa294ec24254065bfd0e8cd"
+        },
+        {
+          "stepNumber": "04",
+          "title": "Deploy",
+          "desc": "After testing, we prepare the solution for use in your business environment. We check the main features, integrations, and setup before release.",
+          "bullets": [],
+          "image": "",
+          "_id": "6aa294ec24254065bfd0e8ce"
+        },
+        {
+          "stepNumber": "05",
+          "title": "Monitor and Improve",
+          "desc": "AI solutions may need updates as business needs change. We can review performance, fix issues, update features, and make improvements after launch.",
+          "bullets": [],
+          "image": "",
+          "_id": "6aa294ec24254065bfd0e8cf"
+        }
+      ]
     },
-    "bullets": [],
     "title": "AI Consulting",
     "slug": "ai-consulting",
-    "desc": "Strategy, readiness, and roadmap for AI adoption.",
+    "desc": "Our AI consulting team helps businesses decide where AI can support daily operations, improve existing processes, and reduce manual work with a clear roadmap and practical implementation.",
     "group": "Artificial Intelligence",
-    "faqs": []
+    "bullets": [],
+    "ctaBannerButtonLink": "/contact",
+    "ctaBannerButtonText": "Start Your AI Consulting Project",
+    "ctaBannerDesc": "Find practical ways to use **AI consulting services** across your business. Share your goals, current processes, and AI plans with Cubixsol, and our team will help you identify suitable opportunities and define the next steps.",
+    "ctaBannerEyebrow": "READY TO GET STARTED?",
+    "ctaBannerSecondaryButtonLink": "/contact",
+    "ctaBannerSecondaryButtonText": "Book a Free AI Readiness Call",
+    "ctaBannerTitle": "Ready to Get Started?",
+    "ctaPrimaryLink": "/contact",
+    "ctaPrimaryText": "Start Your AI Consulting Project",
+    "ctaSecondaryLink": "/contact",
+    "ctaSecondaryText": "Book a Free AI Readiness Call",
+    "faqs": [
+      {
+        "q": "What is AI consulting?",
+        "a": "AI consulting helps businesses find suitable AI use cases, review their current systems and data, choose appropriate technology, and plan implementation. The work starts with a business need and then looks at where AI can provide a useful solution."
+      },
+      {
+        "q": "How much does AI consulting cost?",
+        "a": "AI consulting costs depend on the project scope, number of use cases, technical requirements, data needs, integrations, and support required. A readiness assessment will usually involve less work than a full strategy, roadmap, and implementation project. Cubixsol reviews your requirements before providing an estimate."
+      },
+      {
+        "q": "How does an AI consulting engagement work?",
+        "a": "The process starts with your business goals, current workflows, systems, and challenges. We then assess possible use cases, set priorities, and create a practical roadmap. Development and implementation can follow when required."
+      },
+      {
+        "q": "What ROI can AI consulting deliver?",
+        "a": "ROI depends on the use case, current process, implementation cost, and expected result. AI may help reduce manual work, improve response times, handle larger workloads, or reduce repeated tasks. We assess the expected business value before recommending a project."
+      },
+      {
+        "q": "How long does an AI consulting project take?",
+        "a": "The timeline depends on the scope and technical needs. A readiness assessment may take less time than a full strategy and implementation project. After reviewing your requirements, we can define the work, milestones, and expected timeline."
+      }
+    ],
+    "subServicesIntro": "Our AI consulting team helps businesses decide where AI can support daily operations, improve existing processes, and reduce manual work. Each service can support a new AI project, an existing system, or a wider automation plan.",
+    "subServicesItems": [
+      {
+        "title": "AI Strategy Consulting",
+        "desc": "Our AI strategy consulting service starts with your business goals and current processes. We identify areas where AI may provide useful results, compare possible use cases, and help set clear priorities. The strategy also helps your team decide which AI projects are worth testing first and what needs to be in place before development starts.",
+        "q": "AI Strategy Consulting",
+        "a": "Our AI strategy consulting service starts with your business goals and current processes. We identify areas where AI may provide useful results, compare possible use cases, and help set clear priorities. The strategy also helps your team decide which AI projects are worth testing first and what needs to be in place before development starts."
+      },
+      {
+        "title": "AI Readiness Assessment",
+        "desc": "AI projects depend on suitable data, systems, workflows, and technical resources. We review these areas to find gaps that may affect your AI plans. Our assessment can cover existing software, data availability, integrations, security needs, and manual processes. You get a clear view of what is ready for AI and what needs attention before implementation.",
+        "q": "AI Readiness Assessment",
+        "a": "AI projects depend on suitable data, systems, workflows, and technical resources. We review these areas to find gaps that may affect your AI plans. Our assessment can cover existing software, data availability, integrations, security needs, and manual processes. You get a clear view of what is ready for AI and what needs attention before implementation."
+      },
+      {
+        "title": "AI Roadmap",
+        "desc": "An AI roadmap sets out the work needed to move from an idea to a working solution. We organise potential use cases by business priority, technical effort, data needs, and expected value. The roadmap can cover an initial pilot, development requirements, system integrations, testing, deployment, and future improvements. Your team gets a clear plan before committing to larger development work.",
+        "q": "AI Roadmap",
+        "a": "An AI roadmap sets out the work needed to move from an idea to a working solution. We organise potential use cases by business priority, technical effort, data needs, and expected value. The roadmap can cover an initial pilot, development requirements, system integrations, testing, deployment, and future improvements. Your team gets a clear plan before committing to larger development work."
+      },
+      {
+        "title": "AI Automation Services",
+        "desc": "Our AI automation services help reduce repetitive work across business processes. We review how tasks are handled and identify steps where AI or automation can reduce manual effort. Possible areas include customer enquiries, document processing, lead qualification, internal requests, reporting, and routine data tasks. We recommend automation based on the actual process and the result you need.",
+        "q": "AI Automation Services",
+        "a": "Our AI automation services help reduce repetitive work across business processes. We review how tasks are handled and identify steps where AI or automation can reduce manual effort. Possible areas include customer enquiries, document processing, lead qualification, internal requests, reporting, and routine data tasks. We recommend automation based on the actual process and the result you need."
+      },
+      {
+        "title": "AI Implementation",
+        "desc": "A good plan needs a clear path to implementation. Cubixsol can support AI development, system integrations, testing, and deployment after the consulting stage. Our team can also connect AI features with existing business software where needed. Businesses requiring full technical development can also explore our AI development services.",
+        "q": "AI Implementation",
+        "a": "A good plan needs a clear path to implementation. Cubixsol can support AI development, system integrations, testing, and deployment after the consulting stage. Our team can also connect AI features with existing business software where needed. Businesses requiring full technical development can also explore our AI development services."
+      }
+    ],
+    "subServicesTitle": "Our AI Consulting Services",
+    "tech": [
+      "GPT",
+      "Claude",
+      "cloud AI platforms",
+      "MLOps"
+    ],
+    "techDesc": "Our technology choices depend on the requirements of each project. We work with technologies such as GPT, Claude, cloud AI platforms, and MLOps tools where they fit the solution. We consider the required features, data, existing systems, security needs, performance, and ongoing maintenance before selecting the technology for an AI project.",
+    "techTitle": "Tools & Technology",
+    "useCasesIntro": "AI consulting can help you find practical use cases across customer support, sales, document processing, internal knowledge, reporting, data handling, and repetitive office tasks.",
+    "useCasesItems": [
+      {
+        "title": "Use Case Comparison & Prioritization",
+        "desc": "Our team can compare possible use cases based on the problem they solve, expected value, technical effort, data needs, and cost.",
+        "q": "Use Case Comparison & Prioritization",
+        "a": "Our team can compare possible use cases based on the problem they solve, expected value, technical effort, data needs, and cost."
+      },
+      {
+        "title": "Pilot Selection & Scoping",
+        "desc": "We can then help select a suitable pilot, define its requirements, and plan the steps needed to move a successful pilot into production.",
+        "q": "Pilot Selection & Scoping",
+        "a": "We can then help select a suitable pilot, define its requirements, and plan the steps needed to move a successful pilot into production."
+      },
+      {
+        "title": "Cross-Functional Business Automation",
+        "desc": "Businesses looking at wider AI options can also explore Cubixsol’s full suite of enterprise AI solutions.",
+        "q": "Cross-Functional Business Automation",
+        "a": "Businesses looking at wider AI options can also explore Cubixsol’s full suite of enterprise AI solutions."
+      }
+    ],
+    "useCasesTitle": "AI Consulting Use Cases",
+    "whyChooseIntro": "",
+    "whyChooseItems": [
+      {
+        "title": "Practical AI Expertise",
+        "desc": "We look at the business problem before recommending an AI solution. Our team combines AI knowledge with software development skills, so suitable projects can move from planning into development.",
+        "q": "Practical AI Expertise",
+        "a": "We look at the business problem before recommending an AI solution. Our team combines AI knowledge with software development skills, so suitable projects can move from planning into development."
+      },
+      {
+        "title": "Security and Compliance",
+        "desc": "AI solutions may work with customer information, company data, and internal systems. We consider data handling, access, security requirements, and relevant compliance needs during planning and implementation.",
+        "q": "Security and Compliance",
+        "a": "AI solutions may work with customer information, company data, and internal systems. We consider data handling, access, security requirements, and relevant compliance needs during planning and implementation."
+      },
+      {
+        "title": "Clear Business Value",
+        "desc": "We help compare AI opportunities before you invest in development. Each use case can be reviewed based on the problem it solves, expected value, technical work, and resources required.",
+        "q": "Clear Business Value",
+        "a": "We help compare AI opportunities before you invest in development. Each use case can be reviewed based on the problem it solves, expected value, technical work, and resources required."
+      },
+      {
+        "title": "Ongoing Technical Support",
+        "desc": "Support does not have to stop after the strategy or roadmap is complete. Cubixsol can continue with development, integrations, deployment, maintenance, and future improvements when your project is ready. For businesses exploring specific generative AI use cases, Cubixsol also offers generative AI solutions.",
+        "q": "Ongoing Technical Support",
+        "a": "Support does not have to stop after the strategy or roadmap is complete. Cubixsol can continue with development, integrations, deployment, maintenance, and future improvements when your project is ready. For businesses exploring specific generative AI use cases, Cubixsol also offers generative AI solutions."
+      }
+    ],
+    "whyChooseTitle": "Why Choose Cubixsol?",
+    "faqsText": "What is AI consulting? | AI consulting helps businesses find suitable AI use cases, review their current systems and data, choose appropriate technology, and plan implementation. The work starts with a business need and then looks at where AI can provide a useful solution.\n\nHow much does AI consulting cost? | AI consulting costs depend on the project scope, number of use cases, technical requirements, data needs, integrations, and support required. A readiness assessment will usually involve less work than a full strategy, roadmap, and implementation project. Cubixsol reviews your requirements before providing an estimate.\n\nHow does an AI consulting engagement work? | The process starts with your business goals, current workflows, systems, and challenges. We then assess possible use cases, set priorities, and create a practical roadmap. Development and implementation can follow when required.\n\nWhat ROI can AI consulting deliver? | ROI depends on the use case, current process, implementation cost, and expected result. AI may help reduce manual work, improve response times, handle larger workloads, or reduce repeated tasks. We assess the expected business value before recommending a project.\n\nHow long does an AI consulting project take? | The timeline depends on the scope and technical needs. A readiness assessment may take less time than a full strategy and implementation project. After reviewing your requirements, we can define the work, milestones, and expected timeline.",
+    "impactRowsText": "",
+    "practicesItemsText": "",
+    "processStepsText": "01 | Discover | We start by reviewing your business goals, workflows, systems, data, and current challenges. We also identify tasks where AI may provide a useful improvement.\n\n02 | Design | Our team selects suitable use cases and defines how the proposed solution should work. We also identify data needs, integrations, technical requirements, and project scope.\n\n03 | Build | Developers create the agreed AI solution, automation, or integration in clear stages. Progress is reviewed during development to keep the work aligned with the agreed requirements.\n\n04 | Deploy | After testing, we prepare the solution for use in your business environment. We check the main features, integrations, and setup before release.\n\n05 | Monitor and Improve | AI solutions may need updates as business needs change. We can review performance, fix issues, update features, and make improvements after launch.",
+    "processSubtitle": "Our structured methodology to move from initial evaluation to practical AI roadmap and delivery.",
+    "processTitle": "How We Deliver AI Consulting Projects",
+    "subServicesText": "AI Strategy Consulting | Our AI strategy consulting service starts with your business goals and current processes. We identify areas where AI may provide useful results, compare possible use cases, and help set clear priorities. The strategy also helps your team decide which AI projects are worth testing first and what needs to be in place before development starts.\n\nAI Readiness Assessment | AI projects depend on suitable data, systems, workflows, and technical resources. We review these areas to find gaps that may affect your AI plans. Our assessment can cover existing software, data availability, integrations, security needs, and manual processes. You get a clear view of what is ready for AI and what needs attention before implementation.\n\nAI Roadmap | An AI roadmap sets out the work needed to move from an idea to a working solution. We organise potential use cases by business priority, technical effort, data needs, and expected value. The roadmap can cover an initial pilot, development requirements, system integrations, testing, deployment, and future improvements. Your team gets a clear plan before committing to larger development work.\n\nAI Automation Services | Our AI automation services help reduce repetitive work across business processes. We review how tasks are handled and identify steps where AI or automation can reduce manual effort. Possible areas include customer enquiries, document processing, lead qualification, internal requests, reporting, and routine data tasks. We recommend automation based on the actual process and the result you need.\n\nAI Implementation | A good plan needs a clear path to implementation. Cubixsol can support AI development, system integrations, testing, and deployment after the consulting stage. Our team can also connect AI features with existing business software where needed. Businesses requiring full technical development can also explore our AI development services.",
+    "useCasesText": "Use Case Comparison & Prioritization | Our team can compare possible use cases based on the problem they solve, expected value, technical effort, data needs, and cost.\n\nPilot Selection & Scoping | We can then help select a suitable pilot, define its requirements, and plan the steps needed to move a successful pilot into production.\n\nCross-Functional Business Automation | Businesses looking at wider AI options can also explore Cubixsol’s full suite of enterprise AI solutions.",
+    "whyChooseText": "Practical AI Expertise | We look at the business problem before recommending an AI solution. Our team combines AI knowledge with software development skills, so suitable projects can move from planning into development.\n\nSecurity and Compliance | AI solutions may work with customer information, company data, and internal systems. We consider data handling, access, security requirements, and relevant compliance needs during planning and implementation.\n\nClear Business Value | We help compare AI opportunities before you invest in development. Each use case can be reviewed based on the problem it solves, expected value, technical work, and resources required.\n\nOngoing Technical Support | Support does not have to stop after the strategy or roadmap is complete. Cubixsol can continue with development, integrations, deployment, maintenance, and future improvements when your project is ready. For businesses exploring specific generative AI use cases, Cubixsol also offers generative AI solutions."
   },
   {
     "practices": {
@@ -2631,97 +2991,887 @@ const initialSolutions = [
       "steps": []
     },
     "bullets": [],
+    "tech": [],
     "title": "AI SEO Auditor",
     "slug": "ai-seo-auditor",
     "desc": "Paste a URL or page HTML — get a prioritised SEO health score covering title, meta, headings, mobile signals, and accessibility basics. testing dyuttythj",
     "externalUrl": "/tools/ai-seo-auditor",
     "group": "Accessibility Tools",
+    "subServicesItems": [],
+    "useCasesItems": [],
+    "whyChooseItems": [],
     "faqs": []
   },
   {
     "practices": {
+      "title": "",
+      "intro": "",
       "items": []
     },
     "impact": {
+      "title": "",
+      "intro": "",
       "rows": []
     },
     "process": {
-      "steps": []
+      "title": "How We Deliver",
+      "subtitle": "Our structured process to plan, develop, test, and deploy reliable agentic AI systems.",
+      "steps": [
+        {
+          "_id": "6aa2b1f3d8fe4b0fb4b6758b",
+          "stepNumber": "01",
+          "title": "Discover",
+          "desc": "We begin by reviewing the business goal, current workflow, tasks, data sources, existing systems, and required integrations.",
+          "bullets": []
+        },
+        {
+          "_id": "6aa2b1f3d8fe4b0fb4b6758c",
+          "stepNumber": "02",
+          "title": "Design",
+          "desc": "Our team defines the agent’s tasks, instructions, tools, data access, permissions, and points where human approval may be needed.",
+          "bullets": []
+        },
+        {
+          "_id": "6aa2b1f3d8fe4b0fb4b6758d",
+          "stepNumber": "03",
+          "title": "Build",
+          "desc": "Developers build the AI agent or multi-agent system and connect the required tools, APIs, databases, and data sources.",
+          "bullets": []
+        },
+        {
+          "_id": "6aa2b1f3d8fe4b0fb4b6758e",
+          "stepNumber": "04",
+          "title": "Deploy",
+          "desc": "We test the system before putting it into use. Testing checks whether the agent can complete its assigned tasks and follow the defined rules.",
+          "bullets": []
+        },
+        {
+          "_id": "6aa2b1f3d8fe4b0fb4b6758f",
+          "stepNumber": "05",
+          "title": "Monitor & Improve",
+          "desc": "AI systems may need changes as your business process or connected tools change.",
+          "bullets": []
+        }
+      ]
     },
-    "bullets": [],
-    "title": "Agentic AI",
+    "title": "Agentic AI Development Services",
     "slug": "agentic-ai",
-    "desc": "Autonomous agents that plan and execute workflows. ghthhjkukudkdydkkkddkdku",
+    "desc": "Build AI systems that can handle tasks, use business data, and take actions across connected tools. Cubixsol provides agentic AI development services for businesses that want to reduce manual work and automate tasks that require several steps. Our team builds AI agents, multi-agent systems, workflow automation, and system integrations based on your business needs.",
     "group": "Artificial Intelligence",
-    "faqs": []
+    "bullets": [],
+    "category": "Artificial Intelligence",
+    "faqs": [
+      {
+        "q": "What is agentic AI?",
+        "a": "Agentic AI is a type of AI that can work toward a defined goal and take several actions with less step-by-step human input. An agent can understand a request, decide what to do next, use approved tools, and complete tasks based on set rules."
+      },
+      {
+        "q": "How much does agentic AI development cost?",
+        "a": "The cost depends on the number of agents, workflow complexity, integrations, data requirements, access controls, and testing needed. A single agent handling a focused task will usually require less development work than a multi-agent system connected to several business applications. We review the requirements before providing an estimate."
+      },
+      {
+        "q": "What can agentic AI be used for?",
+        "a": "Agentic AI can be used for customer support, research, internal operations, information retrieval, and workflow automation. It works best for tasks where the system needs to gather information, make a decision, use a tool, or complete several steps."
+      },
+      {
+        "q": "Is agentic AI safe for business use?",
+        "a": "Agentic AI can be used safely when the system has clear rules, limited access, testing, and monitoring. Agents should only access the data and tools required for their assigned tasks. We consider these controls when designing and building the system."
+      },
+      {
+        "q": "How long does agentic AI development take?",
+        "a": "The timeline depends on the number of agents, workflow complexity, integrations, data sources, and testing requirements. A focused agent with a small number of integrations can take less time than a multi-agent system connected to several business processes. We provide a clearer timeline after reviewing the project requirements."
+      }
+    ],
+    "ctaPrimaryLink": "/contact",
+    "ctaPrimaryText": "Book a Call",
+    "ctaSecondaryLink": "/contact",
+    "ctaSecondaryText": "Get a Free Assessment",
+    "subServicesIntro": "Our team builds AI systems for customer support, research, internal operations, and other business workflows. Each solution is planned around the tasks your team needs to complete, the systems already in use, and the actions the AI needs to take.",
+    "subServicesItems": [
+      {
+        "title": "AI Agent Development Services",
+        "desc": "We build AI agents for tasks such as answering questions, finding information, processing requests, checking data, and taking actions in connected systems. Each agent is given a defined role and clear instructions for the work it needs to handle."
+      },
+      {
+        "title": "Multi-Agent Systems",
+        "desc": "Some workflows involve several different tasks that one agent may not handle well. We build multi-agent systems where separate agents manage specific parts of the same workflow."
+      },
+      {
+        "title": "Workflow Automation",
+        "desc": "We build AI-powered workflows for tasks that involve several steps or require a decision before the next action. An agent can review information, decide what needs to happen next, use a connected tool, and continue the workflow. The workflow is built around your actual business process, including the points where human review is still needed."
+      },
+      {
+        "title": "Agent Integration",
+        "desc": "We connect AI agents with the systems your business already uses. An integrated agent can retrieve information, update records, send information to another system, or complete other approved actions. Access is set according to the agent’s role and the requirements of the workflow."
+      }
+    ],
+    "subServicesTitle": "Our Agentic AI Development Services",
+    "tech": [
+      "LangChain",
+      "LangGraph",
+      "OpenAI",
+      "Vector Databases"
+    ],
+    "techDesc": "Our technology stack includes LangChain, LangGraph, OpenAI, and vector databases. Vector databases can help an agent find relevant information from a business knowledge base. LangChain and LangGraph can be used to structure agent workflows, while OpenAI provides AI models for tasks such as understanding requests and generating responses.",
+    "techTitle": "Tools & Tech",
+    "useCasesIntro": "Agentic AI can support business tasks where teams spend time collecting information, responding to requests, or moving work through several steps.",
+    "useCasesItems": [
+      {
+        "title": "Support Automation",
+        "desc": "AI agents can answer common customer questions, search approved information, and handle routine support requests."
+      },
+      {
+        "title": "Research Agents",
+        "desc": "Research agents can collect information from approved sources, organise the results, and prepare summaries for review."
+      },
+      {
+        "title": "Operations Copilots",
+        "desc": "Operations copilots can help employees find information, check data, complete routine tasks, and work across connected business systems."
+      }
+    ],
+    "useCasesTitle": "Use Cases",
+    "ctaBannerButtonLink": "/contact",
+    "ctaBannerButtonText": "Book a Call",
+    "ctaBannerDesc": "Start with a clear business use case and build it with **agentic AI development services** from Cubixsol. Book a call to discuss your workflow, required integrations, and the tasks you want your AI system to handle.",
+    "ctaBannerEyebrow": "READY TO GET STARTED?",
+    "ctaBannerSecondaryButtonLink": "/contact",
+    "ctaBannerSecondaryButtonText": "Get a Free Assessment",
+    "ctaBannerTitle": "Ready to Get Started?",
+    "whyChooseItems": [
+      {
+        "title": "Practical AI Development",
+        "desc": "We start with the business task rather than the technology. Our team reviews what needs to be done, where manual work is taking place, and whether an AI agent is a suitable option for the workflow."
+      },
+      {
+        "title": "Security & Compliance",
+        "desc": "AI agents can access business information and connected systems, so access needs to be controlled. We consider permissions, data access, system controls, and other security requirements when building the solution."
+      },
+      {
+        "title": "Clear Business Value",
+        "desc": "We focus on areas such as reducing repeated manual work, helping teams respond faster, and handling routine tasks through defined AI workflows."
+      },
+      {
+        "title": "Ongoing Support",
+        "desc": "Your AI system may need updates after launch as your processes and tools change."
+      }
+    ],
+    "whyChooseTitle": "Why Choose Cubixsol?"
   },
   {
     "practices": {
+      "title": "",
+      "intro": "",
       "items": []
     },
     "impact": {
+      "title": "",
+      "intro": "",
       "rows": []
     },
     "process": {
-      "steps": []
+      "title": "How We Deliver",
+      "subtitle": "Our structured process to design, build, test, and deploy reliable business intelligence and reporting solutions.",
+      "steps": [
+        {
+          "stepNumber": "01",
+          "title": "Discover",
+          "desc": "We start by reviewing your goals, reports, data sources, users, and current reporting problems. You get a clear view of what needs to be built or improved.",
+          "bullets": [],
+          "image": "",
+          "_id": "6aa2960524254065bfd0e97f"
+        },
+        {
+          "stepNumber": "02",
+          "title": "Design",
+          "desc": "We plan the dashboard structure, KPIs, reports, data connections, and user access. Each part is planned around the information your team needs.",
+          "bullets": [],
+          "image": "",
+          "_id": "6aa2960524254065bfd0e980"
+        },
+        {
+          "stepNumber": "03",
+          "title": "Build",
+          "desc": "Our team connects the required data sources and builds dashboards and reports. We check calculations, filters, permissions, and report layouts during development.",
+          "bullets": [],
+          "image": "",
+          "_id": "6aa2960524254065bfd0e981"
+        },
+        {
+          "stepNumber": "04",
+          "title": "Deploy",
+          "desc": "We prepare the reports for your users and help set up access. Testing is completed before the reports are used across the business.",
+          "bullets": [],
+          "image": "",
+          "_id": "6aa2960524254065bfd0e982"
+        },
+        {
+          "stepNumber": "05",
+          "title": "Monitor & Improve",
+          "desc": "Reports may need updates as your business changes. We can fix issues, update dashboards, add new data sources, and make reporting easier to use over time.",
+          "bullets": [],
+          "image": "",
+          "_id": "6aa2960524254065bfd0e983"
+        }
+      ]
     },
-    "bullets": [],
     "title": "BI & Data Analytics",
     "slug": "bi-data-analytics",
-    "desc": "Dashboards and insights that drive decisions.",
+    "desc": "Good reporting should make it easier to see what is happening across your business. BI and data analytics bring information from different sources into reports and dashboards covering sales, revenue, costs, customer activity, operations, and other key numbers. Cubixsol helps you replace scattered spreadsheets and manual reports with organised reporting your team can use regularly.",
     "group": "Data Solutions",
-    "faqs": []
+    "bullets": [],
+    "ctaBannerButtonLink": "/contact",
+    "ctaBannerButtonText": "Book a Call",
+    "ctaBannerDesc": "Need **business intelligence services** fitting your data and reporting needs? Cubixsol can review your current setup, identify areas for improvement, and plan the right BI solution for your business.",
+    "ctaBannerEyebrow": "READY TO GET STARTED?",
+    "ctaBannerSecondaryButtonLink": "/contact",
+    "ctaBannerSecondaryButtonText": "Get a Free Assessment",
+    "ctaBannerTitle": "Ready to Get Started?",
+    "ctaPrimaryLink": "/contact",
+    "ctaPrimaryText": "Book a Call",
+    "ctaSecondaryLink": "/contact",
+    "ctaSecondaryText": "Get a Free Assessment",
+    "faqs": [
+      {
+        "q": "How much do BI services cost?",
+        "a": "Cost depends on the number of data sources, reports, dashboards, users, integrations, and project requirements. We can review your needs and provide a project estimate before development starts."
+      },
+      {
+        "q": "Which BI tool should my business use?",
+        "a": "Tool choice depends on your existing systems, data sources, reporting needs, and users. We work with Power BI, Tableau, and Looker and can help you choose the right option."
+      },
+      {
+        "q": "How long does a BI project take?",
+        "a": "Project time depends on scope and data readiness. A small dashboard project may take less time than a larger setup involving several data sources, reports, users, and access rules."
+      },
+      {
+        "q": "Can you connect different data sources?",
+        "a": "Yes. We can work with databases, spreadsheets, business systems, and other approved data sources. SQL and data engineering tools can also support more complex reporting setups."
+      },
+      {
+        "q": "Do you provide training?",
+        "a": "Yes. We can help your team understand the dashboards, reports, filters, and approved data available to them. Training can be included as part of the project based on your needs."
+      }
+    ],
+    "subServicesIntro": "Cubixsol provides BI services for businesses needing clear reporting, better access to data, and easier ways to track performance.",
+    "subServicesItems": [
+      {
+        "title": "Dashboards & Reporting",
+        "desc": "We build dashboards and reports for sales, revenue, costs, operations, customers, and other key areas. Each report can be set up for specific users, so managers can see high-level numbers while teams can review the details needed for daily work.",
+        "q": "Dashboards & Reporting",
+        "a": "We build dashboards and reports for sales, revenue, costs, operations, customers, and other key areas. Each report can be set up for specific users, so managers can see high-level numbers while teams can review the details needed for daily work."
+      },
+      {
+        "title": "BI Consulting",
+        "desc": "Our BI consulting services start with your reporting goals. We review your existing reports, data sources, users, and current problems. Based on our review, we help you decide which reports, KPIs, data connections, and tools are actually needed.",
+        "q": "BI Consulting",
+        "a": "Our BI consulting services start with your reporting goals. We review your existing reports, data sources, users, and current problems. Based on our review, we help you decide which reports, KPIs, data connections, and tools are actually needed."
+      },
+      {
+        "title": "Data Analytics",
+        "desc": "Our data analytics services help you review business information and find changes needing attention. We can analyse sales, customer activity, operations, finance, and other areas to compare results over time, spot changes, and answer specific business questions.",
+        "q": "Data Analytics",
+        "a": "Our data analytics services help you review business information and find changes needing attention. We can analyse sales, customer activity, operations, finance, and other areas to compare results over time, spot changes, and answer specific business questions."
+      },
+      {
+        "title": "Self-Service BI",
+        "desc": "Self-service BI gives approved users easier access to reports and data without asking developers to create every basic report. We can set up reporting access based on user roles and help teams work with approved information while keeping access controlled.",
+        "q": "Self-Service BI",
+        "a": "Self-service BI gives approved users easier access to reports and data without asking developers to create every basic report. We can set up reporting access based on user roles and help teams work with approved information while keeping access controlled."
+      },
+      {
+        "title": "KPI Design",
+        "desc": "We help you define KPIs matching your business goals. Each KPI should have a clear purpose and a consistent definition. We add selected KPIs to dashboards and reports so teams can track the same numbers across the business.",
+        "q": "KPI Design",
+        "a": "We help you define KPIs matching your business goals. Each KPI should have a clear purpose and a consistent definition. We add selected KPIs to dashboards and reports so teams can track the same numbers across the business."
+      },
+      {
+        "title": "Power BI Consulting Services",
+        "desc": "Our Power BI consulting services cover Power BI dashboard development, report setup, data connections, and improvements to existing reports. We review your data sources, users, reporting needs, and current Power BI setup before building or updating your reports.",
+        "q": "Power BI Consulting Services",
+        "a": "Our Power BI consulting services cover Power BI dashboard development, report setup, data connections, and improvements to existing reports. We review your data sources, users, reporting needs, and current Power BI setup before building or updating your reports."
+      }
+    ],
+    "subServicesTitle": "Our BI & Data Analytics Capabilities",
+    "tech": [
+      "Power BI",
+      "Tableau",
+      "Looker",
+      "SQL",
+      "databases"
+    ],
+    "techDesc": "We work with Power BI, Tableau, Looker, SQL, and databases based on your data sources, reporting needs, and existing systems. Our team selects tools fitting your current setup instead of adding technology your business does not need.",
+    "techTitle": "Tools & Tech",
+    "useCasesIntro": "Executive dashboards give business leaders a clear view of revenue, costs, sales performance, and other key numbers in one place. Sales analytics helps teams compare sales by product, service, region, salesperson, or time period. Reports make it easier to see changes and areas needing attention.",
+    "useCasesItems": [
+      {
+        "title": "Executive & Sales Analytics",
+        "desc": "Executive dashboards give business leaders a clear view of revenue, costs, sales performance, and other key numbers in one place. Sales analytics helps teams compare sales by product, service, region, salesperson, or time period.",
+        "q": "Executive & Sales Analytics",
+        "a": "Executive dashboards give business leaders a clear view of revenue, costs, sales performance, and other key numbers in one place. Sales analytics helps teams compare sales by product, service, region, salesperson, or time period."
+      },
+      {
+        "title": "Operations & Performance Reporting",
+        "desc": "Operations reporting helps teams track daily activity, costs, service levels, orders, and other operational measures. We can also connect BI reporting with wider data work through our data engineering solutions.",
+        "q": "Operations & Performance Reporting",
+        "a": "Operations reporting helps teams track daily activity, costs, service levels, orders, and other operational measures. We can also connect BI reporting with wider data work through our data engineering solutions."
+      },
+      {
+        "title": "Predictive Reporting & Planning",
+        "desc": "Predictive reporting can support planning when your business needs to look beyond current results. Our predictive analytics services can support forecasting and future planning.",
+        "q": "Predictive Reporting & Planning",
+        "a": "Predictive reporting can support planning when your business needs to look beyond current results. Our predictive analytics services can support forecasting and future planning."
+      }
+    ],
+    "useCasesTitle": "Use Cases",
+    "whyChooseIntro": "",
+    "whyChooseItems": [
+      {
+        "title": "Practical BI Expertise",
+        "desc": "We focus on real reporting needs rather than adding unnecessary dashboards or features. Our team works around your data, users, KPIs, and business goals.",
+        "q": "Practical BI Expertise",
+        "a": "We focus on real reporting needs rather than adding unnecessary dashboards or features. Our team works around your data, users, KPIs, and business goals."
+      },
+      {
+        "title": "Secure Data Handling",
+        "desc": "We consider user access, permissions, data connections, and report visibility when setting up BI systems. Access can be arranged based on who needs to see specific information.",
+        "q": "Secure Data Handling",
+        "a": "We consider user access, permissions, data connections, and report visibility when setting up BI systems. Access can be arranged based on who needs to see specific information."
+      },
+      {
+        "title": "Focus on Useful Results",
+        "desc": "Good BI should save reporting time and make important information easier to find. We focus on reports reducing manual work, improving visibility, and supporting better business decisions.",
+        "q": "Focus on Useful Results",
+        "a": "Good BI should save reporting time and make important information easier to find. We focus on reports reducing manual work, improving visibility, and supporting better business decisions."
+      },
+      {
+        "title": "Ongoing Technical Support",
+        "desc": "Support does not have to stop after launch. We can help with report updates, fixes, new data connections, performance issues, and changes to your reporting needs.",
+        "q": "Ongoing Technical Support",
+        "a": "Support does not have to stop after launch. We can help with report updates, fixes, new data connections, performance issues, and changes to your reporting needs."
+      }
+    ],
+    "whyChooseTitle": "Why Choose Cubixsol?",
+    "faqsText": "How much do BI services cost? | Cost depends on the number of data sources, reports, dashboards, users, integrations, and project requirements. We can review your needs and provide a project estimate before development starts.\n\nWhich BI tool should my business use? | Tool choice depends on your existing systems, data sources, reporting needs, and users. We work with Power BI, Tableau, and Looker and can help you choose the right option.\n\nHow long does a BI project take? | Project time depends on scope and data readiness. A small dashboard project may take less time than a larger setup involving several data sources, reports, users, and access rules.\n\nCan you connect different data sources? | Yes. We can work with databases, spreadsheets, business systems, and other approved data sources. SQL and data engineering tools can also support more complex reporting setups.\n\nDo you provide training? | Yes. We can help your team understand the dashboards, reports, filters, and approved data available to them. Training can be included as part of the project based on your needs.",
+    "impactRowsText": "",
+    "practicesItemsText": "",
+    "processStepsText": "01 | Discover | We start by reviewing your goals, reports, data sources, users, and current reporting problems. You get a clear view of what needs to be built or improved.\n\n02 | Design | We plan the dashboard structure, KPIs, reports, data connections, and user access. Each part is planned around the information your team needs.\n\n03 | Build | Our team connects the required data sources and builds dashboards and reports. We check calculations, filters, permissions, and report layouts during development.\n\n04 | Deploy | We prepare the reports for your users and help set up access. Testing is completed before the reports are used across the business.\n\n05 | Monitor & Improve | Reports may need updates as your business changes. We can fix issues, update dashboards, add new data sources, and make reporting easier to use over time.",
+    "processSubtitle": "Our structured process to design, build, test, and deploy reliable business intelligence and reporting solutions.",
+    "processTitle": "How We Deliver",
+    "subServicesText": "Dashboards & Reporting | We build dashboards and reports for sales, revenue, costs, operations, customers, and other key areas. Each report can be set up for specific users, so managers can see high-level numbers while teams can review the details needed for daily work.\n\nBI Consulting | Our BI consulting services start with your reporting goals. We review your existing reports, data sources, users, and current problems. Based on our review, we help you decide which reports, KPIs, data connections, and tools are actually needed.\n\nData Analytics | Our data analytics services help you review business information and find changes needing attention. We can analyse sales, customer activity, operations, finance, and other areas to compare results over time, spot changes, and answer specific business questions.\n\nSelf-Service BI | Self-service BI gives approved users easier access to reports and data without asking developers to create every basic report. We can set up reporting access based on user roles and help teams work with approved information while keeping access controlled.\n\nKPI Design | We help you define KPIs matching your business goals. Each KPI should have a clear purpose and a consistent definition. We add selected KPIs to dashboards and reports so teams can track the same numbers across the business.\n\nPower BI Consulting Services | Our Power BI consulting services cover Power BI dashboard development, report setup, data connections, and improvements to existing reports. We review your data sources, users, reporting needs, and current Power BI setup before building or updating your reports.",
+    "useCasesText": "Executive & Sales Analytics | Executive dashboards give business leaders a clear view of revenue, costs, sales performance, and other key numbers in one place. Sales analytics helps teams compare sales by product, service, region, salesperson, or time period.\n\nOperations & Performance Reporting | Operations reporting helps teams track daily activity, costs, service levels, orders, and other operational measures. We can also connect BI reporting with wider data work through our data engineering solutions.\n\nPredictive Reporting & Planning | Predictive reporting can support planning when your business needs to look beyond current results. Our predictive analytics services can support forecasting and future planning.",
+    "whyChooseText": "Practical BI Expertise | We focus on real reporting needs rather than adding unnecessary dashboards or features. Our team works around your data, users, KPIs, and business goals.\n\nSecure Data Handling | We consider user access, permissions, data connections, and report visibility when setting up BI systems. Access can be arranged based on who needs to see specific information.\n\nFocus on Useful Results | Good BI should save reporting time and make important information easier to find. We focus on reports reducing manual work, improving visibility, and supporting better business decisions.\n\nOngoing Technical Support | Support does not have to stop after launch. We can help with report updates, fixes, new data connections, performance issues, and changes to your reporting needs."
   },
   {
     "practices": {
+      "title": "",
+      "intro": "",
       "items": []
     },
     "impact": {
+      "title": "",
+      "intro": "",
       "rows": []
     },
     "process": {
-      "steps": []
+      "title": "How We Deliver",
+      "subtitle": "Our structured process to design, build, test, and deploy reliable customer segmentation models.",
+      "steps": [
+        {
+          "_id": "6aa2b1f3d8fe4b0fb4b675b7",
+          "stepNumber": "01",
+          "title": "Discover",
+          "desc": "We begin by reviewing your business goals, customer data, existing systems, and segmentation requirements. Early discussions help define the customer groups your team needs and the data available for the project.",
+          "bullets": []
+        },
+        {
+          "_id": "6aa2b1f3d8fe4b0fb4b675b8",
+          "stepNumber": "02",
+          "title": "Design",
+          "desc": "Our team selects suitable segmentation methods and defines the rules for each customer group. We also plan how segments will be used across your marketing or customer systems.",
+          "bullets": []
+        },
+        {
+          "_id": "6aa2b1f3d8fe4b0fb4b675b9",
+          "stepNumber": "03",
+          "title": "Build",
+          "desc": "Developers and data specialists create the required segments, analysis, and supporting data setup. We check the results against the agreed requirements before moving to deployment.",
+          "bullets": []
+        },
+        {
+          "_id": "6aa2b1f3d8fe4b0fb4b675ba",
+          "stepNumber": "04",
+          "title": "Deploy",
+          "desc": "We make the completed segments available in the relevant systems and workflows. Deployment can support marketing campaigns, customer analysis, reporting, or other approved business activities.",
+          "bullets": []
+        },
+        {
+          "_id": "6aa2b1f3d8fe4b0fb4b675bb",
+          "stepNumber": "05",
+          "title": "Monitor & Improve",
+          "desc": "Customer behaviour can change over time. We review segment performance, data quality, and business needs so your segmentation setup can be updated when new requirements arise.",
+          "bullets": []
+        }
+      ]
     },
-    "bullets": [],
     "title": "Customer Segmentation",
     "slug": "customer-segmentation",
-    "desc": "Smarter audiences for campaigns and personalization.",
+    "desc": "Customer segmentation divides customers into groups based on shared characteristics, behaviour, purchase activity, engagement, or customer value. Cubixsol helps businesses use these groups to send more relevant campaigns, improve customer experiences, identify retention opportunities, and make better marketing decisions. Our team reviews your available customer data, selects suitable segmentation methods, and creates groups your business can use across relevant marketing and customer activities.",
     "group": "E-Commerce",
-    "faqs": []
+    "bullets": [],
+    "ctaBannerButtonLink": "/contact",
+    "ctaBannerButtonText": "Book a Call",
+    "ctaBannerDesc": "Improve customer targeting and retention using **customer segmentation services** from Cubixsol. Share your customer data needs and business goals, and our team can help define a suitable segmentation approach.",
+    "ctaBannerEyebrow": "READY TO GET STARTED?",
+    "ctaBannerSecondaryButtonLink": "/contact",
+    "ctaBannerSecondaryButtonText": "Get a Free Assessment",
+    "ctaBannerTitle": "Ready to Get Started?",
+    "ctaPrimaryLink": "/contact",
+    "ctaPrimaryText": "Book a Call",
+    "ctaSecondaryLink": "/contact",
+    "ctaSecondaryText": "Get a Free Assessment",
+    "faqs": [
+      {
+        "q": "How much do customer segmentation services cost?",
+        "a": "Cost depends on the amount and type of customer data, number of segments, systems involved, analysis requirements, and project scope. Cubixsol reviews your requirements before providing an estimate."
+      },
+      {
+        "q": "What customer data do you need for segmentation?",
+        "a": "Required data depends on your business goals and the type of segments you need. Common data can include purchase history, transaction value, customer activity, engagement, demographics, location, and other relevant customer information."
+      },
+      {
+        "q": "What tools can Cubixsol use for customer segmentation?",
+        "a": "We can use Python, customer data platforms, cloud machine learning tools, and relevant data systems based on your project needs. Our team reviews your existing setup before selecting the most suitable tools for the work."
+      },
+      {
+        "q": "How long does customer segmentation take?",
+        "a": "Project timelines depend on data quality, project size, number of segments, system requirements, and the level of analysis needed. We provide a clearer timeline after reviewing your data, goals, and technical requirements."
+      },
+      {
+        "q": "How quickly can customer segments be activated?",
+        "a": "Activation time depends on your data setup, existing systems, and where the segments need to be used. Our team plans deployment around your marketing systems, customer data sources, and required workflows."
+      }
+    ],
+    "subServicesIntro": "Our team reviews your available customer data, selects suitable segmentation methods, and creates groups your business can use across relevant marketing and customer activities.",
+    "subServicesItems": [
+      {
+        "title": "Segmentation Models",
+        "desc": "We build customer segments based on the data and goals of your business. Segments can include purchase behaviour, customer activity, demographics, engagement, location, or other relevant factors. Our team defines clear rules for each group, so your marketing and customer teams can use the segments consistently."
+      },
+      {
+        "title": "RFM Analysis",
+        "desc": "RFM analysis groups customers based on recency, frequency, and monetary value. We use these measures to identify recent buyers, frequent customers, high-value customers, inactive buyers, and other useful groups. Your team can then plan campaigns based on customer value and buying behaviour."
+      },
+      {
+        "title": "Personalization Services",
+        "desc": "Our personalization services help businesses use customer groups to provide more relevant content, offers, and messages. Different customer segments can receive suitable campaigns based on their interests, activity, purchase history, or level of engagement."
+      },
+      {
+        "title": "Audience Analytics",
+        "desc": "Our customer analytics services help businesses understand how different customer groups behave. We analyse customer activity, compare audience groups, and identify useful patterns in your data. Results can support campaign planning, customer retention, and marketing decisions."
+      }
+    ],
+    "subServicesTitle": "Our Customer Segmentation Capabilities",
+    "tech": [
+      "Python",
+      "Customer Data Platforms (CDPs)",
+      "Cloud Machine Learning Tools"
+    ],
+    "techDesc": "Our customer segmentation technology includes Python, customer data platforms (CDPs), and cloud machine learning tools. Python supports data analysis and customer modelling, while CDPs can help bring customer information together. Cloud ML tools can support more advanced analysis when required by the project.",
+    "techTitle": "Tools & Tech",
+    "useCasesIntro": "Customer segmentation can support several common business goals.",
+    "useCasesItems": [
+      {
+        "title": "Targeted Campaigns",
+        "desc": "Create focused audiences for email, advertising, promotions, and other marketing campaigns. Customer groups help teams avoid sending the same message to every customer."
+      },
+      {
+        "title": "Personalization",
+        "desc": "Use customer information to provide more relevant offers, content, and communication. Segments can help businesses match campaigns to customer interests and past activity."
+      },
+      {
+        "title": "Retention",
+        "desc": "Identify loyal customers, inactive buyers, and customers whose activity has changed. Teams can use these groups to plan suitable retention campaigns and encourage customers to return."
+      }
+    ],
+    "useCasesTitle": "Use Cases",
+    "whyChooseIntro": "",
+    "whyChooseItems": [
+      {
+        "title": "Practical Expertise",
+        "desc": "Our team focuses on customer segmentation, analytics, and practical business use. We create customer groups based on clear goals rather than producing segments with no clear purpose."
+      },
+      {
+        "title": "Security and Compliance",
+        "desc": "Customer data requires careful handling throughout the project. We apply suitable access controls and security practices based on the data, systems, and requirements involved."
+      },
+      {
+        "title": "Business Value",
+        "desc": "Useful segmentation can help businesses improve campaign targeting, personalisation, and retention. We focus on customer groups your team can apply to real marketing and customer activities."
+      },
+      {
+        "title": "Ongoing Support",
+        "desc": "Customer data and business needs can change after launch. Our team can support segment reviews, updates, data changes, and improvements so your setup remains useful as requirements change."
+      }
+    ],
+    "whyChooseTitle": "Why Choose Cubixsol?"
   },
   {
     "practices": {
+      "title": "",
+      "intro": "",
       "items": []
     },
     "impact": {
+      "title": "",
+      "intro": "",
       "rows": []
     },
     "process": {
-      "steps": []
+      "title": "How We Deliver Data Engineering Projects",
+      "subtitle": "Our structured process to design, build, test, and deploy modern data engineering infrastructure.",
+      "steps": [
+        {
+          "stepNumber": "01",
+          "title": "Discover",
+          "desc": "We review your current data sources, systems, workflows, business requirements, and reporting needs. Our team identifies data gaps, integration issues, and areas that need improvement.",
+          "bullets": [],
+          "image": "",
+          "_id": "6aa2a48d24254065bfd0f095"
+        },
+        {
+          "stepNumber": "02",
+          "title": "Design",
+          "desc": "We create the data architecture, pipeline structure, storage approach, and data models for your project. You get a clear technical plan before development starts.",
+          "bullets": [],
+          "image": "",
+          "_id": "6aa2a48d24254065bfd0f096"
+        },
+        {
+          "stepNumber": "03",
+          "title": "Build",
+          "desc": "Our engineers develop pipelines, integrations, transformations, data models, and storage systems. We also add data validation and access controls where required.",
+          "bullets": [],
+          "image": "",
+          "_id": "6aa2a48d24254065bfd0f097"
+        },
+        {
+          "stepNumber": "04",
+          "title": "Deploy",
+          "desc": "We move the completed data solution into your working environment and test the pipelines, connections, permissions, and data flows before release.",
+          "bullets": [],
+          "image": "",
+          "_id": "6aa2a48d24254065bfd0f098"
+        },
+        {
+          "stepNumber": "05",
+          "title": "Monitor and Improve",
+          "desc": "Data systems need ongoing attention. We monitor pipeline performance, data quality, failures, and system usage. Our team fixes issues and makes improvements as your data needs change.",
+          "bullets": [],
+          "image": "",
+          "_id": "6aa2a48d24254065bfd0f099"
+        }
+      ]
     },
-    "bullets": [],
     "title": "Data Engineering",
-    "slug": "data-engineering",
-    "desc": "Pipelines, warehouses, and reliable data platforms.",
+    "slug": "data-engineering-services",
+    "desc": "Good business decisions depend on reliable data. Cubixsol helps businesses bring data from different systems into a structured environment where teams can access and use it more easily. Our data engineering services cover data pipelines, ETL, data warehouses, data lakes, streaming, and platform modernization. We also build data foundations that support reporting, business intelligence services, analytics, and machine learning.",
     "group": "Data Solutions",
-    "faqs": []
+    "bullets": [],
+    "ctaBannerButtonLink": "/contact",
+    "ctaBannerButtonText": "Book a Call",
+    "ctaBannerDesc": "Reliable data starts with the right foundation. Cubixsol provides **data engineering services** for businesses that need better data pipelines, storage, processing, and access.",
+    "ctaBannerEyebrow": "READY TO GET STARTED?",
+    "ctaBannerSecondaryButtonLink": "/contact",
+    "ctaBannerSecondaryButtonText": "Free Assessment",
+    "ctaBannerTitle": "Ready to Get Started?",
+    "ctaPrimaryLink": "/contact",
+    "ctaPrimaryText": "Book a Call",
+    "ctaSecondaryLink": "/contact",
+    "ctaSecondaryText": "Free Assessment",
+    "faqs": [
+      {
+        "q": "How much do data engineering services cost?",
+        "a": "Cost depends on the number of data sources, project scope, platform requirements, integrations, and ongoing support needs. Cubixsol can review your requirements and provide a project estimate."
+      },
+      {
+        "q": "How long does a data engineering project take?",
+        "a": "A small pipeline project may take a few weeks, while a larger data platform can take several months. The timeline depends on system complexity, data volume, integrations, and project requirements."
+      },
+      {
+        "q": "What is the difference between ETL and ELT?",
+        "a": "ETL transforms data before loading it into the target system. ELT loads the data first and transforms it inside the warehouse or data platform. The right approach depends on your systems, data volume, and processing needs."
+      },
+      {
+        "q": "How do I choose between Snowflake and BigQuery?",
+        "a": "Both platforms support scalable cloud data workloads. The better option depends on your existing cloud environment, data architecture, workload type, team expertise, and cost requirements. Our team can help evaluate both options."
+      },
+      {
+        "q": "How do you maintain data quality?",
+        "a": "We use validation rules, data checks, transformation logic, monitoring, and error handling to identify problems in data pipelines. We also review data quality requirements during the design stage."
+      }
+    ],
+    "subServicesIntro": "Our data engineering services cover the core systems your business needs to collect, process, store, and use data.",
+    "subServicesItems": [
+      {
+        "title": "Data Pipelines and ETL Services",
+        "desc": "We build data pipelines to move information from databases, applications, APIs, files, and other sources into your target systems. Our ETL services extract data, clean and transform it, then load it into the right destination. We also support ELT workflows when your platform handles transformation after data reaches the warehouse or lake. Automated pipelines reduce manual data handling and help keep information ready for reporting and analysis.",
+        "q": "Data Pipelines and ETL Services",
+        "a": "We build data pipelines to move information from databases, applications, APIs, files, and other sources into your target systems. Our ETL services extract data, clean and transform it, then load it into the right destination. We also support ELT workflows when your platform handles transformation after data reaches the warehouse or lake. Automated pipelines reduce manual data handling and help keep information ready for reporting and analysis."
+      },
+      {
+        "title": "Data Warehousing",
+        "desc": "We design data warehouses that bring business information into one structured environment. Your teams can access data from sales, finance, operations, marketing, and other systems without checking each source separately. Our team works with platforms such as Snowflake and BigQuery to create organized data models that support reporting, dashboards, analytics, and business intelligence.",
+        "q": "Data Warehousing",
+        "a": "We design data warehouses that bring business information into one structured environment. Your teams can access data from sales, finance, operations, marketing, and other systems without checking each source separately. Our team works with platforms such as Snowflake and BigQuery to create organized data models that support reporting, dashboards, analytics, and business intelligence."
+      },
+      {
+        "title": "Data Lakes",
+        "desc": "Data lakes provide a central place for structured, semi-structured, and unstructured data. We help businesses collect large volumes of information and organize it for future analytics, reporting, and machine learning use cases. Our team sets up storage and data flows based on how your business collects and uses information.",
+        "q": "Data Lakes",
+        "a": "Data lakes provide a central place for structured, semi-structured, and unstructured data. We help businesses collect large volumes of information and organize it for future analytics, reporting, and machine learning use cases. Our team sets up storage and data flows based on how your business collects and uses information."
+      },
+      {
+        "title": "Real-Time Data Streaming",
+        "desc": "Some businesses need data as events happen instead of waiting for scheduled updates. We build streaming pipelines for use cases such as live dashboards, transaction monitoring, application events, and operational analytics. Kafka can support high-volume event streaming and help move data between applications and analytics systems in near real time.",
+        "q": "Real-Time Data Streaming",
+        "a": "Some businesses need data as events happen instead of waiting for scheduled updates. We build streaming pipelines for use cases such as live dashboards, transaction monitoring, application events, and operational analytics. Kafka can support high-volume event streaming and help move data between applications and analytics systems in near real time."
+      },
+      {
+        "title": "Data Platform Modernization",
+        "desc": "Older data systems can require manual work, slow reporting, and difficult maintenance. We modernize data platforms by reviewing existing systems, improving pipelines, updating data models, and moving workloads to modern cloud platforms when needed. The goal is a simpler data environment that supports current business needs and future growth.",
+        "q": "Data Platform Modernization",
+        "a": "Older data systems can require manual work, slow reporting, and difficult maintenance. We modernize data platforms by reviewing existing systems, improving pipelines, updating data models, and moving workloads to modern cloud platforms when needed. The goal is a simpler data environment that supports current business needs and future growth."
+      }
+    ],
+    "subServicesTitle": "Our Data Engineering Capabilities",
+    "tech": [
+      "Apache Airflow",
+      "dbt",
+      "Snowflake",
+      "Google BigQuery",
+      "Apache Spark",
+      "Apache Kafka"
+    ],
+    "techDesc": "Our team uses proven data engineering technologies based on project requirements. Our technology stack includes Apache Airflow, dbt, Snowflake, Google BigQuery, Apache Spark, and Apache Kafka. Airflow helps manage scheduled workflows. dbt supports data transformation and modeling. Snowflake and BigQuery provide scalable cloud data platforms. Spark handles large-scale data processing, while Kafka supports real-time event streaming.",
+    "techTitle": "Tools & Tech",
+    "useCasesIntro": "Data engineering enables reliable data integration, real-time analytics, and machine learning readiness across your operations.",
+    "useCasesItems": [
+      {
+        "title": "Unify Siloed Data",
+        "desc": "Businesses often store data across different applications and databases. We connect these sources and create data pipelines that bring information into a common environment. Your teams can work from consistent data instead of checking multiple systems manually.",
+        "q": "Unify Siloed Data",
+        "a": "Businesses often store data across different applications and databases. We connect these sources and create data pipelines that bring information into a common environment. Your teams can work from consistent data instead of checking multiple systems manually."
+      },
+      {
+        "title": "Real-Time Analytics",
+        "desc": "Real-time data pipelines help teams see important changes as they happen. Businesses can use live data for operational dashboards, transaction monitoring, customer activity, and other time-sensitive decisions.",
+        "q": "Real-Time Analytics",
+        "a": "Real-time data pipelines help teams see important changes as they happen. Businesses can use live data for operational dashboards, transaction monitoring, customer activity, and other time-sensitive decisions."
+      },
+      {
+        "title": "ML-Ready Datasets",
+        "desc": "Machine learning projects need clean, structured, and accessible data. We prepare datasets by combining sources, applying transformations, handling data quality issues, and creating reliable data flows for ML workloads.",
+        "q": "ML-Ready Datasets",
+        "a": "Machine learning projects need clean, structured, and accessible data. We prepare datasets by combining sources, applying transformations, handling data quality issues, and creating reliable data flows for ML workloads."
+      }
+    ],
+    "useCasesTitle": "Use Cases",
+    "whyChooseIntro": "",
+    "whyChooseItems": [
+      {
+        "title": "Data Engineering Expertise",
+        "desc": "Our team works across data pipelines, warehouses, lakes, streaming systems, cloud platforms, and data transformations. We focus on building systems your technical and business teams can use.",
+        "q": "Data Engineering Expertise",
+        "a": "Our team works across data pipelines, warehouses, lakes, streaming systems, cloud platforms, and data transformations. We focus on building systems your technical and business teams can use."
+      },
+      {
+        "title": "Security and Compliance",
+        "desc": "We include access controls, permissions, encryption, and data handling practices as part of the solution. Our team also considers audit and data governance requirements when designing data workflows.",
+        "q": "Security and Compliance",
+        "a": "We include access controls, permissions, encryption, and data handling practices as part of the solution. Our team also considers audit and data governance requirements when designing data workflows."
+      },
+      {
+        "title": "Practical Business Value",
+        "desc": "Better data systems can reduce manual reporting, limit duplicate records, improve data access, and lower maintenance work. Reliable data also gives analytics and ML teams a stronger foundation for their projects.",
+        "q": "Practical Business Value",
+        "a": "Better data systems can reduce manual reporting, limit duplicate records, improve data access, and lower maintenance work. Reliable data also gives analytics and ML teams a stronger foundation for their projects."
+      },
+      {
+        "title": "Ongoing Technical Support",
+        "desc": "Our support does not end after deployment. We can help monitor pipelines, resolve technical issues, update workflows, and maintain your data platform as business requirements change.",
+        "q": "Ongoing Technical Support",
+        "a": "Our support does not end after deployment. We can help monitor pipelines, resolve technical issues, update workflows, and maintain your data platform as business requirements change."
+      }
+    ],
+    "whyChooseTitle": "Why Choose Cubixsol?",
+    "faqsText": "How much do data engineering services cost? | Cost depends on the number of data sources, project scope, platform requirements, integrations, and ongoing support needs. Cubixsol can review your requirements and provide a project estimate.\n\nHow long does a data engineering project take? | A small pipeline project may take a few weeks, while a larger data platform can take several months. The timeline depends on system complexity, data volume, integrations, and project requirements.\n\nWhat is the difference between ETL and ELT? | ETL transforms data before loading it into the target system. ELT loads the data first and transforms it inside the warehouse or data platform. The right approach depends on your systems, data volume, and processing needs.\n\nHow do I choose between Snowflake and BigQuery? | Both platforms support scalable cloud data workloads. The better option depends on your existing cloud environment, data architecture, workload type, team expertise, and cost requirements. Our team can help evaluate both options.\n\nHow do you maintain data quality? | We use validation rules, data checks, transformation logic, monitoring, and error handling to identify problems in data pipelines. We also review data quality requirements during the design stage.",
+    "impactRowsText": "",
+    "practicesItemsText": "",
+    "processStepsText": "01 | Discover | We review your current data sources, systems, workflows, business requirements, and reporting needs. Our team identifies data gaps, integration issues, and areas that need improvement.\n\n02 | Design | We create the data architecture, pipeline structure, storage approach, and data models for your project. You get a clear technical plan before development starts.\n\n03 | Build | Our engineers develop pipelines, integrations, transformations, data models, and storage systems. We also add data validation and access controls where required.\n\n04 | Deploy | We move the completed data solution into your working environment and test the pipelines, connections, permissions, and data flows before release.\n\n05 | Monitor and Improve | Data systems need ongoing attention. We monitor pipeline performance, data quality, failures, and system usage. Our team fixes issues and makes improvements as your data needs change.",
+    "processSubtitle": "Our structured process to design, build, test, and deploy modern data engineering infrastructure.",
+    "processTitle": "How We Deliver Data Engineering Projects",
+    "subServicesText": "Data Pipelines and ETL Services | We build data pipelines to move information from databases, applications, APIs, files, and other sources into your target systems. Our ETL services extract data, clean and transform it, then load it into the right destination. We also support ELT workflows when your platform handles transformation after data reaches the warehouse or lake. Automated pipelines reduce manual data handling and help keep information ready for reporting and analysis.\n\nData Warehousing | We design data warehouses that bring business information into one structured environment. Your teams can access data from sales, finance, operations, marketing, and other systems without checking each source separately. Our team works with platforms such as Snowflake and BigQuery to create organized data models that support reporting, dashboards, analytics, and business intelligence.\n\nData Lakes | Data lakes provide a central place for structured, semi-structured, and unstructured data. We help businesses collect large volumes of information and organize it for future analytics, reporting, and machine learning use cases. Our team sets up storage and data flows based on how your business collects and uses information.\n\nReal-Time Data Streaming | Some businesses need data as events happen instead of waiting for scheduled updates. We build streaming pipelines for use cases such as live dashboards, transaction monitoring, application events, and operational analytics. Kafka can support high-volume event streaming and help move data between applications and analytics systems in near real time.\n\nData Platform Modernization | Older data systems can require manual work, slow reporting, and difficult maintenance. We modernize data platforms by reviewing existing systems, improving pipelines, updating data models, and moving workloads to modern cloud platforms when needed. The goal is a simpler data environment that supports current business needs and future growth.",
+    "useCasesText": "Unify Siloed Data | Businesses often store data across different applications and databases. We connect these sources and create data pipelines that bring information into a common environment. Your teams can work from consistent data instead of checking multiple systems manually.\n\nReal-Time Analytics | Real-time data pipelines help teams see important changes as they happen. Businesses can use live data for operational dashboards, transaction monitoring, customer activity, and other time-sensitive decisions.\n\nML-Ready Datasets | Machine learning projects need clean, structured, and accessible data. We prepare datasets by combining sources, applying transformations, handling data quality issues, and creating reliable data flows for ML workloads.",
+    "whyChooseText": "Data Engineering Expertise | Our team works across data pipelines, warehouses, lakes, streaming systems, cloud platforms, and data transformations. We focus on building systems your technical and business teams can use.\n\nSecurity and Compliance | We include access controls, permissions, encryption, and data handling practices as part of the solution. Our team also considers audit and data governance requirements when designing data workflows.\n\nPractical Business Value | Better data systems can reduce manual reporting, limit duplicate records, improve data access, and lower maintenance work. Reliable data also gives analytics and ML teams a stronger foundation for their projects.\n\nOngoing Technical Support | Our support does not end after deployment. We can help monitor pipelines, resolve technical issues, update workflows, and maintain your data platform as business requirements change."
   },
   {
     "practices": {
+      "title": "",
+      "intro": "",
       "items": []
     },
     "impact": {
+      "title": "",
+      "intro": "",
       "rows": []
     },
     "process": {
-      "steps": []
+      "title": "How We Deliver",
+      "subtitle": "Our data governance services follow a clear process from the first review through implementation and ongoing improvement.",
+      "steps": [
+        {
+          "_id": "6aa2b1f3d8fe4b0fb4b675e2",
+          "stepNumber": "01",
+          "title": "Discover",
+          "desc": "We review your data sources, systems, current policies, access controls, and business requirements. Our team identifies gaps and areas where your current data processes need improvement.",
+          "bullets": []
+        },
+        {
+          "_id": "6aa2b1f3d8fe4b0fb4b675e3",
+          "stepNumber": "02",
+          "title": "Design",
+          "desc": "We define data ownership, governance rules, access controls, quality checks, security measures, and documentation based on your requirements.",
+          "bullets": []
+        },
+        {
+          "_id": "6aa2b1f3d8fe4b0fb4b675e4",
+          "stepNumber": "03",
+          "title": "Build",
+          "desc": "Our team puts the approved policies, processes, controls, catalogs, and quality checks into place. We work with your existing systems where possible and keep the implementation aligned with your business processes.",
+          "bullets": []
+        },
+        {
+          "_id": "6aa2b1f3d8fe4b0fb4b675e5",
+          "stepNumber": "04",
+          "title": "Deploy",
+          "desc": "We test the governance setup before applying it across the required systems and teams. Your staff can then follow clear processes for managing, accessing, and using business data.",
+          "bullets": []
+        },
+        {
+          "_id": "6aa2b1f3d8fe4b0fb4b675e6",
+          "stepNumber": "05",
+          "title": "Monitor & Improve",
+          "desc": "Data systems and business requirements can change over time. We review data quality, access permissions, governance policies, and controls. Regular reviews help keep your data processes current as your business changes.",
+          "bullets": []
+        }
+      ]
     },
-    "bullets": [],
     "title": "Data Governance and Security",
     "slug": "data-governance-security",
-    "desc": "Policies, access control, and data quality.",
+    "desc": "Good data governance gives your team clear rules for managing business data. Cubixsol helps define data ownership, access rules, quality checks, security controls, and compliance processes. Our team reviews your current setup, finds gaps, and puts practical processes in place based on your systems and business requirements.",
     "group": "Data Solutions",
-    "faqs": []
+    "bullets": [],
+    "ctaBannerButtonLink": "/contact",
+    "ctaBannerButtonText": "Book a Call",
+    "ctaBannerDesc": "Need clearer control over your business data? Cubixsol provides **data governance services** for data policies, access control, quality, security, compliance, and data management.",
+    "ctaBannerEyebrow": "READY TO GET STARTED?",
+    "ctaBannerSecondaryButtonLink": "/contact",
+    "ctaBannerSecondaryButtonText": "Request a Free Assessment",
+    "ctaBannerTitle": "Ready to Get Started?",
+    "ctaPrimaryLink": "/contact",
+    "ctaPrimaryText": "Book a Call",
+    "ctaSecondaryLink": "/contact",
+    "ctaSecondaryText": "Request a Free Assessment",
+    "faqs": [
+      {
+        "q": "What is data governance?",
+        "a": "Data governance is a set of rules, roles, processes, and controls used to manage business data. It defines who owns data, who can access it, how quality is maintained, and how sensitive information should be handled."
+      },
+      {
+        "q": "How much do data governance services cost?",
+        "a": "Cost depends on your data environment, number of systems, project scope, security requirements, and compliance needs. A smaller project may focus on access control or data quality. A larger project may cover governance across multiple systems and departments."
+      },
+      {
+        "q": "How does data governance support compliance?",
+        "a": "Governance gives your team clear rules for collecting, accessing, storing, using, and protecting data. Ownership rules, access controls, documentation, and regular reviews can support requirements such as GDPR and HIPAA."
+      },
+      {
+        "q": "Who is responsible for data governance?",
+        "a": "Responsibility can involve data owners, IT teams, security teams, compliance staff, and business users. Clear roles help each person understand what they can access, manage, approve, or change."
+      },
+      {
+        "q": "What tools are used for data governance?",
+        "a": "Common tools include Collibra for governance and data cataloging, Great Expectations for data quality checks, and cloud IAM tools for access management. Tool selection depends on your systems, data sources, security needs, and project requirements."
+      }
+    ],
+    "subServicesIntro": "Good data governance gives your team clear rules for managing business data. Cubixsol helps define data ownership, access rules, quality checks, security controls, and compliance processes. Our team reviews your current setup, finds gaps, and puts practical processes in place based on your systems and business requirements.",
+    "subServicesItems": [
+      {
+        "title": "Governance Framework",
+        "desc": "We define clear rules for how your business manages data. Our team sets data ownership, user responsibilities, policies, standards, and approval processes. Clear roles help your staff know who can manage data and how each type of data should be handled."
+      },
+      {
+        "title": "Access Control",
+        "desc": "We help control who can view, edit, download, share, or manage business data. Access rules can follow job roles and responsibilities. Our team can also review existing permissions and remove access users no longer need."
+      },
+      {
+        "title": "Data Quality",
+        "desc": "Our data quality services help identify duplicate, missing, incorrect, and inconsistent records. We can set validation rules and quality checks for important data. Your team can use clear processes to find and correct data problems before they affect reports or business operations."
+      },
+      {
+        "title": "Compliance (GDPR/HIPAA)",
+        "desc": "We help your business create data policies and controls for regulated information. Processes can cover data access, storage, ownership, handling, and documentation. Our team can also help connect governance processes with GDPR, HIPAA, and other applicable business requirements."
+      },
+      {
+        "title": "Cataloging",
+        "desc": "We help create a central data catalog so your team can see where data is stored, who owns it, what it contains, and how it is used. Clear data information makes important records easier to find, understand, and manage."
+      }
+    ],
+    "subServicesTitle": "Our Data Governance & Security Capabilities",
+    "tech": [
+      "Collibra",
+      "Great Expectations",
+      "Cloud IAM Tools",
+      "Data Security Services"
+    ],
+    "techDesc": "Our team can work with tools already used in your data environment. Collibra can support data cataloging and governance. Great Expectations can support data quality checks. Cloud IAM tools can help manage user access and permissions. We also provide data security services to help protect sensitive business and customer information through appropriate access controls and security policies. Tool selection depends on your current systems, data sources, security requirements, and project scope.",
+    "techTitle": "Tools & Tech",
+    "useCasesIntro": "Businesses need data governance for different reasons. Cubixsol provides data governance services for projects where data quality, access, ownership, security, or compliance needs clearer control.",
+    "useCasesItems": [
+      {
+        "title": "Regulated Industries",
+        "desc": "Healthcare, finance, and other regulated businesses handle sensitive information every day. We help define data ownership, access rules, handling procedures, and documentation for regulated environments."
+      },
+      {
+        "title": "Data Quality Programs",
+        "desc": "Poor data can affect reports, analytics, customer records, and daily operations. Our team can identify data quality problems, create validation checks, and set processes for correcting recurring issues."
+      },
+      {
+        "title": "Access Audits",
+        "desc": "Employee roles can change, and old permissions can remain active. We review user access, identify unnecessary permissions, and help establish regular access review processes."
+      }
+    ],
+    "useCasesTitle": "Use Cases",
+    "whyChooseIntro": "",
+    "whyChooseItems": [
+      {
+        "title": "Data Governance Expertise",
+        "desc": "Our team works across data management, governance, security, and engineering. We focus on clear processes your staff can use in daily operations."
+      },
+      {
+        "title": "Security & Compliance",
+        "desc": "We connect data governance with security and compliance requirements. Access controls, data ownership, handling rules, and documentation can work together across your data environment."
+      },
+      {
+        "title": "Clear Project Planning",
+        "desc": "You get a defined process from the initial review through deployment. We explain what needs to change, how it will work, and what your team needs to manage after implementation."
+      },
+      {
+        "title": "Ongoing Support",
+        "desc": "Your data environment can change as users, systems, and business requirements change. We can continue reviewing governance processes, access controls, data quality, and compliance requirements after implementation."
+      }
+    ],
+    "whyChooseTitle": "Why Choose Cubixsol?"
   },
   {
     "practices": {
@@ -2734,58 +3884,96 @@ const initialSolutions = [
       "steps": []
     },
     "bullets": [],
+    "tech": [],
     "title": "Data Migration",
     "slug": "data-migration",
     "desc": "Safe moves between systems with minimal downtime.",
     "group": "Data Solutions",
+    "subServicesItems": [],
+    "useCasesItems": [],
+    "whyChooseItems": [],
     "faqs": []
   },
   {
     "practices": {
-      "title": "thifewjfmeklmfelwfmlthifewjfme",
-      "intro": "thifewjfmeklmfelwfml",
-      "items": [
-        {
-          "title": "testitestitestitestitestitestitestitestitestitestitestitestitestitestitestitestitestitestitestitestitestitestitestitestitestitestitestitestitesti",
-          "body": "",
-          "_id": "6a9528c63cfeba27631bd316"
-        },
-        {
-          "title": "fewfewfewfewfewfewfewffew",
-          "body": "Where does it come from?fefeWhere does it come from?fefeWhere does it come from?fefe",
-          "_id": "6a9528c63cfeba27631bd317"
-        }
-      ]
+      "title": "",
+      "intro": "",
+      "items": []
     },
     "impact": {
       "title": "",
-      "intro": "\n",
-      "rows": [
+      "intro": "",
+      "rows": []
+    },
+    "process": {
+      "title": "How We Deliver",
+      "subtitle": "Our structured process to design, build, test, and deploy reliable data science and machine learning solutions.",
+      "steps": [
         {
-          "area": "Impact Table Intro Text",
-          "impact": "",
-          "_id": "6a9528c63cfeba27631bd314"
+          "_id": "6aa2b1f3d8fe4b0fb4b675f8",
+          "stepNumber": "01",
+          "title": "Discover",
+          "desc": "We begin by understanding your business goals, available data, current systems, and technical requirements. Early discovery helps define the problem and establish clear project goals.",
+          "bullets": []
         },
         {
-          "area": "Impact Table Intro Text",
-          "impact": "",
-          "_id": "6a9528c63cfeba27631bd315"
+          "_id": "6aa2b1f3d8fe4b0fb4b675f9",
+          "stepNumber": "02",
+          "title": "Design",
+          "desc": "Our team plans the solution around the identified requirements. We define the data needs, model approach, technical setup, success measures, and development stages before implementation starts.",
+          "bullets": []
+        },
+        {
+          "_id": "6aa2b1f3d8fe4b0fb4b675fa",
+          "stepNumber": "03",
+          "title": "Build",
+          "desc": "Developers prepare the required data, develop the models, and test the solution against agreed requirements. We review results during development so issues can be addressed before deployment.",
+          "bullets": []
+        },
+        {
+          "_id": "6aa2b1f3d8fe4b0fb4b675fb",
+          "stepNumber": "04",
+          "title": "Deploy",
+          "desc": "Once the solution meets the required standards, we prepare it for production use. Deployment can include model integration, data workflows, cloud infrastructure, and other required system components.",
+          "bullets": []
+        },
+        {
+          "_id": "6aa2b1f3d8fe4b0fb4b675fc",
+          "stepNumber": "05",
+          "title": "Monitor & Improve",
+          "desc": "We monitor the solution after deployment and review its performance over time. Updates may be required when new data, business requirements, or system changes affect model results.",
+          "bullets": []
         }
       ]
     },
-    "process": {
-      "steps": []
-    },
     "title": "Data Science",
     "slug": "data-science",
-    "desc": "\n",
+    "desc": "Turn your business data into useful insights, predictive models, and better decisions. Cubixsol provides data science consulting for businesses that need practical solutions for analytics, machine learning, experimentation, and MLOps. Our team helps define the right use case, prepare the data, build the solution, and support it after deployment.",
     "group": "Artificial Intelligence",
-    "bullets": [
-      "Build and test",
-      "Launch support"
-    ],
+    "bullets": [],
     "category": "Data Solutions",
-    "faqs": [],
+    "faqs": [
+      {
+        "q": "How much does data science consulting cost?",
+        "a": "Data science consulting costs depend on project scope, data requirements, model complexity, integrations, infrastructure, and support needs. A focused ML project may require less work than a larger solution involving multiple data sources, production deployment, and ongoing monitoring. We review your requirements before providing an estimate."
+      },
+      {
+        "q": "What engagement models do you offer?",
+        "a": "The right engagement model depends on your project scope and required level of support. You may need help with a defined data science project, ongoing development, or support for an existing ML system. We review your goals and recommend an approach based on the work involved."
+      },
+      {
+        "q": "What data do I need for a data science project?",
+        "a": "Data requirements depend on the problem you want to solve. Useful sources can include customer records, transaction data, product information, operational data, or historical business records. Our team can review your available data and identify gaps before development starts."
+      },
+      {
+        "q": "What are MLOps services used for?",
+        "a": "MLOps services help manage machine learning models after development. They can cover deployment, model tracking, monitoring, testing, version control, and updates. A suitable MLOps setup helps teams manage ML systems more consistently in production."
+      },
+      {
+        "q": "How long does a data science project take?",
+        "a": "Project timelines depend on scope, data quality, model requirements, integrations, testing, and deployment needs. A focused project may require less time than a larger system involving several data sources and production workflows. We can provide a clearer timeline after reviewing your requirements."
+      }
+    ],
     "impactIntro": "\n",
     "impactText": "",
     "impactTitle": "",
@@ -2794,7 +3982,82 @@ const initialSolutions = [
     "practicesTitle": "",
     "processSubtitle": "",
     "processText": "",
-    "processTitle": ""
+    "processTitle": "",
+    "ctaBannerButtonLink": "/contact",
+    "ctaBannerButtonText": "Book a Discovery Call",
+    "ctaBannerDesc": "Need **data science consulting** for a new ML project, analytics product, or existing data system? Cubixsol can review your requirements and help define a practical approach based on your goals, data, and technical needs.",
+    "ctaBannerEyebrow": "READY TO GET STARTED?",
+    "ctaBannerSecondaryButtonLink": "/contact",
+    "ctaBannerSecondaryButtonText": "Get a Free Assessment",
+    "ctaBannerTitle": "Ready to Get Started?",
+    "ctaPrimaryLink": "/contact",
+    "ctaPrimaryText": "Book a Discovery Call",
+    "ctaSecondaryLink": "/contact",
+    "ctaSecondaryText": "Get a Free Assessment",
+    "subServicesIntro": "Our data science services cover the key stages of planning, building, testing, and managing data-driven solutions. Each service can support a new project, an existing ML system, or a product that needs stronger data capabilities.",
+    "subServicesItems": [
+      {
+        "title": "Data Science Consulting",
+        "desc": "We help you identify suitable data science opportunities based on your business goals, available data, and technical requirements. Our team can assess your current setup, define project requirements, and recommend a practical approach for analytics or machine learning."
+      },
+      {
+        "title": "ML Modeling",
+        "desc": "We develop machine learning models for prediction, forecasting, classification, recommendation, and pattern detection. Our team selects the model approach based on your data, use case, performance requirements, and available infrastructure."
+      },
+      {
+        "title": "MLOps",
+        "desc": "Our MLOps services support model deployment, version control, monitoring, testing, and update workflows. We help move ML models from development into production and manage changes as new data or business requirements affect model performance."
+      },
+      {
+        "title": "Experimentation",
+        "desc": "We help teams test models, compare approaches, validate assumptions, and measure results against defined goals. Testing can identify issues early and provide useful evidence before more resources go into development or deployment."
+      }
+    ],
+    "subServicesTitle": "Our Data Science Capabilities",
+    "tech": [
+      "Python",
+      "MLflow",
+      "Cloud ML",
+      "dbt"
+    ],
+    "techDesc": "Our data science technology stack includes Python, MLflow, cloud ML, and dbt. Tool selection depends on your data environment, existing systems, application requirements, and project scope. Python supports data processing and model development. MLflow can help track experiments and models, cloud ML platforms support ML workloads, and dbt can help manage data transformation workflows.",
+    "techTitle": "Tools & Tech",
+    "useCasesIntro": "Data science can support different business needs based on your data, product, and goals. Cubixsol helps businesses apply machine learning and analytics to practical projects that require measurable results.",
+    "useCasesItems": [
+      {
+        "title": "Custom ML Models",
+        "desc": "Custom ML models can support forecasting, customer analysis, risk assessment, recommendations, and other data-driven tasks. We develop models around the specific business problem, available data, and required outcome."
+      },
+      {
+        "title": "Analytics Products",
+        "desc": "Analytics products can bring business data, reports, predictions, and key metrics into one system. Such products can help teams understand performance, identify patterns, and make better decisions using current and historical data."
+      },
+      {
+        "title": "MLOps Setup",
+        "desc": "Production ML systems need processes for deployment, monitoring, testing, tracking, and updates. Our team can help establish an MLOps setup that supports model management and makes ongoing maintenance easier."
+      }
+    ],
+    "useCasesTitle": "Use Cases",
+    "whyChooseIntro": "",
+    "whyChooseItems": [
+      {
+        "title": "Data Science Expertise",
+        "desc": "Our team works across data science, machine learning, and related engineering requirements. We focus on practical solutions based on your business problem, available data, technical needs, and expected results."
+      },
+      {
+        "title": "Security & Compliance",
+        "desc": "Data needs careful handling throughout development and deployment. We consider access, data handling, system controls, and relevant compliance requirements when planning and implementing data science solutions."
+      },
+      {
+        "title": "Focus on ROI",
+        "desc": "Every project should have a clear business purpose. We connect data science work with measurable goals such as improved forecasting, better decisions, useful analytics, process improvements, or more efficient operations."
+      },
+      {
+        "title": "Ongoing Support",
+        "desc": "Support can continue after deployment. Our team can assist with model monitoring, technical issues, updates, performance improvements, and changes required as your business and data needs develop."
+      }
+    ],
+    "whyChooseTitle": "Why Choose Cubixsol?"
   },
   {
     "practices": {
@@ -2807,10 +4070,14 @@ const initialSolutions = [
       "steps": []
     },
     "bullets": [],
+    "tech": [],
     "title": "Data Scraping",
     "slug": "data-scraping",
     "desc": "Ethical collection and structuring of web data.",
     "group": "Data Solutions",
+    "subServicesItems": [],
+    "useCasesItems": [],
+    "whyChooseItems": [],
     "faqs": []
   },
   {
@@ -2824,10 +4091,14 @@ const initialSolutions = [
       "steps": []
     },
     "bullets": [],
+    "tech": [],
     "title": "Deep Learning",
     "slug": "deep-learning",
     "desc": "Models for vision, speech, and complex prediction.",
     "group": "Artificial Intelligence",
+    "subServicesItems": [],
+    "useCasesItems": [],
+    "whyChooseItems": [],
     "faqs": []
   },
   {
@@ -2841,10 +4112,14 @@ const initialSolutions = [
       "steps": []
     },
     "bullets": [],
+    "tech": [],
     "title": "Generative AI",
     "slug": "generative-ai",
     "desc": "LLMs and generative tools tailored to your domain.",
     "group": "Artificial Intelligence",
+    "subServicesItems": [],
+    "useCasesItems": [],
+    "whyChooseItems": [],
     "faqs": []
   },
   {
@@ -2858,11 +4133,15 @@ const initialSolutions = [
       "steps": []
     },
     "bullets": [],
+    "tech": [],
     "title": "Image to Text",
     "slug": "image-to-text",
     "desc": "Free OCR — extract text from images in 200+ languages.",
     "externalUrl": "https://imagetotext.best/",
     "group": "Accessibility Tools",
+    "subServicesItems": [],
+    "useCasesItems": [],
+    "whyChooseItems": [],
     "faqs": []
   },
   {
@@ -2876,11 +4155,15 @@ const initialSolutions = [
       "steps": []
     },
     "bullets": [],
+    "tech": [],
     "title": "JPG to PDF",
     "slug": "jpg-to-pdf",
     "desc": "Turn JPG files into polished PDF documents.",
     "externalUrl": "https://jpg2pdf.io/",
     "group": "Accessibility Tools",
+    "subServicesItems": [],
+    "useCasesItems": [],
+    "whyChooseItems": [],
     "faqs": []
   },
   {
@@ -2894,11 +4177,15 @@ const initialSolutions = [
       "steps": []
     },
     "bullets": [],
+    "tech": [],
     "title": "JPGA PDF",
     "slug": "jpg-a-pdf",
     "desc": "Convert JPG images to PDF quickly online.",
     "externalUrl": "https://jpgapdf.io/",
     "group": "Accessibility Tools",
+    "subServicesItems": [],
+    "useCasesItems": [],
+    "whyChooseItems": [],
     "faqs": []
   },
   {
@@ -2912,10 +4199,14 @@ const initialSolutions = [
       "steps": []
     },
     "bullets": [],
+    "tech": [],
     "title": "Oracle AI Data Platform",
     "slug": "oracle-aidp",
     "desc": "AIDP assessment, migration, and Oracle data platform engineering.",
     "group": "Data Solutions",
+    "subServicesItems": [],
+    "useCasesItems": [],
+    "whyChooseItems": [],
     "faqs": []
   },
   {
@@ -2929,10 +4220,14 @@ const initialSolutions = [
       "steps": []
     },
     "bullets": [],
+    "tech": [],
     "title": "Predictive Analysis",
     "slug": "predictive-analysis",
     "desc": "Forecasting demand, risk, and customer behavior.",
     "group": "Artificial Intelligence",
+    "subServicesItems": [],
+    "useCasesItems": [],
+    "whyChooseItems": [],
     "faqs": []
   },
   {
@@ -2946,11 +4241,15 @@ const initialSolutions = [
       "steps": []
     },
     "bullets": [],
+    "tech": [],
     "title": "Reescrever Texto",
     "slug": "reescrever-texto",
     "desc": "Rewrite and improve text for clarity and style.",
     "externalUrl": "https://reescrevertexto.io/",
     "group": "Accessibility Tools",
+    "subServicesItems": [],
+    "useCasesItems": [],
+    "whyChooseItems": [],
     "faqs": []
   },
   {
@@ -2964,10 +4263,14 @@ const initialSolutions = [
       "steps": []
     },
     "bullets": [],
+    "tech": [],
     "title": "Sentiment Analysis",
     "slug": "sentiment-analysis",
     "desc": "Understand customer voice at scale.",
     "group": "Artificial Intelligence",
+    "subServicesItems": [],
+    "useCasesItems": [],
+    "whyChooseItems": [],
     "faqs": []
   },
   {
@@ -2981,10 +4284,14 @@ const initialSolutions = [
       "steps": []
     },
     "bullets": [],
+    "tech": [],
     "title": "Voice Commerce",
     "slug": "voice-commerce",
     "desc": "Voice-driven shopping and ordering experiences.",
     "group": "E-Commerce",
+    "subServicesItems": [],
+    "useCasesItems": [],
+    "whyChooseItems": [],
     "faqs": []
   },
   {
@@ -2998,10 +4305,14 @@ const initialSolutions = [
       "steps": []
     },
     "bullets": [],
+    "tech": [],
     "title": "eCommerce Development",
     "slug": "ecommerce-development",
     "desc": "Storefronts built to convert and scale.",
     "group": "E-Commerce",
+    "subServicesItems": [],
+    "useCasesItems": [],
+    "whyChooseItems": [],
     "faqs": []
   }
 ];

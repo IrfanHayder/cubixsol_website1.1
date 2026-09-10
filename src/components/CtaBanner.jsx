@@ -9,6 +9,8 @@ export default function CtaBanner({
   desc = 'Choose us as your custom software development company and move from idea to launch with a clear plan, experienced specialists, and dependable technical support.',
   buttonText = 'Get a Free Consultation',
   buttonLink = '/contact',
+  secondaryButtonText,
+  secondaryButtonLink,
 }) {
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -34,12 +36,22 @@ export default function CtaBanner({
               </p>
             )}
           </div>
-          <Link
-            to={buttonLink || '/contact'}
-            className="relative z-10 shrink-0 inline-flex items-center gap-2 bg-white text-[#00a4d8] font-bold px-7 py-3.5 rounded-2xl hover:bg-cyan-50 hover:shadow-lg hover:scale-105 transition-all duration-300"
-          >
-            {buttonText || 'Get a Free Consultation'} <ArrowRight className="w-4 h-4" />
-          </Link>
+          <div className="relative z-10 shrink-0 flex flex-wrap items-center gap-3">
+            <Link
+              to={buttonLink || '/contact'}
+              className="inline-flex items-center gap-2 bg-white text-[#00a4d8] font-bold px-7 py-3.5 rounded-2xl hover:bg-cyan-50 hover:shadow-lg hover:scale-105 transition-all duration-300"
+            >
+              {buttonText || 'Get a Free Consultation'} <ArrowRight className="w-4 h-4" />
+            </Link>
+            {secondaryButtonText && (
+              <Link
+                to={secondaryButtonLink || '/contact'}
+                className="inline-flex items-center gap-2 bg-white/15 backdrop-blur border border-white/30 text-white font-bold px-7 py-3.5 rounded-2xl hover:bg-white/25 transition-all duration-300"
+              >
+                {secondaryButtonText}
+              </Link>
+            )}
+          </div>
         </div>
       </Reveal>
     </section>

@@ -303,15 +303,140 @@ const SECTION_CONFIGS = {
     endpoint: 'solutions',
     columns: [
       { key: 'title', label: 'Title' },
+      { key: 'group', label: 'Group / Category' },
       { key: 'slug', label: 'Slug' },
-      { key: 'category', label: 'Category' },
+      { key: 'desc', label: 'Description' },
     ],
     fields: [
-      { name: 'title', label: 'Solution Title', required: true, fullWidth: true },
-      { name: 'slug', label: 'Slug', required: true },
-      { name: 'category', label: 'Category', required: true },
-      { name: 'image', label: 'Solution Image', type: 'image', fullWidth: true },
-      { name: 'desc', label: 'Description', type: 'textarea', fullWidth: true, rows: 5 },
+      { name: 'title', label: 'Solution Title (e.g. Agentic AI)', required: true, fullWidth: true },
+      { name: 'slug', label: 'Slug (e.g. agentic-ai)', required: true },
+      { name: 'group', label: 'Category / Group (e.g. Artificial Intelligence, Data Solutions, Cloud Solutions)', required: true },
+      { name: 'desc', label: 'Hero Description / Overview', type: 'textarea', fullWidth: true, rows: 3 },
+      { name: 'ctaPrimaryText', label: 'Primary CTA Button Text (e.g. Book a Call / Talk to us)' },
+      { name: 'ctaPrimaryLink', label: 'Primary CTA Button Link (e.g. /contact)' },
+      { name: 'ctaSecondaryText', label: 'Secondary CTA Button Text (e.g. Get a Free Assessment / Browse services)' },
+      { name: 'ctaSecondaryLink', label: 'Secondary CTA Button Link (e.g. /services)' },
+      {
+        name: 'bullets',
+        label: 'How We Engage Steps (one per line - leave empty to hide section)',
+        type: 'textarea',
+        fullWidth: true,
+        rows: 4,
+        isArray: true,
+        hint: 'Example:\nDiscovery & requirements alignment\nArchitecture and implementation plan\nBuild, integrate, and test\nLaunch support and iteration',
+      },
+
+      // Sub-Services / Specialized Offerings Grid Section
+      { name: 'subServicesTitle', label: 'Sub-Services Section Title (e.g. Our Agentic AI Development Services)', fullWidth: true },
+      { name: 'subServicesIntro', label: 'Sub-Services Intro Text', type: 'textarea', fullWidth: true, rows: 2 },
+      {
+        name: 'subServicesText',
+        label: 'Sub-Services Items (Format: Title | Description, one per line - leave empty to hide section)',
+        type: 'textarea',
+        fullWidth: true,
+        rows: 6,
+        hint: 'Example:\nAI Agent Development Services | We build AI agents for tasks such as answering questions, finding information...\nMulti-Agent Systems | Some workflows involve several different tasks...\nWorkflow Automation | We build AI-powered workflows for tasks that involve several steps...\nAgent Integration | We connect AI agents with the systems your business already uses.',
+        isCustomArray: 'subServicesItems',
+      },
+
+      // Use Cases Section
+      { name: 'useCasesTitle', label: 'Use Cases Section Title (e.g. Use Cases)', fullWidth: true },
+      { name: 'useCasesIntro', label: 'Use Cases Intro Text', type: 'textarea', fullWidth: true, rows: 2 },
+      {
+        name: 'useCasesText',
+        label: 'Use Cases Items (Format: Title | Description, one per line - leave empty to hide section)',
+        type: 'textarea',
+        fullWidth: true,
+        rows: 6,
+        hint: 'Example:\nSupport Automation | AI agents can answer common customer questions, search approved information, and handle routine support requests.\nResearch Agents | Research agents can collect information from approved sources, organise the results, and prepare summaries for review.\nOperations Copilots | Operations copilots can help employees find information, check data, complete routine tasks, and work across connected business systems.',
+        isCustomArray: 'useCasesItems',
+      },
+
+      // Tools & Technologies Stack Section
+      { name: 'techTitle', label: 'Tools & Tech Section Title (e.g. Tools & Tech)', fullWidth: true },
+      { name: 'techDesc', label: 'Tools & Tech Description', type: 'textarea', fullWidth: true, rows: 3 },
+      {
+        name: 'tech',
+        label: 'Technologies / Tools Badges (one per line - leave empty to hide)',
+        type: 'textarea',
+        fullWidth: true,
+        rows: 4,
+        isArray: true,
+        hint: 'Example:\nLangChain\nLangGraph\nOpenAI\nVector Databases',
+      },
+
+      // How We Deliver / Development Process Section
+      { name: 'processTitle', label: 'How We Deliver / Process Section Title (e.g. How We Deliver)', fullWidth: true },
+      { name: 'processSubtitle', label: 'Process Section Subtitle / Intro Text', type: 'textarea', fullWidth: true, rows: 2 },
+      {
+        name: 'processStepsText',
+        label: 'Process Steps (Format: Step# | Title | Description | ImageURL (optional) | Points separated by ; (optional))',
+        type: 'textarea',
+        fullWidth: true,
+        rows: 7,
+        hint: 'Example: 01 | Discover | We begin by reviewing the business goal, current workflow, tasks, data sources, existing systems, and required integrations. | https://... | Analyzing workflows; Defining performance benchmarks',
+        isCustomArray: 'solutionProcessSteps',
+      },
+
+      // Why Choose Us Section
+      { name: 'whyChooseTitle', label: 'Why Choose Us Section Title (e.g. Why Choose Cubixsol?)', fullWidth: true },
+      { name: 'whyChooseIntro', label: 'Why Choose Us Intro Text', type: 'textarea', fullWidth: true, rows: 2 },
+      {
+        name: 'whyChooseText',
+        label: 'Why Choose Us Items (Format: Title | Description, one per line - leave empty to hide section)',
+        type: 'textarea',
+        fullWidth: true,
+        rows: 6,
+        hint: 'Example:\nPractical AI Development | We start with the business task rather than the technology...\nSecurity & Compliance | AI agents can access business information...\nClear Business Value | We focus on areas such as reducing repeated manual work...\nOngoing Support | Your AI system may need updates after launch as your processes and tools change.',
+        isCustomArray: 'whyChooseItems',
+      },
+
+      // Best Practices Section
+      { name: 'practicesTitle', label: 'Best Practices Section Title', fullWidth: true, hint: 'e.g. Best Practices for Agentic AI' },
+      { name: 'practicesIntro', label: 'Best Practices Intro Text', type: 'textarea', fullWidth: true, rows: 2 },
+      {
+        name: 'practicesItemsText',
+        label: 'Best Practices Items (Format: Title | Body Description, one per line - leave empty to hide)',
+        type: 'textarea',
+        fullWidth: true,
+        rows: 6,
+        hint: 'Example: Clear Objectives & Boundaries | Agents know what success looks like and what they must never do, with human escalation paths.',
+        isCustomArray: 'practicesItems',
+      },
+
+      // Impact Comparison Table Section
+      { name: 'impactTitle', label: 'Impact Table Section Title', fullWidth: true, hint: "e.g. Why Leaders Can't Ignore Agentic AI" },
+      { name: 'impactIntro', label: 'Impact Table Intro Text', type: 'textarea', fullWidth: true, rows: 2 },
+      {
+        name: 'impactRowsText',
+        label: 'Impact Comparison Rows (Format: Key Area | How it Creates Impact, one per line - leave empty to hide)',
+        type: 'textarea',
+        fullWidth: true,
+        rows: 6,
+        hint: 'Example: Strategic Decision-Making | Agentic AI helps leaders make timely, data-backed decisions without waiting for manual inputs.',
+        isCustomArray: 'impactRows',
+      },
+
+      // FAQs Section
+      {
+        name: 'faqsText',
+        label: 'FAQs (Format: Question | Answer, one per line - leave empty to hide)',
+        type: 'textarea',
+        fullWidth: true,
+        rows: 6,
+        hint: 'Example: What is agentic AI? | Agentic AI is a type of AI that can work toward a defined goal and take several actions...',
+        isCustomArray: 'faqs',
+      },
+
+      // Bottom CTA Banner Customization Section
+      { name: 'ctaBannerEyebrow', label: 'Bottom Banner Eyebrow (e.g. GET STARTED)' },
+      { name: 'ctaBannerTitle', label: 'Bottom Banner Title (e.g. Ready to Get Started?)', fullWidth: true },
+      { name: 'ctaBannerDesc', label: 'Bottom Banner Description', type: 'textarea', fullWidth: true, rows: 3 },
+      { name: 'ctaBannerButtonText', label: 'Primary Banner Button Text (e.g. Book a Call)' },
+      { name: 'ctaBannerButtonLink', label: 'Primary Banner Button Link (e.g. /contact or #service-inquiry)' },
+      { name: 'ctaBannerSecondaryButtonText', label: 'Secondary Banner Button Text (e.g. Get a Free Assessment)' },
+      { name: 'ctaBannerSecondaryButtonLink', label: 'Secondary Banner Button Link (e.g. /contact)' },
+
       ...commonSeoFields,
     ],
   },
@@ -502,16 +627,104 @@ function DbSection({ sectionKey, showToast }) {
       if (f.isCustomArray && typeof parsed[f.name] === 'string') {
         if (f.isCustomArray === 'serviceProcessSteps') {
           parsed.serviceProcessSteps = parseProcessSteps(parsed[f.name]);
+        } else if (f.isCustomArray === 'solutionProcessSteps') {
+          const steps = parseProcessSteps(parsed[f.name]);
+          parsed.process = parsed.process || {};
+          parsed.process.steps = steps.map((s) => ({
+            stepNumber: s.stepNumber,
+            title: s.title,
+            desc: s.desc,
+            image: s.image,
+            bullets: Array.isArray(s.points) ? s.points : [],
+          }));
+        } else if (f.isCustomArray === 'practicesItems') {
+          parsed.practices = parsed.practices || {};
+          parsed.practices.items = parseCustomListItems(parsed[f.name]).map((i) => ({
+            title: i.title,
+            body: i.desc,
+          }));
+        } else if (f.isCustomArray === 'impactRows') {
+          parsed.impact = parsed.impact || {};
+          parsed.impact.rows = parseCustomListItems(parsed[f.name]).map((i) => ({
+            area: i.title,
+            impact: i.desc,
+          }));
+        } else if (f.isCustomArray === 'faqs') {
+          parsed.faqs = parseCustomListItems(parsed[f.name]).map((i) => ({
+            q: i.title,
+            a: i.desc,
+          }));
         } else {
           parsed[f.isCustomArray] = parseCustomListItems(parsed[f.name]);
         }
       }
     });
+
+    // Handle nested objects for Solutions
+    if (parsed.practicesTitle !== undefined || parsed.practicesIntro !== undefined) {
+      parsed.practices = parsed.practices || {};
+      if (parsed.practicesTitle !== undefined) parsed.practices.title = parsed.practicesTitle;
+      if (parsed.practicesIntro !== undefined) parsed.practices.intro = parsed.practicesIntro;
+    }
+    if (parsed.impactTitle !== undefined || parsed.impactIntro !== undefined) {
+      parsed.impact = parsed.impact || {};
+      if (parsed.impactTitle !== undefined) parsed.impact.title = parsed.impactTitle;
+      if (parsed.impactIntro !== undefined) parsed.impact.intro = parsed.impactIntro;
+    }
+    if (parsed.processTitle !== undefined || parsed.processSubtitle !== undefined) {
+      parsed.process = parsed.process || {};
+      if (parsed.processTitle !== undefined) parsed.process.title = parsed.processTitle;
+      if (parsed.processSubtitle !== undefined) parsed.process.subtitle = parsed.processSubtitle;
+    }
+
     return parsed;
   };
 
   const stringifyArrayFields = (item) => {
     const stringified = { ...item };
+
+    // Unpack nested solution fields for the edit form
+    if (stringified.practices) {
+      if (stringified.practices.title) stringified.practicesTitle = stringified.practices.title;
+      if (stringified.practices.intro) stringified.practicesIntro = stringified.practices.intro;
+      if (Array.isArray(stringified.practices.items)) {
+        stringified.practicesItemsText = stringified.practices.items
+          .map((i) => `${i.title} | ${i.body || i.desc || ''}`)
+          .join('\n\n');
+      }
+    }
+    if (stringified.impact) {
+      if (stringified.impact.title) stringified.impactTitle = stringified.impact.title;
+      if (stringified.impact.intro) stringified.impactIntro = stringified.impact.intro;
+      if (Array.isArray(stringified.impact.rows)) {
+        stringified.impactRowsText = stringified.impact.rows
+          .map((i) => `${i.area} | ${i.impact}`)
+          .join('\n\n');
+      }
+    }
+    if (stringified.process) {
+      if (stringified.process.title) stringified.processTitle = stringified.process.title;
+      if (stringified.process.subtitle) stringified.processSubtitle = stringified.process.subtitle;
+      if (Array.isArray(stringified.process.steps)) {
+        stringified.processStepsText = stringified.process.steps
+          .map((i) => {
+            const stepNum = i.stepNumber || i.num || '01';
+            const title = i.title || '';
+            const desc = i.desc || '';
+            const image = i.image || '';
+            const points = Array.isArray(i.bullets || i.points) ? (i.bullets || i.points).join('; ') : '';
+            if (image || points) {
+              return `${stepNum} | ${title} | ${desc} | ${image} | ${points}`;
+            }
+            return `${stepNum} | ${title} | ${desc}`;
+          })
+          .join('\n\n');
+      }
+    }
+    if (Array.isArray(stringified.faqs) && stringified.faqs.length > 0) {
+      stringified.faqsText = stringified.faqs.map((i) => `${i.q} | ${i.a}`).join('\n\n');
+    }
+
     (config.fields || []).forEach((f) => {
       if (f.isArray && Array.isArray(stringified[f.name])) {
         stringified[f.name] = stringified[f.name].join('\n');
