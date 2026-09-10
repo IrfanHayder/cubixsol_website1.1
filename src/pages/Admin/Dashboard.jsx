@@ -480,6 +480,7 @@ function DbSection({ sectionKey, showToast }) {
   const { refreshServices } = useServices();
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [fetchError, setFetchError] = useState(null);
   const [showForm, setShowForm] = useState(false);
   const [formValues, setFormValues] = useState({});
   const [formMode, setFormMode] = useState('add');
@@ -547,12 +548,15 @@ function DbSection({ sectionKey, showToast }) {
 
   const fetchData = useCallback(async () => {
     setLoading(true);
+    setFetchError(null);
     try {
       const json = await apiFetch(config.endpoint);
       setData(Array.isArray(json) ? json : []);
+      setFetchError(null);
     } catch (err) {
       console.error(err);
-      showToast('Failed to load data', 'error');
+      setFetchError(err.message || 'Failed to load data from server');
+      showToast(err.message ? `Failed to load data: ${err.message}` : 'Failed to load data. Is backend running?', 'error');
     } finally {
       setLoading(false);
     }
@@ -642,7 +646,7 @@ function DbSection({ sectionKey, showToast }) {
       }
 
       if (!res.ok) {
-        const err = await res.json();
+        const err = await res.json().catch(() => ({}));
         throw new Error(err.message || 'Failed to save');
       }
 
@@ -733,6 +737,27 @@ function DbSection({ sectionKey, showToast }) {
             <div className="flex items-center justify-center py-16 gap-3 text-gray-400">
               <Loader2 size={20} className="animate-spin" />
               Loading {config.label.toLowerCase()}...
+            </div>
+          ) : fetchError ? (
+            <div className="text-center py-12 px-6 bg-rose-50/70 rounded-2xl border border-rose-200 shadow-card">
+              <div className="w-12 h-12 mx-auto mb-3 rounded-2xl bg-rose-100 flex items-center justify-center text-rose-600">
+                <AlertCircle size={24} />
+              </div>
+              <h3 className="text-base font-bold text-rose-950">Failed to connect to backend server</h3>
+              <p className="text-rose-700 text-sm mt-1 max-w-md mx-auto">{fetchError}</p>
+              <div className="mt-4 p-3 bg-white/80 border border-rose-200 rounded-xl text-xs text-gray-600 max-w-md mx-auto text-left">
+                <p className="font-semibold text-gray-800 mb-1">💡 How to fix:</p>
+                <p>Run both frontend &amp; backend together using terminal command:</p>
+                <code className="block mt-1 bg-gray-900 text-emerald-400 p-2 rounded-lg font-mono">
+                  npm run dev
+                </code>
+              </div>
+              <button
+                onClick={fetchData}
+                className="mt-4 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-sm font-semibold shadow-soft transition"
+              >
+                <RefreshCw size={15} /> Retry Loading Data
+              </button>
             </div>
           ) : data.length === 0 ? (
             <div className="text-center py-16 bg-white rounded-2xl border border-gray-100 shadow-card">
