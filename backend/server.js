@@ -173,6 +173,7 @@ const {
   initialSiteSettings,
   initialSeoSettings,
   initialPages,
+  initialContactInfo,
 } = require('./seedData');
 
 // Connect to MongoDB & Seed Default Content if Empty
@@ -585,42 +586,9 @@ async function seedInitialData() {
 
     // Seed default Contact cards if missing
     const contactInfoCount = await ContactInfo.countDocuments();
-    if (contactInfoCount === 0) {
-      await ContactInfo.insertMany([
-        {
-          title: 'Our Location',
-          desc: '123 Innovation Drive, Suite 501\nNew York, NY 10001, USA',
-          icon: 'MapPin',
-          link: 'https://maps.google.com/maps?q=New%20York%2C%20NY',
-          order: 1,
-          status: 'Active',
-        },
-        {
-          title: 'Email Us',
-          desc: 'hello@cubixsol.com\ninfo@cubixsol.com',
-          icon: 'Mail',
-          link: 'mailto:hello@cubixsol.com',
-          order: 2,
-          status: 'Active',
-        },
-        {
-          title: 'Call Us',
-          desc: '+1 (212) 123-4567\n+1 (212) 987-6543',
-          icon: 'Phone',
-          link: 'tel:+12121234567',
-          order: 3,
-          status: 'Active',
-        },
-        {
-          title: 'Working Hours',
-          desc: 'Mon - Fri: 9:00 AM - 6:00 PM\nSaturday - Sunday: Closed',
-          icon: 'Clock',
-          link: '',
-          order: 4,
-          status: 'Active',
-        },
-      ]);
-      console.log('Seeded initial ContactInfo cards data');
+    if (contactInfoCount === 0 && initialContactInfo && initialContactInfo.length > 0) {
+      await ContactInfo.insertMany(initialContactInfo);
+      console.log('Seeded default Contact cards data');
     }
   } catch (err) {
     console.error('Error seeding initial data:', err);

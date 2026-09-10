@@ -2,161 +2,1056 @@
 const initialServices = [
   {
     "seo": {
-      "metaTitle": "Graphic Design Services & Branding Solutions | Cubixsol",
-      "metaDescription": "Build a distinctive and consistent brand with Cubixsol’s graphic design services for identity, packaging, social media, illustrations, and digital platforms.",
+      "metaTitle": "Android Development Services | Cubixsol",
+      "metaDescription": "Native Android apps with Kotlin and Jetpack — Material Design, Play Store ready, built for performance.",
+      "keywords": "Kotlin, Jetpack Compose, Android Studio, Firebase, Material 3",
+      "ogTitle": "Android Development Services | Cubixsol",
+      "ogDescription": "Native Android apps with Kotlin and Jetpack — Material Design, Play Store ready, built for performance.",
+      "ogImage": "https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?auto=format&fit=crop&w=1000&h=750&q=70",
+      "canonicalUrl": ""
+    },
+    "icon": "/uploads/media-1788761191366-9651825.svg",
+    "slug": "android-app-development",
+    "heroImage": "https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?auto=format&fit=crop&w=1000&h=750&q=70",
+    "title": " Android App Development Services Built for Business Growth",
+    "desc": "Transform your mobile app idea into a fast, reliable, and user-friendly Android application.",
+    "color": "text-emerald-600 bg-emerald-50",
+    "gradient": "from-emerald-500 to-teal-600",
+    "longDesc": "Transform your mobile app idea into a fast, reliable, and user-friendly Android application. Cubixsol delivers end-to-end Android app development services, from strategy and UI/UX design to development, testing, deployment, and continuous improvement. Our developers create a clear development roadmap to launch new Android applications or improve existing ones with better features, performance, and usability. ",
+    "features": [
+      "Native Kotlin & Jetpack Compose",
+      "Material Design 3 interfaces",
+      "Google Play submission support",
+      "Push notifications & deep links",
+      "In-app billing & subscriptions",
+      "Tablet and foldable-friendly layouts",
+      "Room, WorkManager & modern architecture",
+      "CI builds and internal testing tracks"
+    ],
+    "tech": [
+      "Kotlin",
+      "Jetpack Compose",
+      "Android Studio",
+      "Firebase",
+      "Material 3"
+    ],
+    "outcomes": [
+      "Smooth native Android performance",
+      "Faster Play Console releases",
+      "Clean, maintainable Kotlin codebase"
+    ],
+    "faqs": [
+      {
+        "q": "How much does Android app development cost?",
+        "a": "Android app development costs depend on the number of features, interface complexity, backend requirements, third-party integrations, security needs, and development approach. A basic application generally requires less investment than a platform involving multiple user roles, payments, live tracking, or custom administrative tools. We review the requirements before providing an estimate."
+      },
+      {
+        "q": "How long does it take to build an Android app?",
+        "a": "The timeline depends on the project’s scope and technical complexity. A focused application with standard features may take a few months, while a larger product can require additional planning, development, testing, and integration work. We provide a milestone-based timeline after reviewing the requirements."
+      },
+      {
+        "q": "Should I choose Kotlin or cross-platform development?",
+        "a": "Kotlin is well suited to native Android applications requiring deep device integration, Android-specific features, or maximum platform control. Cross-platform development can be more efficient when a business wants to launch on Android and iOS with similar functionality. We recommend an approach after estimating the product goals and technical needs."
+      },
+      {
+        "q": "Can Cubixsol publish my app on the Google Play Store?",
+        "a": "Yes. We can prepare the release build, review relevant store requirements, and support the Google Play Store submission process. Final approval remains subject to Google’s current policies and review procedures."
+      },
+      {
+        "q": "Can you update or improve an existing Android application?",
+        "a": "Yes. Our developers review the existing application, identify performance and compatibility issues, fix bugs, update dependencies, and add new features. They then recommend the most effective path: optimising the current codebase or rebuilding specific components."
+      }
+    ],
+    "techDesc": "Our Android technology stack includes Kotlin, Java, Jetpack Compose, Android Studio, and Firebase. We select tools according to the application’s functionality, architecture, performance needs, and long-term maintenance requirements.\n\nFirebase can support features such as authentication, analytics, cloud messaging, crash reporting, and real-time data. Required third-party APIs and business systems can also be integrated into the application.",
+    "techTitle": "Technologies We Use",
+    "businessTypesItems": [],
+    "ctaBannerButtonText": "Start Your Android Project",
+    "ctaBannerDesc": "Bring your product idea to life with scalable Android app development services from Cubixsol. Tell us what you want to build, and our team will help define the right development approach.",
+    "ctaBannerEyebrow": "REACH BILLIONS OF ANDROID USERS",
+    "ctaBannerTitle": "Ready to Build Your Android Application?",
+    "serviceProcessSteps": [
+      {
+        "points": [],
+        "stepNumber": "01",
+        "title": "Discover",
+        "desc": "We begin by defining the product idea, target users, business objectives, core features, integrations, and technical constraints. Early discovery helps the team separate essential requirements from lower-priority additions."
+      },
+      {
+        "points": [],
+        "stepNumber": "02",
+        "title": "Plan",
+        "desc": "Our team organises the features, user journeys, development phases, technology choices, and delivery milestones. The plan gives stakeholders a clearer view of the project scope before full development starts."
+      },
+      {
+        "points": [],
+        "stepNumber": "03",
+        "title": "Build",
+        "desc": "Developers create the application in structured stages while designers refine its interface and user experience. Regular progress updates help keep technical decisions and business expectations aligned."
+      },
+      {
+        "points": [],
+        "stepNumber": "04",
+        "title": "Test",
+        "desc": "We test functionality, usability, performance, device compatibility, integrations, and common failure scenarios. We review and resolve identified issues before the production release."
+      },
+      {
+        "points": [],
+        "stepNumber": "05",
+        "title": "Launch and Support",
+        "desc": "Once the application is approved, we prepare it for deployment and support the Play Store submission process. Post-launch services can include monitoring, maintenance, bug fixes, and planned improvements."
+      }
+    ],
+    "subServicesItems": [
+      {
+        "title": "Native Android App Development",
+        "desc": "We build native Android applications designed for strong performance, dependable security, and smooth interaction with device features. Native development is ideal for products requiring advanced functionality, complex integrations, or a highly responsive user experience. Our developers structure each application for long-term stability, making future updates, feature additions, and operating system changes easier to manage."
+      },
+      {
+        "title": "Kotlin and Jetpack Development",
+        "desc": "Kotlin and Jetpack help us create modern Android applications with structured, maintainable code. We use Jetpack components to manage navigation, application data, interface behaviour, and background processes more efficiently. Jetpack Compose also allows our team to create responsive interfaces with reusable components. The result is a consistent user experience across supported Android screen sizes and devices."
+      },
+      {
+        "title": "Google Play Store Launch",
+        "desc": "A functional application still needs a properly managed release. Our team prepares the app for Google Play Store submission, reviews technical requirements, configures release builds, and supports the publishing process.We can also support addressing submission issues and prepare updated versions when Google introduces new platform or policy requirements. Every release is checked before submission to reduce avoidable delays."
+      },
+      {
+        "title": "Android App Maintenance and Support",
+        "desc": "Android applications require regular attention after launch. We provide maintenance services for bug resolution, performance monitoring, security improvements, operating system compatibility, and feature updates.Our developers can review an existing codebase, identify technical concerns, and recommend improvements based on business priorities. Ongoing support helps the application remain stable as user expectations, devices, and Android requirements evolve."
+      },
+      {
+        "title": "Cross Platform App Development Services",
+        "desc": "Cubixsol also provides cross-platform app development services to reach Android and iOS users through a shared codebase. A cross-platform approach can reduce duplicate development work and simplify feature management across both platforms.We assess the required features, performance expectations, integrations, and budget before recommending native or cross-platform development. The final decision depends on the product rather than a one-size-fits-all preference."
+      }
+    ],
+    "whyChooseItems": [
+      {
+        "title": "Planned Delivery",
+        "desc": "Clear milestones keep the project focused and make progress easier to review. If requirements or priorities change, we assess the effect on the timeline and scope before moving ahead."
+      },
+      {
+        "title": "Transparent Communication",
+        "desc": "You receive direct updates on completed work, current development tasks, upcoming milestones, and potential blockers. Clear communication reduces confusion and supports faster decision-making throughout the project."
+      },
+      {
+        "title": "Ongoing Technical Support",
+        "desc": "Our involvement does not have to end when the application reaches the Play Store. We can continue supporting updates, performance improvements, compatibility changes, and new features as the product grows."
+      }
+    ],
+    "ctaPrimaryText": "Start a Project",
+    "ctaSecondaryText": "Get a Free Estimate",
+    "menuTitle": "Android",
+    "subServicesIntro": "Our Android development team builds applications for smartphones, tablets, and other compatible devices. Each service can support a new product, an existing application, or a wider digital transformation project.",
+    "subServicesText": "Native Android App Development | We build native Android applications designed for strong performance, dependable security, and smooth interaction with device features. Native development is ideal for products requiring advanced functionality, complex integrations, or a highly responsive user experience. Our developers structure each application for long-term stability, making future updates, feature additions, and operating system changes easier to manage.\nKotlin and Jetpack Development | Kotlin and Jetpack help us create modern Android applications with structured, maintainable code. We use Jetpack components to manage navigation, application data, interface behaviour, and background processes more efficiently. Jetpack Compose also allows our team to create responsive interfaces with reusable components. The result is a consistent user experience across supported Android screen sizes and devices.\nGoogle Play Store Launch | A functional application still needs a properly managed release. Our team prepares the app for Google Play Store submission, reviews technical requirements, configures release builds, and supports the publishing process.We can also support addressing submission issues and prepare updated versions when Google introduces new platform or policy requirements. Every release is checked before submission to reduce avoidable delays.\nAndroid App Maintenance and Support | Android applications require regular attention after launch. We provide maintenance services for bug resolution, performance monitoring, security improvements, operating system compatibility, and feature updates.Our developers can review an existing codebase, identify technical concerns, and recommend improvements based on business priorities. Ongoing support helps the application remain stable as user expectations, devices, and Android requirements evolve.\nCross Platform App Development Services | Cubixsol also provides cross-platform app development services to reach Android and iOS users through a shared codebase. A cross-platform approach can reduce duplicate development work and simplify feature management across both platforms.We assess the required features, performance expectations, integrations, and budget before recommending native or cross-platform development. The final decision depends on the product rather than a one-size-fits-all preference.",
+    "subServicesTitle": "Our Android Development Services",
+    "whyChooseIntro": "We prioritise stable architecture, maintainable code, intuitive interfaces, and reliable application performance. Testing remains part of the development cycle rather than a final check performed immediately before launch.",
+    "whyChooseText": "Planned Delivery | Clear milestones keep the project focused and make progress easier to review. If requirements or priorities change, we assess the effect on the timeline and scope before moving ahead.\nTransparent Communication | You receive direct updates on completed work, current development tasks, upcoming milestones, and potential blockers. Clear communication reduces confusion and supports faster decision-making throughout the project.\nOngoing Technical Support | Our involvement does not have to end when the application reaches the Play Store. We can continue supporting updates, performance improvements, compatibility changes, and new features as the product grows.",
+    "whyChooseTitle": "Quality-Focused Development",
+    "faqsText": "How much does Android app development cost? | Android app development costs depend on the number of features, interface complexity, backend requirements, third-party integrations, security needs, and development approach. A basic application generally requires less investment than a platform involving multiple user roles, payments, live tracking, or custom administrative tools. We review the requirements before providing an estimate.\nHow long does it take to build an Android app? | The timeline depends on the project’s scope and technical complexity. A focused application with standard features may take a few months, while a larger product can require additional planning, development, testing, and integration work. We provide a milestone-based timeline after reviewing the requirements.\nShould I choose Kotlin or cross-platform development? | Kotlin is well suited to native Android applications requiring deep device integration, Android-specific features, or maximum platform control. Cross-platform development can be more efficient when a business wants to launch on Android and iOS with similar functionality. We recommend an approach after estimating the product goals and technical needs.\nCan Cubixsol publish my app on the Google Play Store? | Yes. We can prepare the release build, review relevant store requirements, and support the Google Play Store submission process. Final approval remains subject to Google’s current policies and review procedures.\nCan you update or improve an existing Android application? | Yes. Our developers review the existing application, identify performance and compatibility issues, fix bugs, update dependencies, and add new features. They then recommend the most effective path: optimising the current codebase or rebuilding specific components.",
+    "serviceProcessText": "01 | Discover | We begin by defining the product idea, target users, business objectives, core features, integrations, and technical constraints. Early discovery helps the team separate essential requirements from lower-priority additions.\n02 | Plan | Our team organises the features, user journeys, development phases, technology choices, and delivery milestones. The plan gives stakeholders a clearer view of the project scope before full development starts.\n03 | Build | Developers create the application in structured stages while designers refine its interface and user experience. Regular progress updates help keep technical decisions and business expectations aligned.\n04 | Test | We test functionality, usability, performance, device compatibility, integrations, and common failure scenarios. We review and resolve identified issues before the production release.\n05 | Launch and Support | Once the application is approved, we prepare it for deployment and support the Play Store submission process. Post-launch services can include monitoring, maintenance, bug fixes, and planned improvements.",
+    "serviceProcessTitle": "Our Android Development Process"
+  },
+  {
+    "seo": {
+      "metaTitle": "Laravel Development Services | Cubixsol",
+      "metaDescription": "Powerful and scalable web applications using the Laravel PHP framework for complex business logic.",
+      "keywords": "Laravel, PHP, MySQL, Redis, Vue",
+      "ogTitle": "Laravel Development Services | Cubixsol",
+      "ogDescription": "Powerful and scalable web applications using the Laravel PHP framework for complex business logic.",
+      "ogImage": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1000&h=750&q=70",
+      "canonicalUrl": ""
+    },
+    "icon": "/uploads/media-1788761191368-839736527.svg",
+    "slug": "laravel-development",
+    "heroImage": "/uploads/media-1788760355443-70201310.svg",
+    "title": " Laravel Development Services for Scalable Web Applications",
+    "desc": "Cubixsol turns your product requirements into a reliable Laravel application.",
+    "color": "text-red-500 bg-red-50",
+    "gradient": "from-red-500 to-rose-600",
+    "longDesc": "Cubixsol turns your product requirements into a reliable Laravel application. We develop applications for strong performance, practical growth, and easier maintenance. Cubixsol handles planning, backend architecture, development, integrations, testing, deployment, and post-launch improvements through one accountable team.",
+    "features": [
+      "Custom admin panels",
+      "REST & GraphQL APIs",
+      "Queue jobs & scheduling",
+      "Multi-tenant apps",
+      "Payment integrations",
+      "Role-based access control"
+    ],
+    "tech": [
+      "Laravel",
+      "PHP",
+      "MySQL",
+      "Redis",
+      "Vue"
+    ],
+    "outcomes": [
+      "Reliable backends",
+      "Faster feature delivery",
+      "Lower long-term cost"
+    ],
+    "faqs": [
+      {
+        "q": "How much do Laravel development services cost?",
+        "a": "Laravel development costs depend on the number of features, integrations, user roles, design requirements, data migration, and support needs. Cubixsol reviews the scope first and provides a clear estimate based on the work required."
+      },
+      {
+        "q": "How long does Laravel development take?",
+        "a": "The timeline depends on the application’s size, technical complexity, feedback cycle, and third-party integrations. A focused product takes less time than a multi-role SaaS platform or a legacy migration. We confirm milestones and a realistic delivery schedule after discovery."
+      },
+      {
+        "q": "Why choose Laravel over another framework?",
+        "a": "Laravel is a strong choice for structured PHP applications because it provides established tools for routing, authentication, database access, queues, caching, testing, and API development. The best framework still depends on the product, existing technology, team, and long-term plans."
+      },
+      {
+        "q": "Do you provide Laravel maintenance and support?",
+        "a": "Yes. Cubixsol provides ongoing support for updates, issue resolution, performance improvements, security patches, and new features. We can support applications developed by our team or review an existing Laravel codebase before taking responsibility for it."
+      },
+      {
+        "q": "Can I hire a dedicated Laravel developer?",
+        "a": "Yes. You can hire dedicated Laravel developers through Cubixsol for ongoing development, additional technical capacity, or a defined project. We align the engagement with your scope, preferred workflow, communication needs, and delivery priorities."
+      }
+    ],
+    "techDesc": "We combine Laravel with PHP 8, MySQL or PostgreSQL, Livewire, Vue.js, Redis, and AWS according to the product’s needs. These technologies support responsive interfaces, efficient data handling, background processing, caching, cloud deployment, and scalable application architecture. We select tools for a clear technical reason instead of adding complexity without a measurable benefit.",
+    "techTitle": "Technologies We Use",
+    "businessTypesItems": [],
+    "ctaBannerButtonText": "Start a Project",
+    "ctaBannerDesc": "Convert your idea into a reliable application with Cubixsol’s **Laravel development services**. Share your idea, existing system, or technical challenge with our team to receive a practical development plan and a free estimate.\n",
+    "ctaBannerEyebrow": "",
+    "ctaBannerTitle": "Ready to Start Your Laravel Project?",
+    "serviceProcessSteps": [
+      {
+        "stepNumber": "01",
+        "title": "Discover",
+        "desc": "We define the users, business goals, required features, integrations, constraints, and success criteria.",
+        "image": "",
+        "points": []
+      },
+      {
+        "stepNumber": "02",
+        "title": "Plan",
+        "desc": "We map the architecture, database, user journeys, priorities, milestones, and delivery schedule",
+        "image": "",
+        "points": []
+      },
+      {
+        "stepNumber": "03",
+        "title": "Develop",
+        "desc": "Our team creates the application in structured phases and reviews progress against the agreed scope.",
+        "image": "",
+        "points": []
+      },
+      {
+        "stepNumber": "04",
+        "title": "Test",
+        "desc": "We check features, APIs, permissions, performance, security controls, and compatibility across relevant devices and browsers.",
+        "image": "",
+        "points": []
+      },
+      {
+        "stepNumber": "05",
+        "title": "Launch and support",
+        "desc": "We deploy the approved product, monitor its performance, resolve early issues, and plan future releases.",
+        "image": "",
+        "points": []
+      }
+    ],
+    "subServicesItems": [
+      {
+        "title": "Custom Laravel Application Development",
+        "desc": "We develop business portals, booking systems, marketplaces, management platforms, and other custom applications around your workflows. Our custom PHP development services cover the complete product foundation, including architecture, databases, business logic, permissions, dashboards, and third-party integrations."
+      },
+      {
+        "title": "Laravel API and Backend Development",
+        "desc": "Our backend development services create the systems responsible for your application’s data, rules, integrations, and user access. We develop RESTful APIs and connect payment gateways, CRM platforms, mobile applications, analytics tools, and other services while keeping the backend organised and ready for further development."
+      },
+      {
+        "title": "Laravel SaaS Development",
+        "desc": "We create SaaS products with subscription management, user roles, account controls, reporting, notifications, and multi-tenant capabilities. The architecture is planned around your operating model, so your team can add customers, refine features, and manage the platform without unnecessary technical friction."
+      },
+      {
+        "title": "Laravel Migration and Upgrades",
+        "desc": "We move legacy PHP applications and suitable systems from other frameworks to Laravel with a controlled migration plan. Our team also upgrades older Laravel projects, resolves compatibility issues, updates dependencies, and protects essential data and workflows throughout the transition."
+      },
+      {
+        "title": "Laravel Maintenance and Support",
+        "desc": "We keep Laravel applications stable after release through issue resolution, dependency updates, performance reviews, security patches, and planned feature improvements. Support can cover a newly launched Cubixsol product or an existing Laravel application that needs a dependable technical team."
+      }
+    ],
+    "whyChooseItems": [
+      {
+        "title": "Quality-Focused Engineering",
+        "desc": "We use structured architecture, coding standards, reviews, and testing to reduce avoidable defects and simplify future improvements. Every technical decision must support the product’s real requirements."
+      },
+      {
+        "title": "Dependable Delivery",
+        "desc": "We divide the project into defined phases with practical milestones and clear responsibilities. Potential blockers, changing requirements, and external dependencies are raised early to protect the schedule."
+      },
+      {
+        "title": "Transparent Collaboration",
+        "desc": "You receive regular progress updates, working demonstrations, and direct explanations of technical decisions. The shared scope and priorities keep both teams aligned throughout development."
+      },
+      {
+        "title": "Ongoing Technical Support",
+        "desc": "Our involvement can continue after launch with monitoring, maintenance, upgrades, fixes, and feature development. Your application keeps receiving attention as user needs and business priorities change."
+      }
+    ],
+    "whyChooseImage": "",
+    "additionalParagraph": "Our Laravel development services cover the end-to-end creation, modernisation, and support of web applications, APIs, SaaS platforms, admin systems, and business portals using Laravel and PHP. Our developers connect the backend, database, third-party tools, and user-facing features within a structured codebase. The result is a product designed around real workflows, not a collection of disconnected features that becomes expensive to maintain.",
+    "ctaPrimaryText": "Start a Project",
+    "ctaSecondaryText": "Get a Free Estimate",
+    "faqsText": "How much do Laravel development services cost? | Laravel development costs depend on the number of features, integrations, user roles, design requirements, data migration, and support needs. Cubixsol reviews the scope first and provides a clear estimate based on the work required.\nHow long does Laravel development take? | The timeline depends on the application’s size, technical complexity, feedback cycle, and third-party integrations. A focused product takes less time than a multi-role SaaS platform or a legacy migration. We confirm milestones and a realistic delivery schedule after discovery.\nWhy choose Laravel over another framework? | Laravel is a strong choice for structured PHP applications because it provides established tools for routing, authentication, database access, queues, caching, testing, and API development. The best framework still depends on the product, existing technology, team, and long-term plans.\nDo you provide Laravel maintenance and support? | Yes. Cubixsol provides ongoing support for updates, issue resolution, performance improvements, security patches, and new features. We can support applications developed by our team or review an existing Laravel codebase before taking responsibility for it.\nCan I hire a dedicated Laravel developer? | Yes. You can hire dedicated Laravel developers through Cubixsol for ongoing development, additional technical capacity, or a defined project. We align the engagement with your scope, preferred workflow, communication needs, and delivery priorities.",
+    "menuTitle": "Laravel",
+    "serviceProcessIntro": "Our Laravel development process moves from validated requirements to a tested release through five clear stages.",
+    "serviceProcessText": "Discover | We define the users, business goals, required features, integrations, constraints, and success criteria.\nPlan | We map the architecture, database, user journeys, priorities, milestones, and delivery schedule\nDevelop | Our team creates the application in structured phases and reviews progress against the agreed scope.\nTest | We check features, APIs, permissions, performance, security controls, and compatibility across relevant devices and browsers.\nLaunch and support | We deploy the approved product, monitor its performance, resolve early issues, and plan future releases.",
+    "serviceProcessTitle": "Our Laravel Development Process",
+    "subServicesIntro": "Our Laravel development company supports new products, growing platforms, and legacy PHP systems with focused engineering expertise. Each engagement starts with the business problem, user requirements, and technical constraints so the final solution fits its purpose and remains manageable after launch.",
+    "subServicesText": "Custom Laravel Application Development | We develop business portals, booking systems, marketplaces, management platforms, and other custom applications around your workflows. Our custom PHP development services cover the complete product foundation, including architecture, databases, business logic, permissions, dashboards, and third-party integrations.\nLaravel API and Backend Development | Our backend development services create the systems responsible for your application’s data, rules, integrations, and user access. We develop RESTful APIs and connect payment gateways, CRM platforms, mobile applications, analytics tools, and other services while keeping the backend organised and ready for further development.\nLaravel SaaS Development | We create SaaS products with subscription management, user roles, account controls, reporting, notifications, and multi-tenant capabilities. The architecture is planned around your operating model, so your team can add customers, refine features, and manage the platform without unnecessary technical friction.\nLaravel Migration and Upgrades | We move legacy PHP applications and suitable systems from other frameworks to Laravel with a controlled migration plan. Our team also upgrades older Laravel projects, resolves compatibility issues, updates dependencies, and protects essential data and workflows throughout the transition.\nLaravel Maintenance and Support | We keep Laravel applications stable after release through issue resolution, dependency updates, performance reviews, security patches, and planned feature improvements. Support can cover a newly launched Cubixsol product or an existing Laravel application that needs a dependable technical team.",
+    "subServicesTitle": "Our Laravel Development Services",
+    "whyChooseIntro": "Our experts combine disciplined development with clear project coordination. They help businesses move from an idea or an outdated system to a dependable Laravel product.",
+    "whyChooseText": "Quality-Focused Engineering | We use structured architecture, coding standards, reviews, and testing to reduce avoidable defects and simplify future improvements. Every technical decision must support the product’s real requirements.\nDependable Delivery | We divide the project into defined phases with practical milestones and clear responsibilities. Potential blockers, changing requirements, and external dependencies are raised early to protect the schedule.\nTransparent Collaboration | You receive regular progress updates, working demonstrations, and direct explanations of technical decisions. The shared scope and priorities keep both teams aligned throughout development.\nOngoing Technical Support | Our involvement can continue after launch with monitoring, maintenance, upgrades, fixes, and feature development. Your application keeps receiving attention as user needs and business priorities change.",
+    "whyChooseTitle": "Why Choose Cubixsol for Laravel Development?"
+  },
+  {
+    "seo": {
+      "metaTitle": "AI Product Development Services | Cubixsol",
+      "metaDescription": "Use AI to automate repetitive work, improve customer experiences, analyze data, and support faster decisions. We develop practical AI applications, intelligent assistants, recommendation systems, and workflow automation tools connected to your business processes.",
+      "keywords": "OpenAI, Python, LangChain, Vector DBs, AWS",
+      "ogTitle": "AI Product Development Services | Cubixsol",
+      "ogDescription": "Use AI to automate repetitive work, improve customer experiences, analyze data, and support faster decisions. We develop practical AI applications, intelligent assistants, recommendation systems, and workflow automation tools connected to your business processes.",
+      "ogImage": "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1000&h=750&q=70",
+      "canonicalUrl": ""
+    },
+    "icon": "/uploads/media-1788761191364-90843475.svg",
+    "slug": "ai-development",
+    "heroImage": "/uploads/media-1788439771541-852484829.svg",
+    "title": "AI Development Services",
+    "desc": "Turn complex business challenges into practical AI solutions that save time, improve decisions, and create better customer experiences. Cubixsol provides AI chatbot development services for businesses that want intelligent, scalable, and secure digital products not another disconnected AI experiment.",
+    "color": "text-primary-600 bg-primary-50",
+    "gradient": "from-violet-500 to-primary-600",
+    "longDesc": "",
+    "features": [
+      "Custom GPT / LLM apps",
+      "Process automation",
+      "Document & data extraction",
+      "Recommendation systems",
+      "Internal AI copilots",
+      "Secure private deployments"
+    ],
+    "tech": [
+      "OpenAI",
+      "Python",
+      "LangChain",
+      "Vector DBs",
+      "AWS"
+    ],
+    "outcomes": [
+      "Less manual work",
+      "Faster decisions",
+      "New product capabilities"
+    ],
+    "faqs": [
+      {
+        "q": "How much does an AI development project cost?",
+        "a": "The cost depends on the product scope, data readiness, model requirements, integrations, security controls, infrastructure, and expected usage. A focused proof of concept costs less than a production platform with multiple workflows. Cubixsol provides a scoped estimate after the initial discovery process."
+      },
+      {
+        "q": "How long does it take to develop an AI solution?",
+        "a": "A focused AI pilot may take approximately six to ten weeks, while a production-grade solution can require several months. The timeline depends on data preparation, feature complexity, third-party integrations, testing requirements, and deployment approvals."
+      },
+      {
+        "q": "Do we need a large proprietary dataset?",
+        "a": "Not always. Generative AI applications can often begin with existing models and approved company documents. Products requiring specialized predictions or classifications may need structured historical data. We assess data quality and availability before recommending an approach."
+      },
+      {
+        "q": "What is the difference between generative AI and AI agents?",
+        "a": "Generative AI produces outputs such as text, summaries, images, or code. AI agents go further by planning steps, using approved tools, retrieving information, and performing actions toward a defined goal. Some products combine both capabilities."
+      },
+      {
+        "q": "How do you protect sensitive business data?",
+        "a": "We apply role-based access, secure API connections, controlled data retrieval, encryption, logging, and model-specific privacy settings where appropriate. Security requirements are defined during discovery and tested before deployment."
+      }
+    ],
+    "techDesc": "We select technologies according to the product’s use case, data requirements, security needs, and expected scale. Our technology stack can include OpenAI and GPT models, LangChain, Python, TensorFlow, PyTorch, vector databases, cloud AI services, embedding models, retrieval systems, and secure application programming interfaces\n\nThe final architecture remains flexible, maintainable, and compatible with your existing technology environment.",
+    "techTitle": "AI Technologies We Use",
+    "businessTypesItems": [],
+    "businessTypesText": "",
+    "ctaPrimaryText": "Discuss Your AI Project",
+    "ctaSecondaryText": "Request a Consultation",
+    "faqsText": "How much does an AI development project cost? | The cost depends on the product scope, data readiness, model requirements, integrations, security controls, infrastructure, and expected usage. A focused proof of concept costs less than a production platform with multiple workflows. Cubixsol provides a scoped estimate after the initial discovery process.\nHow long does it take to develop an AI solution? | A focused AI pilot may take approximately six to ten weeks, while a production-grade solution can require several months. The timeline depends on data preparation, feature complexity, third-party integrations, testing requirements, and deployment approvals.\nDo we need a large proprietary dataset? | Not always. Generative AI applications can often begin with existing models and approved company documents. Products requiring specialized predictions or classifications may need structured historical data. We assess data quality and availability before recommending an approach.\nWhat is the difference between generative AI and AI agents? | Generative AI produces outputs such as text, summaries, images, or code. AI agents go further by planning steps, using approved tools, retrieving information, and performing actions toward a defined goal. Some products combine both capabilities.\nHow do you protect sensitive business data? | We apply role-based access, secure API connections, controlled data retrieval, encryption, logging, and model-specific privacy settings where appropriate. Security requirements are defined during discovery and tested before deployment.",
+    "serviceProcessSteps": [
+      {
+        "points": [],
+        "stepNumber": "01",
+        "title": "Discover the use case:",
+        "desc": "We define the business problem, intended users, expected outcomes, technical constraints, and success metrics."
+      },
+      {
+        "points": [],
+        "stepNumber": "02",
+        "title": "Assess the data:",
+        "desc": "Our team reviews available documents, databases, content sources, permissions, and data-quality requirements."
+      },
+      {
+        "points": [],
+        "stepNumber": "03",
+        "title": "Build and validate:",
+        "desc": "The approved solution is connected to your applications, business systems, and user workflows."
+      },
+      {
+        "points": [],
+        "stepNumber": "04",
+        "title": "Monitor and improve:",
+        "desc": "We track performance, user feedback, response quality, operating costs, and emerging risks after deployment."
+      }
+    ],
+    "serviceProcessText": "01 | Discover the use case: | We define the business problem, intended users, expected outcomes, technical constraints, and success metrics.\n02 | Assess the data: | Our team reviews available documents, databases, content sources, permissions, and data-quality requirements.\n03 | Build and validate: | The approved solution is connected to your applications, business systems, and user workflows.\n04 | Monitor and improve: | We track performance, user feedback, response quality, operating costs, and emerging risks after deployment.",
+    "subServicesItems": [],
+    "subServicesText": "",
+    "whyChooseItems": [
+      {
+        "title": "Built for Real Business Workflows",
+        "desc": "We focus on how the solution will function inside your operations. We consider user roles, approval steps, exceptions, system dependencies, and measurable outcomes before development begins."
+      },
+      {
+        "title": "Security and Data Privacy",
+        "desc": "We address access controls, data handling, model permissions, audit requirements, and secure integrations throughout the development process. Sensitive information is protected according to the solution’s operational and regulatory needs."
+      },
+      {
+        "title": "Clear Business Value",
+        "desc": "An AI feature should solve a defined problem. We prioritize use cases that can reduce processing time, improve service quality, control operating costs, or help teams make faster decisions."
+      },
+      {
+        "title": "Ongoing AI Operations",
+        "desc": "AI products require monitoring after launch. Cubixsol supports performance tracking, model updates, prompt improvement, infrastructure management, error analysis, and workflow refinement as business requirements evolve."
+      }
+    ],
+    "whyChooseText": "Built for Real Business Workflows | We focus on how the solution will function inside your operations. We consider user roles, approval steps, exceptions, system dependencies, and measurable outcomes before development begins.\nSecurity and Data Privacy | We address access controls, data handling, model permissions, audit requirements, and secure integrations throughout the development process. Sensitive information is protected according to the solution’s operational and regulatory needs.\nClear Business Value | An AI feature should solve a defined problem. We prioritize use cases that can reduce processing time, improve service quality, control operating costs, or help teams make faster decisions.\nOngoing AI Operations | AI products require monitoring after launch. Cubixsol supports performance tracking, model updates, prompt improvement, infrastructure management, error analysis, and workflow refinement as business requirements evolve.",
+    "additionalParagraph": "Cubixsol’s AI development services cover the complete product lifecycle, from use-case discovery and data preparation to development, integration, deployment, and ongoing improvement. Our custom AI development services help businesses automate repetitive work, retrieve information faster, generate content, support customers, and make operational data more useful.",
+    "ctaBannerButtonText": "Start Your AI Project",
+    "ctaBannerDesc": "Use AI to solve a measurable business problem instead of adding technology without a clear purpose. Partner with Cubixsol for **AI development services** designed around your operational goals.",
+    "ctaBannerTitle": "Ready to Build with AI?",
+    "whyChooseTitle": "Why Choose Cubixsol for AI Development?",
+    "pricingSectionText": "AI can support different workflows across industries. Healthcare organizations can improve document processing and patient communication, while financial platforms can strengthen data analysis and fraud monitoring. Retail and e-commerce businesses can personalize recommendations, automate support, and forecast demand. Logistics companies can improve planning and operational visibility, while professional-service teams can search large document collections and generate structured reports.\nEvery solution begins with the operating problem—not with a predetermined model or platform.\n",
+    "pricingSectionTitle": "AI Use Cases by Industry",
+    "serviceProcessTitle": "Our AI Development Process",
+    "ctaBannerEyebrow": "INTELLIGENT WORKFLOWS & AUTOMATION"
+  },
+  {
+    "seo": {
+      "metaTitle": "API Development & Integration Services | Cubixsol",
+      "metaDescription": "Secure APIs, PMS connections, and payment gateways that connect your product to the tools your business runs on.",
+      "keywords": "Node.js, Python, REST, GraphQL, Stripe, OAuth",
+      "ogTitle": "API Development & Integration Services | Cubixsol",
+      "ogDescription": "Secure APIs, PMS connections, and payment gateways that connect your product to the tools your business runs on.",
+      "ogImage": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&h=750&q=70",
+      "canonicalUrl": ""
+    },
+    "icon": "/uploads/media-1788761191368-839736527.svg",
+    "slug": "api-development-and-integration",
+    "heroImage": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&h=750&q=70",
+    "title": "API Development & Integration Services",
+    "desc": "Connect applications, data, payment gateways, and third-party platforms through secure custom APIs and dependable system integrations.",
+    "color": "text-indigo-600 bg-indigo-50",
+    "gradient": "from-indigo-500 to-violet-600",
+    "longDesc": "Connect your applications, platforms, and business systems with reliable APIs built for your specific requirements. Cubixsol provides API development services for businesses seeking secure data exchange, custom integrations, payment connections, and dependable digital products.",
+    "features": [
+      "Custom REST & GraphQL API design",
+      "API Integration with third-party platforms",
+      "PMS Integration (property & booking systems)",
+      "Payment Gateways (Stripe, PayPal, local providers)",
+      "Webhooks, events & real-time sync",
+      "Auth, rate limits & API security",
+      "Documentation & developer portals",
+      "Monitoring, retries & error handling"
+    ],
+    "tech": [
+      "Node.js",
+      "Python",
+      "REST",
+      "GraphQL",
+      "Stripe",
+      "OAuth"
+    ],
+    "outcomes": [
+      "Systems that stay in sync",
+      "Faster checkout and bookings",
+      "Fewer manual handoffs between tools"
+    ],
+    "faqs": [
+      {
+        "q": "How much does API development cost?",
+        "a": "API development costs depend on the project scope, API complexity, integrations, security requirements, and existing systems. A simple API usually needs less development work than a project connecting several third-party platforms. Cubixsol can review your requirements and provide a project-specific estimate.",
+        "title": "How much does API development cost?",
+        "desc": "API development costs depend on the project scope, API complexity, integrations, security requirements, and existing systems. A simple API usually needs less development work than a project connecting several third-party platforms. Cubixsol can review your requirements and provide a project-specific estimate."
+      },
+      {
+        "q": "How long does API development take?",
+        "a": "The timeline depends on the API features, integrations, testing requirements, and technical complexity. A simple API may take less time than a larger integration involving several systems. We can review your requirements first and provide a realistic project timeline.",
+        "title": "How long does API development take?",
+        "desc": "The timeline depends on the API features, integrations, testing requirements, and technical complexity. A simple API may take less time than a larger integration involving several systems. We can review your requirements first and provide a realistic project timeline."
+      },
+      {
+        "q": "What is the difference between REST and GraphQL?",
+        "a": "REST uses different endpoints to handle resources and works well for many common API projects. GraphQL lets applications request the specific data they need through a single API interface. The right choice depends on your application, data structure, frontend requirements, and existing technology.",
+        "title": "What is the difference between REST and GraphQL?",
+        "desc": "REST uses different endpoints to handle resources and works well for many common API projects. GraphQL lets applications request the specific data they need through a single API interface. The right choice depends on your application, data structure, frontend requirements, and existing technology."
+      },
+      {
+        "q": "How do you secure an API?",
+        "a": "API security can include authentication, authorisation, access controls, input validation, secure connections, and proper error handling. We consider security during API planning and development so the required controls are part of the solution from the start.",
+        "title": "How do you secure an API?",
+        "desc": "API security can include authentication, authorisation, access controls, input validation, secure connections, and proper error handling. We consider security during API planning and development so the required controls are part of the solution from the start."
+      },
+      {
+        "q": "Can you integrate third-party APIs with an existing application?",
+        "a": "Yes. We can connect existing applications with payment providers, SaaS platforms, databases, and other third-party services. We first review your current application and integration requirements, then plan and develop the required connection.",
+        "title": "Can you integrate third-party APIs with an existing application?",
+        "desc": "Yes. We can connect existing applications with payment providers, SaaS platforms, databases, and other third-party services. We first review your current application and integration requirements, then plan and develop the required connection."
+      }
+    ],
+    "techDesc": "We select technologies based on your application, existing systems, security needs, and integration requirements. Our API technology stack includes REST, GraphQL, Node.js, OAuth, Stripe, and Postman for building, connecting, testing, and managing API solutions.",
+    "techTitle": "Technologies We Use",
+    "businessTypesItems": [],
+    "ctaBannerButtonText": "Start Your API Project",
+    "ctaBannerDesc": "Need api development services for a new application or an existing product? Cubixsol can help you plan, build, integrate, test, and support an API solution based on your project requirements.",
+    "ctaBannerEyebrow": "SEAMLESS SYSTEM CONNECTIVITY",
+    "ctaBannerTitle": "Ready to Start Your Project?",
+    "serviceProcessSteps": [
+      {
+        "stepNumber": "01",
+        "title": "Discover",
+        "desc": "We review your application, existing systems, data requirements, users, and integration goals.",
+        "image": "",
+        "points": []
+      },
+      {
+        "stepNumber": "02",
+        "title": "Plan",
+        "desc": "We define the API structure, endpoints, data flow, authentication, and technical requirements",
+        "image": "",
+        "points": []
+      },
+      {
+        "stepNumber": "03",
+        "title": "Build",
+        "desc": "Our team develops the API or integration according to the agreed project requirements.",
+        "image": "",
+        "points": []
+      },
+      {
+        "stepNumber": "04",
+        "title": "Test",
+        "desc": "We test requests, responses, authentication, error handling, security, and integration flows.",
+        "image": "",
+        "points": []
+      },
+      {
+        "stepNumber": "05",
+        "title": "Launch & Support",
+        "desc": "We help move the solution into production and provide support for updates, fixes, and future changes.",
+        "image": "",
+        "points": []
+      }
+    ],
+    "subServicesItems": [
+      {
+        "title": "Custom API Development",
+        "desc": "We build custom APIs for web applications, mobile apps, SaaS products, and internal business systems. Our team plans the API structure, endpoints, data flow, authentication, and business logic based on your project requirements.",
+        "q": "Custom API Development",
+        "a": "We build custom APIs for web applications, mobile apps, SaaS products, and internal business systems. Our team plans the API structure, endpoints, data flow, authentication, and business logic based on your project requirements."
+      },
+      {
+        "title": "API Integration",
+        "desc": "Connect your application with third-party platforms, SaaS tools, databases, and other business systems. Our API development and integration services help different systems share data and perform actions within a single connected workflow.",
+        "q": "API Integration",
+        "a": "Connect your application with third-party platforms, SaaS tools, databases, and other business systems. Our API development and integration services help different systems share data and perform actions within a single connected workflow."
+      },
+      {
+        "title": "Payment Gateways",
+        "desc": "Connect payment providers such as Stripe with your website or application. We handle API connections for payment requests, transaction responses, payment status updates, and other required payment events.",
+        "q": "Payment Gateways",
+        "a": "Connect payment providers such as Stripe with your website or application. We handle API connections for payment requests, transaction responses, payment status updates, and other required payment events."
+      },
+      {
+        "title": "Webhooks",
+        "desc": "Webhooks let your application receive updates when an event happens in another system. We can set up webhook connections for payments, transactions, account changes, and other events requiring an automatic response.",
+        "q": "Webhooks",
+        "a": "Webhooks let your application receive updates when an event happens in another system. We can set up webhook connections for payments, transactions, account changes, and other events requiring an automatic response."
+      },
+      {
+        "title": "API Security",
+        "desc": "Keep your API and connected data protected with suitable security controls. We work with authentication, authorisation, access controls, input validation, secure connections, and error handling as part of the API development process.",
+        "q": "API Security",
+        "a": "Keep your API and connected data protected with suitable security controls. We work with authentication, authorisation, access controls, input validation, secure connections, and error handling as part of the API development process."
+      }
+    ],
+    "whyChooseItems": [
+      {
+        "title": "Quality-Focused Development",
+        "desc": "We build APIs around your product requirements and technical setup. Clean architecture, reliable data handling, proper testing, and clear documentation help keep the API easier to manage.",
+        "q": "Quality-Focused Development",
+        "a": "We build APIs around your product requirements and technical setup. Clean architecture, reliable data handling, proper testing, and clear documentation help keep the API easier to manage."
+      },
+      {
+        "title": "On-Time Delivery",
+        "desc": "Clear requirements and defined project stages help keep development organised. You can see what is being worked on and what comes next during the project.",
+        "q": "On-Time Delivery",
+        "a": "Clear requirements and defined project stages help keep development organised. You can see what is being worked on and what comes next during the project."
+      },
+      {
+        "title": "Transparent Communication",
+        "desc": "You should know what is happening during development. We keep communication clear and explain important technical decisions without unnecessary complexity.",
+        "q": "Transparent Communication",
+        "a": "You should know what is happening during development. We keep communication clear and explain important technical decisions without unnecessary complexity."
+      },
+      {
+        "title": "Ongoing Support",
+        "desc": "APIs often need updates when applications or connected services change. Cubixsol can help with maintenance, integration updates, technical issues, and future improvements after launch.",
+        "q": "Ongoing Support",
+        "a": "APIs often need updates when applications or connected services change. Cubixsol can help with maintenance, integration updates, technical issues, and future improvements after launch."
+      }
+    ],
+    "ctaPrimaryText": "Start a Project",
+    "ctaSecondaryText": "Free Estimate",
+    "faqsText": "How much does API development cost? | API development costs depend on the project scope, API complexity, integrations, security requirements, and existing systems. A simple API usually needs less development work than a project connecting several third-party platforms. Cubixsol can review your requirements and provide a project-specific estimate.\n\nHow long does API development take? | The timeline depends on the API features, integrations, testing requirements, and technical complexity. A simple API may take less time than a larger integration involving several systems. We can review your requirements first and provide a realistic project timeline.\n\nWhat is the difference between REST and GraphQL? | REST uses different endpoints to handle resources and works well for many common API projects. GraphQL lets applications request the specific data they need through a single API interface. The right choice depends on your application, data structure, frontend requirements, and existing technology.\n\nHow do you secure an API? | API security can include authentication, authorisation, access controls, input validation, secure connections, and proper error handling. We consider security during API planning and development so the required controls are part of the solution from the start.\n\nCan you integrate third-party APIs with an existing application? | Yes. We can connect existing applications with payment providers, SaaS platforms, databases, and other third-party services. We first review your current application and integration requirements, then plan and develop the required connection.",
+    "serviceProcessText": "01 | Discover | We review your application, existing systems, data requirements, users, and integration goals.\n\n02 | Plan | We define the API structure, endpoints, data flow, authentication, and technical requirements\n\n03 | Build | Our team develops the API or integration according to the agreed project requirements.\n\n04 | Test | We test requests, responses, authentication, error handling, security, and integration flows.\n\n05 | Launch & Support | We help move the solution into production and provide support for updates, fixes, and future changes.",
+    "serviceProcessTitle": "Our API Development Process",
+    "subServicesText": "Custom API Development | We build custom APIs for web applications, mobile apps, SaaS products, and internal business systems. Our team plans the API structure, endpoints, data flow, authentication, and business logic based on your project requirements.\n\nAPI Integration | Connect your application with third-party platforms, SaaS tools, databases, and other business systems. Our API development and integration services help different systems share data and perform actions within a single connected workflow.\n\nPayment Gateways | Connect payment providers such as Stripe with your website or application. We handle API connections for payment requests, transaction responses, payment status updates, and other required payment events.\n\nWebhooks | Webhooks let your application receive updates when an event happens in another system. We can set up webhook connections for payments, transactions, account changes, and other events requiring an automatic response.\n\nAPI Security | Keep your API and connected data protected with suitable security controls. We work with authentication, authorisation, access controls, input validation, secure connections, and error handling as part of the API development process.",
+    "subServicesTitle": "Our API Development & Integration Services",
+    "whyChooseText": "Quality-Focused Development | We build APIs around your product requirements and technical setup. Clean architecture, reliable data handling, proper testing, and clear documentation help keep the API easier to manage.\n\nOn-Time Delivery | Clear requirements and defined project stages help keep development organised. You can see what is being worked on and what comes next during the project.\n\nTransparent Communication | You should know what is happening during development. We keep communication clear and explain important technical decisions without unnecessary complexity.\n\nOngoing Support | APIs often need updates when applications or connected services change. Cubixsol can help with maintenance, integration updates, technical issues, and future improvements after launch.",
+    "whyChooseTitle": "",
+    "cardTitle": "API Development Services"
+  },
+  {
+    "seo": {
+      "metaTitle": "CMS Development Services | Cubixsol",
+      "metaDescription": "WordPress, Shopify, Magento, and more — CMS builds that are fast to manage and ready to grow.",
+      "keywords": "WordPress, Shopify, Magento, WooCommerce, PHP, Liquid",
+      "ogTitle": "CMS Development Services | Cubixsol",
+      "ogDescription": "WordPress, Shopify, Magento, and more — CMS builds that are fast to manage and ready to grow.",
+      "ogImage": "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&w=1000&h=750&q=70",
+      "canonicalUrl": ""
+    },
+    "icon": "/uploads/media-1788761191368-390026375.svg",
+    "slug": "cms-development",
+    "heroImage": "/uploads/media-1788760355423-686594247.svg",
+    "title": "CMS Development",
+    "desc": "We build a flexible CMS around your workflows, publishing requirements, integrations, and approval processes, so your team can manage content without technical bottlenecks. ",
+    "color": "text-violet-600 bg-violet-50",
+    "gradient": "from-violet-500 to-purple-600",
+    "longDesc": "We build and customize content platforms so your team can publish, sell, and iterate without fighting the CMS. From WordPress and Shopify to Magento, BigCommerce, Joomla, and OpenCart — clean themes, solid plugins, and performance that holds up.",
+    "features": [
+      "Magento Development",
+      "Shopify Development",
+      "WordPress Development",
+      "BigCommerce Development",
+      "Joomla Development",
+      "OpenCart Development",
+      "Theme & plugin customization",
+      "Migrations and performance tuning"
+    ],
+    "tech": [
+      "WordPress",
+      "Shopify",
+      "Magento",
+      "WooCommerce",
+      "PHP",
+      "Liquid"
+    ],
+    "outcomes": [
+      "Easier content and catalog updates",
+      "Faster storefront performance",
+      "Cleaner admin workflows"
+    ],
+    "faqs": [],
+    "techDesc": "We select technologies according to the project’s functionality, performance requirements, integrations, and future roadmap.\n\nThe goal is not to use the newest technology for its own sake. It is to choose a dependable stack that fits your product, supports maintainability, and avoids unnecessary technical complexity.",
+    "techTitle": "Technologies We Use",
+    "businessTypesItems": [],
+    "ctaBannerButtonText": "Get Started with CMS",
+    "ctaBannerDesc": "Empower your marketing team to publish and manage content effortlessly with our **custom CMS development services**.",
+    "ctaBannerEyebrow": "TAKE CONTROL OF YOUR CONTENT",
+    "ctaBannerTitle": "Ready for a Scalable CMS Solution?",
+    "serviceProcessSteps": [],
+    "subServicesItems": [],
+    "whyChooseItems": [],
+    "cardTitle": "CMS Development"
+  },
+  {
+    "seo": {
+      "metaTitle": "Cloud and DevOps Services | Cubixsol",
+      "metaDescription": "Cubixsol offers cloud consulting, migration & DevOps — scalable, secure AWS infrastructure with high availability. Get a free cloud assessment.",
+      "keywords": "",
+      "ogTitle": "Cloud and DevOps Services | Cubixsol",
+      "ogDescription": "Create a reliable technical foundation for your product through cloud architecture, automated deployment, monitoring, security, and performance optimization. Our DevOps approach helps teams release updates faster while reducing downtime and infrastructure risks.",
+      "ogImage": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1000&h=750&q=70",
+      "canonicalUrl": ""
+    },
+    "icon": "/uploads/media-1788761191367-247242232.svg",
+    "slug": "cloud-solutions",
+    "heroImage": "/uploads/media-1788439771568-239387480.svg",
+    "title": "Cloud Consulting & Solutions for Your Business",
+    "desc": "Cubixsol provides cloud consulting services to help businesses plan, build, migrate, and manage reliable cloud environments.",
+    "color": "text-sky-600 bg-sky-50",
+    "gradient": "from-sky-500 to-blue-600",
+    "longDesc": "Cubixsol provides cloud consulting services to help businesses plan, build, migrate, and manage reliable cloud environments. Our team helps you assess your current infrastructure, select suitable cloud technologies, improve performance, and support secure applications. We work across cloud strategy, migration, AWS, Kubernetes, security, and infrastructure management.",
+    "features": [
+      "AWS / Azure / GCP setup",
+      "CI/CD pipelines",
+      "Docker & Kubernetes",
+      "Monitoring & alerts",
+      "Cost optimization",
+      "Disaster recovery plans"
+    ],
+    "tech": [
+      "AWS",
+      "Docker",
+      "Kubernetes",
+      "Terraform",
+      "GitHub Actions"
+    ],
+    "outcomes": [
+      "Faster deployments",
+      "Higher uptime",
+      "Predictable costs"
+    ],
+    "faqs": [
+      {
+        "q": "How much do cloud migration services cost?",
+        "a": "Cloud migration costs depend on your current infrastructure, applications, data, cloud platform, and project complexity. Cubixsol can review your environment and provide an estimate based on your specific migration requirements."
+      },
+      {
+        "q": "How long does a cloud migration take?",
+        "a": "Migration time depends on the number of applications, amount of data, infrastructure complexity, and migration method. Smaller projects may take less time, while larger environments can require more planning, testing, and staged migration."
+      },
+      {
+        "q": "AWS vs Azure: Which is better for my business?",
+        "a": "The right platform depends on your applications, existing systems, technical needs, budget, and plans. Our team can review your requirements and help you select a suitable cloud platform."
+      },
+      {
+        "q": "How do you keep cloud environments secure?",
+        "a": "We consider security during cloud planning, setup, and implementation. Our approach can include access controls, data protection, monitoring, secure configurations, and other measures based on your infrastructure and application requirements."
+      },
+      {
+        "q": "Can you migrate applications without downtime?",
+        "a": "Some applications can be migrated with little or no downtime, but the approach depends on the application, infrastructure, dependencies, and migration method. We review your environment first and recommend a migration plan designed to reduce disruption."
+      }
+    ],
+    "techDesc": "We work with widely used cloud and infrastructure technologies, including AWS, Azure, Google Cloud Platform (GCP), Docker, Kubernetes, and Terraform. The technology used for a project depends on its infrastructure, applications, technical requirements, and business goals.",
+    "techTitle": "Technologies We Use",
+    "businessTypesItems": [],
+    "ctaBannerButtonText": "Start Your Project",
+    "ctaBannerDesc": "Improve your cloud infrastructure with practical cloud consulting services from Cubixsol. If you need cloud planning, migration, AWS support, Kubernetes consulting, DevOps, security, or ongoing cloud support, our team can help you plan and deliver the right solution.",
+    "ctaBannerEyebrow": "SCALE WITH CONFIDENCE",
+    "ctaBannerTitle": "Ready to Start Your Project?",
+    "serviceProcessSteps": [
+      {
+        "stepNumber": "01",
+        "title": "Assessment",
+        "desc": "We thoroughly analyze your requirements and evaluate your existing IT architecture and workflows to ensure the best outcomes.",
+        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=560&q=70",
+        "points": [
+          "Software Development Lifecycle (SDLC) Review",
+          "Infrastructure & IT Resource Assessment",
+          "Business Expectation Mapping",
+          "Capability & Constraint Analysis",
+          "DevOps Strategy Development"
+        ]
+      },
+      {
+        "stepNumber": "02",
+        "title": "Roadmap",
+        "desc": "During this phase, we create a detailed roadmap that serves as the foundation for implementing your DevOps project.",
+        "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&h=560&q=70",
+        "points": [
+          "Containerization Strategy",
+          "CI/CD Pipeline Design",
+          "Test Automation Integration",
+          "IaC & Configuration Management",
+          "Monitoring Architecture",
+          "Security & Compliance Guidelines",
+          "DevOps Challenge Analysis & Solutions"
+        ]
+      },
+      {
+        "stepNumber": "03",
+        "title": "Execution",
+        "desc": "We implement the roadmap with a focus on aligning teams, automating workflows, and ensuring stability across your DevOps environment.",
+        "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&h=560&q=70",
+        "points": [
+          "CI/CD Pipeline Setup",
+          "Test Automation Deployment",
+          "IaC Implementation",
+          "Team Enablement & Tool Training",
+          "DevOps Process Setup",
+          "Tool Chain Integration"
+        ]
+      },
+      {
+        "stepNumber": "04",
+        "title": "Optimization",
+        "desc": "We continuously monitor system performance and make adjustments to ensure the solution aligns with your goals and delivers optimal results.",
+        "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=800&h=560&q=70",
+        "points": [
+          "Performance Tuning",
+          "Auto-scaling & Load Management",
+          "Release Cycle Acceleration",
+          "Monitoring & Alerting Setup",
+          "Security & Compliance Enhancements"
+        ]
+      },
+      {
+        "stepNumber": "05",
+        "title": "Support",
+        "desc": "We provide ongoing support to ensure your DevOps ecosystem remains operational, stable, and in sync with your business goals.",
+        "image": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&h=560&q=70",
+        "points": [
+          "Infrastructure Operability Support",
+          "Change Implementation",
+          "Load Distribution Management",
+          "Environment Scaling & Maintenance"
+        ]
+      }
+    ],
+    "subServicesItems": [
+      {
+        "title": "Cloud Consulting",
+        "desc": "Our cloud consulting services help businesses assess their current infrastructure and plan a suitable cloud strategy. We review applications, workloads, infrastructure, technical requirements, and business goals to recommend a practical approach. Our team can also identify areas where performance, scalability, reliability, or cloud costs can be improved."
+      },
+      {
+        "title": "Cloud Migration Services",
+        "desc": "Our cloud migration services help businesses move applications, workloads, and data to the cloud. We assess the existing environment, identify migration requirements, and create a clear plan for each stage. Careful planning and testing can help reduce service disruption and make the move more manageable."
+      },
+      {
+        "title": "AWS Consulting Services",
+        "desc": "Our AWS consulting services support businesses with cloud architecture, infrastructure setup, deployment, optimisation, and ongoing improvements. We help create AWS environments for applications and workloads while considering performance, security, reliability, and scalability."
+      },
+      {
+        "title": "Kubernetes Consulting Services",
+        "desc": "Our Kubernetes consulting services help businesses manage containerised applications and improve application deployment. We can help set up and manage Kubernetes environments, support scaling, and improve the way applications run across cloud infrastructure."
+      },
+      {
+        "title": "Cloud Security",
+        "desc": "Cloud security is an important part of every cloud environment. Our team helps businesses improve protection for infrastructure, applications, and data through suitable access controls, data protection, monitoring, and security practices. Security requirements are considered during planning and implementation."
+      }
+    ],
+    "whyChooseItems": [
+      {
+        "title": "Quality-Focused Delivery",
+        "desc": "We focus on reliable infrastructure, suitable technologies, and clear project requirements. Each part of the work is planned around the needs of your applications and cloud environment."
+      },
+      {
+        "title": "On-Time Delivery",
+        "desc": "Clear planning and defined project stages help keep work organised. We set priorities and milestones so you have a clear view of project progress from discovery through launch."
+      },
+      {
+        "title": "Transparent Communication",
+        "desc": "We keep communication simple and clear throughout the project. You receive updates on progress, requirements, issues, and upcoming work, so you know what is happening at each stage."
+      },
+      {
+        "title": "Ongoing Support",
+        "desc": "Cloud infrastructure can need updates, optimisation, monitoring, and technical support after launch. Our team can continue working with you to maintain and improve your cloud environment as your needs change."
+      }
+    ],
+    "ctaPrimaryText": "Start a Project",
+    "ctaSecondaryText": "Free Estimate",
+    "faqsText": "How much do cloud migration services cost? | Cloud migration costs depend on your current infrastructure, applications, data, cloud platform, and project complexity. Cubixsol can review your environment and provide an estimate based on your specific migration requirements.\nHow long does a cloud migration take? | Migration time depends on the number of applications, amount of data, infrastructure complexity, and migration method. Smaller projects may take less time, while larger environments can require more planning, testing, and staged migration.\nAWS vs Azure: Which is better for my business? | The right platform depends on your applications, existing systems, technical needs, budget, and plans. Our team can review your requirements and help you select a suitable cloud platform.\nHow do you keep cloud environments secure? | We consider security during cloud planning, setup, and implementation. Our approach can include access controls, data protection, monitoring, secure configurations, and other measures based on your infrastructure and application requirements.\nCan you migrate applications without downtime? | Some applications can be migrated with little or no downtime, but the approach depends on the application, infrastructure, dependencies, and migration method. We review your environment first and recommend a migration plan designed to reduce disruption.",
+    "menuTitle": "Cloud",
+    "serviceProcessText": "01 | Assessment | We thoroughly analyze your requirements and evaluate your existing IT architecture and workflows to ensure the best outcomes. | https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=560&q=70 | Software Development Lifecycle (SDLC) Review; Infrastructure & IT Resource Assessment; Business Expectation Mapping; Capability & Constraint Analysis; DevOps Strategy Development\n02 | Roadmap | During this phase, we create a detailed roadmap that serves as the foundation for implementing your DevOps project. | https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&h=560&q=70 | Containerization Strategy; CI/CD Pipeline Design; Test Automation Integration; IaC & Configuration Management; Monitoring Architecture; Security & Compliance Guidelines; DevOps Challenge Analysis & Solutions\n03 | Execution | We implement the roadmap with a focus on aligning teams, automating workflows, and ensuring stability across your DevOps environment. | https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&h=560&q=70 | CI/CD Pipeline Setup; Test Automation Deployment; IaC Implementation; Team Enablement & Tool Training; DevOps Process Setup; Tool Chain Integration\n04 | Optimization | We continuously monitor system performance and make adjustments to ensure the solution aligns with your goals and delivers optimal results. | https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=800&h=560&q=70 | Performance Tuning; Auto-scaling & Load Management; Release Cycle Acceleration; Monitoring & Alerting Setup; Security & Compliance Enhancements\n05 | Support | We provide ongoing support to ensure your DevOps ecosystem remains operational, stable, and in sync with your business goals. | https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&h=560&q=70 | Infrastructure Operability Support; Change Implementation; Load Distribution Management; Environment Scaling & Maintenance",
+    "serviceProcessTitle": "Our 5-step DevOps process",
+    "subServicesIntro": "Our team provides practical cloud services for businesses at different stages of their cloud journey. We can help you plan a new cloud environment, move existing workloads, improve infrastructure, or address specific cloud requirements.",
+    "subServicesText": "Cloud Consulting | Our cloud consulting services help businesses assess their current infrastructure and plan a suitable cloud strategy. We review applications, workloads, infrastructure, technical requirements, and business goals to recommend a practical approach. Our team can also identify areas where performance, scalability, reliability, or cloud costs can be improved.\nCloud Migration Services | Our cloud migration services help businesses move applications, workloads, and data to the cloud. We assess the existing environment, identify migration requirements, and create a clear plan for each stage. Careful planning and testing can help reduce service disruption and make the move more manageable.\nAWS Consulting Services | Our AWS consulting services support businesses with cloud architecture, infrastructure setup, deployment, optimisation, and ongoing improvements. We help create AWS environments for applications and workloads while considering performance, security, reliability, and scalability.\nKubernetes Consulting Services | Our Kubernetes consulting services help businesses manage containerised applications and improve application deployment. We can help set up and manage Kubernetes environments, support scaling, and improve the way applications run across cloud infrastructure.\nCloud Security | Cloud security is an important part of every cloud environment. Our team helps businesses improve protection for infrastructure, applications, and data through suitable access controls, data protection, monitoring, and security practices. Security requirements are considered during planning and implementation.",
+    "subServicesTitle": "Our Cloud Consulting Services",
+    "whyChooseIntro": "A successful cloud project needs clear planning, reliable implementation, open communication, and support after launch. Cubixsol focuses on each part of the project to help businesses build and maintain dependable cloud environments.",
+    "whyChooseText": "Quality-Focused Delivery | We focus on reliable infrastructure, suitable technologies, and clear project requirements. Each part of the work is planned around the needs of your applications and cloud environment.\nOn-Time Delivery | Clear planning and defined project stages help keep work organised. We set priorities and milestones so you have a clear view of project progress from discovery through launch.\nTransparent Communication | We keep communication simple and clear throughout the project. You receive updates on progress, requirements, issues, and upcoming work, so you know what is happening at each stage.\nOngoing Support | Cloud infrastructure can need updates, optimisation, monitoring, and technical support after launch. Our team can continue working with you to maintain and improve your cloud environment as your needs change.",
+    "whyChooseTitle": "Why Choose Cubixsol?",
+    "serviceProcessIntro": "A structured path from assessing your environment to ongoing support after deployment — so releases stay fast and systems stay stable."
+  },
+  {
+    "seo": {
+      "metaTitle": " Custom Web Development Services | Cubixsol",
+      "metaDescription": "Build fast, secure, and scalable websites with Cubixsol’s custom web development services. Get a specifically designed solution and a free project estimate.",
       "keywords": "",
       "ogTitle": "",
       "ogDescription": "",
       "ogImage": "",
       "canonicalUrl": ""
     },
-    "icon": "/uploads/media-1788761191368-22630739.svg",
-    "slug": "graphic-designing",
-    "heroImage": "/uploads/media-1788760355440-864999462.svg",
-    "title": "Professional Graphic Design Services to Create a Recognisable Brand",
-    "desc": "UI/UX, web and mobile design, social creatives, branding, and illustration that support real products.",
-    "color": "text-pink-600 bg-pink-50",
-    "gradient": "from-pink-500 to-rose-600",
-    "longDesc": "Design that ships with your product — interfaces, marketing visuals, and brand systems. We cover UI/UX, web and mobile layouts, social media design, branding and identity, and illustration support when campaigns need a distinctive look.",
+    "icon": "/uploads/media-1788761191369-567281372.svg",
+    "slug": "web-development",
+    "heroImage": "/uploads/media-1788439771584-672653979.svg",
+    "title": "Custom Web Development Services",
+    "desc": "Turn your idea into a fast, secure, and scalable digital product with Cubixsol's custom web development services. We design and develop responsive websites, e-commerce platforms, and web applications personalized to your users, business goals, and technical requirements.",
+    "color": "text-blue-600 bg-blue-50",
+    "gradient": "from-blue-500 to-cyan-600",
+    "longDesc": "Turn your idea into a fast, secure, and scalable digital product with Cubixsol's custom web development services. We design and develop responsive websites, e-commerce platforms, and web applications personalized to your users, business goals, and technical requirements.\n\nWe deliver custom website development services across the entire development lifecycle. We plan your project, design the user experience, develop the frontend and backend, test every feature, deploy the website, and provide ongoing support. We build each solution around your business operations and your customers’ needs without limiting you to a restrictive template. ",
     "features": [
-      "UI/UX Designing",
-      "Web design",
-      "Mobile app design",
-      "Social Media Design",
-      "Branding and Identity Design",
-      "3D Illustrations",
-      "Design systems & components",
-      "Handoff-ready production files"
+      "Responsive & mobile-first layouts",
+      "SEO-friendly architecture",
+      "CMS & headless options",
+      "Performance optimization",
+      "Secure authentication & APIs",
+      "Ongoing support & iterations"
     ],
     "tech": [
-      "Figma",
-      "Adobe Suite",
-      "Framer",
-      "Principle",
-      "Illustrator"
+      "React",
+      "Next.js",
+      "Node.js",
+      "TypeScript",
+      "Tailwind"
     ],
     "outcomes": [
-      "Clearer product interfaces",
-      "Stronger brand consistency",
-      "Faster design-to-dev handoff"
+      "Faster page loads",
+      "Higher conversion rates",
+      "Easier content updates"
     ],
     "faqs": [
       {
-        "q": "What deliverables do I receive with graphic design projects?",
-        "a": "You receive complete source files (Figma, Adobe Illustrator, Photoshop) alongside optimized production exports (SVG, PNG, WebP, PDF) and style guides."
+        "q": "How much does custom web development cost?",
+        "a": "The cost depends on the website’s size, design complexity, required features, integrations, content needs, and technology stack. A focused business website costs less than a custom portal, e-commerce platform, or SaaS application.",
+        "title": "How much does custom web development cost?",
+        "desc": "The cost depends on the website’s size, design complexity, required features, integrations, content needs, and technology stack. A focused business website costs less than a custom portal, e-commerce platform, or SaaS application."
       },
       {
-        "q": "Can you work within our existing brand guidelines?",
-        "a": "Yes. We can strictly adhere to your existing brand assets and style rules, or help modernize and expand them if needed."
+        "q": "How long does it take to develop a custom website?",
+        "a": "A focused business website may take approximately four to eight weeks, while a complex web application can require several months. The timeline depends on scope, feedback cycles, integrations, content readiness, testing requirements, and the speed of approvals.",
+        "title": "How long does it take to develop a custom website?",
+        "desc": "A focused business website may take approximately four to eight weeks, while a complex web application can require several months. The timeline depends on scope, feedback cycles, integrations, content readiness, testing requirements, and the speed of approvals."
       },
       {
-        "q": "How long does a brand identity or design project take?",
-        "a": "Individual design assets typically take 3-5 days, while complete brand identity and design systems range from 2 to 4 weeks depending on scope."
+        "q": "Which technologies do you use for web development?",
+        "a": "We work with technologies such as React, Next.js, TypeScript, Node.js, Laravel, WordPress, APIs, databases, and AWS. We recommend the stack after reviewing your functionality, performance requirements, existing systems, and long-term plans.",
+        "title": "Which technologies do you use for web development?",
+        "desc": "We work with technologies such as React, Next.js, TypeScript, Node.js, Laravel, WordPress, APIs, databases, and AWS. We recommend the stack after reviewing your functionality, performance requirements, existing systems, and long-term plans."
       },
       {
-        "q": "Do you provide revisions during the design process?",
-        "a": "Yes, we provide structured iterative review stages to ensure the final design meets your exact expectations and standards before sign-off."
+        "q": "Do you provide website maintenance after launch?",
+        "a": "Yes. Post-launch support can include security updates, bug fixes, performance monitoring, backups, feature improvements, content changes, and compatibility updates.",
+        "title": "Do you provide website maintenance after launch?",
+        "desc": "Yes. Post-launch support can include security updates, bug fixes, performance monitoring, backups, feature improvements, content changes, and compatibility updates."
       },
       {
-        "q": "Do you design for both digital and print?",
-        "a": "Yes, we prepare high-resolution CMYK print files with bleed margins as well as RGB web-optimized assets."
+        "q": "Should I choose a custom website or a template?",
+        "a": "A template may work for a simple website with standard requirements and a limited budget. Custom development is the stronger choice when you need unique functionality, integrations, greater design control, scalability, or workflows that templates cannot support effectively.",
+        "title": "Should I choose a custom website or a template?",
+        "desc": "A template may work for a simple website with standard requirements and a limited budget. Custom development is the stronger choice when you need unique functionality, integrations, greater design control, scalability, or workflows that templates cannot support effectively."
       }
     ],
-    "techDesc": "We select technologies according to the project’s functionality, performance requirements, integrations, and future roadmap.\n\nThe goal is not to use the newest technology for its own sake. It is to choose a dependable stack that fits your product, supports maintainability, and avoids unnecessary technical complexity.",
+    "techDesc": "We select technologies according to the project’s functionality, performance requirements, integrations, and future roadmap. Our web development stack includes React, Next.js, TypeScript, Node.js, Laravel, WordPress, relational and non-relational databases, REST APIs, and AWS cloud infrastructure.\n\nThe goal is not to use the newest technology for its own sake. It is to choose a dependable stack that fits your product, supports maintainability, and avoids unnecessary technical complexity.",
     "techTitle": "Technologies We Use",
-    "businessTypesItems": [],
-    "businessTypesText": "",
-    "faqsText": "What deliverables do I receive with graphic design projects? | You receive complete source files (Figma, Adobe Illustrator, Photoshop) alongside optimized production exports (SVG, PNG, WebP, PDF) and style guides.\n\nCan you work within our existing brand guidelines? | Yes. We can strictly adhere to your existing brand assets and style rules, or help modernize and expand them if needed.\n\nHow long does a brand identity or design project take? | Individual design assets typically take 3-5 days, while complete brand identity and design systems range from 2 to 4 weeks depending on scope.\n\nDo you provide revisions during the design process? | Yes, we provide structured iterative review stages to ensure the final design meets your exact expectations and standards before sign-off.\n\nDo you design for both digital and print? | Yes, we prepare high-resolution CMYK print files with bleed margins as well as RGB web-optimized assets.",
+    "faqsText": "How much does custom web development cost? | The cost depends on the website’s size, design complexity, required features, integrations, content needs, and technology stack. A focused business website costs less than a custom portal, e-commerce platform, or SaaS application.\n\nHow long does it take to develop a custom website? | A focused business website may take approximately four to eight weeks, while a complex web application can require several months. The timeline depends on scope, feedback cycles, integrations, content readiness, testing requirements, and the speed of approvals.\n\nWhich technologies do you use for web development? | We work with technologies such as React, Next.js, TypeScript, Node.js, Laravel, WordPress, APIs, databases, and AWS. We recommend the stack after reviewing your functionality, performance requirements, existing systems, and long-term plans.\n\nDo you provide website maintenance after launch? | Yes. Post-launch support can include security updates, bug fixes, performance monitoring, backups, feature improvements, content changes, and compatibility updates.\n\nShould I choose a custom website or a template? | A template may work for a simple website with standard requirements and a limited budget. Custom development is the stronger choice when you need unique functionality, integrations, greater design control, scalability, or workflows that templates cannot support effectively.",
+    "whyChooseItems": [
+      {
+        "title": "Performance-Focused Development",
+        "desc": "We use clean code, optimized assets, responsive layouts, and practical performance testing to create websites that load quickly and work smoothly across devices.",
+        "q": "Performance-Focused Development",
+        "a": "We use clean code, optimized assets, responsive layouts, and practical performance testing to create websites that load quickly and work smoothly across devices."
+      },
+      {
+        "title": "Security Built into Development",
+        "desc": "We prioritize security throughout the project rather than treating it as an afterthought. We implement secure authentication, access permissions, data-handling practices, dependency management, and deployment controls based on your solution’s requirements.",
+        "q": "Security Built into Development",
+        "a": "We prioritize security throughout the project rather than treating it as an afterthought. We implement secure authentication, access permissions, data-handling practices, dependency management, and deployment controls based on your solution’s requirements."
+      },
+      {
+        "title": "SEO-Ready Foundations",
+        "desc": "Your website is developed with clean structure, responsive design, crawlable content, metadata controls, and performance fundamentals. These technical foundations make it easier for your SEO strategy to produce results after launch.",
+        "q": "SEO-Ready Foundations",
+        "a": "Your website is developed with clean structure, responsive design, crawlable content, metadata controls, and performance fundamentals. These technical foundations make it easier for your SEO strategy to produce results after launch."
+      },
+      {
+        "title": "Structured, Transparent Delivery",
+        "desc": "Clear milestones, defined deliverables, regular progress updates, and staged reviews keep the project moving and reduce avoidable surprises. You know what is being developed, what has been completed, and what comes next.",
+        "q": "Structured, Transparent Delivery",
+        "a": "Clear milestones, defined deliverables, regular progress updates, and staged reviews keep the project moving and reduce avoidable surprises. You know what is being developed, what has been completed, and what comes next."
+      }
+    ],
+    "whyChooseTitle": "Why Choose Cubixsol for Web Development?",
     "serviceProcessSteps": [
       {
         "stepNumber": "01",
-        "title": "Creative Brief & Research",
-        "desc": "We analyze your brand values, target demographic, competitor landscape, and aesthetic preferences.",
+        "title": "Discovery",
+        "desc": "We clarify your goals, target users, technical requirements, required integrations, project scope, and measures of success.",
         "image": "",
         "points": []
       },
       {
         "stepNumber": "02",
-        "title": "Concept Exploration",
-        "desc": "Our designers develop multiple initial directions, mood boards, and sketch concepts for review.",
+        "title": "Design",
+        "desc": "Our team plans the user journey, information architecture, wireframes, and interface design before development begins.",
         "image": "",
         "points": []
       },
       {
         "stepNumber": "03",
-        "title": "Design Refinement",
-        "desc": "We polish the chosen direction, fine-tuning typography, contrast, spacing, and brand harmony.",
+        "title": "Development",
+        "desc": "Frontend and backend developers convert the approved designs and requirements into a functional, scalable web solution.",
         "image": "",
         "points": []
       },
       {
         "stepNumber": "04",
-        "title": "Production & Formats",
-        "desc": "We generate all required asset sizes, SVG exports, print bleed setups, and digital variants.",
+        "title": "Testing",
+        "desc": "We test functionality, responsiveness, browser compatibility, accessibility, performance, integrations, and security before release.",
         "image": "",
         "points": []
       },
       {
         "stepNumber": "05",
-        "title": "Handoff & Guidelines",
-        "desc": "Delivery of organized source files (Figma, AI, PSD), style documentation, and usage guidelines.",
+        "title": "Launch and Support",
+        "desc": "After deployment, we monitor the website, resolve launch issues, and provide ongoing maintenance or development support when required.",
         "image": "",
         "points": []
       }
     ],
-    "serviceProcessText": "01 | Creative Brief & Research | We analyze your brand values, target demographic, competitor landscape, and aesthetic preferences.\n\n02 | Concept Exploration | Our designers develop multiple initial directions, mood boards, and sketch concepts for review.\n\n03 | Design Refinement | We polish the chosen direction, fine-tuning typography, contrast, spacing, and brand harmony.\n\n04 | Production & Formats | We generate all required asset sizes, SVG exports, print bleed setups, and digital variants.\n\n05 | Handoff & Guidelines | Delivery of organized source files (Figma, AI, PSD), style documentation, and usage guidelines.",
+    "serviceProcessTitle": "Our Web Development Process",
+    "subServicesIntro": "We create websites and web applications that combine clean design, reliable technology, and practical business functionality. Every solution is built to perform across devices, support future growth, and provide a smooth experience for both users and administrators.",
     "subServicesItems": [
       {
-        "title": "Brand Identity & Logo Design",
-        "desc": "We design memorable logos, color palettes, typography scales, and brand style guides that establish a cohesive, recognizable identity across all company touchpoints."
+        "title": "Custom Websites",
+        "desc": "Build a website shaped around your brand, audience, and business objectives. Our custom websites include responsive layouts, intuitive navigation, scalable architecture, content management capabilities, and integrations with the tools your team already uses.",
+        "q": "Custom Websites",
+        "a": "Build a website shaped around your brand, audience, and business objectives. Our custom websites include responsive layouts, intuitive navigation, scalable architecture, content management capabilities, and integrations with the tools your team already uses."
       },
       {
-        "title": "UI/UX & Web Design Graphics",
-        "desc": "Engaging website banners, icons, feature illustrations, and user interface visuals designed to improve conversions and user retention."
+        "title": "Web Application Development Services",
+        "desc": "Our **web application development services** turn complex ideas and business processes into secure, user-friendly digital products. We develop customer portals, SaaS platforms, internal dashboards, booking systems, workflow tools, and other browser-based applications with functionality customized to your requirements.",
+        "q": "Web Application Development Services",
+        "a": "Our **web application development services** turn complex ideas and business processes into secure, user-friendly digital products. We develop customer portals, SaaS platforms, internal dashboards, booking systems, workflow tools, and other browser-based applications with functionality customized to your requirements."
       },
       {
-        "title": "Marketing & Social Media Creatives",
-        "desc": "Custom social media post templates, ad creatives for Meta/Google, pitch decks, infographics, and campaign graphics built to drive engagement."
+        "title": "Ecommerce Web Development Services",
+        "desc": "Our **ecommerce web development services** help businesses create convenient and reliable online shopping experiences. We build product catalogs, secure checkout flows, payment integrations, inventory features, customer accounts, order-management systems, and mobile-responsive storefronts designed to support conversions and growth.",
+        "q": "Ecommerce Web Development Services",
+        "a": "Our **ecommerce web development services** help businesses create convenient and reliable online shopping experiences. We build product catalogs, secure checkout flows, payment integrations, inventory features, customer accounts, order-management systems, and mobile-responsive storefronts designed to support conversions and growth."
       },
       {
-        "title": "Print & Packaging Design",
-        "desc": "Brochures, flyers, business stationery, merchandise, and retail packaging designed with exact print specifications and high-resolution output."
+        "title": "Frontend Development Services with React",
+        "desc": "Our **frontend development services** focus on creating fast, accessible, and responsive user interfaces. Through our **React development services**, we build reusable components, interactive features, and consistent experiences that work smoothly across modern browsers, screen sizes, and devices.",
+        "q": "Frontend Development Services with React",
+        "a": "Our **frontend development services** focus on creating fast, accessible, and responsive user interfaces. Through our **React development services**, we build reusable components, interactive features, and consistent experiences that work smoothly across modern browsers, screen sizes, and devices."
       },
       {
-        "title": "Custom 2D/3D Illustrations",
-        "desc": "Unique digital illustrations and 3D visual elements tailored to your brand narrative, making complex products feel intuitive and premium."
+        "title": "Backend Development Services and APIs",
+        "desc": "Our **backend development services** provide the secure foundation behind your website or application. We develop databases, APIs, authentication systems, business logic, third-party integrations, and administrative tools that keep your platform reliable, maintainable, and ready to scale.",
+        "q": "Backend Development Services and APIs",
+        "a": "Our **backend development services** provide the secure foundation behind your website or application. We develop databases, APIs, authentication systems, business logic, third-party integrations, and administrative tools that keep your platform reliable, maintainable, and ready to scale."
+      },
+      {
+        "title": "CMS Development",
+        "desc": "Manage your website without relying on a developer for every content update. We build and customize WordPress, headless CMS, and other content-management solutions that give your team control while preserving performance, security, and design consistency.",
+        "q": "CMS Development",
+        "a": "Manage your website without relying on a developer for every content update. We build and customize WordPress, headless CMS, and other content-management solutions that give your team control while preserving performance, security, and design consistency."
       }
     ],
-    "subServicesText": "Brand Identity & Logo Design | We design memorable logos, color palettes, typography scales, and brand style guides that establish a cohesive, recognizable identity across all company touchpoints.\n\nUI/UX & Web Design Graphics | Engaging website banners, icons, feature illustrations, and user interface visuals designed to improve conversions and user retention.\n\nMarketing & Social Media Creatives | Custom social media post templates, ad creatives for Meta/Google, pitch decks, infographics, and campaign graphics built to drive engagement.\n\nPrint & Packaging Design | Brochures, flyers, business stationery, merchandise, and retail packaging designed with exact print specifications and high-resolution output.\n\nCustom 2D/3D Illustrations | Unique digital illustrations and 3D visual elements tailored to your brand narrative, making complex products feel intuitive and premium.",
-    "whyChooseItems": [
-      {
-        "title": "Tailored Brand Alignment",
-        "desc": "Every visual asset is crafted around your unique audience, industry positioning, and business goals."
-      },
-      {
-        "title": "Multi-Format Production Ready",
-        "desc": "Handoff-ready vector files, responsive web assets, and print-ready deliverables in all required industry formats."
-      },
-      {
-        "title": "Fast Turnaround with Iterations",
-        "desc": "Structured creative phases with concept exploration, feedback cycles, and clear milestone deliveries."
-      },
-      {
-        "title": "Unified Design Systems",
-        "desc": "We ensure long-term consistency with complete component libraries, guidelines, and scalable design assets."
-      }
-    ],
-    "whyChooseText": "Tailored Brand Alignment | Every visual asset is crafted around your unique audience, industry positioning, and business goals.\n\nMulti-Format Production Ready | Handoff-ready vector files, responsive web assets, and print-ready deliverables in all required industry formats.\n\nFast Turnaround with Iterations | Structured creative phases with concept exploration, feedback cycles, and clear milestone deliveries.\n\nUnified Design Systems | We ensure long-term consistency with complete component libraries, guidelines, and scalable design assets.",
-    "menuTitle": "Graphic Design",
-    "serviceProcessTitle": "Our Graphic Design Process",
-    "subServicesIntro": "We deliver professional graphic design services that help businesses build a consistent visual identity, communicate their value clearly, and create polished creative assets across digital and print media.",
-    "subServicesTitle": "Our Graphic Design Services",
-    "whyChooseIntro": "We combine artistic excellence with strategic brand thinking to create designs that elevate your company.",
-    "whyChooseTitle": "Why Choose Cubixsol for Graphic Design?",
-    "ctaBannerButtonText": "Request a Design Quote",
-    "ctaBannerDesc": "Transform your visual presence with Cubixsol’s **professional graphic design services** for branding, marketing assets, and scalable design systems.",
-    "ctaBannerEyebrow": "STAND OUT WITH DISTINCTIVE DESIGN",
-    "ctaBannerTitle": "Ready to Elevate Your Brand Identity?"
+    "subServicesTitle": "Our Custom Web Development Services",
+    "businessTypesItems": [],
+    "businessTypesText": "",
+    "serviceProcessText": "01 | Discovery | We clarify your goals, target users, technical requirements, required integrations, project scope, and measures of success.\n\n02 | Design | Our team plans the user journey, information architecture, wireframes, and interface design before development begins.\n\n03 | Development | Frontend and backend developers convert the approved designs and requirements into a functional, scalable web solution.\n\n04 | Testing | We test functionality, responsiveness, browser compatibility, accessibility, performance, integrations, and security before release.\n\n05 | Launch and Support | After deployment, we monitor the website, resolve launch issues, and provide ongoing maintenance or development support when required.",
+    "subServicesText": "Custom Websites | Build a website shaped around your brand, audience, and business objectives. Our custom websites include responsive layouts, intuitive navigation, scalable architecture, content management capabilities, and integrations with the tools your team already uses.\n\nWeb Application Development Services | Our **web application development services** turn complex ideas and business processes into secure, user-friendly digital products. We develop customer portals, SaaS platforms, internal dashboards, booking systems, workflow tools, and other browser-based applications with functionality customized to your requirements.\n\nEcommerce Web Development Services | Our **ecommerce web development services** help businesses create convenient and reliable online shopping experiences. We build product catalogs, secure checkout flows, payment integrations, inventory features, customer accounts, order-management systems, and mobile-responsive storefronts designed to support conversions and growth.\n\nFrontend Development Services with React | Our **frontend development services** focus on creating fast, accessible, and responsive user interfaces. Through our **React development services**, we build reusable components, interactive features, and consistent experiences that work smoothly across modern browsers, screen sizes, and devices.\n\nBackend Development Services and APIs | Our **backend development services** provide the secure foundation behind your website or application. We develop databases, APIs, authentication systems, business logic, third-party integrations, and administrative tools that keep your platform reliable, maintainable, and ready to scale.\n\nCMS Development | Manage your website without relying on a developer for every content update. We build and customize WordPress, headless CMS, and other content-management solutions that give your team control while preserving performance, security, and design consistency.",
+    "whyChooseText": "Performance-Focused Development | We use clean code, optimized assets, responsive layouts, and practical performance testing to create websites that load quickly and work smoothly across devices.\n\nSecurity Built into Development | We prioritize security throughout the project rather than treating it as an afterthought. We implement secure authentication, access permissions, data-handling practices, dependency management, and deployment controls based on your solution’s requirements.\n\nSEO-Ready Foundations | Your website is developed with clean structure, responsive design, crawlable content, metadata controls, and performance fundamentals. These technical foundations make it easier for your SEO strategy to produce results after launch.\n\nStructured, Transparent Delivery | Clear milestones, defined deliverables, regular progress updates, and staged reviews keep the project moving and reduce avoidable surprises. You know what is being developed, what has been completed, and what comes next.",
+    "ctaBannerButtonText": "Get a Free Consultation",
+    "ctaBannerDesc": "Choose us as your **custom web development company** and move from idea to launch with a clear plan, experienced specialists, and dependable technical support.",
+    "ctaBannerEyebrow": "HAVE A WEB PROJECT IN MIND?",
+    "ctaBannerTitle": "Ready to Build Your Web Application? Let’s Talk"
   },
   {
     "seo": {
@@ -355,413 +1250,164 @@ const initialServices = [
   },
   {
     "seo": {
-      "metaTitle": "PHP Development Services | Cubixsol",
-      "metaDescription": "Laravel, CodeIgniter, CakePHP, and ongoing PHP maintenance for reliable backend systems.",
-      "keywords": "PHP, Laravel, CodeIgniter, CakePHP, MySQL, Redis",
-      "ogTitle": "PHP Development Services | Cubixsol",
-      "ogDescription": "Laravel, CodeIgniter, CakePHP, and ongoing PHP maintenance for reliable backend systems.",
-      "ogImage": "https://images.unsplash.com/photo-1599507593499-a69270d22dc9?auto=format&fit=crop&w=1000&h=750&q=70",
+      "metaTitle": "DevOps Consulting Services | Cubixsol",
+      "metaDescription": "Cubixsol delivers DevOps consulting — CI/CD, infrastructure as code, and reliable cloud ops that keep releases fast and systems stable. Free consult.\n",
+      "keywords": "",
+      "ogTitle": "",
+      "ogDescription": "",
+      "ogImage": "",
       "canonicalUrl": ""
     },
-    "icon": "/uploads/media-1788761191368-719289353.svg",
-    "slug": "php-development",
-    "heroImage": "/uploads/media-1788760355443-290359679.svg",
-    "title": "PHP Development Services for High-Performance Web Solutions",
-    "desc": "Our professionals provide PHP development services for custom applications, customer portals, APIs, e-commerce systems, and platform upgrades.",
-    "color": "text-purple-600 bg-purple-50",
-    "gradient": "from-purple-500 to-indigo-600",
-    "longDesc": "Our professionals provide PHP development services for custom applications, customer portals, APIs, e-commerce systems, and platform upgrades. They combine clean architecture with proven PHP frameworks to support reliable performance, easier maintenance, and future growth.",
+    "icon": "/uploads/media-1788761191368-235481978.svg",
+    "slug": "devops",
+    "heroImage": "/uploads/media-1788760355429-241403522.svg",
+    "title": "DevOps Consulting Services for Scalable Software Delivery ",
+    "desc": "Improve software delivery, infrastructure, and application reliability with DevOps consulting services from Cubixsol.",
+    "color": "text-cyan-600 bg-cyan-50",
+    "gradient": "from-cyan-500 to-primary-600",
+    "longDesc": "Improve software delivery, infrastructure, and application reliability with DevOps consulting services from Cubixsol. We help businesses automate deployment workflows, manage cloud environments, improve infrastructure, and monitor application performance. Our team can build a new DevOps environment or improve an existing setup based on your application, technical requirements, and development goals.",
     "features": [
-      "CakePHP Development",
-      "Laravel Development",
-      "CodeIgniter Development",
-      "PHP Maintenance and Support",
-      "Legacy modernization",
-      "API backends in PHP",
-      "Security hardening & upgrades",
-      "Performance and caching"
+      "CI/CD pipelines (GitHub Actions, GitLab CI, Jenkins)",
+      "Infrastructure as Code (Terraform, CloudFormation)",
+      "Containerization with Docker & Kubernetes",
+      "Cloud setup on AWS, GCP, and Azure",
+      "Monitoring, logging & alerting",
+      "Security scanning & secrets management",
+      "Automated testing in the pipeline",
+      "Release strategies (blue/green, canary)"
     ],
     "tech": [
-      "PHP",
-      "Laravel",
-      "CodeIgniter",
-      "CakePHP",
-      "MySQL",
-      "Redis"
+      "Docker",
+      "Kubernetes",
+      "Terraform",
+      "AWS",
+      "GitHub Actions",
+      "Prometheus"
     ],
     "outcomes": [
-      "Stable, maintainable backends",
-      "Safer upgrades from legacy code",
-      "Faster feature delivery on PHP stacks"
-    ],
-    "faqs": [
-      {
-        "q": "How much do PHP development services cost?",
-        "a": "PHP development costs depend on the application’s size, features, design requirements, integrations, security needs, and technical complexity. Cubixsol reviews your requirements before providing a clear estimate based on the actual project scope."
-      },
-      {
-        "q": "How long does PHP development take?",
-        "a": "A focused website or application upgrade can take several weeks, while a complex platform can require several months. We provide a realistic delivery schedule after reviewing the features, integrations, technical risks, and testing requirements."
-      },
-      {
-        "q": "Which PHP frameworks do you use?",
-        "a": "Our developers work with Laravel, CodeIgniter, and CakePHP. We recommend a framework based on the project’s architecture, complexity, performance needs, existing codebase, development timeline, and long-term maintenance requirements."
-      },
-      {
-        "q": "Do you provide PHP maintenance and support?",
-        "a": "Yes. we provides ongoing PHP maintenance, including bug fixes, framework updates, security improvements, database optimization, performance monitoring, code refactoring, and new feature development."
-      },
-      {
-        "q": "Can I hire a PHP developer from Cubixsol?",
-        "a": "Yes. You can hire a PHP developer or a complete development team based on your project scope. We establish responsibilities, milestones, communication routines, and reporting expectations before development begins."
-      }
-    ],
-    "techDesc": "We use supported, project-appropriate technologies to build dependable PHP applications. Our stack includes PHP 8.x, Laravel, CodeIgniter, CakePHP, MySQL, REST APIs, Composer, Git, HTML5, CSS3, and JavaScript. Technology choices depend on performance requirements, product complexity, existing infrastructure, integration needs, and future development plans.\n",
-    "techTitle": "Technologies We Use",
-    "businessTypesItems": [],
-    "ctaBannerButtonText": "Start Your PHP Project",
-    "ctaBannerDesc": "Use Cubixsol’s PHP development services to build, improve, or modernise a secure web application aligned with your business goals. Share your requirements with our team and receive a practical development plan.\n",
-    "ctaBannerEyebrow": "",
-    "ctaBannerTitle": "Ready to Start Your PHP Project?",
-    "serviceProcessSteps": [
-      {
-        "stepNumber": "01",
-        "title": "Discover",
-        "desc": "We examine your business goals, users, workflows, existing systems, technical requirements, and project priorities.",
-        "image": "",
-        "points": []
-      },
-      {
-        "stepNumber": "02",
-        "title": "Plan",
-        "desc": "Our team defines the architecture, features, integrations, development milestones, and delivery roadmap.",
-        "image": "",
-        "points": []
-      },
-      {
-        "stepNumber": "03",
-        "title": "Build",
-        "desc": "Developers create the frontend, backend, database structure, APIs, and required integrations through manageable development stages.",
-        "image": "",
-        "points": []
-      },
-      {
-        "stepNumber": "04",
-        "title": "Test",
-        "desc": "We test functionality, responsiveness, security, performance, browser compatibility, and important user journeys before release.",
-        "image": "",
-        "points": []
-      },
-      {
-        "stepNumber": "05",
-        "title": "Launch and Support",
-        "desc": "Our team deploys the application, monitors performance, resolves launch issues, and provides ongoing maintenance when required.",
-        "image": "",
-        "points": []
-      }
-    ],
-    "subServicesItems": [
-      {
-        "title": "Custom PHP Web Development Services",
-        "desc": "Our custom **PHP development services** turn complex workflows into perfect web applications. We develop SaaS platforms, admin dashboards, customer portals, booking systems, marketplaces, and internal tools with clear architecture and room for growth. Our **PHP web development services** also connect responsive interfaces with dependable backend functionality for smooth user and administrator experiences."
-      },
-      {
-        "title": "Laravel Development Services",
-        "desc": "We use Laravel for structured, feature-rich applications involving secure authentication, role management, queues, dashboards, third-party integrations, or complex business logic. Our Laravel development services support new applications, platform migrations, feature expansion, performance improvements, and long-term product maintenance."
-      },
-      {
-        "title": "CodeIgniter and CakePHP Development",
-        "desc": "CodeIgniter supports lightweight, performance-focused applications, while CakePHP provides an organised framework for rapidly developing structured web products. We select the most suitable option based on project goals, existing architecture, application complexity, development speed, and long-term ownership requirements."
-      },
-      {
-        "title": "PHP Maintenance and Modernisation",
-        "desc": "Keep existing PHP applications secure, stable, and useful through version upgrades, bug fixes, code refactoring, database optimisation, security improvements, and performance tuning. We can also modernise legacy PHP systems through carefully planned phases to minimise disruption and preserve important business data."
-      },
-      {
-        "title": "PHP API Development and Integration",
-        "desc": "We create secure APIs and connect PHP applications with payment gateways, CRMs, ERPs, shipping platforms, analytics tools, cloud services, and other business systems. Clear documentation, authentication controls, and reliable data exchange make every integration easier to manage and maintain."
-      }
-    ],
-    "whyChooseItems": [
-      {
-        "title": "Quality-focused development",
-        "desc": "We follow clean coding practices, review important components, and test critical workflows before deployment.",
-        "q": "Quality-focused development",
-        "a": "We follow clean coding practices, review important components, and test critical workflows before deployment."
-      },
-      {
-        "title": "Reliable project delivery",
-        "desc": "Defined milestones, realistic schedules, and regular progress reviews keep development moving in the right direction.",
-        "q": "Reliable project delivery",
-        "a": "Defined milestones, realistic schedules, and regular progress reviews keep development moving in the right direction."
-      },
-      {
-        "title": "Transparent communication",
-        "desc": "You receive clear updates about completed work, upcoming priorities, technical decisions, and potential project risks.",
-        "q": "Transparent communication",
-        "a": "You receive clear updates about completed work, upcoming priorities, technical decisions, and potential project risks."
-      },
-      {
-        "title": "Ongoing technical support",
-        "desc": "Our team can handle updates, security improvements, performance optimization, bug fixes, and future feature development after launch.",
-        "q": "Ongoing technical support",
-        "a": "Our team can handle updates, security improvements, performance optimization, bug fixes, and future feature development after launch."
-      }
-    ],
-    "additionalParagraph": "Cubixsol’s **PHP development services** cover strategy, architecture, interface development, backend engineering, database design, integrations, testing, deployment, and ongoing support. We build new digital products and improve existing PHP systems around practical business workflows. Every project focuses on clean code, secure data handling, responsive experiences, stable performance, and a flexible foundation for future features.",
-    "ctaPrimaryText": "Start Your PHP Project",
-    "ctaSecondaryText": "Get a Free Estimate",
-    "faqsText": "How much do PHP development services cost? | PHP development costs depend on the application’s size, features, design requirements, integrations, security needs, and technical complexity. Cubixsol reviews your requirements before providing a clear estimate based on the actual project scope.\nHow long does PHP development take? | A focused website or application upgrade can take several weeks, while a complex platform can require several months. We provide a realistic delivery schedule after reviewing the features, integrations, technical risks, and testing requirements.\nWhich PHP frameworks do you use? | Our developers work with Laravel, CodeIgniter, and CakePHP. We recommend a framework based on the project’s architecture, complexity, performance needs, existing codebase, development timeline, and long-term maintenance requirements.\nDo you provide PHP maintenance and support? | Yes. we provides ongoing PHP maintenance, including bug fixes, framework updates, security improvements, database optimization, performance monitoring, code refactoring, and new feature development.\nCan I hire a PHP developer from Cubixsol? | Yes. You can hire a PHP developer or a complete development team based on your project scope. We establish responsibilities, milestones, communication routines, and reporting expectations before development begins.",
-    "menuTitle": "Php",
-    "serviceProcessIntro": "Our five-step process keeps development organised, transparent, and focused on measurable project requirements.\n",
-    "serviceProcessText": "Discover | We examine your business goals, users, workflows, existing systems, technical requirements, and project priorities.\nPlan | Our team defines the architecture, features, integrations, development milestones, and delivery roadmap.\nBuild | Developers create the frontend, backend, database structure, APIs, and required integrations through manageable development stages.\nTest | We test functionality, responsiveness, security, performance, browser compatibility, and important user journeys before release.\nLaunch and Support | Our team deploys the application, monitors performance, resolves launch issues, and provides ongoing maintenance when required.",
-    "serviceProcessTitle": "Our PHP Development Process",
-    "subServicesIntro": "Our team develops reliable PHP solutions for businesses launching new products, modernising legacy platforms, or expanding existing applications. Each engagement begins with clear requirements and ends with a production-ready solution built for long-term use.",
-    "subServicesText": "Custom PHP Web Development Services | Our custom **PHP development services** turn complex workflows into perfect web applications. We develop SaaS platforms, admin dashboards, customer portals, booking systems, marketplaces, and internal tools with clear architecture and room for growth. Our **PHP web development services** also connect responsive interfaces with dependable backend functionality for smooth user and administrator experiences.\nLaravel Development Services | We use Laravel for structured, feature-rich applications involving secure authentication, role management, queues, dashboards, third-party integrations, or complex business logic. Our Laravel development services support new applications, platform migrations, feature expansion, performance improvements, and long-term product maintenance.\nCodeIgniter and CakePHP Development | CodeIgniter supports lightweight, performance-focused applications, while CakePHP provides an organised framework for rapidly developing structured web products. We select the most suitable option based on project goals, existing architecture, application complexity, development speed, and long-term ownership requirements.\nPHP Maintenance and Modernisation | Keep existing PHP applications secure, stable, and useful through version upgrades, bug fixes, code refactoring, database optimisation, security improvements, and performance tuning. We can also modernise legacy PHP systems through carefully planned phases to minimise disruption and preserve important business data.\nPHP API Development and Integration | We create secure APIs and connect PHP applications with payment gateways, CRMs, ERPs, shipping platforms, analytics tools, cloud services, and other business systems. Clear documentation, authentication controls, and reliable data exchange make every integration easier to manage and maintain.",
-    "subServicesTitle": "Our PHP Development Services",
-    "whyChooseIntro": "Our experts combines practical engineering with clear project communication to deliver PHP solutions built for real business use.\n",
-    "whyChooseText": "- Quality-focused development: We follow clean coding practices, review important components, and test critical workflows before deployment.\n- Reliable project delivery: Defined milestones, realistic schedules, and regular progress reviews keep development moving in the right direction.\n- Transparent communication: You receive clear updates about completed work, upcoming priorities, technical decisions, and potential project risks.\n- Ongoing technical support: Our team can handle updates, security improvements, performance optimization, bug fixes, and future feature development after launch.",
-    "whyChooseTitle": "Why Choose Cubixsol?"
-  },
-  {
-    "seo": {
-      "metaTitle": "CMS Development Services | Cubixsol",
-      "metaDescription": "WordPress, Shopify, Magento, and more — CMS builds that are fast to manage and ready to grow.",
-      "keywords": "WordPress, Shopify, Magento, WooCommerce, PHP, Liquid",
-      "ogTitle": "CMS Development Services | Cubixsol",
-      "ogDescription": "WordPress, Shopify, Magento, and more — CMS builds that are fast to manage and ready to grow.",
-      "ogImage": "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&w=1000&h=750&q=70",
-      "canonicalUrl": ""
-    },
-    "icon": "/uploads/media-1788761191368-390026375.svg",
-    "slug": "cms-development",
-    "heroImage": "/uploads/media-1788760355423-686594247.svg",
-    "title": "CMS Development",
-    "desc": "We build a flexible CMS around your workflows, publishing requirements, integrations, and approval processes, so your team can manage content without technical bottlenecks. ",
-    "color": "text-violet-600 bg-violet-50",
-    "gradient": "from-violet-500 to-purple-600",
-    "longDesc": "We build and customize content platforms so your team can publish, sell, and iterate without fighting the CMS. From WordPress and Shopify to Magento, BigCommerce, Joomla, and OpenCart — clean themes, solid plugins, and performance that holds up.",
-    "features": [
-      "Magento Development",
-      "Shopify Development",
-      "WordPress Development",
-      "BigCommerce Development",
-      "Joomla Development",
-      "OpenCart Development",
-      "Theme & plugin customization",
-      "Migrations and performance tuning"
-    ],
-    "tech": [
-      "WordPress",
-      "Shopify",
-      "Magento",
-      "WooCommerce",
-      "PHP",
-      "Liquid"
-    ],
-    "outcomes": [
-      "Easier content and catalog updates",
-      "Faster storefront performance",
-      "Cleaner admin workflows"
+      "Faster, safer releases",
+      "Fewer production incidents",
+      "Clearer visibility into system health"
     ],
     "faqs": [],
-    "techDesc": "We select technologies according to the project’s functionality, performance requirements, integrations, and future roadmap.\n\nThe goal is not to use the newest technology for its own sake. It is to choose a dependable stack that fits your product, supports maintainability, and avoids unnecessary technical complexity.",
+    "techDesc": "Our DevOps technology stack includes Docker, Kubernetes, Terraform, Jenkins, GitHub Actions, and AWS. Tool selection depends on your application architecture, deployment workflow, infrastructure, and project requirements.\n\nWe use the combination best suited to the environment rather than applying the same stack to every project",
     "techTitle": "Technologies We Use",
     "businessTypesItems": [],
-    "ctaBannerButtonText": "Get Started with CMS",
-    "ctaBannerDesc": "Empower your marketing team to publish and manage content effortlessly with our **custom CMS development services**.",
-    "ctaBannerEyebrow": "TAKE CONTROL OF YOUR CONTENT",
-    "ctaBannerTitle": "Ready for a Scalable CMS Solution?",
-    "serviceProcessSteps": [],
-    "subServicesItems": [],
-    "whyChooseItems": [],
-    "cardTitle": "CMS Development"
-  },
-  {
-    "seo": {
-      "metaTitle": "API Development & Integration Services | Cubixsol",
-      "metaDescription": "Secure APIs, PMS connections, and payment gateways that connect your product to the tools your business runs on.",
-      "keywords": "Node.js, Python, REST, GraphQL, Stripe, OAuth",
-      "ogTitle": "API Development & Integration Services | Cubixsol",
-      "ogDescription": "Secure APIs, PMS connections, and payment gateways that connect your product to the tools your business runs on.",
-      "ogImage": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&h=750&q=70",
-      "canonicalUrl": ""
-    },
-    "icon": "/uploads/media-1788761191368-839736527.svg",
-    "slug": "api-development-and-integration",
-    "heroImage": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&h=750&q=70",
-    "title": "API Development & Integration Services",
-    "desc": "Connect applications, data, payment gateways, and third-party platforms through secure custom APIs and dependable system integrations.",
-    "color": "text-indigo-600 bg-indigo-50",
-    "gradient": "from-indigo-500 to-violet-600",
-    "longDesc": "Connect your applications, platforms, and business systems with reliable APIs built for your specific requirements. Cubixsol provides API development services for businesses seeking secure data exchange, custom integrations, payment connections, and dependable digital products.",
-    "features": [
-      "Custom REST & GraphQL API design",
-      "API Integration with third-party platforms",
-      "PMS Integration (property & booking systems)",
-      "Payment Gateways (Stripe, PayPal, local providers)",
-      "Webhooks, events & real-time sync",
-      "Auth, rate limits & API security",
-      "Documentation & developer portals",
-      "Monitoring, retries & error handling"
-    ],
-    "tech": [
-      "Node.js",
-      "Python",
-      "REST",
-      "GraphQL",
-      "Stripe",
-      "OAuth"
-    ],
-    "outcomes": [
-      "Systems that stay in sync",
-      "Faster checkout and bookings",
-      "Fewer manual handoffs between tools"
-    ],
-    "faqs": [
-      {
-        "q": "How much does API development cost?",
-        "a": "API development costs depend on the project scope, API complexity, integrations, security requirements, and existing systems. A simple API usually needs less development work than a project connecting several third-party platforms. Cubixsol can review your requirements and provide a project-specific estimate.",
-        "title": "How much does API development cost?",
-        "desc": "API development costs depend on the project scope, API complexity, integrations, security requirements, and existing systems. A simple API usually needs less development work than a project connecting several third-party platforms. Cubixsol can review your requirements and provide a project-specific estimate."
-      },
-      {
-        "q": "How long does API development take?",
-        "a": "The timeline depends on the API features, integrations, testing requirements, and technical complexity. A simple API may take less time than a larger integration involving several systems. We can review your requirements first and provide a realistic project timeline.",
-        "title": "How long does API development take?",
-        "desc": "The timeline depends on the API features, integrations, testing requirements, and technical complexity. A simple API may take less time than a larger integration involving several systems. We can review your requirements first and provide a realistic project timeline."
-      },
-      {
-        "q": "What is the difference between REST and GraphQL?",
-        "a": "REST uses different endpoints to handle resources and works well for many common API projects. GraphQL lets applications request the specific data they need through a single API interface. The right choice depends on your application, data structure, frontend requirements, and existing technology.",
-        "title": "What is the difference between REST and GraphQL?",
-        "desc": "REST uses different endpoints to handle resources and works well for many common API projects. GraphQL lets applications request the specific data they need through a single API interface. The right choice depends on your application, data structure, frontend requirements, and existing technology."
-      },
-      {
-        "q": "How do you secure an API?",
-        "a": "API security can include authentication, authorisation, access controls, input validation, secure connections, and proper error handling. We consider security during API planning and development so the required controls are part of the solution from the start.",
-        "title": "How do you secure an API?",
-        "desc": "API security can include authentication, authorisation, access controls, input validation, secure connections, and proper error handling. We consider security during API planning and development so the required controls are part of the solution from the start."
-      },
-      {
-        "q": "Can you integrate third-party APIs with an existing application?",
-        "a": "Yes. We can connect existing applications with payment providers, SaaS platforms, databases, and other third-party services. We first review your current application and integration requirements, then plan and develop the required connection.",
-        "title": "Can you integrate third-party APIs with an existing application?",
-        "desc": "Yes. We can connect existing applications with payment providers, SaaS platforms, databases, and other third-party services. We first review your current application and integration requirements, then plan and develop the required connection."
-      }
-    ],
-    "techDesc": "We select technologies based on your application, existing systems, security needs, and integration requirements. Our API technology stack includes REST, GraphQL, Node.js, OAuth, Stripe, and Postman for building, connecting, testing, and managing API solutions.",
-    "techTitle": "Technologies We Use",
-    "businessTypesItems": [],
-    "ctaBannerButtonText": "Start Your API Project",
-    "ctaBannerDesc": "Need api development services for a new application or an existing product? Cubixsol can help you plan, build, integrate, test, and support an API solution based on your project requirements.",
-    "ctaBannerEyebrow": "SEAMLESS SYSTEM CONNECTIVITY",
+    "ctaBannerButtonText": "Start Your DevOps Project",
+    "ctaBannerDesc": "Improve your software delivery and infrastructure with **DevOps consulting services** from Cubixsol. Share your current setup or project requirements, and our team can help you plan the right solution.",
+    "ctaBannerEyebrow": "",
     "ctaBannerTitle": "Ready to Start Your Project?",
     "serviceProcessSteps": [
       {
         "stepNumber": "01",
         "title": "Discover",
-        "desc": "We review your application, existing systems, data requirements, users, and integration goals.",
-        "image": "",
+        "desc": "We begin by reviewing your applications, infrastructure, development workflow, deployment process, and technical requirements. Early discovery helps us understand current problems and define the areas that need attention.",
+        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=560&q=70",
         "points": []
       },
       {
         "stepNumber": "02",
         "title": "Plan",
-        "desc": "We define the API structure, endpoints, data flow, authentication, and technical requirements",
-        "image": "",
+        "desc": "Our team defines the DevOps approach, technology choices, infrastructure requirements, project scope, and delivery milestones. A clear plan helps everyone understand the work before implementation begins.",
+        "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&h=560&q=70",
         "points": []
       },
       {
         "stepNumber": "03",
         "title": "Build",
-        "desc": "Our team develops the API or integration according to the agreed project requirements.",
-        "image": "",
+        "desc": "We develop the required pipelines, infrastructure, automation, cloud setup, and monitoring solutions. Development follows the agreed scope while keeping technical decisions connected to your application requirements.",
+        "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&h=560&q=70",
         "points": []
       },
       {
         "stepNumber": "04",
         "title": "Test",
-        "desc": "We test requests, responses, authentication, error handling, security, and integration flows.",
-        "image": "",
+        "desc": "We test deployment workflows, infrastructure changes, application behaviour, and other important parts of the environment. Our team reviews identified issues and resolves them before production launch.",
+        "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=800&h=560&q=70",
         "points": []
       },
       {
         "stepNumber": "05",
-        "title": "Launch & Support",
-        "desc": "We help move the solution into production and provide support for updates, fixes, and future changes.",
-        "image": "",
+        "title": "Launch and Support",
+        "desc": "We support the production launch once the environment is ready. Ongoing support can include monitoring, troubleshooting, deployment assistance, infrastructure updates, and improvements to existing DevOps workflows.",
+        "image": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&h=560&q=70",
         "points": []
       }
     ],
     "subServicesItems": [
       {
-        "title": "Custom API Development",
-        "desc": "We build custom APIs for web applications, mobile apps, SaaS products, and internal business systems. Our team plans the API structure, endpoints, data flow, authentication, and business logic based on your project requirements.",
-        "q": "Custom API Development",
-        "a": "We build custom APIs for web applications, mobile apps, SaaS products, and internal business systems. Our team plans the API structure, endpoints, data flow, authentication, and business logic based on your project requirements."
+        "title": "Our DevOps Services",
+        "desc": "Our DevOps team helps businesses improve software delivery through automation, cloud infrastructure, monitoring, and modern development practices. Each service can support a new application, an existing system, or a wider infrastructure improvement project.",
+        "q": "Our DevOps Services",
+        "a": "Our DevOps team helps businesses improve software delivery through automation, cloud infrastructure, monitoring, and modern development practices. Each service can support a new application, an existing system, or a wider infrastructure improvement project."
       },
       {
-        "title": "API Integration",
-        "desc": "Connect your application with third-party platforms, SaaS tools, databases, and other business systems. Our API development and integration services help different systems share data and perform actions within a single connected workflow.",
-        "q": "API Integration",
-        "a": "Connect your application with third-party platforms, SaaS tools, databases, and other business systems. Our API development and integration services help different systems share data and perform actions within a single connected workflow."
+        "title": "CI/CD Pipeline Development",
+        "desc": "We build CI/CD pipelines to automate code building, testing, and deployment. Automated workflows reduce repetitive manual tasks and create a consistent process for moving application updates between development, staging, and production environments.",
+        "q": "CI/CD Pipeline Development",
+        "a": "We build CI/CD pipelines to automate code building, testing, and deployment. Automated workflows reduce repetitive manual tasks and create a consistent process for moving application updates between development, staging, and production environments."
       },
       {
-        "title": "Payment Gateways",
-        "desc": "Connect payment providers such as Stripe with your website or application. We handle API connections for payment requests, transaction responses, payment status updates, and other required payment events.",
-        "q": "Payment Gateways",
-        "a": "Connect payment providers such as Stripe with your website or application. We handle API connections for payment requests, transaction responses, payment status updates, and other required payment events."
+        "title": "Infrastructure as Code",
+        "desc": "Infrastructure as Code helps teams manage servers, networks, and other infrastructure through configuration files instead of repeated manual setup. We use tools such as Terraform to create consistent and repeatable environments.",
+        "q": "Infrastructure as Code",
+        "a": "Infrastructure as Code helps teams manage servers, networks, and other infrastructure through configuration files instead of repeated manual setup. We use tools such as Terraform to create consistent and repeatable environments."
       },
       {
-        "title": "Webhooks",
-        "desc": "Webhooks let your application receive updates when an event happens in another system. We can set up webhook connections for payments, transactions, account changes, and other events requiring an automatic response.",
-        "q": "Webhooks",
-        "a": "Webhooks let your application receive updates when an event happens in another system. We can set up webhook connections for payments, transactions, account changes, and other events requiring an automatic response."
+        "title": "Cloud Operations",
+        "desc": "We help businesses manage cloud infrastructure with a focus on stability, resource management, and application performance. Our AWS consulting services cover cloud setup, infrastructure management, deployment workflows, and operational improvements.",
+        "q": "Cloud Operations",
+        "a": "We help businesses manage cloud infrastructure with a focus on stability, resource management, and application performance. Our AWS consulting services cover cloud setup, infrastructure management, deployment workflows, and operational improvements."
       },
       {
-        "title": "API Security",
-        "desc": "Keep your API and connected data protected with suitable security controls. We work with authentication, authorisation, access controls, input validation, secure connections, and error handling as part of the API development process.",
-        "q": "API Security",
-        "a": "Keep your API and connected data protected with suitable security controls. We work with authentication, authorisation, access controls, input validation, secure connections, and error handling as part of the API development process."
+        "title": "Monitoring and Observability",
+        "desc": "Application and infrastructure monitoring gives your team better visibility into system performance and health. We set up monitoring and alerts to help identify errors, performance issues, resource problems, and other concerns early.",
+        "q": "Monitoring and Observability",
+        "a": "Application and infrastructure monitoring gives your team better visibility into system performance and health. We set up monitoring and alerts to help identify errors, performance issues, resource problems, and other concerns early."
+      },
+      {
+        "title": "Kubernetes Consulting Services",
+        "desc": "We help businesses deploy and manage containerised applications using Kubernetes. Our Kubernetes consulting services cover Kubernetes planning, configuration, deployment, scaling, and ongoing management.",
+        "q": "Kubernetes Consulting Services",
+        "a": "We help businesses deploy and manage containerised applications using Kubernetes. Our Kubernetes consulting services cover Kubernetes planning, configuration, deployment, scaling, and ongoing management."
       }
     ],
     "whyChooseItems": [
       {
         "title": "Quality-Focused Development",
-        "desc": "We build APIs around your product requirements and technical setup. Clean architecture, reliable data handling, proper testing, and clear documentation help keep the API easier to manage.",
+        "desc": "We focus on reliable infrastructure, consistent deployment workflows, maintainable configurations, and stable application environments. Each project receives an approach based on its technical requirements.",
         "q": "Quality-Focused Development",
-        "a": "We build APIs around your product requirements and technical setup. Clean architecture, reliable data handling, proper testing, and clear documentation help keep the API easier to manage."
+        "a": "We focus on reliable infrastructure, consistent deployment workflows, maintainable configurations, and stable application environments. Each project receives an approach based on its technical requirements."
       },
       {
-        "title": "On-Time Delivery",
-        "desc": "Clear requirements and defined project stages help keep development organised. You can see what is being worked on and what comes next during the project.",
-        "q": "On-Time Delivery",
-        "a": "Clear requirements and defined project stages help keep development organised. You can see what is being worked on and what comes next during the project."
+        "title": "Planned Delivery",
+        "desc": "Clear milestones keep the project organised and make progress easier to review. We define the work, delivery stages, and technical requirements before implementation moves forward.",
+        "q": "Planned Delivery",
+        "a": "Clear milestones keep the project organised and make progress easier to review. We define the work, delivery stages, and technical requirements before implementation moves forward."
       },
       {
         "title": "Transparent Communication",
-        "desc": "You should know what is happening during development. We keep communication clear and explain important technical decisions without unnecessary complexity.",
+        "desc": "You receive clear updates about completed work, current tasks, upcoming steps, and possible project concerns. Direct communication keeps technical work aligned with your requirements throughout development.",
         "q": "Transparent Communication",
-        "a": "You should know what is happening during development. We keep communication clear and explain important technical decisions without unnecessary complexity."
+        "a": "You receive clear updates about completed work, current tasks, upcoming steps, and possible project concerns. Direct communication keeps technical work aligned with your requirements throughout development."
       },
       {
-        "title": "Ongoing Support",
-        "desc": "APIs often need updates when applications or connected services change. Cubixsol can help with maintenance, integration updates, technical issues, and future improvements after launch.",
-        "q": "Ongoing Support",
-        "a": "APIs often need updates when applications or connected services change. Cubixsol can help with maintenance, integration updates, technical issues, and future improvements after launch."
+        "title": "Ongoing Technical Support",
+        "desc": "DevOps needs can change after deployment. We can continue supporting infrastructure, monitoring, deployment workflows, troubleshooting, and technical improvements as your applications and workloads grow.",
+        "q": "Ongoing Technical Support",
+        "a": "DevOps needs can change after deployment. We can continue supporting infrastructure, monitoring, deployment workflows, troubleshooting, and technical improvements as your applications and workloads grow."
       }
     ],
+    "serviceProcessIntro": "",
+    "serviceProcessTitle": "Our DevOps Process",
+    "serviceProcessText": "01 | Discover | We begin by reviewing your applications, infrastructure, development workflow, deployment process, and technical requirements. Early discovery helps us understand current problems and define the areas that need attention. | https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=560&q=70 \n\n02 | Plan | Our team defines the DevOps approach, technology choices, infrastructure requirements, project scope, and delivery milestones. A clear plan helps everyone understand the work before implementation begins. | https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&h=560&q=70 \n\n03 | Build | We develop the required pipelines, infrastructure, automation, cloud setup, and monitoring solutions. Development follows the agreed scope while keeping technical decisions connected to your application requirements. | https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&h=560&q=70 \n\n04 | Test | We test deployment workflows, infrastructure changes, application behaviour, and other important parts of the environment. Our team reviews identified issues and resolves them before production launch. | https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=800&h=560&q=70 \n\n05 | Launch and Support | We support the production launch once the environment is ready. Ongoing support can include monitoring, troubleshooting, deployment assistance, infrastructure updates, and improvements to existing DevOps workflows. | https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&h=560&q=70 ",
     "ctaPrimaryText": "Start a Project",
-    "ctaSecondaryText": "Free Estimate",
-    "faqsText": "How much does API development cost? | API development costs depend on the project scope, API complexity, integrations, security requirements, and existing systems. A simple API usually needs less development work than a project connecting several third-party platforms. Cubixsol can review your requirements and provide a project-specific estimate.\n\nHow long does API development take? | The timeline depends on the API features, integrations, testing requirements, and technical complexity. A simple API may take less time than a larger integration involving several systems. We can review your requirements first and provide a realistic project timeline.\n\nWhat is the difference between REST and GraphQL? | REST uses different endpoints to handle resources and works well for many common API projects. GraphQL lets applications request the specific data they need through a single API interface. The right choice depends on your application, data structure, frontend requirements, and existing technology.\n\nHow do you secure an API? | API security can include authentication, authorisation, access controls, input validation, secure connections, and proper error handling. We consider security during API planning and development so the required controls are part of the solution from the start.\n\nCan you integrate third-party APIs with an existing application? | Yes. We can connect existing applications with payment providers, SaaS platforms, databases, and other third-party services. We first review your current application and integration requirements, then plan and develop the required connection.",
-    "serviceProcessText": "01 | Discover | We review your application, existing systems, data requirements, users, and integration goals.\n\n02 | Plan | We define the API structure, endpoints, data flow, authentication, and technical requirements\n\n03 | Build | Our team develops the API or integration according to the agreed project requirements.\n\n04 | Test | We test requests, responses, authentication, error handling, security, and integration flows.\n\n05 | Launch & Support | We help move the solution into production and provide support for updates, fixes, and future changes.",
-    "serviceProcessTitle": "Our API Development Process",
-    "subServicesText": "Custom API Development | We build custom APIs for web applications, mobile apps, SaaS products, and internal business systems. Our team plans the API structure, endpoints, data flow, authentication, and business logic based on your project requirements.\n\nAPI Integration | Connect your application with third-party platforms, SaaS tools, databases, and other business systems. Our API development and integration services help different systems share data and perform actions within a single connected workflow.\n\nPayment Gateways | Connect payment providers such as Stripe with your website or application. We handle API connections for payment requests, transaction responses, payment status updates, and other required payment events.\n\nWebhooks | Webhooks let your application receive updates when an event happens in another system. We can set up webhook connections for payments, transactions, account changes, and other events requiring an automatic response.\n\nAPI Security | Keep your API and connected data protected with suitable security controls. We work with authentication, authorisation, access controls, input validation, secure connections, and error handling as part of the API development process.",
-    "subServicesTitle": "Our API Development & Integration Services",
-    "whyChooseText": "Quality-Focused Development | We build APIs around your product requirements and technical setup. Clean architecture, reliable data handling, proper testing, and clear documentation help keep the API easier to manage.\n\nOn-Time Delivery | Clear requirements and defined project stages help keep development organised. You can see what is being worked on and what comes next during the project.\n\nTransparent Communication | You should know what is happening during development. We keep communication clear and explain important technical decisions without unnecessary complexity.\n\nOngoing Support | APIs often need updates when applications or connected services change. Cubixsol can help with maintenance, integration updates, technical issues, and future improvements after launch.",
-    "whyChooseTitle": "",
-    "cardTitle": "API Development Services"
+    "ctaSecondaryText": "Get a Free Estimate",
+    "subServicesIntro": "Cubixsol helps businesses create a more efficient path from development to production. Our work covers CI/CD, infrastructure as code, cloud operations, monitoring, and Kubernetes. We assess your current environment, find technical gaps, and recommend practical changes for smoother releases, better system stability, and easier infrastructure management. \n",
+    "subServicesText": "Our DevOps Services | Our DevOps team helps businesses improve software delivery through automation, cloud infrastructure, monitoring, and modern development practices. Each service can support a new application, an existing system, or a wider infrastructure improvement project.\nCI/CD Pipeline Development | We build CI/CD pipelines to automate code building, testing, and deployment. Automated workflows reduce repetitive manual tasks and create a consistent process for moving application updates between development, staging, and production environments.\nInfrastructure as Code | Infrastructure as Code helps teams manage servers, networks, and other infrastructure through configuration files instead of repeated manual setup. We use tools such as Terraform to create consistent and repeatable environments.\nCloud Operations | We help businesses manage cloud infrastructure with a focus on stability, resource management, and application performance. Our AWS consulting services cover cloud setup, infrastructure management, deployment workflows, and operational improvements.\nMonitoring and Observability | Application and infrastructure monitoring gives your team better visibility into system performance and health. We set up monitoring and alerts to help identify errors, performance issues, resource problems, and other concerns early.\nKubernetes Consulting Services | We help businesses deploy and manage containerised applications using Kubernetes. Our Kubernetes consulting services cover Kubernetes planning, configuration, deployment, scaling, and ongoing management.\n\n\n\n\n\n",
+    "subServicesTitle": "DevOps Consulting Services for Reliable Software Delivery",
+    "whyChooseText": "Quality-Focused Development | We focus on reliable infrastructure, consistent deployment workflows, maintainable configurations, and stable application environments. Each project receives an approach based on its technical requirements.\nPlanned Delivery | Clear milestones keep the project organised and make progress easier to review. We define the work, delivery stages, and technical requirements before implementation moves forward.\nTransparent Communication | You receive clear updates about completed work, current tasks, upcoming steps, and possible project concerns. Direct communication keeps technical work aligned with your requirements throughout development.\nOngoing Technical Support | DevOps needs can change after deployment. We can continue supporting infrastructure, monitoring, deployment workflows, troubleshooting, and technical improvements as your applications and workloads grow.\n\n",
+    "whyChooseTitle": "Why Choose Cubixsol?"
   },
   {
     "seo": {
@@ -995,632 +1641,6 @@ const initialServices = [
   },
   {
     "seo": {
-      "metaTitle": "DevOps Consulting Services | Cubixsol",
-      "metaDescription": "Cubixsol delivers DevOps consulting — CI/CD, infrastructure as code, and reliable cloud ops that keep releases fast and systems stable. Free consult.\n",
-      "keywords": "",
-      "ogTitle": "",
-      "ogDescription": "",
-      "ogImage": "",
-      "canonicalUrl": ""
-    },
-    "icon": "/uploads/media-1788761191368-235481978.svg",
-    "slug": "devops",
-    "heroImage": "/uploads/media-1788760355429-241403522.svg",
-    "title": "DevOps Consulting Services for Scalable Software Delivery ",
-    "desc": "Improve software delivery, infrastructure, and application reliability with DevOps consulting services from Cubixsol.",
-    "color": "text-cyan-600 bg-cyan-50",
-    "gradient": "from-cyan-500 to-primary-600",
-    "longDesc": "Improve software delivery, infrastructure, and application reliability with DevOps consulting services from Cubixsol. We help businesses automate deployment workflows, manage cloud environments, improve infrastructure, and monitor application performance. Our team can build a new DevOps environment or improve an existing setup based on your application, technical requirements, and development goals.",
-    "features": [
-      "CI/CD pipelines (GitHub Actions, GitLab CI, Jenkins)",
-      "Infrastructure as Code (Terraform, CloudFormation)",
-      "Containerization with Docker & Kubernetes",
-      "Cloud setup on AWS, GCP, and Azure",
-      "Monitoring, logging & alerting",
-      "Security scanning & secrets management",
-      "Automated testing in the pipeline",
-      "Release strategies (blue/green, canary)"
-    ],
-    "tech": [
-      "Docker",
-      "Kubernetes",
-      "Terraform",
-      "AWS",
-      "GitHub Actions",
-      "Prometheus"
-    ],
-    "outcomes": [
-      "Faster, safer releases",
-      "Fewer production incidents",
-      "Clearer visibility into system health"
-    ],
-    "faqs": [],
-    "techDesc": "Our DevOps technology stack includes Docker, Kubernetes, Terraform, Jenkins, GitHub Actions, and AWS. Tool selection depends on your application architecture, deployment workflow, infrastructure, and project requirements.\n\nWe use the combination best suited to the environment rather than applying the same stack to every project",
-    "techTitle": "Technologies We Use",
-    "businessTypesItems": [],
-    "ctaBannerButtonText": "Start Your DevOps Project",
-    "ctaBannerDesc": "Improve your software delivery and infrastructure with **DevOps consulting services** from Cubixsol. Share your current setup or project requirements, and our team can help you plan the right solution.",
-    "ctaBannerEyebrow": "",
-    "ctaBannerTitle": "Ready to Start Your Project?",
-    "serviceProcessSteps": [
-      {
-        "stepNumber": "01",
-        "title": "Discover",
-        "desc": "We begin by reviewing your applications, infrastructure, development workflow, deployment process, and technical requirements. Early discovery helps us understand current problems and define the areas that need attention.",
-        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=560&q=70",
-        "points": []
-      },
-      {
-        "stepNumber": "02",
-        "title": "Plan",
-        "desc": "Our team defines the DevOps approach, technology choices, infrastructure requirements, project scope, and delivery milestones. A clear plan helps everyone understand the work before implementation begins.",
-        "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&h=560&q=70",
-        "points": []
-      },
-      {
-        "stepNumber": "03",
-        "title": "Build",
-        "desc": "We develop the required pipelines, infrastructure, automation, cloud setup, and monitoring solutions. Development follows the agreed scope while keeping technical decisions connected to your application requirements.",
-        "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&h=560&q=70",
-        "points": []
-      },
-      {
-        "stepNumber": "04",
-        "title": "Test",
-        "desc": "We test deployment workflows, infrastructure changes, application behaviour, and other important parts of the environment. Our team reviews identified issues and resolves them before production launch.",
-        "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=800&h=560&q=70",
-        "points": []
-      },
-      {
-        "stepNumber": "05",
-        "title": "Launch and Support",
-        "desc": "We support the production launch once the environment is ready. Ongoing support can include monitoring, troubleshooting, deployment assistance, infrastructure updates, and improvements to existing DevOps workflows.",
-        "image": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&h=560&q=70",
-        "points": []
-      }
-    ],
-    "subServicesItems": [
-      {
-        "title": "Our DevOps Services",
-        "desc": "Our DevOps team helps businesses improve software delivery through automation, cloud infrastructure, monitoring, and modern development practices. Each service can support a new application, an existing system, or a wider infrastructure improvement project.",
-        "q": "Our DevOps Services",
-        "a": "Our DevOps team helps businesses improve software delivery through automation, cloud infrastructure, monitoring, and modern development practices. Each service can support a new application, an existing system, or a wider infrastructure improvement project."
-      },
-      {
-        "title": "CI/CD Pipeline Development",
-        "desc": "We build CI/CD pipelines to automate code building, testing, and deployment. Automated workflows reduce repetitive manual tasks and create a consistent process for moving application updates between development, staging, and production environments.",
-        "q": "CI/CD Pipeline Development",
-        "a": "We build CI/CD pipelines to automate code building, testing, and deployment. Automated workflows reduce repetitive manual tasks and create a consistent process for moving application updates between development, staging, and production environments."
-      },
-      {
-        "title": "Infrastructure as Code",
-        "desc": "Infrastructure as Code helps teams manage servers, networks, and other infrastructure through configuration files instead of repeated manual setup. We use tools such as Terraform to create consistent and repeatable environments.",
-        "q": "Infrastructure as Code",
-        "a": "Infrastructure as Code helps teams manage servers, networks, and other infrastructure through configuration files instead of repeated manual setup. We use tools such as Terraform to create consistent and repeatable environments."
-      },
-      {
-        "title": "Cloud Operations",
-        "desc": "We help businesses manage cloud infrastructure with a focus on stability, resource management, and application performance. Our AWS consulting services cover cloud setup, infrastructure management, deployment workflows, and operational improvements.",
-        "q": "Cloud Operations",
-        "a": "We help businesses manage cloud infrastructure with a focus on stability, resource management, and application performance. Our AWS consulting services cover cloud setup, infrastructure management, deployment workflows, and operational improvements."
-      },
-      {
-        "title": "Monitoring and Observability",
-        "desc": "Application and infrastructure monitoring gives your team better visibility into system performance and health. We set up monitoring and alerts to help identify errors, performance issues, resource problems, and other concerns early.",
-        "q": "Monitoring and Observability",
-        "a": "Application and infrastructure monitoring gives your team better visibility into system performance and health. We set up monitoring and alerts to help identify errors, performance issues, resource problems, and other concerns early."
-      },
-      {
-        "title": "Kubernetes Consulting Services",
-        "desc": "We help businesses deploy and manage containerised applications using Kubernetes. Our Kubernetes consulting services cover Kubernetes planning, configuration, deployment, scaling, and ongoing management.",
-        "q": "Kubernetes Consulting Services",
-        "a": "We help businesses deploy and manage containerised applications using Kubernetes. Our Kubernetes consulting services cover Kubernetes planning, configuration, deployment, scaling, and ongoing management."
-      }
-    ],
-    "whyChooseItems": [
-      {
-        "title": "Quality-Focused Development",
-        "desc": "We focus on reliable infrastructure, consistent deployment workflows, maintainable configurations, and stable application environments. Each project receives an approach based on its technical requirements.",
-        "q": "Quality-Focused Development",
-        "a": "We focus on reliable infrastructure, consistent deployment workflows, maintainable configurations, and stable application environments. Each project receives an approach based on its technical requirements."
-      },
-      {
-        "title": "Planned Delivery",
-        "desc": "Clear milestones keep the project organised and make progress easier to review. We define the work, delivery stages, and technical requirements before implementation moves forward.",
-        "q": "Planned Delivery",
-        "a": "Clear milestones keep the project organised and make progress easier to review. We define the work, delivery stages, and technical requirements before implementation moves forward."
-      },
-      {
-        "title": "Transparent Communication",
-        "desc": "You receive clear updates about completed work, current tasks, upcoming steps, and possible project concerns. Direct communication keeps technical work aligned with your requirements throughout development.",
-        "q": "Transparent Communication",
-        "a": "You receive clear updates about completed work, current tasks, upcoming steps, and possible project concerns. Direct communication keeps technical work aligned with your requirements throughout development."
-      },
-      {
-        "title": "Ongoing Technical Support",
-        "desc": "DevOps needs can change after deployment. We can continue supporting infrastructure, monitoring, deployment workflows, troubleshooting, and technical improvements as your applications and workloads grow.",
-        "q": "Ongoing Technical Support",
-        "a": "DevOps needs can change after deployment. We can continue supporting infrastructure, monitoring, deployment workflows, troubleshooting, and technical improvements as your applications and workloads grow."
-      }
-    ],
-    "serviceProcessIntro": "",
-    "serviceProcessTitle": "Our DevOps Process",
-    "serviceProcessText": "01 | Discover | We begin by reviewing your applications, infrastructure, development workflow, deployment process, and technical requirements. Early discovery helps us understand current problems and define the areas that need attention. | https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=560&q=70 \n\n02 | Plan | Our team defines the DevOps approach, technology choices, infrastructure requirements, project scope, and delivery milestones. A clear plan helps everyone understand the work before implementation begins. | https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&h=560&q=70 \n\n03 | Build | We develop the required pipelines, infrastructure, automation, cloud setup, and monitoring solutions. Development follows the agreed scope while keeping technical decisions connected to your application requirements. | https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&h=560&q=70 \n\n04 | Test | We test deployment workflows, infrastructure changes, application behaviour, and other important parts of the environment. Our team reviews identified issues and resolves them before production launch. | https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=800&h=560&q=70 \n\n05 | Launch and Support | We support the production launch once the environment is ready. Ongoing support can include monitoring, troubleshooting, deployment assistance, infrastructure updates, and improvements to existing DevOps workflows. | https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&h=560&q=70 ",
-    "ctaPrimaryText": "Start a Project",
-    "ctaSecondaryText": "Get a Free Estimate",
-    "subServicesIntro": "Cubixsol helps businesses create a more efficient path from development to production. Our work covers CI/CD, infrastructure as code, cloud operations, monitoring, and Kubernetes. We assess your current environment, find technical gaps, and recommend practical changes for smoother releases, better system stability, and easier infrastructure management. \n",
-    "subServicesText": "Our DevOps Services | Our DevOps team helps businesses improve software delivery through automation, cloud infrastructure, monitoring, and modern development practices. Each service can support a new application, an existing system, or a wider infrastructure improvement project.\nCI/CD Pipeline Development | We build CI/CD pipelines to automate code building, testing, and deployment. Automated workflows reduce repetitive manual tasks and create a consistent process for moving application updates between development, staging, and production environments.\nInfrastructure as Code | Infrastructure as Code helps teams manage servers, networks, and other infrastructure through configuration files instead of repeated manual setup. We use tools such as Terraform to create consistent and repeatable environments.\nCloud Operations | We help businesses manage cloud infrastructure with a focus on stability, resource management, and application performance. Our AWS consulting services cover cloud setup, infrastructure management, deployment workflows, and operational improvements.\nMonitoring and Observability | Application and infrastructure monitoring gives your team better visibility into system performance and health. We set up monitoring and alerts to help identify errors, performance issues, resource problems, and other concerns early.\nKubernetes Consulting Services | We help businesses deploy and manage containerised applications using Kubernetes. Our Kubernetes consulting services cover Kubernetes planning, configuration, deployment, scaling, and ongoing management.\n\n\n\n\n\n",
-    "subServicesTitle": "DevOps Consulting Services for Reliable Software Delivery",
-    "whyChooseText": "Quality-Focused Development | We focus on reliable infrastructure, consistent deployment workflows, maintainable configurations, and stable application environments. Each project receives an approach based on its technical requirements.\nPlanned Delivery | Clear milestones keep the project organised and make progress easier to review. We define the work, delivery stages, and technical requirements before implementation moves forward.\nTransparent Communication | You receive clear updates about completed work, current tasks, upcoming steps, and possible project concerns. Direct communication keeps technical work aligned with your requirements throughout development.\nOngoing Technical Support | DevOps needs can change after deployment. We can continue supporting infrastructure, monitoring, deployment workflows, troubleshooting, and technical improvements as your applications and workloads grow.\n\n",
-    "whyChooseTitle": "Why Choose Cubixsol?"
-  },
-  {
-    "seo": {
-      "metaTitle": "Android Development Services | Cubixsol",
-      "metaDescription": "Native Android apps with Kotlin and Jetpack — Material Design, Play Store ready, built for performance.",
-      "keywords": "Kotlin, Jetpack Compose, Android Studio, Firebase, Material 3",
-      "ogTitle": "Android Development Services | Cubixsol",
-      "ogDescription": "Native Android apps with Kotlin and Jetpack — Material Design, Play Store ready, built for performance.",
-      "ogImage": "https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?auto=format&fit=crop&w=1000&h=750&q=70",
-      "canonicalUrl": ""
-    },
-    "icon": "/uploads/media-1788761191366-9651825.svg",
-    "slug": "android-app-development",
-    "heroImage": "https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?auto=format&fit=crop&w=1000&h=750&q=70",
-    "title": " Android App Development Services Built for Business Growth",
-    "desc": "Transform your mobile app idea into a fast, reliable, and user-friendly Android application.",
-    "color": "text-emerald-600 bg-emerald-50",
-    "gradient": "from-emerald-500 to-teal-600",
-    "longDesc": "Transform your mobile app idea into a fast, reliable, and user-friendly Android application. Cubixsol delivers end-to-end Android app development services, from strategy and UI/UX design to development, testing, deployment, and continuous improvement. Our developers create a clear development roadmap to launch new Android applications or improve existing ones with better features, performance, and usability. ",
-    "features": [
-      "Native Kotlin & Jetpack Compose",
-      "Material Design 3 interfaces",
-      "Google Play submission support",
-      "Push notifications & deep links",
-      "In-app billing & subscriptions",
-      "Tablet and foldable-friendly layouts",
-      "Room, WorkManager & modern architecture",
-      "CI builds and internal testing tracks"
-    ],
-    "tech": [
-      "Kotlin",
-      "Jetpack Compose",
-      "Android Studio",
-      "Firebase",
-      "Material 3"
-    ],
-    "outcomes": [
-      "Smooth native Android performance",
-      "Faster Play Console releases",
-      "Clean, maintainable Kotlin codebase"
-    ],
-    "faqs": [
-      {
-        "q": "How much does Android app development cost?",
-        "a": "Android app development costs depend on the number of features, interface complexity, backend requirements, third-party integrations, security needs, and development approach. A basic application generally requires less investment than a platform involving multiple user roles, payments, live tracking, or custom administrative tools. We review the requirements before providing an estimate."
-      },
-      {
-        "q": "How long does it take to build an Android app?",
-        "a": "The timeline depends on the project’s scope and technical complexity. A focused application with standard features may take a few months, while a larger product can require additional planning, development, testing, and integration work. We provide a milestone-based timeline after reviewing the requirements."
-      },
-      {
-        "q": "Should I choose Kotlin or cross-platform development?",
-        "a": "Kotlin is well suited to native Android applications requiring deep device integration, Android-specific features, or maximum platform control. Cross-platform development can be more efficient when a business wants to launch on Android and iOS with similar functionality. We recommend an approach after estimating the product goals and technical needs."
-      },
-      {
-        "q": "Can Cubixsol publish my app on the Google Play Store?",
-        "a": "Yes. We can prepare the release build, review relevant store requirements, and support the Google Play Store submission process. Final approval remains subject to Google’s current policies and review procedures."
-      },
-      {
-        "q": "Can you update or improve an existing Android application?",
-        "a": "Yes. Our developers review the existing application, identify performance and compatibility issues, fix bugs, update dependencies, and add new features. They then recommend the most effective path: optimising the current codebase or rebuilding specific components."
-      }
-    ],
-    "techDesc": "Our Android technology stack includes Kotlin, Java, Jetpack Compose, Android Studio, and Firebase. We select tools according to the application’s functionality, architecture, performance needs, and long-term maintenance requirements.\n\nFirebase can support features such as authentication, analytics, cloud messaging, crash reporting, and real-time data. Required third-party APIs and business systems can also be integrated into the application.",
-    "techTitle": "Technologies We Use",
-    "businessTypesItems": [],
-    "ctaBannerButtonText": "Start Your Android Project",
-    "ctaBannerDesc": "Bring your product idea to life with scalable Android app development services from Cubixsol. Tell us what you want to build, and our team will help define the right development approach.",
-    "ctaBannerEyebrow": "REACH BILLIONS OF ANDROID USERS",
-    "ctaBannerTitle": "Ready to Build Your Android Application?",
-    "serviceProcessSteps": [
-      {
-        "points": [],
-        "stepNumber": "01",
-        "title": "Discover",
-        "desc": "We begin by defining the product idea, target users, business objectives, core features, integrations, and technical constraints. Early discovery helps the team separate essential requirements from lower-priority additions."
-      },
-      {
-        "points": [],
-        "stepNumber": "02",
-        "title": "Plan",
-        "desc": "Our team organises the features, user journeys, development phases, technology choices, and delivery milestones. The plan gives stakeholders a clearer view of the project scope before full development starts."
-      },
-      {
-        "points": [],
-        "stepNumber": "03",
-        "title": "Build",
-        "desc": "Developers create the application in structured stages while designers refine its interface and user experience. Regular progress updates help keep technical decisions and business expectations aligned."
-      },
-      {
-        "points": [],
-        "stepNumber": "04",
-        "title": "Test",
-        "desc": "We test functionality, usability, performance, device compatibility, integrations, and common failure scenarios. We review and resolve identified issues before the production release."
-      },
-      {
-        "points": [],
-        "stepNumber": "05",
-        "title": "Launch and Support",
-        "desc": "Once the application is approved, we prepare it for deployment and support the Play Store submission process. Post-launch services can include monitoring, maintenance, bug fixes, and planned improvements."
-      }
-    ],
-    "subServicesItems": [
-      {
-        "title": "Native Android App Development",
-        "desc": "We build native Android applications designed for strong performance, dependable security, and smooth interaction with device features. Native development is ideal for products requiring advanced functionality, complex integrations, or a highly responsive user experience. Our developers structure each application for long-term stability, making future updates, feature additions, and operating system changes easier to manage."
-      },
-      {
-        "title": "Kotlin and Jetpack Development",
-        "desc": "Kotlin and Jetpack help us create modern Android applications with structured, maintainable code. We use Jetpack components to manage navigation, application data, interface behaviour, and background processes more efficiently. Jetpack Compose also allows our team to create responsive interfaces with reusable components. The result is a consistent user experience across supported Android screen sizes and devices."
-      },
-      {
-        "title": "Google Play Store Launch",
-        "desc": "A functional application still needs a properly managed release. Our team prepares the app for Google Play Store submission, reviews technical requirements, configures release builds, and supports the publishing process.We can also support addressing submission issues and prepare updated versions when Google introduces new platform or policy requirements. Every release is checked before submission to reduce avoidable delays."
-      },
-      {
-        "title": "Android App Maintenance and Support",
-        "desc": "Android applications require regular attention after launch. We provide maintenance services for bug resolution, performance monitoring, security improvements, operating system compatibility, and feature updates.Our developers can review an existing codebase, identify technical concerns, and recommend improvements based on business priorities. Ongoing support helps the application remain stable as user expectations, devices, and Android requirements evolve."
-      },
-      {
-        "title": "Cross Platform App Development Services",
-        "desc": "Cubixsol also provides cross-platform app development services to reach Android and iOS users through a shared codebase. A cross-platform approach can reduce duplicate development work and simplify feature management across both platforms.We assess the required features, performance expectations, integrations, and budget before recommending native or cross-platform development. The final decision depends on the product rather than a one-size-fits-all preference."
-      }
-    ],
-    "whyChooseItems": [
-      {
-        "title": "Planned Delivery",
-        "desc": "Clear milestones keep the project focused and make progress easier to review. If requirements or priorities change, we assess the effect on the timeline and scope before moving ahead."
-      },
-      {
-        "title": "Transparent Communication",
-        "desc": "You receive direct updates on completed work, current development tasks, upcoming milestones, and potential blockers. Clear communication reduces confusion and supports faster decision-making throughout the project."
-      },
-      {
-        "title": "Ongoing Technical Support",
-        "desc": "Our involvement does not have to end when the application reaches the Play Store. We can continue supporting updates, performance improvements, compatibility changes, and new features as the product grows."
-      }
-    ],
-    "ctaPrimaryText": "Start a Project",
-    "ctaSecondaryText": "Get a Free Estimate",
-    "menuTitle": "Android",
-    "subServicesIntro": "Our Android development team builds applications for smartphones, tablets, and other compatible devices. Each service can support a new product, an existing application, or a wider digital transformation project.",
-    "subServicesText": "Native Android App Development | We build native Android applications designed for strong performance, dependable security, and smooth interaction with device features. Native development is ideal for products requiring advanced functionality, complex integrations, or a highly responsive user experience. Our developers structure each application for long-term stability, making future updates, feature additions, and operating system changes easier to manage.\nKotlin and Jetpack Development | Kotlin and Jetpack help us create modern Android applications with structured, maintainable code. We use Jetpack components to manage navigation, application data, interface behaviour, and background processes more efficiently. Jetpack Compose also allows our team to create responsive interfaces with reusable components. The result is a consistent user experience across supported Android screen sizes and devices.\nGoogle Play Store Launch | A functional application still needs a properly managed release. Our team prepares the app for Google Play Store submission, reviews technical requirements, configures release builds, and supports the publishing process.We can also support addressing submission issues and prepare updated versions when Google introduces new platform or policy requirements. Every release is checked before submission to reduce avoidable delays.\nAndroid App Maintenance and Support | Android applications require regular attention after launch. We provide maintenance services for bug resolution, performance monitoring, security improvements, operating system compatibility, and feature updates.Our developers can review an existing codebase, identify technical concerns, and recommend improvements based on business priorities. Ongoing support helps the application remain stable as user expectations, devices, and Android requirements evolve.\nCross Platform App Development Services | Cubixsol also provides cross-platform app development services to reach Android and iOS users through a shared codebase. A cross-platform approach can reduce duplicate development work and simplify feature management across both platforms.We assess the required features, performance expectations, integrations, and budget before recommending native or cross-platform development. The final decision depends on the product rather than a one-size-fits-all preference.",
-    "subServicesTitle": "Our Android Development Services",
-    "whyChooseIntro": "We prioritise stable architecture, maintainable code, intuitive interfaces, and reliable application performance. Testing remains part of the development cycle rather than a final check performed immediately before launch.",
-    "whyChooseText": "Planned Delivery | Clear milestones keep the project focused and make progress easier to review. If requirements or priorities change, we assess the effect on the timeline and scope before moving ahead.\nTransparent Communication | You receive direct updates on completed work, current development tasks, upcoming milestones, and potential blockers. Clear communication reduces confusion and supports faster decision-making throughout the project.\nOngoing Technical Support | Our involvement does not have to end when the application reaches the Play Store. We can continue supporting updates, performance improvements, compatibility changes, and new features as the product grows.",
-    "whyChooseTitle": "Quality-Focused Development",
-    "faqsText": "How much does Android app development cost? | Android app development costs depend on the number of features, interface complexity, backend requirements, third-party integrations, security needs, and development approach. A basic application generally requires less investment than a platform involving multiple user roles, payments, live tracking, or custom administrative tools. We review the requirements before providing an estimate.\nHow long does it take to build an Android app? | The timeline depends on the project’s scope and technical complexity. A focused application with standard features may take a few months, while a larger product can require additional planning, development, testing, and integration work. We provide a milestone-based timeline after reviewing the requirements.\nShould I choose Kotlin or cross-platform development? | Kotlin is well suited to native Android applications requiring deep device integration, Android-specific features, or maximum platform control. Cross-platform development can be more efficient when a business wants to launch on Android and iOS with similar functionality. We recommend an approach after estimating the product goals and technical needs.\nCan Cubixsol publish my app on the Google Play Store? | Yes. We can prepare the release build, review relevant store requirements, and support the Google Play Store submission process. Final approval remains subject to Google’s current policies and review procedures.\nCan you update or improve an existing Android application? | Yes. Our developers review the existing application, identify performance and compatibility issues, fix bugs, update dependencies, and add new features. They then recommend the most effective path: optimising the current codebase or rebuilding specific components.",
-    "serviceProcessText": "01 | Discover | We begin by defining the product idea, target users, business objectives, core features, integrations, and technical constraints. Early discovery helps the team separate essential requirements from lower-priority additions.\n02 | Plan | Our team organises the features, user journeys, development phases, technology choices, and delivery milestones. The plan gives stakeholders a clearer view of the project scope before full development starts.\n03 | Build | Developers create the application in structured stages while designers refine its interface and user experience. Regular progress updates help keep technical decisions and business expectations aligned.\n04 | Test | We test functionality, usability, performance, device compatibility, integrations, and common failure scenarios. We review and resolve identified issues before the production release.\n05 | Launch and Support | Once the application is approved, we prepare it for deployment and support the Play Store submission process. Post-launch services can include monitoring, maintenance, bug fixes, and planned improvements.",
-    "serviceProcessTitle": "Our Android Development Process"
-  },
-  {
-    "seo": {
-      "metaTitle": "iOS Development Services | Cubixsol",
-      "metaDescription": "Native iPhone and iPad apps built with Swift and SwiftUI — fast, polished, and App Store ready.",
-      "keywords": "Swift, SwiftUI, UIKit, Xcode, Firebase, Combine",
-      "ogTitle": "iOS Development Services | Cubixsol",
-      "ogDescription": "Native iPhone and iPad apps built with Swift and SwiftUI — fast, polished, and App Store ready.",
-      "ogImage": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1000&h=750&q=70",
-      "canonicalUrl": ""
-    },
-    "icon": "/uploads/media-1788761191366-9651825.svg",
-    "slug": "ios-app-development",
-    "heroImage": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1000&h=750&q=70",
-    "title": "iOS App Development Services for High-Performing Apple Products",
-    "desc": "Cubixsol’s iOS app development services turn your product idea into a secure, intuitive, and scalable Apple application.",
-    "color": "text-slate-700 bg-slate-100",
-    "gradient": "from-slate-700 to-sky-500",
-    "longDesc": "Cubixsol’s iOS app development services turn your product idea into a secure, intuitive, and scalable Apple application. We plan, design, develop, test, launch, and support iPhone and iPad apps that serve your users and business goals.",
-    "features": [
-      "Native Swift & SwiftUI apps",
-      "UIKit when needed for complex UI",
-      "App Store submission & review support",
-      "Push notifications & deep linking",
-      "In-app purchases & subscriptions",
-      "iPad and multi-device layouts",
-      "Core Data & CloudKit sync",
-      "CI builds and TestFlight delivery"
-    ],
-    "tech": [
-      "Swift",
-      "SwiftUI",
-      "UIKit",
-      "Xcode",
-      "Firebase",
-      "Combine"
-    ],
-    "outcomes": [
-      "Buttery-smooth native performance",
-      "Faster App Store approval cycles",
-      "Maintainable, modern Swift codebase"
-    ],
-    "faqs": [
-      {
-        "q": "How much does iOS app development cost?",
-        "a": "The cost depends on the application’s features, interface complexity, integrations, security needs, and delivery schedule. We review the requirements and provide a detailed estimate with a defined scope before development starts."
-      },
-      {
-        "q": "How long does it take to build an iOS application?",
-        "a": "A focused MVP may take several weeks, while a complex application can require several months. Discovery confirms the features, dependencies, milestones, and realistic launch schedule."
-      },
-      {
-        "q": "Should I choose Swift or cross-platform development?",
-        "a": "Swift provides deep access to Apple technologies and strong native performance. Cross-platform development can reduce duplicated work across iOS and Android. Our React Native development services suit products that need coordinated delivery on both platforms from a shared codebase."
-      },
-      {
-        "q": "Can you submit my application to the App Store?",
-        "a": "Yes. We prepare the production build, support listing configuration, coordinate TestFlight testing, complete the technical submission, and help address feedback from Apple’s review team."
-      }
-    ],
-    "techDesc": "Our iOS developers use Swift, SwiftUI, Xcode, Objective-C, Core Data, and TestFlight based on the product’s technical requirements. We also work with APIs, analytics platforms, payment systems, cloud services, and third-party tools to create connected user experiences. The selected technology stack supports performance, security, maintainability, and future expansion.\n\nOur developers also plan accessibility, permission management, secure local storage, and privacy disclosures during implementation. Strong technical foundations reduce avoidable limitations and prepare the application for new features, higher usage, and future Apple platform updates.\n",
-    "techTitle": "Technologies We Use",
-    "businessTypesItems": [],
-    "ctaBannerButtonText": "Get a Free Estimate",
-    "ctaBannerDesc": "Choose Cubixsol’s iOS app development services to take your product from initial planning to App Store launch and continuous improvement.",
-    "ctaBannerEyebrow": "",
-    "ctaBannerTitle": "Ready to Start Your iOS Project?",
-    "serviceProcessSteps": [
-      {
-        "stepNumber": "01",
-        "title": "Discover",
-        "desc": "We define the users, business goals, core features, technical requirements, budget, and success criteria.",
-        "image": "",
-        "points": []
-      },
-      {
-        "stepNumber": "02",
-        "title": "Plan",
-        "desc": "Our team maps user flows, selects the architecture and technologies, and creates a practical delivery roadmap.",
-        "image": "",
-        "points": []
-      },
-      {
-        "stepNumber": "03",
-        "title": "Build",
-        "desc": "Designers and developers create the interface, application logic, integrations, and supporting systems in planned stages.",
-        "image": "",
-        "points": []
-      },
-      {
-        "stepNumber": "04",
-        "title": "Test",
-        "desc": "Quality specialists examine functionality, usability, performance, security, and compatibility across relevant Apple devices.",
-        "image": "",
-        "points": []
-      },
-      {
-        "stepNumber": "05",
-        "title": "Launch and Support",
-        "desc": "We prepare the release, support App Store submission, monitor the live product, and deliver ongoing improvements.",
-        "image": "",
-        "points": []
-      }
-    ],
-    "subServicesItems": [
-      {
-        "title": "Native iOS App Development",
-        "desc": "We build native iPhone applications with Swift and Apple frameworks to deliver responsive performance, secure data handling, and direct access to device features. Native development works well for products that require advanced functionality, complex integrations, or a deeply optimised iOS experience."
-      },
-      {
-        "title": "SwiftUI App Development",
-        "desc": "Our developers use SwiftUI to create clean, consistent interfaces across supported Apple devices. Reusable components, clear state management, and modern development practices help us accelerate implementation while keeping the codebase maintainable as the application grows."
-      },
-      {
-        "title": "iPad App Development",
-        "desc": "We develop iPad applications that use larger displays, multitasking features, adaptable layouts, and touch-based interactions effectively. Our team can create a dedicated iPad product or extend an existing iPhone application to provide a stronger tablet experience."
-      },
-      {
-        "title": "App Store Launch",
-        "desc": "We prepare release builds, configure required app information, support TestFlight testing, and manage the technical submission process. Our team also addresses review feedback and resolves submission issues to help move the application toward approval."
-      },
-      {
-        "title": "iOS App Maintenance and Upgrades",
-        "desc": "We monitor performance, fix bugs, update dependencies, improve compatibility, and add features after launch. Regular maintenance helps the application remain stable as Apple releases new iOS versions, devices, frameworks, and App Store requirements."
-      }
-    ],
-    "whyChooseItems": [
-      {
-        "title": "Quality-Focused Engineering",
-        "desc": "Code reviews, structured testing, and clear development standards help us create stable applications that remain easier to maintain and extend."
-      },
-      {
-        "title": "Organised, On-Time Delivery",
-        "desc": "Defined milestones, prioritised features, and regular progress reviews keep the project focused and help the team meet agreed delivery targets."
-      },
-      {
-        "title": "Transparent Collaboration",
-        "desc": "You receive clear updates, working builds, and direct visibility into priorities, progress, risks, and upcoming decisions throughout development."
-      },
-      {
-        "title": "Ongoing Product Support",
-        "desc": "Our involvement can continue after launch through performance monitoring, bug fixes, compatibility updates, feature development, and technical guidance."
-      }
-    ],
-    "ctaPrimaryText": "Start a Project ",
-    "ctaSecondaryText": "Get a Free Estimate",
-    "faqsText": "How much does iOS app development cost? | The cost depends on the application’s features, interface complexity, integrations, security needs, and delivery schedule. We review the requirements and provide a detailed estimate with a defined scope before development starts.\nHow long does it take to build an iOS application? | A focused MVP may take several weeks, while a complex application can require several months. Discovery confirms the features, dependencies, milestones, and realistic launch schedule.\nShould I choose Swift or cross-platform development? | Swift provides deep access to Apple technologies and strong native performance. Cross-platform development can reduce duplicated work across iOS and Android. Our React Native development services suit products that need coordinated delivery on both platforms from a shared codebase.\nCan you submit my application to the App Store? | Yes. We prepare the production build, support listing configuration, coordinate TestFlight testing, complete the technical submission, and help address feedback from Apple’s review team.",
-    "menuTitle": "IOS",
-    "serviceProcessText": "Discover | We define the users, business goals, core features, technical requirements, budget, and success criteria.\nPlan | Our team maps user flows, selects the architecture and technologies, and creates a practical delivery roadmap.\nBuild | Designers and developers create the interface, application logic, integrations, and supporting systems in planned stages.\nTest | Quality specialists examine functionality, usability, performance, security, and compatibility across relevant Apple devices.\nLaunch and Support | We prepare the release, support App Store submission, monitor the live product, and deliver ongoing improvements.",
-    "serviceProcessTitle": "Our iOS Development Process",
-    "subServicesIntro": "As an iOS app development company, we combines product thinking, technical expertise, and structured delivery to create reliable applications for the Apple ecosystem. Our team can manage the complete project or strengthen your internal team at a specific development stage.\n",
-    "subServicesText": "Native iOS App Development | We build native iPhone applications with Swift and Apple frameworks to deliver responsive performance, secure data handling, and direct access to device features. Native development works well for products that require advanced functionality, complex integrations, or a deeply optimised iOS experience.\nSwiftUI App Development | Our developers use SwiftUI to create clean, consistent interfaces across supported Apple devices. Reusable components, clear state management, and modern development practices help us accelerate implementation while keeping the codebase maintainable as the application grows.\niPad App Development | We develop iPad applications that use larger displays, multitasking features, adaptable layouts, and touch-based interactions effectively. Our team can create a dedicated iPad product or extend an existing iPhone application to provide a stronger tablet experience.\nApp Store Launch | We prepare release builds, configure required app information, support TestFlight testing, and manage the technical submission process. Our team also addresses review feedback and resolves submission issues to help move the application toward approval.\niOS App Maintenance and Upgrades | We monitor performance, fix bugs, update dependencies, improve compatibility, and add features after launch. Regular maintenance helps the application remain stable as Apple releases new iOS versions, devices, frameworks, and App Store requirements.",
-    "subServicesTitle": "Our iOS Development Services",
-    "whyChooseText": "Quality-Focused Engineering | Code reviews, structured testing, and clear development standards help us create stable applications that remain easier to maintain and extend.\nOrganised, On-Time Delivery | Defined milestones, prioritised features, and regular progress reviews keep the project focused and help the team meet agreed delivery targets.\nTransparent Collaboration | You receive clear updates, working builds, and direct visibility into priorities, progress, risks, and upcoming decisions throughout development.\nOngoing Product Support | Our involvement can continue after launch through performance monitoring, bug fixes, compatibility updates, feature development, and technical guidance.\n\n\n\n\n",
-    "whyChooseTitle": "Why Choose Cubixsol for iOS Development?"
-  },
-  {
-    "seo": {
-      "metaTitle": "Laravel Development Services | Cubixsol",
-      "metaDescription": "Powerful and scalable web applications using the Laravel PHP framework for complex business logic.",
-      "keywords": "Laravel, PHP, MySQL, Redis, Vue",
-      "ogTitle": "Laravel Development Services | Cubixsol",
-      "ogDescription": "Powerful and scalable web applications using the Laravel PHP framework for complex business logic.",
-      "ogImage": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1000&h=750&q=70",
-      "canonicalUrl": ""
-    },
-    "icon": "/uploads/media-1788761191368-839736527.svg",
-    "slug": "laravel-development",
-    "heroImage": "/uploads/media-1788760355443-70201310.svg",
-    "title": " Laravel Development Services for Scalable Web Applications",
-    "desc": "Cubixsol turns your product requirements into a reliable Laravel application.",
-    "color": "text-red-500 bg-red-50",
-    "gradient": "from-red-500 to-rose-600",
-    "longDesc": "Cubixsol turns your product requirements into a reliable Laravel application. We develop applications for strong performance, practical growth, and easier maintenance. Cubixsol handles planning, backend architecture, development, integrations, testing, deployment, and post-launch improvements through one accountable team.",
-    "features": [
-      "Custom admin panels",
-      "REST & GraphQL APIs",
-      "Queue jobs & scheduling",
-      "Multi-tenant apps",
-      "Payment integrations",
-      "Role-based access control"
-    ],
-    "tech": [
-      "Laravel",
-      "PHP",
-      "MySQL",
-      "Redis",
-      "Vue"
-    ],
-    "outcomes": [
-      "Reliable backends",
-      "Faster feature delivery",
-      "Lower long-term cost"
-    ],
-    "faqs": [
-      {
-        "q": "How much do Laravel development services cost?",
-        "a": "Laravel development costs depend on the number of features, integrations, user roles, design requirements, data migration, and support needs. Cubixsol reviews the scope first and provides a clear estimate based on the work required."
-      },
-      {
-        "q": "How long does Laravel development take?",
-        "a": "The timeline depends on the application’s size, technical complexity, feedback cycle, and third-party integrations. A focused product takes less time than a multi-role SaaS platform or a legacy migration. We confirm milestones and a realistic delivery schedule after discovery."
-      },
-      {
-        "q": "Why choose Laravel over another framework?",
-        "a": "Laravel is a strong choice for structured PHP applications because it provides established tools for routing, authentication, database access, queues, caching, testing, and API development. The best framework still depends on the product, existing technology, team, and long-term plans."
-      },
-      {
-        "q": "Do you provide Laravel maintenance and support?",
-        "a": "Yes. Cubixsol provides ongoing support for updates, issue resolution, performance improvements, security patches, and new features. We can support applications developed by our team or review an existing Laravel codebase before taking responsibility for it."
-      },
-      {
-        "q": "Can I hire a dedicated Laravel developer?",
-        "a": "Yes. You can hire dedicated Laravel developers through Cubixsol for ongoing development, additional technical capacity, or a defined project. We align the engagement with your scope, preferred workflow, communication needs, and delivery priorities."
-      }
-    ],
-    "techDesc": "We combine Laravel with PHP 8, MySQL or PostgreSQL, Livewire, Vue.js, Redis, and AWS according to the product’s needs. These technologies support responsive interfaces, efficient data handling, background processing, caching, cloud deployment, and scalable application architecture. We select tools for a clear technical reason instead of adding complexity without a measurable benefit.",
-    "techTitle": "Technologies We Use",
-    "businessTypesItems": [],
-    "ctaBannerButtonText": "Start a Project",
-    "ctaBannerDesc": "Convert your idea into a reliable application with Cubixsol’s **Laravel development services**. Share your idea, existing system, or technical challenge with our team to receive a practical development plan and a free estimate.\n",
-    "ctaBannerEyebrow": "",
-    "ctaBannerTitle": "Ready to Start Your Laravel Project?",
-    "serviceProcessSteps": [
-      {
-        "stepNumber": "01",
-        "title": "Discover",
-        "desc": "We define the users, business goals, required features, integrations, constraints, and success criteria.",
-        "image": "",
-        "points": []
-      },
-      {
-        "stepNumber": "02",
-        "title": "Plan",
-        "desc": "We map the architecture, database, user journeys, priorities, milestones, and delivery schedule",
-        "image": "",
-        "points": []
-      },
-      {
-        "stepNumber": "03",
-        "title": "Develop",
-        "desc": "Our team creates the application in structured phases and reviews progress against the agreed scope.",
-        "image": "",
-        "points": []
-      },
-      {
-        "stepNumber": "04",
-        "title": "Test",
-        "desc": "We check features, APIs, permissions, performance, security controls, and compatibility across relevant devices and browsers.",
-        "image": "",
-        "points": []
-      },
-      {
-        "stepNumber": "05",
-        "title": "Launch and support",
-        "desc": "We deploy the approved product, monitor its performance, resolve early issues, and plan future releases.",
-        "image": "",
-        "points": []
-      }
-    ],
-    "subServicesItems": [
-      {
-        "title": "Custom Laravel Application Development",
-        "desc": "We develop business portals, booking systems, marketplaces, management platforms, and other custom applications around your workflows. Our custom PHP development services cover the complete product foundation, including architecture, databases, business logic, permissions, dashboards, and third-party integrations."
-      },
-      {
-        "title": "Laravel API and Backend Development",
-        "desc": "Our backend development services create the systems responsible for your application’s data, rules, integrations, and user access. We develop RESTful APIs and connect payment gateways, CRM platforms, mobile applications, analytics tools, and other services while keeping the backend organised and ready for further development."
-      },
-      {
-        "title": "Laravel SaaS Development",
-        "desc": "We create SaaS products with subscription management, user roles, account controls, reporting, notifications, and multi-tenant capabilities. The architecture is planned around your operating model, so your team can add customers, refine features, and manage the platform without unnecessary technical friction."
-      },
-      {
-        "title": "Laravel Migration and Upgrades",
-        "desc": "We move legacy PHP applications and suitable systems from other frameworks to Laravel with a controlled migration plan. Our team also upgrades older Laravel projects, resolves compatibility issues, updates dependencies, and protects essential data and workflows throughout the transition."
-      },
-      {
-        "title": "Laravel Maintenance and Support",
-        "desc": "We keep Laravel applications stable after release through issue resolution, dependency updates, performance reviews, security patches, and planned feature improvements. Support can cover a newly launched Cubixsol product or an existing Laravel application that needs a dependable technical team."
-      }
-    ],
-    "whyChooseItems": [
-      {
-        "title": "Quality-Focused Engineering",
-        "desc": "We use structured architecture, coding standards, reviews, and testing to reduce avoidable defects and simplify future improvements. Every technical decision must support the product’s real requirements."
-      },
-      {
-        "title": "Dependable Delivery",
-        "desc": "We divide the project into defined phases with practical milestones and clear responsibilities. Potential blockers, changing requirements, and external dependencies are raised early to protect the schedule."
-      },
-      {
-        "title": "Transparent Collaboration",
-        "desc": "You receive regular progress updates, working demonstrations, and direct explanations of technical decisions. The shared scope and priorities keep both teams aligned throughout development."
-      },
-      {
-        "title": "Ongoing Technical Support",
-        "desc": "Our involvement can continue after launch with monitoring, maintenance, upgrades, fixes, and feature development. Your application keeps receiving attention as user needs and business priorities change."
-      }
-    ],
-    "whyChooseImage": "",
-    "additionalParagraph": "Our Laravel development services cover the end-to-end creation, modernisation, and support of web applications, APIs, SaaS platforms, admin systems, and business portals using Laravel and PHP. Our developers connect the backend, database, third-party tools, and user-facing features within a structured codebase. The result is a product designed around real workflows, not a collection of disconnected features that becomes expensive to maintain.",
-    "ctaPrimaryText": "Start a Project",
-    "ctaSecondaryText": "Get a Free Estimate",
-    "faqsText": "How much do Laravel development services cost? | Laravel development costs depend on the number of features, integrations, user roles, design requirements, data migration, and support needs. Cubixsol reviews the scope first and provides a clear estimate based on the work required.\nHow long does Laravel development take? | The timeline depends on the application’s size, technical complexity, feedback cycle, and third-party integrations. A focused product takes less time than a multi-role SaaS platform or a legacy migration. We confirm milestones and a realistic delivery schedule after discovery.\nWhy choose Laravel over another framework? | Laravel is a strong choice for structured PHP applications because it provides established tools for routing, authentication, database access, queues, caching, testing, and API development. The best framework still depends on the product, existing technology, team, and long-term plans.\nDo you provide Laravel maintenance and support? | Yes. Cubixsol provides ongoing support for updates, issue resolution, performance improvements, security patches, and new features. We can support applications developed by our team or review an existing Laravel codebase before taking responsibility for it.\nCan I hire a dedicated Laravel developer? | Yes. You can hire dedicated Laravel developers through Cubixsol for ongoing development, additional technical capacity, or a defined project. We align the engagement with your scope, preferred workflow, communication needs, and delivery priorities.",
-    "menuTitle": "Laravel",
-    "serviceProcessIntro": "Our Laravel development process moves from validated requirements to a tested release through five clear stages.",
-    "serviceProcessText": "Discover | We define the users, business goals, required features, integrations, constraints, and success criteria.\nPlan | We map the architecture, database, user journeys, priorities, milestones, and delivery schedule\nDevelop | Our team creates the application in structured phases and reviews progress against the agreed scope.\nTest | We check features, APIs, permissions, performance, security controls, and compatibility across relevant devices and browsers.\nLaunch and support | We deploy the approved product, monitor its performance, resolve early issues, and plan future releases.",
-    "serviceProcessTitle": "Our Laravel Development Process",
-    "subServicesIntro": "Our Laravel development company supports new products, growing platforms, and legacy PHP systems with focused engineering expertise. Each engagement starts with the business problem, user requirements, and technical constraints so the final solution fits its purpose and remains manageable after launch.",
-    "subServicesText": "Custom Laravel Application Development | We develop business portals, booking systems, marketplaces, management platforms, and other custom applications around your workflows. Our custom PHP development services cover the complete product foundation, including architecture, databases, business logic, permissions, dashboards, and third-party integrations.\nLaravel API and Backend Development | Our backend development services create the systems responsible for your application’s data, rules, integrations, and user access. We develop RESTful APIs and connect payment gateways, CRM platforms, mobile applications, analytics tools, and other services while keeping the backend organised and ready for further development.\nLaravel SaaS Development | We create SaaS products with subscription management, user roles, account controls, reporting, notifications, and multi-tenant capabilities. The architecture is planned around your operating model, so your team can add customers, refine features, and manage the platform without unnecessary technical friction.\nLaravel Migration and Upgrades | We move legacy PHP applications and suitable systems from other frameworks to Laravel with a controlled migration plan. Our team also upgrades older Laravel projects, resolves compatibility issues, updates dependencies, and protects essential data and workflows throughout the transition.\nLaravel Maintenance and Support | We keep Laravel applications stable after release through issue resolution, dependency updates, performance reviews, security patches, and planned feature improvements. Support can cover a newly launched Cubixsol product or an existing Laravel application that needs a dependable technical team.",
-    "subServicesTitle": "Our Laravel Development Services",
-    "whyChooseIntro": "Our experts combine disciplined development with clear project coordination. They help businesses move from an idea or an outdated system to a dependable Laravel product.",
-    "whyChooseText": "Quality-Focused Engineering | We use structured architecture, coding standards, reviews, and testing to reduce avoidable defects and simplify future improvements. Every technical decision must support the product’s real requirements.\nDependable Delivery | We divide the project into defined phases with practical milestones and clear responsibilities. Potential blockers, changing requirements, and external dependencies are raised early to protect the schedule.\nTransparent Collaboration | You receive regular progress updates, working demonstrations, and direct explanations of technical decisions. The shared scope and priorities keep both teams aligned throughout development.\nOngoing Technical Support | Our involvement can continue after launch with monitoring, maintenance, upgrades, fixes, and feature development. Your application keeps receiving attention as user needs and business priorities change.",
-    "whyChooseTitle": "Why Choose Cubixsol for Laravel Development?"
-  },
-  {
-    "seo": {
       "metaTitle": "E-Commerce Development Services | Cubixsol",
       "metaDescription": "Launch or improve an online store, marketplace, or subscription platform built around easier product discovery and checkout. We support secure payments, inventory systems, third-party integrations, mobile optimization, and simple store management.",
       "keywords": "Shopify, WooCommerce, Next.js, Stripe, Laravel",
@@ -1773,6 +1793,486 @@ const initialServices = [
     "ctaBannerDesc": "Partner with Cubixsol for **high-converting ecommerce development services** that deliver fast checkouts, robust integrations, and smooth buying journeys.",
     "ctaBannerEyebrow": "READY TO GROW YOUR ONLINE STORE?",
     "ctaBannerTitle": "Ready to Scale Your E-Commerce Business?"
+  },
+  {
+    "seo": {
+      "metaTitle": "Mobile App Development Services | Cubixsol",
+      "metaDescription": "Turn your product concept into a smooth mobile experience for iOS and Android. Our team develops native and cross-platform apps with intuitive navigation, stable performance, secure data handling, and scalable back-end systems.",
+      "keywords": "Flutter, React Native, Swift, Kotlin, Firebase",
+      "ogTitle": "Mobile App Development Services | Cubixsol",
+      "ogDescription": "Turn your product concept into a smooth mobile experience for iOS and Android. Our team develops native and cross-platform apps with intuitive navigation, stable performance, secure data handling, and scalable back-end systems.",
+      "ogImage": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1000&h=750&q=70",
+      "canonicalUrl": ""
+    },
+    "icon": "/uploads/media-1788761191366-9651825.svg",
+    "slug": "mobile-app-development",
+    "heroImage": "/uploads/media-1788439771557-360010811.svg",
+    "title": "Mobile App Development Services Built Around Your Business Goals",
+    "desc": "Launch native or cross-platform applications for iOS and Android with intuitive interfaces, reliable performance, and scalable architecture.",
+    "color": "text-emerald-600 bg-emerald-50",
+    "gradient": "from-emerald-500 to-teal-600",
+    "longDesc": "Cubixsol provides end-to-end mobile app development services to turn your app idea into a reliable digital product. We cover product planning, interface design, development, testing, launch, and ongoing improvement.",
+    "features": [
+      "iOS App Development",
+      "Android App Development",
+      "React Native apps",
+      "Flutter App Development",
+      "Ionic App Development",
+      "IoT-connected mobile experiences",
+      "App Store & Play Store launch",
+      "Ongoing maintenance & updates"
+    ],
+    "tech": [
+      "Flutter",
+      "React Native",
+      "Swift",
+      "Kotlin",
+      "Firebase"
+    ],
+    "outcomes": [
+      "One codebase, two platforms",
+      "Faster time-to-store",
+      "Consistent UX"
+    ],
+    "faqs": [],
+    "techDesc": "Our developers select technologies according to the product’s features, performance requirements, platform strategy, integrations, and growth plans.\n\n1. **Flutter**: Cross-platform apps with flexible user interfaces\n2. **React Native**: Shared development for iOS and Android\n3. **Swift**: Native iOS applications\n4. **Kotlin**: Native Android applications\n5. **Firebase**: Authentication, databases, notifications, and analytics\n6. **Node.js**: Scalable APIs and backend services",
+    "techTitle": "Technologies We Use",
+    "businessTypesItems": [],
+    "ctaBannerButtonText": "Get a Free Estimate",
+    "ctaBannerDesc": "Move from idea to launch with mobile app development services focused on your users, goals, and future growth. Share your requirements with Cubixsol and receive a practical development plan for your product.",
+    "ctaBannerEyebrow": "",
+    "ctaBannerTitle": "Ready to Start Your Mobile App Project?",
+    "serviceProcessSteps": [
+      {
+        "stepNumber": "01",
+        "title": "Discover",
+        "desc": "We define the product goals, target users, essential features, technical requirements, and success measures.",
+        "image": "",
+        "points": []
+      },
+      {
+        "stepNumber": "02",
+        "title": "Plan",
+        "desc": "Our team maps user journeys, project scope, system architecture, delivery milestones, and required integrations.",
+        "image": "",
+        "points": []
+      },
+      {
+        "stepNumber": "03",
+        "title": "Build",
+        "desc": "Designers and developers create the interface, application logic, APIs, and backend systems through organised development cycles.",
+        "image": "",
+        "points": []
+      },
+      {
+        "stepNumber": "04",
+        "title": "Test",
+        "desc": "We test functionality, usability, compatibility, performance, and security across relevant devices and operating-system versions.",
+        "image": "",
+        "points": []
+      },
+      {
+        "stepNumber": "05",
+        "title": "Launch and Support",
+        "desc": "Our team prepares the application for release, supports store submission, monitors performance, and plans future improvements.",
+        "image": "",
+        "points": []
+      }
+    ],
+    "subServicesItems": [
+      {
+        "title": "iOS App Development",
+        "desc": "We develop iPhone and iPad applications with Swift and Apple-native technologies. Our developers create intuitive interfaces, stable functionality, and secure integrations while following Apple’s technical and App Store requirements.",
+        "q": "iOS App Development",
+        "a": "We develop iPhone and iPad applications with Swift and Apple-native technologies. Our developers create intuitive interfaces, stable functionality, and secure integrations while following Apple’s technical and App Store requirements."
+      },
+      {
+        "title": "Android App Development",
+        "desc": "Our Android developers build applications for smartphones, tablets, and other Android devices. We use Kotlin and modern Android frameworks to support strong performance, broad device compatibility, and maintainable code.",
+        "q": "Android App Development",
+        "a": "Our Android developers build applications for smartphones, tablets, and other Android devices. We use Kotlin and modern Android frameworks to support strong performance, broad device compatibility, and maintainable code."
+      },
+      {
+        "title": "MVP App Development",
+        "desc": "We help startups and product teams convert ideas into focused minimum viable products. The process prioritises essential features, validates key assumptions, and creates a practical foundation for future releases without overloading the first version.",
+        "q": "MVP App Development",
+        "a": "We help startups and product teams convert ideas into focused minimum viable products. The process prioritises essential features, validates key assumptions, and creates a practical foundation for future releases without overloading the first version."
+      },
+      {
+        "title": "Cross-Platform App Development",
+        "desc": "Our cross platform app development services help businesses reach iOS and Android users through a coordinated codebase. This approach can reduce duplicate development work, simplify feature management, and support a consistent experience across both platforms.",
+        "q": "Cross-Platform App Development",
+        "a": "Our cross platform app development services help businesses reach iOS and Android users through a coordinated codebase. This approach can reduce duplicate development work, simplify feature management, and support a consistent experience across both platforms."
+      },
+      {
+        "title": "Mobile Apps for Fintech and Healthcare",
+        "desc": "Our fintech mobile app development services support products such as digital wallets, payment platforms, financial dashboards, lending systems, and account management apps. We plan each solution around secure data handling, dependable integrations, clear user journeys, and applicable compliance requirements.",
+        "q": "Mobile Apps for Fintech and Healthcare",
+        "a": "Our fintech mobile app development services support products such as digital wallets, payment platforms, financial dashboards, lending systems, and account management apps. We plan each solution around secure data handling, dependable integrations, clear user journeys, and applicable compliance requirements."
+      }
+    ],
+    "whyChooseItems": [
+      {
+        "title": "Quality-Focused Development",
+        "desc": "Code reviews, structured testing, and clear technical standards help us create stable applications that remain easier to maintain and improve.",
+        "q": "Quality-Focused Development",
+        "a": "Code reviews, structured testing, and clear technical standards help us create stable applications that remain easier to maintain and improve."
+      },
+      {
+        "title": "Organised, On-Time Delivery",
+        "desc": "Defined milestones and focused development cycles keep the project moving. Regular progress reviews help identify delays early and protect delivery priorities.",
+        "q": "Organised, On-Time Delivery",
+        "a": "Defined milestones and focused development cycles keep the project moving. Regular progress reviews help identify delays early and protect delivery priorities."
+      },
+      {
+        "title": "Transparent Communication",
+        "desc": "You receive clear updates on scope, progress, technical decisions, and upcoming work. Our team discusses changes before they affect the budget or timeline.",
+        "q": "Transparent Communication",
+        "a": "You receive clear updates on scope, progress, technical decisions, and upcoming work. Our team discusses changes before they affect the budget or timeline."
+      },
+      {
+        "title": "Ongoing Technical Support",
+        "desc": "Launch marks the start of continuous product improvement. We can monitor the application, resolve issues, update dependencies, improve performance, and develop new features as user needs change.",
+        "q": "Ongoing Technical Support",
+        "a": "Launch marks the start of continuous product improvement. We can monitor the application, resolve issues, update dependencies, improve performance, and develop new features as user needs change."
+      }
+    ],
+    "serviceProcessText": "01 | Discover | We define the product goals, target users, essential features, technical requirements, and success measures.\n\n02 | Plan | Our team maps user journeys, project scope, system architecture, delivery milestones, and required integrations.\n\n03 | Build | Designers and developers create the interface, application logic, APIs, and backend systems through organised development cycles.\n\n04 | Test | We test functionality, usability, compatibility, performance, and security across relevant devices and operating-system versions.\n\n05 | Launch and Support | Our team prepares the application for release, supports store submission, monitors performance, and plans future improvements.",
+    "serviceProcessTitle": "Our Mobile App Development Process",
+    "subServicesText": "iOS App Development | We develop iPhone and iPad applications with Swift and Apple-native technologies. Our developers create intuitive interfaces, stable functionality, and secure integrations while following Apple’s technical and App Store requirements.\n\nAndroid App Development | Our Android developers build applications for smartphones, tablets, and other Android devices. We use Kotlin and modern Android frameworks to support strong performance, broad device compatibility, and maintainable code.\n\nMVP App Development | We help startups and product teams convert ideas into focused minimum viable products. The process prioritises essential features, validates key assumptions, and creates a practical foundation for future releases without overloading the first version.\n\nCross-Platform App Development | Our cross platform app development services help businesses reach iOS and Android users through a coordinated codebase. This approach can reduce duplicate development work, simplify feature management, and support a consistent experience across both platforms.\n\nMobile Apps for Fintech and Healthcare | Our fintech mobile app development services support products such as digital wallets, payment platforms, financial dashboards, lending systems, and account management apps. We plan each solution around secure data handling, dependable integrations, clear user journeys, and applicable compliance requirements.",
+    "subServicesTitle": "Our Mobile App Development Services",
+    "whyChooseText": "Quality-Focused Development | Code reviews, structured testing, and clear technical standards help us create stable applications that remain easier to maintain and improve.\n\nOrganised, On-Time Delivery | Defined milestones and focused development cycles keep the project moving. Regular progress reviews help identify delays early and protect delivery priorities.\n\nTransparent Communication | You receive clear updates on scope, progress, technical decisions, and upcoming work. Our team discusses changes before they affect the budget or timeline.\n\nOngoing Technical Support | Launch marks the start of continuous product improvement. We can monitor the application, resolve issues, update dependencies, improve performance, and develop new features as user needs change.",
+    "whyChooseTitle": "Why Choose Cubixsol?",
+    "menuTitle": "Mobile App",
+    "cardTitle": "Mobile App Development"
+  },
+  {
+    "seo": {
+      "metaTitle": "PHP Development Services | Cubixsol",
+      "metaDescription": "Laravel, CodeIgniter, CakePHP, and ongoing PHP maintenance for reliable backend systems.",
+      "keywords": "PHP, Laravel, CodeIgniter, CakePHP, MySQL, Redis",
+      "ogTitle": "PHP Development Services | Cubixsol",
+      "ogDescription": "Laravel, CodeIgniter, CakePHP, and ongoing PHP maintenance for reliable backend systems.",
+      "ogImage": "https://images.unsplash.com/photo-1599507593499-a69270d22dc9?auto=format&fit=crop&w=1000&h=750&q=70",
+      "canonicalUrl": ""
+    },
+    "icon": "/uploads/media-1788761191368-719289353.svg",
+    "slug": "php-development",
+    "heroImage": "/uploads/media-1788760355443-290359679.svg",
+    "title": "PHP Development Services for High-Performance Web Solutions",
+    "desc": "Our professionals provide PHP development services for custom applications, customer portals, APIs, e-commerce systems, and platform upgrades.",
+    "color": "text-purple-600 bg-purple-50",
+    "gradient": "from-purple-500 to-indigo-600",
+    "longDesc": "Our professionals provide PHP development services for custom applications, customer portals, APIs, e-commerce systems, and platform upgrades. They combine clean architecture with proven PHP frameworks to support reliable performance, easier maintenance, and future growth.",
+    "features": [
+      "CakePHP Development",
+      "Laravel Development",
+      "CodeIgniter Development",
+      "PHP Maintenance and Support",
+      "Legacy modernization",
+      "API backends in PHP",
+      "Security hardening & upgrades",
+      "Performance and caching"
+    ],
+    "tech": [
+      "PHP",
+      "Laravel",
+      "CodeIgniter",
+      "CakePHP",
+      "MySQL",
+      "Redis"
+    ],
+    "outcomes": [
+      "Stable, maintainable backends",
+      "Safer upgrades from legacy code",
+      "Faster feature delivery on PHP stacks"
+    ],
+    "faqs": [
+      {
+        "q": "How much do PHP development services cost?",
+        "a": "PHP development costs depend on the application’s size, features, design requirements, integrations, security needs, and technical complexity. Cubixsol reviews your requirements before providing a clear estimate based on the actual project scope."
+      },
+      {
+        "q": "How long does PHP development take?",
+        "a": "A focused website or application upgrade can take several weeks, while a complex platform can require several months. We provide a realistic delivery schedule after reviewing the features, integrations, technical risks, and testing requirements."
+      },
+      {
+        "q": "Which PHP frameworks do you use?",
+        "a": "Our developers work with Laravel, CodeIgniter, and CakePHP. We recommend a framework based on the project’s architecture, complexity, performance needs, existing codebase, development timeline, and long-term maintenance requirements."
+      },
+      {
+        "q": "Do you provide PHP maintenance and support?",
+        "a": "Yes. we provides ongoing PHP maintenance, including bug fixes, framework updates, security improvements, database optimization, performance monitoring, code refactoring, and new feature development."
+      },
+      {
+        "q": "Can I hire a PHP developer from Cubixsol?",
+        "a": "Yes. You can hire a PHP developer or a complete development team based on your project scope. We establish responsibilities, milestones, communication routines, and reporting expectations before development begins."
+      }
+    ],
+    "techDesc": "We use supported, project-appropriate technologies to build dependable PHP applications. Our stack includes PHP 8.x, Laravel, CodeIgniter, CakePHP, MySQL, REST APIs, Composer, Git, HTML5, CSS3, and JavaScript. Technology choices depend on performance requirements, product complexity, existing infrastructure, integration needs, and future development plans.\n",
+    "techTitle": "Technologies We Use",
+    "businessTypesItems": [],
+    "ctaBannerButtonText": "Start Your PHP Project",
+    "ctaBannerDesc": "Use Cubixsol’s PHP development services to build, improve, or modernise a secure web application aligned with your business goals. Share your requirements with our team and receive a practical development plan.\n",
+    "ctaBannerEyebrow": "",
+    "ctaBannerTitle": "Ready to Start Your PHP Project?",
+    "serviceProcessSteps": [
+      {
+        "stepNumber": "01",
+        "title": "Discover",
+        "desc": "We examine your business goals, users, workflows, existing systems, technical requirements, and project priorities.",
+        "image": "",
+        "points": []
+      },
+      {
+        "stepNumber": "02",
+        "title": "Plan",
+        "desc": "Our team defines the architecture, features, integrations, development milestones, and delivery roadmap.",
+        "image": "",
+        "points": []
+      },
+      {
+        "stepNumber": "03",
+        "title": "Build",
+        "desc": "Developers create the frontend, backend, database structure, APIs, and required integrations through manageable development stages.",
+        "image": "",
+        "points": []
+      },
+      {
+        "stepNumber": "04",
+        "title": "Test",
+        "desc": "We test functionality, responsiveness, security, performance, browser compatibility, and important user journeys before release.",
+        "image": "",
+        "points": []
+      },
+      {
+        "stepNumber": "05",
+        "title": "Launch and Support",
+        "desc": "Our team deploys the application, monitors performance, resolves launch issues, and provides ongoing maintenance when required.",
+        "image": "",
+        "points": []
+      }
+    ],
+    "subServicesItems": [
+      {
+        "title": "Custom PHP Web Development Services",
+        "desc": "Our custom **PHP development services** turn complex workflows into perfect web applications. We develop SaaS platforms, admin dashboards, customer portals, booking systems, marketplaces, and internal tools with clear architecture and room for growth. Our **PHP web development services** also connect responsive interfaces with dependable backend functionality for smooth user and administrator experiences."
+      },
+      {
+        "title": "Laravel Development Services",
+        "desc": "We use Laravel for structured, feature-rich applications involving secure authentication, role management, queues, dashboards, third-party integrations, or complex business logic. Our Laravel development services support new applications, platform migrations, feature expansion, performance improvements, and long-term product maintenance."
+      },
+      {
+        "title": "CodeIgniter and CakePHP Development",
+        "desc": "CodeIgniter supports lightweight, performance-focused applications, while CakePHP provides an organised framework for rapidly developing structured web products. We select the most suitable option based on project goals, existing architecture, application complexity, development speed, and long-term ownership requirements."
+      },
+      {
+        "title": "PHP Maintenance and Modernisation",
+        "desc": "Keep existing PHP applications secure, stable, and useful through version upgrades, bug fixes, code refactoring, database optimisation, security improvements, and performance tuning. We can also modernise legacy PHP systems through carefully planned phases to minimise disruption and preserve important business data."
+      },
+      {
+        "title": "PHP API Development and Integration",
+        "desc": "We create secure APIs and connect PHP applications with payment gateways, CRMs, ERPs, shipping platforms, analytics tools, cloud services, and other business systems. Clear documentation, authentication controls, and reliable data exchange make every integration easier to manage and maintain."
+      }
+    ],
+    "whyChooseItems": [
+      {
+        "title": "Quality-focused development",
+        "desc": "We follow clean coding practices, review important components, and test critical workflows before deployment.",
+        "q": "Quality-focused development",
+        "a": "We follow clean coding practices, review important components, and test critical workflows before deployment."
+      },
+      {
+        "title": "Reliable project delivery",
+        "desc": "Defined milestones, realistic schedules, and regular progress reviews keep development moving in the right direction.",
+        "q": "Reliable project delivery",
+        "a": "Defined milestones, realistic schedules, and regular progress reviews keep development moving in the right direction."
+      },
+      {
+        "title": "Transparent communication",
+        "desc": "You receive clear updates about completed work, upcoming priorities, technical decisions, and potential project risks.",
+        "q": "Transparent communication",
+        "a": "You receive clear updates about completed work, upcoming priorities, technical decisions, and potential project risks."
+      },
+      {
+        "title": "Ongoing technical support",
+        "desc": "Our team can handle updates, security improvements, performance optimization, bug fixes, and future feature development after launch.",
+        "q": "Ongoing technical support",
+        "a": "Our team can handle updates, security improvements, performance optimization, bug fixes, and future feature development after launch."
+      }
+    ],
+    "additionalParagraph": "Cubixsol’s **PHP development services** cover strategy, architecture, interface development, backend engineering, database design, integrations, testing, deployment, and ongoing support. We build new digital products and improve existing PHP systems around practical business workflows. Every project focuses on clean code, secure data handling, responsive experiences, stable performance, and a flexible foundation for future features.",
+    "ctaPrimaryText": "Start Your PHP Project",
+    "ctaSecondaryText": "Get a Free Estimate",
+    "faqsText": "How much do PHP development services cost? | PHP development costs depend on the application’s size, features, design requirements, integrations, security needs, and technical complexity. Cubixsol reviews your requirements before providing a clear estimate based on the actual project scope.\nHow long does PHP development take? | A focused website or application upgrade can take several weeks, while a complex platform can require several months. We provide a realistic delivery schedule after reviewing the features, integrations, technical risks, and testing requirements.\nWhich PHP frameworks do you use? | Our developers work with Laravel, CodeIgniter, and CakePHP. We recommend a framework based on the project’s architecture, complexity, performance needs, existing codebase, development timeline, and long-term maintenance requirements.\nDo you provide PHP maintenance and support? | Yes. we provides ongoing PHP maintenance, including bug fixes, framework updates, security improvements, database optimization, performance monitoring, code refactoring, and new feature development.\nCan I hire a PHP developer from Cubixsol? | Yes. You can hire a PHP developer or a complete development team based on your project scope. We establish responsibilities, milestones, communication routines, and reporting expectations before development begins.",
+    "menuTitle": "Php",
+    "serviceProcessIntro": "Our five-step process keeps development organised, transparent, and focused on measurable project requirements.\n",
+    "serviceProcessText": "Discover | We examine your business goals, users, workflows, existing systems, technical requirements, and project priorities.\nPlan | Our team defines the architecture, features, integrations, development milestones, and delivery roadmap.\nBuild | Developers create the frontend, backend, database structure, APIs, and required integrations through manageable development stages.\nTest | We test functionality, responsiveness, security, performance, browser compatibility, and important user journeys before release.\nLaunch and Support | Our team deploys the application, monitors performance, resolves launch issues, and provides ongoing maintenance when required.",
+    "serviceProcessTitle": "Our PHP Development Process",
+    "subServicesIntro": "Our team develops reliable PHP solutions for businesses launching new products, modernising legacy platforms, or expanding existing applications. Each engagement begins with clear requirements and ends with a production-ready solution built for long-term use.",
+    "subServicesText": "Custom PHP Web Development Services | Our custom **PHP development services** turn complex workflows into perfect web applications. We develop SaaS platforms, admin dashboards, customer portals, booking systems, marketplaces, and internal tools with clear architecture and room for growth. Our **PHP web development services** also connect responsive interfaces with dependable backend functionality for smooth user and administrator experiences.\nLaravel Development Services | We use Laravel for structured, feature-rich applications involving secure authentication, role management, queues, dashboards, third-party integrations, or complex business logic. Our Laravel development services support new applications, platform migrations, feature expansion, performance improvements, and long-term product maintenance.\nCodeIgniter and CakePHP Development | CodeIgniter supports lightweight, performance-focused applications, while CakePHP provides an organised framework for rapidly developing structured web products. We select the most suitable option based on project goals, existing architecture, application complexity, development speed, and long-term ownership requirements.\nPHP Maintenance and Modernisation | Keep existing PHP applications secure, stable, and useful through version upgrades, bug fixes, code refactoring, database optimisation, security improvements, and performance tuning. We can also modernise legacy PHP systems through carefully planned phases to minimise disruption and preserve important business data.\nPHP API Development and Integration | We create secure APIs and connect PHP applications with payment gateways, CRMs, ERPs, shipping platforms, analytics tools, cloud services, and other business systems. Clear documentation, authentication controls, and reliable data exchange make every integration easier to manage and maintain.",
+    "subServicesTitle": "Our PHP Development Services",
+    "whyChooseIntro": "Our experts combines practical engineering with clear project communication to deliver PHP solutions built for real business use.\n",
+    "whyChooseText": "- Quality-focused development: We follow clean coding practices, review important components, and test critical workflows before deployment.\n- Reliable project delivery: Defined milestones, realistic schedules, and regular progress reviews keep development moving in the right direction.\n- Transparent communication: You receive clear updates about completed work, upcoming priorities, technical decisions, and potential project risks.\n- Ongoing technical support: Our team can handle updates, security improvements, performance optimization, bug fixes, and future feature development after launch.",
+    "whyChooseTitle": "Why Choose Cubixsol?"
+  },
+  {
+    "seo": {
+      "metaTitle": "Graphic Design Services & Branding Solutions | Cubixsol",
+      "metaDescription": "Build a distinctive and consistent brand with Cubixsol’s graphic design services for identity, packaging, social media, illustrations, and digital platforms.",
+      "keywords": "",
+      "ogTitle": "",
+      "ogDescription": "",
+      "ogImage": "",
+      "canonicalUrl": ""
+    },
+    "icon": "/uploads/media-1788761191368-22630739.svg",
+    "slug": "graphic-designing",
+    "heroImage": "/uploads/media-1788760355440-864999462.svg",
+    "title": "Professional Graphic Design Services to Create a Recognisable Brand",
+    "desc": "UI/UX, web and mobile design, social creatives, branding, and illustration that support real products.",
+    "color": "text-pink-600 bg-pink-50",
+    "gradient": "from-pink-500 to-rose-600",
+    "longDesc": "Design that ships with your product — interfaces, marketing visuals, and brand systems. We cover UI/UX, web and mobile layouts, social media design, branding and identity, and illustration support when campaigns need a distinctive look.",
+    "features": [
+      "UI/UX Designing",
+      "Web design",
+      "Mobile app design",
+      "Social Media Design",
+      "Branding and Identity Design",
+      "3D Illustrations",
+      "Design systems & components",
+      "Handoff-ready production files"
+    ],
+    "tech": [
+      "Figma",
+      "Adobe Suite",
+      "Framer",
+      "Principle",
+      "Illustrator"
+    ],
+    "outcomes": [
+      "Clearer product interfaces",
+      "Stronger brand consistency",
+      "Faster design-to-dev handoff"
+    ],
+    "faqs": [
+      {
+        "q": "What deliverables do I receive with graphic design projects?",
+        "a": "You receive complete source files (Figma, Adobe Illustrator, Photoshop) alongside optimized production exports (SVG, PNG, WebP, PDF) and style guides."
+      },
+      {
+        "q": "Can you work within our existing brand guidelines?",
+        "a": "Yes. We can strictly adhere to your existing brand assets and style rules, or help modernize and expand them if needed."
+      },
+      {
+        "q": "How long does a brand identity or design project take?",
+        "a": "Individual design assets typically take 3-5 days, while complete brand identity and design systems range from 2 to 4 weeks depending on scope."
+      },
+      {
+        "q": "Do you provide revisions during the design process?",
+        "a": "Yes, we provide structured iterative review stages to ensure the final design meets your exact expectations and standards before sign-off."
+      },
+      {
+        "q": "Do you design for both digital and print?",
+        "a": "Yes, we prepare high-resolution CMYK print files with bleed margins as well as RGB web-optimized assets."
+      }
+    ],
+    "techDesc": "We select technologies according to the project’s functionality, performance requirements, integrations, and future roadmap.\n\nThe goal is not to use the newest technology for its own sake. It is to choose a dependable stack that fits your product, supports maintainability, and avoids unnecessary technical complexity.",
+    "techTitle": "Technologies We Use",
+    "businessTypesItems": [],
+    "businessTypesText": "",
+    "faqsText": "What deliverables do I receive with graphic design projects? | You receive complete source files (Figma, Adobe Illustrator, Photoshop) alongside optimized production exports (SVG, PNG, WebP, PDF) and style guides.\n\nCan you work within our existing brand guidelines? | Yes. We can strictly adhere to your existing brand assets and style rules, or help modernize and expand them if needed.\n\nHow long does a brand identity or design project take? | Individual design assets typically take 3-5 days, while complete brand identity and design systems range from 2 to 4 weeks depending on scope.\n\nDo you provide revisions during the design process? | Yes, we provide structured iterative review stages to ensure the final design meets your exact expectations and standards before sign-off.\n\nDo you design for both digital and print? | Yes, we prepare high-resolution CMYK print files with bleed margins as well as RGB web-optimized assets.",
+    "serviceProcessSteps": [
+      {
+        "stepNumber": "01",
+        "title": "Creative Brief & Research",
+        "desc": "We analyze your brand values, target demographic, competitor landscape, and aesthetic preferences.",
+        "image": "",
+        "points": []
+      },
+      {
+        "stepNumber": "02",
+        "title": "Concept Exploration",
+        "desc": "Our designers develop multiple initial directions, mood boards, and sketch concepts for review.",
+        "image": "",
+        "points": []
+      },
+      {
+        "stepNumber": "03",
+        "title": "Design Refinement",
+        "desc": "We polish the chosen direction, fine-tuning typography, contrast, spacing, and brand harmony.",
+        "image": "",
+        "points": []
+      },
+      {
+        "stepNumber": "04",
+        "title": "Production & Formats",
+        "desc": "We generate all required asset sizes, SVG exports, print bleed setups, and digital variants.",
+        "image": "",
+        "points": []
+      },
+      {
+        "stepNumber": "05",
+        "title": "Handoff & Guidelines",
+        "desc": "Delivery of organized source files (Figma, AI, PSD), style documentation, and usage guidelines.",
+        "image": "",
+        "points": []
+      }
+    ],
+    "serviceProcessText": "01 | Creative Brief & Research | We analyze your brand values, target demographic, competitor landscape, and aesthetic preferences.\n\n02 | Concept Exploration | Our designers develop multiple initial directions, mood boards, and sketch concepts for review.\n\n03 | Design Refinement | We polish the chosen direction, fine-tuning typography, contrast, spacing, and brand harmony.\n\n04 | Production & Formats | We generate all required asset sizes, SVG exports, print bleed setups, and digital variants.\n\n05 | Handoff & Guidelines | Delivery of organized source files (Figma, AI, PSD), style documentation, and usage guidelines.",
+    "subServicesItems": [
+      {
+        "title": "Brand Identity & Logo Design",
+        "desc": "We design memorable logos, color palettes, typography scales, and brand style guides that establish a cohesive, recognizable identity across all company touchpoints."
+      },
+      {
+        "title": "UI/UX & Web Design Graphics",
+        "desc": "Engaging website banners, icons, feature illustrations, and user interface visuals designed to improve conversions and user retention."
+      },
+      {
+        "title": "Marketing & Social Media Creatives",
+        "desc": "Custom social media post templates, ad creatives for Meta/Google, pitch decks, infographics, and campaign graphics built to drive engagement."
+      },
+      {
+        "title": "Print & Packaging Design",
+        "desc": "Brochures, flyers, business stationery, merchandise, and retail packaging designed with exact print specifications and high-resolution output."
+      },
+      {
+        "title": "Custom 2D/3D Illustrations",
+        "desc": "Unique digital illustrations and 3D visual elements tailored to your brand narrative, making complex products feel intuitive and premium."
+      }
+    ],
+    "subServicesText": "Brand Identity & Logo Design | We design memorable logos, color palettes, typography scales, and brand style guides that establish a cohesive, recognizable identity across all company touchpoints.\n\nUI/UX & Web Design Graphics | Engaging website banners, icons, feature illustrations, and user interface visuals designed to improve conversions and user retention.\n\nMarketing & Social Media Creatives | Custom social media post templates, ad creatives for Meta/Google, pitch decks, infographics, and campaign graphics built to drive engagement.\n\nPrint & Packaging Design | Brochures, flyers, business stationery, merchandise, and retail packaging designed with exact print specifications and high-resolution output.\n\nCustom 2D/3D Illustrations | Unique digital illustrations and 3D visual elements tailored to your brand narrative, making complex products feel intuitive and premium.",
+    "whyChooseItems": [
+      {
+        "title": "Tailored Brand Alignment",
+        "desc": "Every visual asset is crafted around your unique audience, industry positioning, and business goals."
+      },
+      {
+        "title": "Multi-Format Production Ready",
+        "desc": "Handoff-ready vector files, responsive web assets, and print-ready deliverables in all required industry formats."
+      },
+      {
+        "title": "Fast Turnaround with Iterations",
+        "desc": "Structured creative phases with concept exploration, feedback cycles, and clear milestone deliveries."
+      },
+      {
+        "title": "Unified Design Systems",
+        "desc": "We ensure long-term consistency with complete component libraries, guidelines, and scalable design assets."
+      }
+    ],
+    "whyChooseText": "Tailored Brand Alignment | Every visual asset is crafted around your unique audience, industry positioning, and business goals.\n\nMulti-Format Production Ready | Handoff-ready vector files, responsive web assets, and print-ready deliverables in all required industry formats.\n\nFast Turnaround with Iterations | Structured creative phases with concept exploration, feedback cycles, and clear milestone deliveries.\n\nUnified Design Systems | We ensure long-term consistency with complete component libraries, guidelines, and scalable design assets.",
+    "menuTitle": "Graphic Design",
+    "serviceProcessTitle": "Our Graphic Design Process",
+    "subServicesIntro": "We deliver professional graphic design services that help businesses build a consistent visual identity, communicate their value clearly, and create polished creative assets across digital and print media.",
+    "subServicesTitle": "Our Graphic Design Services",
+    "whyChooseIntro": "We combine artistic excellence with strategic brand thinking to create designs that elevate your company.",
+    "whyChooseTitle": "Why Choose Cubixsol for Graphic Design?",
+    "ctaBannerButtonText": "Request a Design Quote",
+    "ctaBannerDesc": "Transform your visual presence with Cubixsol’s **professional graphic design services** for branding, marketing assets, and scalable design systems.",
+    "ctaBannerEyebrow": "STAND OUT WITH DISTINCTIVE DESIGN",
+    "ctaBannerTitle": "Ready to Elevate Your Brand Identity?"
   },
   {
     "seo": {
@@ -1930,658 +2430,158 @@ const initialServices = [
   },
   {
     "seo": {
-      "metaTitle": "Cloud and DevOps Services | Cubixsol",
-      "metaDescription": "Cubixsol offers cloud consulting, migration & DevOps — scalable, secure AWS infrastructure with high availability. Get a free cloud assessment.",
-      "keywords": "",
-      "ogTitle": "Cloud and DevOps Services | Cubixsol",
-      "ogDescription": "Create a reliable technical foundation for your product through cloud architecture, automated deployment, monitoring, security, and performance optimization. Our DevOps approach helps teams release updates faster while reducing downtime and infrastructure risks.",
-      "ogImage": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1000&h=750&q=70",
-      "canonicalUrl": ""
-    },
-    "icon": "/uploads/media-1788761191367-247242232.svg",
-    "slug": "cloud-solutions",
-    "heroImage": "/uploads/media-1788439771568-239387480.svg",
-    "title": "Cloud Consulting & Solutions for Your Business",
-    "desc": "Cubixsol provides cloud consulting services to help businesses plan, build, migrate, and manage reliable cloud environments.",
-    "color": "text-sky-600 bg-sky-50",
-    "gradient": "from-sky-500 to-blue-600",
-    "longDesc": "Cubixsol provides cloud consulting services to help businesses plan, build, migrate, and manage reliable cloud environments. Our team helps you assess your current infrastructure, select suitable cloud technologies, improve performance, and support secure applications. We work across cloud strategy, migration, AWS, Kubernetes, security, and infrastructure management.",
-    "features": [
-      "AWS / Azure / GCP setup",
-      "CI/CD pipelines",
-      "Docker & Kubernetes",
-      "Monitoring & alerts",
-      "Cost optimization",
-      "Disaster recovery plans"
-    ],
-    "tech": [
-      "AWS",
-      "Docker",
-      "Kubernetes",
-      "Terraform",
-      "GitHub Actions"
-    ],
-    "outcomes": [
-      "Faster deployments",
-      "Higher uptime",
-      "Predictable costs"
-    ],
-    "faqs": [
-      {
-        "q": "How much do cloud migration services cost?",
-        "a": "Cloud migration costs depend on your current infrastructure, applications, data, cloud platform, and project complexity. Cubixsol can review your environment and provide an estimate based on your specific migration requirements."
-      },
-      {
-        "q": "How long does a cloud migration take?",
-        "a": "Migration time depends on the number of applications, amount of data, infrastructure complexity, and migration method. Smaller projects may take less time, while larger environments can require more planning, testing, and staged migration."
-      },
-      {
-        "q": "AWS vs Azure: Which is better for my business?",
-        "a": "The right platform depends on your applications, existing systems, technical needs, budget, and plans. Our team can review your requirements and help you select a suitable cloud platform."
-      },
-      {
-        "q": "How do you keep cloud environments secure?",
-        "a": "We consider security during cloud planning, setup, and implementation. Our approach can include access controls, data protection, monitoring, secure configurations, and other measures based on your infrastructure and application requirements."
-      },
-      {
-        "q": "Can you migrate applications without downtime?",
-        "a": "Some applications can be migrated with little or no downtime, but the approach depends on the application, infrastructure, dependencies, and migration method. We review your environment first and recommend a migration plan designed to reduce disruption."
-      }
-    ],
-    "techDesc": "We work with widely used cloud and infrastructure technologies, including AWS, Azure, Google Cloud Platform (GCP), Docker, Kubernetes, and Terraform. The technology used for a project depends on its infrastructure, applications, technical requirements, and business goals.",
-    "techTitle": "Technologies We Use",
-    "businessTypesItems": [],
-    "ctaBannerButtonText": "Start Your Project",
-    "ctaBannerDesc": "Improve your cloud infrastructure with practical cloud consulting services from Cubixsol. If you need cloud planning, migration, AWS support, Kubernetes consulting, DevOps, security, or ongoing cloud support, our team can help you plan and deliver the right solution.",
-    "ctaBannerEyebrow": "SCALE WITH CONFIDENCE",
-    "ctaBannerTitle": "Ready to Start Your Project?",
-    "serviceProcessSteps": [
-      {
-        "stepNumber": "01",
-        "title": "Assessment",
-        "desc": "We thoroughly analyze your requirements and evaluate your existing IT architecture and workflows to ensure the best outcomes.",
-        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=560&q=70",
-        "points": [
-          "Software Development Lifecycle (SDLC) Review",
-          "Infrastructure & IT Resource Assessment",
-          "Business Expectation Mapping",
-          "Capability & Constraint Analysis",
-          "DevOps Strategy Development"
-        ]
-      },
-      {
-        "stepNumber": "02",
-        "title": "Roadmap",
-        "desc": "During this phase, we create a detailed roadmap that serves as the foundation for implementing your DevOps project.",
-        "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&h=560&q=70",
-        "points": [
-          "Containerization Strategy",
-          "CI/CD Pipeline Design",
-          "Test Automation Integration",
-          "IaC & Configuration Management",
-          "Monitoring Architecture",
-          "Security & Compliance Guidelines",
-          "DevOps Challenge Analysis & Solutions"
-        ]
-      },
-      {
-        "stepNumber": "03",
-        "title": "Execution",
-        "desc": "We implement the roadmap with a focus on aligning teams, automating workflows, and ensuring stability across your DevOps environment.",
-        "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&h=560&q=70",
-        "points": [
-          "CI/CD Pipeline Setup",
-          "Test Automation Deployment",
-          "IaC Implementation",
-          "Team Enablement & Tool Training",
-          "DevOps Process Setup",
-          "Tool Chain Integration"
-        ]
-      },
-      {
-        "stepNumber": "04",
-        "title": "Optimization",
-        "desc": "We continuously monitor system performance and make adjustments to ensure the solution aligns with your goals and delivers optimal results.",
-        "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=800&h=560&q=70",
-        "points": [
-          "Performance Tuning",
-          "Auto-scaling & Load Management",
-          "Release Cycle Acceleration",
-          "Monitoring & Alerting Setup",
-          "Security & Compliance Enhancements"
-        ]
-      },
-      {
-        "stepNumber": "05",
-        "title": "Support",
-        "desc": "We provide ongoing support to ensure your DevOps ecosystem remains operational, stable, and in sync with your business goals.",
-        "image": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&h=560&q=70",
-        "points": [
-          "Infrastructure Operability Support",
-          "Change Implementation",
-          "Load Distribution Management",
-          "Environment Scaling & Maintenance"
-        ]
-      }
-    ],
-    "subServicesItems": [
-      {
-        "title": "Cloud Consulting",
-        "desc": "Our cloud consulting services help businesses assess their current infrastructure and plan a suitable cloud strategy. We review applications, workloads, infrastructure, technical requirements, and business goals to recommend a practical approach. Our team can also identify areas where performance, scalability, reliability, or cloud costs can be improved."
-      },
-      {
-        "title": "Cloud Migration Services",
-        "desc": "Our cloud migration services help businesses move applications, workloads, and data to the cloud. We assess the existing environment, identify migration requirements, and create a clear plan for each stage. Careful planning and testing can help reduce service disruption and make the move more manageable."
-      },
-      {
-        "title": "AWS Consulting Services",
-        "desc": "Our AWS consulting services support businesses with cloud architecture, infrastructure setup, deployment, optimisation, and ongoing improvements. We help create AWS environments for applications and workloads while considering performance, security, reliability, and scalability."
-      },
-      {
-        "title": "Kubernetes Consulting Services",
-        "desc": "Our Kubernetes consulting services help businesses manage containerised applications and improve application deployment. We can help set up and manage Kubernetes environments, support scaling, and improve the way applications run across cloud infrastructure."
-      },
-      {
-        "title": "Cloud Security",
-        "desc": "Cloud security is an important part of every cloud environment. Our team helps businesses improve protection for infrastructure, applications, and data through suitable access controls, data protection, monitoring, and security practices. Security requirements are considered during planning and implementation."
-      }
-    ],
-    "whyChooseItems": [
-      {
-        "title": "Quality-Focused Delivery",
-        "desc": "We focus on reliable infrastructure, suitable technologies, and clear project requirements. Each part of the work is planned around the needs of your applications and cloud environment."
-      },
-      {
-        "title": "On-Time Delivery",
-        "desc": "Clear planning and defined project stages help keep work organised. We set priorities and milestones so you have a clear view of project progress from discovery through launch."
-      },
-      {
-        "title": "Transparent Communication",
-        "desc": "We keep communication simple and clear throughout the project. You receive updates on progress, requirements, issues, and upcoming work, so you know what is happening at each stage."
-      },
-      {
-        "title": "Ongoing Support",
-        "desc": "Cloud infrastructure can need updates, optimisation, monitoring, and technical support after launch. Our team can continue working with you to maintain and improve your cloud environment as your needs change."
-      }
-    ],
-    "ctaPrimaryText": "Start a Project",
-    "ctaSecondaryText": "Free Estimate",
-    "faqsText": "How much do cloud migration services cost? | Cloud migration costs depend on your current infrastructure, applications, data, cloud platform, and project complexity. Cubixsol can review your environment and provide an estimate based on your specific migration requirements.\nHow long does a cloud migration take? | Migration time depends on the number of applications, amount of data, infrastructure complexity, and migration method. Smaller projects may take less time, while larger environments can require more planning, testing, and staged migration.\nAWS vs Azure: Which is better for my business? | The right platform depends on your applications, existing systems, technical needs, budget, and plans. Our team can review your requirements and help you select a suitable cloud platform.\nHow do you keep cloud environments secure? | We consider security during cloud planning, setup, and implementation. Our approach can include access controls, data protection, monitoring, secure configurations, and other measures based on your infrastructure and application requirements.\nCan you migrate applications without downtime? | Some applications can be migrated with little or no downtime, but the approach depends on the application, infrastructure, dependencies, and migration method. We review your environment first and recommend a migration plan designed to reduce disruption.",
-    "menuTitle": "Cloud",
-    "serviceProcessText": "01 | Assessment | We thoroughly analyze your requirements and evaluate your existing IT architecture and workflows to ensure the best outcomes. | https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=560&q=70 | Software Development Lifecycle (SDLC) Review; Infrastructure & IT Resource Assessment; Business Expectation Mapping; Capability & Constraint Analysis; DevOps Strategy Development\n02 | Roadmap | During this phase, we create a detailed roadmap that serves as the foundation for implementing your DevOps project. | https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&h=560&q=70 | Containerization Strategy; CI/CD Pipeline Design; Test Automation Integration; IaC & Configuration Management; Monitoring Architecture; Security & Compliance Guidelines; DevOps Challenge Analysis & Solutions\n03 | Execution | We implement the roadmap with a focus on aligning teams, automating workflows, and ensuring stability across your DevOps environment. | https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&h=560&q=70 | CI/CD Pipeline Setup; Test Automation Deployment; IaC Implementation; Team Enablement & Tool Training; DevOps Process Setup; Tool Chain Integration\n04 | Optimization | We continuously monitor system performance and make adjustments to ensure the solution aligns with your goals and delivers optimal results. | https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=800&h=560&q=70 | Performance Tuning; Auto-scaling & Load Management; Release Cycle Acceleration; Monitoring & Alerting Setup; Security & Compliance Enhancements\n05 | Support | We provide ongoing support to ensure your DevOps ecosystem remains operational, stable, and in sync with your business goals. | https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&h=560&q=70 | Infrastructure Operability Support; Change Implementation; Load Distribution Management; Environment Scaling & Maintenance",
-    "serviceProcessTitle": "Our 5-step DevOps process",
-    "subServicesIntro": "Our team provides practical cloud services for businesses at different stages of their cloud journey. We can help you plan a new cloud environment, move existing workloads, improve infrastructure, or address specific cloud requirements.",
-    "subServicesText": "Cloud Consulting | Our cloud consulting services help businesses assess their current infrastructure and plan a suitable cloud strategy. We review applications, workloads, infrastructure, technical requirements, and business goals to recommend a practical approach. Our team can also identify areas where performance, scalability, reliability, or cloud costs can be improved.\nCloud Migration Services | Our cloud migration services help businesses move applications, workloads, and data to the cloud. We assess the existing environment, identify migration requirements, and create a clear plan for each stage. Careful planning and testing can help reduce service disruption and make the move more manageable.\nAWS Consulting Services | Our AWS consulting services support businesses with cloud architecture, infrastructure setup, deployment, optimisation, and ongoing improvements. We help create AWS environments for applications and workloads while considering performance, security, reliability, and scalability.\nKubernetes Consulting Services | Our Kubernetes consulting services help businesses manage containerised applications and improve application deployment. We can help set up and manage Kubernetes environments, support scaling, and improve the way applications run across cloud infrastructure.\nCloud Security | Cloud security is an important part of every cloud environment. Our team helps businesses improve protection for infrastructure, applications, and data through suitable access controls, data protection, monitoring, and security practices. Security requirements are considered during planning and implementation.",
-    "subServicesTitle": "Our Cloud Consulting Services",
-    "whyChooseIntro": "A successful cloud project needs clear planning, reliable implementation, open communication, and support after launch. Cubixsol focuses on each part of the project to help businesses build and maintain dependable cloud environments.",
-    "whyChooseText": "Quality-Focused Delivery | We focus on reliable infrastructure, suitable technologies, and clear project requirements. Each part of the work is planned around the needs of your applications and cloud environment.\nOn-Time Delivery | Clear planning and defined project stages help keep work organised. We set priorities and milestones so you have a clear view of project progress from discovery through launch.\nTransparent Communication | We keep communication simple and clear throughout the project. You receive updates on progress, requirements, issues, and upcoming work, so you know what is happening at each stage.\nOngoing Support | Cloud infrastructure can need updates, optimisation, monitoring, and technical support after launch. Our team can continue working with you to maintain and improve your cloud environment as your needs change.",
-    "whyChooseTitle": "Why Choose Cubixsol?",
-    "serviceProcessIntro": "A structured path from assessing your environment to ongoing support after deployment — so releases stay fast and systems stay stable."
-  },
-  {
-    "seo": {
-      "metaTitle": "AI Product Development Services | Cubixsol",
-      "metaDescription": "Use AI to automate repetitive work, improve customer experiences, analyze data, and support faster decisions. We develop practical AI applications, intelligent assistants, recommendation systems, and workflow automation tools connected to your business processes.",
-      "keywords": "OpenAI, Python, LangChain, Vector DBs, AWS",
-      "ogTitle": "AI Product Development Services | Cubixsol",
-      "ogDescription": "Use AI to automate repetitive work, improve customer experiences, analyze data, and support faster decisions. We develop practical AI applications, intelligent assistants, recommendation systems, and workflow automation tools connected to your business processes.",
-      "ogImage": "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1000&h=750&q=70",
-      "canonicalUrl": ""
-    },
-    "icon": "/uploads/media-1788761191364-90843475.svg",
-    "slug": "ai-development",
-    "heroImage": "/uploads/media-1788439771541-852484829.svg",
-    "title": "AI Development Services",
-    "desc": "Turn complex business challenges into practical AI solutions that save time, improve decisions, and create better customer experiences. Cubixsol provides AI chatbot development services for businesses that want intelligent, scalable, and secure digital products not another disconnected AI experiment.",
-    "color": "text-primary-600 bg-primary-50",
-    "gradient": "from-violet-500 to-primary-600",
-    "longDesc": "",
-    "features": [
-      "Custom GPT / LLM apps",
-      "Process automation",
-      "Document & data extraction",
-      "Recommendation systems",
-      "Internal AI copilots",
-      "Secure private deployments"
-    ],
-    "tech": [
-      "OpenAI",
-      "Python",
-      "LangChain",
-      "Vector DBs",
-      "AWS"
-    ],
-    "outcomes": [
-      "Less manual work",
-      "Faster decisions",
-      "New product capabilities"
-    ],
-    "faqs": [
-      {
-        "q": "How much does an AI development project cost?",
-        "a": "The cost depends on the product scope, data readiness, model requirements, integrations, security controls, infrastructure, and expected usage. A focused proof of concept costs less than a production platform with multiple workflows. Cubixsol provides a scoped estimate after the initial discovery process."
-      },
-      {
-        "q": "How long does it take to develop an AI solution?",
-        "a": "A focused AI pilot may take approximately six to ten weeks, while a production-grade solution can require several months. The timeline depends on data preparation, feature complexity, third-party integrations, testing requirements, and deployment approvals."
-      },
-      {
-        "q": "Do we need a large proprietary dataset?",
-        "a": "Not always. Generative AI applications can often begin with existing models and approved company documents. Products requiring specialized predictions or classifications may need structured historical data. We assess data quality and availability before recommending an approach."
-      },
-      {
-        "q": "What is the difference between generative AI and AI agents?",
-        "a": "Generative AI produces outputs such as text, summaries, images, or code. AI agents go further by planning steps, using approved tools, retrieving information, and performing actions toward a defined goal. Some products combine both capabilities."
-      },
-      {
-        "q": "How do you protect sensitive business data?",
-        "a": "We apply role-based access, secure API connections, controlled data retrieval, encryption, logging, and model-specific privacy settings where appropriate. Security requirements are defined during discovery and tested before deployment."
-      }
-    ],
-    "techDesc": "We select technologies according to the product’s use case, data requirements, security needs, and expected scale. Our technology stack can include OpenAI and GPT models, LangChain, Python, TensorFlow, PyTorch, vector databases, cloud AI services, embedding models, retrieval systems, and secure application programming interfaces\n\nThe final architecture remains flexible, maintainable, and compatible with your existing technology environment.",
-    "techTitle": "AI Technologies We Use",
-    "businessTypesItems": [],
-    "businessTypesText": "",
-    "ctaPrimaryText": "Discuss Your AI Project",
-    "ctaSecondaryText": "Request a Consultation",
-    "faqsText": "How much does an AI development project cost? | The cost depends on the product scope, data readiness, model requirements, integrations, security controls, infrastructure, and expected usage. A focused proof of concept costs less than a production platform with multiple workflows. Cubixsol provides a scoped estimate after the initial discovery process.\nHow long does it take to develop an AI solution? | A focused AI pilot may take approximately six to ten weeks, while a production-grade solution can require several months. The timeline depends on data preparation, feature complexity, third-party integrations, testing requirements, and deployment approvals.\nDo we need a large proprietary dataset? | Not always. Generative AI applications can often begin with existing models and approved company documents. Products requiring specialized predictions or classifications may need structured historical data. We assess data quality and availability before recommending an approach.\nWhat is the difference between generative AI and AI agents? | Generative AI produces outputs such as text, summaries, images, or code. AI agents go further by planning steps, using approved tools, retrieving information, and performing actions toward a defined goal. Some products combine both capabilities.\nHow do you protect sensitive business data? | We apply role-based access, secure API connections, controlled data retrieval, encryption, logging, and model-specific privacy settings where appropriate. Security requirements are defined during discovery and tested before deployment.",
-    "serviceProcessSteps": [
-      {
-        "points": [],
-        "stepNumber": "01",
-        "title": "Discover the use case:",
-        "desc": "We define the business problem, intended users, expected outcomes, technical constraints, and success metrics."
-      },
-      {
-        "points": [],
-        "stepNumber": "02",
-        "title": "Assess the data:",
-        "desc": "Our team reviews available documents, databases, content sources, permissions, and data-quality requirements."
-      },
-      {
-        "points": [],
-        "stepNumber": "03",
-        "title": "Build and validate:",
-        "desc": "The approved solution is connected to your applications, business systems, and user workflows."
-      },
-      {
-        "points": [],
-        "stepNumber": "04",
-        "title": "Monitor and improve:",
-        "desc": "We track performance, user feedback, response quality, operating costs, and emerging risks after deployment."
-      }
-    ],
-    "serviceProcessText": "01 | Discover the use case: | We define the business problem, intended users, expected outcomes, technical constraints, and success metrics.\n02 | Assess the data: | Our team reviews available documents, databases, content sources, permissions, and data-quality requirements.\n03 | Build and validate: | The approved solution is connected to your applications, business systems, and user workflows.\n04 | Monitor and improve: | We track performance, user feedback, response quality, operating costs, and emerging risks after deployment.",
-    "subServicesItems": [],
-    "subServicesText": "",
-    "whyChooseItems": [
-      {
-        "title": "Built for Real Business Workflows",
-        "desc": "We focus on how the solution will function inside your operations. We consider user roles, approval steps, exceptions, system dependencies, and measurable outcomes before development begins."
-      },
-      {
-        "title": "Security and Data Privacy",
-        "desc": "We address access controls, data handling, model permissions, audit requirements, and secure integrations throughout the development process. Sensitive information is protected according to the solution’s operational and regulatory needs."
-      },
-      {
-        "title": "Clear Business Value",
-        "desc": "An AI feature should solve a defined problem. We prioritize use cases that can reduce processing time, improve service quality, control operating costs, or help teams make faster decisions."
-      },
-      {
-        "title": "Ongoing AI Operations",
-        "desc": "AI products require monitoring after launch. Cubixsol supports performance tracking, model updates, prompt improvement, infrastructure management, error analysis, and workflow refinement as business requirements evolve."
-      }
-    ],
-    "whyChooseText": "Built for Real Business Workflows | We focus on how the solution will function inside your operations. We consider user roles, approval steps, exceptions, system dependencies, and measurable outcomes before development begins.\nSecurity and Data Privacy | We address access controls, data handling, model permissions, audit requirements, and secure integrations throughout the development process. Sensitive information is protected according to the solution’s operational and regulatory needs.\nClear Business Value | An AI feature should solve a defined problem. We prioritize use cases that can reduce processing time, improve service quality, control operating costs, or help teams make faster decisions.\nOngoing AI Operations | AI products require monitoring after launch. Cubixsol supports performance tracking, model updates, prompt improvement, infrastructure management, error analysis, and workflow refinement as business requirements evolve.",
-    "additionalParagraph": "Cubixsol’s AI development services cover the complete product lifecycle, from use-case discovery and data preparation to development, integration, deployment, and ongoing improvement. Our custom AI development services help businesses automate repetitive work, retrieve information faster, generate content, support customers, and make operational data more useful.",
-    "ctaBannerButtonText": "Start Your AI Project",
-    "ctaBannerDesc": "Use AI to solve a measurable business problem instead of adding technology without a clear purpose. Partner with Cubixsol for **AI development services** designed around your operational goals.",
-    "ctaBannerTitle": "Ready to Build with AI?",
-    "whyChooseTitle": "Why Choose Cubixsol for AI Development?",
-    "pricingSectionText": "AI can support different workflows across industries. Healthcare organizations can improve document processing and patient communication, while financial platforms can strengthen data analysis and fraud monitoring. Retail and e-commerce businesses can personalize recommendations, automate support, and forecast demand. Logistics companies can improve planning and operational visibility, while professional-service teams can search large document collections and generate structured reports.\nEvery solution begins with the operating problem—not with a predetermined model or platform.\n",
-    "pricingSectionTitle": "AI Use Cases by Industry",
-    "serviceProcessTitle": "Our AI Development Process",
-    "ctaBannerEyebrow": "INTELLIGENT WORKFLOWS & AUTOMATION"
-  },
-  {
-    "seo": {
-      "metaTitle": "Mobile App Development Services | Cubixsol",
-      "metaDescription": "Turn your product concept into a smooth mobile experience for iOS and Android. Our team develops native and cross-platform apps with intuitive navigation, stable performance, secure data handling, and scalable back-end systems.",
-      "keywords": "Flutter, React Native, Swift, Kotlin, Firebase",
-      "ogTitle": "Mobile App Development Services | Cubixsol",
-      "ogDescription": "Turn your product concept into a smooth mobile experience for iOS and Android. Our team develops native and cross-platform apps with intuitive navigation, stable performance, secure data handling, and scalable back-end systems.",
+      "metaTitle": "iOS Development Services | Cubixsol",
+      "metaDescription": "Native iPhone and iPad apps built with Swift and SwiftUI — fast, polished, and App Store ready.",
+      "keywords": "Swift, SwiftUI, UIKit, Xcode, Firebase, Combine",
+      "ogTitle": "iOS Development Services | Cubixsol",
+      "ogDescription": "Native iPhone and iPad apps built with Swift and SwiftUI — fast, polished, and App Store ready.",
       "ogImage": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1000&h=750&q=70",
       "canonicalUrl": ""
     },
     "icon": "/uploads/media-1788761191366-9651825.svg",
-    "slug": "mobile-app-development",
-    "heroImage": "/uploads/media-1788439771557-360010811.svg",
-    "title": "Mobile App Development Services Built Around Your Business Goals",
-    "desc": "Launch native or cross-platform applications for iOS and Android with intuitive interfaces, reliable performance, and scalable architecture.",
-    "color": "text-emerald-600 bg-emerald-50",
-    "gradient": "from-emerald-500 to-teal-600",
-    "longDesc": "Cubixsol provides end-to-end mobile app development services to turn your app idea into a reliable digital product. We cover product planning, interface design, development, testing, launch, and ongoing improvement.",
+    "slug": "ios-app-development",
+    "heroImage": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1000&h=750&q=70",
+    "title": "iOS App Development Services for High-Performing Apple Products",
+    "desc": "Cubixsol’s iOS app development services turn your product idea into a secure, intuitive, and scalable Apple application.",
+    "color": "text-slate-700 bg-slate-100",
+    "gradient": "from-slate-700 to-sky-500",
+    "longDesc": "Cubixsol’s iOS app development services turn your product idea into a secure, intuitive, and scalable Apple application. We plan, design, develop, test, launch, and support iPhone and iPad apps that serve your users and business goals.",
     "features": [
-      "iOS App Development",
-      "Android App Development",
-      "React Native apps",
-      "Flutter App Development",
-      "Ionic App Development",
-      "IoT-connected mobile experiences",
-      "App Store & Play Store launch",
-      "Ongoing maintenance & updates"
+      "Native Swift & SwiftUI apps",
+      "UIKit when needed for complex UI",
+      "App Store submission & review support",
+      "Push notifications & deep linking",
+      "In-app purchases & subscriptions",
+      "iPad and multi-device layouts",
+      "Core Data & CloudKit sync",
+      "CI builds and TestFlight delivery"
     ],
     "tech": [
-      "Flutter",
-      "React Native",
       "Swift",
-      "Kotlin",
-      "Firebase"
+      "SwiftUI",
+      "UIKit",
+      "Xcode",
+      "Firebase",
+      "Combine"
     ],
     "outcomes": [
-      "One codebase, two platforms",
-      "Faster time-to-store",
-      "Consistent UX"
+      "Buttery-smooth native performance",
+      "Faster App Store approval cycles",
+      "Maintainable, modern Swift codebase"
     ],
-    "faqs": [],
-    "techDesc": "Our developers select technologies according to the product’s features, performance requirements, platform strategy, integrations, and growth plans.\n\n1. **Flutter**: Cross-platform apps with flexible user interfaces\n2. **React Native**: Shared development for iOS and Android\n3. **Swift**: Native iOS applications\n4. **Kotlin**: Native Android applications\n5. **Firebase**: Authentication, databases, notifications, and analytics\n6. **Node.js**: Scalable APIs and backend services",
+    "faqs": [
+      {
+        "q": "How much does iOS app development cost?",
+        "a": "The cost depends on the application’s features, interface complexity, integrations, security needs, and delivery schedule. We review the requirements and provide a detailed estimate with a defined scope before development starts."
+      },
+      {
+        "q": "How long does it take to build an iOS application?",
+        "a": "A focused MVP may take several weeks, while a complex application can require several months. Discovery confirms the features, dependencies, milestones, and realistic launch schedule."
+      },
+      {
+        "q": "Should I choose Swift or cross-platform development?",
+        "a": "Swift provides deep access to Apple technologies and strong native performance. Cross-platform development can reduce duplicated work across iOS and Android. Our React Native development services suit products that need coordinated delivery on both platforms from a shared codebase."
+      },
+      {
+        "q": "Can you submit my application to the App Store?",
+        "a": "Yes. We prepare the production build, support listing configuration, coordinate TestFlight testing, complete the technical submission, and help address feedback from Apple’s review team."
+      }
+    ],
+    "techDesc": "Our iOS developers use Swift, SwiftUI, Xcode, Objective-C, Core Data, and TestFlight based on the product’s technical requirements. We also work with APIs, analytics platforms, payment systems, cloud services, and third-party tools to create connected user experiences. The selected technology stack supports performance, security, maintainability, and future expansion.\n\nOur developers also plan accessibility, permission management, secure local storage, and privacy disclosures during implementation. Strong technical foundations reduce avoidable limitations and prepare the application for new features, higher usage, and future Apple platform updates.\n",
     "techTitle": "Technologies We Use",
     "businessTypesItems": [],
     "ctaBannerButtonText": "Get a Free Estimate",
-    "ctaBannerDesc": "Move from idea to launch with mobile app development services focused on your users, goals, and future growth. Share your requirements with Cubixsol and receive a practical development plan for your product.",
+    "ctaBannerDesc": "Choose Cubixsol’s iOS app development services to take your product from initial planning to App Store launch and continuous improvement.",
     "ctaBannerEyebrow": "",
-    "ctaBannerTitle": "Ready to Start Your Mobile App Project?",
+    "ctaBannerTitle": "Ready to Start Your iOS Project?",
     "serviceProcessSteps": [
       {
         "stepNumber": "01",
         "title": "Discover",
-        "desc": "We define the product goals, target users, essential features, technical requirements, and success measures.",
+        "desc": "We define the users, business goals, core features, technical requirements, budget, and success criteria.",
         "image": "",
         "points": []
       },
       {
         "stepNumber": "02",
         "title": "Plan",
-        "desc": "Our team maps user journeys, project scope, system architecture, delivery milestones, and required integrations.",
+        "desc": "Our team maps user flows, selects the architecture and technologies, and creates a practical delivery roadmap.",
         "image": "",
         "points": []
       },
       {
         "stepNumber": "03",
         "title": "Build",
-        "desc": "Designers and developers create the interface, application logic, APIs, and backend systems through organised development cycles.",
+        "desc": "Designers and developers create the interface, application logic, integrations, and supporting systems in planned stages.",
         "image": "",
         "points": []
       },
       {
         "stepNumber": "04",
         "title": "Test",
-        "desc": "We test functionality, usability, compatibility, performance, and security across relevant devices and operating-system versions.",
+        "desc": "Quality specialists examine functionality, usability, performance, security, and compatibility across relevant Apple devices.",
         "image": "",
         "points": []
       },
       {
         "stepNumber": "05",
         "title": "Launch and Support",
-        "desc": "Our team prepares the application for release, supports store submission, monitors performance, and plans future improvements.",
+        "desc": "We prepare the release, support App Store submission, monitor the live product, and deliver ongoing improvements.",
         "image": "",
         "points": []
       }
     ],
     "subServicesItems": [
       {
-        "title": "iOS App Development",
-        "desc": "We develop iPhone and iPad applications with Swift and Apple-native technologies. Our developers create intuitive interfaces, stable functionality, and secure integrations while following Apple’s technical and App Store requirements.",
-        "q": "iOS App Development",
-        "a": "We develop iPhone and iPad applications with Swift and Apple-native technologies. Our developers create intuitive interfaces, stable functionality, and secure integrations while following Apple’s technical and App Store requirements."
+        "title": "Native iOS App Development",
+        "desc": "We build native iPhone applications with Swift and Apple frameworks to deliver responsive performance, secure data handling, and direct access to device features. Native development works well for products that require advanced functionality, complex integrations, or a deeply optimised iOS experience."
       },
       {
-        "title": "Android App Development",
-        "desc": "Our Android developers build applications for smartphones, tablets, and other Android devices. We use Kotlin and modern Android frameworks to support strong performance, broad device compatibility, and maintainable code.",
-        "q": "Android App Development",
-        "a": "Our Android developers build applications for smartphones, tablets, and other Android devices. We use Kotlin and modern Android frameworks to support strong performance, broad device compatibility, and maintainable code."
+        "title": "SwiftUI App Development",
+        "desc": "Our developers use SwiftUI to create clean, consistent interfaces across supported Apple devices. Reusable components, clear state management, and modern development practices help us accelerate implementation while keeping the codebase maintainable as the application grows."
       },
       {
-        "title": "MVP App Development",
-        "desc": "We help startups and product teams convert ideas into focused minimum viable products. The process prioritises essential features, validates key assumptions, and creates a practical foundation for future releases without overloading the first version.",
-        "q": "MVP App Development",
-        "a": "We help startups and product teams convert ideas into focused minimum viable products. The process prioritises essential features, validates key assumptions, and creates a practical foundation for future releases without overloading the first version."
+        "title": "iPad App Development",
+        "desc": "We develop iPad applications that use larger displays, multitasking features, adaptable layouts, and touch-based interactions effectively. Our team can create a dedicated iPad product or extend an existing iPhone application to provide a stronger tablet experience."
       },
       {
-        "title": "Cross-Platform App Development",
-        "desc": "Our cross platform app development services help businesses reach iOS and Android users through a coordinated codebase. This approach can reduce duplicate development work, simplify feature management, and support a consistent experience across both platforms.",
-        "q": "Cross-Platform App Development",
-        "a": "Our cross platform app development services help businesses reach iOS and Android users through a coordinated codebase. This approach can reduce duplicate development work, simplify feature management, and support a consistent experience across both platforms."
+        "title": "App Store Launch",
+        "desc": "We prepare release builds, configure required app information, support TestFlight testing, and manage the technical submission process. Our team also addresses review feedback and resolves submission issues to help move the application toward approval."
       },
       {
-        "title": "Mobile Apps for Fintech and Healthcare",
-        "desc": "Our fintech mobile app development services support products such as digital wallets, payment platforms, financial dashboards, lending systems, and account management apps. We plan each solution around secure data handling, dependable integrations, clear user journeys, and applicable compliance requirements.",
-        "q": "Mobile Apps for Fintech and Healthcare",
-        "a": "Our fintech mobile app development services support products such as digital wallets, payment platforms, financial dashboards, lending systems, and account management apps. We plan each solution around secure data handling, dependable integrations, clear user journeys, and applicable compliance requirements."
+        "title": "iOS App Maintenance and Upgrades",
+        "desc": "We monitor performance, fix bugs, update dependencies, improve compatibility, and add features after launch. Regular maintenance helps the application remain stable as Apple releases new iOS versions, devices, frameworks, and App Store requirements."
       }
     ],
     "whyChooseItems": [
       {
-        "title": "Quality-Focused Development",
-        "desc": "Code reviews, structured testing, and clear technical standards help us create stable applications that remain easier to maintain and improve.",
-        "q": "Quality-Focused Development",
-        "a": "Code reviews, structured testing, and clear technical standards help us create stable applications that remain easier to maintain and improve."
+        "title": "Quality-Focused Engineering",
+        "desc": "Code reviews, structured testing, and clear development standards help us create stable applications that remain easier to maintain and extend."
       },
       {
         "title": "Organised, On-Time Delivery",
-        "desc": "Defined milestones and focused development cycles keep the project moving. Regular progress reviews help identify delays early and protect delivery priorities.",
-        "q": "Organised, On-Time Delivery",
-        "a": "Defined milestones and focused development cycles keep the project moving. Regular progress reviews help identify delays early and protect delivery priorities."
+        "desc": "Defined milestones, prioritised features, and regular progress reviews keep the project focused and help the team meet agreed delivery targets."
       },
       {
-        "title": "Transparent Communication",
-        "desc": "You receive clear updates on scope, progress, technical decisions, and upcoming work. Our team discusses changes before they affect the budget or timeline.",
-        "q": "Transparent Communication",
-        "a": "You receive clear updates on scope, progress, technical decisions, and upcoming work. Our team discusses changes before they affect the budget or timeline."
+        "title": "Transparent Collaboration",
+        "desc": "You receive clear updates, working builds, and direct visibility into priorities, progress, risks, and upcoming decisions throughout development."
       },
       {
-        "title": "Ongoing Technical Support",
-        "desc": "Launch marks the start of continuous product improvement. We can monitor the application, resolve issues, update dependencies, improve performance, and develop new features as user needs change.",
-        "q": "Ongoing Technical Support",
-        "a": "Launch marks the start of continuous product improvement. We can monitor the application, resolve issues, update dependencies, improve performance, and develop new features as user needs change."
+        "title": "Ongoing Product Support",
+        "desc": "Our involvement can continue after launch through performance monitoring, bug fixes, compatibility updates, feature development, and technical guidance."
       }
     ],
-    "serviceProcessText": "01 | Discover | We define the product goals, target users, essential features, technical requirements, and success measures.\n\n02 | Plan | Our team maps user journeys, project scope, system architecture, delivery milestones, and required integrations.\n\n03 | Build | Designers and developers create the interface, application logic, APIs, and backend systems through organised development cycles.\n\n04 | Test | We test functionality, usability, compatibility, performance, and security across relevant devices and operating-system versions.\n\n05 | Launch and Support | Our team prepares the application for release, supports store submission, monitors performance, and plans future improvements.",
-    "serviceProcessTitle": "Our Mobile App Development Process",
-    "subServicesText": "iOS App Development | We develop iPhone and iPad applications with Swift and Apple-native technologies. Our developers create intuitive interfaces, stable functionality, and secure integrations while following Apple’s technical and App Store requirements.\n\nAndroid App Development | Our Android developers build applications for smartphones, tablets, and other Android devices. We use Kotlin and modern Android frameworks to support strong performance, broad device compatibility, and maintainable code.\n\nMVP App Development | We help startups and product teams convert ideas into focused minimum viable products. The process prioritises essential features, validates key assumptions, and creates a practical foundation for future releases without overloading the first version.\n\nCross-Platform App Development | Our cross platform app development services help businesses reach iOS and Android users through a coordinated codebase. This approach can reduce duplicate development work, simplify feature management, and support a consistent experience across both platforms.\n\nMobile Apps for Fintech and Healthcare | Our fintech mobile app development services support products such as digital wallets, payment platforms, financial dashboards, lending systems, and account management apps. We plan each solution around secure data handling, dependable integrations, clear user journeys, and applicable compliance requirements.",
-    "subServicesTitle": "Our Mobile App Development Services",
-    "whyChooseText": "Quality-Focused Development | Code reviews, structured testing, and clear technical standards help us create stable applications that remain easier to maintain and improve.\n\nOrganised, On-Time Delivery | Defined milestones and focused development cycles keep the project moving. Regular progress reviews help identify delays early and protect delivery priorities.\n\nTransparent Communication | You receive clear updates on scope, progress, technical decisions, and upcoming work. Our team discusses changes before they affect the budget or timeline.\n\nOngoing Technical Support | Launch marks the start of continuous product improvement. We can monitor the application, resolve issues, update dependencies, improve performance, and develop new features as user needs change.",
-    "whyChooseTitle": "Why Choose Cubixsol?",
-    "menuTitle": "Mobile App",
-    "cardTitle": "Mobile App Development"
-  },
-  {
-    "seo": {
-      "metaTitle": " Custom Web Development Services | Cubixsol",
-      "metaDescription": "Build fast, secure, and scalable websites with Cubixsol’s custom web development services. Get a specifically designed solution and a free project estimate.",
-      "keywords": "",
-      "ogTitle": "",
-      "ogDescription": "",
-      "ogImage": "",
-      "canonicalUrl": ""
-    },
-    "icon": "/uploads/media-1788761191369-567281372.svg",
-    "slug": "web-development",
-    "heroImage": "/uploads/media-1788439771584-672653979.svg",
-    "title": "Custom Web Development Services",
-    "desc": "Turn your idea into a fast, secure, and scalable digital product with Cubixsol's custom web development services. We design and develop responsive websites, e-commerce platforms, and web applications personalized to your users, business goals, and technical requirements.",
-    "color": "text-blue-600 bg-blue-50",
-    "gradient": "from-blue-500 to-cyan-600",
-    "longDesc": "Turn your idea into a fast, secure, and scalable digital product with Cubixsol's custom web development services. We design and develop responsive websites, e-commerce platforms, and web applications personalized to your users, business goals, and technical requirements.\n\nWe deliver custom website development services across the entire development lifecycle. We plan your project, design the user experience, develop the frontend and backend, test every feature, deploy the website, and provide ongoing support. We build each solution around your business operations and your customers’ needs without limiting you to a restrictive template. ",
-    "features": [
-      "Responsive & mobile-first layouts",
-      "SEO-friendly architecture",
-      "CMS & headless options",
-      "Performance optimization",
-      "Secure authentication & APIs",
-      "Ongoing support & iterations"
-    ],
-    "tech": [
-      "React",
-      "Next.js",
-      "Node.js",
-      "TypeScript",
-      "Tailwind"
-    ],
-    "outcomes": [
-      "Faster page loads",
-      "Higher conversion rates",
-      "Easier content updates"
-    ],
-    "faqs": [
-      {
-        "q": "How much does custom web development cost?",
-        "a": "The cost depends on the website’s size, design complexity, required features, integrations, content needs, and technology stack. A focused business website costs less than a custom portal, e-commerce platform, or SaaS application.",
-        "title": "How much does custom web development cost?",
-        "desc": "The cost depends on the website’s size, design complexity, required features, integrations, content needs, and technology stack. A focused business website costs less than a custom portal, e-commerce platform, or SaaS application."
-      },
-      {
-        "q": "How long does it take to develop a custom website?",
-        "a": "A focused business website may take approximately four to eight weeks, while a complex web application can require several months. The timeline depends on scope, feedback cycles, integrations, content readiness, testing requirements, and the speed of approvals.",
-        "title": "How long does it take to develop a custom website?",
-        "desc": "A focused business website may take approximately four to eight weeks, while a complex web application can require several months. The timeline depends on scope, feedback cycles, integrations, content readiness, testing requirements, and the speed of approvals."
-      },
-      {
-        "q": "Which technologies do you use for web development?",
-        "a": "We work with technologies such as React, Next.js, TypeScript, Node.js, Laravel, WordPress, APIs, databases, and AWS. We recommend the stack after reviewing your functionality, performance requirements, existing systems, and long-term plans.",
-        "title": "Which technologies do you use for web development?",
-        "desc": "We work with technologies such as React, Next.js, TypeScript, Node.js, Laravel, WordPress, APIs, databases, and AWS. We recommend the stack after reviewing your functionality, performance requirements, existing systems, and long-term plans."
-      },
-      {
-        "q": "Do you provide website maintenance after launch?",
-        "a": "Yes. Post-launch support can include security updates, bug fixes, performance monitoring, backups, feature improvements, content changes, and compatibility updates.",
-        "title": "Do you provide website maintenance after launch?",
-        "desc": "Yes. Post-launch support can include security updates, bug fixes, performance monitoring, backups, feature improvements, content changes, and compatibility updates."
-      },
-      {
-        "q": "Should I choose a custom website or a template?",
-        "a": "A template may work for a simple website with standard requirements and a limited budget. Custom development is the stronger choice when you need unique functionality, integrations, greater design control, scalability, or workflows that templates cannot support effectively.",
-        "title": "Should I choose a custom website or a template?",
-        "desc": "A template may work for a simple website with standard requirements and a limited budget. Custom development is the stronger choice when you need unique functionality, integrations, greater design control, scalability, or workflows that templates cannot support effectively."
-      }
-    ],
-    "techDesc": "We select technologies according to the project’s functionality, performance requirements, integrations, and future roadmap. Our web development stack includes React, Next.js, TypeScript, Node.js, Laravel, WordPress, relational and non-relational databases, REST APIs, and AWS cloud infrastructure.\n\nThe goal is not to use the newest technology for its own sake. It is to choose a dependable stack that fits your product, supports maintainability, and avoids unnecessary technical complexity.",
-    "techTitle": "Technologies We Use",
-    "faqsText": "How much does custom web development cost? | The cost depends on the website’s size, design complexity, required features, integrations, content needs, and technology stack. A focused business website costs less than a custom portal, e-commerce platform, or SaaS application.\n\nHow long does it take to develop a custom website? | A focused business website may take approximately four to eight weeks, while a complex web application can require several months. The timeline depends on scope, feedback cycles, integrations, content readiness, testing requirements, and the speed of approvals.\n\nWhich technologies do you use for web development? | We work with technologies such as React, Next.js, TypeScript, Node.js, Laravel, WordPress, APIs, databases, and AWS. We recommend the stack after reviewing your functionality, performance requirements, existing systems, and long-term plans.\n\nDo you provide website maintenance after launch? | Yes. Post-launch support can include security updates, bug fixes, performance monitoring, backups, feature improvements, content changes, and compatibility updates.\n\nShould I choose a custom website or a template? | A template may work for a simple website with standard requirements and a limited budget. Custom development is the stronger choice when you need unique functionality, integrations, greater design control, scalability, or workflows that templates cannot support effectively.",
-    "whyChooseItems": [
-      {
-        "title": "Performance-Focused Development",
-        "desc": "We use clean code, optimized assets, responsive layouts, and practical performance testing to create websites that load quickly and work smoothly across devices.",
-        "q": "Performance-Focused Development",
-        "a": "We use clean code, optimized assets, responsive layouts, and practical performance testing to create websites that load quickly and work smoothly across devices."
-      },
-      {
-        "title": "Security Built into Development",
-        "desc": "We prioritize security throughout the project rather than treating it as an afterthought. We implement secure authentication, access permissions, data-handling practices, dependency management, and deployment controls based on your solution’s requirements.",
-        "q": "Security Built into Development",
-        "a": "We prioritize security throughout the project rather than treating it as an afterthought. We implement secure authentication, access permissions, data-handling practices, dependency management, and deployment controls based on your solution’s requirements."
-      },
-      {
-        "title": "SEO-Ready Foundations",
-        "desc": "Your website is developed with clean structure, responsive design, crawlable content, metadata controls, and performance fundamentals. These technical foundations make it easier for your SEO strategy to produce results after launch.",
-        "q": "SEO-Ready Foundations",
-        "a": "Your website is developed with clean structure, responsive design, crawlable content, metadata controls, and performance fundamentals. These technical foundations make it easier for your SEO strategy to produce results after launch."
-      },
-      {
-        "title": "Structured, Transparent Delivery",
-        "desc": "Clear milestones, defined deliverables, regular progress updates, and staged reviews keep the project moving and reduce avoidable surprises. You know what is being developed, what has been completed, and what comes next.",
-        "q": "Structured, Transparent Delivery",
-        "a": "Clear milestones, defined deliverables, regular progress updates, and staged reviews keep the project moving and reduce avoidable surprises. You know what is being developed, what has been completed, and what comes next."
-      }
-    ],
-    "whyChooseTitle": "Why Choose Cubixsol for Web Development?",
-    "serviceProcessSteps": [
-      {
-        "stepNumber": "01",
-        "title": "Discovery",
-        "desc": "We clarify your goals, target users, technical requirements, required integrations, project scope, and measures of success.",
-        "image": "",
-        "points": []
-      },
-      {
-        "stepNumber": "02",
-        "title": "Design",
-        "desc": "Our team plans the user journey, information architecture, wireframes, and interface design before development begins.",
-        "image": "",
-        "points": []
-      },
-      {
-        "stepNumber": "03",
-        "title": "Development",
-        "desc": "Frontend and backend developers convert the approved designs and requirements into a functional, scalable web solution.",
-        "image": "",
-        "points": []
-      },
-      {
-        "stepNumber": "04",
-        "title": "Testing",
-        "desc": "We test functionality, responsiveness, browser compatibility, accessibility, performance, integrations, and security before release.",
-        "image": "",
-        "points": []
-      },
-      {
-        "stepNumber": "05",
-        "title": "Launch and Support",
-        "desc": "After deployment, we monitor the website, resolve launch issues, and provide ongoing maintenance or development support when required.",
-        "image": "",
-        "points": []
-      }
-    ],
-    "serviceProcessTitle": "Our Web Development Process",
-    "subServicesIntro": "We create websites and web applications that combine clean design, reliable technology, and practical business functionality. Every solution is built to perform across devices, support future growth, and provide a smooth experience for both users and administrators.",
-    "subServicesItems": [
-      {
-        "title": "Custom Websites",
-        "desc": "Build a website shaped around your brand, audience, and business objectives. Our custom websites include responsive layouts, intuitive navigation, scalable architecture, content management capabilities, and integrations with the tools your team already uses.",
-        "q": "Custom Websites",
-        "a": "Build a website shaped around your brand, audience, and business objectives. Our custom websites include responsive layouts, intuitive navigation, scalable architecture, content management capabilities, and integrations with the tools your team already uses."
-      },
-      {
-        "title": "Web Application Development Services",
-        "desc": "Our **web application development services** turn complex ideas and business processes into secure, user-friendly digital products. We develop customer portals, SaaS platforms, internal dashboards, booking systems, workflow tools, and other browser-based applications with functionality customized to your requirements.",
-        "q": "Web Application Development Services",
-        "a": "Our **web application development services** turn complex ideas and business processes into secure, user-friendly digital products. We develop customer portals, SaaS platforms, internal dashboards, booking systems, workflow tools, and other browser-based applications with functionality customized to your requirements."
-      },
-      {
-        "title": "Ecommerce Web Development Services",
-        "desc": "Our **ecommerce web development services** help businesses create convenient and reliable online shopping experiences. We build product catalogs, secure checkout flows, payment integrations, inventory features, customer accounts, order-management systems, and mobile-responsive storefronts designed to support conversions and growth.",
-        "q": "Ecommerce Web Development Services",
-        "a": "Our **ecommerce web development services** help businesses create convenient and reliable online shopping experiences. We build product catalogs, secure checkout flows, payment integrations, inventory features, customer accounts, order-management systems, and mobile-responsive storefronts designed to support conversions and growth."
-      },
-      {
-        "title": "Frontend Development Services with React",
-        "desc": "Our **frontend development services** focus on creating fast, accessible, and responsive user interfaces. Through our **React development services**, we build reusable components, interactive features, and consistent experiences that work smoothly across modern browsers, screen sizes, and devices.",
-        "q": "Frontend Development Services with React",
-        "a": "Our **frontend development services** focus on creating fast, accessible, and responsive user interfaces. Through our **React development services**, we build reusable components, interactive features, and consistent experiences that work smoothly across modern browsers, screen sizes, and devices."
-      },
-      {
-        "title": "Backend Development Services and APIs",
-        "desc": "Our **backend development services** provide the secure foundation behind your website or application. We develop databases, APIs, authentication systems, business logic, third-party integrations, and administrative tools that keep your platform reliable, maintainable, and ready to scale.",
-        "q": "Backend Development Services and APIs",
-        "a": "Our **backend development services** provide the secure foundation behind your website or application. We develop databases, APIs, authentication systems, business logic, third-party integrations, and administrative tools that keep your platform reliable, maintainable, and ready to scale."
-      },
-      {
-        "title": "CMS Development",
-        "desc": "Manage your website without relying on a developer for every content update. We build and customize WordPress, headless CMS, and other content-management solutions that give your team control while preserving performance, security, and design consistency.",
-        "q": "CMS Development",
-        "a": "Manage your website without relying on a developer for every content update. We build and customize WordPress, headless CMS, and other content-management solutions that give your team control while preserving performance, security, and design consistency."
-      }
-    ],
-    "subServicesTitle": "Our Custom Web Development Services",
-    "businessTypesItems": [],
-    "businessTypesText": "",
-    "serviceProcessText": "01 | Discovery | We clarify your goals, target users, technical requirements, required integrations, project scope, and measures of success.\n\n02 | Design | Our team plans the user journey, information architecture, wireframes, and interface design before development begins.\n\n03 | Development | Frontend and backend developers convert the approved designs and requirements into a functional, scalable web solution.\n\n04 | Testing | We test functionality, responsiveness, browser compatibility, accessibility, performance, integrations, and security before release.\n\n05 | Launch and Support | After deployment, we monitor the website, resolve launch issues, and provide ongoing maintenance or development support when required.",
-    "subServicesText": "Custom Websites | Build a website shaped around your brand, audience, and business objectives. Our custom websites include responsive layouts, intuitive navigation, scalable architecture, content management capabilities, and integrations with the tools your team already uses.\n\nWeb Application Development Services | Our **web application development services** turn complex ideas and business processes into secure, user-friendly digital products. We develop customer portals, SaaS platforms, internal dashboards, booking systems, workflow tools, and other browser-based applications with functionality customized to your requirements.\n\nEcommerce Web Development Services | Our **ecommerce web development services** help businesses create convenient and reliable online shopping experiences. We build product catalogs, secure checkout flows, payment integrations, inventory features, customer accounts, order-management systems, and mobile-responsive storefronts designed to support conversions and growth.\n\nFrontend Development Services with React | Our **frontend development services** focus on creating fast, accessible, and responsive user interfaces. Through our **React development services**, we build reusable components, interactive features, and consistent experiences that work smoothly across modern browsers, screen sizes, and devices.\n\nBackend Development Services and APIs | Our **backend development services** provide the secure foundation behind your website or application. We develop databases, APIs, authentication systems, business logic, third-party integrations, and administrative tools that keep your platform reliable, maintainable, and ready to scale.\n\nCMS Development | Manage your website without relying on a developer for every content update. We build and customize WordPress, headless CMS, and other content-management solutions that give your team control while preserving performance, security, and design consistency.",
-    "whyChooseText": "Performance-Focused Development | We use clean code, optimized assets, responsive layouts, and practical performance testing to create websites that load quickly and work smoothly across devices.\n\nSecurity Built into Development | We prioritize security throughout the project rather than treating it as an afterthought. We implement secure authentication, access permissions, data-handling practices, dependency management, and deployment controls based on your solution’s requirements.\n\nSEO-Ready Foundations | Your website is developed with clean structure, responsive design, crawlable content, metadata controls, and performance fundamentals. These technical foundations make it easier for your SEO strategy to produce results after launch.\n\nStructured, Transparent Delivery | Clear milestones, defined deliverables, regular progress updates, and staged reviews keep the project moving and reduce avoidable surprises. You know what is being developed, what has been completed, and what comes next.",
-    "ctaBannerButtonText": "Get a Free Consultation",
-    "ctaBannerDesc": "Choose us as your **custom web development company** and move from idea to launch with a clear plan, experienced specialists, and dependable technical support.",
-    "ctaBannerEyebrow": "HAVE A WEB PROJECT IN MIND?",
-    "ctaBannerTitle": "Ready to Build Your Web Application? Let’s Talk"
+    "ctaPrimaryText": "Start a Project ",
+    "ctaSecondaryText": "Get a Free Estimate",
+    "faqsText": "How much does iOS app development cost? | The cost depends on the application’s features, interface complexity, integrations, security needs, and delivery schedule. We review the requirements and provide a detailed estimate with a defined scope before development starts.\nHow long does it take to build an iOS application? | A focused MVP may take several weeks, while a complex application can require several months. Discovery confirms the features, dependencies, milestones, and realistic launch schedule.\nShould I choose Swift or cross-platform development? | Swift provides deep access to Apple technologies and strong native performance. Cross-platform development can reduce duplicated work across iOS and Android. Our React Native development services suit products that need coordinated delivery on both platforms from a shared codebase.\nCan you submit my application to the App Store? | Yes. We prepare the production build, support listing configuration, coordinate TestFlight testing, complete the technical submission, and help address feedback from Apple’s review team.",
+    "menuTitle": "IOS",
+    "serviceProcessText": "Discover | We define the users, business goals, core features, technical requirements, budget, and success criteria.\nPlan | Our team maps user flows, selects the architecture and technologies, and creates a practical delivery roadmap.\nBuild | Designers and developers create the interface, application logic, integrations, and supporting systems in planned stages.\nTest | Quality specialists examine functionality, usability, performance, security, and compatibility across relevant Apple devices.\nLaunch and Support | We prepare the release, support App Store submission, monitor the live product, and deliver ongoing improvements.",
+    "serviceProcessTitle": "Our iOS Development Process",
+    "subServicesIntro": "As an iOS app development company, we combines product thinking, technical expertise, and structured delivery to create reliable applications for the Apple ecosystem. Our team can manage the complete project or strengthen your internal team at a specific development stage.\n",
+    "subServicesText": "Native iOS App Development | We build native iPhone applications with Swift and Apple frameworks to deliver responsive performance, secure data handling, and direct access to device features. Native development works well for products that require advanced functionality, complex integrations, or a deeply optimised iOS experience.\nSwiftUI App Development | Our developers use SwiftUI to create clean, consistent interfaces across supported Apple devices. Reusable components, clear state management, and modern development practices help us accelerate implementation while keeping the codebase maintainable as the application grows.\niPad App Development | We develop iPad applications that use larger displays, multitasking features, adaptable layouts, and touch-based interactions effectively. Our team can create a dedicated iPad product or extend an existing iPhone application to provide a stronger tablet experience.\nApp Store Launch | We prepare release builds, configure required app information, support TestFlight testing, and manage the technical submission process. Our team also addresses review feedback and resolves submission issues to help move the application toward approval.\niOS App Maintenance and Upgrades | We monitor performance, fix bugs, update dependencies, improve compatibility, and add features after launch. Regular maintenance helps the application remain stable as Apple releases new iOS versions, devices, frameworks, and App Store requirements.",
+    "subServicesTitle": "Our iOS Development Services",
+    "whyChooseText": "Quality-Focused Engineering | Code reviews, structured testing, and clear development standards help us create stable applications that remain easier to maintain and extend.\nOrganised, On-Time Delivery | Defined milestones, prioritised features, and regular progress reviews keep the project focused and help the team meet agreed delivery targets.\nTransparent Collaboration | You receive clear updates, working builds, and direct visibility into priorities, progress, risks, and upcoming decisions throughout development.\nOngoing Product Support | Our involvement can continue after launch through performance monitoring, bug fixes, compatibility updates, feature development, and technical guidance.\n\n\n\n\n",
+    "whyChooseTitle": "Why Choose Cubixsol for iOS Development?"
   }
 ];
 
@@ -2597,9 +2597,146 @@ const initialSolutions = [
       "steps": []
     },
     "bullets": [],
-    "title": "Oracle AI Data Platform",
-    "slug": "oracle-aidp",
-    "desc": "AIDP assessment, migration, and Oracle data platform engineering.",
+    "title": "AI Chatbots & Customer Support",
+    "slug": "ai-chatbots-support",
+    "desc": "Conversational support that resolves and escalates smartly.",
+    "group": "E-Commerce",
+    "faqs": []
+  },
+  {
+    "practices": {
+      "items": []
+    },
+    "impact": {
+      "rows": []
+    },
+    "process": {
+      "steps": []
+    },
+    "bullets": [],
+    "title": "AI Consulting",
+    "slug": "ai-consulting",
+    "desc": "Strategy, readiness, and roadmap for AI adoption.",
+    "group": "Artificial Intelligence",
+    "faqs": []
+  },
+  {
+    "practices": {
+      "items": []
+    },
+    "impact": {
+      "rows": []
+    },
+    "process": {
+      "steps": []
+    },
+    "bullets": [],
+    "title": "AI SEO Auditor",
+    "slug": "ai-seo-auditor",
+    "desc": "Paste a URL or page HTML — get a prioritised SEO health score covering title, meta, headings, mobile signals, and accessibility basics. testing dyuttythj",
+    "externalUrl": "/tools/ai-seo-auditor",
+    "group": "Accessibility Tools",
+    "faqs": []
+  },
+  {
+    "practices": {
+      "items": []
+    },
+    "impact": {
+      "rows": []
+    },
+    "process": {
+      "steps": []
+    },
+    "bullets": [],
+    "title": "Agentic AI",
+    "slug": "agentic-ai",
+    "desc": "Autonomous agents that plan and execute workflows. ghthhjkukudkdydkkkddkdku",
+    "group": "Artificial Intelligence",
+    "faqs": []
+  },
+  {
+    "practices": {
+      "items": []
+    },
+    "impact": {
+      "rows": []
+    },
+    "process": {
+      "steps": []
+    },
+    "bullets": [],
+    "title": "BI & Data Analytics",
+    "slug": "bi-data-analytics",
+    "desc": "Dashboards and insights that drive decisions.",
+    "group": "Data Solutions",
+    "faqs": []
+  },
+  {
+    "practices": {
+      "items": []
+    },
+    "impact": {
+      "rows": []
+    },
+    "process": {
+      "steps": []
+    },
+    "bullets": [],
+    "title": "Customer Segmentation",
+    "slug": "customer-segmentation",
+    "desc": "Smarter audiences for campaigns and personalization.",
+    "group": "E-Commerce",
+    "faqs": []
+  },
+  {
+    "practices": {
+      "items": []
+    },
+    "impact": {
+      "rows": []
+    },
+    "process": {
+      "steps": []
+    },
+    "bullets": [],
+    "title": "Data Engineering",
+    "slug": "data-engineering",
+    "desc": "Pipelines, warehouses, and reliable data platforms.",
+    "group": "Data Solutions",
+    "faqs": []
+  },
+  {
+    "practices": {
+      "items": []
+    },
+    "impact": {
+      "rows": []
+    },
+    "process": {
+      "steps": []
+    },
+    "bullets": [],
+    "title": "Data Governance and Security",
+    "slug": "data-governance-security",
+    "desc": "Policies, access control, and data quality.",
+    "group": "Data Solutions",
+    "faqs": []
+  },
+  {
+    "practices": {
+      "items": []
+    },
+    "impact": {
+      "rows": []
+    },
+    "process": {
+      "steps": []
+    },
+    "bullets": [],
+    "title": "Data Migration",
+    "slug": "data-migration",
+    "desc": "Safe moves between systems with minimal downtime.",
     "group": "Data Solutions",
     "faqs": []
   },
@@ -2610,11 +2747,13 @@ const initialSolutions = [
       "items": [
         {
           "title": "testitestitestitestitestitestitestitestitestitestitestitestitestitestitestitestitestitestitestitestitestitestitestitestitestitestitestitestitesti",
-          "body": ""
+          "body": "",
+          "_id": "6a9528c63cfeba27631bd316"
         },
         {
           "title": "fewfewfewfewfewfewfewffew",
-          "body": "Where does it come from?fefeWhere does it come from?fefeWhere does it come from?fefe"
+          "body": "Where does it come from?fefeWhere does it come from?fefeWhere does it come from?fefe",
+          "_id": "6a9528c63cfeba27631bd317"
         }
       ]
     },
@@ -2624,11 +2763,13 @@ const initialSolutions = [
       "rows": [
         {
           "area": "Impact Table Intro Text",
-          "impact": ""
+          "impact": "",
+          "_id": "6a9528c63cfeba27631bd314"
         },
         {
           "area": "Impact Table Intro Text",
-          "impact": ""
+          "impact": "",
+          "_id": "6a9528c63cfeba27631bd315"
         }
       ]
     },
@@ -2683,27 +2824,10 @@ const initialSolutions = [
       "steps": []
     },
     "bullets": [],
-    "title": "AI Consulting",
-    "slug": "ai-consulting",
-    "desc": "Strategy, readiness, and roadmap for AI adoption.",
+    "title": "Deep Learning",
+    "slug": "deep-learning",
+    "desc": "Models for vision, speech, and complex prediction.",
     "group": "Artificial Intelligence",
-    "faqs": []
-  },
-  {
-    "practices": {
-      "items": []
-    },
-    "impact": {
-      "rows": []
-    },
-    "process": {
-      "steps": []
-    },
-    "bullets": [],
-    "title": "Customer Segmentation",
-    "slug": "customer-segmentation",
-    "desc": "Smarter audiences for campaigns and personalization.",
-    "group": "E-Commerce",
     "faqs": []
   },
   {
@@ -2720,145 +2844,6 @@ const initialSolutions = [
     "title": "Generative AI",
     "slug": "generative-ai",
     "desc": "LLMs and generative tools tailored to your domain.",
-    "group": "Artificial Intelligence",
-    "faqs": []
-  },
-  {
-    "practices": {
-      "items": []
-    },
-    "impact": {
-      "rows": []
-    },
-    "process": {
-      "steps": []
-    },
-    "bullets": [],
-    "title": "AI SEO Auditor",
-    "slug": "ai-seo-auditor",
-    "desc": "Paste a URL or page HTML — get a prioritised SEO health score covering title, meta, headings, mobile signals, and accessibility basics. testing dyuttythj",
-    "externalUrl": "/tools/ai-seo-auditor",
-    "group": "Accessibility Tools",
-    "faqs": []
-  },
-  {
-    "practices": {
-      "items": []
-    },
-    "impact": {
-      "rows": []
-    },
-    "process": {
-      "steps": []
-    },
-    "bullets": [],
-    "title": "Data Engineering",
-    "slug": "data-engineering",
-    "desc": "Pipelines, warehouses, and reliable data platforms.",
-    "group": "Data Solutions",
-    "faqs": []
-  },
-  {
-    "practices": {
-      "items": []
-    },
-    "impact": {
-      "rows": []
-    },
-    "process": {
-      "steps": []
-    },
-    "bullets": [],
-    "title": "Voice Commerce",
-    "slug": "voice-commerce",
-    "desc": "Voice-driven shopping and ordering experiences.",
-    "group": "E-Commerce",
-    "faqs": []
-  },
-  {
-    "practices": {
-      "items": []
-    },
-    "impact": {
-      "rows": []
-    },
-    "process": {
-      "steps": []
-    },
-    "bullets": [],
-    "title": "JPG to PDF",
-    "slug": "jpg-to-pdf",
-    "desc": "Turn JPG files into polished PDF documents.",
-    "externalUrl": "https://jpg2pdf.io/",
-    "group": "Accessibility Tools",
-    "faqs": []
-  },
-  {
-    "practices": {
-      "items": []
-    },
-    "impact": {
-      "rows": []
-    },
-    "process": {
-      "steps": []
-    },
-    "bullets": [],
-    "title": "Data Migration",
-    "slug": "data-migration",
-    "desc": "Safe moves between systems with minimal downtime.",
-    "group": "Data Solutions",
-    "faqs": []
-  },
-  {
-    "practices": {
-      "items": []
-    },
-    "impact": {
-      "rows": []
-    },
-    "process": {
-      "steps": []
-    },
-    "bullets": [],
-    "title": "JPGA PDF",
-    "slug": "jpg-a-pdf",
-    "desc": "Convert JPG images to PDF quickly online.",
-    "externalUrl": "https://jpgapdf.io/",
-    "group": "Accessibility Tools",
-    "faqs": []
-  },
-  {
-    "practices": {
-      "items": []
-    },
-    "impact": {
-      "rows": []
-    },
-    "process": {
-      "steps": []
-    },
-    "bullets": [],
-    "title": "Data Governance and Security",
-    "slug": "data-governance-security",
-    "desc": "Policies, access control, and data quality.",
-    "group": "Data Solutions",
-    "faqs": []
-  },
-  {
-    "practices": {
-      "items": []
-    },
-    "impact": {
-      "rows": []
-    },
-    "process": {
-      "steps": []
-    },
-    "bullets": [],
-    "title": "Deep Learning",
-    "slug": "deep-learning",
-    "desc": "Models for vision, speech, and complex prediction.",
     "group": "Artificial Intelligence",
     "faqs": []
   },
@@ -2891,10 +2876,11 @@ const initialSolutions = [
       "steps": []
     },
     "bullets": [],
-    "title": "AI Chatbots & Customer Support",
-    "slug": "ai-chatbots-support",
-    "desc": "Conversational support that resolves and escalates smartly.",
-    "group": "E-Commerce",
+    "title": "JPG to PDF",
+    "slug": "jpg-to-pdf",
+    "desc": "Turn JPG files into polished PDF documents.",
+    "externalUrl": "https://jpg2pdf.io/",
+    "group": "Accessibility Tools",
     "faqs": []
   },
   {
@@ -2908,10 +2894,11 @@ const initialSolutions = [
       "steps": []
     },
     "bullets": [],
-    "title": "eCommerce Development",
-    "slug": "ecommerce-development",
-    "desc": "Storefronts built to convert and scale.",
-    "group": "E-Commerce",
+    "title": "JPGA PDF",
+    "slug": "jpg-a-pdf",
+    "desc": "Convert JPG images to PDF quickly online.",
+    "externalUrl": "https://jpgapdf.io/",
+    "group": "Accessibility Tools",
     "faqs": []
   },
   {
@@ -2925,10 +2912,27 @@ const initialSolutions = [
       "steps": []
     },
     "bullets": [],
-    "title": "BI & Data Analytics",
-    "slug": "bi-data-analytics",
-    "desc": "Dashboards and insights that drive decisions.",
+    "title": "Oracle AI Data Platform",
+    "slug": "oracle-aidp",
+    "desc": "AIDP assessment, migration, and Oracle data platform engineering.",
     "group": "Data Solutions",
+    "faqs": []
+  },
+  {
+    "practices": {
+      "items": []
+    },
+    "impact": {
+      "rows": []
+    },
+    "process": {
+      "steps": []
+    },
+    "bullets": [],
+    "title": "Predictive Analysis",
+    "slug": "predictive-analysis",
+    "desc": "Forecasting demand, risk, and customer behavior.",
+    "group": "Artificial Intelligence",
     "faqs": []
   },
   {
@@ -2960,49 +2964,109 @@ const initialSolutions = [
       "steps": []
     },
     "bullets": [],
-    "title": "Predictive Analysis",
-    "slug": "predictive-analysis",
-    "desc": "Forecasting demand, risk, and customer behavior.",
-    "group": "Artificial Intelligence",
-    "faqs": []
-  },
-  {
-    "practices": {
-      "items": []
-    },
-    "impact": {
-      "rows": []
-    },
-    "process": {
-      "steps": []
-    },
-    "bullets": [],
-    "title": "Agentic AI",
-    "slug": "agentic-ai",
-    "desc": "Autonomous agents that plan and execute workflows. ghthhjkukudkdydkkkddkdku",
-    "group": "Artificial Intelligence",
-    "faqs": []
-  },
-  {
-    "practices": {
-      "items": []
-    },
-    "impact": {
-      "rows": []
-    },
-    "process": {
-      "steps": []
-    },
-    "bullets": [],
     "title": "Sentiment Analysis",
     "slug": "sentiment-analysis",
     "desc": "Understand customer voice at scale.",
     "group": "Artificial Intelligence",
     "faqs": []
+  },
+  {
+    "practices": {
+      "items": []
+    },
+    "impact": {
+      "rows": []
+    },
+    "process": {
+      "steps": []
+    },
+    "bullets": [],
+    "title": "Voice Commerce",
+    "slug": "voice-commerce",
+    "desc": "Voice-driven shopping and ordering experiences.",
+    "group": "E-Commerce",
+    "faqs": []
+  },
+  {
+    "practices": {
+      "items": []
+    },
+    "impact": {
+      "rows": []
+    },
+    "process": {
+      "steps": []
+    },
+    "bullets": [],
+    "title": "eCommerce Development",
+    "slug": "ecommerce-development",
+    "desc": "Storefronts built to convert and scale.",
+    "group": "E-Commerce",
+    "faqs": []
   }
 ];
 
 const initialProducts = [
+  {
+    "slug": "ai-seo-auditor",
+    "name": "AI SEO Auditor",
+    "title": "AI-Powered SEO Auditor",
+    "tagline": "Scan your site for SEO issues, content gaps, and technical fixes — guided by AI.",
+    "desc": "Cubixsol AI SEO Auditor reviews pages for technical SEO, on-page signals, and prioritised recommendations so teams know what to fix first.",
+    "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=1200&h=750&q=80",
+    "accent": "from-emerald-100 to-teal-50",
+    "heroTheme": "teal",
+    "layout": "B",
+    "externalUrl": "/tools/ai-seo-auditor",
+    "category": "accessibility",
+    "stats": [
+      [
+        "AI",
+        "Page analysis"
+      ],
+      [
+        "Clear",
+        "Priorities"
+      ],
+      [
+        "Action",
+        "Checklists"
+      ]
+    ],
+    "challenges": [
+      {
+        "title": "Unknown issues",
+        "body": "Rankings slip while technical and content problems stay buried."
+      },
+      {
+        "title": "Noisy reports",
+        "body": "Generic audit tools dump hundreds of alerts with little prioritisation."
+      },
+      {
+        "title": "Slow iteration",
+        "body": "Teams need a short list of high-impact fixes, not a 50-page PDF."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Enter your URL",
+        "body": "Point the auditor at the site or key landing pages."
+      },
+      {
+        "title": "AI scan",
+        "body": "Technical, content, and on-page signals are evaluated together."
+      },
+      {
+        "title": "Prioritised report",
+        "body": "See what matters most — severity and effort side by side."
+      },
+      {
+        "title": "Fix & recheck",
+        "body": "Work the checklist and re-run to confirm progress."
+      }
+    ],
+    "answers": []
+  },
   {
     "slug": "fix-alert",
     "name": "FixAlert",
@@ -3180,6 +3244,66 @@ const initialProducts = [
     "answers": []
   },
   {
+    "slug": "jpg-to-pdf",
+    "name": "JPG to PDF",
+    "title": "JPG to PDF Converter",
+    "tagline": "Reliable image-to-PDF for documents, scans, and photo sets.",
+    "desc": "Convert JPG files into PDF documents online — built for everyday document workflows and multi-page needs.",
+    "image": "https://images.unsplash.com/photo-1568667256549-094345857347?auto=format&fit=crop&w=1200&h=750&q=80",
+    "accent": "from-cyan-100 to-teal-50",
+    "heroTheme": "teal",
+    "layout": "A",
+    "externalUrl": "https://jpg2pdf.io/",
+    "category": "accessibility",
+    "stats": [
+      [
+        "Multi",
+        "Page ready"
+      ],
+      [
+        "Clean",
+        "Output"
+      ],
+      [
+        "Free",
+        "Start"
+      ]
+    ],
+    "challenges": [
+      {
+        "title": "Scattered images",
+        "body": "Related scans stay as separate JPGs instead of one file."
+      },
+      {
+        "title": "Sharing limits",
+        "body": "Some portals only accept PDF uploads."
+      },
+      {
+        "title": "Print workflows",
+        "body": "Printing mixed JPGs is messy without a single PDF."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Upload JPGs",
+        "body": "Add the images that belong in one document."
+      },
+      {
+        "title": "Order & convert",
+        "body": "Build the PDF in the sequence you need."
+      },
+      {
+        "title": "Download PDF",
+        "body": "Get a shareable, printable file."
+      },
+      {
+        "title": "Reuse",
+        "body": "Come back anytime you need another conversion."
+      }
+    ],
+    "answers": []
+  },
+  {
     "slug": "jpg-a-pdf",
     "name": "JPGA PDF",
     "title": "Convert JPG Images to PDF Online",
@@ -3235,6 +3359,66 @@ const initialProducts = [
       {
         "title": "Done",
         "body": "No account required for standard use."
+      }
+    ],
+    "answers": []
+  },
+  {
+    "slug": "reescrever-texto",
+    "name": "Reescrever Texto",
+    "title": "Rewrite Text for Clarity and Style",
+    "tagline": "Improve tone, readability, and structure without losing your meaning.",
+    "desc": "Online text rewriting tool to refine drafts, simplify language, and produce clearer copy for work, study, or publishing.",
+    "image": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1200&h=750&q=80",
+    "accent": "from-violet-100 to-purple-50",
+    "heroTheme": "violet",
+    "layout": "A",
+    "externalUrl": "https://reescrevertexto.io/",
+    "category": "accessibility",
+    "stats": [
+      [
+        "Fast",
+        "Rewrites"
+      ],
+      [
+        "Clear",
+        "Tone control"
+      ],
+      [
+        "Web",
+        "Ready"
+      ]
+    ],
+    "challenges": [
+      {
+        "title": "Rough drafts",
+        "body": "Ideas are there, but wording is hard to polish by hand."
+      },
+      {
+        "title": "Inconsistent voice",
+        "body": "Emails, posts, and docs need a consistent style."
+      },
+      {
+        "title": "Time pressure",
+        "body": "Rewriting from scratch slows every delivery."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Paste your text",
+        "body": "Drop in the paragraph or document section you want improved."
+      },
+      {
+        "title": "Rewrite",
+        "body": "Generate a clearer version while keeping intent."
+      },
+      {
+        "title": "Adjust",
+        "body": "Tweak until the tone fits your audience."
+      },
+      {
+        "title": "Use anywhere",
+        "body": "Copy into docs, CMS, or chat."
       }
     ],
     "answers": []
@@ -3309,186 +3493,6 @@ const initialProducts = [
         "body": "Calendar and event reminders built in."
       }
     ]
-  },
-  {
-    "slug": "ai-seo-auditor",
-    "name": "AI SEO Auditor",
-    "title": "AI-Powered SEO Auditor",
-    "tagline": "Scan your site for SEO issues, content gaps, and technical fixes — guided by AI.",
-    "desc": "Cubixsol AI SEO Auditor reviews pages for technical SEO, on-page signals, and prioritised recommendations so teams know what to fix first.",
-    "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=1200&h=750&q=80",
-    "accent": "from-emerald-100 to-teal-50",
-    "heroTheme": "teal",
-    "layout": "B",
-    "externalUrl": "/tools/ai-seo-auditor",
-    "category": "accessibility",
-    "stats": [
-      [
-        "AI",
-        "Page analysis"
-      ],
-      [
-        "Clear",
-        "Priorities"
-      ],
-      [
-        "Action",
-        "Checklists"
-      ]
-    ],
-    "challenges": [
-      {
-        "title": "Unknown issues",
-        "body": "Rankings slip while technical and content problems stay buried."
-      },
-      {
-        "title": "Noisy reports",
-        "body": "Generic audit tools dump hundreds of alerts with little prioritisation."
-      },
-      {
-        "title": "Slow iteration",
-        "body": "Teams need a short list of high-impact fixes, not a 50-page PDF."
-      }
-    ],
-    "steps": [
-      {
-        "title": "Enter your URL",
-        "body": "Point the auditor at the site or key landing pages."
-      },
-      {
-        "title": "AI scan",
-        "body": "Technical, content, and on-page signals are evaluated together."
-      },
-      {
-        "title": "Prioritised report",
-        "body": "See what matters most — severity and effort side by side."
-      },
-      {
-        "title": "Fix & recheck",
-        "body": "Work the checklist and re-run to confirm progress."
-      }
-    ],
-    "answers": []
-  },
-  {
-    "slug": "jpg-to-pdf",
-    "name": "JPG to PDF",
-    "title": "JPG to PDF Converter",
-    "tagline": "Reliable image-to-PDF for documents, scans, and photo sets.",
-    "desc": "Convert JPG files into PDF documents online — built for everyday document workflows and multi-page needs.",
-    "image": "https://images.unsplash.com/photo-1568667256549-094345857347?auto=format&fit=crop&w=1200&h=750&q=80",
-    "accent": "from-cyan-100 to-teal-50",
-    "heroTheme": "teal",
-    "layout": "A",
-    "externalUrl": "https://jpg2pdf.io/",
-    "category": "accessibility",
-    "stats": [
-      [
-        "Multi",
-        "Page ready"
-      ],
-      [
-        "Clean",
-        "Output"
-      ],
-      [
-        "Free",
-        "Start"
-      ]
-    ],
-    "challenges": [
-      {
-        "title": "Scattered images",
-        "body": "Related scans stay as separate JPGs instead of one file."
-      },
-      {
-        "title": "Sharing limits",
-        "body": "Some portals only accept PDF uploads."
-      },
-      {
-        "title": "Print workflows",
-        "body": "Printing mixed JPGs is messy without a single PDF."
-      }
-    ],
-    "steps": [
-      {
-        "title": "Upload JPGs",
-        "body": "Add the images that belong in one document."
-      },
-      {
-        "title": "Order & convert",
-        "body": "Build the PDF in the sequence you need."
-      },
-      {
-        "title": "Download PDF",
-        "body": "Get a shareable, printable file."
-      },
-      {
-        "title": "Reuse",
-        "body": "Come back anytime you need another conversion."
-      }
-    ],
-    "answers": []
-  },
-  {
-    "slug": "reescrever-texto",
-    "name": "Reescrever Texto",
-    "title": "Rewrite Text for Clarity and Style",
-    "tagline": "Improve tone, readability, and structure without losing your meaning.",
-    "desc": "Online text rewriting tool to refine drafts, simplify language, and produce clearer copy for work, study, or publishing.",
-    "image": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1200&h=750&q=80",
-    "accent": "from-violet-100 to-purple-50",
-    "heroTheme": "violet",
-    "layout": "A",
-    "externalUrl": "https://reescrevertexto.io/",
-    "category": "accessibility",
-    "stats": [
-      [
-        "Fast",
-        "Rewrites"
-      ],
-      [
-        "Clear",
-        "Tone control"
-      ],
-      [
-        "Web",
-        "Ready"
-      ]
-    ],
-    "challenges": [
-      {
-        "title": "Rough drafts",
-        "body": "Ideas are there, but wording is hard to polish by hand."
-      },
-      {
-        "title": "Inconsistent voice",
-        "body": "Emails, posts, and docs need a consistent style."
-      },
-      {
-        "title": "Time pressure",
-        "body": "Rewriting from scratch slows every delivery."
-      }
-    ],
-    "steps": [
-      {
-        "title": "Paste your text",
-        "body": "Drop in the paragraph or document section you want improved."
-      },
-      {
-        "title": "Rewrite",
-        "body": "Generate a clearer version while keeping intent."
-      },
-      {
-        "title": "Adjust",
-        "body": "Tweak until the tone fits your audience."
-      },
-      {
-        "title": "Use anywhere",
-        "body": "Copy into docs, CMS, or chat."
-      }
-    ],
-    "answers": []
   },
   {
     "slug": "workstream",
@@ -3566,94 +3570,6 @@ const initialProducts = [
 const initialIndustries = [
   {
     "testimonial": {
-      "quote": "Field and office teams finally saw the same status in real time.",
-      "name": "Fleet Manager",
-      "role": "Regional logistics"
-    },
-    "slug": "logistics",
-    "title": "Logistics",
-    "icon": "/uploads/media-1788421050308-313091127.svg",
-    "short": "Tracking, dispatch, and operations visibility on the move.",
-    "desc": "Logistics software for dispatch, tracking, and partner coordination — mobile-friendly field tools and control-tower dashboards.",
-    "points": [
-      "Dispatch & routing support",
-      "Shipment tracking UX",
-      "Partner portals",
-      "Ops dashboards"
-    ],
-    "servicesWeOffer": [],
-    "workAreas": [],
-    "productsBuilt": [],
-    "caseStudies": []
-  },
-  {
-    "testimonial": {
-      "quote": "Cubixsol delivered a clean payment experience without cutting corners on controls.",
-      "name": "CTO",
-      "role": "Fintech startup"
-    },
-    "slug": "fintech",
-    "title": "Finance & Fintech",
-    "icon": "/uploads/media-1788421050295-842693555.svg",
-    "short": "Payments, dashboards, and compliant financial products.",
-    "desc": "From customer-facing finance apps to internal risk and reporting tools, we help fintech and finance teams ship secure, auditable software that moves money and data with clarity.",
-    "points": [
-      "Payment & wallet flows",
-      "KYC-friendly onboarding",
-      "Admin & risk dashboards",
-      "API-first integrations"
-    ],
-    "servicesWeOffer": [],
-    "workAreas": [],
-    "productsBuilt": [],
-    "caseStudies": []
-  },
-  {
-    "testimonial": {
-      "quote": "They balanced usability for clinicians with the compliance constraints we cannot ignore.",
-      "name": "Operations Manager",
-      "role": "Health services provider"
-    },
-    "slug": "healthcare",
-    "title": "Healthcare",
-    "icon": "/uploads/media-1788421050303-234659715.svg",
-    "short": "Secure patient experiences and clinical operations software.",
-    "desc": "We design and engineer healthcare software with privacy and reliability in mind — patient portals, scheduling, telehealth flows, and internal clinical tools that reduce friction for staff and patients.",
-    "points": [
-      "Patient portals",
-      "Appointment & care workflows",
-      "HIPAA-minded practices",
-      "Integrations with existing systems"
-    ],
-    "servicesWeOffer": [],
-    "workAreas": [],
-    "productsBuilt": [],
-    "caseStudies": []
-  },
-  {
-    "testimonial": {
-      "quote": "They thought in product metrics, not just tickets closed.",
-      "name": "Founder",
-      "role": "B2B SaaS"
-    },
-    "slug": "saas",
-    "title": "SaaS",
-    "icon": "/uploads/media-1788421050317-66609444.svg",
-    "short": "Multi-tenant products built to onboard, retain, and scale.",
-    "desc": "We partner with SaaS teams on product engineering — from MVP to scale — with solid tenancy, billing hooks, admin, and customer-facing UX.",
-    "points": [
-      "Multi-tenant architecture",
-      "Onboarding & activation",
-      "Billing integrations",
-      "Admin & analytics"
-    ],
-    "servicesWeOffer": [],
-    "workAreas": [],
-    "productsBuilt": [],
-    "caseStudies": []
-  },
-  {
-    "testimonial": {
       "quote": "Our conversion and ops visibility improved in the same release cycle.",
       "name": "Head of Digital",
       "role": "Retail brand"
@@ -3661,79 +3577,13 @@ const initialIndustries = [
     "slug": "ecommerce",
     "title": "E-Commerce",
     "icon": "/uploads/media-1788421040721-524946062.svg",
-    "short": "Stores, marketplaces, and conversion-focused commerce.",
-    "desc": "We build high-converting storefronts, custom checkout, and commerce backends — with inventory, promotions, and analytics wired for growth.",
+    "short": "Our ecommerce development services help retailers build fast online stores, multivendor marketplaces, inventory systems, checkout experiences, and integrations with payment and fulfilment platforms.",
+    "desc": "Our **ecommerce development services** help retailers build fast online stores, multivendor marketplaces, inventory systems, checkout experiences, and integrations with payment and fulfilment platforms.",
     "points": [
       "Custom storefronts",
       "Checkout optimization",
       "Marketplace features",
       "OMS & inventory sync"
-    ],
-    "servicesWeOffer": [],
-    "workAreas": [],
-    "productsBuilt": [],
-    "caseStudies": []
-  },
-  {
-    "testimonial": {
-      "quote": "They matched our engineering bar and moved at product speed.",
-      "name": "VP Engineering",
-      "role": "Tech company"
-    },
-    "slug": "technology",
-    "title": "Technology",
-    "icon": "/uploads/media-1788421050320-328223291.svg",
-    "short": "Platforms, developer tools, and internal tech products.",
-    "desc": "For technology companies building platforms or internal tools, we embed as an engineering partner — architecture, delivery, and UI that matches product standards.",
-    "points": [
-      "Platform features",
-      "Internal tools",
-      "API products",
-      "Design systems"
-    ],
-    "servicesWeOffer": [],
-    "workAreas": [],
-    "productsBuilt": [],
-    "caseStudies": []
-  },
-  {
-    "testimonial": {
-      "quote": "Peak season held up — and the booking UX stayed simple.",
-      "name": "Digital Manager",
-      "role": "Hospitality group"
-    },
-    "slug": "travel",
-    "title": "Travel & Hospitality",
-    "icon": "/uploads/media-1788421050341-423557658.svg",
-    "short": "Booking journeys and guest experiences that convert.",
-    "desc": "Booking flows, supplier integrations, and guest apps for travel and hospitality brands that need reliability at peak demand. this is checkingrfgreg fefewfewefewf",
-    "points": [
-      "Booking & availability",
-      "Supplier APIs",
-      "Guest mobile experiences",
-      "Loyalty hooks"
-    ],
-    "servicesWeOffer": [],
-    "workAreas": [],
-    "productsBuilt": [],
-    "caseStudies": []
-  },
-  {
-    "testimonial": {
-      "quote": "Listings and leads finally lived in one system our agents actually use.",
-      "name": "Sales Director",
-      "role": "Property group"
-    },
-    "slug": "real-estate",
-    "title": "Real Estate",
-    "icon": "/uploads/media-1788421050310-764937006.svg",
-    "short": "Listings, portals, and property operations platforms.",
-    "desc": "Property search, agent tools, and operations software for developers and agencies — fast listing experiences and reliable backend workflows.",
-    "points": [
-      "Listing portals",
-      "Agent CRM light flows",
-      "PMS integrations",
-      "Lead routing"
     ],
     "servicesWeOffer": [],
     "workAreas": [],
@@ -3749,8 +3599,8 @@ const initialIndustries = [
     "slug": "education",
     "title": "Education",
     "icon": "/uploads/media-1788421050282-718579643.svg",
-    "short": "Learning platforms, school systems, and engagement tools.",
-    "desc": "Cubixsol designs and builds digital products for schools, universities, and EdTech companies — from learner engagement and LMS features to parent communication and multi-institution content delivery.",
+    "short": "With our education software development services, institutions and education businesses can launch learning platforms, student portals, assessment tools, virtual classrooms, and administrative systems.",
+    "desc": "With our **education software development** services, institutions and education businesses can launch learning platforms, student portals, assessment tools, virtual classrooms, and administrative systems.",
     "points": [
       "Learning platforms & LMS modules",
       "School & parent communication apps",
@@ -3831,30 +3681,177 @@ const initialIndustries = [
       "Analytics and admin dashboards",
       "UI/UX for education products"
     ]
+  },
+  {
+    "testimonial": {
+      "quote": "Cubixsol delivered a clean payment experience without cutting corners on controls.",
+      "name": "CTO",
+      "role": "Fintech startup"
+    },
+    "slug": "fintech",
+    "title": "Finance & Fintech",
+    "icon": "/uploads/media-1788421050295-842693555.svg",
+    "short": "Our fintech software development team creates secure payment platforms, financial dashboards, digital wallets, lending applications, and automated financial workflows.",
+    "desc": "Our **fintech software development** team creates secure payment platforms, financial dashboards, digital wallets, lending applications, and automated financial workflows.",
+    "points": [
+      "Payment & wallet flows",
+      "KYC-friendly onboarding",
+      "Admin & risk dashboards",
+      "API-first integrations"
+    ],
+    "servicesWeOffer": [],
+    "workAreas": [],
+    "productsBuilt": [],
+    "caseStudies": []
+  },
+  {
+    "testimonial": {
+      "quote": "They balanced usability for clinicians with the compliance constraints we cannot ignore.",
+      "name": "Operations Manager",
+      "role": "Health services provider"
+    },
+    "slug": "healthcare",
+    "title": "Healthcare",
+    "icon": "/uploads/media-1788421050303-234659715.svg",
+    "short": "Our healthcare software development services cover patient portals, telehealth platforms, clinical workflows, healthcare applications, data integrations, and secure administrative systems.",
+    "desc": "Our **healthcare software development services** cover patient portals, telehealth platforms, clinical workflows, healthcare applications, data integrations, and secure administrative systems.",
+    "points": [
+      "Patient portals",
+      "Appointment & care workflows",
+      "HIPAA-minded practices",
+      "Integrations with existing systems"
+    ],
+    "servicesWeOffer": [],
+    "workAreas": [],
+    "productsBuilt": [],
+    "caseStudies": []
+  },
+  {
+    "testimonial": {
+      "quote": "Field and office teams finally saw the same status in real time.",
+      "name": "Fleet Manager",
+      "role": "Regional logistics"
+    },
+    "slug": "logistics",
+    "title": "Logistics",
+    "icon": "/uploads/media-1788421050308-313091127.svg",
+    "short": "Through our logistics software development expertise, we build fleet management platforms, shipment tracking systems, warehouse tools, route-planning applications, and supply-chain dashboards.",
+    "desc": "Through our **logistics software development** expertise, we build fleet management platforms, shipment tracking systems, warehouse tools, route-planning applications, and supply-chain dashboards.",
+    "points": [
+      "Dispatch & routing support",
+      "Shipment tracking UX",
+      "Partner portals",
+      "Ops dashboards"
+    ],
+    "servicesWeOffer": [],
+    "workAreas": [],
+    "productsBuilt": [],
+    "caseStudies": []
+  },
+  {
+    "testimonial": {
+      "quote": "Listings and leads finally lived in one system our agents actually use.",
+      "name": "Sales Director",
+      "role": "Property group"
+    },
+    "slug": "real-estate",
+    "title": "Real Estate",
+    "icon": "/uploads/media-1788421050310-764937006.svg",
+    "short": "Our real estate software development services support property portals, listing platforms, CRM systems, tenant applications, property management tools, and virtual viewing experiences.",
+    "desc": "Our **real estate software development** services support property portals, listing platforms, CRM systems, tenant applications, property management tools, and virtual viewing experiences.",
+    "points": [
+      "Listing portals",
+      "Agent CRM light flows",
+      "PMS integrations",
+      "Lead routing"
+    ],
+    "servicesWeOffer": [],
+    "workAreas": [],
+    "productsBuilt": [],
+    "caseStudies": []
+  },
+  {
+    "testimonial": {
+      "quote": "They thought in product metrics, not just tickets closed.",
+      "name": "Founder",
+      "role": "B2B SaaS"
+    },
+    "slug": "saas",
+    "title": "SaaS",
+    "icon": "/uploads/media-1788421050317-66609444.svg",
+    "short": "As a results-focused SaaS development company, Cubixsol builds subscription platforms, multi-tenant applications, customer dashboards, billing systems, and scalable cloud-based products.",
+    "desc": "As a results-focused **SaaS development company**, Cubixsol builds subscription platforms, multi-tenant applications, customer dashboards, billing systems, and scalable cloud-based products.",
+    "points": [
+      "Multi-tenant architecture",
+      "Onboarding & activation",
+      "Billing integrations",
+      "Admin & analytics"
+    ],
+    "servicesWeOffer": [],
+    "workAreas": [],
+    "productsBuilt": [],
+    "caseStudies": []
+  },
+  {
+    "testimonial": {
+      "quote": "They matched our engineering bar and moved at product speed.",
+      "name": "VP Engineering",
+      "role": "Tech company"
+    },
+    "slug": "technology",
+    "title": "Technology",
+    "icon": "/uploads/media-1788421050320-328223291.svg",
+    "short": "Platforms, developer tools, and internal tech products.",
+    "desc": "For technology companies building platforms or internal tools, we embed as an engineering partner — architecture, delivery, and UI that matches product standards.",
+    "points": [
+      "Platform features",
+      "Internal tools",
+      "API products",
+      "Design systems"
+    ],
+    "servicesWeOffer": [],
+    "workAreas": [],
+    "productsBuilt": [],
+    "caseStudies": []
+  },
+  {
+    "testimonial": {
+      "quote": "Peak season held up — and the booking UX stayed simple.",
+      "name": "Digital Manager",
+      "role": "Hospitality group"
+    },
+    "slug": "travel",
+    "title": "Travel & Hospitality",
+    "icon": "/uploads/media-1788421050341-423557658.svg",
+    "short": "As an experienced travel software development company, we create booking platforms, reservation systems, itinerary tools, travel portals, mobile applications, and third-party service integrations.",
+    "desc": "As an experienced **travel software development company**, we create booking platforms, reservation systems, itinerary tools, travel portals, mobile applications, and third-party service integrations.",
+    "points": [
+      "Booking & availability",
+      "Supplier APIs",
+      "Guest mobile experiences",
+      "Loyalty hooks"
+    ],
+    "servicesWeOffer": [],
+    "workAreas": [],
+    "productsBuilt": [],
+    "caseStudies": []
   }
 ];
 
 const initialProjects = [
-  {
-    "title": "HomeHub",
-    "category": "Web Development",
-    "desc": "A real estate platform for buying, renting and selling properties with advanced search.",
-    "tag": "Web Development",
-    "color": "from-slate-800 to-slate-950"
-  },
-  {
-    "title": "MediCare Plus",
-    "category": "Web Development",
-    "desc": "A healthcare platform connecting patients with doctors and managing appointments.",
-    "tag": "Healthcare",
-    "color": "from-sky-100 to-blue-200"
-  },
   {
     "title": "FinGo Mobile App",
     "category": "Mobile Apps",
     "desc": "A personal finance app for budgeting, tracking expenses and achieving financial goals.",
     "tag": "Mobile Apps",
     "color": "from-blue-600 to-cyan-500"
+  },
+  {
+    "title": "HomeHub",
+    "category": "Web Development",
+    "desc": "A real estate platform for buying, renting and selling properties with advanced search.",
+    "tag": "Web Development",
+    "color": "from-slate-800 to-slate-950"
   },
   {
     "title": "InsightAI",
@@ -3864,11 +3861,11 @@ const initialProjects = [
     "color": "from-slate-900 to-purple-950"
   },
   {
-    "title": "TaskFlow SaaS",
-    "category": "SaaS",
-    "desc": "A comprehensive project management SaaS for teams to plan, collaborate and deliver.",
-    "tag": "SaaS",
-    "color": "from-indigo-500 to-blue-600"
+    "title": "MediCare Plus",
+    "category": "Web Development",
+    "desc": "A healthcare platform connecting patients with doctors and managing appointments.",
+    "tag": "Healthcare",
+    "color": "from-sky-100 to-blue-200"
   },
   {
     "title": "Pawfect Foods",
@@ -3876,17 +3873,28 @@ const initialProjects = [
     "desc": "An e-commerce store for premium pet food and accessories with seamless shopping.",
     "tag": "E-Commerce",
     "color": "from-amber-200 to-orange-300"
+  },
+  {
+    "title": "TaskFlow SaaS",
+    "category": "SaaS",
+    "desc": "A comprehensive project management SaaS for teams to plan, collaborate and deliver.",
+    "tag": "SaaS",
+    "color": "from-indigo-500 to-blue-600"
   }
 ];
 
 const initialTeam = [
   {
-    "name": "Noman Ghaffer",
-    "role": "CEO & Founder"
-  },
-  {
     "name": "Abdul Rehman",
     "role": "Lead Developer"
+  },
+  {
+    "name": "Ayesha Khan",
+    "role": "UI/UX Director"
+  },
+  {
+    "name": "Fahad Nadeem",
+    "role": "CEO & Founder"
   },
   {
     "name": "Hina Batool",
@@ -3895,10 +3903,6 @@ const initialTeam = [
   {
     "name": "Usman Tariq",
     "role": "CTO"
-  },
-  {
-    "name": "Ayesha Khan",
-    "role": "UI/UX Director"
   }
 ];
 
@@ -4011,6 +4015,139 @@ const initialSeoSettings = [];
 const initialPages = [
   {
     "seo": {
+      "metaTitle": "Contact Us | Cubixsol",
+      "metaDescription": "Get in touch with Cubixsol. We build innovative software solutions, custom websites, and enterprise web applications.",
+      "keywords": "contact cubixsol, hire developers, software agency contact"
+    },
+    "slug": "contact",
+    "title": "Contact Us",
+    "heroEyebrow": "Get In Touch",
+    "heroTitle": "Let's Build Something Amazing Together",
+    "heroDesc": "Have a project in mind or need expert advice? We'd love to hear from you. Fill out the form and our team will get back to you as soon as possible.",
+    "heroBadges": [],
+    "contactSectionTitle": "We're Here to Help",
+    "contactSectionSubtitle": "Choose the best way to reach us. Our team is always ready to assist you.",
+    "mapEmbedUrl": "https://maps.google.com/maps?q=United%20Kingdom&t=&z=13&ie=UTF8&iwloc=&output=embed",
+    "highlights": [
+      {
+        "icon": "Clock",
+        "title": "Quick Response",
+        "desc": "We reply within 24 hours"
+      },
+      {
+        "icon": "Users2",
+        "title": "Expert Support",
+        "desc": "Get help from our experienced team"
+      },
+      {
+        "icon": "ShieldCheck",
+        "title": "Trusted Partner",
+        "desc": "Your success is our priority"
+      }
+    ],
+    "processSteps": [],
+    "whyChooseItems": [],
+    "engagementItems": [],
+    "industriesItems": [],
+    "faqs": []
+  },
+  {
+    "seo": {
+      "metaTitle": "Industry-Specific Software Development Services | Cubixsol",
+      "metaDescription": "Cubixsol provides industry software development services across healthcare, SaaS, fintech, logistics, real estate, education, ecommerce, and travel.",
+      "keywords": "industry software development, healthcare software, fintech software, saas development, logistics software, real estate software, ecommerce software, education software, travel software, cubixsol",
+      "ogTitle": "Industry-Specific Software Development Services | Cubixsol",
+      "ogDescription": "Cubixsol provides industry software development services across healthcare, SaaS, fintech, logistics, real estate, education, ecommerce, and travel.",
+      "ogImage": "",
+      "canonicalUrl": ""
+    },
+    "slug": "industries",
+    "title": "Industries",
+    "heroEyebrow": "Where we deliver",
+    "heroTitle": "Industry-Specific Software Development Services",
+    "heroDesc": "Cubixsol provides **industry software development services** to address the operational demands, customer expectations, and technical requirements of your market. We understand your domain and combine that knowledge with product strategy, design, engineering, and system integration to build powerful software that achieves your business goals.",
+    "heroButtonText": "Discuss Your Project",
+    "heroButtonLink": "/contact",
+    "heroBadges": [
+      "Domain-Aware Engineering",
+      "Regulated Compliance (HIPAA, PCI DSS)",
+      "Modern Scalable Architecture",
+      "Custom Third-Party Integrations"
+    ],
+    "ctaEyebrow": "Let's Collaborate",
+    "ctaTitle": "Let’s Build Something Amazing Together",
+    "ctaDesc": "Turn your industry knowledge into a digital product that works for your customers and operations. Partner with Cubixsol to plan, design, develop, and scale software built around your market.",
+    "ctaButtonText": "Start Your Project",
+    "ctaButtonLink": "/contact",
+    "faqEyebrow": "FAQ",
+    "faqTitle": "Frequently Asked Questions",
+    "faqIntro": "Explore answers to key questions about our industry-specific software development capabilities.",
+    "faqs": [
+      {
+        "q": "Does Cubixsol have experience with industry-specific software?",
+        "a": "Yes. We build software for healthcare, SaaS, fintech, logistics, real estate, education, ecommerce, and travel businesses. We design the development process around each industry's users, workflows, and technical requirements."
+      },
+      {
+        "q": "Can you integrate the software with our existing systems?",
+        "a": "Yes. We can connect your product with CRM, ERP, payment, accounting, analytics, inventory, communication, and other third-party platforms through available APIs or custom integrations."
+      },
+      {
+        "q": "Can we review relevant project examples?",
+        "a": "Yes. Share your industry and project requirements with our team. We will present the most relevant work, capabilities, or technical approach based on your product goals and confidentiality restrictions."
+      }
+    ],
+    "builtAroundEyebrow": "Tailored Solutions",
+    "builtAroundTitle": "Software Built Around Your Industry",
+    "builtAroundDesc": "Every industry faces distinct challenges, which is why we develop industry-specific software to address them. We develop each product based on the industry’s users, processes, integrations, security risks, and regulatory requirements. Our specialists deliver industry-focused software solutions across eight key verticals to modernize outdated systems, improve customer experiences, and support future growth.",
+    "builtAroundPoints": [
+      {
+        "title": "User & Workflow Centric",
+        "desc": "Tailored to the specific daily operating workflows of your teams and end users."
+      },
+      {
+        "title": "Security & Regulatory Compliance",
+        "desc": "Built-in protection adhering to HIPAA, PCI DSS, SOC 2, and data privacy regulations."
+      },
+      {
+        "title": "API & Legacy System Integration",
+        "desc": "Interoperable connections with CRM, ERP, payment gateways, and core platforms."
+      },
+      {
+        "title": "Scalable Cloud Architecture",
+        "desc": "Engineered for high traffic volume, fault tolerance, and zero-downtime operations."
+      }
+    ],
+    "industriesSectionEyebrow": "Industries We Serve",
+    "industriesSectionTitle": "Industries We Serve",
+    "industriesSectionIntro": "Our teams combine technical expertise with practical industry knowledge. From regulated healthcare platforms to high-traffic ecommerce stores, we build reliable digital products around the way each business operates.",
+    "domainExpertiseEyebrow": "Strategic Advantage",
+    "domainExpertiseTitle": "Why Domain Expertise Matters",
+    "domainExpertiseParagraphs": [
+      "Software development decisions carry different consequences in every industry. A healthcare platform must protect sensitive patient information, while a fintech product must secure financial transactions. E-commerce and travel platforms must process heavy traffic without disrupting the customer journey.",
+      "We consider industry-specific requirements from the beginning. We assess user roles, business workflows, system dependencies, data security, and relevant standards such as HIPAA and PCI DSS where applicable. Our approach reduces avoidable rework, supports faster decision-making, and produces software suited to real operating conditions rather than generic assumptions."
+    ],
+    "domainExpertisePillars": [
+      {
+        "title": "Context-Driven Architecture",
+        "desc": "Technical decisions tailored to actual industry constraints and user requirements."
+      },
+      {
+        "title": "Security & Compliance from Day 1",
+        "desc": "Built with strict industry standards such as HIPAA, PCI DSS, and data privacy laws."
+      },
+      {
+        "title": "Zero Rework & Fast Delivery",
+        "desc": "Clear understanding of industry workflows prevents costly revisions and speeds rollout."
+      }
+    ],
+    "processSteps": [],
+    "whyChooseItems": [],
+    "engagementItems": [],
+    "industriesItems": [],
+    "highlights": []
+  },
+  {
+    "seo": {
       "metaTitle": "Software Development & IT Consulting Services | Cubixsol",
       "metaDescription": "Explore Cubixsol’s full suite of custom web development, mobile apps, AI products, cloud DevOps, and UI/UX design services designed to scale your business.",
       "keywords": "custom software development, web development, mobile apps, AI development, cloud devops, ui ux design, cubixsol services",
@@ -4024,8 +4161,6 @@ const initialPages = [
     "heroEyebrow": "Our Services",
     "heroTitle": "Powerful digital solutions that drive real results",
     "heroDesc": "Strategy, design, engineering and growth — under one roof. Pick a service to see how we deliver, or tell us your goal and we will map the right path.",
-    "heroButtonText": "Get a Free Project Consultation",
-    "heroButtonLink": "/contact#contact-form",
     "heroBadges": [
       "Modern stack",
       "Scalable & secure",
@@ -4165,97 +4300,43 @@ const initialPages = [
         "q": "How can I find custom software development services near me?",
         "a": "Location should not be your only selection criterion. Compare relevant experience, communication, technical capability, delivery process, and post-launch support. Our experts collaborate with clients through remote and regional teams."
       }
-    ]
+    ],
+    "highlights": []
+  }
+];
+
+const initialContactInfo = [
+  {
+    "title": "Our Location",
+    "desc": "UK\nUAE\nPakistan",
+    "icon": "MapPin",
+    "link": "https://www.google.com/maps/place/United+Kingdom/@54.1034466,-15.0008131,5z/data=!3m1!4b1!4m6!3m5!1s0x25a3b1142c791a9:0xc4f8a0433288257a!8m2!3d55.378051!4d-3.435973!16zL20vMDdzc2M?hl=en-US&entry=ttu&g_ep=EgoyMDI2MDkwMi4wIKXMDSoASAFQAw%3D%3D",
+    "order": 1,
+    "status": "Active"
   },
   {
-    "slug": "industries",
-    "title": "Industries",
-    "heroEyebrow": "Where we deliver",
-    "heroTitle": "Industry-Specific Software Development Services",
-    "heroDesc": "Cubixsol provides **industry software development services** to address the operational demands, customer expectations, and technical requirements of your market. We understand your domain and combine that knowledge with product strategy, design, engineering, and system integration to build powerful software that achieves your business goals.",
-    "heroButtonText": "Discuss Your Project",
-    "heroButtonLink": "/contact",
-    "heroBadges": [
-      "Domain-Aware Engineering",
-      "Regulated Compliance (HIPAA, PCI DSS)",
-      "Modern Scalable Architecture",
-      "Custom Third-Party Integrations"
-    ],
-    "builtAroundEyebrow": "Tailored Solutions",
-    "builtAroundTitle": "Software Built Around Your Industry",
-    "builtAroundDesc": "Every industry faces distinct challenges, which is why we develop industry-specific software to address them. We develop each product based on the industry’s users, processes, integrations, security risks, and regulatory requirements. Our specialists deliver industry-focused software solutions across eight key verticals to modernize outdated systems, improve customer experiences, and support future growth.",
-    "builtAroundPoints": [
-      {
-        "title": "User & Workflow Centric",
-        "desc": "Tailored to the specific daily operating workflows of your teams and end users."
-      },
-      {
-        "title": "Security & Regulatory Compliance",
-        "desc": "Built-in protection adhering to HIPAA, PCI DSS, SOC 2, and data privacy regulations."
-      },
-      {
-        "title": "API & Legacy System Integration",
-        "desc": "Interoperable connections with CRM, ERP, payment gateways, and core platforms."
-      },
-      {
-        "title": "Scalable Cloud Architecture",
-        "desc": "Engineered for high traffic volume, fault tolerance, and zero-downtime operations."
-      }
-    ],
-    "industriesSectionEyebrow": "Industries We Serve",
-    "industriesSectionTitle": "Industries We Serve",
-    "industriesSectionIntro": "Our teams combine technical expertise with practical industry knowledge. From regulated healthcare platforms to high-traffic ecommerce stores, we build reliable digital products around the way each business operates.",
-    "domainExpertiseEyebrow": "Strategic Advantage",
-    "domainExpertiseTitle": "Why Domain Expertise Matters",
-    "domainExpertiseParagraphs": [
-      "Software development decisions carry different consequences in every industry. A healthcare platform must protect sensitive patient information, while a fintech product must secure financial transactions. E-commerce and travel platforms must process heavy traffic without disrupting the customer journey.",
-      "We consider industry-specific requirements from the beginning. We assess user roles, business workflows, system dependencies, data security, and relevant standards such as HIPAA and PCI DSS where applicable. Our approach reduces avoidable rework, supports faster decision-making, and produces software suited to real operating conditions rather than generic assumptions."
-    ],
-    "domainExpertisePillars": [
-      {
-        "title": "Context-Driven Architecture",
-        "desc": "Technical decisions tailored to actual industry constraints and user requirements."
-      },
-      {
-        "title": "Security & Compliance from Day 1",
-        "desc": "Built with strict industry standards such as HIPAA, PCI DSS, and data privacy laws."
-      },
-      {
-        "title": "Zero Rework & Fast Delivery",
-        "desc": "Clear understanding of industry workflows prevents costly revisions and speeds rollout."
-      }
-    ],
-    "ctaEyebrow": "Let's Collaborate",
-    "ctaTitle": "Let’s Build Something Amazing Together",
-    "ctaDesc": "Turn your industry knowledge into a digital product that works for your customers and operations. Partner with Cubixsol to plan, design, develop, and scale software built around your market.",
-    "ctaButtonText": "Start Your Project",
-    "ctaButtonLink": "/contact",
-    "faqEyebrow": "FAQ",
-    "faqTitle": "Frequently Asked Questions",
-    "faqIntro": "Explore answers to key questions about our industry-specific software development capabilities.",
-    "faqs": [
-      {
-        "q": "Does Cubixsol have experience with industry-specific software?",
-        "a": "Yes. We build software for healthcare, SaaS, fintech, logistics, real estate, education, ecommerce, and travel businesses. We design the development process around each industry's users, workflows, and technical requirements."
-      },
-      {
-        "q": "Can you integrate the software with our existing systems?",
-        "a": "Yes. We can connect your product with CRM, ERP, payment, accounting, analytics, inventory, communication, and other third-party platforms through available APIs or custom integrations."
-      },
-      {
-        "q": "Can we review relevant project examples?",
-        "a": "Yes. Share your industry and project requirements with our team. We will present the most relevant work, capabilities, or technical approach based on your product goals and confidentiality restrictions."
-      }
-    ],
-    "seo": {
-      "metaTitle": "Industry-Specific Software Development Services | Cubixsol",
-      "metaDescription": "Cubixsol provides industry software development services across healthcare, SaaS, fintech, logistics, real estate, education, ecommerce, and travel.",
-      "keywords": "industry software development, healthcare software, fintech software, saas development, logistics software, real estate software, ecommerce software, education software, travel software, cubixsol",
-      "ogTitle": "Industry-Specific Software Development Services | Cubixsol",
-      "ogDescription": "Cubixsol provides industry software development services across healthcare, SaaS, fintech, logistics, real estate, education, ecommerce, and travel.",
-      "ogImage": "",
-      "canonicalUrl": ""
-    }
+    "title": "Email Us",
+    "desc": "info@cubixsol.com",
+    "icon": "Mail",
+    "link": "mailto:info@cubixsol.com",
+    "order": 2,
+    "status": "Active"
+  },
+  {
+    "title": "Call Us",
+    "desc": "+44 7404 870865\n+92 304 1100028",
+    "icon": "Phone",
+    "link": "tel:+92 304 1100028",
+    "order": 3,
+    "status": "Active"
+  },
+  {
+    "title": "Working Hours",
+    "desc": "Mon - Sat: 9:00 AM - 6:00 PM\nSunday: Closed",
+    "icon": "Clock",
+    "link": "",
+    "order": 4,
+    "status": "Active"
   }
 ];
 
@@ -4276,4 +4357,5 @@ module.exports = {
   initialSiteSettings,
   initialSeoSettings,
   initialPages,
+  initialContactInfo,
 };
