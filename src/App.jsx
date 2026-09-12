@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect, Component } from 'react';
 import { AuthProvider } from './context/AuthContext';
 import { ServicesProvider } from './context/ServicesContext';
+import { EstimateModalProvider } from './context/EstimateModalContext';
 import ProtectedRoute from './components/Admin/ProtectedRoute';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -160,8 +161,10 @@ export default function App() {
     <BrowserRouter>
       <AuthProvider>
         <ServicesProvider>
-          <ScrollToTop />
-          <AppShell />
+          <EstimateModalProvider>
+            <ScrollToTop />
+            <AppShell />
+          </EstimateModalProvider>
         </ServicesProvider>
       </AuthProvider>
     </BrowserRouter>

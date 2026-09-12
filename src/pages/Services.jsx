@@ -326,9 +326,9 @@ export default function Services() {
                     className="group card h-full flex flex-col hover:shadow-elev hover:-translate-y-1.5 transition-all duration-300 !p-5 sm:!p-6"
                   >
                     <span
-                      className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${s.color} group-hover:scale-110 transition-transform duration-300`}
+                      className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-4 ${s.color} group-hover:scale-110 transition-transform duration-300 shadow-sm`}
                     >
-                      <IconComponent className="w-6 h-6" />
+                      <IconComponent className="w-8 h-8 object-contain" />
                     </span>
                     <h2 className="font-bold text-ink text-lg mb-2 group-hover:text-primary-600 transition-colors">
                       {s.title}

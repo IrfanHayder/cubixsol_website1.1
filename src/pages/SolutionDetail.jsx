@@ -8,14 +8,6 @@ import CtaBanner from '../components/CtaBanner';
 import ServiceInquiryForm from '../components/ServiceInquiryForm';
 import { AgenticAiImpact, AgenticAiProcess } from '../components/AgenticAiSections';
 import SolutionBestPractices from '../components/SolutionBestPractices';
-import {
-  OracleAidpHero,
-  OracleAidpIntro,
-  OracleAidpCompare,
-  OracleAidpExpertise,
-  OracleAidpApproach,
-  OracleAidpExtras,
-} from '../components/OracleAidpSections';
 import Reveal, { Stagger, StaggerItem } from '../components/Reveal';
 import { apiFetch } from '../utils/api';
 import { useSEO } from '../utils/seo';
@@ -84,18 +76,37 @@ function SolutionFaqSection({ faqs, solutionTitle }) {
 export default function SolutionDetail() {
   const { slug } = useParams();
   const fallback = staticSolutions.find((s) => s.slug === slug);
-  const [solution, setSolution] = useState(fallback || null);
+  const [solution, setSolution] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [notFound, setNotFound] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
+    setLoading(true);
+    setNotFound(false);
+
     async function loadSolution() {
       try {
         const live = await apiFetch(`solutions/${slug}`);
-        if (!cancelled && live && live.slug) {
+        if (cancelled) return;
+        if (live && live.slug) {
           setSolution(live);
+          setLoading(false);
+        } else if (fallback) {
+          setSolution(fallback);
+          setLoading(false);
+        } else {
+          setNotFound(true);
+          setLoading(false);
         }
       } catch (_) {
-        // use fallback
+        if (cancelled) return;
+        if (fallback) {
+          setSolution(fallback);
+        } else {
+          setNotFound(true);
+        }
+        setLoading(false);
       }
     }
     loadSolution();
@@ -106,13 +117,22 @@ export default function SolutionDetail() {
 
   useSEO(solution?.seo, {
     title: solution?.title ? `${solution.title} | Cubixsol Solutions` : undefined,
-    description: solution?.desc,
-    keywords: `${solution?.title || ''}, ${solution?.group || ''}, Cubixsol solutions`,
+    description: solution?.desc || solution?.description,
+    keywords: `${solution?.title || ''}, ${solution?.group || solution?.category || ''}, Cubixsol solutions`,
   });
 
-  if (!solution && !fallback) return <Navigate to="/solutions" replace />;
+  if (loading) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-[60vh] gap-3 text-gray-400">
+        <div className="w-9 h-9 border-3 border-gray-200 border-t-[#00a4d8] rounded-full animate-spin" />
+        <span className="text-sm font-medium text-gray-500">Loading solution...</span>
+      </div>
+    );
+  }
 
-  const currentSolution = solution || fallback;
+  if (notFound || !solution) return <Navigate to="/solutions" replace />;
+
+  const currentSolution = solution;
 
   const accessibilitySlugs = ['image-to-text', 'reescrever-texto', 'jpg-a-pdf', 'jpg-to-pdf'];
   if (accessibilitySlugs.includes(currentSolution.slug)) {
@@ -123,22 +143,6 @@ export default function SolutionDetail() {
     return <Navigate to="/tools/ai-seo-auditor" replace />;
   }
 
-  if (currentSolution.slug === 'oracle-aidp') {
-    return (
-      <div className="bg-white">
-        <OracleAidpHero />
-        <OracleAidpIntro />
-        <OracleAidpCompare />
-        <OracleAidpExpertise />
-        <OracleAidpApproach />
-        <OracleAidpExtras />
-        <div id="oracle-inquiry">
-          <ServiceInquiryForm defaultService="Oracle AI Data Platform" />
-        </div>
-        <CtaBanner />
-      </div>
-    );
-  }
 
   const related = staticSolutions
     .filter((s) => s.group === currentSolution.group && s.slug !== slug)
@@ -157,7 +161,7 @@ export default function SolutionDetail() {
   return (
     <div>
       <Breadcrumb
-        current={currentSolution.title}
+        current={currentSolution.heroTitle || currentSolution.title || currentSolution.name}
         items={[
           { label: 'Solutions', to: '/solutions' },
           { label: currentSolution.group || currentSolution.category || 'Solutions', to: '/solutions' },
@@ -173,11 +177,11 @@ export default function SolutionDetail() {
           </Link>
           <p className="eyebrow mb-2">{currentSolution.group || currentSolution.category || 'Solution'}</p>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-ink tracking-tight mb-4 max-w-3xl">
-            {currentSolution.title}
+            {currentSolution.heroTitle || currentSolution.title || currentSolution.name}
           </h1>
-          {currentSolution.desc && (
+          {(currentSolution.description || currentSolution.desc) && (
             <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-3xl mb-8">
-              {currentSolution.desc}
+              {currentSolution.description || currentSolution.desc}
             </p>
           )}
           <div className="flex flex-wrap gap-3 mb-12">

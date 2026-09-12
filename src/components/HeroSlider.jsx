@@ -2,6 +2,7 @@ import { useMemo, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ArrowDown, Sparkles } from 'lucide-react';
+import { useEstimateModal } from '../context/EstimateModalContext';
 
 const orbitItems = [
   {
@@ -74,6 +75,7 @@ function OrbitCard({ item, size = 'md' }) {
 
 export default function HeroSlider() {
   const [wordIndex, setWordIndex] = useState(0);
+  const { openEstimateModal } = useEstimateModal();
 
   useEffect(() => {
     const id = setInterval(() => setWordIndex((i) => (i + 1) % rotatingWords.length), 2600);
@@ -163,12 +165,13 @@ export default function HeroSlider() {
               transition={{ duration: 0.5, delay: 0.12 }}
               className="flex flex-wrap justify-center lg:justify-start gap-3 mb-8"
             >
-              <Link
-                to="/services"
-                className="inline-flex items-center gap-2 bg-ink text-white font-semibold px-6 py-3 rounded-full hover:bg-ink/90 transition shadow-elev"
+              <button
+                type="button"
+                onClick={openEstimateModal}
+                className="inline-flex items-center gap-2 bg-ink text-white font-semibold px-6 py-3 rounded-full hover:bg-ink/90 transition shadow-elev cursor-pointer"
               >
-                {/* Find out how*/}Get a Free Estimate  <ArrowRight className="w-4 h-4" />
-              </Link>
+                Get a Free Estimate <ArrowRight className="w-4 h-4" />
+              </button>
               <Link
                 to="/contact"
                 className="inline-flex items-center gap-2 bg-white text-ink font-semibold px-6 py-3 rounded-full border border-gray-200/80 hover:border-primary-300 hover:shadow-card transition"

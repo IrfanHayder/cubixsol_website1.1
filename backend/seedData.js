@@ -634,11 +634,11 @@ const initialServices = [
     "icon": "/uploads/media-1788761191368-390026375.svg",
     "slug": "cms-development",
     "heroImage": "/uploads/media-1788760355423-686594247.svg",
-    "title": "CMS Development",
-    "desc": "We build a flexible CMS around your workflows, publishing requirements, integrations, and approval processes, so your team can manage content without technical bottlenecks. ",
+    "title": "CMS & WordPress Development Services",
+    "desc": "Give your team a website they can manage with confidence. Cubixsol’s wordpress development services help businesses launch, update, and grow websites with clear navigation, flexible content tools, and dependable functionality. From company websites to online stores, we build CMS solutions around your customers, publishing needs, and business goals.",
     "color": "text-violet-600 bg-violet-50",
     "gradient": "from-violet-500 to-purple-600",
-    "longDesc": "We build and customize content platforms so your team can publish, sell, and iterate without fighting the CMS. From WordPress and Shopify to Magento, BigCommerce, Joomla, and OpenCart — clean themes, solid plugins, and performance that holds up.",
+    "longDesc": "Give your team a website they can manage with confidence. Cubixsol’s wordpress development services help businesses launch, update, and grow websites with clear navigation, flexible content tools, and dependable functionality. From company websites to online stores, we build CMS solutions around your customers, publishing needs, and business goals.",
     "features": [
       "Magento Development",
       "Shopify Development",
@@ -653,27 +653,131 @@ const initialServices = [
       "WordPress",
       "Shopify",
       "Magento",
-      "WooCommerce",
+      "Drupal",
       "PHP",
-      "Liquid"
+      "Next.js"
     ],
     "outcomes": [
       "Easier content and catalog updates",
       "Faster storefront performance",
       "Cleaner admin workflows"
     ],
-    "faqs": [],
-    "techDesc": "We select technologies according to the project’s functionality, performance requirements, integrations, and future roadmap.\n\nThe goal is not to use the newest technology for its own sake. It is to choose a dependable stack that fits your product, supports maintainability, and avoids unnecessary technical complexity.",
+    "faqs": [
+      {
+        "q": "How much does CMS development cost?",
+        "a": "CMS development costs depend on the platform, design complexity, content volume, integrations, and custom features. We review your requirements before preparing an estimate that outlines the scope, deliverables, and any ongoing services."
+      },
+      {
+        "q": "How long does a CMS development project take?",
+        "a": "The timeline depends on project scope, content readiness, integrations, and approval cycles. A straightforward website generally requires less work than a custom store or migration. We agree on milestones after reviewing your requirements."
+      },
+      {
+        "q": "Should I choose standard WordPress or custom WordPress development?",
+        "a": "A standard theme and suitable plugins can cover common website requirements. Custom development makes sense when you need distinctive layouts, specialised workflows, or integrations that existing tools cannot adequately support. Both approaches use WordPress."
+      },
+      {
+        "q": "Do you provide CMS maintenance after launch?",
+        "a": "We can arrange maintenance for updates, backups, compatibility checks, and issue resolution within an agreed support scope. Coverage depends on your platform and hosting setup, and we clarify responsibilities and response expectations before work begins."
+      },
+      {
+        "q": "Can you migrate my existing website to a new CMS?",
+        "a": "Yes. We assess your content, media, URLs, and integrations before planning the migration. The scope can include content mapping, redirects, and post-launch checks to reduce disruption and help preserve access to existing pages."
+      }
+    ],
+    "techDesc": "We work with WordPress, Shopify, Magento, and Drupal, using PHP where the platform or custom backend requires it. For headless projects, we can build the frontend with Next.js and connect it to your CMS through APIs. We select the stack around your content model, integrations, hosting requirements, and maintenance capacity, so the technology fits your team’s practical needs.",
     "techTitle": "Technologies We Use",
     "businessTypesItems": [],
-    "ctaBannerButtonText": "Get Started with CMS",
-    "ctaBannerDesc": "Empower your marketing team to publish and manage content effortlessly with our **custom CMS development services**.",
+    "ctaBannerButtonText": "Start a Project",
+    "ctaBannerDesc": "Make your website easier to manage and ready for your next stage of growth. Talk to Cubixsol about WordPress development services that fit your content, customers, and business priorities. Share your requirements to get a clear starting point.",
     "ctaBannerEyebrow": "TAKE CONTROL OF YOUR CONTENT",
-    "ctaBannerTitle": "Ready for a Scalable CMS Solution?",
-    "serviceProcessSteps": [],
-    "subServicesItems": [],
-    "whyChooseItems": [],
-    "cardTitle": "CMS Development"
+    "ctaBannerTitle": "Ready to Start Your Project?",
+    "serviceProcessSteps": [
+      {
+        "stepNumber": "01",
+        "title": "Discover",
+        "desc": "We review your goals, audience, existing website, content, and technical constraints to define the project scope.",
+        "points": []
+      },
+      {
+        "stepNumber": "02",
+        "title": "Plan",
+        "desc": "We map the site structure, choose the platform, and agree on features, milestones, and responsibilities.",
+        "points": []
+      },
+      {
+        "stepNumber": "03",
+        "title": "Build",
+        "desc": "We develop layouts, configure editing tools, and connect the integrations included in your scope.",
+        "points": []
+      },
+      {
+        "stepNumber": "04",
+        "title": "Test",
+        "desc": "We check responsive layouts, content workflows, forms, integrations, and key user journeys before approval.",
+        "points": []
+      },
+      {
+        "stepNumber": "05",
+        "title": "Launch & Support",
+        "desc": "We coordinate deployment, walk your team through content updates, and arrange the agreed support activities.",
+        "points": []
+      }
+    ],
+    "subServicesItems": [
+      {
+        "title": "WordPress Development",
+        "desc": "We build responsive WordPress websites with reusable page layouts, organised navigation, and straightforward editing tools, giving your team control over routine content updates. Our work covers theme setup, plugin configuration, contact forms, and the page structures your business needs to present its services clearly."
+      },
+      {
+        "title": "Custom WordPress Development Services",
+        "desc": "Our custom WordPress development services cover customised themes, plugins, content types, and integrations for requirements that standard configurations cannot fully address. We translate your publishing workflows and business rules into practical features, while keeping the administration experience understandable for the people managing the website."
+      },
+      {
+        "title": "Shopify Development Services",
+        "desc": "Our Shopify development services help you launch or improve an online store with branded themes, clear product pages, and intuitive navigation. We configure collections, connect suitable apps, and refine the shopping journey so customers can explore products and move toward checkout with fewer obstacles."
+      },
+      {
+        "title": "Magento Web Development Services",
+        "desc": "Our Magento web development services support stores with detailed catalogues, custom functionality, and connected business systems. We develop storefront features, configure product structures, and integrate inventory or order tools according to your operational requirements and the capabilities of your chosen setup."
+      },
+      {
+        "title": "Drupal Web Development Services",
+        "desc": "Our Drupal web development services support websites that need structured content, defined user permissions, and coordinated publishing workflows. We organise content types, configure editorial roles, and develop custom features to help multiple contributors manage information consistently across larger or more complex websites."
+      },
+      {
+        "title": "Headless CMS Development",
+        "desc": "We connect a CMS to a separate website frontend through APIs, giving you more control over how content appears across digital experiences. Your editors manage structured content centrally, while we build the presentation layer around your design and functionality requirements."
+      }
+    ],
+    "whyChooseItems": [
+      {
+        "title": "Quality you can review",
+        "desc": "We use agreed requirements and testing checkpoints to assess functionality, usability, and content management before launch."
+      },
+      {
+        "title": "A plan that supports on-time delivery",
+        "desc": "We define milestones, track dependencies, and raise blockers early so you can make timely decisions."
+      },
+      {
+        "title": "Transparent communication",
+        "desc": "We explain scope, progress, and proposed changes, including their likely effect on cost and scheduling."
+      },
+      {
+        "title": "Ongoing support",
+        "desc": "We agree on maintenance responsibilities and support coverage, helping your team plan for updates, fixes, and future improvements."
+      }
+    ],
+    "cardTitle": "CMS & WordPress Development",
+    "ctaBannerButtonLink": "/contact",
+    "ctaPrimaryText": "Start a Project",
+    "ctaSecondaryText": "Get a Free Estimate",
+    "menuTitle": "CMS & WordPress Development",
+    "serviceProcessIntro": "Our five-step process keeps requirements, review points, and launch responsibilities clear from the beginning.",
+    "serviceProcessTitle": "Our CMS Development Process",
+    "subServicesIntro": "Choose a CMS solution that supports how your business publishes content, serves customers, and manages products. We shape each project around your workflows, design requirements, integrations, and plans for growth.",
+    "subServicesTitle": "Our CMS Development Services",
+    "whyChooseIntro": "We focus on the details that make a CMS project easier to review, launch, and manage.",
+    "whyChooseTitle": "Why Choose Cubixsol"
   },
   {
     "seo": {
@@ -3018,35 +3122,35 @@ const initialSolutions = [
       "subtitle": "Our structured process to plan, develop, test, and deploy reliable agentic AI systems.",
       "steps": [
         {
-          "_id": "6aa2b1f3d8fe4b0fb4b6758b",
+          "_id": "6aa5321218b01006da53e705",
           "stepNumber": "01",
           "title": "Discover",
           "desc": "We begin by reviewing the business goal, current workflow, tasks, data sources, existing systems, and required integrations.",
           "bullets": []
         },
         {
-          "_id": "6aa2b1f3d8fe4b0fb4b6758c",
+          "_id": "6aa5321218b01006da53e706",
           "stepNumber": "02",
           "title": "Design",
           "desc": "Our team defines the agent’s tasks, instructions, tools, data access, permissions, and points where human approval may be needed.",
           "bullets": []
         },
         {
-          "_id": "6aa2b1f3d8fe4b0fb4b6758d",
+          "_id": "6aa5321218b01006da53e707",
           "stepNumber": "03",
           "title": "Build",
           "desc": "Developers build the AI agent or multi-agent system and connect the required tools, APIs, databases, and data sources.",
           "bullets": []
         },
         {
-          "_id": "6aa2b1f3d8fe4b0fb4b6758e",
+          "_id": "6aa5321218b01006da53e708",
           "stepNumber": "04",
           "title": "Deploy",
           "desc": "We test the system before putting it into use. Testing checks whether the agent can complete its assigned tasks and follow the defined rules.",
           "bullets": []
         },
         {
-          "_id": "6aa2b1f3d8fe4b0fb4b6758f",
+          "_id": "6aa5321218b01006da53e709",
           "stepNumber": "05",
           "title": "Monitor & Improve",
           "desc": "AI systems may need changes as your business process or connected tools change.",
@@ -3377,35 +3481,35 @@ const initialSolutions = [
       "subtitle": "Our structured process to design, build, test, and deploy reliable customer segmentation models.",
       "steps": [
         {
-          "_id": "6aa2b1f3d8fe4b0fb4b675b7",
+          "_id": "6aa5321218b01006da53e731",
           "stepNumber": "01",
           "title": "Discover",
           "desc": "We begin by reviewing your business goals, customer data, existing systems, and segmentation requirements. Early discussions help define the customer groups your team needs and the data available for the project.",
           "bullets": []
         },
         {
-          "_id": "6aa2b1f3d8fe4b0fb4b675b8",
+          "_id": "6aa5321218b01006da53e732",
           "stepNumber": "02",
           "title": "Design",
           "desc": "Our team selects suitable segmentation methods and defines the rules for each customer group. We also plan how segments will be used across your marketing or customer systems.",
           "bullets": []
         },
         {
-          "_id": "6aa2b1f3d8fe4b0fb4b675b9",
+          "_id": "6aa5321218b01006da53e733",
           "stepNumber": "03",
           "title": "Build",
           "desc": "Developers and data specialists create the required segments, analysis, and supporting data setup. We check the results against the agreed requirements before moving to deployment.",
           "bullets": []
         },
         {
-          "_id": "6aa2b1f3d8fe4b0fb4b675ba",
+          "_id": "6aa5321218b01006da53e734",
           "stepNumber": "04",
           "title": "Deploy",
           "desc": "We make the completed segments available in the relevant systems and workflows. Deployment can support marketing campaigns, customer analysis, reporting, or other approved business activities.",
           "bullets": []
         },
         {
-          "_id": "6aa2b1f3d8fe4b0fb4b675bb",
+          "_id": "6aa5321218b01006da53e735",
           "stepNumber": "05",
           "title": "Monitor & Improve",
           "desc": "Customer behaviour can change over time. We review segment performance, data quality, and business needs so your segmentation setup can be updated when new requirements arise.",
@@ -3730,35 +3834,35 @@ const initialSolutions = [
       "subtitle": "Our data governance services follow a clear process from the first review through implementation and ongoing improvement.",
       "steps": [
         {
-          "_id": "6aa2b1f3d8fe4b0fb4b675e2",
+          "_id": "6aa5321218b01006da53e75c",
           "stepNumber": "01",
           "title": "Discover",
           "desc": "We review your data sources, systems, current policies, access controls, and business requirements. Our team identifies gaps and areas where your current data processes need improvement.",
           "bullets": []
         },
         {
-          "_id": "6aa2b1f3d8fe4b0fb4b675e3",
+          "_id": "6aa5321218b01006da53e75d",
           "stepNumber": "02",
           "title": "Design",
           "desc": "We define data ownership, governance rules, access controls, quality checks, security measures, and documentation based on your requirements.",
           "bullets": []
         },
         {
-          "_id": "6aa2b1f3d8fe4b0fb4b675e4",
+          "_id": "6aa5321218b01006da53e75e",
           "stepNumber": "03",
           "title": "Build",
           "desc": "Our team puts the approved policies, processes, controls, catalogs, and quality checks into place. We work with your existing systems where possible and keep the implementation aligned with your business processes.",
           "bullets": []
         },
         {
-          "_id": "6aa2b1f3d8fe4b0fb4b675e5",
+          "_id": "6aa5321218b01006da53e75f",
           "stepNumber": "04",
           "title": "Deploy",
           "desc": "We test the governance setup before applying it across the required systems and teams. Your staff can then follow clear processes for managing, accessing, and using business data.",
           "bullets": []
         },
         {
-          "_id": "6aa2b1f3d8fe4b0fb4b675e6",
+          "_id": "6aa5321218b01006da53e760",
           "stepNumber": "05",
           "title": "Monitor & Improve",
           "desc": "Data systems and business requirements can change over time. We review data quality, access permissions, governance policies, and controls. Regular reviews help keep your data processes current as your business changes.",
@@ -3910,35 +4014,35 @@ const initialSolutions = [
       "subtitle": "Our structured process to design, build, test, and deploy reliable data science and machine learning solutions.",
       "steps": [
         {
-          "_id": "6aa2b1f3d8fe4b0fb4b675f8",
+          "_id": "6aa5321218b01006da53e772",
           "stepNumber": "01",
           "title": "Discover",
           "desc": "We begin by understanding your business goals, available data, current systems, and technical requirements. Early discovery helps define the problem and establish clear project goals.",
           "bullets": []
         },
         {
-          "_id": "6aa2b1f3d8fe4b0fb4b675f9",
+          "_id": "6aa5321218b01006da53e773",
           "stepNumber": "02",
           "title": "Design",
           "desc": "Our team plans the solution around the identified requirements. We define the data needs, model approach, technical setup, success measures, and development stages before implementation starts.",
           "bullets": []
         },
         {
-          "_id": "6aa2b1f3d8fe4b0fb4b675fa",
+          "_id": "6aa5321218b01006da53e774",
           "stepNumber": "03",
           "title": "Build",
           "desc": "Developers prepare the required data, develop the models, and test the solution against agreed requirements. We review results during development so issues can be addressed before deployment.",
           "bullets": []
         },
         {
-          "_id": "6aa2b1f3d8fe4b0fb4b675fb",
+          "_id": "6aa5321218b01006da53e775",
           "stepNumber": "04",
           "title": "Deploy",
           "desc": "Once the solution meets the required standards, we prepare it for production use. Deployment can include model integration, data workflows, cloud infrastructure, and other required system components.",
           "bullets": []
         },
         {
-          "_id": "6aa2b1f3d8fe4b0fb4b675fc",
+          "_id": "6aa5321218b01006da53e776",
           "stepNumber": "05",
           "title": "Monitor & Improve",
           "desc": "We monitor the solution after deployment and review its performance over time. Updates may be required when new data, business requirements, or system changes affect model results.",
@@ -4067,18 +4171,193 @@ const initialSolutions = [
       "rows": []
     },
     "process": {
-      "steps": []
+      "title": "Our Data Scraping Process",
+      "subtitle": "Our structured process to discover, design, build, deploy, and maintain reliable data scraping solutions.",
+      "steps": [
+        {
+          "stepNumber": "01",
+          "title": "Discover",
+          "desc": "We begin by defining your data requirements, target websites, required fields, expected data volume, collection frequency, and output format. Clear requirements help the team plan the project around your actual business needs.",
+          "bullets": [],
+          "image": "",
+          "_id": "6aa3cd1e24254065bfd12510"
+        },
+        {
+          "stepNumber": "02",
+          "title": "Design",
+          "desc": "Our team plans the scraping structure, data fields, collection method, and technical setup. We review the source websites and select an approach suited to the project.",
+          "bullets": [],
+          "image": "",
+          "_id": "6aa3cd1e24254065bfd12511"
+        },
+        {
+          "stepNumber": "03",
+          "title": "Build",
+          "desc": "Developers create the scraping solution and test it against the selected sources. We check data fields, collection accuracy, page handling, and output structure during development.",
+          "bullets": [],
+          "image": "",
+          "_id": "6aa3cd1e24254065bfd12512"
+        },
+        {
+          "stepNumber": "04",
+          "title": "Deploy",
+          "desc": "Once testing is complete, we put the scraping solution into use. Collected data can be prepared for your chosen delivery method or connected with a suitable business workflow.",
+          "bullets": [],
+          "image": "",
+          "_id": "6aa3cd1e24254065bfd12513"
+        },
+        {
+          "stepNumber": "05",
+          "title": "Monitor and Improve",
+          "desc": "Websites can change their layouts, page elements, or content structure over time. Our team can monitor the scraping setup and make required updates when source websites or project requirements change.",
+          "bullets": [],
+          "image": "",
+          "_id": "6aa3cd1e24254065bfd12514"
+        }
+      ]
     },
-    "bullets": [],
-    "tech": [],
-    "title": "Data Scraping",
+    "title": "Data Scraping & Web Data Extraction",
     "slug": "data-scraping",
-    "desc": "Ethical collection and structuring of web data.",
+    "desc": "Collect useful website data without spending your team’s time on manual research. Cubixsol provides **web scraping services** for businesses that need structured data for market research, price monitoring, lead generation, and data aggregation. Our team plans the scraping setup around your required sources, data fields, output format, and project scale.",
     "group": "Data Solutions",
-    "subServicesItems": [],
-    "useCasesItems": [],
-    "whyChooseItems": [],
-    "faqs": []
+    "ctaBannerButtonLink": "/contact",
+    "ctaBannerButtonText": "Start Your Data Scraping Project",
+    "ctaBannerDesc": "Get reliable **web scraping services** for market research, price monitoring, lead generation, or data aggregation. Tell us what data you need, where you need it from, and how your team plans to use it.",
+    "ctaBannerEyebrow": "READY TO GET STARTED?",
+    "ctaBannerSecondaryButtonLink": "/contact",
+    "ctaBannerSecondaryButtonText": "Request a Free Assessment",
+    "ctaBannerTitle": "Ready to Get Started?",
+    "ctaPrimaryLink": "/contact",
+    "ctaPrimaryText": "Book a Call",
+    "ctaSecondaryLink": "/contact",
+    "ctaSecondaryText": "Get a Free Assessment",
+    "description": "Collect useful website data without spending your team's time on manual research. Cubixsol provides web scraping services for businesses that need structured data for market research, price monitoring, lead generation, and data aggregation. Our team plans the scraping setup around your required sources, data fields, output format, and project scale.",
+    "faqs": [
+      {
+        "q": "Is web scraping legal and ethical?",
+        "a": "Web scraping rules depend on the website, type of data, location, and intended use. Cubixsol reviews project requirements and considers relevant website rules and legal requirements before starting data collection."
+      },
+      {
+        "q": "How much do web scraping services cost?",
+        "a": "Cost depends on the number of websites, pages, data fields, collection frequency, data volume, and technical requirements. We review your project scope before providing a suitable estimate."
+      },
+      {
+        "q": "What data formats can you provide?",
+        "a": "We can prepare structured data in formats such as CSV and JSON, based on your project requirements. Output can also be planned around the system or workflow where your team will use the data."
+      },
+      {
+        "q": "Can you handle large-scale scraping?",
+        "a": "Yes. We can plan projects involving large numbers of pages or multiple websites. Data volume, collection frequency, source structure, and processing requirements all affect the technical setup."
+      },
+      {
+        "q": "Do you provide scraping maintenance?",
+        "a": "Yes. Websites can change their layouts, page elements, or data structure after a scraper goes live. Our team can review the system, fix collection issues, and update the scraping setup when required."
+      }
+    ],
+    "heroTitle": "Data Scraping & Web Data Extraction",
+    "name": "Data Scraping & Web Data Extraction",
+    "subServicesIntro": "Our data scraping team collects, extracts, cleans, and organises information from suitable web sources. Each service can support a one-time data project, regular data collection, or a wider business data workflow.",
+    "subServicesItems": [
+      {
+        "title": "Web Scraping Services",
+        "desc": "We build web scraping solutions to collect selected information from websites based on your project requirements. Data can include product details, prices, business listings, categories, ratings, locations, and other publicly available information. Our developers select the right scraping method based on website structure, data volume, and collection needs. The final setup focuses on collecting relevant fields in a consistent format.",
+        "q": "Web Scraping Services",
+        "a": "We build web scraping solutions to collect selected information from websites based on your project requirements. Data can include product details, prices, business listings, categories, ratings, locations, and other publicly available information. Our developers select the right scraping method based on website structure, data volume, and collection needs. The final setup focuses on collecting relevant fields in a consistent format."
+      },
+      {
+        "title": "Data Extraction Services",
+        "desc": "Our data extraction services focus on collecting specific information from web pages and preparing it for business use. You can define the websites, fields, data volume, and output format required for your project. We can extract selected records from individual websites or multiple sources and organise them into structured datasets. Clean field mapping makes the final data easier to review, compare, and use.",
+        "q": "Data Extraction Services",
+        "a": "Our data extraction services focus on collecting specific information from web pages and preparing it for business use. You can define the websites, fields, data volume, and output format required for your project. We can extract selected records from individual websites or multiple sources and organise them into structured datasets. Clean field mapping makes the final data easier to review, compare, and use."
+      },
+      {
+        "title": "Scraping APIs",
+        "desc": "Scraping APIs can connect collected web data with an existing business system or workflow. Our team can build an API-based setup around your required data fields, sources, and delivery method. API solutions can support projects requiring regular access to collected information. We review your technical setup before selecting the right approach for data delivery.",
+        "q": "Scraping APIs",
+        "a": "Scraping APIs can connect collected web data with an existing business system or workflow. Our team can build an API-based setup around your required data fields, sources, and delivery method. API solutions can support projects requiring regular access to collected information. We review your technical setup before selecting the right approach for data delivery."
+      },
+      {
+        "title": "Data Cleaning",
+        "desc": "Collected web data can contain duplicate records, missing values, inconsistent fields, or different formats across sources. Our team reviews the dataset and prepares the information for practical business use. Data cleaning can include removing duplicates, organising fields, standardising values, and checking records against the agreed requirements. A clean dataset gives your team a more consistent starting point for research and analysis.",
+        "q": "Data Cleaning",
+        "a": "Collected web data can contain duplicate records, missing values, inconsistent fields, or different formats across sources. Our team reviews the dataset and prepares the information for practical business use. Data cleaning can include removing duplicates, organising fields, standardising values, and checking records against the agreed requirements. A clean dataset gives your team a more consistent starting point for research and analysis."
+      }
+    ],
+    "subServicesTitle": "Our Data Scraping Capabilities",
+    "tech": [
+      "Python",
+      "Scrapy",
+      "Playwright",
+      "Proxies"
+    ],
+    "techDesc": "Our data scraping technology stack includes Python, Scrapy, Playwright, and proxies. We select tools based on website structure, data volume, access requirements, and project scope. Python supports scraping logic and data processing. Scrapy can handle larger crawling projects, while Playwright can work with websites where content loads through browser actions. Proxies can support suitable projects requiring managed web requests.",
+    "techTitle": "Tools & Tech",
+    "useCasesIntro": "Businesses use data scraping services for research, sales, pricing, and market analysis. Our solutions can support several common business requirements.",
+    "useCasesItems": [
+      {
+        "title": "Price Monitoring",
+        "desc": "Collect product prices from selected websites and organise pricing information for comparison. Regular collection can help teams track changes across products, sellers, or market sources.",
+        "q": "Price Monitoring",
+        "a": "Collect product prices from selected websites and organise pricing information for comparison. Regular collection can help teams track changes across products, sellers, or market sources."
+      },
+      {
+        "title": "Lead Lists",
+        "desc": "Collect public business information such as company names, websites, locations, categories, and other required fields. Structured records can support sales research and lead generation activities.",
+        "q": "Lead Lists",
+        "a": "Collect public business information such as company names, websites, locations, categories, and other required fields. Structured records can support sales research and lead generation activities."
+      },
+      {
+        "title": "Market Research",
+        "desc": "Gather information from multiple websites to support research into products, prices, businesses, categories, and market activity. Organised web data can give research teams a broader set of information to review.",
+        "q": "Market Research",
+        "a": "Gather information from multiple websites to support research into products, prices, businesses, categories, and market activity. Organised web data can give research teams a broader set of information to review."
+      },
+      {
+        "title": "Data Aggregation",
+        "desc": "Bring information from different websites into one structured dataset. Aggregated data can make comparison, filtering, reporting, and further analysis easier for business teams.",
+        "q": "Data Aggregation",
+        "a": "Bring information from different websites into one structured dataset. Aggregated data can make comparison, filtering, reporting, and further analysis easier for business teams."
+      }
+    ],
+    "useCasesTitle": "Use Cases",
+    "whyChooseIntro": "",
+    "whyChooseItems": [
+      {
+        "title": "Technical Expertise",
+        "desc": "Our team works with Python, Scrapy, Playwright, proxies, and other tools used for web scraping projects. We select the technical setup based on your sources, data requirements, and project size.",
+        "q": "Technical Expertise",
+        "a": "Our team works with Python, Scrapy, Playwright, proxies, and other tools used for web scraping projects. We select the technical setup based on your sources, data requirements, and project size."
+      },
+      {
+        "title": "Responsible Data Collection",
+        "desc": "We consider website rules, data use, and relevant legal requirements when planning scraping projects. Our approach focuses on suitable public data sources and responsible collection practices.",
+        "q": "Responsible Data Collection",
+        "a": "We consider website rules, data use, and relevant legal requirements when planning scraping projects. Our approach focuses on suitable public data sources and responsible collection practices."
+      },
+      {
+        "title": "Less Manual Work",
+        "desc": "Manual data collection can take significant time when teams need information from many pages or websites. Automated scraping can collect selected information at scale and reduce repetitive work for your team.",
+        "q": "Less Manual Work",
+        "a": "Manual data collection can take significant time when teams need information from many pages or websites. Automated scraping can collect selected information at scale and reduce repetitive work for your team."
+      },
+      {
+        "title": "Ongoing Support",
+        "desc": "Scraping systems may need updates when websites change their layouts or data structure. Our team can provide maintenance, review collection issues, and make technical updates as your project develops.",
+        "q": "Ongoing Support",
+        "a": "Scraping systems may need updates when websites change their layouts or data structure. Our team can provide maintenance, review collection issues, and make technical updates as your project develops."
+      }
+    ],
+    "whyChooseTitle": "Why Choose Cubixsol?",
+    "bullets": [],
+    "faqsText": "Is web scraping legal and ethical? | Web scraping rules depend on the website, type of data, location, and intended use. Cubixsol reviews project requirements and considers relevant website rules and legal requirements before starting data collection.\n\nHow much do web scraping services cost? | Cost depends on the number of websites, pages, data fields, collection frequency, data volume, and technical requirements. We review your project scope before providing a suitable estimate.\n\nWhat data formats can you provide? | We can prepare structured data in formats such as CSV and JSON, based on your project requirements. Output can also be planned around the system or workflow where your team will use the data.\n\nCan you handle large-scale scraping? | Yes. We can plan projects involving large numbers of pages or multiple websites. Data volume, collection frequency, source structure, and processing requirements all affect the technical setup.\n\nDo you provide scraping maintenance? | Yes. Websites can change their layouts, page elements, or data structure after a scraper goes live. Our team can review the system, fix collection issues, and update the scraping setup when required.",
+    "impactRowsText": "",
+    "practicesItemsText": "",
+    "processStepsText": "01 | Discover | We begin by defining your data requirements, target websites, required fields, expected data volume, collection frequency, and output format. Clear requirements help the team plan the project around your actual business needs.\n\n02 | Design | Our team plans the scraping structure, data fields, collection method, and technical setup. We review the source websites and select an approach suited to the project.\n\n03 | Build | Developers create the scraping solution and test it against the selected sources. We check data fields, collection accuracy, page handling, and output structure during development.\n\n04 | Deploy | Once testing is complete, we put the scraping solution into use. Collected data can be prepared for your chosen delivery method or connected with a suitable business workflow.\n\n05 | Monitor and Improve | Websites can change their layouts, page elements, or content structure over time. Our team can monitor the scraping setup and make required updates when source websites or project requirements change.",
+    "processSubtitle": "Our structured process to discover, design, build, deploy, and maintain reliable data scraping solutions.",
+    "processTitle": "Our Data Scraping Process",
+    "subServicesText": "Web Scraping Services | We build web scraping solutions to collect selected information from websites based on your project requirements. Data can include product details, prices, business listings, categories, ratings, locations, and other publicly available information. Our developers select the right scraping method based on website structure, data volume, and collection needs. The final setup focuses on collecting relevant fields in a consistent format.\n\nData Extraction Services | Our data extraction services focus on collecting specific information from web pages and preparing it for business use. You can define the websites, fields, data volume, and output format required for your project. We can extract selected records from individual websites or multiple sources and organise them into structured datasets. Clean field mapping makes the final data easier to review, compare, and use.\n\nScraping APIs | Scraping APIs can connect collected web data with an existing business system or workflow. Our team can build an API-based setup around your required data fields, sources, and delivery method. API solutions can support projects requiring regular access to collected information. We review your technical setup before selecting the right approach for data delivery.\n\nData Cleaning | Collected web data can contain duplicate records, missing values, inconsistent fields, or different formats across sources. Our team reviews the dataset and prepares the information for practical business use. Data cleaning can include removing duplicates, organising fields, standardising values, and checking records against the agreed requirements. A clean dataset gives your team a more consistent starting point for research and analysis.",
+    "useCasesText": "Price Monitoring | Collect product prices from selected websites and organise pricing information for comparison. Regular collection can help teams track changes across products, sellers, or market sources.\n\nLead Lists | Collect public business information such as company names, websites, locations, categories, and other required fields. Structured records can support sales research and lead generation activities.\n\nMarket Research | Gather information from multiple websites to support research into products, prices, businesses, categories, and market activity. Organised web data can give research teams a broader set of information to review.\n\nData Aggregation | Bring information from different websites into one structured dataset. Aggregated data can make comparison, filtering, reporting, and further analysis easier for business teams.",
+    "whyChooseText": "Technical Expertise | Our team works with Python, Scrapy, Playwright, proxies, and other tools used for web scraping projects. We select the technical setup based on your sources, data requirements, and project size.\n\nResponsible Data Collection | We consider website rules, data use, and relevant legal requirements when planning scraping projects. Our approach focuses on suitable public data sources and responsible collection practices.\n\nLess Manual Work | Manual data collection can take significant time when teams need information from many pages or websites. Automated scraping can collect selected information at scale and reduce repetitive work for your team.\n\nOngoing Support | Scraping systems may need updates when websites change their layouts or data structure. Our team can provide maintenance, review collection issues, and make technical updates as your project develops."
   },
   {
     "practices": {
@@ -4088,18 +4367,187 @@ const initialSolutions = [
       "rows": []
     },
     "process": {
-      "steps": []
+      "title": "How We Deliver Deep Learning Projects",
+      "subtitle": "Our structured methodology to discover, design, build, deploy, and maintain deep learning AI systems.",
+      "steps": [
+        {
+          "stepNumber": "01",
+          "title": "Discover",
+          "desc": "We begin by understanding the business goal, required AI task, available data, current software, users, and technical requirements. Early discovery helps define what the model needs to achieve before development starts.",
+          "bullets": [],
+          "image": "",
+          "_id": "6aa3d01f24254065bfd13806"
+        },
+        {
+          "stepNumber": "02",
+          "title": "Design",
+          "desc": "Our team defines the model approach, data requirements, system setup, integrations, and development stages. We also plan how the model will work with your existing application or business system.",
+          "bullets": [],
+          "image": "",
+          "_id": "6aa3d01f24254065bfd13807"
+        },
+        {
+          "stepNumber": "03",
+          "title": "Build",
+          "desc": "Developers prepare the data, build the model, and train it for the required task. We test the model during development and review its results against the project requirements.",
+          "bullets": [],
+          "image": "",
+          "_id": "6aa3d01f24254065bfd13808"
+        },
+        {
+          "stepNumber": "04",
+          "title": "Deploy",
+          "desc": "Once the model meets the agreed requirements, we connect it with the required application, platform, or business system. Deployment also covers the setup needed to run the model in its intended environment.",
+          "bullets": [],
+          "image": "",
+          "_id": "6aa3d01f24254065bfd13809"
+        },
+        {
+          "stepNumber": "05",
+          "title": "Monitor and Improve",
+          "desc": "Model performance can change as new data becomes available. We monitor results, review performance, resolve issues, and support retraining or model updates when required.",
+          "bullets": [],
+          "image": "",
+          "_id": "6aa3d01f24254065bfd1380a"
+        }
+      ]
     },
-    "bullets": [],
-    "tech": [],
-    "title": "Deep Learning",
+    "title": "Deep Learning Development Services",
     "slug": "deep-learning",
-    "desc": "Models for vision, speech, and complex prediction.",
+    "desc": "Turn complex data into practical AI solutions with reliable deep learning services from Cubixsol. Our team develops deep learning models for computer vision, speech and audio, prediction, and other AI applications. We handle model development, training, testing, deployment, and ongoing improvements based on your project requirements.",
     "group": "Artificial Intelligence",
-    "subServicesItems": [],
-    "useCasesItems": [],
-    "whyChooseItems": [],
-    "faqs": []
+    "ctaBannerButtonLink": "/contact",
+    "ctaBannerButtonText": "Start Your Deep Learning Project",
+    "ctaBannerDesc": "Build a deep learning solution around your business requirements with Cubixsol. Share your project goals, current system, or AI use case with our team, and we can discuss the right development approach.",
+    "ctaBannerEyebrow": "READY TO GET STARTED?",
+    "ctaBannerSecondaryButtonLink": "/contact",
+    "ctaBannerSecondaryButtonText": "Request a Free Assessment",
+    "ctaBannerTitle": "Ready to Get Started?",
+    "ctaPrimaryLink": "/contact",
+    "ctaPrimaryText": "Book a Call",
+    "ctaSecondaryLink": "/contact",
+    "ctaSecondaryText": "Get a Free Assessment",
+    "description": "Turn complex data into practical AI solutions with reliable deep learning services from Cubixsol. Our team develops deep learning models for computer vision, speech and audio, prediction, and other AI applications. We handle model development, training, testing, deployment, and ongoing improvements based on your project requirements.",
+    "faqs": [
+      {
+        "q": "How much do deep learning services cost?",
+        "a": "Deep learning project costs depend on the model type, data requirements, project scope, integrations, testing, and deployment needs. A computer vision model may have different requirements from a forecasting or speech solution. We review the project requirements before providing an estimate."
+      },
+      {
+        "q": "What data is needed for a deep learning project?",
+        "a": "Data requirements depend on the AI task. Image recognition projects may require relevant images, while forecasting projects may need historical business data. Data quality, volume, and labelling can also affect model training and testing."
+      },
+      {
+        "q": "How long does deep learning development take?",
+        "a": "Project timelines depend on the scope, data readiness, model complexity, testing requirements, and system integrations. A small proof-of-concept can take less time than a production system with multiple features and integrations. We define the expected timeline after reviewing the project requirements."
+      },
+      {
+        "q": "How accurate can a deep learning model be?",
+        "a": "Model accuracy depends on factors such as data quality, data volume, model selection, training, testing, and the task itself. We test model performance during development and make improvements where results do not meet the agreed requirements."
+      },
+      {
+        "q": "Can you deploy a deep learning model into an existing application?",
+        "a": "Yes. We can connect a trained model with an existing application, website, platform, or business system. The integration approach depends on your current technology, model requirements, and how users need to access the AI feature."
+      }
+    ],
+    "heroTitle": "Deep Learning Development Services",
+    "name": "Deep Learning Development Services",
+    "subServicesIntro": "Our deep learning team develops AI solutions for new products, existing applications, and business systems. Each service can support a specific AI feature or form part of a complete deep learning project.",
+    "subServicesItems": [
+      {
+        "title": "Computer Vision Development Services",
+        "desc": "We develop computer vision solutions for applications that need to process and understand images or video. Use cases can include image recognition, object detection, visual inspection, document analysis, and other image-based tasks. Our developers select the model and processing approach according to the type of visual data, required output, application setup, and expected performance.",
+        "q": "Computer Vision Development Services",
+        "a": "We develop computer vision solutions for applications that need to process and understand images or video. Use cases can include image recognition, object detection, visual inspection, document analysis, and other image-based tasks. Our developers select the model and processing approach according to the type of visual data, required output, application setup, and expected performance."
+      },
+      {
+        "title": "Speech and Audio Development",
+        "desc": "Deep learning can help applications recognise, classify, and process speech and other audio data. We develop solutions for speech recognition, audio classification, transcription, and audio analysis based on the required use case. Our team considers the type of audio, expected output, data available for training, and how the model will work inside your application.",
+        "q": "Speech and Audio Development",
+        "a": "Deep learning can help applications recognise, classify, and process speech and other audio data. We develop solutions for speech recognition, audio classification, transcription, and audio analysis based on the required use case. Our team considers the type of audio, expected output, data available for training, and how the model will work inside your application."
+      },
+      {
+        "title": "Deep Learning Model Training",
+        "desc": "Model training forms a key part of deep learning development. We prepare relevant data, train the selected model, test its results, and make improvements based on performance. Our developers can work on classification, recognition, prediction, and other tasks where a model needs to learn patterns from data. Testing helps identify areas where the model needs further training or changes.",
+        "q": "Deep Learning Model Training",
+        "a": "Model training forms a key part of deep learning development. We prepare relevant data, train the selected model, test its results, and make improvements based on performance. Our developers can work on classification, recognition, prediction, and other tasks where a model needs to learn patterns from data. Testing helps identify areas where the model needs further training or changes."
+      },
+      {
+        "title": "MLOps",
+        "desc": "A trained model still needs proper management after development. Our MLOps services support deployment, monitoring, testing, model updates, and performance checks. We can help connect models with production systems and keep track of how they perform as new data enters the system. Regular checks also make it easier to identify issues and plan model updates.",
+        "q": "MLOps",
+        "a": "A trained model still needs proper management after development. Our MLOps services support deployment, monitoring, testing, model updates, and performance checks. We can help connect models with production systems and keep track of how they perform as new data enters the system. Regular checks also make it easier to identify issues and plan model updates."
+      }
+    ],
+    "subServicesTitle": "Our Deep Learning Services",
+    "tech": [
+      "PyTorch",
+      "TensorFlow",
+      "OpenCV",
+      "CUDA"
+    ],
+    "techDesc": "Our deep learning technology stack includes PyTorch, TensorFlow, OpenCV, and CUDA. PyTorch and TensorFlow support model development and training, while OpenCV supports image and video processing. CUDA can support GPU-based deep learning workloads. We select technologies according to the model, data, application requirements, processing needs, and deployment environment.",
+    "techTitle": "Tools & Technology",
+    "useCasesIntro": "Deep learning can support business applications where software needs to process large amounts of data or identify patterns that are difficult to handle through fixed rules.",
+    "useCasesItems": [
+      {
+        "title": "Image Recognition",
+        "desc": "Image recognition allows software to identify and classify visual information. Businesses can use it to recognise products, objects, documents, or other items in images.",
+        "q": "Image Recognition",
+        "a": "Image recognition allows software to identify and classify visual information. Businesses can use it to recognise products, objects, documents, or other items in images."
+      },
+      {
+        "title": "Defect Detection",
+        "desc": "Defect detection can help businesses inspect products through images or video. A trained model can identify visible issues and flag items for further review, helping teams improve quality checks.",
+        "q": "Defect Detection",
+        "a": "Defect detection can help businesses inspect products through images or video. A trained model can identify visible issues and flag items for further review, helping teams improve quality checks."
+      },
+      {
+        "title": "Forecasting",
+        "desc": "Deep learning models can analyse historical data and identify patterns linked to future results. Businesses can use forecasting for demand, sales, stock levels, and other areas where past data can support planning. Projects can also combine deep learning with machine learning development services when prediction, classification, automation, or data analysis requires different model types.",
+        "q": "Forecasting",
+        "a": "Deep learning models can analyse historical data and identify patterns linked to future results. Businesses can use forecasting for demand, sales, stock levels, and other areas where past data can support planning. Projects can also combine deep learning with machine learning development services when prediction, classification, automation, or data analysis requires different model types."
+      }
+    ],
+    "useCasesTitle": "Deep Learning Use Cases",
+    "whyChooseIntro": "",
+    "whyChooseItems": [
+      {
+        "title": "Deep Learning Expertise",
+        "desc": "Our team works across computer vision, speech and audio, model training, and MLOps. We can support individual AI features or complete deep learning projects from development through deployment.",
+        "q": "Deep Learning Expertise",
+        "a": "Our team works across computer vision, speech and audio, model training, and MLOps. We can support individual AI features or complete deep learning projects from development through deployment."
+      },
+      {
+        "title": "Security and Compliance",
+        "desc": "We consider data access, system security, and project requirements during development. Our team can account for your data handling and system needs when planning the solution.",
+        "q": "Security and Compliance",
+        "a": "We consider data access, system security, and project requirements during development. Our team can account for your data handling and system needs when planning the solution."
+      },
+      {
+        "title": "Focus on Business Results",
+        "desc": "Deep learning should solve a clear business problem. We focus on practical use cases such as image recognition, quality checks, speech processing, forecasting, and other tasks where AI can support your business.",
+        "q": "Focus on Business Results",
+        "a": "Deep learning should solve a clear business problem. We focus on practical use cases such as image recognition, quality checks, speech processing, forecasting, and other tasks where AI can support your business."
+      },
+      {
+        "title": "Ongoing Support",
+        "desc": "Our support can continue after deployment. We can help monitor model performance, resolve technical issues, update models, and make changes as your application and data requirements develop.",
+        "q": "Ongoing Support",
+        "a": "Our support can continue after deployment. We can help monitor model performance, resolve technical issues, update models, and make changes as your application and data requirements develop."
+      }
+    ],
+    "whyChooseTitle": "Why Choose Cubixsol?",
+    "bullets": [],
+    "faqsText": "How much do deep learning services cost? | Deep learning project costs depend on the model type, data requirements, project scope, integrations, testing, and deployment needs. A computer vision model may have different requirements from a forecasting or speech solution. We review the project requirements before providing an estimate.\n\nWhat data is needed for a deep learning project? | Data requirements depend on the AI task. Image recognition projects may require relevant images, while forecasting projects may need historical business data. Data quality, volume, and labelling can also affect model training and testing.\n\nHow long does deep learning development take? | Project timelines depend on the scope, data readiness, model complexity, testing requirements, and system integrations. A small proof-of-concept can take less time than a production system with multiple features and integrations. We define the expected timeline after reviewing the project requirements.\n\nHow accurate can a deep learning model be? | Model accuracy depends on factors such as data quality, data volume, model selection, training, testing, and the task itself. We test model performance during development and make improvements where results do not meet the agreed requirements.\n\nCan you deploy a deep learning model into an existing application? | Yes. We can connect a trained model with an existing application, website, platform, or business system. The integration approach depends on your current technology, model requirements, and how users need to access the AI feature.",
+    "impactRowsText": "",
+    "practicesItemsText": "",
+    "processStepsText": "01 | Discover | We begin by understanding the business goal, required AI task, available data, current software, users, and technical requirements. Early discovery helps define what the model needs to achieve before development starts.\n\n02 | Design | Our team defines the model approach, data requirements, system setup, integrations, and development stages. We also plan how the model will work with your existing application or business system.\n\n03 | Build | Developers prepare the data, build the model, and train it for the required task. We test the model during development and review its results against the project requirements.\n\n04 | Deploy | Once the model meets the agreed requirements, we connect it with the required application, platform, or business system. Deployment also covers the setup needed to run the model in its intended environment.\n\n05 | Monitor and Improve | Model performance can change as new data becomes available. We monitor results, review performance, resolve issues, and support retraining or model updates when required.",
+    "processSubtitle": "Our structured methodology to discover, design, build, deploy, and maintain deep learning AI systems.",
+    "processTitle": "How We Deliver Deep Learning Projects",
+    "subServicesText": "Computer Vision Development Services | We develop computer vision solutions for applications that need to process and understand images or video. Use cases can include image recognition, object detection, visual inspection, document analysis, and other image-based tasks. Our developers select the model and processing approach according to the type of visual data, required output, application setup, and expected performance.\n\nSpeech and Audio Development | Deep learning can help applications recognise, classify, and process speech and other audio data. We develop solutions for speech recognition, audio classification, transcription, and audio analysis based on the required use case. Our team considers the type of audio, expected output, data available for training, and how the model will work inside your application.\n\nDeep Learning Model Training | Model training forms a key part of deep learning development. We prepare relevant data, train the selected model, test its results, and make improvements based on performance. Our developers can work on classification, recognition, prediction, and other tasks where a model needs to learn patterns from data. Testing helps identify areas where the model needs further training or changes.\n\nMLOps | A trained model still needs proper management after development. Our MLOps services support deployment, monitoring, testing, model updates, and performance checks. We can help connect models with production systems and keep track of how they perform as new data enters the system. Regular checks also make it easier to identify issues and plan model updates.",
+    "useCasesText": "Image Recognition | Image recognition allows software to identify and classify visual information. Businesses can use it to recognise products, objects, documents, or other items in images.\n\nDefect Detection | Defect detection can help businesses inspect products through images or video. A trained model can identify visible issues and flag items for further review, helping teams improve quality checks.\n\nForecasting | Deep learning models can analyse historical data and identify patterns linked to future results. Businesses can use forecasting for demand, sales, stock levels, and other areas where past data can support planning. Projects can also combine deep learning with machine learning development services when prediction, classification, automation, or data analysis requires different model types.",
+    "whyChooseText": "Deep Learning Expertise | Our team works across computer vision, speech and audio, model training, and MLOps. We can support individual AI features or complete deep learning projects from development through deployment.\n\nSecurity and Compliance | We consider data access, system security, and project requirements during development. Our team can account for your data handling and system needs when planning the solution.\n\nFocus on Business Results | Deep learning should solve a clear business problem. We focus on practical use cases such as image recognition, quality checks, speech processing, forecasting, and other tasks where AI can support your business.\n\nOngoing Support | Our support can continue after deployment. We can help monitor model performance, resolve technical issues, update models, and make changes as your application and data requirements develop."
   },
   {
     "practices": {
@@ -4109,18 +4557,160 @@ const initialSolutions = [
       "rows": []
     },
     "process": {
-      "steps": []
+      "title": "How We Deliver",
+      "subtitle": "Our structured process to discover, design, build, deploy, and refine generative AI solutions.",
+      "steps": [
+        {
+          "stepNumber": "01",
+          "title": "Discover",
+          "desc": "We review your business goal, users, workflow, available data, existing systems, required features, and technical requirements. Discovery helps define project scope and suitable AI capabilities.",
+          "bullets": [],
+          "_id": "6aa3dff71b55f58f36c8b6b9"
+        },
+        {
+          "stepNumber": "02",
+          "title": "Design",
+          "desc": "Our team plans the application flow, AI features, data sources, integrations, user experience, and technical structure before development begins.",
+          "bullets": [],
+          "_id": "6aa3dff71b55f58f36c8b6ba"
+        },
+        {
+          "stepNumber": "03",
+          "title": "Build",
+          "desc": "Developers build the AI application and connect required models, data sources, APIs, and business systems.",
+          "bullets": [],
+          "_id": "6aa3dff71b55f58f36c8b6bb"
+        },
+        {
+          "stepNumber": "04",
+          "title": "Deploy",
+          "desc": "We prepare the solution for its production environment after testing core features and integrations.",
+          "bullets": [],
+          "_id": "6aa3dff71b55f58f36c8b6bc"
+        },
+        {
+          "stepNumber": "05",
+          "title": "Monitor and Improve",
+          "desc": "Our team can review response quality, system performance, user feedback, and technical issues after launch.",
+          "bullets": [],
+          "_id": "6aa3dff71b55f58f36c8b6bd"
+        }
+      ]
     },
     "bullets": [],
-    "tech": [],
-    "title": "Generative AI",
+    "title": "Generative AI Development Services for Business Applications",
     "slug": "generative-ai",
     "desc": "LLMs and generative tools tailored to your domain.",
     "group": "Artificial Intelligence",
-    "subServicesItems": [],
-    "useCasesItems": [],
-    "whyChooseItems": [],
-    "faqs": []
+    "ctaBannerButtonLink": "/contact",
+    "ctaBannerButtonText": "Book a Call",
+    "ctaBannerDesc": "Looking for **generative AI development services** for a product, workflow, or business application? Share your requirements with Cubixsol and discuss the right AI approach for your project solutions.",
+    "ctaBannerEyebrow": "READY TO GET STARTED?",
+    "ctaBannerSecondaryButtonLink": "/contact",
+    "ctaBannerSecondaryButtonText": "Get a Free Assessment",
+    "ctaBannerTitle": "Ready to Get Started?",
+    "ctaPrimaryLink": "/contact",
+    "ctaPrimaryText": "Book a Call",
+    "ctaSecondaryLink": "/contact",
+    "ctaSecondaryText": "Get a Free Assessment",
+    "description": "Generative AI uses advanced models to create content, answer questions, summarise information, and process business data. Businesses can use these capabilities to reduce repetitive work, improve access to knowledge, and add useful AI features to products and internal systems. Cubixsol develops AI solutions around specific business needs. Our team reviews users, workflows, data, existing software, and required features before choosing the right development approach.",
+    "faqs": [
+      {
+        "q": "How much do generative AI development services cost?",
+        "a": "Cost depends on features, AI model, data requirements, integrations, security needs, and project scope. Cubixsol reviews your requirements before preparing an estimate."
+      },
+      {
+        "q": "What data is needed for a Generative AI solution?",
+        "a": "Projects may use company documents, product information, databases, knowledge bases, customer support content, or other approved sources. Our team can review available data before development."
+      },
+      {
+        "q": "How secure are Generative AI solutions?",
+        "a": "Security depends on the model, data sources, infrastructure, integrations, and user access rules. Cubixsol considers data access, permissions, secure integrations, and relevant controls during development."
+      },
+      {
+        "q": "What is the difference between Generative AI and AI agents?",
+        "a": "Generative AI can create content, answer questions, summarise information, and process requests. AI agents can also perform actions across multiple steps and interact with connected systems."
+      },
+      {
+        "q": "How long does Generative AI development take?",
+        "a": "The timeline depends on project scope, data preparation, model requirements, integrations, testing, and features. A focused AI feature may take less time than a complete application with custom workflows and multiple system connections."
+      }
+    ],
+    "heroTitle": "Generative AI Development Services for Business Applications",
+    "name": "Generative AI",
+    "subServicesIntro": "Our team develops applications for content creation, business knowledge, customer support, document processing, and other AI-powered workflows.",
+    "subServicesItems": [
+      {
+        "title": "LLM Apps",
+        "desc": "Our LLM development services help businesses build applications using large language models for text generation, question answering, summarisation, research, and information processing. Applications can also include structured outputs, business rules, and user permissions where required."
+      },
+      {
+        "title": "Custom Chatbots",
+        "desc": "AI chatbots can help customers find information, answer common questions, and interact with business services. Internal chatbots can also help employees access company information and documents. Clear response rules help keep conversations focused and useful for the intended audience."
+      },
+      {
+        "title": "Custom AI Development Services",
+        "desc": "Custom AI development services help businesses add AI features around specific tasks and workflows. Solutions can support customer service, research, content work, document handling, internal operations, and product features. Our team reviews the process, then selects suitable models, tools, integrations, and data sources."
+      },
+      {
+        "title": "Content Generation",
+        "desc": "Generative AI can help teams prepare product descriptions, email drafts, summaries, reports, and marketing content. AI can handle initial content work while human review remains part of the approval process. Cubixsol can add content generation features to internal platforms or customer-facing applications."
+      },
+      {
+        "title": "RAG and Knowledge Solutions",
+        "desc": "RAG, or Retrieval-Augmented Generation, connects an AI application with selected business information. Users can ask questions and receive responses based on approved documents, knowledge bases, product information, or internal resources. Our developers can build RAG solutions with document processing, search, data retrieval, and response generation. This approach can also help keep answers connected to current business information stored in approved sources."
+      },
+      {
+        "title": "Fine-Tuning",
+        "desc": "Fine-tuning can improve a model for a specific task when suitable training data is available. Cubixsol reviews the use case, data, model requirements, and expected results before recommending this approach."
+      }
+    ],
+    "subServicesTitle": "Our Generative AI Capabilities",
+    "tech": [
+      "GPT",
+      "Claude",
+      "LangChain",
+      "Vector Databases",
+      "RAG"
+    ],
+    "techDesc": "Our Generative AI technology stack can include GPT, Claude, LangChain, vector databases, and RAG. AI models can connect with APIs, databases, business applications, and knowledge sources as required.",
+    "techTitle": "Tools & Tech",
+    "useCasesIntro": "",
+    "useCasesItems": [
+      {
+        "title": "Domain Copilots",
+        "desc": "AI copilots can help employees search information, summarise documents, prepare drafts, and complete common tasks within a specific business area."
+      },
+      {
+        "title": "Document AI",
+        "desc": "Document AI can process contracts, reports, forms, invoices, and other business files. AI can extract key details and create summaries across large document collections."
+      },
+      {
+        "title": "Content Automation",
+        "desc": "Content automation can support repeated writing and editing tasks for marketing, product, sales, and support teams."
+      }
+    ],
+    "useCasesTitle": "Use Cases",
+    "whyChooseIntro": "",
+    "whyChooseItems": [
+      {
+        "title": "AI Development Expertise",
+        "desc": "Our team works across Generative AI, LLM applications, chatbots, RAG, automation, and software integrations. We focus on practical applications with a clear business purpose."
+      },
+      {
+        "title": "Security and Data Controls",
+        "desc": "AI solutions may work with company documents, customer information, and internal data. Our development approach considers access permissions, data handling, and relevant security requirements."
+      },
+      {
+        "title": "Focus on Business Value",
+        "desc": "Cubixsol focuses on useful areas such as repetitive tasks, information access, content work, document processing, and customer support."
+      },
+      {
+        "title": "Ongoing Support",
+        "desc": "Support can continue after deployment with monitoring, issue resolution, performance improvements, model updates, and new features as your application develops."
+      }
+    ],
+    "whyChooseTitle": "Why Choose Cubixsol?"
   },
   {
     "practices": {
@@ -4196,18 +4786,150 @@ const initialSolutions = [
       "rows": []
     },
     "process": {
-      "steps": []
+      "title": "How We Deliver",
+      "subtitle": "Our structured delivery process to review, design, engineer, deploy, and support your Oracle AI Data Platform.",
+      "steps": [
+        {
+          "stepNumber": "01",
+          "title": "Discover",
+          "desc": "We review your business goals, current Oracle environment, data sources, workloads, integrations, and technical requirements. Early discovery helps define the project scope and identify the main work required.",
+          "bullets": [],
+          "_id": "6aa3ee4eb31e03561eadd6fb"
+        },
+        {
+          "stepNumber": "02",
+          "title": "Design",
+          "desc": "Our team plans the platform structure, required integrations, migration approach, technical setup, and delivery stages. Clear planning helps your team understand what will be built and how the work will progress.",
+          "bullets": [],
+          "_id": "6aa3ee4eb31e03561eadd6fc"
+        },
+        {
+          "stepNumber": "03",
+          "title": "Build",
+          "desc": "Our developers and data engineers build the required platform components, data connections, and workflows. We review progress during development to keep the work aligned with the agreed requirements.",
+          "bullets": [],
+          "_id": "6aa3ee4eb31e03561eadd6fd"
+        },
+        {
+          "stepNumber": "04",
+          "title": "Deploy",
+          "desc": "We complete testing and prepare the platform for deployment. Our team checks integrations, data movement, system performance, and key functions before moving the solution into the target environment.",
+          "bullets": [],
+          "_id": "6aa3ee4eb31e03561eadd6fe"
+        },
+        {
+          "stepNumber": "05",
+          "title": "Monitor & Improve",
+          "desc": "Post-launch support can include platform monitoring, issue resolution, performance checks, updates, and improvements. Our team can continue working on the platform as your business adds new data sources, workloads, or AI requirements.",
+          "bullets": [],
+          "_id": "6aa3ee4eb31e03561eadd6ff"
+        }
+      ]
     },
     "bullets": [],
-    "tech": [],
     "title": "Oracle AI Data Platform",
     "slug": "oracle-aidp",
-    "desc": "AIDP assessment, migration, and Oracle data platform engineering.",
+    "desc": "Cubixsol provides Oracle AI Data Platform services for businesses planning a new data platform or improving an existing Oracle setup. Our team can support assessment, migration, engineering, and ongoing platform support based on your current systems and business goals.",
     "group": "Data Solutions",
-    "subServicesItems": [],
-    "useCasesItems": [],
-    "whyChooseItems": [],
-    "faqs": []
+    "category": "Data Solutions",
+    "ctaBannerButtonLink": "/contact",
+    "ctaBannerButtonText": "Book a Call",
+    "ctaBannerDesc": "Build a reliable **oracle data platform** with Cubixsol. Share your Oracle environment, data needs, and project goals with our team. We can help you plan the right approach for assessment, migration, engineering, and ongoing support.",
+    "ctaBannerEyebrow": "READY TO GET STARTED?",
+    "ctaBannerSecondaryButtonLink": "/contact",
+    "ctaBannerSecondaryButtonText": "Get a Free Assessment",
+    "ctaBannerTitle": "Ready to Get Started?",
+    "ctaPrimaryLink": "/contact",
+    "ctaPrimaryText": "Book a Call",
+    "ctaSecondaryLink": "/contact",
+    "ctaSecondaryText": "Get a Free Assessment",
+    "faqs": [
+      {
+        "q": "What is Oracle AI Data Platform?",
+        "a": "Oracle AI Data Platform is an Oracle platform for working with business data and supporting modern analytics and AI needs. Cubixsol helps businesses assess their current environment, plan AIDP adoption, build data platform components, and support the platform after deployment."
+      },
+      {
+        "q": "How much does Oracle AI Data Platform cost?",
+        "a": "Cost depends on the project scope, data volume, existing Oracle environment, migration needs, integrations, technical requirements, and support needs. Cubixsol reviews these factors before defining the project scope and preparing an estimate."
+      },
+      {
+        "q": "How long does Oracle migration take?",
+        "a": "Migration time depends on data volume, workload size, system connections, integrations, testing needs, and the current Oracle environment. Cubixsol reviews the existing setup first and creates a project plan based on the required migration work."
+      },
+      {
+        "q": "What are the prerequisites for Oracle AI Data Platform?",
+        "a": "Prerequisites depend on the planned setup. Your team may need details about existing Oracle systems, data sources, workloads, integrations, security requirements, and business goals. An AIDP assessment can help identify the technical requirements before development starts."
+      },
+      {
+        "q": "Does Cubixsol provide ongoing support?",
+        "a": "Yes. Cubixsol can provide ongoing support for platform monitoring, issue resolution, performance improvements, updates, and technical changes. Support can continue after deployment as your data environment and business requirements develop."
+      }
+    ],
+    "heroTitle": "Oracle AI Data Platform Services",
+    "name": "Oracle AI Data Platform",
+    "subServicesIntro": "Cubixsol provides Oracle AI Data Platform services for businesses planning a new data platform or improving an existing Oracle setup. Our team can support assessment, migration, engineering, and ongoing platform support based on your current systems and business goals.",
+    "subServicesItems": [
+      {
+        "title": "AIDP Assessment and Oracle Consulting Services",
+        "desc": "Our Oracle consulting services start with a review of your current data setup, Oracle environment, business goals, and technical needs. We assess your readiness for AIDP and identify the work required for adoption. You receive a clear view of the current setup, key requirements, and recommended next steps."
+      },
+      {
+        "title": "Oracle Migration",
+        "desc": "Our team helps move Oracle data and workloads into the required Oracle environment. We review data sources, system connections, dependencies, and migration needs before planning. Testing helps check data accuracy and system performance before deployment."
+      },
+      {
+        "title": "Data Platform Engineering",
+        "desc": "We build data platform components based on your business requirements and existing systems. Our work can include data architecture, data integration, data pipelines, and connections between business systems. We organise the platform so your team can manage data more easily and support future analytics and AI projects."
+      },
+      {
+        "title": "Support and Optimisation",
+        "desc": "Post-deployment support helps keep your Oracle data platform stable and useful. Our team can monitor platform performance, troubleshoot issues, review system changes, and make required improvements. Support can also cover updates and changes as your data requirements grow."
+      }
+    ],
+    "subServicesTitle": "Our Oracle AI Data Platform Capabilities",
+    "tech": [
+      "Oracle Cloud",
+      "Oracle AI Data Platform (AIDP)",
+      "Oracle Cloud Infrastructure (OCI)"
+    ],
+    "techDesc": "Our Oracle technology stack includes Oracle Cloud, Oracle AI Data Platform (AIDP), and Oracle Cloud Infrastructure (OCI). We select the required tools based on your data sources, existing Oracle systems, integration needs, security requirements, and project goals.",
+    "techTitle": "Tools & Tech",
+    "useCasesIntro": "Oracle AI Data Platform can support businesses with different data and modernisation needs.",
+    "useCasesItems": [
+      {
+        "title": "Oracle Modernisation",
+        "desc": "Improve an existing Oracle data environment with a more organised platform, better data connections, and support for current business needs."
+      },
+      {
+        "title": "AIDP Adoption",
+        "desc": "Prepare your business for Oracle AI Data Platform adoption with an assessment of your current systems, data, technical requirements, and implementation needs."
+      },
+      {
+        "title": "Data Platform Build",
+        "desc": "Build a new data platform for business data, analytics, and AI projects. Cubixsol can help define the platform structure, connect required data sources, and build the core components."
+      }
+    ],
+    "useCasesTitle": "Use Cases",
+    "whyChooseIntro": "",
+    "whyChooseItems": [
+      {
+        "title": "Practical Oracle Expertise",
+        "desc": "Our team starts with your existing environment and business requirements before planning the work. We review your data setup, technical needs, integrations, and project goals to define a clear implementation approach."
+      },
+      {
+        "title": "Security and Compliance",
+        "desc": "Security requirements form part of the platform planning process. We consider data access, system connections, infrastructure, and business requirements when designing and implementing your Oracle data environment."
+      },
+      {
+        "title": "Business-Focused Results",
+        "desc": "We focus on platform work with a clear business purpose. A well-planned data platform can make data easier to manage, support modernisation, and give analytics and AI projects a stronger technical base."
+      },
+      {
+        "title": "Ongoing Support",
+        "desc": "Our support continues beyond the initial deployment when required. We can help with monitoring, technical issues, performance improvements, updates, and new platform requirements as your business needs change."
+      }
+    ],
+    "whyChooseTitle": "Why Choose Cubixsol?"
   },
   {
     "practices": {
@@ -4217,18 +4939,151 @@ const initialSolutions = [
       "rows": []
     },
     "process": {
-      "steps": []
+      "title": "How We Deliver Predictive Analytics Projects",
+      "subtitle": "Our structured process to discover, design, build, deploy, and refine predictive analytics solutions.",
+      "steps": [
+        {
+          "stepNumber": "01",
+          "title": "Discover",
+          "desc": "We begin by defining the business goal, prediction requirements, available data, existing systems, and key project needs. Early discovery helps the team establish a clear scope before development begins.",
+          "bullets": [],
+          "_id": "6aa3f1b8eb37f72a7a056757"
+        },
+        {
+          "stepNumber": "02",
+          "title": "Design",
+          "desc": "Our team reviews the data and selects a suitable modelling approach. We also plan data preparation, model testing, system integration, deployment, and project milestones.",
+          "bullets": [],
+          "_id": "6aa3f1b8eb37f72a7a056758"
+        },
+        {
+          "stepNumber": "03",
+          "title": "Build",
+          "desc": "Developers prepare the data, build predictive models, and test their performance. The team reviews results against the agreed business goals and makes required improvements during development.",
+          "bullets": [],
+          "_id": "6aa3f1b8eb37f72a7a056759"
+        },
+        {
+          "stepNumber": "04",
+          "title": "Deploy",
+          "desc": "Once the model meets the required performance level, we prepare it for deployment. Our team can connect the solution with relevant applications, databases, cloud platforms, or existing business workflows.",
+          "bullets": [],
+          "_id": "6aa3f1b8eb37f72a7a05675a"
+        },
+        {
+          "stepNumber": "05",
+          "title": "Monitor & Improve",
+          "desc": "Predictive models need regular checks as data and business conditions change. We monitor model performance and can update the solution when new data, changing patterns, or business requirements call for improvements.",
+          "bullets": [],
+          "_id": "6aa3f1b8eb37f72a7a05675b"
+        }
+      ]
     },
     "bullets": [],
-    "tech": [],
     "title": "Predictive Analysis",
     "slug": "predictive-analysis",
-    "desc": "Forecasting demand, risk, and customer behavior.",
+    "desc": "Our predictive analytics team builds solutions around specific business goals, available data, and existing workflows. Each capability can support a new analytics project, an existing data environment, or a wider business intelligence initiative.",
     "group": "Artificial Intelligence",
-    "subServicesItems": [],
-    "useCasesItems": [],
-    "whyChooseItems": [],
-    "faqs": []
+    "category": "Artificial Intelligence",
+    "ctaBannerButtonLink": "/contact",
+    "ctaBannerButtonText": "Book a Call",
+    "ctaBannerDesc": "Turn your business data into useful insights with **predictive analytics services** from Cubixsol. Share your goals, data environment, and project requirements with our team to discuss the right solution.",
+    "ctaBannerEyebrow": "READY TO GET STARTED?",
+    "ctaBannerSecondaryButtonLink": "/contact",
+    "ctaBannerSecondaryButtonText": "Get a Free Assessment",
+    "ctaBannerTitle": "Ready to Get Started?",
+    "ctaPrimaryLink": "/contact",
+    "ctaPrimaryText": "Book a Call",
+    "ctaSecondaryLink": "/contact",
+    "ctaSecondaryText": "Get a Free Assessment",
+    "faqs": [
+      {
+        "q": "How much do predictive analytics services cost?",
+        "a": "Cost depends on the project scope, data sources, model complexity, integrations, deployment requirements, and ongoing support needs. We review your requirements first and define a suitable project scope before providing an estimate."
+      },
+      {
+        "q": "What data is needed for predictive analytics?",
+        "a": "Data requirements depend on the prediction goal. Common sources include sales records, customer activity, transaction history, product information, and operational data. Our team reviews your available data to identify what can support the planned model."
+      },
+      {
+        "q": "How accurate are predictive models?",
+        "a": "Model accuracy depends on data quality, the amount of useful historical data, model selection, testing, and changing business conditions. We test model performance before deployment and monitor results after launch."
+      },
+      {
+        "q": "How long does a predictive analytics project take?",
+        "a": "Project timelines depend on data readiness, solution scope, model complexity, integrations, and deployment needs. A focused project can require less time than a larger solution involving several data sources and business systems. We define milestones after reviewing the project requirements."
+      },
+      {
+        "q": "Can predictive analytics integrate with existing systems?",
+        "a": "Yes. Predictive models can connect with existing databases, applications, cloud platforms, and business workflows. We review your current systems during the planning stage and select an integration approach based on the project requirements."
+      }
+    ],
+    "heroTitle": "Predictive Analysis Services for Business Growth",
+    "name": "Predictive Analysis",
+    "subServicesIntro": "Our predictive analytics team builds solutions around specific business goals, available data, and existing workflows. Each capability can support a new analytics project, an existing data environment, or a wider business intelligence initiative.",
+    "subServicesItems": [
+      {
+        "title": "Demand Forecasting",
+        "desc": "Our demand forecasting services help businesses estimate future demand using historical sales, customer activity, seasonal trends, and other relevant data. Forecasts can support inventory planning, sales targets, staffing, and resource allocation.\n\nOur team reviews the available data and selects a suitable modelling approach for the business case. Regular model checks can also help keep forecasts useful as demand patterns change."
+      },
+      {
+        "title": "Risk Modeling",
+        "desc": "Our predictive modeling services help businesses assess possible risks using historical patterns and relevant business data. Models can support risk scoring, early risk identification, and faster review of high-risk cases.\n\nWe consider the business process, available data, and required output before building the model. Results can then be connected with existing workflows to support faster risk-related decisions."
+      },
+      {
+        "title": "Churn Prediction",
+        "desc": "Customer churn can affect revenue, retention, and long-term customer value. Our churn prediction solutions identify behaviour patterns linked with customers who may leave a product or service.\n\nTeams can use these insights to identify higher-risk customer groups and plan suitable retention actions. Model inputs can include customer activity, purchase history, service usage, and other relevant records."
+      },
+      {
+        "title": "Recommendation",
+        "desc": "Recommendation solutions help businesses present relevant products, services, or content based on customer behaviour and preferences. Our team develops models around available customer data and the type of recommendation your platform needs.\n\nRecommendations can support product discovery, customer engagement, and sales across websites, applications, and other digital platforms. We also consider system integration requirements during development."
+      }
+    ],
+    "subServicesTitle": "Our Predictive Analysis Capabilities",
+    "tech": [
+      "Python",
+      "scikit-learn",
+      "XGBoost",
+      "Cloud ML Tools"
+    ],
+    "techDesc": "Our technology stack includes Python, scikit-learn, XGBoost, and cloud ML tools. We select technologies based on the model requirements, data environment, performance needs, deployment plans, and existing systems.\n\nPython supports model development and data processing, while scikit-learn and XGBoost provide tools for building and testing machine learning models. Cloud ML environments can support scalable deployment and ongoing model management.",
+    "techTitle": "Tools & Tech",
+    "useCasesIntro": "Predictive analytics can support business decisions across sales, customer management, and risk control.",
+    "useCasesItems": [
+      {
+        "title": "Sales Forecasting",
+        "desc": "Sales teams can use historical sales data and other business signals to estimate future results. Forecasts can support sales targets, revenue planning, stock decisions, and resource allocation."
+      },
+      {
+        "title": "Churn Reduction",
+        "desc": "Customer behaviour data can help identify users with a higher likelihood of leaving. Teams can use these signals to prioritise retention work and take action before customer loss occurs."
+      },
+      {
+        "title": "Fraud and Risk Scoring",
+        "desc": "Predictive models can review transaction, account, or activity data to identify patterns linked with higher risk. Risk scores can help teams focus reviews on cases requiring closer attention."
+      }
+    ],
+    "useCasesTitle": "Use Cases",
+    "whyChooseIntro": "",
+    "whyChooseItems": [
+      {
+        "title": "Practical Analytics Expertise",
+        "desc": "Our team focuses on business problems rather than building models without a clear purpose. We connect predictive analytics with specific goals such as sales forecasting, customer retention, risk scoring, and demand planning."
+      },
+      {
+        "title": "Secure Data Handling",
+        "desc": "Data security is considered throughout the project. We review data access, storage, system connections, and other security requirements during planning and implementation."
+      },
+      {
+        "title": "Focus on Business Value",
+        "desc": "Useful predictions should support better decisions. We define clear project goals and performance measures so your team can assess how the solution supports planning, risk control, customer management, or other business priorities."
+      },
+      {
+        "title": "Ongoing Support",
+        "desc": "Support can continue after deployment through model monitoring, performance checks, updates, and technical improvements. Our team can also help adjust the solution as your data and business requirements change."
+      }
+    ],
+    "whyChooseTitle": "Why Choose Cubixsol?"
   },
   {
     "practices": {
@@ -4260,18 +5115,151 @@ const initialSolutions = [
       "rows": []
     },
     "process": {
-      "steps": []
+      "title": "How We Deliver",
+      "subtitle": "Our structured process to discover, design, build, deploy, and refine sentiment analysis solutions.",
+      "steps": [
+        {
+          "stepNumber": "01",
+          "title": "Discover",
+          "desc": "We review your business goals, data sources, analysis needs, target users, and required outputs. Early planning helps define project scope.",
+          "bullets": [],
+          "_id": "6aa3f41f28d769996d19a841"
+        },
+        {
+          "stepNumber": "02",
+          "title": "Design",
+          "desc": "Our team plans the data flow, NLP approach, model requirements, integrations, and reporting structure. Clear planning defines how the solution will process and present results.",
+          "bullets": [],
+          "_id": "6aa3f41f28d769996d19a842"
+        },
+        {
+          "stepNumber": "03",
+          "title": "Build",
+          "desc": "Developers create the required NLP pipelines, sentiment models, data workflows, and integrations. Testing takes place during development before release.",
+          "bullets": [],
+          "_id": "6aa3f41f28d769996d19a843"
+        },
+        {
+          "stepNumber": "04",
+          "title": "Deploy",
+          "desc": "We prepare the solution for deployment and connect it with required applications, databases, or cloud environments. Deployment follows agreed technical and security requirements.",
+          "bullets": [],
+          "_id": "6aa3f41f28d769996d19a844"
+        },
+        {
+          "stepNumber": "05",
+          "title": "Monitor and Improve",
+          "desc": "Post-launch checks help identify model issues and data changes. Our team can update models, improve processing rules, and fix technical issues.",
+          "bullets": [],
+          "_id": "6aa3f41f28d769996d19a845"
+        }
+      ]
     },
     "bullets": [],
-    "tech": [],
     "title": "Sentiment Analysis",
     "slug": "sentiment-analysis",
-    "desc": "Understand customer voice at scale.",
+    "desc": "Businesses can receive thousands of customer messages across different channels. Manual review makes repeated issues harder to spot. Our solutions process large volumes of text and organise results around your business needs, data sources, and reporting requirements.",
     "group": "Artificial Intelligence",
-    "subServicesItems": [],
-    "useCasesItems": [],
-    "whyChooseItems": [],
-    "faqs": []
+    "category": "Artificial Intelligence",
+    "ctaBannerButtonLink": "/contact",
+    "ctaBannerButtonText": "Book a Call",
+    "ctaBannerDesc": "Need **sentiment analysis services** for customer feedback, support data, reviews, or brand monitoring? Cubixsol can help you plan and develop a solution around your data, systems, and business goals. Speak with our team about your requirements and goals.",
+    "ctaBannerEyebrow": "READY TO GET STARTED?",
+    "ctaBannerSecondaryButtonLink": "/contact",
+    "ctaBannerSecondaryButtonText": "Get a Free Assessment",
+    "ctaBannerTitle": "Ready to Get Started?",
+    "ctaPrimaryLink": "/contact",
+    "ctaPrimaryText": "Book a Call",
+    "ctaSecondaryLink": "/contact",
+    "ctaSecondaryText": "Get a Free Assessment",
+    "faqs": [
+      {
+        "q": "How much do sentiment analysis services cost?",
+        "a": "Cost depends on data volume, data sources, required features, language support, integrations, model requirements, and deployment needs. A focused solution usually needs less development than a larger system with custom models, dashboards, and integrations. We review your requirements before providing an estimate."
+      },
+      {
+        "q": "How accurate is sentiment analysis?",
+        "a": "Accuracy depends on data quality, language, context, model selection, and text type. Customer reviews may contain sarcasm, mixed opinions, short comments, or industry-specific terms. Testing with real business data helps measure results and identify areas for improvement."
+      },
+      {
+        "q": "Can sentiment analysis support multiple languages?",
+        "a": "Yes. Language support depends on the languages, available models, data quality, and project requirements. Our team can review your language needs and select suitable NLP tools or models."
+      },
+      {
+        "q": "What data sources can sentiment analysis analyse?",
+        "a": "Sentiment analysis can process customer reviews, survey responses, support conversations, emails, social media content, product feedback, and other text-based data. Available integrations depend on the systems and data sources used by your business."
+      },
+      {
+        "q": "How long does sentiment analysis development take?",
+        "a": "Project timelines depend on data preparation, solution scope, data sources, language requirements, integrations, and model needs. A focused solution may take less time than a larger platform with custom workflows and multiple integrations. We provide a project timeline after reviewing your requirements."
+      }
+    ],
+    "heroTitle": "Sentiment Analysis Services & AI Solutions",
+    "name": "Sentiment Analysis",
+    "subServicesIntro": "Businesses can receive thousands of customer messages across different channels. Manual review makes repeated issues harder to spot. Our solutions process large volumes of text and organise results around your business needs, data sources, and reporting requirements.",
+    "subServicesItems": [
+      {
+        "title": "Sentiment Analysis",
+        "desc": "Our sentiment analysis solutions classify customer text as positive, negative, or neutral. Reviews, survey responses, support messages, product feedback, and other text can be processed based on your use case.\n\nAnalysis can work at the message, review, or topic level. Results help teams find repeated complaints and positive comments."
+      },
+      {
+        "title": "Text Analytics Services",
+        "desc": "Our text analytics services help businesses find useful information across large collections of unstructured text. Analysis can cover keywords, topics, common phrases, customer concerns, and sentiment.\n\nResults can feed reports, dashboards, search tools, or internal workflows. Teams can compare feedback across products, services, or campaigns. Clear reporting helps teams act on findings instead of reviewing raw text alone. We can also connect results to existing workflows and business tools when needed."
+      },
+      {
+        "title": "NLP Pipelines and NLP Services",
+        "desc": "Our NLP services support systems built to process human language. We develop NLP pipelines for text cleaning, classification, topic detection, entity recognition, and sentiment analysis.\n\nPipelines can connect with applications, databases, APIs, and existing business systems."
+      },
+      {
+        "title": "Social Listening",
+        "desc": "Social listening helps businesses track public conversations about brands, products, services, or campaigns. Sentiment analysis can show how people respond to a launch, campaign, service issue, or product change.\n\nConversations can be grouped by sentiment, topic, or source for faster review."
+      }
+    ],
+    "subServicesTitle": "Our Sentiment Analysis Services and Capabilities",
+    "tech": [
+      "Python",
+      "spaCy",
+      "Transformers",
+      "Cloud NLP Tools"
+    ],
+    "techDesc": "Our technology stack can include Python, spaCy, transformers, and cloud NLP tools. Tool selection depends on language needs, data sources, security, integrations, and data volume.",
+    "techTitle": "Tools & Tech",
+    "useCasesIntro": "Sentiment analysis can support customer, support, product, and marketing teams.",
+    "useCasesItems": [
+      {
+        "title": "Voice of Customer",
+        "desc": "Customer reviews, surveys, support messages, and product feedback can show what people like and where problems occur. Sentiment analysis helps teams find common opinions and recurring complaints."
+      },
+      {
+        "title": "Support Triage",
+        "desc": "Support teams receive messages across email, chat, forms, and other channels. Sentiment analysis can flag negative or urgent conversations for earlier review. Repeated negative feedback can highlight service problems."
+      },
+      {
+        "title": "Brand Monitoring",
+        "desc": "Businesses can monitor public opinions across reviews and social platforms. Results help teams see customer responses to campaigns, product releases, and service changes."
+      }
+    ],
+    "useCasesTitle": "Use Cases",
+    "whyChooseIntro": "",
+    "whyChooseItems": [
+      {
+        "title": "Practical AI Expertise",
+        "desc": "Our team develops AI and language-based solutions for specific business needs. We review your data and goals before selecting tools or building the solution."
+      },
+      {
+        "title": "Security and Compliance",
+        "desc": "We consider data access, storage, permissions, and security requirements during solution planning."
+      },
+      {
+        "title": "Clear Business Value",
+        "desc": "Our solutions can reduce manual feedback review, identify customer concerns faster, and give teams clearer customer insights."
+      },
+      {
+        "title": "Ongoing Support",
+        "desc": "Support can continue after deployment through technical fixes, model updates, and system improvements."
+      }
+    ],
+    "whyChooseTitle": "Why Choose Cubixsol?"
   },
   {
     "practices": {
@@ -4281,18 +5269,150 @@ const initialSolutions = [
       "rows": []
     },
     "process": {
-      "steps": []
+      "title": "How We Deliver",
+      "subtitle": "Our structured process to discover, design, build, deploy, and refine voice commerce solutions.",
+      "steps": [
+        {
+          "stepNumber": "01",
+          "title": "Discover",
+          "desc": "We begin by reviewing your business goals, products, customers, existing systems, required platforms, and voice features. Early planning helps define the main functions before development starts.",
+          "bullets": [],
+          "_id": "6aa3f8f40fe0743ed8cefdb3"
+        },
+        {
+          "stepNumber": "02",
+          "title": "Design",
+          "desc": "Our team plans voice commands, responses, user journeys, product searches, and shopping actions. Each flow focuses on simple conversations and clear steps for common customer tasks.",
+          "bullets": [],
+          "_id": "6aa3f8f40fe0743ed8cefdb4"
+        },
+        {
+          "stepNumber": "03",
+          "title": "Build",
+          "desc": "Developers create the voice experience and connect it with the required business systems. We develop each feature in clear stages and review key functions during development.",
+          "bullets": [],
+          "_id": "6aa3f8f40fe0743ed8cefdb5"
+        },
+        {
+          "stepNumber": "04",
+          "title": "Deploy",
+          "desc": "We test the solution across supported platforms and review voice commands, responses, integrations, and shopping flows before launch. Approved builds are prepared for deployment after testing is complete.",
+          "bullets": [],
+          "_id": "6aa3f8f40fe0743ed8cefdb6"
+        },
+        {
+          "stepNumber": "05",
+          "title": "Monitor & Improve",
+          "desc": "Post-launch support can include performance checks, issue resolution, updates, and new features. Usage data and customer feedback can help identify areas for future improvements.",
+          "bullets": [],
+          "_id": "6aa3f8f40fe0743ed8cefdb7"
+        }
+      ]
     },
     "bullets": [],
-    "tech": [],
     "title": "Voice Commerce",
     "slug": "voice-commerce",
-    "desc": "Voice-driven shopping and ordering experiences.",
+    "desc": "Our team creates voice experiences for product search, shopping, ordering, customer support, and repeat purchases. Each solution can support a new eCommerce product, an existing online store, or a wider customer experience project.",
     "group": "E-Commerce",
-    "subServicesItems": [],
-    "useCasesItems": [],
-    "whyChooseItems": [],
-    "faqs": []
+    "category": "E-Commerce",
+    "ctaBannerButtonLink": "/contact",
+    "ctaBannerButtonText": "Book a Call",
+    "ctaBannerDesc": "Add **voice commerce** to your customer experience with a solution built around your business needs. Tell us what you want to offer through voice, and our team can help define the right development approach.",
+    "ctaBannerEyebrow": "READY TO GET STARTED?",
+    "ctaBannerSecondaryButtonLink": "/contact",
+    "ctaBannerSecondaryButtonText": "Get a Free Assessment",
+    "ctaBannerTitle": "Ready to Get Started?",
+    "ctaPrimaryLink": "/contact",
+    "ctaPrimaryText": "Book a Call",
+    "ctaSecondaryLink": "/contact",
+    "ctaSecondaryText": "Get a Free Assessment",
+    "faqs": [
+      {
+        "q": "What is voice commerce?",
+        "a": "Voice commerce allows customers to use spoken commands for shopping tasks such as product search, product information, ordering, reordering, and order updates. Businesses can offer these functions through voice assistants and connected digital systems."
+      },
+      {
+        "q": "How much does voice commerce development cost?",
+        "a": "Cost depends on the number of features, supported platforms, integrations, and level of custom development required. A basic voice search feature usually requires less development than a complete shopping system with product search, ordering, customer accounts, and eCommerce integration. We review your requirements before providing an estimate."
+      },
+      {
+        "q": "Which voice platforms can Cubixsol support?",
+        "a": "Cubixsol can develop voice experiences for platforms such as Alexa and Google, along with speech APIs and other required technologies. Platform selection depends on your customers, business systems, required features, and planned voice experience."
+      },
+      {
+        "q": "How long does voice commerce development take?",
+        "a": "The timeline depends on project scope and technical requirements. A focused voice search feature may take less time than a complete solution involving product search, ordering, customer accounts, payments, and eCommerce integration. We provide a project timeline after reviewing your requirements."
+      },
+      {
+        "q": "What ROI can a business expect from voice commerce?",
+        "a": "ROI depends on your products, customers, use cases, and customer adoption. Voice features can reduce steps in common shopping tasks, support repeat orders, and give customers another way to interact with your business. We can help define measurable goals for your voice commerce project before development starts."
+      }
+    ],
+    "heroTitle": "Voice Commerce Services for Modern Brands",
+    "name": "Voice Commerce",
+    "subServicesIntro": "Our team creates voice experiences for product search, shopping, ordering, customer support, and repeat purchases. Each solution can support a new eCommerce product, an existing online store, or a wider customer experience project.",
+    "subServicesItems": [
+      {
+        "title": "Voice Shopping",
+        "desc": "Voice shopping lets customers search for products, check details, and complete common shopping tasks using spoken commands. We can support product search, recommendations, cart actions, order placement, and repeat purchases.\n\nRepeat ordering can also make regular purchases easier. Customers can use voice commands to find products they buy often and place another order without going through every shopping step."
+      },
+      {
+        "title": "Voice Assistants",
+        "desc": "Our team develops voice experiences for platforms such as Alexa and Google. Voice commands can support product searches, order checks, product questions, and other common shopping requests.\n\nCustomers get another way to interact with your business without starting every task on a website or mobile app. Clear commands and simple responses help keep each interaction easy to follow."
+      },
+      {
+        "title": "Voice Search",
+        "desc": "Voice search allows customers to find products and information through spoken requests. We can connect search features with your product catalogue, website, or eCommerce platform.\n\nSearch can cover product names, categories, prices, features, availability, and other store information. Customers can reach useful product details with fewer steps."
+      },
+      {
+        "title": "Integration",
+        "desc": "Voice features work best when they connect with the systems your business already uses. Our developers can integrate voice experiences with eCommerce platforms, product databases, order systems, customer support tools, and other business software.\n\nBusinesses can also use our eCommerce development services when a wider online shopping solution is required. Conversational commerce can connect voice interactions with product discovery, customer questions, and shopping actions."
+      }
+    ],
+    "subServicesTitle": "Our Voice Commerce Capabilities",
+    "tech": [
+      "Alexa Skills",
+      "Google Actions",
+      "Speech APIs"
+    ],
+    "techDesc": "Our voice technology stack can include Alexa Skills, Google Actions, and speech APIs. Tool selection depends on your required platforms, voice features, eCommerce system, product data, and customer journey.\n\nExisting APIs and business systems can also be connected when your project needs product information, order data, customer accounts, or other live business data.",
+    "techTitle": "Tools & Tech",
+    "useCasesIntro": "Voice commerce can support practical shopping tasks across different industries. Customers can search for products, place orders, reorder regular purchases, check order details, and ask product-related questions through voice commands.\n\nHands-free shopping can help when typing or browsing is not convenient. Repeat ordering can also simplify purchases for products customers buy regularly. Businesses can use voice experiences for product discovery, order support, customer service, and other common interactions.",
+    "useCasesItems": [
+      {
+        "title": "Voice Shopping & Reordering",
+        "desc": "Customers can search for products, place orders, and reorder regular purchases using spoken commands without manual browsing."
+      },
+      {
+        "title": "Order Support & Tracking",
+        "desc": "Check order details, shipping status, and ask product-related questions through connected voice assistants."
+      },
+      {
+        "title": "Hands-Free Product Discovery",
+        "desc": "Find products and explore catalogues when typing or browsing is not convenient, simplifying everyday shopping."
+      }
+    ],
+    "useCasesTitle": "Use Cases",
+    "whyChooseIntro": "",
+    "whyChooseItems": [
+      {
+        "title": "Development Expertise",
+        "desc": "Our team works across AI, eCommerce, application development, and system integration. We focus on useful voice features linked to real customer and business needs."
+      },
+      {
+        "title": "Security and Compliance",
+        "desc": "Security remains part of the development process. We consider data access, user permissions, system connections, and relevant compliance needs when planning your solution."
+      },
+      {
+        "title": "Business Value",
+        "desc": "Voice features can make common shopping tasks easier, support repeat purchases, and give customers another way to interact with your business. We focus on practical functions with clear business value."
+      },
+      {
+        "title": "Ongoing Support",
+        "desc": "Our work can continue after launch through monitoring, bug fixes, updates, integration support, and new features. Ongoing technical support helps keep your voice experience reliable as your business needs change.\n\nBusinesses can also explore our AI solutions or connect voice features with AI chatbot support for broader customer service needs."
+      }
+    ],
+    "whyChooseTitle": "Why Choose Cubixsol?"
   },
   {
     "practices": {
@@ -4302,18 +5422,151 @@ const initialSolutions = [
       "rows": []
     },
     "process": {
-      "steps": []
+      "title": "Our eCommerce Development Process",
+      "subtitle": "Our structured process to discover, design, build, deploy, and scale successful eCommerce storefronts.",
+      "steps": [
+        {
+          "stepNumber": "01",
+          "title": "Discover",
+          "desc": "We review your products, customers, business goals, current platform, required features, integrations, and technical requirements. Early discovery helps define the project scope.",
+          "bullets": [],
+          "_id": "6aa3d6398ed4ee38e5c6074d"
+        },
+        {
+          "stepNumber": "02",
+          "title": "Design",
+          "desc": "Our team plans the store structure, user journeys, interface, navigation, product pages, and checkout experience. Design decisions focus on a clear and easy shopping process.",
+          "bullets": [],
+          "_id": "6aa3d6398ed4ee38e5c6074e"
+        },
+        {
+          "stepNumber": "03",
+          "title": "Build",
+          "desc": "Developers build the agreed features and connect platforms, payment services, APIs, and business systems. Development takes place in structured stages.",
+          "bullets": [],
+          "_id": "6aa3d6398ed4ee38e5c6074f"
+        },
+        {
+          "stepNumber": "04",
+          "title": "Deploy",
+          "desc": "We test product pages, navigation, forms, payments, customer accounts, checkout, and integrations before launch. We resolve identified issues before deployment.",
+          "bullets": [],
+          "_id": "6aa3d6398ed4ee38e5c60750"
+        },
+        {
+          "stepNumber": "05",
+          "title": "Monitor and Improve",
+          "desc": "Post-launch support can include bug fixes, platform updates, performance improvements, new features, and integration changes as your business requirements change.",
+          "bullets": [],
+          "_id": "6aa3d6398ed4ee38e5c60751"
+        }
+      ]
     },
     "bullets": [],
-    "tech": [],
-    "title": "eCommerce Development",
+    "title": "eCommerce Development Services",
     "slug": "ecommerce-development",
     "desc": "Storefronts built to convert and scale.",
     "group": "E-Commerce",
-    "subServicesItems": [],
-    "useCasesItems": [],
-    "whyChooseItems": [],
-    "faqs": []
+    "ctaBannerButtonLink": "/contact",
+    "ctaBannerButtonText": "Start Your eCommerce Project",
+    "ctaBannerDesc": "Build or improve your online store with reliable **ecommerce development services** from Cubixsol. Tell us about your products, business goals, and technical requirements, and our team will help define the right development approach.",
+    "ctaBannerEyebrow": "READY TO GET STARTED?",
+    "ctaBannerSecondaryButtonLink": "/contact",
+    "ctaBannerSecondaryButtonText": "Request a Free Estimate",
+    "ctaBannerTitle": "Ready to Get Started?",
+    "ctaPrimaryLink": "/contact",
+    "ctaPrimaryText": "Book a Call",
+    "ctaSecondaryLink": "/contact",
+    "ctaSecondaryText": "Request a Free Estimate",
+    "description": "Storefronts and online commerce platforms built to convert visitors into customers and scale with your business growth. We build custom stores, Shopify experiences, headless setups, and B2B portals tailored to your operational workflows.",
+    "faqs": [
+      {
+        "q": "How much does eCommerce development cost?",
+        "a": "eCommerce development costs depend on the platform, features, design, integrations, payment setup, and project scope. A basic store generally requires less work than a custom platform with B2B features or multiple integrations."
+      },
+      {
+        "q": "How long does it take to build an eCommerce website?",
+        "a": "The timeline depends on the store size, platform, features, integrations, content, and testing requirements. A simple store can take less time than a custom B2B platform or large replatforming project."
+      },
+      {
+        "q": "Should I choose Shopify or custom eCommerce development?",
+        "a": "Shopify can suit businesses looking for an established platform with room for customisation. Custom development can suit businesses with specific workflows or advanced requirements. We recommend an approach after reviewing your business and technical needs."
+      },
+      {
+        "q": "Which payment options can you integrate?",
+        "a": "Payment options depend on your market, platform, and business requirements. Stripe is one payment option we can integrate where suitable. Our team can review your payment needs and connect the required service."
+      },
+      {
+        "q": "Can you scale an eCommerce platform as my business grows?",
+        "a": "Yes. Platform selection, system structure, integrations, hosting, and development choices affect future growth. We consider current and future requirements when planning an eCommerce solution. Post-launch work can add features and integrations as your business expands."
+      }
+    ],
+    "heroTitle": "eCommerce Development Services",
+    "name": "eCommerce Development",
+    "subServicesIntro": "Our eCommerce development team builds online stores and commerce platforms for different business models.",
+    "subServicesItems": [
+      {
+        "title": "Custom eCommerce Store Development",
+        "desc": "We build custom eCommerce stores around specific products, customer journeys, business processes, and technical requirements. Custom development suits businesses that need features beyond standard platform options. Our developers can connect payment systems, inventory tools, shipping services, customer platforms, and other business systems."
+      },
+      {
+        "title": "Shopify Development Services",
+        "desc": "Shopify provides a flexible platform for businesses that want to launch or improve an online store. Our Shopify development services include store setup, theme customisation, feature development, payment integration, third-party apps, and platform improvements."
+      },
+      {
+        "title": "B2B eCommerce Development Services",
+        "desc": "B2B businesses often need different buying features from standard retail stores. Customers may require business accounts, customer-specific pricing, bulk orders, repeat purchases, approval steps, or access to selected products. Our b2b ecommerce development services support these requirements through dedicated commerce portals and buying experiences. We can connect the platform with existing business systems and organise features around your sales process."
+      },
+      {
+        "title": "Headless Commerce Development",
+        "desc": "Headless commerce separates the customer-facing interface from the commerce system behind it. This approach can suit businesses that need greater front-end control, custom shopping experiences, or connections across multiple digital channels. Our developers assess features, integrations, and performance needs before recommending a headless approach."
+      }
+    ],
+    "subServicesTitle": "Our eCommerce Development Solution Capabilities",
+    "tech": [
+      "Shopify",
+      "WooCommerce",
+      "Next.js",
+      "Stripe"
+    ],
+    "techDesc": "Our eCommerce technology stack includes Shopify, WooCommerce, Next.js, and Stripe. We select tools according to the store model, required features, integrations, performance needs, and maintenance requirements.",
+    "techTitle": "Tools & Tech",
+    "useCasesIntro": "",
+    "useCasesItems": [
+      {
+        "title": "New Store Launch",
+        "desc": "Launching a new online store requires the right platform, store structure, product setup, payment options, and customer journey. Cubixsol can develop the core commerce experience, connect required systems, and prepare the store for launch."
+      },
+      {
+        "title": "eCommerce Replatforming",
+        "desc": "An existing platform may become difficult to manage or lack required features. Our team can move your store to a more suitable platform while rebuilding key functions and connecting essential integrations."
+      },
+      {
+        "title": "B2B Commerce Portals",
+        "desc": "B2B customers often place larger orders and follow different buying processes. A dedicated commerce portal can support business accounts, bulk ordering, custom pricing, repeat purchases, and customer-specific requirements."
+      }
+    ],
+    "useCasesTitle": "Use Cases",
+    "whyChooseIntro": "",
+    "whyChooseItems": [
+      {
+        "title": "eCommerce Development Expertise",
+        "desc": "We focus on the business requirements behind each project and ongoing technical support for your store. Our team considers the store structure, customer journey, features, integrations, and platform needs before development begins."
+      },
+      {
+        "title": "Security and Compliance",
+        "desc": "Secure payment handling and responsible data practices are important parts of eCommerce development. We use suitable platforms, payment services, and development practices to support secure transactions."
+      },
+      {
+        "title": "Focus on Business Value",
+        "desc": "An eCommerce platform should support customers and internal business teams. We focus on useful features, simple shopping journeys, reliable functions, and integrations that support daily business needs."
+      },
+      {
+        "title": "Ongoing Technical Support",
+        "desc": "Our support can continue after the store goes live through updates, bug fixes, new features, and performance improvements."
+      }
+    ],
+    "whyChooseTitle": "Why Choose Cubixsol?"
   }
 ];
 
@@ -4887,19 +6140,87 @@ const initialIndustries = [
     },
     "slug": "ecommerce",
     "title": "E-Commerce",
-    "icon": "/uploads/media-1788421040721-524946062.svg",
+    "icon": "ShoppingCart",
     "short": "Our ecommerce development services help retailers build fast online stores, multivendor marketplaces, inventory systems, checkout experiences, and integrations with payment and fulfilment platforms.",
     "desc": "Our **ecommerce development services** help retailers build fast online stores, multivendor marketplaces, inventory systems, checkout experiences, and integrations with payment and fulfilment platforms.",
     "points": [
-      "Custom storefronts",
-      "Checkout optimization",
-      "Marketplace features",
-      "OMS & inventory sync"
+      "Sub-second headless storefronts (Next.js, Remix, Hydrogen)",
+      "High-converting 1-click checkout & payment gateways",
+      "AI-driven product recommendations & visual search",
+      "Multi-channel inventory & 3PL order routing sync",
+      "Multi-vendor marketplace portals & vendor payouts",
+      "Real-time customer lifetime value (LTV) & cart analytics"
     ],
-    "servicesWeOffer": [],
-    "workAreas": [],
-    "productsBuilt": [],
-    "caseStudies": []
+    "servicesWeOffer": [
+      "Headless commerce development (Shopify Plus, Medusa, Magento)",
+      "Custom checkout & payment integrations",
+      "Marketplace platform engineering",
+      "Omnichannel inventory & ERP synchronization",
+      "Conversion Rate Optimization (CRO) audits",
+      "Mobile commerce apps (iOS & Android)"
+    ],
+    "workAreas": [
+      {
+        "title": "Headless Storefront Engineering",
+        "body": "Custom storefronts built with Shopify Plus, MedusaJS, BigCommerce, or Commerce Layer for blazing speed and zero layout shift."
+      },
+      {
+        "title": "Checkout & Conversion Optimization",
+        "body": "Custom cart drawers, 1-click Apple Pay/Google Pay checkout, auto-address verification, and personalized dynamic upsell modules."
+      },
+      {
+        "title": "Multi-Vendor Marketplaces",
+        "body": "Vendor registration, automated commission splitting, individual merchant dashboards, and centralized catalog moderation."
+      },
+      {
+        "title": "OMS, ERP & 3PL Logistics Sync",
+        "body": "Automated order routing across multiple fulfillment centers, inventory reconciliation with NetSuite/SAP, and automated return flows."
+      }
+    ],
+    "productsBuilt": [
+      {
+        "name": "NovaStorefront",
+        "slug": "novastorefront",
+        "blurb": "Ultra-fast headless commerce framework with sub-0.5s TTFB."
+      },
+      {
+        "name": "CartBoost AI",
+        "slug": "cartboost",
+        "blurb": "Dynamic personalized checkout upsells and abandonment recovery."
+      }
+    ],
+    "caseStudies": [
+      {
+        "title": "Global Direct-to-Consumer (DTC) Replatform",
+        "result": "Migrated an omnichannel retail brand to headless Shopify Hydrogen, increasing mobile checkout conversions by 42% and boosting page speed to 98/100.",
+        "tags": [
+          "Hydrogen",
+          "Shopify Plus",
+          "Conversion"
+        ]
+      },
+      {
+        "title": "Multi-Vendor Artisan Marketplace",
+        "result": "Built a marketplace connecting 450+ independent sellers with automated Stripe Connect payouts and unified shipping label generation.",
+        "tags": [
+          "Marketplace",
+          "Stripe Connect",
+          "OMS"
+        ]
+      },
+      {
+        "title": "High-Scale Flash Sale Infrastructure",
+        "result": "Engineered auto-scaling backend architecture that handled 85,000 concurrent shoppers during Black Friday with zero checkout downtime.",
+        "tags": [
+          "High Concurrency",
+          "Redis",
+          "Scale"
+        ]
+      }
+    ],
+    "stats": [],
+    "approachItems": [],
+    "solutionsItems": []
   },
   {
     "testimonial": {
@@ -4909,7 +6230,7 @@ const initialIndustries = [
     },
     "slug": "education",
     "title": "Education",
-    "icon": "/uploads/media-1788421050282-718579643.svg",
+    "icon": "GraduationCap",
     "short": "With our education software development services, institutions and education businesses can launch learning platforms, student portals, assessment tools, virtual classrooms, and administrative systems.",
     "desc": "With our **education software development** services, institutions and education businesses can launch learning platforms, student portals, assessment tools, virtual classrooms, and administrative systems.",
     "points": [
@@ -4991,6 +6312,101 @@ const initialIndustries = [
       "Integrations (SIS, payment, SSO)",
       "Analytics and admin dashboards",
       "UI/UX for education products"
+    ],
+    "approachItems": [
+      {
+        "title": "We Lead with Design",
+        "subtitle": "Our team of designers, skilled in product design, UI/UX, and accessibility, create experiences that are:",
+        "points": [
+          {
+            "heading": "Timely",
+            "text": "We design at the pace users need, with rapid learning and iteration built in.",
+            "_id": "6aa51ef3ced409771f8fe406"
+          },
+          {
+            "heading": "Useful",
+            "text": "Success is measured by how easily users achieve their goals.",
+            "_id": "6aa51ef3ced409771f8fe407"
+          },
+          {
+            "heading": "Delightful",
+            "text": "We create thoughtful experiences that feel worthwhile.",
+            "_id": "6aa51ef3ced409771f8fe408"
+          }
+        ]
+      },
+      {
+        "title": "We Leverage Open Source",
+        "subtitle": "With thousands of contributions to dozens of open-source projects, we have deep expertise that translates into:",
+        "points": [
+          {
+            "heading": "Sovereignty",
+            "text": "Avoid vendor lock-in and securely deploy on-premises or in private clouds.",
+            "_id": "6aa51ef3ced409771f8fe40a"
+          },
+          {
+            "heading": "Flexibility",
+            "text": "Customize source code and choose licensing that fits your requirements.",
+            "_id": "6aa51ef3ced409771f8fe40b"
+          },
+          {
+            "heading": "Economy",
+            "text": "Reduce hosting, maintenance, and development costs through free, adaptable, AI-ready open-source technologies at greater scale.",
+            "_id": "6aa51ef3ced409771f8fe40c"
+          }
+        ]
+      },
+      {
+        "title": "We Accelerate with AI",
+        "subtitle": "We have been working with generative AI for over a decade, applying it to:",
+        "points": [
+          {
+            "heading": "Build Smarter Software",
+            "text": "We integrate agentic workflows using LangGraph, open-weight, and frontier models tailored to user needs, prioritizing sovereignty and adaptability.",
+            "_id": "6aa51ef3ced409771f8fe40e"
+          },
+          {
+            "heading": "Build It Faster Than Ever",
+            "text": "Our teams use Codex, Claude, and multi-agent workflows while managing security, performance, cost, and governance without compromising speed or quality.",
+            "_id": "6aa51ef3ced409771f8fe40f"
+          }
+        ]
+      }
+    ],
+    "approachTitle": "The Cubixsol Approach",
+    "solutionsItems": [
+      {
+        "title": "Modern LMS Systems for Desktop and Mobile",
+        "body": "We have deep expertise in best-in-class open-source learning management systems, including Open edX, Moodle, and Edly — our own Open edX fork designed for the enterprise. Every solution comes with self-hosting or managed hosting on AWS, GCP, Oracle, and Azure."
+      },
+      {
+        "title": "Accelerated Content Production",
+        "body": "We have world-class capability to produce learning content of every kind: videos, interactive activities, assessments, and AI-based evaluations. Our Edly division's Compose product delivers the fastest possible course authoring experience, driven by AI and letting creators author directly in all major LMSes, including Canvas and Blackboard."
+      },
+      {
+        "title": "Data Management, Analytics and ML",
+        "body": "Our data engineering team has deep expertise in edTech data standards like Caliper and xAPI. Understanding, warehousing, and analyzing this data, and building ML-based prediction and forecasting pipelines on top of it, is Cubixsol's forte."
+      }
+    ],
+    "solutionsSubtitle": "Purpose-built solutions for education organizations, backed by the cross-industry capabilities every technology team needs.",
+    "solutionsTitle": "Our EdTech Solutions",
+    "stats": [
+      {
+        "value": "19+",
+        "label": "years of proven market experience"
+      },
+      {
+        "value": "750+",
+        "label": "experts in Engineering, Data, AI, Design & QA"
+      },
+      {
+        "value": "550+",
+        "label": "partnerships spanning across six verticals"
+      },
+      {
+        "value": "80%",
+        "label": "clients rate us better than others"
+      }
     ]
   },
   {
@@ -5001,19 +6417,184 @@ const initialIndustries = [
     },
     "slug": "fintech",
     "title": "Finance & Fintech",
-    "icon": "/uploads/media-1788421050295-842693555.svg",
+    "icon": "Landmark",
     "short": "Our fintech software development team creates secure payment platforms, financial dashboards, digital wallets, lending applications, and automated financial workflows.",
     "desc": "Our **fintech software development** team creates secure payment platforms, financial dashboards, digital wallets, lending applications, and automated financial workflows.",
     "points": [
-      "Payment & wallet flows",
-      "KYC-friendly onboarding",
-      "Admin & risk dashboards",
-      "API-first integrations"
+      "PCI-DSS compliant payment & checkout flows",
+      "Automated KYC / AML verification pipelines",
+      "High-frequency ledger & reconciliation engines",
+      "Open Banking & ISO 20022 messaging APIs",
+      "Multi-currency digital wallet architectures",
+      "Real-time fraud anomaly scoring & risk dashboards"
     ],
-    "servicesWeOffer": [],
-    "workAreas": [],
-    "productsBuilt": [],
-    "caseStudies": []
+    "servicesWeOffer": [
+      "PCI-DSS compliant architecture design",
+      "Payment processor integrations (Stripe, Adyen, Plaid)",
+      "Digital wallet & ledger engineering",
+      "KYC/AML identity verification flows",
+      "Risk modeling & fraud detection portals",
+      "Financial data visualization & analytics"
+    ],
+    "workAreas": [
+      {
+        "title": "Payment Gateways & Checkout Orchestration",
+        "body": "Smart routing across multiple payment processors (Stripe, Adyen, Braintree) with automatic fallbacks and 3D-Secure 2.2 support."
+      },
+      {
+        "title": "Neo-Banking & Digital Wallets",
+        "body": "Virtual/physical debit card issuance (Marqeta/Lithic), account balances, P2P money transfers, and transaction categorization."
+      },
+      {
+        "title": "KYC, Identity & Compliance Workflows",
+        "body": "Automated biometric liveness checks, document verification, AML sanctions screening, and audit trail record keeping."
+      },
+      {
+        "title": "Risk & Fraud Intelligence Dashboards",
+        "body": "Machine learning velocity models, suspicious activity report (SAR) generation, and real-time transaction limits."
+      }
+    ],
+    "productsBuilt": [
+      {
+        "name": "PayFlow Gateway",
+        "slug": "payflow",
+        "blurb": "Unified multi-currency payment checkout & tokenization engine."
+      },
+      {
+        "name": "LedgerPro",
+        "slug": "ledgerpro",
+        "blurb": "Double-entry accounting and automated transaction reconciliation."
+      }
+    ],
+    "caseStudies": [
+      {
+        "title": "High-Volume Micro-Lending Engine",
+        "result": "Engineered an automated credit underwriting API processing $45M+ in loan disbursements with sub-2-second decision latency.",
+        "tags": [
+          "Credit Scoring",
+          "Microservices",
+          "Fintech"
+        ]
+      },
+      {
+        "title": "Cross-Border B2B Payment Hub",
+        "result": "Delivered an FX settlement platform supporting 28 currencies with automated SWIFT / SEPA routing and real-time reconciliation.",
+        "tags": [
+          "FX Payments",
+          "ISO 20022",
+          "Multi-currency"
+        ]
+      },
+      {
+        "title": "Embedded Neo-Bank Mobile Experience",
+        "result": "Shipped a full-featured digital banking app with virtual cards and instant Apple Wallet / Google Pay provisioning in 4 months.",
+        "tags": [
+          "Mobile Banking",
+          "Card Issuance",
+          "Security"
+        ]
+      }
+    ],
+    "approachItems": [
+      {
+        "title": "We Engineer for Financial Security & Trust",
+        "subtitle": "Our financial systems architects and fintech engineers build payment products that are:",
+        "points": [
+          {
+            "heading": "Ultra-Fast",
+            "text": "Sub-25ms API response times, instant transaction settlement, and distributed cache performance.",
+            "_id": "6aa51ef4ced409771f8fe47f"
+          },
+          {
+            "heading": "Bank-Grade Secure",
+            "text": "Hardware-level AES-256 encryption, zero-trust tokenization, and strict PCI-DSS Level 1 compliance.",
+            "_id": "6aa51ef4ced409771f8fe480"
+          },
+          {
+            "heading": "Frictionless UX",
+            "text": "1-click checkout experiences and biometric mobile authentication that maximize conversion.",
+            "_id": "6aa51ef4ced409771f8fe481"
+          }
+        ]
+      },
+      {
+        "title": "We Ensure Full Regulatory Compliance",
+        "subtitle": "With deep integration experience across payment rails and open banking protocols, we ensure:",
+        "points": [
+          {
+            "heading": "Open Banking & ISO 20022",
+            "text": "Interoperable APIs for Plaid, Stripe, Yodlee, SWIFT, and SEPA cross-border networks.",
+            "_id": "6aa51ef4ced409771f8fe483"
+          },
+          {
+            "heading": "Automated KYC & AML",
+            "text": "Real-time biometric liveness checks, document verification, and sanction list screening.",
+            "_id": "6aa51ef4ced409771f8fe484"
+          },
+          {
+            "heading": "Immutable Audit Ledgers",
+            "text": "Double-entry accounting systems with cryptographically verified transaction histories.",
+            "_id": "6aa51ef4ced409771f8fe485"
+          }
+        ]
+      },
+      {
+        "title": "We Accelerate with Real-Time AI & Risk Intelligence",
+        "subtitle": "We embed predictive machine learning models directly into transaction processing pipelines:",
+        "points": [
+          {
+            "heading": "Real-Time Fraud Prevention",
+            "text": "Zero-shot anomaly scoring that stops fraudulent transfers before settlement occurs.",
+            "_id": "6aa51ef4ced409771f8fe487"
+          },
+          {
+            "heading": "Dynamic Routing & Failover",
+            "text": "Multi-processor smart routing that minimizes interchange fees and boosts authorization rates.",
+            "_id": "6aa51ef4ced409771f8fe488"
+          },
+          {
+            "heading": "Automated Underwriting",
+            "text": "Instant credit decisioning algorithms that evaluate multi-source borrower risk.",
+            "_id": "6aa51ef4ced409771f8fe489"
+          }
+        ]
+      }
+    ],
+    "approachTitle": "The Cubixsol Approach to Fintech",
+    "solutionsItems": [
+      {
+        "title": "Payment Orchestration & Checkout Engines",
+        "body": "Multi-processor routing gateways with 3D Secure 2.2 authentication, recurring subscription billing, localized alternative payment methods (Apple Pay, Google Pay, Pix, iDEAL), and automated chargeback dispute resolution."
+      },
+      {
+        "title": "Neo-Banking & Digital Wallet Infrastructure",
+        "body": "Full-featured digital banking applications with virtual/physical card issuance (Marqeta, Lithic), real-time P2P balance transfers, instant ACH/SEPA payments, and automated financial health analytics."
+      },
+      {
+        "title": "Core Ledgers, KYC & Risk Automation",
+        "body": "High-throughput double-entry ledgers capable of handling 50,000+ operations/sec with automated multi-bank reconciliation, automated SAR filing, and real-time KYC/AML identity verification."
+      }
+    ],
+    "solutionsSubtitle": "Institutional-grade payment gateways, digital wallets, core banking ledgers, and KYC pipelines designed to scale with complete reliability.",
+    "solutionsTitle": "Our Financial & Fintech Solutions",
+    "stats": [
+      {
+        "value": "< 25ms",
+        "label": "Average Execution & Ledger Latency"
+      },
+      {
+        "value": "$250M+",
+        "label": "Annual Processed Transaction Volume"
+      },
+      {
+        "value": "99.999%",
+        "label": "Uptime SLA for Critical Core Services"
+      },
+      {
+        "value": "PCI-DSS L1",
+        "label": "Certified Bank-Grade Security Defaults"
+      }
+    ]
   },
   {
     "testimonial": {
@@ -5023,19 +6604,184 @@ const initialIndustries = [
     },
     "slug": "healthcare",
     "title": "Healthcare",
-    "icon": "/uploads/media-1788421050303-234659715.svg",
+    "icon": "HeartPulse",
     "short": "Our healthcare software development services cover patient portals, telehealth platforms, clinical workflows, healthcare applications, data integrations, and secure administrative systems.",
     "desc": "Our **healthcare software development services** cover patient portals, telehealth platforms, clinical workflows, healthcare applications, data integrations, and secure administrative systems.",
     "points": [
-      "Patient portals",
-      "Appointment & care workflows",
-      "HIPAA-minded practices",
-      "Integrations with existing systems"
+      "HIPAA-compliant patient portals & apps",
+      "WebRTC encrypted telehealth & video consults",
+      "EHR/EMR integration via HL7 FHIR APIs",
+      "E-prescriptions & digital pharmacy routing",
+      "Clinical intake & automated triage workflows",
+      "Role-based access & strict audit trails"
     ],
-    "servicesWeOffer": [],
-    "workAreas": [],
-    "productsBuilt": [],
-    "caseStudies": []
+    "servicesWeOffer": [
+      "Custom HIPAA-compliant web & mobile apps",
+      "EHR / EMR interoperability (HL7 FHIR, SMART on FHIR)",
+      "Encrypted telehealth & WebRTC video rooms",
+      "Medical billing & insurance eligibility APIs",
+      "Clinical workflow automation dashboards",
+      "Healthcare UI/UX design & accessibility audits"
+    ],
+    "workAreas": [
+      {
+        "title": "Patient Engagement & Portals",
+        "body": "Frictionless patient self-scheduling, pre-visit intake questionnaires, lab result viewing, and secure clinician messaging."
+      },
+      {
+        "title": "Telehealth & Virtual Care",
+        "body": "Browser-based HD video consultation rooms with zero downloads, screen sharing, digital whiteboard, and live vitals telemetry."
+      },
+      {
+        "title": "Clinical Operations & Workflow",
+        "body": "EHR-integrated staff dashboards that streamline nurse charting, patient room assignments, and diagnostic handoffs."
+      },
+      {
+        "title": "Remote Patient Monitoring (RPM)",
+        "body": "IoT health device synchronization (blood pressure, glucose, pulse oximetry) with automated clinical threshold alert triggers."
+      }
+    ],
+    "productsBuilt": [
+      {
+        "name": "MediConnect Telehealth",
+        "slug": "mediconnect",
+        "blurb": "Encrypted virtual clinic suite for outpatient care."
+      },
+      {
+        "name": "DocuCare Patient Portal",
+        "slug": "docucare",
+        "blurb": "Self-service patient appointment, charts, and billing access."
+      }
+    ],
+    "caseStudies": [
+      {
+        "title": "Multi-Specialty Telehealth Platform",
+        "result": "Built an encrypted WebRTC telehealth system handling 12,000+ monthly clinical consultations with 99.98% video reliability.",
+        "tags": [
+          "WebRTC",
+          "HIPAA",
+          "Telehealth"
+        ]
+      },
+      {
+        "title": "FHIR EHR Integration Pipeline",
+        "result": "Unified legacy Cerner and Epic medical records into a single patient summary dashboard, cutting physician charting time by 32%.",
+        "tags": [
+          "HL7 FHIR",
+          "EHR",
+          "Security"
+        ]
+      },
+      {
+        "title": "Digital Patient Intake & Triage Suite",
+        "result": "Replaced paper intake forms with contactless mobile check-in across 18 regional clinics, eliminating waiting room bottlenecks.",
+        "tags": [
+          "Mobile UX",
+          "Triage",
+          "Portal"
+        ]
+      }
+    ],
+    "approachItems": [
+      {
+        "title": "We Engineer for Patient Safety & Trust",
+        "subtitle": "Our digital health engineers and medical UX specialists create intuitive care experiences that are:",
+        "points": [
+          {
+            "heading": "Timely",
+            "text": "Fast, frictionless patient intake, instant appointment scheduling, and rapid clinical alerts.",
+            "_id": "6aa51ef4ced409771f8fe447"
+          },
+          {
+            "heading": "Safe & Compliant",
+            "text": "Zero-trust data vaults, end-to-end WebRTC encryption, and complete audit trails protecting PHI.",
+            "_id": "6aa51ef4ced409771f8fe448"
+          },
+          {
+            "heading": "Clinician-Friendly",
+            "text": "Thoughtful workflows that reduce electronic documentation fatigue and clicks for providers.",
+            "_id": "6aa51ef4ced409771f8fe449"
+          }
+        ]
+      },
+      {
+        "title": "We Ensure Interoperability & Compliance",
+        "subtitle": "With deep integration expertise across healthcare ecosystems, we ensure your software seamlessly connects:",
+        "points": [
+          {
+            "heading": "EHR & EMR Systems",
+            "text": "Bi-directional integration with Epic, Cerner, Allscripts, and AthenaHealth via HL7 FHIR v4.",
+            "_id": "6aa51ef4ced409771f8fe44b"
+          },
+          {
+            "heading": "Regulatory Standards",
+            "text": "Guaranteed adherence to HIPAA, HITECH, FDA 21 CFR Part 11, and GDPR health privacy rules.",
+            "_id": "6aa51ef4ced409771f8fe44c"
+          },
+          {
+            "heading": "Medical Device APIs",
+            "text": "Stream real-time vitals and diagnostic telemetry from FDA-cleared remote patient monitoring (RPM) hardware.",
+            "_id": "6aa51ef4ced409771f8fe44d"
+          }
+        ]
+      },
+      {
+        "title": "We Accelerate Clinical AI & Telehealth",
+        "subtitle": "We integrate medical-grade intelligence and WebRTC communication into modern clinical products:",
+        "points": [
+          {
+            "heading": "Intelligent Symptom Triage",
+            "text": "AI-assisted clinical questionnaires that route patients to appropriate care tiers.",
+            "_id": "6aa51ef4ced409771f8fe44f"
+          },
+          {
+            "heading": "Sub-100ms HD Telehealth",
+            "text": "Browser-based WebRTC video consultations with zero downloads and live vitals overlay.",
+            "_id": "6aa51ef4ced409771f8fe450"
+          },
+          {
+            "heading": "Automated Clinical Charting",
+            "text": "AI-generated consultation summaries and ICD-10 diagnostic coding assistance.",
+            "_id": "6aa51ef4ced409771f8fe451"
+          }
+        ]
+      }
+    ],
+    "approachTitle": "The Cubixsol Approach to Healthcare",
+    "solutionsItems": [
+      {
+        "title": "Telehealth & Virtual Care Delivery Suites",
+        "body": "We engineer HIPAA-compliant telehealth applications with WebRTC HD video, multi-party family consultations, in-call chat, screen sharing, and integrated digital prescription (e-Rx) dispatch. Works seamlessly on desktop browsers, iOS, and Android with zero installation required."
+      },
+      {
+        "title": "EHR / EMR Interoperability & FHIR Middleware",
+        "body": "Connect modern wellness apps and patient portals with legacy hospital systems. We build robust HL7 v2/v3, C-CDA, and SMART on FHIR middleware pipelines that sync clinical notes, lab results, and patient demographics in sub-second intervals."
+      },
+      {
+        "title": "Remote Patient Monitoring (RPM) & Medical AI",
+        "body": "Continuous care pipelines that ingest telemetry from Bluetooth and cellular medical devices (blood pressure cuffs, continuous glucose monitors, pulse oximeters). Includes automated threshold alert systems for nurse dispatch and ML-based early warning scoring."
+      }
+    ],
+    "solutionsSubtitle": "Enterprise-grade digital health platforms, clinical workflow automation, and EHR interoperability built for hospitals, clinics, and healthtech startups.",
+    "solutionsTitle": "Our Healthcare & Life Sciences Solutions",
+    "stats": [
+      {
+        "value": "100%",
+        "label": "HIPAA & HITECH Compliant by Default"
+      },
+      {
+        "value": "120k+",
+        "label": "Patients Served on Cubixsol Systems"
+      },
+      {
+        "value": "HL7 FHIR",
+        "label": "Standardized v4 Interoperability"
+      },
+      {
+        "value": "0.8s",
+        "label": "Real-Time EHR Record Synchronization"
+      }
+    ]
   },
   {
     "testimonial": {
@@ -5045,19 +6791,87 @@ const initialIndustries = [
     },
     "slug": "logistics",
     "title": "Logistics",
-    "icon": "/uploads/media-1788421050308-313091127.svg",
+    "icon": "Truck",
     "short": "Through our logistics software development expertise, we build fleet management platforms, shipment tracking systems, warehouse tools, route-planning applications, and supply-chain dashboards.",
     "desc": "Through our **logistics software development** expertise, we build fleet management platforms, shipment tracking systems, warehouse tools, route-planning applications, and supply-chain dashboards.",
     "points": [
-      "Dispatch & routing support",
-      "Shipment tracking UX",
-      "Partner portals",
-      "Ops dashboards"
+      "Real-time GPS telematics & fleet map tracking",
+      "Dynamic multi-stop route optimization algorithms",
+      "Mobile Electronic Proof of Delivery (ePOD) & scanning",
+      "Geo-fencing alerts & automated micro-milestone updates",
+      "TMS & WMS integrations (SAP, Oracle TM, Blue Yonder)",
+      "Cold-chain IoT sensor telemetry & exception alerts"
     ],
-    "servicesWeOffer": [],
-    "workAreas": [],
-    "productsBuilt": [],
-    "caseStudies": []
+    "servicesWeOffer": [
+      "Fleet tracking & dispatch portal development",
+      "Route optimization & heuristic algorithms",
+      "Driver mobile apps (ePOD, barcode scanning)",
+      "TMS / WMS integration (SAP, Oracle, Blue Yonder)",
+      "IoT sensor telematics & temperature monitoring",
+      "Customer-facing real-time tracking experiences"
+    ],
+    "workAreas": [
+      {
+        "title": "Dispatch & Fleet Management",
+        "body": "Live fleet dispatch control towers, automated load assignment, driver shift scheduling, and hours-of-service compliance tracking."
+      },
+      {
+        "title": "Last-Mile Route Optimization",
+        "body": "AI-driven routing that calculates optimal delivery sequences factoring in traffic, time windows, vehicle weight, and toll costs."
+      },
+      {
+        "title": "Driver Companion Mobile Apps",
+        "body": "Turn-by-turn navigation, barcode scanning, digital signature capture, photo damage documentation, and instant offline sync."
+      },
+      {
+        "title": "Supply Chain Visibility & Customer Tracking",
+        "body": "Branded live tracking pages for end recipients with live map pins, accurate ETAs, and automated SMS milestone updates."
+      }
+    ],
+    "productsBuilt": [
+      {
+        "name": "FleetTower",
+        "slug": "fleettower",
+        "blurb": "Real-time fleet telematics, dispatch, and geo-fence tracking."
+      },
+      {
+        "name": "DeliverPass",
+        "slug": "deliverpass",
+        "blurb": "Contactless electronic proof of delivery (ePOD) mobile app."
+      }
+    ],
+    "caseStudies": [
+      {
+        "title": "Regional Freight Dispatch & Telematics Hub",
+        "result": "Deployed a real-time dispatch dashboard for 220+ commercial trucks, reducing deadhead miles by 19% and fuel costs by $140,000/yr.",
+        "tags": [
+          "Telematics",
+          "GPS",
+          "Routing"
+        ]
+      },
+      {
+        "title": "Last-Mile Delivery Driver Mobile App",
+        "result": "Built an offline-first iOS/Android driver app with high-speed barcode scanning, cutting average stop time by 45 seconds per delivery.",
+        "tags": [
+          "Mobile ePOD",
+          "Offline-First",
+          "Scanning"
+        ]
+      },
+      {
+        "title": "End-to-End Customer Tracking Portal",
+        "result": "Shipped a live customer delivery tracker handling 40,000+ daily package updates, reducing \"Where Is My Order\" support calls by 58%.",
+        "tags": [
+          "Customer UX",
+          "Live Map",
+          "WebSockets"
+        ]
+      }
+    ],
+    "stats": [],
+    "approachItems": [],
+    "solutionsItems": []
   },
   {
     "testimonial": {
@@ -5067,19 +6881,184 @@ const initialIndustries = [
     },
     "slug": "real-estate",
     "title": "Real Estate",
-    "icon": "/uploads/media-1788421050310-764937006.svg",
+    "icon": "Building2",
     "short": "Our real estate software development services support property portals, listing platforms, CRM systems, tenant applications, property management tools, and virtual viewing experiences.",
     "desc": "Our **real estate software development** services support property portals, listing platforms, CRM systems, tenant applications, property management tools, and virtual viewing experiences.",
     "points": [
-      "Listing portals",
-      "Agent CRM light flows",
-      "PMS integrations",
-      "Lead routing"
+      "Sub-minute MLS / IDX & RESO Web API synchronization",
+      "Interactive spatial map search with Mapbox polygon filters",
+      "Integrated 3D Matterport virtual tour & floor plan viewers",
+      "Intelligent agent CRM & round-robin lead routing",
+      "Digital offer management & e-signature closing vaults",
+      "PMS integrations (Yardi, RealPage, AppFolio)"
     ],
-    "servicesWeOffer": [],
-    "workAreas": [],
-    "productsBuilt": [],
-    "caseStudies": []
+    "servicesWeOffer": [
+      "Custom MLS / IDX listing portal development",
+      "Interactive Mapbox & GIS spatial search tools",
+      "Virtual tour & 3D walkthrough integrations",
+      "Real estate CRM & agent automation tools",
+      "Property management software (PMS) sync",
+      "Digital contract & escrow workflow systems"
+    ],
+    "workAreas": [
+      {
+        "title": "MLS/IDX Listing Portals",
+        "body": "High-speed property search portals with neighborhood school ratings, transit scores, tax history, and automated price alert notifications."
+      },
+      {
+        "title": "Interactive Spatial & Map Exploration",
+        "body": "Custom polygon drawing search, commute time radius filters, and interactive 3D site plan maps for master-planned communities."
+      },
+      {
+        "title": "Agent CRM & Lead Automation",
+        "body": "Automated lead scoring, instant SMS notifications to on-duty agents, showing calendar scheduling, and commission pipeline tracking."
+      },
+      {
+        "title": "Property Management & Tenant Portals",
+        "body": "Online rent collection, digital lease signing, maintenance ticketing with photo uploads, and owner payout reporting."
+      }
+    ],
+    "productsBuilt": [
+      {
+        "name": "PropView IDX",
+        "slug": "propview",
+        "blurb": "Blazing-fast MLS search engine with interactive map filtering."
+      },
+      {
+        "name": "LeasePilot",
+        "slug": "leasepilot",
+        "blurb": "Digital tenant onboarding, screening, and automated lease signing."
+      }
+    ],
+    "caseStudies": [
+      {
+        "title": "Luxury Brokerage Web & Map Portal",
+        "result": "Designed and built a custom RESO-compliant listing platform that drove a 65% increase in online tour bookings across 8 metropolitan markets.",
+        "tags": [
+          "RESO API",
+          "Mapbox",
+          "PropTech"
+        ]
+      },
+      {
+        "title": "Commercial Property Management Suite",
+        "result": "Delivered an integrated tenant portal for 1.2M sq. ft. of commercial office space, automating lease renewals and maintenance tracking.",
+        "tags": [
+          "PMS",
+          "Tenant Portal",
+          "SaaS"
+        ]
+      },
+      {
+        "title": "Automated Real Estate Lead Router",
+        "result": "Engineered an AI-assisted lead qualification and SMS dispatch engine that reduced agent response times from 3 hours to 45 seconds.",
+        "tags": [
+          "CRM",
+          "Automation",
+          "SMS"
+        ]
+      }
+    ],
+    "approachItems": [
+      {
+        "title": "We Engineer for Spatial Immersion & Speed",
+        "subtitle": "Our PropTech software engineers and real estate UX specialists craft listing platforms that are:",
+        "points": [
+          {
+            "heading": "Sub-Minute Sync",
+            "text": "RESO Web API synchronization that reflects new listings and price cuts in under 60 seconds.",
+            "_id": "6aa51ef4ced409771f8fe4c9"
+          },
+          {
+            "heading": "Immersive Spatial UX",
+            "text": "Embedded 3D Matterport virtual walkthroughs and Mapbox polygon spatial search.",
+            "_id": "6aa51ef4ced409771f8fe4ca"
+          },
+          {
+            "heading": "High-Converting Flow",
+            "text": "Frictionless tour booking and automated SMS routing to local on-duty agents.",
+            "_id": "6aa51ef4ced409771f8fe4cb"
+          }
+        ]
+      },
+      {
+        "title": "We Ensure Full MLS & RESO Compliance",
+        "subtitle": "With deep integration expertise across North American & global real estate feeds:",
+        "points": [
+          {
+            "heading": "RESO Web API Standard",
+            "text": "Certified data pipelines ensuring accurate listing status, photos, and agent attribution.",
+            "_id": "6aa51ef4ced409771f8fe4cd"
+          },
+          {
+            "heading": "Fair Housing & WCAG 2.1",
+            "text": "Built-in accessibility compliance, screen reader support, and equal housing opportunity notices.",
+            "_id": "6aa51ef4ced409771f8fe4ce"
+          },
+          {
+            "heading": "PMS Interoperability",
+            "text": "Two-way synchronization with Yardi, RealPage, AppFolio, and Entrata property databases.",
+            "_id": "6aa51ef4ced409771f8fe4cf"
+          }
+        ]
+      },
+      {
+        "title": "We Accelerate Brokerage & Agent Conversions",
+        "subtitle": "We build automated intelligence pipelines that convert casual website visitors into signed clients:",
+        "points": [
+          {
+            "heading": "Sub-45s Lead Routing",
+            "text": "Round-robin agent assignment with instant push alerts that maximize lead response rates.",
+            "_id": "6aa51ef4ced409771f8fe4d1"
+          },
+          {
+            "heading": "Automated CMA Reports",
+            "text": "Instant Comparative Market Analysis generation powered by live neighborhood comps.",
+            "_id": "6aa51ef4ced409771f8fe4d2"
+          },
+          {
+            "heading": "Digital Escrow Vaults",
+            "text": "Secure digital offer submission, automated e-signatures, and transaction milestone tracking.",
+            "_id": "6aa51ef4ced409771f8fe4d3"
+          }
+        ]
+      }
+    ],
+    "approachTitle": "The Cubixsol Approach to Real Estate",
+    "solutionsItems": [
+      {
+        "title": "MLS / IDX Search Portals & Interactive Map GIS",
+        "body": "Custom polygon drawing search filters, commute-time radius calculations, school district boundary layers, automated price drop notifications, and high-speed image CDN delivery."
+      },
+      {
+        "title": "Brokerage CRM & Agent Round-Robin Automation",
+        "body": "Automated lead qualification and routing engine with instant SMS alerts, showing calendar scheduling, agent commission pipelines, and digital transaction document vaults."
+      },
+      {
+        "title": "Property Management & Digital Tenant Onboarding",
+        "body": "End-to-end tenant portals for online rent collection (ACH/Credit), digital lease execution, maintenance ticketing with photo uploads, and real-time landlord financial reporting."
+      }
+    ],
+    "solutionsSubtitle": "Enterprise MLS listing portals, spatial map search engines, brokerage CRMs, and property management suites designed for modern agencies.",
+    "solutionsTitle": "Our Real Estate & PropTech Solutions",
+    "stats": [
+      {
+        "value": "< 60s",
+        "label": "MLS & RESO Feed Synchronization Frequency"
+      },
+      {
+        "value": "+65%",
+        "label": "Online Tour Booking & Lead Conversion Lift"
+      },
+      {
+        "value": "3.4x",
+        "label": "Average On-Page Property Dwell Time"
+      },
+      {
+        "value": "RESO API",
+        "label": "Certified Real Estate Standard Standardized"
+      }
+    ]
   },
   {
     "testimonial": {
@@ -5089,19 +7068,184 @@ const initialIndustries = [
     },
     "slug": "saas",
     "title": "SaaS",
-    "icon": "/uploads/media-1788421050317-66609444.svg",
+    "icon": "Cloud",
     "short": "As a results-focused SaaS development company, Cubixsol builds subscription platforms, multi-tenant applications, customer dashboards, billing systems, and scalable cloud-based products.",
     "desc": "As a results-focused **SaaS development company**, Cubixsol builds subscription platforms, multi-tenant applications, customer dashboards, billing systems, and scalable cloud-based products.",
     "points": [
-      "Multi-tenant architecture",
-      "Onboarding & activation",
-      "Billing integrations",
-      "Admin & analytics"
+      "Multi-tenant architecture with PostgreSQL Row-Level Security",
+      "Metered, tiered & seat-based Stripe billing engines",
+      "Enterprise SSO (SAML 2.0 / Okta / Azure AD) & SCIM sync",
+      "Granular Role-Based Access Control (RBAC) matrices",
+      "Feature flags, canary deployments & A/B test pipelines",
+      "Full-stack telemetry & product adoption analytics"
     ],
-    "servicesWeOffer": [],
-    "workAreas": [],
-    "productsBuilt": [],
-    "caseStudies": []
+    "servicesWeOffer": [
+      "MVP architecture & rapid full-stack delivery",
+      "Multi-tenant database design & security isolation",
+      "Subscription billing & usage metering (Stripe/Paddle)",
+      "Enterprise SSO & SCIM directory integration",
+      "Feature flag & CI/CD pipeline setup",
+      "Product UI/UX design & design systems"
+    ],
+    "workAreas": [
+      {
+        "title": "Multi-Tenant Backend Architecture",
+        "body": "Scalable cloud infrastructure supporting isolated tenant data, custom subdomains, and automated tenant provisioning."
+      },
+      {
+        "title": "Billing, Subscriptions & Monetization",
+        "body": "Complex pricing tier implementation, usage meters, self-serve upgrade flows, proration calculations, and automated dunning."
+      },
+      {
+        "title": "Enterprise Readiness & Security",
+        "body": "SAML 2.0 SSO, audit logs, automated SCIM provisioning, IP allowlisting, and compliance export tooling for enterprise buyers."
+      },
+      {
+        "title": "Onboarding & Activation Loops",
+        "body": "Frictionless self-serve onboarding wizards, interactive product tours, empty states, and behavioral trigger emails that lift Day-1 retention."
+      }
+    ],
+    "productsBuilt": [
+      {
+        "name": "SaaSKit Pro",
+        "slug": "saaskit",
+        "blurb": "Production-ready multi-tenant SaaS starter with billing & auth."
+      },
+      {
+        "name": "TenantPulse",
+        "slug": "tenantpulse",
+        "blurb": "Product health scoring and churn prediction dashboard."
+      }
+    ],
+    "caseStudies": [
+      {
+        "title": "B2B Workflow Automation SaaS",
+        "result": "Architected and shipped a multi-tenant workflow SaaS from scratch to $1.2M ARR in 10 months with 99.99% system availability.",
+        "tags": [
+          "Multi-Tenant",
+          "Stripe Billing",
+          "Node.js"
+        ]
+      },
+      {
+        "title": "Enterprise SSO & Compliance Upgrade",
+        "result": "Added Okta/Azure SAML SSO and SOC 2 audit logging to an existing SaaS platform, unblocking $800k in enterprise pipeline deals.",
+        "tags": [
+          "SAML",
+          "Enterprise",
+          "Security"
+        ]
+      },
+      {
+        "title": "Product-Led Growth (PLG) Onboarding Flow",
+        "result": "Redesigned the self-serve signup and activation funnel, increasing free-to-paid conversion rate by 3.2x in 60 days.",
+        "tags": [
+          "PLG",
+          "Onboarding",
+          "UX"
+        ]
+      }
+    ],
+    "approachItems": [
+      {
+        "title": "We Architect for Multi-Tenancy & Isolation",
+        "subtitle": "Our cloud architects and SaaS systems engineers build multi-tenant backends that are:",
+        "points": [
+          {
+            "heading": "Row-Level Secure",
+            "text": "PostgreSQL RLS and schema isolation guaranteeing zero cross-tenant data leakage.",
+            "_id": "6aa51ef4ced409771f8fe501"
+          },
+          {
+            "heading": "Subdomain Automated",
+            "text": "Instant dynamic DNS tenant routing (tenant.yourplatform.com) with automated TLS certificates.",
+            "_id": "6aa51ef4ced409771f8fe502"
+          },
+          {
+            "heading": "High-Throughput Pool",
+            "text": "Tenant-aware connection pooling and Redis caching for sub-20ms database queries.",
+            "_id": "6aa51ef4ced409771f8fe503"
+          }
+        ]
+      },
+      {
+        "title": "We Implement Frictionless Monetization & Billing",
+        "subtitle": "From product-led growth freemium models to complex enterprise contracts, we build:",
+        "points": [
+          {
+            "heading": "Stripe & Paddle Metering",
+            "text": "Real-time usage aggregation, tiered seat management, and self-serve upgrade flows.",
+            "_id": "6aa51ef4ced409771f8fe505"
+          },
+          {
+            "heading": "Automated Dunning",
+            "text": "Smart credit card retry logic and automated email recovery flows that reduce involuntary churn.",
+            "_id": "6aa51ef4ced409771f8fe506"
+          },
+          {
+            "heading": "Global Tax Compliance",
+            "text": "Automated sales tax and VAT calculation via Stripe Tax and TaxJar integration.",
+            "_id": "6aa51ef4ced409771f8fe507"
+          }
+        ]
+      },
+      {
+        "title": "We Accelerate Product-Led Growth & Retention",
+        "subtitle": "We embed behavioral analytics and activation loops directly into the application UX:",
+        "points": [
+          {
+            "heading": "Self-Serve Onboarding",
+            "text": "Interactive product walkthroughs and checklist empty-states that cut time-to-value to minutes.",
+            "_id": "6aa51ef4ced409771f8fe509"
+          },
+          {
+            "heading": "Feature Flag Canary",
+            "text": "LaunchDarkly and PostHog integration for progressive rollouts and zero-downtime releases.",
+            "_id": "6aa51ef4ced409771f8fe50a"
+          },
+          {
+            "heading": "Enterprise Security Ready",
+            "text": "One-click Okta, Azure AD, and Google Workspace SAML SSO with automated SCIM provisioning.",
+            "_id": "6aa51ef4ced409771f8fe50b"
+          }
+        ]
+      }
+    ],
+    "approachTitle": "The Cubixsol Approach to SaaS & Cloud Platforms",
+    "solutionsItems": [
+      {
+        "title": "Multi-Tenant Cloud Infrastructure & PostgreSQL RLS",
+        "body": "Distributed multi-tenant database clusters with Row-Level Security, custom tenant subdomains, automated database backup snapshots, and zero-downtime migrations."
+      },
+      {
+        "title": "Subscription Monetization, Stripe Billing & Usage Meters",
+        "body": "Custom billing portals with seat allocation, metered API usage tracking, automated invoice generation, proration calculations, and self-serve tier upgrades."
+      },
+      {
+        "title": "Enterprise SSO, SAML 2.0 & Role-Based Access Control",
+        "body": "Universal identity orchestration supporting Okta, Azure AD, Google Workspace, automated SCIM user provisioning, and granular RBAC permission matrices."
+      }
+    ],
+    "solutionsSubtitle": "Enterprise multi-tenant microservices, automated subscription engines, SSO/SCIM security, and real-time product telemetry engineered to scale seamlessly.",
+    "solutionsTitle": "Our SaaS & Cloud Architecture Solutions",
+    "stats": [
+      {
+        "value": "< 10 min",
+        "label": "Average Customer Time-to-Value & Setup"
+      },
+      {
+        "value": "99.99%",
+        "label": "Multi-Tenant Row-Level Data Isolation"
+      },
+      {
+        "value": "SAML 2.0",
+        "label": "Enterprise SSO & Automated SCIM Ready"
+      },
+      {
+        "value": "100%",
+        "label": "SOC-2 & ISO 27001 Audit Trail Compliance"
+      }
+    ]
   },
   {
     "testimonial": {
@@ -5111,19 +7255,87 @@ const initialIndustries = [
     },
     "slug": "technology",
     "title": "Technology",
-    "icon": "/uploads/media-1788421050320-328223291.svg",
+    "icon": "Cpu",
     "short": "Platforms, developer tools, and internal tech products.",
     "desc": "For technology companies building platforms or internal tools, we embed as an engineering partner — architecture, delivery, and UI that matches product standards.",
     "points": [
-      "Platform features",
-      "Internal tools",
-      "API products",
-      "Design systems"
+      "Internal Developer Platforms (IDP) on Kubernetes & Terraform",
+      "High-throughput microservice & Kafka event bus backbones",
+      "Distributed tracing & OpenTelemetry observability stacks",
+      "Enterprise React & TypeScript design systems / component SDKs",
+      "Zero-downtime CI/CD GitOps pipelines",
+      "API gateway orchestration with gRPC & GraphQL"
     ],
-    "servicesWeOffer": [],
-    "workAreas": [],
-    "productsBuilt": [],
-    "caseStudies": []
+    "servicesWeOffer": [
+      "Internal developer platform (IDP) engineering",
+      "Event-driven architecture & microservices delivery",
+      "Enterprise design systems & React component SDKs",
+      "Cloud infrastructure as code (Terraform, AWS, GCP)",
+      "API gateway & gRPC/GraphQL development",
+      "Site Reliability Engineering (SRE) & observability setup"
+    ],
+    "workAreas": [
+      {
+        "title": "Internal Developer Platforms & Tooling",
+        "body": "Self-serve developer portals (Backstage), ephemeral preview environment spin-up, and standardized service scaffolding templates."
+      },
+      {
+        "title": "Event-Driven Microservice Architecture",
+        "body": "Decoupled asynchronous event pipelines using Apache Kafka, RabbitMQ, and AWS SQS for resilient, high-volume data streams."
+      },
+      {
+        "title": "Design Systems & Component Libraries",
+        "body": "Accessible, tokenized UI component libraries with automated Storybook testing, zero-runtime styling, and npm package publishing."
+      },
+      {
+        "title": "Observability, SRE & Cloud Infrastructure",
+        "body": "Full-stack instrumentation with Prometheus, Grafana, OpenTelemetry, and Datadog to ensure 99.999% system availability."
+      }
+    ],
+    "productsBuilt": [
+      {
+        "name": "DevScaffold CLI",
+        "slug": "devscaffold",
+        "blurb": "Internal CLI tool for spinning up microservices and preview environments in seconds."
+      },
+      {
+        "name": "CoreUI Design System",
+        "slug": "coreui",
+        "blurb": "Enterprise-grade React component library with WCAG 2.1 AA compliance."
+      }
+    ],
+    "caseStudies": [
+      {
+        "title": "Internal Developer Platform Modernization",
+        "result": "Architected a Kubernetes-based IDP that cut developer environment provisioning times from 2 days to 45 seconds for 180+ engineers.",
+        "tags": [
+          "Kubernetes",
+          "IDP",
+          "DevOps"
+        ]
+      },
+      {
+        "title": "High-Throughput Event Streaming Backbone",
+        "result": "Designed a Kafka microservices pipeline processing 500,000+ events per second with sub-15ms message delivery latency.",
+        "tags": [
+          "Kafka",
+          "gRPC",
+          "Distributed Systems"
+        ]
+      },
+      {
+        "title": "Multi-Brand Enterprise Design System",
+        "result": "Created a unified React/TypeScript design system deployed across 4 distinct SaaS products, reducing UI development cycles by 50%.",
+        "tags": [
+          "Design System",
+          "React",
+          "Storybook"
+        ]
+      }
+    ],
+    "stats": [],
+    "approachItems": [],
+    "solutionsItems": []
   },
   {
     "testimonial": {
@@ -5133,19 +7345,87 @@ const initialIndustries = [
     },
     "slug": "travel",
     "title": "Travel & Hospitality",
-    "icon": "/uploads/media-1788421050341-423557658.svg",
+    "icon": "Plane",
     "short": "As an experienced travel software development company, we create booking platforms, reservation systems, itinerary tools, travel portals, mobile applications, and third-party service integrations.",
     "desc": "As an experienced **travel software development company**, we create booking platforms, reservation systems, itinerary tools, travel portals, mobile applications, and third-party service integrations.",
     "points": [
-      "Booking & availability",
-      "Supplier APIs",
-      "Guest mobile experiences",
-      "Loyalty hooks"
+      "Multi-GDS & airline NDC aggregator APIs (Amadeus, Sabre)",
+      "Dynamic packaging engines (Flights + Hotels + Activities)",
+      "High-concurrency stress-tested booking infrastructure",
+      "Mobile guest apps with BLE contactless room key access",
+      "PMS & Channel Manager sync (Opera, Cloudbeds, Mews)",
+      "Multi-currency pricing & automated loyalty rewards"
     ],
-    "servicesWeOffer": [],
-    "workAreas": [],
-    "productsBuilt": [],
-    "caseStudies": []
+    "servicesWeOffer": [
+      "Custom travel booking engine development",
+      "GDS / NDC integrations (Amadeus, Sabre, Travelport)",
+      "Dynamic packaging & revenue management software",
+      "Hotel PMS & channel manager sync",
+      "Mobile guest apps & digital key integration",
+      "Travel loyalty program & points redemption engines"
+    ],
+    "workAreas": [
+      {
+        "title": "Flight & Hotel Booking Engines",
+        "body": "High-speed flight search, fare matrix comparison, seat map selection, hotel room filtering, and instant PNR generation."
+      },
+      {
+        "title": "Dynamic Packaging & Yield Management",
+        "body": "Automated bundle pricing algorithms combining flights, hotels, and excursions with customizable supplier commission markups."
+      },
+      {
+        "title": "Guest Experience & Mobile Room Keys",
+        "body": "Native mobile guest apps supporting online check-in, Bluetooth digital door locks, in-app room service, and concierge chat."
+      },
+      {
+        "title": "Hospitality PMS & Channel Management",
+        "body": "Real-time two-way synchronization of rates, availability, and guest profiles across Booking.com, Expedia, Airbnb, and direct booking channels."
+      }
+    ],
+    "productsBuilt": [
+      {
+        "name": "VoyageEngine",
+        "slug": "voyageengine",
+        "blurb": "Sub-second multi-GDS flight and hotel aggregator engine."
+      },
+      {
+        "name": "StayKey Mobile",
+        "slug": "staykey",
+        "blurb": "Contactless guest check-in and BLE digital room key app."
+      }
+    ],
+    "caseStudies": [
+      {
+        "title": "Global Tour Operator Booking Platform",
+        "result": "Unified 14 supplier API feeds into a single dynamic package booking engine, increasing average booking value by 28%.",
+        "tags": [
+          "GDS APIs",
+          "Dynamic Packaging",
+          "Scale"
+        ]
+      },
+      {
+        "title": "Boutique Hotel Mobile Guest App",
+        "result": "Shipped a contactless guest app with digital key access across 6 luxury properties, resulting in a 4.9/5 guest satisfaction score.",
+        "tags": [
+          "BLE Key",
+          "Mobile App",
+          "Hospitality"
+        ]
+      },
+      {
+        "title": "High-Traffic Flash Sale Travel Engine",
+        "result": "Engineered auto-scaling booking infrastructure that processed 15,000 simultaneous booking checkouts during peak holiday season with 0 errors.",
+        "tags": [
+          "High Concurrency",
+          "Redis Lock",
+          "Cloud"
+        ]
+      }
+    ],
+    "stats": [],
+    "approachItems": [],
+    "solutionsItems": []
   }
 ];
 

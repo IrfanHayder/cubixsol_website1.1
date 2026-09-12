@@ -12,7 +12,7 @@ export default function ServicesShowcase() {
   const services = allServices.slice(0, 6);
 
   return (
-    <section className="bg-white py-14 lg:py-18">
+    <section className="bg-gray-50 py-16 lg:py-20 border-y border-gray-100/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal className="text-center max-w-3xl mx-auto mb-10">
           <p className="text-sm font-medium text-gray-400 mb-3">Our services</p>
@@ -44,11 +44,15 @@ export default function ServicesShowcase() {
                   className="group relative bg-white rounded-3xl border border-gray-100 p-6 lg:p-7 shadow-card hover:shadow-elev hover:border-cyan-200 hover:-translate-y-1.5 transition-all duration-300 h-full flex flex-col justify-between overflow-hidden"
                 >
                   <div>
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className="w-11 h-11 rounded-2xl bg-gradient-to-br from-sky-50 to-cyan-50 border border-cyan-100/90 text-[#00a4d8] flex items-center justify-center shrink-0 group-hover:scale-105 group-hover:bg-gradient-to-br group-hover:from-[#00a4d8] group-hover:to-[#0284c7] group-hover:text-white transition-all duration-300 shadow-sm">
-                        <DynamicIcon icon={s.icon} title={s.title} className="w-5 h-5 object-contain" />
+                    <div className="flex items-center gap-3.5 mb-4">
+                      <span className="w-14 h-14 rounded-2xl bg-gradient-to-br from-sky-50 via-cyan-50 to-blue-50/80 border border-cyan-200/90 text-[#00a4d8] flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:bg-gradient-to-br group-hover:from-[#00a4d8] group-hover:via-[#0284c7] group-hover:to-[#0369a1] group-hover:text-white group-hover:border-transparent group-hover:shadow-xl group-hover:shadow-[#00a4d8]/35 group-hover:ring-4 group-hover:ring-cyan-100/70 group-hover:-translate-y-0.5 transition-all duration-300 ease-out shadow-sm overflow-hidden">
+                        <DynamicIcon
+                          icon={s.icon}
+                          title={s.title}
+                          className="w-8 h-8 sm:w-9 sm:h-9 object-contain text-[#00a4d8] group-hover:text-white group-hover:brightness-0 group-hover:invert group-hover:drop-shadow-[0_2px_8px_rgba(255,255,255,0.85)] transition-all duration-300"
+                        />
                       </span>
-                      <span className="text-xs font-bold uppercase tracking-wider text-[#00a4d8]">
+                      <span className="text-xs sm:text-[13px] font-extrabold uppercase tracking-wider text-[#00a4d8] leading-tight">
                         {s.menuTitle || s.title}
                       </span>
                     </div>

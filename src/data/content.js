@@ -233,26 +233,118 @@ export const services = [
     icon: LayoutTemplate,
     slug: 'cms-development',
     heroImage: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&w=1000&h=750&q=70',
-    title: 'CMS Development',
-    desc: 'WordPress, Shopify, Magento, and more — CMS builds that are fast to manage and ready to grow.',
+    title: 'CMS & WordPress Development Services',
+    desc: 'Give your team a website they can manage with confidence. Cubixsol’s wordpress development services help businesses launch, update, and grow websites with clear navigation, flexible content tools, and dependable functionality. From company websites to online stores, we build CMS solutions around your customers, publishing needs, and business goals.',
     color: 'text-violet-600 bg-violet-50',
     gradient: 'from-violet-500 to-purple-600',
-    longDesc: 'We build and customize content platforms so your team can publish, sell, and iterate without fighting the CMS. From WordPress and Shopify to Magento, BigCommerce, Joomla, and OpenCart — clean themes, solid plugins, and performance that holds up.',
-    features: [
-      'Magento Development',
-      'Shopify Development',
-      'WordPress Development',
-      'BigCommerce Development',
-      'Joomla Development',
-      'OpenCart Development',
-      'Theme & plugin customization',
-      'Migrations and performance tuning',
+    longDesc: 'Give your team a website they can manage with confidence. Cubixsol’s wordpress development services help businesses launch, update, and grow websites with clear navigation, flexible content tools, and dependable functionality. From company websites to online stores, we build CMS solutions around your customers, publishing needs, and business goals.',
+    ctaPrimaryText: 'Start a Project',
+    ctaSecondaryText: 'Get a Free Estimate',
+    subServicesTitle: 'Our CMS Development Services',
+    subServicesIntro: 'Choose a CMS solution that supports how your business publishes content, serves customers, and manages products. We shape each project around your workflows, design requirements, integrations, and plans for growth.',
+    subServicesItems: [
+      {
+        title: 'WordPress Development',
+        desc: 'We build responsive WordPress websites with reusable page layouts, organised navigation, and straightforward editing tools, giving your team control over routine content updates. Our work covers theme setup, plugin configuration, contact forms, and the page structures your business needs to present its services clearly.',
+      },
+      {
+        title: 'Custom WordPress Development Services',
+        desc: 'Our custom WordPress development services cover customised themes, plugins, content types, and integrations for requirements that standard configurations cannot fully address. We translate your publishing workflows and business rules into practical features, while keeping the administration experience understandable for the people managing the website.',
+      },
+      {
+        title: 'Shopify Development Services',
+        desc: 'Our Shopify development services help you launch or improve an online store with branded themes, clear product pages, and intuitive navigation. We configure collections, connect suitable apps, and refine the shopping journey so customers can explore products and move toward checkout with fewer obstacles.',
+      },
+      {
+        title: 'Magento Web Development Services',
+        desc: 'Our Magento web development services support stores with detailed catalogues, custom functionality, and connected business systems. We develop storefront features, configure product structures, and integrate inventory or order tools according to your operational requirements and the capabilities of your chosen setup.',
+      },
+      {
+        title: 'Drupal Web Development Services',
+        desc: 'Our Drupal web development services support websites that need structured content, defined user permissions, and coordinated publishing workflows. We organise content types, configure editorial roles, and develop custom features to help multiple contributors manage information consistently across larger or more complex websites.',
+      },
+      {
+        title: 'Headless CMS Development',
+        desc: 'We connect a CMS to a separate website frontend through APIs, giving you more control over how content appears across digital experiences. Your editors manage structured content centrally, while we build the presentation layer around your design and functionality requirements.',
+      },
     ],
-    tech: ['WordPress', 'Shopify', 'Magento', 'WooCommerce', 'PHP', 'Liquid'],
-    outcomes: [
-      'Easier content and catalog updates',
-      'Faster storefront performance',
-      'Cleaner admin workflows',
+    techTitle: 'Technologies We Use',
+    techDesc: 'We work with WordPress, Shopify, Magento, and Drupal, using PHP where the platform or custom backend requires it. For headless projects, we can build the frontend with Next.js and connect it to your CMS through APIs. We select the stack around your content model, integrations, hosting requirements, and maintenance capacity, so the technology fits your team’s practical needs.',
+    tech: ['WordPress', 'Shopify', 'Magento', 'Drupal', 'PHP', 'Next.js'],
+    serviceProcessTitle: 'Our CMS Development Process',
+    serviceProcessIntro: 'Our five-step process keeps requirements, review points, and launch responsibilities clear from the beginning.',
+    serviceProcessSteps: [
+      {
+        stepNumber: '01',
+        title: 'Discover',
+        desc: 'We review your goals, audience, existing website, content, and technical constraints to define the project scope.',
+      },
+      {
+        stepNumber: '02',
+        title: 'Plan',
+        desc: 'We map the site structure, choose the platform, and agree on features, milestones, and responsibilities.',
+      },
+      {
+        stepNumber: '03',
+        title: 'Build',
+        desc: 'We develop layouts, configure editing tools, and connect the integrations included in your scope.',
+      },
+      {
+        stepNumber: '04',
+        title: 'Test',
+        desc: 'We check responsive layouts, content workflows, forms, integrations, and key user journeys before approval.',
+      },
+      {
+        stepNumber: '05',
+        title: 'Launch & Support',
+        desc: 'We coordinate deployment, walk your team through content updates, and arrange the agreed support activities.',
+      },
+    ],
+    whyChooseTitle: 'Why Choose Cubixsol',
+    whyChooseIntro: 'We focus on the details that make a CMS project easier to review, launch, and manage.',
+    whyChooseItems: [
+      {
+        title: 'Quality you can review',
+        desc: 'We use agreed requirements and testing checkpoints to assess functionality, usability, and content management before launch.',
+      },
+      {
+        title: 'A plan that supports on-time delivery',
+        desc: 'We define milestones, track dependencies, and raise blockers early so you can make timely decisions.',
+      },
+      {
+        title: 'Transparent communication',
+        desc: 'We explain scope, progress, and proposed changes, including their likely effect on cost and scheduling.',
+      },
+      {
+        title: 'Ongoing support',
+        desc: 'We agree on maintenance responsibilities and support coverage, helping your team plan for updates, fixes, and future improvements.',
+      },
+    ],
+    ctaBannerTitle: 'Ready to Start Your Project?',
+    ctaBannerDesc: 'Make your website easier to manage and ready for your next stage of growth. Talk to Cubixsol about WordPress development services that fit your content, customers, and business priorities. Share your requirements to get a clear starting point.',
+    ctaBannerButtonText: 'Start a Project',
+    ctaBannerButtonLink: '/contact',
+    faqs: [
+      {
+        q: 'How much does CMS development cost?',
+        a: 'CMS development costs depend on the platform, design complexity, content volume, integrations, and custom features. We review your requirements before preparing an estimate that outlines the scope, deliverables, and any ongoing services.',
+      },
+      {
+        q: 'How long does a CMS development project take?',
+        a: 'The timeline depends on project scope, content readiness, integrations, and approval cycles. A straightforward website generally requires less work than a custom store or migration. We agree on milestones after reviewing your requirements.',
+      },
+      {
+        q: 'Should I choose standard WordPress or custom WordPress development?',
+        a: 'A standard theme and suitable plugins can cover common website requirements. Custom development makes sense when you need distinctive layouts, specialised workflows, or integrations that existing tools cannot adequately support. Both approaches use WordPress.',
+      },
+      {
+        q: 'Do you provide CMS maintenance after launch?',
+        a: 'We can arrange maintenance for updates, backups, compatibility checks, and issue resolution within an agreed support scope. Coverage depends on your platform and hosting setup, and we clarify responsibilities and response expectations before work begins.',
+      },
+      {
+        q: 'Can you migrate my existing website to a new CMS?',
+        a: 'Yes. We assess your content, media, URLs, and integrations before planning the migration. The scope can include content mapping, redirects, and post-launch checks to reduce disruption and help preserve access to existing pages.',
+      },
     ],
   },
   {
@@ -742,7 +834,7 @@ export const products = [
 
 
 export const industries = [
-    {
+  {
     slug: 'education',
     title: 'Education',
     icon: 'GraduationCap',
@@ -801,6 +893,57 @@ export const industries = [
         tags: ['SaaS', 'Reporting', 'Roles'],
       },
     ],
+    stats: [
+      { value: '19+', label: 'years of proven market experience' },
+      { value: '750+', label: 'experts in Engineering, Data, AI, Design & QA' },
+      { value: '550+', label: 'partnerships spanning across six verticals' },
+      { value: '80%', label: 'clients rate us better than others' },
+    ],
+    approachTitle: 'The Cubixsol Approach',
+    approachItems: [
+      {
+        title: 'We Lead with Design',
+        subtitle: 'Our team of designers, skilled in product design, UI/UX, and accessibility, create experiences that are:',
+        points: [
+          { heading: 'Timely', text: 'We design at the pace users need, with rapid learning and iteration built in.' },
+          { heading: 'Useful', text: 'Success is measured by how easily users achieve their goals.' },
+          { heading: 'Delightful', text: 'We create thoughtful experiences that feel worthwhile.' },
+        ],
+      },
+      {
+        title: 'We Leverage Open Source',
+        subtitle: 'With thousands of contributions to dozens of open-source projects, we have deep expertise that translates into:',
+        points: [
+          { heading: 'Sovereignty', text: 'Avoid vendor lock-in and securely deploy on-premises or in private clouds.' },
+          { heading: 'Flexibility', text: 'Customize source code and choose licensing that fits your requirements.' },
+          { heading: 'Economy', text: 'Reduce hosting, maintenance, and development costs through free, adaptable, AI-ready open-source technologies at greater scale.' },
+        ],
+      },
+      {
+        title: 'We Accelerate with AI',
+        subtitle: 'We have been working with generative AI for over a decade, applying it to:',
+        points: [
+          { heading: 'Build Smarter Software', text: 'We integrate agentic workflows using LangGraph, open-weight, and frontier models tailored to user needs, prioritizing sovereignty and adaptability.' },
+          { heading: 'Build It Faster Than Ever', text: 'Our teams use Codex, Claude, and multi-agent workflows while managing security, performance, cost, and governance without compromising speed or quality.' },
+        ],
+      },
+    ],
+    solutionsTitle: 'Our EdTech Solutions',
+    solutionsSubtitle: 'Purpose-built solutions for education organizations, backed by the cross-industry capabilities every technology team needs.',
+    solutionsItems: [
+      {
+        title: 'Modern LMS Systems for Desktop and Mobile',
+        body: 'We have deep expertise in best-in-class open-source learning management systems, including Open edX, Moodle, and Edly — our own Open edX fork designed for the enterprise. Every solution comes with self-hosting or managed hosting on AWS, GCP, Oracle, and Azure.',
+      },
+      {
+        title: 'Accelerated Content Production',
+        body: "We have world-class capability to produce learning content of every kind: videos, interactive activities, assessments, and AI-based evaluations. Our Edly division's Compose product delivers the fastest possible course authoring experience, driven by AI and letting creators author directly in all major LMSes, including Canvas and Blackboard.",
+      },
+      {
+        title: 'Data Management, Analytics and ML',
+        body: "Our data engineering team has deep expertise in edTech data standards like Caliper and xAPI. Understanding, warehousing, and analyzing this data, and building ML-based prediction and forecasting pipelines on top of it, is Cubixsol's forte.",
+      },
+    ],
     servicesWeOffer: [
       'Custom LMS and learning portals',
       'Mobile apps for students and parents',
@@ -817,102 +960,541 @@ export const industries = [
     icon: 'HeartPulse',
     short: 'Secure patient experiences and clinical operations software.',
     desc: 'We design and engineer healthcare software with privacy and reliability in mind — patient portals, scheduling, telehealth flows, and internal clinical tools that reduce friction for staff and patients.',
-    points: ['Patient portals', 'Appointment & care workflows', 'HIPAA-minded practices', 'Integrations with existing systems'],
+    points: [
+      'HIPAA-compliant patient portals & apps',
+      'WebRTC encrypted telehealth & video consults',
+      'EHR/EMR integration via HL7 FHIR APIs',
+      'E-prescriptions & digital pharmacy routing',
+      'Clinical intake & automated triage workflows',
+      'Role-based access & strict audit trails',
+    ],
     testimonial: {
       quote: 'They balanced usability for clinicians with the compliance constraints we cannot ignore.',
       name: 'Operations Manager',
       role: 'Health services provider',
     },
+    workAreas: [
+      {
+        title: 'Patient Engagement & Portals',
+        body: 'Frictionless patient self-scheduling, pre-visit intake questionnaires, lab result viewing, and secure clinician messaging.',
+      },
+      {
+        title: 'Telehealth & Virtual Care',
+        body: 'Browser-based HD video consultation rooms with zero downloads, screen sharing, digital whiteboard, and live vitals telemetry.',
+      },
+      {
+        title: 'Clinical Operations & Workflow',
+        body: 'EHR-integrated staff dashboards that streamline nurse charting, patient room assignments, and diagnostic handoffs.',
+      },
+      {
+        title: 'Remote Patient Monitoring (RPM)',
+        body: 'IoT health device synchronization (blood pressure, glucose, pulse oximetry) with automated clinical threshold alert triggers.',
+      },
+    ],
+    productsBuilt: [
+      { name: 'MediConnect Telehealth', slug: 'mediconnect', blurb: 'Encrypted virtual clinic suite for outpatient care.' },
+      { name: 'DocuCare Patient Portal', slug: 'docucare', blurb: 'Self-service patient appointment, charts, and billing access.' },
+    ],
+    caseStudies: [
+      {
+        title: 'Multi-Specialty Telehealth Platform',
+        result: 'Built an encrypted WebRTC telehealth system handling 12,000+ monthly clinical consultations with 99.98% video reliability.',
+        tags: ['WebRTC', 'HIPAA', 'Telehealth'],
+      },
+      {
+        title: 'FHIR EHR Integration Pipeline',
+        result: 'Unified legacy Cerner and Epic medical records into a single patient summary dashboard, cutting physician charting time by 32%.',
+        tags: ['HL7 FHIR', 'EHR', 'Security'],
+      },
+      {
+        title: 'Digital Patient Intake & Triage Suite',
+        result: 'Replaced paper intake forms with contactless mobile check-in across 18 regional clinics, eliminating waiting room bottlenecks.',
+        tags: ['Mobile UX', 'Triage', 'Portal'],
+      },
+    ],
+    servicesWeOffer: [
+      'Custom HIPAA-compliant web & mobile apps',
+      'EHR / EMR interoperability (HL7 FHIR, SMART on FHIR)',
+      'Encrypted telehealth & WebRTC video rooms',
+      'Medical billing & insurance eligibility APIs',
+      'Clinical workflow automation dashboards',
+      'Healthcare UI/UX design & accessibility audits',
+    ],
   },
+
   {
     slug: 'fintech',
     title: 'Finance & Fintech',
     icon: 'Landmark',
     short: 'Payments, dashboards, and compliant financial products.',
     desc: 'From customer-facing finance apps to internal risk and reporting tools, we help fintech and finance teams ship secure, auditable software that moves money and data with clarity.',
-    points: ['Payment & wallet flows', 'KYC-friendly onboarding', 'Admin & risk dashboards', 'API-first integrations'],
+    points: [
+      'PCI-DSS compliant payment & checkout flows',
+      'Automated KYC / AML verification pipelines',
+      'High-frequency ledger & reconciliation engines',
+      'Open Banking & ISO 20022 messaging APIs',
+      'Multi-currency digital wallet architectures',
+      'Real-time fraud anomaly scoring & risk dashboards',
+    ],
     testimonial: {
       quote: 'Cubixsol delivered a clean payment experience without cutting corners on controls.',
       name: 'CTO',
       role: 'Fintech startup',
     },
+    workAreas: [
+      {
+        title: 'Payment Gateways & Checkout Orchestration',
+        body: 'Smart routing across multiple payment processors (Stripe, Adyen, Braintree) with automatic fallbacks and 3D-Secure 2.2 support.',
+      },
+      {
+        title: 'Neo-Banking & Digital Wallets',
+        body: 'Virtual/physical debit card issuance (Marqeta/Lithic), account balances, P2P money transfers, and transaction categorization.',
+      },
+      {
+        title: 'KYC, Identity & Compliance Workflows',
+        body: 'Automated biometric liveness checks, document verification, AML sanctions screening, and audit trail record keeping.',
+      },
+      {
+        title: 'Risk & Fraud Intelligence Dashboards',
+        body: 'Machine learning velocity models, suspicious activity report (SAR) generation, and real-time transaction limits.',
+      },
+    ],
+    productsBuilt: [
+      { name: 'PayFlow Gateway', slug: 'payflow', blurb: 'Unified multi-currency payment checkout & tokenization engine.' },
+      { name: 'LedgerPro', slug: 'ledgerpro', blurb: 'Double-entry accounting and automated transaction reconciliation.' },
+    ],
+    caseStudies: [
+      {
+        title: 'High-Volume Micro-Lending Engine',
+        result: 'Engineered an automated credit underwriting API processing $45M+ in loan disbursements with sub-2-second decision latency.',
+        tags: ['Credit Scoring', 'Microservices', 'Fintech'],
+      },
+      {
+        title: 'Cross-Border B2B Payment Hub',
+        result: 'Delivered an FX settlement platform supporting 28 currencies with automated SWIFT / SEPA routing and real-time reconciliation.',
+        tags: ['FX Payments', 'ISO 20022', 'Multi-currency'],
+      },
+      {
+        title: 'Embedded Neo-Bank Mobile Experience',
+        result: 'Shipped a full-featured digital banking app with virtual cards and instant Apple Wallet / Google Pay provisioning in 4 months.',
+        tags: ['Mobile Banking', 'Card Issuance', 'Security'],
+      },
+    ],
+    servicesWeOffer: [
+      'PCI-DSS compliant architecture design',
+      'Payment processor integrations (Stripe, Adyen, Plaid)',
+      'Digital wallet & ledger engineering',
+      'KYC/AML identity verification flows',
+      'Risk modeling & fraud detection portals',
+      'Financial data visualization & analytics',
+    ],
   },
+
   {
     slug: 'ecommerce',
     title: 'E-Commerce',
     icon: 'ShoppingCart',
     short: 'Stores, marketplaces, and conversion-focused commerce.',
     desc: 'We build high-converting storefronts, custom checkout, and commerce backends — with inventory, promotions, and analytics wired for growth.',
-    points: ['Custom storefronts', 'Checkout optimization', 'Marketplace features', 'OMS & inventory sync'],
+    points: [
+      'Sub-second headless storefronts (Next.js, Remix, Hydrogen)',
+      'High-converting 1-click checkout & payment gateways',
+      'AI-driven product recommendations & visual search',
+      'Multi-channel inventory & 3PL order routing sync',
+      'Multi-vendor marketplace portals & vendor payouts',
+      'Real-time customer lifetime value (LTV) & cart analytics',
+    ],
     testimonial: {
       quote: 'Our conversion and ops visibility improved in the same release cycle.',
       name: 'Head of Digital',
       role: 'Retail brand',
     },
+    workAreas: [
+      {
+        title: 'Headless Storefront Engineering',
+        body: 'Custom storefronts built with Shopify Plus, MedusaJS, BigCommerce, or Commerce Layer for blazing speed and zero layout shift.',
+      },
+      {
+        title: 'Checkout & Conversion Optimization',
+        body: 'Custom cart drawers, 1-click Apple Pay/Google Pay checkout, auto-address verification, and personalized dynamic upsell modules.',
+      },
+      {
+        title: 'Multi-Vendor Marketplaces',
+        body: 'Vendor registration, automated commission splitting, individual merchant dashboards, and centralized catalog moderation.',
+      },
+      {
+        title: 'OMS, ERP & 3PL Logistics Sync',
+        body: 'Automated order routing across multiple fulfillment centers, inventory reconciliation with NetSuite/SAP, and automated return flows.',
+      },
+    ],
+    productsBuilt: [
+      { name: 'NovaStorefront', slug: 'novastorefront', blurb: 'Ultra-fast headless commerce framework with sub-0.5s TTFB.' },
+      { name: 'CartBoost AI', slug: 'cartboost', blurb: 'Dynamic personalized checkout upsells and abandonment recovery.' },
+    ],
+    caseStudies: [
+      {
+        title: 'Global Direct-to-Consumer (DTC) Replatform',
+        result: 'Migrated an omnichannel retail brand to headless Shopify Hydrogen, increasing mobile checkout conversions by 42% and boosting page speed to 98/100.',
+        tags: ['Hydrogen', 'Shopify Plus', 'Conversion'],
+      },
+      {
+        title: 'Multi-Vendor Artisan Marketplace',
+        result: 'Built a marketplace connecting 450+ independent sellers with automated Stripe Connect payouts and unified shipping label generation.',
+        tags: ['Marketplace', 'Stripe Connect', 'OMS'],
+      },
+      {
+        title: 'High-Scale Flash Sale Infrastructure',
+        result: 'Engineered auto-scaling backend architecture that handled 85,000 concurrent shoppers during Black Friday with zero checkout downtime.',
+        tags: ['High Concurrency', 'Redis', 'Scale'],
+      },
+    ],
+    servicesWeOffer: [
+      'Headless commerce development (Shopify Plus, Medusa, Magento)',
+      'Custom checkout & payment integrations',
+      'Marketplace platform engineering',
+      'Omnichannel inventory & ERP synchronization',
+      'Conversion Rate Optimization (CRO) audits',
+      'Mobile commerce apps (iOS & Android)',
+    ],
   },
+
   {
     slug: 'real-estate',
     title: 'Real Estate',
     icon: 'Building2',
     short: 'Listings, portals, and property operations platforms.',
     desc: 'Property search, agent tools, and operations software for developers and agencies — fast listing experiences and reliable backend workflows.',
-    points: ['Listing portals', 'Agent CRM light flows', 'PMS integrations', 'Lead routing'],
+    points: [
+      'Sub-minute MLS / IDX & RESO Web API synchronization',
+      'Interactive spatial map search with Mapbox polygon filters',
+      'Integrated 3D Matterport virtual tour & floor plan viewers',
+      'Intelligent agent CRM & round-robin lead routing',
+      'Digital offer management & e-signature closing vaults',
+      'PMS integrations (Yardi, RealPage, AppFolio)',
+    ],
     testimonial: {
       quote: 'Listings and leads finally lived in one system our agents actually use.',
       name: 'Sales Director',
       role: 'Property group',
     },
+    workAreas: [
+      {
+        title: 'MLS/IDX Listing Portals',
+        body: 'High-speed property search portals with neighborhood school ratings, transit scores, tax history, and automated price alert notifications.',
+      },
+      {
+        title: 'Interactive Spatial & Map Exploration',
+        body: 'Custom polygon drawing search, commute time radius filters, and interactive 3D site plan maps for master-planned communities.',
+      },
+      {
+        title: 'Agent CRM & Lead Automation',
+        body: 'Automated lead scoring, instant SMS notifications to on-duty agents, showing calendar scheduling, and commission pipeline tracking.',
+      },
+      {
+        title: 'Property Management & Tenant Portals',
+        body: 'Online rent collection, digital lease signing, maintenance ticketing with photo uploads, and owner payout reporting.',
+      },
+    ],
+    productsBuilt: [
+      { name: 'PropView IDX', slug: 'propview', blurb: 'Blazing-fast MLS search engine with interactive map filtering.' },
+      { name: 'LeasePilot', slug: 'leasepilot', blurb: 'Digital tenant onboarding, screening, and automated lease signing.' },
+    ],
+    caseStudies: [
+      {
+        title: 'Luxury Brokerage Web & Map Portal',
+        result: 'Designed and built a custom RESO-compliant listing platform that drove a 65% increase in online tour bookings across 8 metropolitan markets.',
+        tags: ['RESO API', 'Mapbox', 'PropTech'],
+      },
+      {
+        title: 'Commercial Property Management Suite',
+        result: 'Delivered an integrated tenant portal for 1.2M sq. ft. of commercial office space, automating lease renewals and maintenance tracking.',
+        tags: ['PMS', 'Tenant Portal', 'SaaS'],
+      },
+      {
+        title: 'Automated Real Estate Lead Router',
+        result: 'Engineered an AI-assisted lead qualification and SMS dispatch engine that reduced agent response times from 3 hours to 45 seconds.',
+        tags: ['CRM', 'Automation', 'SMS'],
+      },
+    ],
+    servicesWeOffer: [
+      'Custom MLS / IDX listing portal development',
+      'Interactive Mapbox & GIS spatial search tools',
+      'Virtual tour & 3D walkthrough integrations',
+      'Real estate CRM & agent automation tools',
+      'Property management software (PMS) sync',
+      'Digital contract & escrow workflow systems',
+    ],
   },
+
   {
     slug: 'saas',
     title: 'SaaS',
     icon: 'Cloud',
     short: 'Multi-tenant products built to onboard, retain, and scale.',
     desc: 'We partner with SaaS teams on product engineering — from MVP to scale — with solid tenancy, billing hooks, admin, and customer-facing UX.',
-    points: ['Multi-tenant architecture', 'Onboarding & activation', 'Billing integrations', 'Admin & analytics'],
+    points: [
+      'Multi-tenant architecture with PostgreSQL Row-Level Security',
+      'Metered, tiered & seat-based Stripe billing engines',
+      'Enterprise SSO (SAML 2.0 / Okta / Azure AD) & SCIM sync',
+      'Granular Role-Based Access Control (RBAC) matrices',
+      'Feature flags, canary deployments & A/B test pipelines',
+      'Full-stack telemetry & product adoption analytics',
+    ],
     testimonial: {
       quote: 'They thought in product metrics, not just tickets closed.',
       name: 'Founder',
       role: 'B2B SaaS',
     },
+    workAreas: [
+      {
+        title: 'Multi-Tenant Backend Architecture',
+        body: 'Scalable cloud infrastructure supporting isolated tenant data, custom subdomains, and automated tenant provisioning.',
+      },
+      {
+        title: 'Billing, Subscriptions & Monetization',
+        body: 'Complex pricing tier implementation, usage meters, self-serve upgrade flows, proration calculations, and automated dunning.',
+      },
+      {
+        title: 'Enterprise Readiness & Security',
+        body: 'SAML 2.0 SSO, audit logs, automated SCIM provisioning, IP allowlisting, and compliance export tooling for enterprise buyers.',
+      },
+      {
+        title: 'Onboarding & Activation Loops',
+        body: 'Frictionless self-serve onboarding wizards, interactive product tours, empty states, and behavioral trigger emails that lift Day-1 retention.',
+      },
+    ],
+    productsBuilt: [
+      { name: 'SaaSKit Pro', slug: 'saaskit', blurb: 'Production-ready multi-tenant SaaS starter with billing & auth.' },
+      { name: 'TenantPulse', slug: 'tenantpulse', blurb: 'Product health scoring and churn prediction dashboard.' },
+    ],
+    caseStudies: [
+      {
+        title: 'B2B Workflow Automation SaaS',
+        result: 'Architected and shipped a multi-tenant workflow SaaS from scratch to $1.2M ARR in 10 months with 99.99% system availability.',
+        tags: ['Multi-Tenant', 'Stripe Billing', 'Node.js'],
+      },
+      {
+        title: 'Enterprise SSO & Compliance Upgrade',
+        result: 'Added Okta/Azure SAML SSO and SOC 2 audit logging to an existing SaaS platform, unblocking $800k in enterprise pipeline deals.',
+        tags: ['SAML', 'Enterprise', 'Security'],
+      },
+      {
+        title: 'Product-Led Growth (PLG) Onboarding Flow',
+        result: 'Redesigned the self-serve signup and activation funnel, increasing free-to-paid conversion rate by 3.2x in 60 days.',
+        tags: ['PLG', 'Onboarding', 'UX'],
+      },
+    ],
+    servicesWeOffer: [
+      'MVP architecture & rapid full-stack delivery',
+      'Multi-tenant database design & security isolation',
+      'Subscription billing & usage metering (Stripe/Paddle)',
+      'Enterprise SSO & SCIM directory integration',
+      'Feature flag & CI/CD pipeline setup',
+      'Product UI/UX design & design systems',
+    ],
   },
+
   {
     slug: 'logistics',
     title: 'Logistics',
     icon: 'Truck',
     short: 'Tracking, dispatch, and operations visibility on the move.',
     desc: 'Logistics software for dispatch, tracking, and partner coordination — mobile-friendly field tools and control-tower dashboards.',
-    points: ['Dispatch & routing support', 'Shipment tracking UX', 'Partner portals', 'Ops dashboards'],
+    points: [
+      'Real-time GPS telematics & fleet map tracking',
+      'Dynamic multi-stop route optimization algorithms',
+      'Mobile Electronic Proof of Delivery (ePOD) & scanning',
+      'Geo-fencing alerts & automated micro-milestone updates',
+      'TMS & WMS integrations (SAP, Oracle TM, Blue Yonder)',
+      'Cold-chain IoT sensor telemetry & exception alerts',
+    ],
     testimonial: {
       quote: 'Field and office teams finally saw the same status in real time.',
       name: 'Fleet Manager',
       role: 'Regional logistics',
     },
+    workAreas: [
+      {
+        title: 'Dispatch & Fleet Management',
+        body: 'Live fleet dispatch control towers, automated load assignment, driver shift scheduling, and hours-of-service compliance tracking.',
+      },
+      {
+        title: 'Last-Mile Route Optimization',
+        body: 'AI-driven routing that calculates optimal delivery sequences factoring in traffic, time windows, vehicle weight, and toll costs.',
+      },
+      {
+        title: 'Driver Companion Mobile Apps',
+        body: 'Turn-by-turn navigation, barcode scanning, digital signature capture, photo damage documentation, and instant offline sync.',
+      },
+      {
+        title: 'Supply Chain Visibility & Customer Tracking',
+        body: 'Branded live tracking pages for end recipients with live map pins, accurate ETAs, and automated SMS milestone updates.',
+      },
+    ],
+    productsBuilt: [
+      { name: 'FleetTower', slug: 'fleettower', blurb: 'Real-time fleet telematics, dispatch, and geo-fence tracking.' },
+      { name: 'DeliverPass', slug: 'deliverpass', blurb: 'Contactless electronic proof of delivery (ePOD) mobile app.' },
+    ],
+    caseStudies: [
+      {
+        title: 'Regional Freight Dispatch & Telematics Hub',
+        result: 'Deployed a real-time dispatch dashboard for 220+ commercial trucks, reducing deadhead miles by 19% and fuel costs by $140,000/yr.',
+        tags: ['Telematics', 'GPS', 'Routing'],
+      },
+      {
+        title: 'Last-Mile Delivery Driver Mobile App',
+        result: 'Built an offline-first iOS/Android driver app with high-speed barcode scanning, cutting average stop time by 45 seconds per delivery.',
+        tags: ['Mobile ePOD', 'Offline-First', 'Scanning'],
+      },
+      {
+        title: 'End-to-End Customer Tracking Portal',
+        result: 'Shipped a live customer delivery tracker handling 40,000+ daily package updates, reducing "Where Is My Order" support calls by 58%.',
+        tags: ['Customer UX', 'Live Map', 'WebSockets'],
+      },
+    ],
+    servicesWeOffer: [
+      'Fleet tracking & dispatch portal development',
+      'Route optimization & heuristic algorithms',
+      'Driver mobile apps (ePOD, barcode scanning)',
+      'TMS / WMS integration (SAP, Oracle, Blue Yonder)',
+      'IoT sensor telematics & temperature monitoring',
+      'Customer-facing real-time tracking experiences',
+    ],
   },
+
   {
     slug: 'travel',
     title: 'Travel & Hospitality',
     icon: 'Plane',
     short: 'Booking journeys and guest experiences that convert.',
     desc: 'Booking flows, supplier integrations, and guest apps for travel and hospitality brands that need reliability at peak demand.',
-    points: ['Booking & availability', 'Supplier APIs', 'Guest mobile experiences', 'Loyalty hooks'],
+    points: [
+      'Multi-GDS & airline NDC aggregator APIs (Amadeus, Sabre)',
+      'Dynamic packaging engines (Flights + Hotels + Activities)',
+      'High-concurrency stress-tested booking infrastructure',
+      'Mobile guest apps with BLE contactless room key access',
+      'PMS & Channel Manager sync (Opera, Cloudbeds, Mews)',
+      'Multi-currency pricing & automated loyalty rewards',
+    ],
     testimonial: {
       quote: 'Peak season held up — and the booking UX stayed simple.',
       name: 'Digital Manager',
       role: 'Hospitality group',
     },
+    workAreas: [
+      {
+        title: 'Flight & Hotel Booking Engines',
+        body: 'High-speed flight search, fare matrix comparison, seat map selection, hotel room filtering, and instant PNR generation.',
+      },
+      {
+        title: 'Dynamic Packaging & Yield Management',
+        body: 'Automated bundle pricing algorithms combining flights, hotels, and excursions with customizable supplier commission markups.',
+      },
+      {
+        title: 'Guest Experience & Mobile Room Keys',
+        body: 'Native mobile guest apps supporting online check-in, Bluetooth digital door locks, in-app room service, and concierge chat.',
+      },
+      {
+        title: 'Hospitality PMS & Channel Management',
+        body: 'Real-time two-way synchronization of rates, availability, and guest profiles across Booking.com, Expedia, Airbnb, and direct booking channels.',
+      },
+    ],
+    productsBuilt: [
+      { name: 'VoyageEngine', slug: 'voyageengine', blurb: 'Sub-second multi-GDS flight and hotel aggregator engine.' },
+      { name: 'StayKey Mobile', slug: 'staykey', blurb: 'Contactless guest check-in and BLE digital room key app.' },
+    ],
+    caseStudies: [
+      {
+        title: 'Global Tour Operator Booking Platform',
+        result: 'Unified 14 supplier API feeds into a single dynamic package booking engine, increasing average booking value by 28%.',
+        tags: ['GDS APIs', 'Dynamic Packaging', 'Scale'],
+      },
+      {
+        title: 'Boutique Hotel Mobile Guest App',
+        result: 'Shipped a contactless guest app with digital key access across 6 luxury properties, resulting in a 4.9/5 guest satisfaction score.',
+        tags: ['BLE Key', 'Mobile App', 'Hospitality'],
+      },
+      {
+        title: 'High-Traffic Flash Sale Travel Engine',
+        result: 'Engineered auto-scaling booking infrastructure that processed 15,000 simultaneous booking checkouts during peak holiday season with 0 errors.',
+        tags: ['High Concurrency', 'Redis Lock', 'Cloud'],
+      },
+    ],
+    servicesWeOffer: [
+      'Custom travel booking engine development',
+      'GDS / NDC integrations (Amadeus, Sabre, Travelport)',
+      'Dynamic packaging & revenue management software',
+      'Hotel PMS & channel manager sync',
+      'Mobile guest apps & digital key integration',
+      'Travel loyalty program & points redemption engines',
+    ],
   },
+
   {
     slug: 'technology',
     title: 'Technology',
     icon: 'Cpu',
     short: 'Platforms, developer tools, and internal tech products.',
     desc: 'For technology companies building platforms or internal tools, we embed as an engineering partner — architecture, delivery, and UI that matches product standards.',
-    points: ['Platform features', 'Internal tools', 'API products', 'Design systems'],
+    points: [
+      'Internal Developer Platforms (IDP) on Kubernetes & Terraform',
+      'High-throughput microservice & Kafka event bus backbones',
+      'Distributed tracing & OpenTelemetry observability stacks',
+      'Enterprise React & TypeScript design systems / component SDKs',
+      'Zero-downtime CI/CD GitOps pipelines',
+      'API gateway orchestration with gRPC & GraphQL',
+    ],
     testimonial: {
       quote: 'They matched our engineering bar and moved at product speed.',
       name: 'VP Engineering',
       role: 'Tech company',
     },
+    workAreas: [
+      {
+        title: 'Internal Developer Platforms & Tooling',
+        body: 'Self-serve developer portals (Backstage), ephemeral preview environment spin-up, and standardized service scaffolding templates.',
+      },
+      {
+        title: 'Event-Driven Microservice Architecture',
+        body: 'Decoupled asynchronous event pipelines using Apache Kafka, RabbitMQ, and AWS SQS for resilient, high-volume data streams.',
+      },
+      {
+        title: 'Design Systems & Component Libraries',
+        body: 'Accessible, tokenized UI component libraries with automated Storybook testing, zero-runtime styling, and npm package publishing.',
+      },
+      {
+        title: 'Observability, SRE & Cloud Infrastructure',
+        body: 'Full-stack instrumentation with Prometheus, Grafana, OpenTelemetry, and Datadog to ensure 99.999% system availability.',
+      },
+    ],
+    productsBuilt: [
+      { name: 'DevScaffold CLI', slug: 'devscaffold', blurb: 'Internal CLI tool for spinning up microservices and preview environments in seconds.' },
+      { name: 'CoreUI Design System', slug: 'coreui', blurb: 'Enterprise-grade React component library with WCAG 2.1 AA compliance.' },
+    ],
+    caseStudies: [
+      {
+        title: 'Internal Developer Platform Modernization',
+        result: 'Architected a Kubernetes-based IDP that cut developer environment provisioning times from 2 days to 45 seconds for 180+ engineers.',
+        tags: ['Kubernetes', 'IDP', 'DevOps'],
+      },
+      {
+        title: 'High-Throughput Event Streaming Backbone',
+        result: 'Designed a Kafka microservices pipeline processing 500,000+ events per second with sub-15ms message delivery latency.',
+        tags: ['Kafka', 'gRPC', 'Distributed Systems'],
+      },
+      {
+        title: 'Multi-Brand Enterprise Design System',
+        result: 'Created a unified React/TypeScript design system deployed across 4 distinct SaaS products, reducing UI development cycles by 50%.',
+        tags: ['Design System', 'React', 'Storybook'],
+      },
+    ],
+    servicesWeOffer: [
+      'Internal developer platform (IDP) engineering',
+      'Event-driven architecture & microservices delivery',
+      'Enterprise design systems & React component SDKs',
+      'Cloud infrastructure as code (Terraform, AWS, GCP)',
+      'API gateway & gRPC/GraphQL development',
+      'Site Reliability Engineering (SRE) & observability setup',
+    ],
   },
 ];

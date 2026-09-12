@@ -289,12 +289,54 @@ const SECTION_CONFIGS = {
     ],
     fields: [
       { name: 'title', label: 'Industry Name', required: true },
-      { name: 'slug', label: 'Slug (e.g. healthcare)', required: true },
+      { name: 'slug', label: 'Slug (e.g. education, healthcare, fintech)', required: true },
       { name: 'icon', label: 'Industry Icon (Image/SVG or Lucide Icon Name)', type: 'image', fullWidth: true, hint: 'Select an SVG/Image from Media Library or enter a Lucide icon name' },
       { name: 'short', label: 'Short Description', type: 'textarea', fullWidth: true, rows: 2 },
-      { name: 'desc', label: 'Full Description', type: 'textarea', fullWidth: true, rows: 5 },
-      { name: 'points', label: 'Key Points (one per line)', type: 'textarea', fullWidth: true, rows: 4, isArray: true },
+      { name: 'desc', label: 'Full Hero Description', type: 'textarea', fullWidth: true, rows: 4 },
+      { name: 'points', label: 'Key Highlights & Points (one per line)', type: 'textarea', fullWidth: true, rows: 4, isArray: true },
       { name: 'servicesWeOffer', label: 'Services We Offer (one per line)', type: 'textarea', fullWidth: true, rows: 3, isArray: true },
+      
+      // Stats Strip
+      {
+        name: 'statsText',
+        label: 'Hero Stats Strip (Format: Value | Label, one per line)',
+        type: 'textarea',
+        fullWidth: true,
+        rows: 4,
+        isCustomArray: 'industryStats',
+        hint: 'Example:\n19+ | years of proven market experience\n750+ | experts in Engineering, Data, AI, Design & QA\n550+ | partnerships spanning across six verticals\n80% | clients rate us better than others',
+      },
+
+      // Approach Section
+      { name: 'approachTitle', label: 'Approach Section Title (e.g. The Cubixsol Approach)', fullWidth: true },
+      {
+        name: 'approachItemsText',
+        label: 'Approach Cards (Format: Title | Subtitle | Heading1: Text1; Heading2: Text2)',
+        type: 'textarea',
+        fullWidth: true,
+        rows: 6,
+        isCustomArray: 'industryApproach',
+        hint: 'Example:\nWe Lead with Design | Our team of designers create experiences that are: | Timely: We design at the pace users need; Useful: Success is measured by goals; Delightful: We create thoughtful experiences\n\nWe Leverage Open Source | With thousands of contributions, we deliver: | Sovereignty: Avoid vendor lock-in; Flexibility: Customize source code; Economy: Reduce hosting and maintenance costs\n\nWe Accelerate with AI | We apply generative AI to: | Build Smarter Software: We integrate agentic workflows; Build It Faster Than Ever: Our teams use Claude and Codex',
+      },
+
+      // Solutions Section
+      { name: 'solutionsTitle', label: 'Domain Solutions Title (e.g. Our EdTech Solutions)', fullWidth: true },
+      { name: 'solutionsSubtitle', label: 'Domain Solutions Subtitle', type: 'textarea', fullWidth: true, rows: 2 },
+      {
+        name: 'solutionsItemsText',
+        label: 'Domain Solutions Items (Format: Title | Description, one item per block/line)',
+        type: 'textarea',
+        fullWidth: true,
+        rows: 6,
+        isCustomArray: 'industrySolutions',
+        hint: 'Example:\nModern LMS Systems for Desktop and Mobile | We have deep expertise in best-in-class open-source LMS systems including Open edX, Moodle, and Edly.\nAccelerated Content Production | We have world-class capability to produce learning content of every kind.\nData Management, Analytics and ML | Our data engineering team has deep expertise in edTech data standards like Caliper and xAPI.',
+      },
+
+      // Testimonial
+      { name: 'testimonialQuote', label: 'Client Testimonial Quote', type: 'textarea', fullWidth: true, rows: 2 },
+      { name: 'testimonialName', label: 'Testimonial Author Name' },
+      { name: 'testimonialRole', label: 'Testimonial Author Role / Company' },
+
       ...commonSeoFields,
     ],
   },
@@ -648,7 +690,34 @@ function DbSection({ sectionKey, showToast }) {
           parsed.impact.rows = parseCustomListItems(parsed[f.name]).map((i) => ({
             area: i.title,
             impact: i.desc,
+          }));        } else if (f.isCustomArray === 'industryStats') {
+          parsed.stats = parseCustomListItems(parsed[f.name]).map((i) => ({
+            value: i.title,
+            label: i.desc,
           }));
+        } else if (f.isCustomArray === 'industrySolutions') {
+          parsed.solutionsItems = parseCustomListItems(parsed[f.name]).map((i) => ({
+            title: i.title,
+            body: i.desc,
+          }));
+        } else if (f.isCustomArray === 'industryApproach') {
+          parsed.approachItems = (parsed[f.name] || '')
+            .split('\n\n')
+            .map((block) => {
+              const parts = block.split('|').map((s) => s.trim());
+              const title = parts[0] || '';
+              const subtitle = parts[1] || '';
+              const ptsRaw = parts[2] || '';
+              const points = ptsRaw
+                .split(';')
+                .map((p) => {
+                  const [h, ...t] = p.split(':');
+                  return { heading: (h || '').trim(), text: (t.join(':') || '').trim() };
+                })
+                .filter((p) => p.heading);
+              return { title, subtitle, points };
+            })
+            .filter((i) => i.title);
         } else if (f.isCustomArray === 'faqs') {
           parsed.faqs = parseCustomListItems(parsed[f.name]).map((i) => ({
             q: i.title,
@@ -675,6 +744,15 @@ function DbSection({ sectionKey, showToast }) {
       parsed.process = parsed.process || {};
       if (parsed.processTitle !== undefined) parsed.process.title = parsed.processTitle;
       if (parsed.processSubtitle !== undefined) parsed.process.subtitle = parsed.processSubtitle;
+    }
+
+    // Handle nested testimonial for Industries
+    if (parsed.testimonialQuote !== undefined || parsed.testimonialName !== undefined || parsed.testimonialRole !== undefined) {
+      parsed.testimonial = {
+        quote: parsed.testimonialQuote || '',
+        name: parsed.testimonialName || '',
+        role: parsed.testimonialRole || '',
+      };
     }
 
     return parsed;
@@ -723,6 +801,27 @@ function DbSection({ sectionKey, showToast }) {
     }
     if (Array.isArray(stringified.faqs) && stringified.faqs.length > 0) {
       stringified.faqsText = stringified.faqs.map((i) => `${i.q} | ${i.a}`).join('\n\n');
+    }
+
+    // Unpack Industry custom arrays
+    if (Array.isArray(stringified.stats) && stringified.stats.length > 0) {
+      stringified.statsText = stringified.stats.map((s) => `${s.value} | ${s.label}`).join('\n');
+    }
+    if (Array.isArray(stringified.solutionsItems) && stringified.solutionsItems.length > 0) {
+      stringified.solutionsItemsText = stringified.solutionsItems.map((s) => `${s.title} | ${s.body}`).join('\n\n');
+    }
+    if (Array.isArray(stringified.approachItems) && stringified.approachItems.length > 0) {
+      stringified.approachItemsText = stringified.approachItems
+        .map((a) => {
+          const pts = (a.points || []).map((p) => `${p.heading}: ${p.text}`).join('; ');
+          return `${a.title} | ${a.subtitle || ''} | ${pts}`;
+        })
+        .join('\n\n');
+    }
+    if (stringified.testimonial) {
+      stringified.testimonialQuote = stringified.testimonial.quote || '';
+      stringified.testimonialName = stringified.testimonial.name || '';
+      stringified.testimonialRole = stringified.testimonial.role || '';
     }
 
     (config.fields || []).forEach((f) => {
