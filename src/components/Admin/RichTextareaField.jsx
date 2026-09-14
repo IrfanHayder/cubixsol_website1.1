@@ -13,8 +13,15 @@ import {
   Tag,
   Eraser,
   Pilcrow,
+  Quote,
+  Minus,
+  Table as TableIcon,
+  Image as ImageIcon,
+  FolderOpen,
+  X,
 } from 'lucide-react';
 import { FormatRichText } from '../../utils/formatText';
+import MediaPickerModal from './MediaPickerModal';
 
 export default function RichTextareaField({
   name,
@@ -30,6 +37,177 @@ export default function RichTextareaField({
   const [isPreview, setIsPreview] = useState(false);
   const [showHelp, setShowHelp] = useState(false);
   const textareaRef = useRef(null);
+
+  // Link Modal state
+  const [linkModalOpen, setLinkModalOpen] = useState(false);
+  const [linkText, setLinkText] = useState('');
+  const [linkUrl, setLinkUrl] = useState('');
+  const [selectionRange, setSelectionRange] = useState({ start: 0, end: 0 });
+
+  // Image Modal state
+  const [imageModalOpen, setImageModalOpen] = useState(false);
+  const [mediaPickerOpen, setMediaPickerOpen] = useState(false);
+  const [imageUrl, setImageUrl] = useState('');
+  const [imageAlt, setImageAlt] = useState('');
+  const [imageCursorPos, setImageCursorPos] = useState(0);
+
+  // Helper to format or toggle heading level (# H1, ## H2, ### H3, #### H4)
+  const applyHeading = (level) => {
+    const textarea = textareaRef.current;
+    if (!textarea) return;
+
+    const start = textarea.selectionStart ?? 0;
+    const end = textarea.selectionEnd ?? 0;
+    const currentVal = value || '';
+    const prefix = '#'.repeat(level) + ' ';
+
+    // Find start of first line and end of last line in selection
+    let lineStart = currentVal.lastIndexOf('\n', start - 1) + 1;
+    let lineEnd = currentVal.indexOf('\n', end);
+    if (lineEnd === -1) lineEnd = currentVal.length;
+
+    const selectedChunk = currentVal.substring(lineStart, lineEnd);
+    const lines = selectedChunk.split('\n');
+
+    const transformed = lines.map((l) => {
+      const headingMatch = l.match(/^(#{1,6})\s+(.*)$/);
+      if (headingMatch) {
+        const existingLevel = headingMatch[1].length;
+        const content = headingMatch[2];
+        if (existingLevel === level) {
+          // Toggle off -> return plain text
+          return content;
+        }
+        // Switch to new heading level
+        return `${prefix}${content}`;
+      }
+      // If not a heading, add heading prefix (strip list bullet if any)
+      const cleanLine = l.replace(/^[-*•\d+.)\s]+/, '').trim();
+      if (!cleanLine) {
+        return `${prefix}Heading ${level}`;
+      }
+      return `${prefix}${cleanLine}`;
+    }).join('\n');
+
+    const updated = currentVal.substring(0, lineStart) + transformed + currentVal.substring(lineEnd);
+    onChange?.(updated);
+
+    setTimeout(() => {
+      if (textareaRef.current) {
+        textareaRef.current.focus();
+        textareaRef.current.setSelectionRange(lineStart, lineStart + transformed.length);
+      }
+    }, 0);
+  };
+
+  // Helper to insert or toggle blockquote '> '
+  const applyBlockquote = () => {
+    const textarea = textareaRef.current;
+    if (!textarea) return;
+
+    const start = textarea.selectionStart ?? 0;
+    const end = textarea.selectionEnd ?? 0;
+    const currentVal = value || '';
+
+    let lineStart = currentVal.lastIndexOf('\n', start - 1) + 1;
+    let lineEnd = currentVal.indexOf('\n', end);
+    if (lineEnd === -1) lineEnd = currentVal.length;
+
+    const selectedChunk = currentVal.substring(lineStart, lineEnd);
+    const lines = selectedChunk.split('\n');
+
+    const transformed = lines.map((l) => {
+      if (l.startsWith('> ')) {
+        return l.substring(2);
+      }
+      return `> ${l || 'Important quote or takeaway'}`;
+    }).join('\n');
+
+    const updated = currentVal.substring(0, lineStart) + transformed + currentVal.substring(lineEnd);
+    onChange?.(updated);
+
+    setTimeout(() => {
+      if (textareaRef.current) {
+        textareaRef.current.focus();
+        textareaRef.current.setSelectionRange(lineStart, lineStart + transformed.length);
+      }
+    }, 0);
+  };
+
+  // Helper to insert a horizontal divider '---'
+  const insertDivider = () => {
+    const textarea = textareaRef.current;
+    if (!textarea) return;
+
+    const start = textarea.selectionStart ?? 0;
+    const end = textarea.selectionEnd ?? 0;
+    const currentVal = value || '';
+    const insertion = (start > 0 && !currentVal.substring(0, start).endsWith('\n') ? '\n\n' : '') + '---\n\n';
+    const updated = currentVal.substring(0, start) + insertion + currentVal.substring(end);
+    onChange?.(updated);
+
+    setTimeout(() => {
+      if (textareaRef.current) {
+        textareaRef.current.focus();
+        textareaRef.current.setSelectionRange(start + insertion.length, start + insertion.length);
+      }
+    }, 0);
+  };
+
+  // Helper to insert or convert selection into a Comparison Table
+  const insertTable = () => {
+    const textarea = textareaRef.current;
+    if (!textarea) return;
+
+    const start = textarea.selectionStart ?? 0;
+    const end = textarea.selectionEnd ?? 0;
+    const currentVal = value || '';
+    const selectedText = currentVal.substring(start, end).trim();
+
+    let tableContent = '';
+    if (selectedText) {
+      const lines = selectedText.split('\n').filter((l) => l.trim().length > 0);
+      if (lines.length > 0) {
+        const rows = lines.map((line) => {
+          if (line.includes('|')) {
+            let clean = line.trim();
+            if (clean.startsWith('|')) clean = clean.substring(1);
+            if (clean.endsWith('|')) clean = clean.slice(0, -1);
+            return clean.split('|').map((c) => c.trim());
+          } else if (line.includes('\t')) {
+            return line.split('\t').map((c) => c.trim());
+          } else {
+            return line.split(/\s{2,}|\s*:\s*/).map((c) => c.trim());
+          }
+        });
+        const colCount = Math.max(...rows.map((r) => r.length), 2);
+        const formattedRows = rows.map((r) => {
+          const padded = [...r];
+          while (padded.length < colCount) padded.push('');
+          return `| ${padded.join(' | ')} |`;
+        });
+        const separator = `| ${Array(colCount).fill('---').join(' | ')} |`;
+        tableContent = [formattedRows[0], separator, ...formattedRows.slice(1)].join('\n');
+      }
+    }
+
+    if (!tableContent) {
+      tableContent = `| Feature | SaaS Software | Custom Software |\n| --- | --- | --- |\n| Deployment | Fast | Takes time |\n| Customization | Limited | Fully customizable |\n| Upfront Cost | Low | Higher |\n| Long-Term Cost | Subscription-based | One-time + maintenance |\n| Compliance | Generic | Tailored to regulations |\n| Security | Vendor-controlled | Business-controlled |`;
+    }
+
+    const prefix = (start > 0 && !currentVal.substring(0, start).endsWith('\n') ? '\n\n' : '');
+    const suffix = '\n\n';
+    const insertion = prefix + tableContent + suffix;
+    const updated = currentVal.substring(0, start) + insertion + currentVal.substring(end);
+    onChange?.(updated);
+
+    setTimeout(() => {
+      if (textareaRef.current) {
+        textareaRef.current.focus();
+        textareaRef.current.setSelectionRange(start + prefix.length, start + prefix.length + tableContent.length);
+      }
+    }, 0);
+  };
 
   // Helper to insert a paragraph break \n\n at current cursor position
   const insertParagraphBreak = () => {
@@ -75,7 +253,6 @@ export default function RichTextareaField({
     const updated = currentVal.substring(0, start) + insertion + currentVal.substring(end);
     onChange?.(updated);
 
-    // Refocus and restore cursor
     setTimeout(() => {
       if (textareaRef.current) {
         textareaRef.current.focus();
@@ -83,6 +260,97 @@ export default function RichTextareaField({
           selectedText ? start : start + before.length,
           selectedText ? newCursorPos : newCursorPos
         );
+      }
+    }, 0);
+  };
+
+  // Open Link Modal with prefilled selection
+  const openLinkModal = () => {
+    const textarea = textareaRef.current;
+    const start = textarea?.selectionStart ?? 0;
+    const end = textarea?.selectionEnd ?? 0;
+    const currentVal = value || '';
+    const selectedText = currentVal.substring(start, end);
+
+    setSelectionRange({ start, end });
+    setLinkText(selectedText || '');
+    setLinkUrl('');
+    setLinkModalOpen(true);
+  };
+
+  // Confirm inserting Link
+  const handleInsertLink = (e) => {
+    e?.preventDefault();
+    if (!linkUrl.trim()) return;
+
+    const currentVal = value || '';
+    const textToDisplay = linkText.trim() || linkUrl.trim();
+    const markdownLink = `[${textToDisplay}](${linkUrl.trim()})`;
+
+    const updated =
+      currentVal.substring(0, selectionRange.start) +
+      markdownLink +
+      currentVal.substring(selectionRange.end);
+
+    onChange?.(updated);
+    setLinkModalOpen(false);
+
+    setTimeout(() => {
+      if (textareaRef.current) {
+        textareaRef.current.focus();
+        const newPos = selectionRange.start + markdownLink.length;
+        textareaRef.current.setSelectionRange(newPos, newPos);
+      }
+    }, 0);
+  };
+
+  // Open Image Modal
+  const openImageModal = () => {
+    const textarea = textareaRef.current;
+    const start = textarea?.selectionStart ?? (value ? value.length : 0);
+    const end = textarea?.selectionEnd ?? start;
+    const currentVal = value || '';
+    const selectedText = currentVal.substring(start, end);
+
+    setImageCursorPos(start);
+    setImageUrl('');
+    setImageAlt(selectedText || '');
+    setImageModalOpen(true);
+  };
+
+  // Confirm inserting Image
+  const handleInsertImage = (e) => {
+    e?.preventDefault();
+    if (!imageUrl.trim()) return;
+
+    const currentVal = value || '';
+    const alt = imageAlt.trim() || 'Visual Illustration';
+    const url = imageUrl.trim();
+
+    // Smart newline formatting around image block
+    const beforeText = currentVal.substring(0, imageCursorPos);
+    const afterText = currentVal.substring(imageCursorPos);
+
+    const prefix = beforeText.length > 0 && !beforeText.endsWith('\n\n')
+      ? (beforeText.endsWith('\n') ? '\n' : '\n\n')
+      : '';
+    const suffix = afterText.length > 0 && !afterText.startsWith('\n\n')
+      ? (afterText.startsWith('\n') ? '\n' : '\n\n')
+      : '\n\n';
+
+    const imageMarkdown = `${prefix}![${alt}](${url})${suffix}`;
+    const updated = beforeText + imageMarkdown + afterText;
+
+    onChange?.(updated);
+    setImageModalOpen(false);
+    setImageUrl('');
+    setImageAlt('');
+
+    setTimeout(() => {
+      if (textareaRef.current) {
+        textareaRef.current.focus();
+        const newPos = imageCursorPos + imageMarkdown.length;
+        textareaRef.current.setSelectionRange(newPos, newPos);
       }
     }, 0);
   };
@@ -146,6 +414,10 @@ export default function RichTextareaField({
     if (!selectedText) return;
 
     const cleaned = selectedText
+      .replace(/^#{1,6}\s+/gm, '')
+      .replace(/^>\s+/gm, '')
+      .replace(/!\[([^\]]*?)\]\([^)]+?\)/g, '$1')
+      .replace(/\[([^\]]+?)\]\([^)]+?\)/g, '$1')
       .replace(/\*\*([^*]+?)\*\*/g, '$1')
       .replace(/\*([^*]+?)\*/g, '$1')
       .replace(/_([^_]+?)_/g, '$1')
@@ -176,7 +448,7 @@ export default function RichTextareaField({
     } else if (field.isArray || name === 'features' || name === 'tech' || name === 'outcomes') {
       template = 'New High-Value Capability Item';
     } else {
-      template = '**Key Advantage:** Detailed explanation with high performance metrics.';
+      template = '## Sub-heading Section\n\nDetailed explanation with high performance metrics.';
     }
 
     onChange?.(currentVal + newline + template);
@@ -185,10 +457,48 @@ export default function RichTextareaField({
   const isCustomArrayField = !!field.isCustomArray || !!field.isArray;
 
   return (
-    <div className="w-full space-y-1.5">
+    <div className="w-full space-y-1.5 relative">
       {/* Top Toolbar */}
-      <div className="flex flex-wrap items-center justify-between gap-1.5 px-3 py-1.5 bg-gray-100/80 border border-gray-200 rounded-t-xl text-xs text-ink/70">
+      <div className="flex flex-wrap items-center justify-between gap-1.5 px-3 py-1.5 bg-gray-100/90 border border-gray-200 rounded-t-xl text-xs text-ink/80">
         <div className="flex flex-wrap items-center gap-1">
+          {/* Heading Buttons Group */}
+          <div className="flex items-center bg-white/80 border border-gray-200/80 rounded-lg p-0.5 shadow-xs">
+            <button
+              type="button"
+              onClick={() => applyHeading(1)}
+              title="Heading 1 (# Heading)"
+              className="px-2 py-1 rounded hover:bg-[#00a4d8] hover:text-white font-extrabold text-[11px] transition-colors"
+            >
+              H1
+            </button>
+            <button
+              type="button"
+              onClick={() => applyHeading(2)}
+              title="Heading 2 (## Heading)"
+              className="px-2 py-1 rounded hover:bg-[#00a4d8] hover:text-white font-bold text-[11px] transition-colors"
+            >
+              H2
+            </button>
+            <button
+              type="button"
+              onClick={() => applyHeading(3)}
+              title="Heading 3 (### Heading)"
+              className="px-2 py-1 rounded hover:bg-[#00a4d8] hover:text-white font-bold text-[11px] transition-colors"
+            >
+              H3
+            </button>
+            <button
+              type="button"
+              onClick={() => applyHeading(4)}
+              title="Heading 4 (#### Heading)"
+              className="px-2 py-1 rounded hover:bg-[#00a4d8] hover:text-white font-semibold text-[11px] transition-colors hidden sm:inline-block"
+            >
+              H4
+            </button>
+          </div>
+
+          <span className="w-px h-4 bg-gray-300 mx-0.5" />
+
           {/* Bold Button */}
           <button
             type="button"
@@ -221,7 +531,7 @@ export default function RichTextareaField({
             className="p-1.5 rounded-lg hover:bg-white hover:text-[#00a4d8] hover:shadow-xs transition-colors flex items-center gap-1"
           >
             <List size={13} />
-            <span className="hidden sm:inline">Bullet List</span>
+            <span className="hidden md:inline">Bullet</span>
           </button>
 
           {/* Numbered List */}
@@ -232,7 +542,18 @@ export default function RichTextareaField({
             className="p-1.5 rounded-lg hover:bg-white hover:text-[#00a4d8] hover:shadow-xs transition-colors flex items-center gap-1"
           >
             <ListOrdered size={13} />
-            <span className="hidden sm:inline">Numbered</span>
+            <span className="hidden md:inline">1. 2. 3.</span>
+          </button>
+
+          {/* Quote Button */}
+          <button
+            type="button"
+            onClick={applyBlockquote}
+            title="Blockquote (> Quote)"
+            className="p-1.5 rounded-lg hover:bg-white hover:text-[#00a4d8] hover:shadow-xs transition-colors flex items-center gap-1"
+          >
+            <Quote size={13} />
+            <span className="hidden lg:inline">Quote</span>
           </button>
 
           {/* Key-Value Tag Button */}
@@ -243,7 +564,7 @@ export default function RichTextareaField({
             className="p-1.5 rounded-lg hover:bg-white hover:text-[#00a4d8] hover:shadow-xs transition-colors flex items-center gap-1"
           >
             <Tag size={13} />
-            <span className="hidden md:inline">**Key:** Value</span>
+            <span className="hidden lg:inline">**Key:**</span>
           </button>
 
           {/* Code Button */}
@@ -256,14 +577,51 @@ export default function RichTextareaField({
             <Code size={13} />
           </button>
 
+          <span className="w-px h-4 bg-gray-300 mx-0.5" />
+
           {/* Link Button */}
           <button
             type="button"
-            onClick={() => applyFormatting('[', '](https://example.com)', 'Link Text')}
-            title="Insert Link [Text](url)"
-            className="p-1.5 rounded-lg hover:bg-white hover:text-[#00a4d8] hover:shadow-xs transition-colors"
+            onClick={openLinkModal}
+            title="Add Link to Word/Text ([Text](url))"
+            className="px-2 py-1 rounded-lg bg-sky-50 text-[#00a4d8] hover:bg-[#00a4d8] hover:text-white border border-sky-200/80 font-bold transition-all flex items-center gap-1 shadow-xs"
           >
             <Link2 size={13} />
+            <span>Link</span>
+          </button>
+
+          {/* Image Button */}
+          <button
+            type="button"
+            onClick={openImageModal}
+            title="Insert Image anywhere between lines/paragraphs (![Alt](url))"
+            className="px-2 py-1 rounded-lg bg-violet-50 text-brand-purple hover:bg-brand-purple hover:text-white border border-violet-200/80 font-bold transition-all flex items-center gap-1 shadow-xs"
+          >
+            <ImageIcon size={13} />
+            <span>Image</span>
+          </button>
+
+          <span className="w-px h-4 bg-gray-300 mx-0.5" />
+
+          {/* Table Button */}
+          <button
+            type="button"
+            onClick={insertTable}
+            title="Insert Comparison Table"
+            className="p-1.5 rounded-lg hover:bg-white hover:text-[#00a4d8] hover:shadow-xs transition-colors flex items-center gap-1 font-semibold"
+          >
+            <TableIcon size={13} />
+            <span className="hidden sm:inline">Table</span>
+          </button>
+
+          {/* Divider Line Button */}
+          <button
+            type="button"
+            onClick={insertDivider}
+            title="Horizontal Divider (---)"
+            className="p-1.5 rounded-lg hover:bg-white hover:text-[#00a4d8] hover:shadow-xs transition-colors"
+          >
+            <Minus size={13} />
           </button>
 
           {/* Clear Button */}
@@ -296,7 +654,7 @@ export default function RichTextareaField({
               className="px-2 py-1 rounded-lg bg-sky-100/80 text-[#00a4d8] hover:bg-[#00a4d8] hover:text-white font-semibold transition-colors flex items-center gap-1 ml-1"
             >
               <PlusCircle size={12} />
-              <span>+ Add Row Template</span>
+              <span>+ Add Row</span>
             </button>
           )}
         </div>
@@ -338,20 +696,29 @@ export default function RichTextareaField({
 
       {/* Help Hint Banner */}
       {showHelp && (
-        <div className="px-4 py-3 bg-sky-50/90 border border-sky-100 rounded-xl text-xs text-sky-900 space-y-2">
-          <p className="font-bold flex items-center gap-1 text-[#00a4d8]">
-            <span>💡 Rich Formatting Guide & Multi-Paragraph Support:</span>
+        <div className="px-4 py-3.5 bg-sky-50/95 border border-sky-200 rounded-xl text-xs text-sky-950 space-y-2.5 shadow-sm">
+          <p className="font-bold flex items-center gap-1.5 text-[#00a4d8]">
+            <span>💡 Complete Formatting, Links & Images Guide:</span>
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1.5 text-[11px] text-gray-700">
-            <div>• <code className="text-[#00a4d8] font-bold">**Flutter:**</code> &rarr; <strong>Flutter:</strong></div>
-            <div>• <code className="text-[#00a4d8] font-bold">- Bullet item</code> &rarr; Clean bullet point</div>
-            <div>• <code className="text-[#00a4d8] font-bold">*Italic*</code> &rarr; <em>Italic</em></div>
-            <div>• <code className="text-[#00a4d8] font-bold">1. Step one</code> &rarr; Numbered list</div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-2 text-[11px] text-gray-800">
+            <div>• <code className="text-[#00a4d8] font-bold">[Link Text](url)</code> &rarr; <strong>Clickable Link</strong></div>
+            <div>• <code className="text-brand-purple font-bold">![Caption](img_url)</code> &rarr; <strong>Embedded Image</strong></div>
+            <div>• <code className="text-[#00a4d8] font-bold"># Main Heading</code> &rarr; <strong>H1 Title</strong></div>
+            <div>• <code className="text-[#00a4d8] font-bold">## Section Title</code> &rarr; <strong>H2 Heading</strong></div>
+            <div>• <code className="text-[#00a4d8] font-bold">### Sub-section</code> &rarr; <strong>H3 Heading</strong></div>
+            <div>• <code className="text-[#00a4d8] font-bold">| Col 1 | Col 2 |</code> &rarr; <strong>Comparison Table</strong></div>
+            <div>• <code className="text-[#00a4d8] font-bold">**Bold Text**</code> &rarr; <strong>Bold Text</strong></div>
+            <div>• <code className="text-[#00a4d8] font-bold">*Italic Text*</code> &rarr; <em>Italic Text</em></div>
+            <div>• <code className="text-[#00a4d8] font-bold">&gt; Blockquote text</code> &rarr; Callout quote</div>
           </div>
-          <div className="pt-1 border-t border-sky-200/60 text-[11px] text-gray-700">
-            <p className="font-semibold text-[#00a4d8] mb-0.5">📄 Multiple Paragraphs inside Sub-Services / Items:</p>
-            <p className="text-gray-600">
-              Press Enter twice (<code className="text-[#00a4d8]">Enter + Enter</code>) or click <strong>Paragraph</strong> to separate paragraphs under the same item. A new item only starts when you write a new line with <code className="text-[#00a4d8]">Title | ...</code>.
+          <div className="pt-2 border-t border-sky-200/80 text-[11px] text-gray-700 space-y-1">
+            <p className="font-semibold text-[#00a4d8]">🔗 How to add links to words:</p>
+            <p>
+              Select any word or phrase in your text and click the <strong className="text-[#00a4d8]">Link</strong> button. Enter the URL (e.g. <code className="text-[#00a4d8]">/services/digital-marketing</code> or <code className="text-[#00a4d8]">https://google.com</code>) and click Insert.
+            </p>
+            <p className="font-semibold text-brand-purple pt-1">🖼️ How to add images between paragraphs:</p>
+            <p>
+              Place your cursor on a new line where you want the image and click the <strong className="text-brand-purple">Image</strong> button. You can select an image from your Media Library, upload a new image from your computer, or paste an image URL!
             </p>
           </div>
         </div>
@@ -360,7 +727,7 @@ export default function RichTextareaField({
       {/* Main Content Area: Edit Textarea or Live Preview */}
       {isPreview ? (
         <div
-          className="w-full px-4 py-3 rounded-b-xl border border-gray-200 bg-white min-h-[100px] text-sm text-ink/80 overflow-y-auto max-h-72"
+          className="w-full px-4 py-3 rounded-b-xl border border-gray-200 bg-white min-h-[100px] text-sm text-ink/80 overflow-y-auto max-h-96"
           style={{ minHeight: `${rows * 26}px` }}
         >
           {value && value.trim() ? (
@@ -378,17 +745,240 @@ export default function RichTextareaField({
           value={value}
           onChange={(e) => onChange?.(e.target.value)}
           rows={rows}
-          placeholder={placeholder || 'Type description or content here... Use **bold** or - bullets for styling.'}
+          placeholder={placeholder || 'Type description or content here... Use **bold**, [links](url), or ![images](url) for styling.'}
           required={required}
-          className="w-full px-4 py-2.5 rounded-b-xl border border-gray-200 bg-gray-50/50 focus:bg-white focus:border-brand-cyan focus:ring-2 focus:ring-brand-cyan/20 outline-none transition-all text-sm resize-y font-mono leading-relaxed"
+          className="w-full px-4 py-2.5 rounded-b-xl border border-gray-200 bg-gray-50/50 focus:bg-white focus:border-[#00a4d8] focus:ring-2 focus:ring-[#00a4d8]/20 outline-none transition-all text-sm resize-y font-mono leading-relaxed"
         />
       )}
 
       {/* Footer Info */}
       <div className="flex items-center justify-between text-[11px] text-gray-400 px-1">
-        <span>{hint || 'Supports markdown bold (**text**), lists (- item), and live preview.'}</span>
+        <span>{hint || 'Supports markdown bold (**text**), [links](url), ![images](url), tables, and live preview.'}</span>
         <span>{value ? `${value.length} chars` : '0 chars'}</span>
       </div>
+
+      {/* ========================================================================= */}
+      {/* 🔗 LINK INSERTION MODAL */}
+      {/* ========================================================================= */}
+      {linkModalOpen && (
+        <div className="fixed inset-0 z-[110] flex items-center justify-center bg-black/50 backdrop-blur-xs p-4 animate-in fade-in duration-150">
+          <div className="bg-white w-full max-w-md rounded-2xl shadow-2xl border border-gray-100 p-5 space-y-4">
+            <div className="flex items-center justify-between pb-2 border-b border-gray-100">
+              <div className="flex items-center gap-2 text-ink">
+                <div className="w-7 h-7 rounded-lg bg-sky-100 text-[#00a4d8] flex items-center justify-center">
+                  <Link2 size={16} />
+                </div>
+                <h3 className="font-bold text-sm">Insert Link</h3>
+              </div>
+              <button
+                type="button"
+                onClick={() => setLinkModalOpen(false)}
+                className="p-1 rounded-lg text-gray-400 hover:text-gray-700 hover:bg-gray-100"
+              >
+                <X size={18} />
+              </button>
+            </div>
+
+            <form onSubmit={handleInsertLink} className="space-y-3 text-xs">
+              <div>
+                <label className="block font-semibold text-gray-700 mb-1">
+                  Text to Display (Word or Phrase)
+                </label>
+                <input
+                  type="text"
+                  value={linkText}
+                  onChange={(e) => setLinkText(e.target.value)}
+                  placeholder="e.g. SEO Reporting Services"
+                  className="w-full px-3 py-2 border border-gray-200 rounded-xl focus:border-[#00a4d8] focus:ring-1 focus:ring-[#00a4d8] outline-none text-sm"
+                  autoFocus
+                />
+              </div>
+
+              <div>
+                <label className="block font-semibold text-gray-700 mb-1">
+                  Link Destination URL (Web link or internal path)
+                </label>
+                <input
+                  type="text"
+                  value={linkUrl}
+                  onChange={(e) => setLinkUrl(e.target.value)}
+                  placeholder="e.g. /services/digital-marketing or https://example.com"
+                  className="w-full px-3 py-2 border border-gray-200 rounded-xl focus:border-[#00a4d8] focus:ring-1 focus:ring-[#00a4d8] outline-none text-sm"
+                  required
+                />
+              </div>
+
+              {/* Quick Suggestions */}
+              <div className="pt-1">
+                <span className="text-[10px] text-gray-400 font-medium block mb-1">Quick internal links:</span>
+                <div className="flex flex-wrap gap-1.5">
+                  {[
+                    { label: 'Home', url: '/' },
+                    { label: 'Services', url: '/services' },
+                    { label: 'Digital Marketing', url: '/services/digital-marketing' },
+                    { label: 'Contact', url: '/contact' },
+                    { label: 'Blog', url: '/blog' },
+                  ].map((sug) => (
+                    <button
+                      key={sug.url}
+                      type="button"
+                      onClick={() => setLinkUrl(sug.url)}
+                      className="px-2 py-0.5 rounded-md bg-gray-100 hover:bg-sky-100 hover:text-[#00a4d8] text-[10px] text-gray-600 transition-colors"
+                    >
+                      {sug.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="flex items-center justify-end gap-2 pt-3 border-t border-gray-100">
+                <button
+                  type="button"
+                  onClick={() => setLinkModalOpen(false)}
+                  className="px-3.5 py-1.5 rounded-xl border border-gray-200 text-gray-600 hover:bg-gray-100 font-semibold"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  disabled={!linkUrl.trim()}
+                  className="px-4 py-1.5 rounded-xl bg-[#00a4d8] hover:bg-[#0284c7] text-white font-bold transition disabled:opacity-40"
+                >
+                  Insert Link
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* ========================================================================= */}
+      {/* 🖼️ IMAGE INSERTION MODAL */}
+      {/* ========================================================================= */}
+      {imageModalOpen && (
+        <div className="fixed inset-0 z-[110] flex items-center justify-center bg-black/50 backdrop-blur-xs p-4 animate-in fade-in duration-150">
+          <div className="bg-white w-full max-w-lg rounded-2xl shadow-2xl border border-gray-100 p-5 space-y-4">
+            <div className="flex items-center justify-between pb-2 border-b border-gray-100">
+              <div className="flex items-center gap-2 text-ink">
+                <div className="w-7 h-7 rounded-lg bg-violet-100 text-brand-purple flex items-center justify-center">
+                  <ImageIcon size={16} />
+                </div>
+                <div>
+                  <h3 className="font-bold text-sm">Insert Image into Content</h3>
+                  <p className="text-[10px] text-gray-500">Insert image between paragraphs or anywhere in the text</p>
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick={() => setImageModalOpen(false)}
+                className="p-1 rounded-lg text-gray-400 hover:text-gray-700 hover:bg-gray-100"
+              >
+                <X size={18} />
+              </button>
+            </div>
+
+            <form onSubmit={handleInsertImage} className="space-y-3.5 text-xs">
+              {/* Media Library / Upload Trigger Button */}
+              <div className="p-3.5 rounded-xl bg-violet-50/70 border border-violet-100 flex flex-col sm:flex-row items-center justify-between gap-3">
+                <div className="space-y-0.5 text-left">
+                  <p className="font-bold text-brand-purple text-xs">Choose from Media Library or Upload</p>
+                  <p className="text-[11px] text-gray-500">Pick from existing website assets or upload a file directly</p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setMediaPickerOpen(true)}
+                  className="px-3.5 py-2 rounded-xl bg-primary-gradient text-white text-xs font-bold shadow-soft hover:opacity-95 transition flex items-center gap-1.5 shrink-0"
+                >
+                  <FolderOpen size={14} />
+                  <span>Select / Upload</span>
+                </button>
+              </div>
+
+              {/* Direct Image URL input */}
+              <div>
+                <label className="block font-semibold text-gray-700 mb-1">
+                  Image URL or Path
+                </label>
+                <input
+                  type="text"
+                  value={imageUrl}
+                  onChange={(e) => setImageUrl(e.target.value)}
+                  placeholder="e.g. /uploads/seo-graph.jpg or https://images.unsplash.com/..."
+                  className="w-full px-3 py-2 border border-gray-200 rounded-xl focus:border-brand-purple focus:ring-1 focus:ring-brand-purple outline-none text-sm"
+                  required
+                />
+              </div>
+
+              {/* Alt Text / Caption */}
+              <div>
+                <label className="block font-semibold text-gray-700 mb-1">
+                  Caption / Alt Description (Recommended for SEO)
+                </label>
+                <input
+                  type="text"
+                  value={imageAlt}
+                  onChange={(e) => setImageAlt(e.target.value)}
+                  placeholder="e.g. SEO reporting analytics dashboard and insights"
+                  className="w-full px-3 py-2 border border-gray-200 rounded-xl focus:border-brand-purple focus:ring-1 focus:ring-brand-purple outline-none text-sm"
+                />
+              </div>
+
+              {/* Image Preview */}
+              {imageUrl && (
+                <div className="p-2.5 rounded-xl border border-gray-200 bg-gray-50 flex items-center gap-3">
+                  <img
+                    src={imageUrl}
+                    alt="Preview"
+                    className="w-16 h-16 object-cover rounded-lg border border-gray-200 shrink-0 bg-white"
+                    onError={(e) => {
+                      e.currentTarget.onerror = null;
+                      e.currentTarget.src = 'https://placehold.co/100x100?text=Invalid+Image';
+                    }}
+                  />
+                  <div className="min-w-0 text-left">
+                    <p className="text-xs font-bold text-gray-800 truncate">{imageAlt || 'Selected image'}</p>
+                    <p className="text-[10px] text-gray-400 truncate">{imageUrl}</p>
+                    <span className="inline-block mt-1 text-[9px] font-bold px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-700">
+                      ✓ Ready to insert
+                    </span>
+                  </div>
+                </div>
+              )}
+
+              <div className="flex items-center justify-end gap-2 pt-3 border-t border-gray-100">
+                <button
+                  type="button"
+                  onClick={() => setImageModalOpen(false)}
+                  className="px-3.5 py-1.5 rounded-xl border border-gray-200 text-gray-600 hover:bg-gray-100 font-semibold"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  disabled={!imageUrl.trim()}
+                  className="px-4 py-1.5 rounded-xl bg-primary-gradient text-white font-bold transition shadow-soft disabled:opacity-40"
+                >
+                  Insert Image
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* Media Picker Modal for selecting/uploading media */}
+      <MediaPickerModal
+        isOpen={mediaPickerOpen}
+        onClose={() => setMediaPickerOpen(false)}
+        currentValue={imageUrl}
+        onSelect={(url, item) => {
+          setImageUrl(url);
+          if (item?.title && !imageAlt) {
+            setImageAlt(item.title);
+          }
+          setMediaPickerOpen(false);
+        }}
+      />
     </div>
   );
 }

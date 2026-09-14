@@ -14,19 +14,40 @@ export function formatInline(text, options = {}) {
     strongClass = 'font-bold text-ink',
     emClass = 'italic text-ink/90',
     codeClass = 'px-1.5 py-0.5 rounded bg-gray-100/90 border border-gray-200 text-[#00a4d8] font-mono text-[0.88em]',
-    linkClass = 'text-[#00a4d8] underline hover:text-[#0284c7] transition-colors',
+    linkClass = 'text-[#00a4d8] underline hover:text-[#0284c7] font-semibold transition-colors',
   } = options;
 
   // Regex tokens:
-  // 1. Markdown Links: \[([^\]]+)\]\(([^)]+)\)
-  // 2. Bold: \*\*([^*]+?)\*\*
-  // 3. Inline code: `([^`]+?)`
-  // 4. Italic: \*([^*]+?)\* or _([^_]+?)_
-  const tokenRegex = /(\[[^\]]+\]\([^)]+\)|\*\*[^*]+?\*\*|`[^`]+?`|\*[^*]+?\*|_[^_]+?_)/g;
+  // 1. Markdown Images: !\[([^\]]*)\]\(([^)]+)\)
+  // 2. Markdown Links: \[([^\]]+)\]\(([^)]+)\)
+  // 3. Bold: \*\*([^*]+?)\*\*
+  // 4. Inline code: `([^`]+?)`
+  // 5. Italic: \*([^*]+?)\* or _([^_]+?)_
+  const tokenRegex = /(!\[[^\]]*\]\([^)]+\)|\[[^\]]+\]\([^)]+\)|\*\*[^*]+?\*\*|`[^`]+?`|\*[^*]+?\*|_[^_]+?_)/g;
   const parts = text.split(tokenRegex);
 
   return parts.map((part, index) => {
     if (!part) return null;
+
+    // Image: ![alt](url)
+    const imgMatch = /^!\[([^\]]*)\]\(([^)]+)\)$/.exec(part);
+    if (imgMatch) {
+      const altText = imgMatch[1];
+      const imgUrl = imgMatch[2];
+      return (
+        <span key={index} className="inline-block my-2 max-w-full">
+          <img
+            src={imgUrl}
+            alt={altText || 'Image'}
+            className="rounded-xl shadow-sm border border-gray-100 max-h-96 object-cover inline-block max-w-full"
+            loading="lazy"
+          />
+          {altText && (
+            <span className="block text-center text-xs text-gray-500 italic mt-1">{altText}</span>
+          )}
+        </span>
+      );
+    }
 
     // Link: [title](url)
     const linkMatch = /^\[([^\]]+)\]\(([^)]+)\)$/.exec(part);
@@ -95,7 +116,48 @@ export function formatInline(text, options = {}) {
 export const formatText = formatInline;
 
 /**
+ * Helper to parse a line into table cells (supports markdown pipe, tab-separated, or multi-space columns)
+ */
+function parseTableRow(line) {
+  const trimmed = line.trim();
+  if (!trimmed) return null;
+  if (/^[#>]\s+/.test(trimmed)) return null;
+
+  // 1. Pipe-separated: | Col 1 | Col 2 | or Col 1 | Col 2
+  if (trimmed.includes('|')) {
+    let clean = trimmed;
+    if (clean.startsWith('|')) clean = clean.substring(1);
+    if (clean.endsWith('|')) clean = clean.slice(0, -1);
+    const cells = clean.split('|').map((c) => c.trim());
+    if (cells.length >= 2) {
+      const isSep = cells.every((c) => /^:?-+:?$/.test(c));
+      return { type: isSep ? 'sep' : 'row', cells };
+    }
+  }
+
+  // 2. Tab-separated: Col 1\tCol 2\tCol 3
+  if (trimmed.includes('\t')) {
+    const cells = trimmed.split('\t').map((c) => c.trim()).filter(Boolean);
+    if (cells.length >= 2) {
+      return { type: 'row', cells };
+    }
+  }
+
+  // 3. Multi-space separated columns: Col 1    Col 2    Col 3
+  const multiSpaceCells = trimmed.split(/\s{2,}/).map((c) => c.trim()).filter(Boolean);
+  if (multiSpaceCells.length >= 2) {
+    return { type: 'row', cells: multiSpaceCells };
+  }
+
+  return null;
+}
+
+/**
  * Parses full multiline rich text blocks, including:
+ * - Headings (# H1, ## H2, ### H3, #### H4, ##### H5, ###### H6)
+ * - Tables (Markdown pipe tables, tab-separated, or multi-space comparison tables)
+ * - Blockquotes (> Quote)
+ * - Horizontal rules (---)
  * - Bullet lists (- item, * item, • item, + item)
  * - Numbered lists (1. item, 2. item)
  * - Key-Value formatted lines (e.g. `**Flutter:** Description...`)
@@ -114,57 +176,228 @@ export function FormatRichText({
   const normalized = text.replace(/<br\s*\/?>/gi, '\n');
   const lines = normalized.split(/\r?\n/);
 
-  // Group lines into blocks: 'p', 'ul', 'ol'
+  // Group lines into blocks: 'h1'-'h6', 'table', 'blockquote', 'hr', 'p', 'ul', 'ol'
   const blocks = [];
   let currentList = null;
+  let currentTable = null;
+
+  const flushList = () => {
+    if (currentList) {
+      blocks.push(currentList);
+      currentList = null;
+    }
+  };
+
+  const flushTable = () => {
+    if (currentTable) {
+      if (currentTable.rows.length >= 2 || (currentTable.rows.length >= 1 && currentTable.hasSep)) {
+        blocks.push(currentTable);
+      } else {
+        // Not enough rows to form a table, fallback to normal paragraphs
+        currentTable.rows.forEach((r) => {
+          blocks.push({ type: 'p', text: r.join(' | ') });
+        });
+      }
+      currentTable = null;
+    }
+  };
 
   lines.forEach((line) => {
     const trimmed = line.trim();
     if (!trimmed) {
-      if (currentList) {
-        blocks.push(currentList);
-        currentList = null;
+      flushList();
+      flushTable();
+      return;
+    }
+
+    // Check table row first
+    const tableRow = parseTableRow(line);
+    if (tableRow) {
+      flushList();
+      if (!currentTable) {
+        currentTable = { type: 'table', rows: [], hasSep: false };
+      }
+      if (tableRow.type === 'sep') {
+        currentTable.hasSep = true;
+      } else {
+        currentTable.rows.push(tableRow.cells);
       }
       return;
     }
 
-    // Bullet item (- item, * item, • item, + item)
-    // Note: Do NOT treat `**bold**` as bullet `*`
+    // Not a table line, flush active table
+    flushTable();
+
+    // Heading matches: # H1, ## H2, ### H3, #### H4, ##### H5, ###### H6
+    const headingMatch = /^(#{1,6})\s+(.*)$/.exec(trimmed);
+    // Block image: ![alt](url)
+    const imgBlockMatch = /^!\[([^\]]*)\]\(([^)]+)\)$/.exec(trimmed);
+    // Blockquote: > text
+    const quoteMatch = /^>\s+(.*)$/.exec(trimmed);
+    // Horizontal divider: --- or *** or ___
+    const hrMatch = /^(?:---|\*\*\*|___)$/.exec(trimmed);
+    // Bullet item (- item, * item, • item, + item) - do NOT match **bold**
     const bulletMatch = /^([-•+]|\*(?!\*))\s+(.*)$/.exec(trimmed);
     // Numbered item (1. item, 2. item)
     const numberedMatch = /^(\d+)\.\s+(.*)$/.exec(trimmed);
 
-    if (bulletMatch) {
+    if (headingMatch) {
+      flushList();
+      const level = headingMatch[1].length;
+      blocks.push({ type: `h${level}`, text: headingMatch[2] });
+    } else if (imgBlockMatch) {
+      flushList();
+      blocks.push({ type: 'img', alt: imgBlockMatch[1], url: imgBlockMatch[2] });
+    } else if (quoteMatch) {
+      flushList();
+      blocks.push({ type: 'blockquote', text: quoteMatch[1] });
+    } else if (hrMatch) {
+      flushList();
+      blocks.push({ type: 'hr' });
+    } else if (bulletMatch) {
       if (!currentList || currentList.type !== 'ul') {
-        if (currentList) blocks.push(currentList);
+        flushList();
         currentList = { type: 'ul', items: [] };
       }
       currentList.items.push(bulletMatch[2]);
     } else if (numberedMatch) {
       if (!currentList || currentList.type !== 'ol') {
-        if (currentList) blocks.push(currentList);
+        flushList();
         currentList = { type: 'ol', items: [] };
       }
       currentList.items.push(numberedMatch[2]);
     } else {
-      if (currentList) {
-        blocks.push(currentList);
-        currentList = null;
-      }
+      flushList();
       blocks.push({ type: 'p', text: trimmed });
     }
   });
 
-  if (currentList) {
-    blocks.push(currentList);
-  }
+  flushList();
+  flushTable();
 
   return (
-    <div className={`space-y-3 ${className}`}>
+    <div className={`space-y-4 ${className}`}>
       {blocks.map((block, bIdx) => {
+        if (block.type === 'img') {
+          return (
+            <figure key={bIdx} className="my-6 sm:my-8 text-center">
+              <img
+                src={block.url}
+                alt={block.alt || 'Content visual'}
+                className="w-full max-w-4xl mx-auto rounded-2xl shadow-md border border-gray-100 object-cover max-h-[550px]"
+                loading="lazy"
+              />
+              {block.alt && block.alt.trim() && (
+                <figcaption className="mt-2.5 text-xs sm:text-sm text-gray-500 italic">
+                  {block.alt}
+                </figcaption>
+              )}
+            </figure>
+          );
+        }
+
+        if (block.type === 'table') {
+          if (!block.rows || block.rows.length === 0) return null;
+          const headerRow = block.rows[0] || [];
+          const bodyRows = block.rows.slice(1);
+
+          return (
+            <div
+              key={bIdx}
+              className="overflow-x-auto my-6 sm:my-8 rounded-2xl border border-gray-200/90 shadow-sm bg-white"
+            >
+              <table className="w-full text-left border-collapse min-w-[520px]">
+                <thead>
+                  <tr className="bg-gradient-to-r from-slate-50 via-sky-50/60 to-indigo-50/40 border-b border-gray-200 text-ink">
+                    {headerRow.map((cell, cIdx) => (
+                      <th
+                        key={cIdx}
+                        className="px-4 sm:px-6 py-3.5 text-xs sm:text-sm font-extrabold text-ink uppercase tracking-wider first:rounded-tl-2xl last:rounded-tr-2xl"
+                      >
+                        {formatInline(cell, { strongClass })}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-100 text-sm sm:text-base text-gray-700">
+                  {bodyRows.map((row, rIdx) => (
+                    <tr
+                      key={rIdx}
+                      className="odd:bg-white even:bg-slate-50/50 hover:bg-sky-50/40 transition-colors"
+                    >
+                      {row.map((cell, cIdx) => (
+                        <td
+                          key={cIdx}
+                          className={`px-4 sm:px-6 py-3.5 leading-relaxed ${
+                            cIdx === 0 ? 'font-bold text-ink' : 'text-gray-700'
+                          }`}
+                        >
+                          {formatInline(cell, { strongClass })}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          );
+        }
+
+        if (block.type === 'h1') {
+          return (
+            <h1 key={bIdx} className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink tracking-tight mt-8 mb-4 first:mt-0 leading-tight">
+              {formatInline(block.text, { strongClass })}
+            </h1>
+          );
+        }
+
+        if (block.type === 'h2') {
+          return (
+            <h2 key={bIdx} className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-ink tracking-tight mt-7 mb-3.5 first:mt-0 leading-tight">
+              {formatInline(block.text, { strongClass })}
+            </h2>
+          );
+        }
+
+        if (block.type === 'h3') {
+          return (
+            <h3 key={bIdx} className="text-lg sm:text-xl lg:text-2xl font-bold text-ink tracking-tight mt-6 mb-3 first:mt-0 leading-snug">
+              {formatInline(block.text, { strongClass })}
+            </h3>
+          );
+        }
+
+        if (block.type === 'h4') {
+          return (
+            <h4 key={bIdx} className="text-base sm:text-lg font-bold text-ink tracking-tight mt-5 mb-2.5 first:mt-0 leading-snug">
+              {formatInline(block.text, { strongClass })}
+            </h4>
+          );
+        }
+
+        if (block.type === 'h5' || block.type === 'h6') {
+          return (
+            <h5 key={bIdx} className="text-sm sm:text-base font-bold text-ink tracking-tight mt-4 mb-2 first:mt-0 uppercase tracking-wide">
+              {formatInline(block.text, { strongClass })}
+            </h5>
+          );
+        }
+
+        if (block.type === 'blockquote') {
+          return (
+            <blockquote key={bIdx} className="border-l-4 border-[#00a4d8] bg-sky-50/70 p-4 sm:p-5 rounded-r-2xl italic text-gray-700 my-5 text-base sm:text-lg leading-relaxed shadow-xs">
+              {formatInline(block.text, { strongClass })}
+            </blockquote>
+          );
+        }
+
+        if (block.type === 'hr') {
+          return <hr key={bIdx} className="my-8 border-gray-200" />;
+        }
+
         if (block.type === 'ul') {
           return (
-            <ul key={bIdx} className="space-y-2.5 my-2.5">
+            <ul key={bIdx} className="space-y-2.5 my-3">
               {block.items.map((item, iIdx) => (
                 <li
                   key={iIdx}
@@ -180,7 +413,7 @@ export function FormatRichText({
 
         if (block.type === 'ol') {
           return (
-            <ol key={bIdx} className="space-y-2.5 my-2.5 list-none">
+            <ol key={bIdx} className="space-y-2.5 my-3 list-none">
               {block.items.map((item, iIdx) => (
                 <li
                   key={iIdx}
@@ -197,7 +430,7 @@ export function FormatRichText({
         }
 
         return (
-          <p key={bIdx} className={`leading-relaxed ${itemClassName}`}>
+          <p key={bIdx} className={`text-base sm:text-lg leading-relaxed text-gray-700 ${itemClassName}`}>
             {formatInline(block.text, { strongClass })}
           </p>
         );

@@ -6,6 +6,7 @@ import CtaBanner from '../components/CtaBanner';
 import Reveal from '../components/Reveal';
 
 import { apiFetch } from '../utils/api';
+import { FormatRichText } from '../utils/formatText';
 
 export default function BlogDetail() {
   const { slug } = useParams();
@@ -131,13 +132,13 @@ export default function BlogDetail() {
           )}
 
           {post.excerpt && (
-            <p className="text-lg text-gray-600 leading-relaxed mb-8 border-l-4 border-primary-400 pl-4 italic">
-              {post.excerpt}
-            </p>
+            <div className="text-lg sm:text-xl text-gray-600 leading-relaxed mb-8 border-l-4 border-[#00a4d8] pl-4 italic bg-sky-50/40 py-3 rounded-r-xl">
+              <FormatRichText text={post.excerpt} />
+            </div>
           )}
 
-          <div className="prose prose-gray max-w-none text-gray-700 leading-relaxed whitespace-pre-wrap">
-            {post.content || 'No content yet.'}
+          <div className="text-gray-700 leading-relaxed space-y-6 pt-2">
+            <FormatRichText text={post.content || 'No content yet.'} />
           </div>
         </Reveal>
       </article>
