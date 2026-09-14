@@ -117,9 +117,66 @@ export default function HealthcareLayout({ industry }) {
 
   return (
     <div className="space-y-16 sm:space-y-24">
-      {/* 1. The Approach Section (Matches Cubixsol Brand & Education Card Standard) */}
+      {/* 1. Capabilities Section (Software for Patients and Care Teams) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Reveal className="mb-8 sm:mb-10">
+        <div className="text-center max-w-3xl mx-auto mb-10">
+          <span className="inline-block px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-primary-50 text-primary-700 border border-primary-200 mb-3 shadow-sm">
+            Capabilities
+          </span>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink tracking-tight">
+            Software for Patients and Care Teams
+          </h2>
+        </div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {[
+            {
+              title: 'Patient portals and mobile apps',
+              desc: 'Frictionless patient self-scheduling, pre-visit intake questionnaires, lab result viewing, and secure clinician messaging.',
+              icon: Users,
+            },
+            {
+              title: 'Appointment and care workflows',
+              desc: 'Intelligent appointment scheduling, automated SMS reminders, care coordination, and streamlined queue management.',
+              icon: CalendarCheck,
+            },
+            {
+              title: 'Telemedicine app development services',
+              desc: 'WebRTC encrypted HD virtual care rooms with live vitals telemetry, in-call chat, and digital prescription routing.',
+              icon: Video,
+            },
+            {
+              title: 'EHR software development and integrations',
+              desc: 'Bi-directional HL7 FHIR v4 integration with Epic, Cerner, and AthenaHealth for real-time clinical charting.',
+              icon: FileText,
+            },
+          ].map((item, idx) => {
+            const Icon = item.icon;
+            return (
+              <motion.div
+                key={item.title}
+                whileHover={{ y: -4 }}
+                className="p-6 rounded-2xl bg-white border border-gray-100 shadow-card hover:border-primary-300 hover:shadow-lg transition-all flex flex-col justify-between"
+              >
+                <div>
+                  <div className="w-12 h-12 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center mb-4 shadow-inner">
+                    <Icon className="w-6 h-6" />
+                  </div>
+                  <h3 className="font-bold text-ink text-base mb-2">{item.title}</h3>
+                  <p className="text-xs text-gray-500 leading-relaxed">{item.desc}</p>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* 2. The Approach Section (Matches Cubixsol Brand & Education Card Standard) */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Reveal className="mb-8 sm:mb-10 text-center max-w-3xl mx-auto">
+          <span className="inline-block px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-primary-50 text-primary-700 border border-primary-200 mb-3 shadow-sm">
+            Strategic Methodology
+          </span>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink tracking-tight">
             {approachTitle}
           </h2>
@@ -133,10 +190,10 @@ export default function HealthcareLayout({ industry }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="rounded-2xl bg-[#f4f7fa] border border-slate-200/80 p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+              className="rounded-2xl bg-white border border-gray-100 p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden shadow-card hover:border-primary-300 hover:shadow-xl transition-all"
             >
               {/* Red Accent Top Indicator Bar */}
-              <div className="absolute top-0 left-0 right-0 h-1.5 bg-[#e11d48]" />
+              <div className="h-1.5 w-16 bg-red-600 rounded-full mb-6" />
 
               <div className="space-y-4">
                 <h3 className="text-xl sm:text-2xl font-extrabold text-ink tracking-tight pt-1">
@@ -150,9 +207,12 @@ export default function HealthcareLayout({ industry }) {
 
                 <div className="space-y-3.5 pt-2">
                   {item.points && item.points.map((pt, pIdx) => (
-                    <div key={pIdx} className="text-xs sm:text-sm text-gray-700 leading-relaxed">
-                      <strong className="font-extrabold text-ink block mb-0.5">{pt.heading}</strong>
-                      <span className="text-gray-600 text-xs sm:text-sm">{pt.text}</span>
+                    <div key={pIdx} className="text-xs sm:text-sm text-gray-700 leading-relaxed flex items-start gap-2.5">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary-600 mt-2 shrink-0" />
+                      <div>
+                        <strong className="font-extrabold text-ink inline">{pt.heading}: </strong>
+                        <span className="text-gray-600 text-xs sm:text-sm">{pt.text}</span>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -162,9 +222,12 @@ export default function HealthcareLayout({ industry }) {
         </div>
       </section>
 
-      {/* 2. Healthcare Solutions Section */}
+      {/* 3. Healthcare Solutions Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Reveal className="mb-8 sm:mb-10 max-w-3xl">
+        <Reveal className="mb-8 sm:mb-10 text-center max-w-3xl mx-auto">
+          <span className="inline-block px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-primary-50 text-primary-700 border border-primary-200 mb-3 shadow-sm">
+            Clinical Solutions
+          </span>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink tracking-tight mb-2">
             {solutionsTitle}
           </h2>
@@ -181,23 +244,149 @@ export default function HealthcareLayout({ industry }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="rounded-2xl bg-[#f4f7fa] border border-slate-200/80 p-6 sm:p-8 flex flex-col justify-start relative overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+              className="rounded-2xl bg-white border border-gray-100 p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden shadow-card hover:border-primary-300 hover:shadow-xl transition-all group"
             >
-              {/* Red Accent Top Indicator Bar */}
-              <div className="w-12 h-1 bg-[#e11d48] rounded-full mb-4" />
+              {/* Top Accent Gradient Bar */}
+              <div className="h-1.5 w-full bg-gradient-to-r from-red-600 via-[#00a4d8] to-[#5d53a3] absolute top-0 left-0 right-0" />
 
-              <h3 className="text-lg sm:text-xl font-extrabold text-ink tracking-tight mb-3">
-                {sol.title}
-              </h3>
-              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                {sol.body}
-              </p>
+              <div className="pt-2">
+                <div className="w-12 h-12 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center mb-6 group-hover:bg-primary-600 group-hover:text-white transition-colors">
+                  {idx === 0 ? <Video className="w-6 h-6" /> : idx === 1 ? <FileText className="w-6 h-6" /> : <Activity className="w-6 h-6" />}
+                </div>
+
+                <h3 className="text-lg sm:text-xl font-extrabold text-ink tracking-tight mb-3">
+                  {sol.title}
+                </h3>
+                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mb-6">
+                  {sol.body}
+                </p>
+              </div>
+
+              <div className="pt-4 border-t border-gray-100 flex items-center text-xs font-bold text-primary-600 group-hover:text-primary-700">
+                <span>Explore Architecture</span>
+                <ArrowRight className="w-3.5 h-3.5 ml-1.5 group-hover:translate-x-1 transition-transform" />
+              </div>
             </motion.div>
           ))}
         </div>
       </section>
 
-      {/* 3. Clinical Visual Band */}
+      {/* 4. How We Work Section (A Clear Process for Healthcare Software Delivery) */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <span className="inline-block px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-primary-50 text-primary-700 border border-primary-200 mb-3 shadow-sm">
+            How we work
+          </span>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink tracking-tight">
+            A Clear Process for Healthcare Software Delivery
+          </h2>
+        </div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            {
+              num: '01',
+              title: 'Understand Your Workflows',
+              desc: 'We work with your stakeholders to understand patient needs, staff responsibilities, data flows, and project requirements before defining the scope.',
+            },
+            {
+              num: '02',
+              title: 'Build in Manageable Stages',
+              desc: 'We prioritise essential features and deliver them in stages, giving your team opportunities to review progress and test workflows early.',
+            },
+            {
+              num: '03',
+              title: 'Plan for Data Protection',
+              desc: 'We define access permissions, data handling, and integration requirements around the information your software needs to manage.',
+            },
+            {
+              num: '04',
+              title: 'Test and Refine',
+              desc: 'We test agreed workflows, gather user feedback, and resolve issues before release, with documentation to support your team’s next steps.',
+            },
+          ].map((proc, idx) => (
+            <motion.div
+              key={proc.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="p-6 sm:p-7 rounded-2xl bg-white border border-gray-100 shadow-card hover:border-primary-300 hover:shadow-lg transition-all flex flex-col justify-between"
+            >
+              <div>
+                <span className="w-10 h-10 rounded-xl bg-gradient-to-r from-[#00a4d8] to-[#5d53a3] text-white font-mono text-sm font-bold flex items-center justify-center shadow-md mb-4">
+                  {proc.num}
+                </span>
+                <h3 className="text-lg font-bold text-ink mb-2.5">{proc.title}</h3>
+                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">{proc.desc}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* 5. Industry Fit / Value Proposition & Value Card */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-12 gap-8 items-center bg-slate-50/80 rounded-3xl p-6 sm:p-10 lg:p-12 border border-slate-200/80">
+          <div className="lg:col-span-7 space-y-6">
+            <span className="inline-block px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-white text-primary-700 border border-primary-200 shadow-sm">
+              Industry fit / value proposition
+            </span>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink tracking-tight">
+              Healthcare Software That Fits Your Daily Work
+            </h2>
+            <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+              Your software should reflect how patients book care, clinicians access information, and administrators coordinate services. Cubixsol turns those requirements into practical interfaces and connected workflows, helping your team reduce repetitive tasks and keep essential information accessible to the right users.
+            </p>
+
+            <div className="space-y-3 pt-2">
+              {[
+                'Define priorities with clinical and operational stakeholders.',
+                'Simplify common tasks for patients and staff.',
+                'Connect workflows with your existing systems.',
+                'Equip your team with clear documentation and handover support.',
+              ].map((pt, pIdx) => (
+                <div key={pIdx} className="flex items-start gap-3">
+                  <div className="w-5 h-5 rounded-full bg-primary-100 text-primary-700 flex items-center justify-center shrink-0 mt-0.5">
+                    <Check className="w-3.5 h-3.5 stroke-[3]" />
+                  </div>
+                  <span className="text-xs sm:text-sm font-medium text-ink">{pt}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="lg:col-span-5">
+            <div className="bg-gradient-to-br from-[#1a1a2e] via-[#241f48] to-[#122844] rounded-2xl p-6 sm:p-8 text-white shadow-xl border border-primary-500/20 space-y-5">
+              <div className="flex items-center gap-2.5 pb-4 border-b border-white/10">
+                <div className="w-8 h-8 rounded-lg bg-[#00a4d8]/20 text-[#00a4d8] flex items-center justify-center">
+                  <Sparkles className="w-4 h-4" />
+                </div>
+                <h3 className="text-lg font-bold text-white tracking-wide">Value Card</h3>
+              </div>
+
+              <div className="space-y-3.5">
+                {[
+                  { title: 'Patient and Staff Focus', desc: 'Designed for everyday clinical usability.' },
+                  { title: 'Clear Success Measures', desc: 'Tangible metrics on speed, security, and care delivery.' },
+                  { title: 'Thoughtful Data Access', desc: 'Zero-trust role permissions protecting patient records.' },
+                  { title: 'Flexible Delivery', desc: 'Agile milestone deployments with full transparency.' },
+                ].map((val, vIdx) => (
+                  <div key={vIdx} className="p-3.5 rounded-xl bg-white/5 border border-white/10 flex items-start gap-3">
+                    <div className="w-2 h-2 rounded-full bg-[#00a4d8] mt-1.5 shrink-0" />
+                    <div>
+                      <h4 className="text-xs sm:text-sm font-bold text-white">{val.title}</h4>
+                      <p className="text-[11px] text-gray-300 mt-0.5">{val.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. Clinical Visual Band */}
       <section className="relative overflow-hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-5">
           <Reveal className="lg:col-span-7" scale>
@@ -256,7 +445,7 @@ export default function HealthcareLayout({ industry }) {
         </div>
       </section>
 
-      {/* 4. Interactive Clinical Workflow & HD Telehealth Simulator */}
+      {/* 7. Interactive Clinical Workflow & HD Telehealth Simulator */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="rounded-3xl bg-gradient-to-br from-[#1a1a2e] via-[#241f48] to-[#122844] text-white p-6 sm:p-10 lg:p-12 border border-primary-500/30 shadow-2xl relative overflow-hidden">
           <div className="absolute right-0 top-0 w-96 h-96 bg-brand-cyan/10 rounded-full blur-3xl pointer-events-none" />
@@ -355,7 +544,7 @@ export default function HealthcareLayout({ industry }) {
         </div>
       </section>
 
-      {/* 5. Compliance & Safety Guarantee Cards */}
+      {/* 8. Compliance & Safety Guarantee Cards */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-10">
           <p className="eyebrow mb-2">Compliance &amp; Privacy Guarantee</p>
@@ -402,7 +591,7 @@ export default function HealthcareLayout({ industry }) {
         </div>
       </section>
 
-      {/* 6. Work Areas with Alternating Layout */}
+      {/* 9. Work Areas with Alternating Layout */}
       {workAreas.length > 0 && (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-10">
@@ -463,7 +652,7 @@ export default function HealthcareLayout({ industry }) {
         </section>
       )}
 
-      {/* 7. Healthcare Products Suite */}
+      {/* 10. Healthcare Products Suite */}
       {products.length > 0 && (
         <section className="relative py-12 lg:py-16 rounded-3xl max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#1a1a2e] via-[#241f48] to-[#122844] text-white">
           <div className="mb-8 max-w-xl">
@@ -512,7 +701,7 @@ export default function HealthcareLayout({ industry }) {
         </section>
       )}
 
-      {/* 8. Case Studies */}
+      {/* 11. Case Studies */}
       {cases.length > 0 && (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
@@ -560,7 +749,7 @@ export default function HealthcareLayout({ industry }) {
         </section>
       )}
 
-      {/* 9. Healthcare Engineering Services */}
+      {/* 12. Healthcare Engineering Services */}
       {services.length > 0 && (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="p-8 rounded-3xl bg-primary-50/60 border border-primary-100">

@@ -3122,35 +3122,35 @@ const initialSolutions = [
       "subtitle": "Our structured process to plan, develop, test, and deploy reliable agentic AI systems.",
       "steps": [
         {
-          "_id": "6aa5321218b01006da53e705",
+          "_id": "6aa5572ed459817639d985be",
           "stepNumber": "01",
           "title": "Discover",
           "desc": "We begin by reviewing the business goal, current workflow, tasks, data sources, existing systems, and required integrations.",
           "bullets": []
         },
         {
-          "_id": "6aa5321218b01006da53e706",
+          "_id": "6aa5572ed459817639d985bf",
           "stepNumber": "02",
           "title": "Design",
           "desc": "Our team defines the agent’s tasks, instructions, tools, data access, permissions, and points where human approval may be needed.",
           "bullets": []
         },
         {
-          "_id": "6aa5321218b01006da53e707",
+          "_id": "6aa5572ed459817639d985c0",
           "stepNumber": "03",
           "title": "Build",
           "desc": "Developers build the AI agent or multi-agent system and connect the required tools, APIs, databases, and data sources.",
           "bullets": []
         },
         {
-          "_id": "6aa5321218b01006da53e708",
+          "_id": "6aa5572ed459817639d985c1",
           "stepNumber": "04",
           "title": "Deploy",
           "desc": "We test the system before putting it into use. Testing checks whether the agent can complete its assigned tasks and follow the defined rules.",
           "bullets": []
         },
         {
-          "_id": "6aa5321218b01006da53e709",
+          "_id": "6aa5572ed459817639d985c2",
           "stepNumber": "05",
           "title": "Monitor & Improve",
           "desc": "AI systems may need changes as your business process or connected tools change.",
@@ -3481,35 +3481,35 @@ const initialSolutions = [
       "subtitle": "Our structured process to design, build, test, and deploy reliable customer segmentation models.",
       "steps": [
         {
-          "_id": "6aa5321218b01006da53e731",
+          "_id": "6aa5572ed459817639d985ea",
           "stepNumber": "01",
           "title": "Discover",
           "desc": "We begin by reviewing your business goals, customer data, existing systems, and segmentation requirements. Early discussions help define the customer groups your team needs and the data available for the project.",
           "bullets": []
         },
         {
-          "_id": "6aa5321218b01006da53e732",
+          "_id": "6aa5572ed459817639d985eb",
           "stepNumber": "02",
           "title": "Design",
           "desc": "Our team selects suitable segmentation methods and defines the rules for each customer group. We also plan how segments will be used across your marketing or customer systems.",
           "bullets": []
         },
         {
-          "_id": "6aa5321218b01006da53e733",
+          "_id": "6aa5572ed459817639d985ec",
           "stepNumber": "03",
           "title": "Build",
           "desc": "Developers and data specialists create the required segments, analysis, and supporting data setup. We check the results against the agreed requirements before moving to deployment.",
           "bullets": []
         },
         {
-          "_id": "6aa5321218b01006da53e734",
+          "_id": "6aa5572ed459817639d985ed",
           "stepNumber": "04",
           "title": "Deploy",
           "desc": "We make the completed segments available in the relevant systems and workflows. Deployment can support marketing campaigns, customer analysis, reporting, or other approved business activities.",
           "bullets": []
         },
         {
-          "_id": "6aa5321218b01006da53e735",
+          "_id": "6aa5572ed459817639d985ee",
           "stepNumber": "05",
           "title": "Monitor & Improve",
           "desc": "Customer behaviour can change over time. We review segment performance, data quality, and business needs so your segmentation setup can be updated when new requirements arise.",
@@ -3834,35 +3834,35 @@ const initialSolutions = [
       "subtitle": "Our data governance services follow a clear process from the first review through implementation and ongoing improvement.",
       "steps": [
         {
-          "_id": "6aa5321218b01006da53e75c",
+          "_id": "6aa5572ed459817639d98615",
           "stepNumber": "01",
           "title": "Discover",
           "desc": "We review your data sources, systems, current policies, access controls, and business requirements. Our team identifies gaps and areas where your current data processes need improvement.",
           "bullets": []
         },
         {
-          "_id": "6aa5321218b01006da53e75d",
+          "_id": "6aa5572ed459817639d98616",
           "stepNumber": "02",
           "title": "Design",
           "desc": "We define data ownership, governance rules, access controls, quality checks, security measures, and documentation based on your requirements.",
           "bullets": []
         },
         {
-          "_id": "6aa5321218b01006da53e75e",
+          "_id": "6aa5572ed459817639d98617",
           "stepNumber": "03",
           "title": "Build",
           "desc": "Our team puts the approved policies, processes, controls, catalogs, and quality checks into place. We work with your existing systems where possible and keep the implementation aligned with your business processes.",
           "bullets": []
         },
         {
-          "_id": "6aa5321218b01006da53e75f",
+          "_id": "6aa5572ed459817639d98618",
           "stepNumber": "04",
           "title": "Deploy",
           "desc": "We test the governance setup before applying it across the required systems and teams. Your staff can then follow clear processes for managing, accessing, and using business data.",
           "bullets": []
         },
         {
-          "_id": "6aa5321218b01006da53e760",
+          "_id": "6aa5572ed459817639d98619",
           "stepNumber": "05",
           "title": "Monitor & Improve",
           "desc": "Data systems and business requirements can change over time. We review data quality, access permissions, governance policies, and controls. Regular reviews help keep your data processes current as your business changes.",
@@ -4014,35 +4014,35 @@ const initialSolutions = [
       "subtitle": "Our structured process to design, build, test, and deploy reliable data science and machine learning solutions.",
       "steps": [
         {
-          "_id": "6aa5321218b01006da53e772",
+          "_id": "6aa5572ed459817639d9862b",
           "stepNumber": "01",
           "title": "Discover",
           "desc": "We begin by understanding your business goals, available data, current systems, and technical requirements. Early discovery helps define the problem and establish clear project goals.",
           "bullets": []
         },
         {
-          "_id": "6aa5321218b01006da53e773",
+          "_id": "6aa5572ed459817639d9862c",
           "stepNumber": "02",
           "title": "Design",
           "desc": "Our team plans the solution around the identified requirements. We define the data needs, model approach, technical setup, success measures, and development stages before implementation starts.",
           "bullets": []
         },
         {
-          "_id": "6aa5321218b01006da53e774",
+          "_id": "6aa5572ed459817639d9862d",
           "stepNumber": "03",
           "title": "Build",
           "desc": "Developers prepare the required data, develop the models, and test the solution against agreed requirements. We review results during development so issues can be addressed before deployment.",
           "bullets": []
         },
         {
-          "_id": "6aa5321218b01006da53e775",
+          "_id": "6aa5572ed459817639d9862e",
           "stepNumber": "04",
           "title": "Deploy",
           "desc": "Once the solution meets the required standards, we prepare it for production use. Deployment can include model integration, data workflows, cloud infrastructure, and other required system components.",
           "bullets": []
         },
         {
-          "_id": "6aa5321218b01006da53e776",
+          "_id": "6aa5572ed459817639d9862f",
           "stepNumber": "05",
           "title": "Monitor & Improve",
           "desc": "We monitor the solution after deployment and review its performance over time. Updates may be required when new data, business requirements, or system changes affect model results.",
@@ -6321,17 +6321,17 @@ const initialIndustries = [
           {
             "heading": "Timely",
             "text": "We design at the pace users need, with rapid learning and iteration built in.",
-            "_id": "6aa51ef3ced409771f8fe406"
+            "_id": "6aa55729a3de33dce3741ad6"
           },
           {
             "heading": "Useful",
             "text": "Success is measured by how easily users achieve their goals.",
-            "_id": "6aa51ef3ced409771f8fe407"
+            "_id": "6aa55729a3de33dce3741ad7"
           },
           {
             "heading": "Delightful",
             "text": "We create thoughtful experiences that feel worthwhile.",
-            "_id": "6aa51ef3ced409771f8fe408"
+            "_id": "6aa55729a3de33dce3741ad8"
           }
         ]
       },
@@ -6342,17 +6342,17 @@ const initialIndustries = [
           {
             "heading": "Sovereignty",
             "text": "Avoid vendor lock-in and securely deploy on-premises or in private clouds.",
-            "_id": "6aa51ef3ced409771f8fe40a"
+            "_id": "6aa55729a3de33dce3741ada"
           },
           {
             "heading": "Flexibility",
             "text": "Customize source code and choose licensing that fits your requirements.",
-            "_id": "6aa51ef3ced409771f8fe40b"
+            "_id": "6aa55729a3de33dce3741adb"
           },
           {
             "heading": "Economy",
             "text": "Reduce hosting, maintenance, and development costs through free, adaptable, AI-ready open-source technologies at greater scale.",
-            "_id": "6aa51ef3ced409771f8fe40c"
+            "_id": "6aa55729a3de33dce3741adc"
           }
         ]
       },
@@ -6363,12 +6363,12 @@ const initialIndustries = [
           {
             "heading": "Build Smarter Software",
             "text": "We integrate agentic workflows using LangGraph, open-weight, and frontier models tailored to user needs, prioritizing sovereignty and adaptability.",
-            "_id": "6aa51ef3ced409771f8fe40e"
+            "_id": "6aa55729a3de33dce3741ade"
           },
           {
             "heading": "Build It Faster Than Ever",
             "text": "Our teams use Codex, Claude, and multi-agent workflows while managing security, performance, cost, and governance without compromising speed or quality.",
-            "_id": "6aa51ef3ced409771f8fe40f"
+            "_id": "6aa55729a3de33dce3741adf"
           }
         ]
       }
@@ -6503,17 +6503,17 @@ const initialIndustries = [
           {
             "heading": "Ultra-Fast",
             "text": "Sub-25ms API response times, instant transaction settlement, and distributed cache performance.",
-            "_id": "6aa51ef4ced409771f8fe47f"
+            "_id": "6aa5572aa3de33dce3741b4f"
           },
           {
             "heading": "Bank-Grade Secure",
             "text": "Hardware-level AES-256 encryption, zero-trust tokenization, and strict PCI-DSS Level 1 compliance.",
-            "_id": "6aa51ef4ced409771f8fe480"
+            "_id": "6aa5572aa3de33dce3741b50"
           },
           {
             "heading": "Frictionless UX",
             "text": "1-click checkout experiences and biometric mobile authentication that maximize conversion.",
-            "_id": "6aa51ef4ced409771f8fe481"
+            "_id": "6aa5572aa3de33dce3741b51"
           }
         ]
       },
@@ -6524,17 +6524,17 @@ const initialIndustries = [
           {
             "heading": "Open Banking & ISO 20022",
             "text": "Interoperable APIs for Plaid, Stripe, Yodlee, SWIFT, and SEPA cross-border networks.",
-            "_id": "6aa51ef4ced409771f8fe483"
+            "_id": "6aa5572aa3de33dce3741b53"
           },
           {
             "heading": "Automated KYC & AML",
             "text": "Real-time biometric liveness checks, document verification, and sanction list screening.",
-            "_id": "6aa51ef4ced409771f8fe484"
+            "_id": "6aa5572aa3de33dce3741b54"
           },
           {
             "heading": "Immutable Audit Ledgers",
             "text": "Double-entry accounting systems with cryptographically verified transaction histories.",
-            "_id": "6aa51ef4ced409771f8fe485"
+            "_id": "6aa5572aa3de33dce3741b55"
           }
         ]
       },
@@ -6545,17 +6545,17 @@ const initialIndustries = [
           {
             "heading": "Real-Time Fraud Prevention",
             "text": "Zero-shot anomaly scoring that stops fraudulent transfers before settlement occurs.",
-            "_id": "6aa51ef4ced409771f8fe487"
+            "_id": "6aa5572aa3de33dce3741b57"
           },
           {
             "heading": "Dynamic Routing & Failover",
             "text": "Multi-processor smart routing that minimizes interchange fees and boosts authorization rates.",
-            "_id": "6aa51ef4ced409771f8fe488"
+            "_id": "6aa5572aa3de33dce3741b58"
           },
           {
             "heading": "Automated Underwriting",
             "text": "Instant credit decisioning algorithms that evaluate multi-source borrower risk.",
-            "_id": "6aa51ef4ced409771f8fe489"
+            "_id": "6aa5572aa3de33dce3741b59"
           }
         ]
       }
@@ -6608,12 +6608,10 @@ const initialIndustries = [
     "short": "Our healthcare software development services cover patient portals, telehealth platforms, clinical workflows, healthcare applications, data integrations, and secure administrative systems.",
     "desc": "Our **healthcare software development services** cover patient portals, telehealth platforms, clinical workflows, healthcare applications, data integrations, and secure administrative systems.",
     "points": [
-      "HIPAA-compliant patient portals & apps",
-      "WebRTC encrypted telehealth & video consults",
-      "EHR/EMR integration via HL7 FHIR APIs",
-      "E-prescriptions & digital pharmacy routing",
-      "Clinical intake & automated triage workflows",
-      "Role-based access & strict audit trails"
+      "Patient portals and mobile apps",
+      "Appointment and care workflows",
+      "Telemedicine app development services",
+      "EHR software development and integrations"
     ],
     "servicesWeOffer": [
       "Custom HIPAA-compliant web & mobile apps",
@@ -6690,17 +6688,17 @@ const initialIndustries = [
           {
             "heading": "Timely",
             "text": "Fast, frictionless patient intake, instant appointment scheduling, and rapid clinical alerts.",
-            "_id": "6aa51ef4ced409771f8fe447"
+            "_id": "6aa5572aa3de33dce3741b17"
           },
           {
             "heading": "Safe & Compliant",
             "text": "Zero-trust data vaults, end-to-end WebRTC encryption, and complete audit trails protecting PHI.",
-            "_id": "6aa51ef4ced409771f8fe448"
+            "_id": "6aa5572aa3de33dce3741b18"
           },
           {
             "heading": "Clinician-Friendly",
             "text": "Thoughtful workflows that reduce electronic documentation fatigue and clicks for providers.",
-            "_id": "6aa51ef4ced409771f8fe449"
+            "_id": "6aa5572aa3de33dce3741b19"
           }
         ]
       },
@@ -6711,17 +6709,17 @@ const initialIndustries = [
           {
             "heading": "EHR & EMR Systems",
             "text": "Bi-directional integration with Epic, Cerner, Allscripts, and AthenaHealth via HL7 FHIR v4.",
-            "_id": "6aa51ef4ced409771f8fe44b"
+            "_id": "6aa5572aa3de33dce3741b1b"
           },
           {
             "heading": "Regulatory Standards",
             "text": "Guaranteed adherence to HIPAA, HITECH, FDA 21 CFR Part 11, and GDPR health privacy rules.",
-            "_id": "6aa51ef4ced409771f8fe44c"
+            "_id": "6aa5572aa3de33dce3741b1c"
           },
           {
             "heading": "Medical Device APIs",
             "text": "Stream real-time vitals and diagnostic telemetry from FDA-cleared remote patient monitoring (RPM) hardware.",
-            "_id": "6aa51ef4ced409771f8fe44d"
+            "_id": "6aa5572aa3de33dce3741b1d"
           }
         ]
       },
@@ -6732,17 +6730,17 @@ const initialIndustries = [
           {
             "heading": "Intelligent Symptom Triage",
             "text": "AI-assisted clinical questionnaires that route patients to appropriate care tiers.",
-            "_id": "6aa51ef4ced409771f8fe44f"
+            "_id": "6aa5572aa3de33dce3741b1f"
           },
           {
             "heading": "Sub-100ms HD Telehealth",
             "text": "Browser-based WebRTC video consultations with zero downloads and live vitals overlay.",
-            "_id": "6aa51ef4ced409771f8fe450"
+            "_id": "6aa5572aa3de33dce3741b20"
           },
           {
             "heading": "Automated Clinical Charting",
             "text": "AI-generated consultation summaries and ICD-10 diagnostic coding assistance.",
-            "_id": "6aa51ef4ced409771f8fe451"
+            "_id": "6aa5572aa3de33dce3741b21"
           }
         ]
       }
@@ -6766,20 +6764,20 @@ const initialIndustries = [
     "solutionsTitle": "Our Healthcare & Life Sciences Solutions",
     "stats": [
       {
-        "value": "100%",
-        "label": "HIPAA & HITECH Compliant by Default"
+        "value": "150+",
+        "label": "Clients served"
       },
       {
-        "value": "120k+",
-        "label": "Patients Served on Cubixsol Systems"
+        "value": "10+",
+        "label": "Years shipping"
       },
       {
-        "value": "HL7 FHIR",
-        "label": "Standardized v4 Interoperability"
+        "value": "98%",
+        "label": "Satisfaction"
       },
       {
-        "value": "0.8s",
-        "label": "Real-Time EHR Record Synchronization"
+        "value": "20+",
+        "label": "Countries"
       }
     ]
   },
@@ -6967,17 +6965,17 @@ const initialIndustries = [
           {
             "heading": "Sub-Minute Sync",
             "text": "RESO Web API synchronization that reflects new listings and price cuts in under 60 seconds.",
-            "_id": "6aa51ef4ced409771f8fe4c9"
+            "_id": "6aa5572aa3de33dce3741b99"
           },
           {
             "heading": "Immersive Spatial UX",
             "text": "Embedded 3D Matterport virtual walkthroughs and Mapbox polygon spatial search.",
-            "_id": "6aa51ef4ced409771f8fe4ca"
+            "_id": "6aa5572aa3de33dce3741b9a"
           },
           {
             "heading": "High-Converting Flow",
             "text": "Frictionless tour booking and automated SMS routing to local on-duty agents.",
-            "_id": "6aa51ef4ced409771f8fe4cb"
+            "_id": "6aa5572aa3de33dce3741b9b"
           }
         ]
       },
@@ -6988,17 +6986,17 @@ const initialIndustries = [
           {
             "heading": "RESO Web API Standard",
             "text": "Certified data pipelines ensuring accurate listing status, photos, and agent attribution.",
-            "_id": "6aa51ef4ced409771f8fe4cd"
+            "_id": "6aa5572aa3de33dce3741b9d"
           },
           {
             "heading": "Fair Housing & WCAG 2.1",
             "text": "Built-in accessibility compliance, screen reader support, and equal housing opportunity notices.",
-            "_id": "6aa51ef4ced409771f8fe4ce"
+            "_id": "6aa5572aa3de33dce3741b9e"
           },
           {
             "heading": "PMS Interoperability",
             "text": "Two-way synchronization with Yardi, RealPage, AppFolio, and Entrata property databases.",
-            "_id": "6aa51ef4ced409771f8fe4cf"
+            "_id": "6aa5572aa3de33dce3741b9f"
           }
         ]
       },
@@ -7009,17 +7007,17 @@ const initialIndustries = [
           {
             "heading": "Sub-45s Lead Routing",
             "text": "Round-robin agent assignment with instant push alerts that maximize lead response rates.",
-            "_id": "6aa51ef4ced409771f8fe4d1"
+            "_id": "6aa5572aa3de33dce3741ba1"
           },
           {
             "heading": "Automated CMA Reports",
             "text": "Instant Comparative Market Analysis generation powered by live neighborhood comps.",
-            "_id": "6aa51ef4ced409771f8fe4d2"
+            "_id": "6aa5572aa3de33dce3741ba2"
           },
           {
             "heading": "Digital Escrow Vaults",
             "text": "Secure digital offer submission, automated e-signatures, and transaction milestone tracking.",
-            "_id": "6aa51ef4ced409771f8fe4d3"
+            "_id": "6aa5572aa3de33dce3741ba3"
           }
         ]
       }
@@ -7154,17 +7152,17 @@ const initialIndustries = [
           {
             "heading": "Row-Level Secure",
             "text": "PostgreSQL RLS and schema isolation guaranteeing zero cross-tenant data leakage.",
-            "_id": "6aa51ef4ced409771f8fe501"
+            "_id": "6aa5572aa3de33dce3741bd1"
           },
           {
             "heading": "Subdomain Automated",
             "text": "Instant dynamic DNS tenant routing (tenant.yourplatform.com) with automated TLS certificates.",
-            "_id": "6aa51ef4ced409771f8fe502"
+            "_id": "6aa5572aa3de33dce3741bd2"
           },
           {
             "heading": "High-Throughput Pool",
             "text": "Tenant-aware connection pooling and Redis caching for sub-20ms database queries.",
-            "_id": "6aa51ef4ced409771f8fe503"
+            "_id": "6aa5572aa3de33dce3741bd3"
           }
         ]
       },
@@ -7175,17 +7173,17 @@ const initialIndustries = [
           {
             "heading": "Stripe & Paddle Metering",
             "text": "Real-time usage aggregation, tiered seat management, and self-serve upgrade flows.",
-            "_id": "6aa51ef4ced409771f8fe505"
+            "_id": "6aa5572aa3de33dce3741bd5"
           },
           {
             "heading": "Automated Dunning",
             "text": "Smart credit card retry logic and automated email recovery flows that reduce involuntary churn.",
-            "_id": "6aa51ef4ced409771f8fe506"
+            "_id": "6aa5572aa3de33dce3741bd6"
           },
           {
             "heading": "Global Tax Compliance",
             "text": "Automated sales tax and VAT calculation via Stripe Tax and TaxJar integration.",
-            "_id": "6aa51ef4ced409771f8fe507"
+            "_id": "6aa5572aa3de33dce3741bd7"
           }
         ]
       },
@@ -7196,17 +7194,17 @@ const initialIndustries = [
           {
             "heading": "Self-Serve Onboarding",
             "text": "Interactive product walkthroughs and checklist empty-states that cut time-to-value to minutes.",
-            "_id": "6aa51ef4ced409771f8fe509"
+            "_id": "6aa5572aa3de33dce3741bd9"
           },
           {
             "heading": "Feature Flag Canary",
             "text": "LaunchDarkly and PostHog integration for progressive rollouts and zero-downtime releases.",
-            "_id": "6aa51ef4ced409771f8fe50a"
+            "_id": "6aa5572aa3de33dce3741bda"
           },
           {
             "heading": "Enterprise Security Ready",
             "text": "One-click Okta, Azure AD, and Google Workspace SAML SSO with automated SCIM provisioning.",
-            "_id": "6aa51ef4ced409771f8fe50b"
+            "_id": "6aa5572aa3de33dce3741bdb"
           }
         ]
       }

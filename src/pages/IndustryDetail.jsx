@@ -53,10 +53,10 @@ const industryThemes = {
     isDarkHero: false,
     trustPills: ['100% HIPAA & BAA Ready', 'HL7 FHIR v4 Certified', 'Encrypted WebRTC Telehealth'],
     stats: [
-      ['100%', 'HIPAA / HITECH Compliant'],
-      ['120k+', 'Patients Served'],
-      ['HL7 / FHIR', 'Standard APIs'],
-      ['0.8s', 'EHR Record Sync'],
+      ['150+', 'Clients served'],
+      ['10+', 'Years shipping'],
+      ['98%', 'Satisfaction'],
+      ['20+', 'Countries'],
     ],
   },
   ecommerce: {
@@ -187,20 +187,20 @@ const domainFaqs = {
   ],
   healthcare: [
     {
-      q: 'Do you sign HIPAA Business Associate Agreements (BAAs)?',
-      a: 'Yes. We sign standard BAAs with healthcare providers, institutions, and digital health startups. All infrastructure, databases, and third-party APIs comply with HIPAA/HITECH security rules.',
+      q: 'What can your healthcare software development services cover?',
+      a: 'We develop patient portals, scheduling tools, telehealth workflows, and internal applications for healthcare operations. We define the features, integrations, and data requirements around your users and the problem you need to solve.',
     },
     {
-      q: 'How do your solutions integrate with Epic, Cerner, or AthenaHealth?',
-      a: 'We build interoperable HL7 FHIR (Fast Healthcare Interoperability Resources) and SMART on FHIR connectors that allow bi-directional clinical charting, appointment synchronization, and lab result streaming.',
+      q: 'Do you provide healthcare mobile app development services?',
+      a: 'Yes. Our healthcare mobile app development services support patient and staff experiences such as appointment booking, care information access, and task coordination. We help you choose a mobile approach based on your users, required features, and existing systems.',
     },
     {
-      q: 'Is video consultation software browser-based or requires downloads?',
-      a: 'Our telehealth solutions are 100% web-based using encrypted WebRTC. Patients and doctors can connect instantly from mobile or desktop with zero downloads required.',
+      q: 'Can you connect new software with our existing healthcare systems?',
+      a: 'We assess the interfaces and data access your systems provide before planning integrations. For EHR software development projects, we clarify which records need to move between systems, who can access them, and how updates should flow.',
     },
     {
-      q: 'Can you handle medical billing and insurance verification?',
-      a: 'Yes. We integrate with clearinghouses (Change Healthcare, Availity, Waystar) for automated 270/271 real-time insurance eligibility checks and 837 claims generation.',
+      q: 'How does a healthcare software project start, and who owns the code?',
+      a: 'We begin with discovery to agree on users, workflows, scope, and a practical first release. Your contract defines ownership and handover terms. We typically transfer project deliverables to you and provide documentation to support your internal team.',
     },
   ],
   ecommerce: [
@@ -635,7 +635,7 @@ function getHeroHeadline(slug, title, theme) {
     case 'healthcare':
       return (
         <>
-          HIPAA-Compliant <span className={theme.accentText}>Digital Health</span> &amp; Clinical Software
+          Healthcare Software <span className={theme.accentText}>Development Services</span>
         </>
       );
     case 'education':
@@ -821,7 +821,7 @@ export default function IndustryDetail() {
 
                 <div className="flex flex-wrap items-center gap-3.5 pt-1">
                   <Link to="/contact" className={`btn-primary flex items-center gap-2 shadow-md ${theme.heroButton}`}>
-                    Discuss Your Project <ArrowRight className="w-4 h-4" />
+                    {ind.slug === 'healthcare' ? 'Discuss your project' : 'Discuss Your Project'} <ArrowRight className="w-4 h-4" />
                   </Link>
                   <button
                     onClick={openEstimateModal}
@@ -832,7 +832,7 @@ export default function IndustryDetail() {
                         : 'border-gray-300 bg-white text-ink hover:border-primary-500'
                     }`}
                   >
-                    <Sparkles className="w-4 h-4 text-primary-500" /> Get Free Estimate
+                    <Sparkles className="w-4 h-4 text-primary-500" /> {ind.slug === 'healthcare' ? 'Get a proposal' : 'Get Free Estimate'}
                   </button>
                 </div>
 
@@ -884,9 +884,11 @@ export default function IndustryDetail() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
             <div>
-              <p className="eyebrow mb-1">Capabilities</p>
+              <p className="eyebrow mb-1">{ind.slug === 'healthcare' ? 'Services' : 'Capabilities'}</p>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-ink tracking-tight">
-                Often Paired with {ind.title} Software
+                {ind.slug === 'healthcare'
+                  ? 'Development Services for Your Healthcare Project'
+                  : `Often Paired with ${ind.title} Software`}
               </h2>
             </div>
             <Link to="/services" className="text-sm font-bold text-primary-600 inline-flex items-center gap-1 hover:gap-2 transition-all">
@@ -923,25 +925,29 @@ export default function IndustryDetail() {
             <div className="absolute -right-10 -top-10 w-64 h-64 rounded-full bg-primary-500/20 blur-3xl pointer-events-none" />
             <div className="relative space-y-2.5">
               <span className="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-white/10 text-primary-300">
-                Ready to Build?
+                {ind.slug === 'healthcare' ? 'Services' : 'Ready to Build?'}
               </span>
               <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-snug">
-                Planning a custom {ind.title.toLowerCase()} software project?
+                {ind.slug === 'healthcare'
+                  ? 'Have a Healthcare Product in Mind?'
+                  : `Planning a custom ${ind.title.toLowerCase()} software project?`}
               </h3>
               <p className="text-white/70 text-sm sm:text-base max-w-xl leading-relaxed">
-                Connect directly with our senior software architects. We will evaluate your technical requirements, constraints, and provide an actionable scope roadmap.
+                {ind.slug === 'healthcare'
+                  ? "Share the workflow you want to improve, the systems you use, and your delivery priorities. We'll help you define a practical starting point."
+                  : 'Connect directly with our senior software architects. We will evaluate your technical requirements, constraints, and provide an actionable scope roadmap.'}
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-3.5 relative shrink-0">
               <Link to="/contact" className="btn-primary">
-                Book Consultation <ArrowRight className="w-4 h-4" />
+                {ind.slug === 'healthcare' ? 'Talk to Cubixsol' : 'Book Consultation'} <ArrowRight className="w-4 h-4" />
               </Link>
               <button
                 onClick={openEstimateModal}
                 type="button"
                 className="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider border border-white/20 transition"
               >
-                Get Cost Estimate
+                {ind.slug === 'healthcare' ? 'Get a Proposal' : 'Get Cost Estimate'}
               </button>
             </div>
           </div>
@@ -1096,7 +1102,17 @@ export default function IndustryDetail() {
       <div id="industry-inquiry">
         <ServiceInquiryForm defaultService={`${ind.title} project`} />
       </div>
-      <CtaBanner />
+      {ind.slug === 'healthcare' ? (
+        <CtaBanner
+          eyebrow="Education | Finance & Fintech | E-Commerce | Real Estate"
+          title="Let’s Build Software That Supports Better Care Delivery"
+          desc="Work with Cubixsol to turn your healthcare requirements into a clear development plan, practical features, and software your patients and staff can use with confidence."
+          buttonText="Get a Free Consultation"
+          buttonLink="/contact"
+        />
+      ) : (
+        <CtaBanner />
+      )}
     </div>
   );
 }
