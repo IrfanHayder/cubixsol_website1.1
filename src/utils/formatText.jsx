@@ -19,11 +19,12 @@ export function formatInline(text, options = {}) {
 
   // Regex tokens:
   // 1. Markdown Images: !\[([^\]]*)\]\(([^)]+)\)
-  // 2. Markdown Links: \[([^\]]+)\]\(([^)]+)\)
-  // 3. Bold: \*\*([^*]+?)\*\*
-  // 4. Inline code: `([^`]+?)`
-  // 5. Italic: \*([^*]+?)\* or _([^_]+?)_
-  const tokenRegex = /(!\[[^\]]*\]\([^)]+\)|\[[^\]]+\]\([^)]+\)|\*\*[^*]+?\*\*|`[^`]+?`|\*[^*]+?\*|_[^_]+?_)/g;
+  // 2. Bold Links: \*\*\[([^\]]+)\]\(([^)]+)\)\*\*
+  // 3. Markdown Links: \[([^\]]+)\]\(([^)]+)\)
+  // 4. Bold: \*\*([^*]+?)\*\*
+  // 5. Inline code: `([^`]+?)`
+  // 6. Italic: \*([^*]+?)\* or _([^_]+?)_
+  const tokenRegex = /(!\[[^\]]*\]\([^)]+\)|\*\*\[[^\]]+\]\([^)]+\)\*\*|\[[^\]]+\]\([^)]+\)|\*\*[^*]+?\*\*|`[^`]+?`|\*[^*]+?\*|_[^_]+?_)/g;
   const parts = text.split(tokenRegex);
 
   return parts.map((part, index) => {
@@ -49,6 +50,26 @@ export function formatInline(text, options = {}) {
       );
     }
 
+    // Bold Link: **[title](url)**
+    const boldLinkMatch = /^\*\*\[([^\]]+)\]\(([^)]+)\)\*\*$/.exec(part);
+    if (boldLinkMatch) {
+      const linkText = boldLinkMatch[1];
+      const linkUrl = boldLinkMatch[2];
+      const isExternal = /^https?:\/\//i.test(linkUrl);
+      return (
+        <strong key={index} className={strongClass}>
+          <a
+            href={linkUrl}
+            target={isExternal ? '_blank' : undefined}
+            rel={isExternal ? 'noopener noreferrer' : undefined}
+            className={linkClass}
+          >
+            {linkText}
+          </a>
+        </strong>
+      );
+    }
+
     // Link: [title](url)
     const linkMatch = /^\[([^\]]+)\]\(([^)]+)\)$/.exec(part);
     if (linkMatch) {
@@ -63,7 +84,7 @@ export function formatInline(text, options = {}) {
           rel={isExternal ? 'noopener noreferrer' : undefined}
           className={linkClass}
         >
-          {linkText}
+          {formatInline(linkText, options)}
         </a>
       );
     }
@@ -78,7 +99,7 @@ export function formatInline(text, options = {}) {
         <React.Fragment key={index}>
           {hasLeadingSpace ? ' ' : ''}
           <strong className={strongClass}>
-            {trimmed}
+            {formatInline(trimmed, options)}
           </strong>
           {hasTrailingSpace ? ' ' : ''}
         </React.Fragment>
@@ -103,7 +124,7 @@ export function formatInline(text, options = {}) {
       const inner = part.slice(1, -1);
       return (
         <em key={index} className={emClass}>
-          {inner}
+          {formatInline(inner, options)}
         </em>
       );
     }
