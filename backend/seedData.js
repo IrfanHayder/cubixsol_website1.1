@@ -3122,35 +3122,35 @@ const initialSolutions = [
       "subtitle": "Our structured process to plan, develop, test, and deploy reliable agentic AI systems.",
       "steps": [
         {
-          "_id": "6aa7ff6c7d66eee8a3dbdb3d",
+          "_id": "6aa8d2fbaff22c02c5080c05",
           "stepNumber": "01",
           "title": "Discover",
           "desc": "We begin by reviewing the business goal, current workflow, tasks, data sources, existing systems, and required integrations.",
           "bullets": []
         },
         {
-          "_id": "6aa7ff6c7d66eee8a3dbdb3e",
+          "_id": "6aa8d2fbaff22c02c5080c06",
           "stepNumber": "02",
           "title": "Design",
           "desc": "Our team defines the agent’s tasks, instructions, tools, data access, permissions, and points where human approval may be needed.",
           "bullets": []
         },
         {
-          "_id": "6aa7ff6c7d66eee8a3dbdb3f",
+          "_id": "6aa8d2fbaff22c02c5080c07",
           "stepNumber": "03",
           "title": "Build",
           "desc": "Developers build the AI agent or multi-agent system and connect the required tools, APIs, databases, and data sources.",
           "bullets": []
         },
         {
-          "_id": "6aa7ff6c7d66eee8a3dbdb40",
+          "_id": "6aa8d2fbaff22c02c5080c08",
           "stepNumber": "04",
           "title": "Deploy",
           "desc": "We test the system before putting it into use. Testing checks whether the agent can complete its assigned tasks and follow the defined rules.",
           "bullets": []
         },
         {
-          "_id": "6aa7ff6c7d66eee8a3dbdb41",
+          "_id": "6aa8d2fbaff22c02c5080c09",
           "stepNumber": "05",
           "title": "Monitor & Improve",
           "desc": "AI systems may need changes as your business process or connected tools change.",
@@ -3481,35 +3481,35 @@ const initialSolutions = [
       "subtitle": "Our structured process to design, build, test, and deploy reliable customer segmentation models.",
       "steps": [
         {
-          "_id": "6aa7ff6c7d66eee8a3dbdb69",
+          "_id": "6aa8d2fbaff22c02c5080c31",
           "stepNumber": "01",
           "title": "Discover",
           "desc": "We begin by reviewing your business goals, customer data, existing systems, and segmentation requirements. Early discussions help define the customer groups your team needs and the data available for the project.",
           "bullets": []
         },
         {
-          "_id": "6aa7ff6c7d66eee8a3dbdb6a",
+          "_id": "6aa8d2fbaff22c02c5080c32",
           "stepNumber": "02",
           "title": "Design",
           "desc": "Our team selects suitable segmentation methods and defines the rules for each customer group. We also plan how segments will be used across your marketing or customer systems.",
           "bullets": []
         },
         {
-          "_id": "6aa7ff6c7d66eee8a3dbdb6b",
+          "_id": "6aa8d2fbaff22c02c5080c33",
           "stepNumber": "03",
           "title": "Build",
           "desc": "Developers and data specialists create the required segments, analysis, and supporting data setup. We check the results against the agreed requirements before moving to deployment.",
           "bullets": []
         },
         {
-          "_id": "6aa7ff6c7d66eee8a3dbdb6c",
+          "_id": "6aa8d2fbaff22c02c5080c34",
           "stepNumber": "04",
           "title": "Deploy",
           "desc": "We make the completed segments available in the relevant systems and workflows. Deployment can support marketing campaigns, customer analysis, reporting, or other approved business activities.",
           "bullets": []
         },
         {
-          "_id": "6aa7ff6c7d66eee8a3dbdb6d",
+          "_id": "6aa8d2fbaff22c02c5080c35",
           "stepNumber": "05",
           "title": "Monitor & Improve",
           "desc": "Customer behaviour can change over time. We review segment performance, data quality, and business needs so your segmentation setup can be updated when new requirements arise.",
@@ -3621,130 +3621,156 @@ const initialSolutions = [
   },
   {
     "practices": {
-      "title": "",
-      "intro": "",
-      "items": []
+      "title": "Best Practices for Data Engineering",
+      "intro": "Reliable pipelines and trustworthy data start with clear standards. These practices guide how we design, run, and scale data platforms.",
+      "items": [
+        {
+          "title": "Reliable Pipeline Design",
+          "body": "We design idempotent, monitored pipelines with clear ownership so failures are visible and recoverable without silent data loss.",
+          "_id": "6aa8d22859c4a05ed5834250"
+        },
+        {
+          "title": "Data Quality Gates",
+          "body": "Validation checks, schema contracts, and freshness alerts keep bad data from flowing into warehouses and dashboards.",
+          "_id": "6aa8d22859c4a05ed5834251"
+        },
+        {
+          "title": "Scalable Architecture",
+          "body": "Partitioning, storage formats, and compute choices are planned for growth so you are not forced into constant rebuilds.",
+          "_id": "6aa8d22859c4a05ed5834252"
+        },
+        {
+          "title": "Security by Default",
+          "body": "Access controls, encryption, and audit trails are part of the design — not an afterthought before go-live.",
+          "_id": "6aa8d22859c4a05ed5834253"
+        },
+        {
+          "title": "Operational Excellence",
+          "body": "Runbooks, alerting, and cost visibility help teams keep systems healthy day after day.",
+          "_id": "6aa8d22859c4a05ed5834254"
+        }
+      ]
     },
     "impact": {
-      "title": "",
-      "intro": "",
       "rows": []
     },
     "process": {
       "title": "How We Deliver Data Engineering Projects",
-      "subtitle": "Our structured process to design, build, test, and deploy modern data engineering infrastructure.",
+      "subtitle": "Our structured delivery process to design, build, test, and deploy modern data engineering infrastructure.",
       "steps": [
         {
           "stepNumber": "01",
-          "title": "Discover",
-          "desc": "We review your current data sources, systems, workflows, business requirements, and reporting needs. Our team identifies data gaps, integration issues, and areas that need improvement.",
+          "title": "Discover & Assess",
+          "desc": "We audit your existing data sources, pipeline bottlenecks, schema complexity, security constraints, and reporting requirements.",
           "bullets": [],
-          "image": "",
-          "_id": "6aa2a48d24254065bfd0f095"
+          "_id": "6aa8d22859c4a05ed5834259"
         },
         {
           "stepNumber": "02",
-          "title": "Design",
-          "desc": "We create the data architecture, pipeline structure, storage approach, and data models for your project. You get a clear technical plan before development starts.",
+          "title": "Architect & Model",
+          "desc": "Our architects design the data pipeline structure, dimensional models, lakehouse partitions, and orchestration workflows.",
           "bullets": [],
-          "image": "",
-          "_id": "6aa2a48d24254065bfd0f096"
+          "_id": "6aa8d22859c4a05ed583425a"
         },
         {
           "stepNumber": "03",
-          "title": "Build",
-          "desc": "Our engineers develop pipelines, integrations, transformations, data models, and storage systems. We also add data validation and access controls where required.",
+          "title": "Build & Automate",
+          "desc": "Our data engineers build the ETL/ELT pipelines, ingestion connectors, transformation scripts in dbt, and automated validation rules.",
           "bullets": [],
-          "image": "",
-          "_id": "6aa2a48d24254065bfd0f097"
+          "_id": "6aa8d22859c4a05ed583425b"
         },
         {
           "stepNumber": "04",
-          "title": "Deploy",
-          "desc": "We move the completed data solution into your working environment and test the pipelines, connections, permissions, and data flows before release.",
+          "title": "Test & Validate",
+          "desc": "We execute end-to-end data reconciliation, performance stress tests, and automated data quality checks before deployment.",
           "bullets": [],
-          "image": "",
-          "_id": "6aa2a48d24254065bfd0f098"
+          "_id": "6aa8d22859c4a05ed583425c"
         },
         {
           "stepNumber": "05",
-          "title": "Monitor and Improve",
-          "desc": "Data systems need ongoing attention. We monitor pipeline performance, data quality, failures, and system usage. Our team fixes issues and makes improvements as your data needs change.",
+          "title": "Deploy & Monitor",
+          "desc": "We deploy to production cloud infrastructure with CI/CD, 24/7 observability, proactive alerting, and handover documentation.",
           "bullets": [],
-          "image": "",
-          "_id": "6aa2a48d24254065bfd0f099"
+          "_id": "6aa8d22859c4a05ed583425d"
         }
       ]
     },
-    "title": "Data Engineering",
-    "slug": "data-engineering-services",
-    "desc": "Good business decisions depend on reliable data. Cubixsol helps businesses bring data from different systems into a structured environment where teams can access and use it more easily. Our data engineering services cover data pipelines, ETL, data warehouses, data lakes, streaming, and platform modernization. We also build data foundations that support reporting, business intelligence services, analytics, and machine learning.",
-    "group": "Data Solutions",
-    "bullets": [],
+    "seo": {
+      "metaTitle": "Data Engineering Services & Cloud Lakehouse Solutions | Cubixsol",
+      "metaDescription": "Scale your analytics and AI with Cubixsol’s data engineering services. We build robust ETL/ELT pipelines, real-time streaming, and modern cloud lakehouses with Snowflake, Databricks, and Kafka.",
+      "keywords": "data engineering, ETL pipelines, ELT pipelines, Snowflake, Databricks, Apache Spark, Kafka, dbt, Apache Airflow, BigQuery, Cubixsol"
+    },
+    "slug": "data-engineering",
+    "bullets": [
+      "End-to-End ETL / ELT Pipeline Architecture & Automation",
+      "Real-Time Streaming & Event-Driven Processing with Kafka & Spark",
+      "Cloud Lakehouse & Warehouse Optimization (Snowflake, Databricks, BigQuery)",
+      "Automated Data Quality Gates, Monitoring & Observability"
+    ],
+    "category": "Data Solutions",
     "ctaBannerButtonLink": "/contact",
-    "ctaBannerButtonText": "Book a Call",
-    "ctaBannerDesc": "Reliable data starts with the right foundation. Cubixsol provides **data engineering services** for businesses that need better data pipelines, storage, processing, and access.",
-    "ctaBannerEyebrow": "READY TO GET STARTED?",
-    "ctaBannerSecondaryButtonLink": "/contact",
-    "ctaBannerSecondaryButtonText": "Free Assessment",
-    "ctaBannerTitle": "Ready to Get Started?",
+    "ctaBannerButtonText": "Talk to Us",
+    "ctaBannerDesc": "Empower your business with clean, fast, and trustworthy data infrastructure built by Cubixsol. Share your data goals with our team and let us architect the right solution for you.",
+    "ctaBannerEyebrow": "TRANSFORM YOUR DATA PLATFORM",
+    "ctaBannerSecondaryButtonLink": "/services",
+    "ctaBannerSecondaryButtonText": "Browse Services",
+    "ctaBannerTitle": "Ready to Build Scalable, Reliable Data Pipelines?",
     "ctaPrimaryLink": "/contact",
-    "ctaPrimaryText": "Book a Call",
-    "ctaSecondaryLink": "/contact",
-    "ctaSecondaryText": "Free Assessment",
+    "ctaPrimaryText": "Talk to us",
+    "ctaSecondaryLink": "/services",
+    "ctaSecondaryText": "Browse services",
+    "desc": "Build robust, scalable data pipelines, modern data lakehouses, and high-performance warehousing platforms. We engineer reliable data infrastructure that powers real-time analytics, machine learning, and business intelligence.",
     "faqs": [
       {
         "q": "How much do data engineering services cost?",
-        "a": "Cost depends on the number of data sources, project scope, platform requirements, integrations, and ongoing support needs. Cubixsol can review your requirements and provide a project estimate."
+        "a": "Cost depends on the number of data sources, pipeline volume, cloud platform requirements, data modeling complexity, and ongoing support. Cubixsol reviews your architecture and provides a clear, milestone-based estimate."
       },
       {
         "q": "How long does a data engineering project take?",
-        "a": "A small pipeline project may take a few weeks, while a larger data platform can take several months. The timeline depends on system complexity, data volume, integrations, and project requirements."
+        "a": "A focused pipeline or dbt modeling setup can take 2 to 4 weeks, while an enterprise-wide data lakehouse and warehouse migration typically takes 2 to 4 months."
       },
       {
         "q": "What is the difference between ETL and ELT?",
-        "a": "ETL transforms data before loading it into the target system. ELT loads the data first and transforms it inside the warehouse or data platform. The right approach depends on your systems, data volume, and processing needs."
+        "a": "ETL transforms data before loading it into the destination, while ELT loads raw data into a scalable warehouse (like Snowflake or BigQuery) and transforms it using tools like dbt. ELT is faster and more flexible for modern cloud data platforms."
       },
       {
-        "q": "How do I choose between Snowflake and BigQuery?",
-        "a": "Both platforms support scalable cloud data workloads. The better option depends on your existing cloud environment, data architecture, workload type, team expertise, and cost requirements. Our team can help evaluate both options."
+        "q": "How do I choose between Snowflake, Databricks, and BigQuery?",
+        "a": "The best choice depends on your cloud ecosystem (AWS/Azure/GCP), workload types (SQL analytics vs Spark/Python ML), concurrency requirements, and budget. We evaluate your needs and recommend the optimal platform."
       },
       {
-        "q": "How do you maintain data quality?",
-        "a": "We use validation rules, data checks, transformation logic, monitoring, and error handling to identify problems in data pipelines. We also review data quality requirements during the design stage."
+        "q": "How do you ensure data quality and avoid silent pipeline failures?",
+        "a": "We implement automated schema validation, freshness monitors, dbt test assertions, anomaly alerts, and CI/CD pipelines so invalid records are quarantined before reaching business dashboards."
       }
     ],
-    "subServicesIntro": "Our data engineering services cover the core systems your business needs to collect, process, store, and use data.",
+    "group": "Data Solutions",
+    "heroSubtitle": "Pipelines, Warehouses, and Enterprise-Scale Data Platforms",
+    "heroTitle": "Data Engineering Services",
+    "name": "Data Engineering",
+    "subServicesIntro": "From fragmented raw data sources to unified analytics-ready datasets, our end-to-end data engineering services cover every stage of the modern data lifecycle.",
     "subServicesItems": [
       {
-        "title": "Data Pipelines and ETL Services",
-        "desc": "We build data pipelines to move information from databases, applications, APIs, files, and other sources into your target systems. Our ETL services extract data, clean and transform it, then load it into the right destination. We also support ELT workflows when your platform handles transformation after data reaches the warehouse or lake. Automated pipelines reduce manual data handling and help keep information ready for reporting and analysis.",
-        "q": "Data Pipelines and ETL Services",
-        "a": "We build data pipelines to move information from databases, applications, APIs, files, and other sources into your target systems. Our ETL services extract data, clean and transform it, then load it into the right destination. We also support ELT workflows when your platform handles transformation after data reaches the warehouse or lake. Automated pipelines reduce manual data handling and help keep information ready for reporting and analysis."
+        "title": "Data Pipelines & ETL / ELT Services",
+        "desc": "We build automated data pipelines to extract, transform, and load information from databases, APIs, ERPs, and cloud storage into unified analytics environments. Automated pipelines reduce manual data handling, eliminate data silos, and maintain high data freshness."
       },
       {
-        "title": "Data Warehousing",
-        "desc": "We design data warehouses that bring business information into one structured environment. Your teams can access data from sales, finance, operations, marketing, and other systems without checking each source separately. Our team works with platforms such as Snowflake and BigQuery to create organized data models that support reporting, dashboards, analytics, and business intelligence.",
-        "q": "Data Warehousing",
-        "a": "We design data warehouses that bring business information into one structured environment. Your teams can access data from sales, finance, operations, marketing, and other systems without checking each source separately. Our team works with platforms such as Snowflake and BigQuery to create organized data models that support reporting, dashboards, analytics, and business intelligence."
+        "title": "Modern Data Lakehouse & Cloud Warehousing",
+        "desc": "We design and optimize scalable data warehouses and lakehouses using Snowflake, Databricks, and Google BigQuery. Structured dimensional data models ensure fast query performance and reliable reporting for your analytics and BI teams."
       },
       {
-        "title": "Data Lakes",
-        "desc": "Data lakes provide a central place for structured, semi-structured, and unstructured data. We help businesses collect large volumes of information and organize it for future analytics, reporting, and machine learning use cases. Our team sets up storage and data flows based on how your business collects and uses information.",
-        "q": "Data Lakes",
-        "a": "Data lakes provide a central place for structured, semi-structured, and unstructured data. We help businesses collect large volumes of information and organize it for future analytics, reporting, and machine learning use cases. Our team sets up storage and data flows based on how your business collects and uses information."
+        "title": "Real-Time Event Streaming & Ingestion",
+        "desc": "Process live data as events occur with distributed streaming architectures powered by Apache Kafka and Apache Spark. Ideal for operational telemetry, fraud detection, live dashboards, and transactional event pipelines."
       },
       {
-        "title": "Real-Time Data Streaming",
-        "desc": "Some businesses need data as events happen instead of waiting for scheduled updates. We build streaming pipelines for use cases such as live dashboards, transaction monitoring, application events, and operational analytics. Kafka can support high-volume event streaming and help move data between applications and analytics systems in near real time.",
-        "q": "Real-Time Data Streaming",
-        "a": "Some businesses need data as events happen instead of waiting for scheduled updates. We build streaming pipelines for use cases such as live dashboards, transaction monitoring, application events, and operational analytics. Kafka can support high-volume event streaming and help move data between applications and analytics systems in near real time."
+        "title": "Data Modeling, Transformation & dbt Orchestration",
+        "desc": "Organize raw information into clean, modular data layers using dbt (data build tool) and Apache Airflow. We establish automated testing, version control, and lineage documentation for maintainable transformation workflows."
       },
       {
-        "title": "Data Platform Modernization",
-        "desc": "Older data systems can require manual work, slow reporting, and difficult maintenance. We modernize data platforms by reviewing existing systems, improving pipelines, updating data models, and moving workloads to modern cloud platforms when needed. The goal is a simpler data environment that supports current business needs and future growth.",
-        "q": "Data Platform Modernization",
-        "a": "Older data systems can require manual work, slow reporting, and difficult maintenance. We modernize data platforms by reviewing existing systems, improving pipelines, updating data models, and moving workloads to modern cloud platforms when needed. The goal is a simpler data environment that supports current business needs and future growth."
+        "title": "Data Quality, Testing & Observability",
+        "desc": "Incorporate automated schema validation, anomaly detection, and freshness alerting with tools like Great Expectations. Catch data quality regressions before they impact executive dashboards or downstream applications."
+      },
+      {
+        "title": "Legacy Data Platform Modernization",
+        "desc": "Modernize legacy data warehouses, slow batch jobs, and fragmented databases into efficient cloud-native architectures with minimal operational disruption and guaranteed data consistency."
       }
     ],
     "subServicesTitle": "Our Data Engineering Capabilities",
@@ -3752,71 +3778,52 @@ const initialSolutions = [
       "Apache Airflow",
       "dbt",
       "Snowflake",
+      "Databricks",
       "Google BigQuery",
       "Apache Spark",
-      "Apache Kafka"
+      "Apache Kafka",
+      "PostgreSQL",
+      "AWS Glue"
     ],
-    "techDesc": "Our team uses proven data engineering technologies based on project requirements. Our technology stack includes Apache Airflow, dbt, Snowflake, Google BigQuery, Apache Spark, and Apache Kafka. Airflow helps manage scheduled workflows. dbt supports data transformation and modeling. Snowflake and BigQuery provide scalable cloud data platforms. Spark handles large-scale data processing, while Kafka supports real-time event streaming.",
-    "techTitle": "Tools & Tech",
-    "useCasesIntro": "Data engineering enables reliable data integration, real-time analytics, and machine learning readiness across your operations.",
+    "techDesc": "Our team leverages modern, industry-standard data engineering frameworks and cloud-native ecosystems to design resilient, future-proof data infrastructure tailored to your workload and budget.",
+    "techTitle": "Tools & Technologies",
+    "title": "Data Engineering",
+    "useCasesIntro": "Our data engineering solutions solve mission-critical data processing and analytics challenges across enterprise domains.",
     "useCasesItems": [
       {
-        "title": "Unify Siloed Data",
-        "desc": "Businesses often store data across different applications and databases. We connect these sources and create data pipelines that bring information into a common environment. Your teams can work from consistent data instead of checking multiple systems manually.",
-        "q": "Unify Siloed Data",
-        "a": "Businesses often store data across different applications and databases. We connect these sources and create data pipelines that bring information into a common environment. Your teams can work from consistent data instead of checking multiple systems manually."
+        "title": "Unified Enterprise 360 & BI",
+        "desc": "Consolidate disparate data sources—CRM, payment gateways, marketing tools, and operational DBs—into a single source of truth for trustworthy BI reporting and cross-departmental insights."
       },
       {
-        "title": "Real-Time Analytics",
-        "desc": "Real-time data pipelines help teams see important changes as they happen. Businesses can use live data for operational dashboards, transaction monitoring, customer activity, and other time-sensitive decisions.",
-        "q": "Real-Time Analytics",
-        "a": "Real-time data pipelines help teams see important changes as they happen. Businesses can use live data for operational dashboards, transaction monitoring, customer activity, and other time-sensitive decisions."
+        "title": "High-Throughput Real-Time Analytics",
+        "desc": "Process millions of events per minute for sub-second dashboards, telemetry monitoring, user clickstreams, and real-time inventory management."
       },
       {
-        "title": "ML-Ready Datasets",
-        "desc": "Machine learning projects need clean, structured, and accessible data. We prepare datasets by combining sources, applying transformations, handling data quality issues, and creating reliable data flows for ML workloads.",
-        "q": "ML-Ready Datasets",
-        "a": "Machine learning projects need clean, structured, and accessible data. We prepare datasets by combining sources, applying transformations, handling data quality issues, and creating reliable data flows for ML workloads."
+        "title": "ML-Ready Feature Stores & Pipelines",
+        "desc": "Clean, structure, and orchestrate large-scale data feeds to power machine learning models, recommendation engines, and AI applications with reliable training data."
       }
     ],
     "useCasesTitle": "Use Cases",
-    "whyChooseIntro": "",
+    "whyChooseIntro": "We build data platforms that combine architectural rigor with practical business value.",
     "whyChooseItems": [
       {
-        "title": "Data Engineering Expertise",
-        "desc": "Our team works across data pipelines, warehouses, lakes, streaming systems, cloud platforms, and data transformations. We focus on building systems your technical and business teams can use.",
-        "q": "Data Engineering Expertise",
-        "a": "Our team works across data pipelines, warehouses, lakes, streaming systems, cloud platforms, and data transformations. We focus on building systems your technical and business teams can use."
+        "title": "End-to-End Architecture Expertise",
+        "desc": "From raw streaming ingestion to refined dimensional marts, our engineers have deep expertise across cloud platforms, warehouses, and transformation frameworks."
       },
       {
-        "title": "Security and Compliance",
-        "desc": "We include access controls, permissions, encryption, and data handling practices as part of the solution. Our team also considers audit and data governance requirements when designing data workflows.",
-        "q": "Security and Compliance",
-        "a": "We include access controls, permissions, encryption, and data handling practices as part of the solution. Our team also considers audit and data governance requirements when designing data workflows."
+        "title": "Zero Data Loss & Resilient Design",
+        "desc": "We build idempotent pipelines with dead-letter queues, automated retries, and comprehensive error logging to ensure data integrity."
       },
       {
-        "title": "Practical Business Value",
-        "desc": "Better data systems can reduce manual reporting, limit duplicate records, improve data access, and lower maintenance work. Reliable data also gives analytics and ML teams a stronger foundation for their projects.",
-        "q": "Practical Business Value",
-        "a": "Better data systems can reduce manual reporting, limit duplicate records, improve data access, and lower maintenance work. Reliable data also gives analytics and ML teams a stronger foundation for their projects."
+        "title": "Cloud Cost Optimization",
+        "desc": "We optimize compute cluster sizing, storage tiers, partition pruning, and query performance to keep cloud operational costs predictable and lean."
       },
       {
-        "title": "Ongoing Technical Support",
-        "desc": "Our support does not end after deployment. We can help monitor pipelines, resolve technical issues, update workflows, and maintain your data platform as business requirements change.",
-        "q": "Ongoing Technical Support",
-        "a": "Our support does not end after deployment. We can help monitor pipelines, resolve technical issues, update workflows, and maintain your data platform as business requirements change."
+        "title": "Enterprise Security & Governance",
+        "desc": "Role-based access control (RBAC), end-to-end encryption, and automated audit logging are built into every pipeline by default."
       }
     ],
-    "whyChooseTitle": "Why Choose Cubixsol?",
-    "faqsText": "How much do data engineering services cost? | Cost depends on the number of data sources, project scope, platform requirements, integrations, and ongoing support needs. Cubixsol can review your requirements and provide a project estimate.\n\nHow long does a data engineering project take? | A small pipeline project may take a few weeks, while a larger data platform can take several months. The timeline depends on system complexity, data volume, integrations, and project requirements.\n\nWhat is the difference between ETL and ELT? | ETL transforms data before loading it into the target system. ELT loads the data first and transforms it inside the warehouse or data platform. The right approach depends on your systems, data volume, and processing needs.\n\nHow do I choose between Snowflake and BigQuery? | Both platforms support scalable cloud data workloads. The better option depends on your existing cloud environment, data architecture, workload type, team expertise, and cost requirements. Our team can help evaluate both options.\n\nHow do you maintain data quality? | We use validation rules, data checks, transformation logic, monitoring, and error handling to identify problems in data pipelines. We also review data quality requirements during the design stage.",
-    "impactRowsText": "",
-    "practicesItemsText": "",
-    "processStepsText": "01 | Discover | We review your current data sources, systems, workflows, business requirements, and reporting needs. Our team identifies data gaps, integration issues, and areas that need improvement.\n\n02 | Design | We create the data architecture, pipeline structure, storage approach, and data models for your project. You get a clear technical plan before development starts.\n\n03 | Build | Our engineers develop pipelines, integrations, transformations, data models, and storage systems. We also add data validation and access controls where required.\n\n04 | Deploy | We move the completed data solution into your working environment and test the pipelines, connections, permissions, and data flows before release.\n\n05 | Monitor and Improve | Data systems need ongoing attention. We monitor pipeline performance, data quality, failures, and system usage. Our team fixes issues and makes improvements as your data needs change.",
-    "processSubtitle": "Our structured process to design, build, test, and deploy modern data engineering infrastructure.",
-    "processTitle": "How We Deliver Data Engineering Projects",
-    "subServicesText": "Data Pipelines and ETL Services | We build data pipelines to move information from databases, applications, APIs, files, and other sources into your target systems. Our ETL services extract data, clean and transform it, then load it into the right destination. We also support ELT workflows when your platform handles transformation after data reaches the warehouse or lake. Automated pipelines reduce manual data handling and help keep information ready for reporting and analysis.\n\nData Warehousing | We design data warehouses that bring business information into one structured environment. Your teams can access data from sales, finance, operations, marketing, and other systems without checking each source separately. Our team works with platforms such as Snowflake and BigQuery to create organized data models that support reporting, dashboards, analytics, and business intelligence.\n\nData Lakes | Data lakes provide a central place for structured, semi-structured, and unstructured data. We help businesses collect large volumes of information and organize it for future analytics, reporting, and machine learning use cases. Our team sets up storage and data flows based on how your business collects and uses information.\n\nReal-Time Data Streaming | Some businesses need data as events happen instead of waiting for scheduled updates. We build streaming pipelines for use cases such as live dashboards, transaction monitoring, application events, and operational analytics. Kafka can support high-volume event streaming and help move data between applications and analytics systems in near real time.\n\nData Platform Modernization | Older data systems can require manual work, slow reporting, and difficult maintenance. We modernize data platforms by reviewing existing systems, improving pipelines, updating data models, and moving workloads to modern cloud platforms when needed. The goal is a simpler data environment that supports current business needs and future growth.",
-    "useCasesText": "Unify Siloed Data | Businesses often store data across different applications and databases. We connect these sources and create data pipelines that bring information into a common environment. Your teams can work from consistent data instead of checking multiple systems manually.\n\nReal-Time Analytics | Real-time data pipelines help teams see important changes as they happen. Businesses can use live data for operational dashboards, transaction monitoring, customer activity, and other time-sensitive decisions.\n\nML-Ready Datasets | Machine learning projects need clean, structured, and accessible data. We prepare datasets by combining sources, applying transformations, handling data quality issues, and creating reliable data flows for ML workloads.",
-    "whyChooseText": "Data Engineering Expertise | Our team works across data pipelines, warehouses, lakes, streaming systems, cloud platforms, and data transformations. We focus on building systems your technical and business teams can use.\n\nSecurity and Compliance | We include access controls, permissions, encryption, and data handling practices as part of the solution. Our team also considers audit and data governance requirements when designing data workflows.\n\nPractical Business Value | Better data systems can reduce manual reporting, limit duplicate records, improve data access, and lower maintenance work. Reliable data also gives analytics and ML teams a stronger foundation for their projects.\n\nOngoing Technical Support | Our support does not end after deployment. We can help monitor pipelines, resolve technical issues, update workflows, and maintain your data platform as business requirements change."
+    "whyChooseTitle": "Why Choose Cubixsol for Data Engineering?"
   },
   {
     "practices": {
@@ -3834,35 +3841,35 @@ const initialSolutions = [
       "subtitle": "Our data governance services follow a clear process from the first review through implementation and ongoing improvement.",
       "steps": [
         {
-          "_id": "6aa7ff6c7d66eee8a3dbdb94",
+          "_id": "6aa8d2fbaff22c02c5080c62",
           "stepNumber": "01",
           "title": "Discover",
           "desc": "We review your data sources, systems, current policies, access controls, and business requirements. Our team identifies gaps and areas where your current data processes need improvement.",
           "bullets": []
         },
         {
-          "_id": "6aa7ff6c7d66eee8a3dbdb95",
+          "_id": "6aa8d2fbaff22c02c5080c63",
           "stepNumber": "02",
           "title": "Design",
           "desc": "We define data ownership, governance rules, access controls, quality checks, security measures, and documentation based on your requirements.",
           "bullets": []
         },
         {
-          "_id": "6aa7ff6c7d66eee8a3dbdb96",
+          "_id": "6aa8d2fbaff22c02c5080c64",
           "stepNumber": "03",
           "title": "Build",
           "desc": "Our team puts the approved policies, processes, controls, catalogs, and quality checks into place. We work with your existing systems where possible and keep the implementation aligned with your business processes.",
           "bullets": []
         },
         {
-          "_id": "6aa7ff6c7d66eee8a3dbdb97",
+          "_id": "6aa8d2fbaff22c02c5080c65",
           "stepNumber": "04",
           "title": "Deploy",
           "desc": "We test the governance setup before applying it across the required systems and teams. Your staff can then follow clear processes for managing, accessing, and using business data.",
           "bullets": []
         },
         {
-          "_id": "6aa7ff6c7d66eee8a3dbdb98",
+          "_id": "6aa8d2fbaff22c02c5080c66",
           "stepNumber": "05",
           "title": "Monitor & Improve",
           "desc": "Data systems and business requirements can change over time. We review data quality, access permissions, governance policies, and controls. Regular reviews help keep your data processes current as your business changes.",
@@ -3979,24 +3986,196 @@ const initialSolutions = [
   },
   {
     "practices": {
-      "items": []
+      "title": "Best Practices for Data Migration",
+      "intro": "Migrations succeed when risk is managed early. We plan cutovers carefully and validate relentlessly.",
+      "items": [
+        {
+          "title": "Thorough Discovery",
+          "body": "Sources, dependencies, and edge cases are mapped before any bulk move begins.",
+          "_id": "6aa8d22859c4a05ed5834287"
+        },
+        {
+          "title": "Phased Cutover",
+          "body": "Where possible we migrate in stages with rollback paths instead of a single high-risk big bang.",
+          "_id": "6aa8d22859c4a05ed5834288"
+        },
+        {
+          "title": "Validation at Every Step",
+          "body": "Row counts, checksums, and business reconciliations confirm that data landed correctly.",
+          "_id": "6aa8d22859c4a05ed5834289"
+        },
+        {
+          "title": "Minimal Disruption",
+          "body": "CDC and delta replication keep systems in sync so production downtime is kept to a scheduled minimum.",
+          "_id": "6aa8d22859c4a05ed583428a"
+        },
+        {
+          "title": "Post-Migration Tuning",
+          "body": "Indexes, statistics, and query plans are optimized on the target platform immediately after cutover.",
+          "_id": "6aa8d22859c4a05ed583428b"
+        }
+      ]
     },
     "impact": {
       "rows": []
     },
     "process": {
-      "steps": []
+      "title": "How We Deliver Data Migrations",
+      "subtitle": "Our battle-tested, phased migration methodology to prevent data loss and operational disruption.",
+      "steps": [
+        {
+          "stepNumber": "01",
+          "title": "Discovery & Schema Mapping",
+          "desc": "Analyze schema dependencies, data volumes, network throughput, and target architecture requirements.",
+          "bullets": [],
+          "_id": "6aa8d22859c4a05ed5834290"
+        },
+        {
+          "stepNumber": "02",
+          "title": "Proof of Concept & Pipeline Setup",
+          "desc": "Configure CDC replication channels, schema conversions, and transformation rules in a sandbox environment.",
+          "bullets": [],
+          "_id": "6aa8d22859c4a05ed5834291"
+        },
+        {
+          "stepNumber": "03",
+          "title": "Initial Bulk Transfer & Sync",
+          "desc": "Perform high-throughput historical data transfer while keeping the target synchronized with live delta changes.",
+          "bullets": [],
+          "_id": "6aa8d22859c4a05ed5834292"
+        },
+        {
+          "stepNumber": "04",
+          "title": "Reconciliation & Validation",
+          "desc": "Execute automated reconciliation queries, schema validation, and user acceptance testing.",
+          "bullets": [],
+          "_id": "6aa8d22859c4a05ed5834293"
+        },
+        {
+          "stepNumber": "05",
+          "title": "Cutover & Post-Launch Support",
+          "desc": "Execute final cutover during low-traffic windows, monitor system health, and provide rapid rollback safety nets.",
+          "bullets": [],
+          "_id": "6aa8d22859c4a05ed5834294"
+        }
+      ]
     },
-    "bullets": [],
-    "tech": [],
+    "seo": {
+      "metaTitle": "Data Migration Services & Cloud Database Modernization | Cubixsol",
+      "metaDescription": "Securely migrate your databases and warehouses to the cloud with Cubixsol. Zero data loss, minimal downtime, and automated data reconciliation.",
+      "keywords": "data migration, database migration, cloud migration, zero downtime migration, Snowflake migration, AWS DMS, Cubixsol"
+    },
     "title": "Data Migration",
     "slug": "data-migration",
-    "desc": "Safe moves between systems with minimal downtime.",
+    "desc": "Move your mission-critical databases, legacy warehouses, and applications to modern cloud environments securely. We guarantee zero data loss, rigorous reconciliation, and near-zero business downtime.",
     "group": "Data Solutions",
-    "subServicesItems": [],
-    "useCasesItems": [],
-    "whyChooseItems": [],
-    "faqs": []
+    "bullets": [
+      "End-to-End Migration Strategy & Dependency Discovery",
+      "Zero-Downtime Replication & Phased Cutover Protocols",
+      "Automated Row-Level Reconciliation & Data Validation",
+      "Post-Migration Performance Tuning & Operational Handover"
+    ],
+    "category": "Data Solutions",
+    "ctaBannerButtonLink": "/contact",
+    "ctaBannerButtonText": "Talk to Us",
+    "ctaBannerDesc": "Let Cubixsol handle your database and data warehouse migration with zero data loss and minimal downtime. Book a strategy session today.",
+    "ctaBannerEyebrow": "MIGRATE WITH CONFIDENCE",
+    "ctaBannerSecondaryButtonLink": "/services",
+    "ctaBannerSecondaryButtonText": "Browse Services",
+    "ctaBannerTitle": "Ready to Modernize Your Data Infrastructure?",
+    "ctaPrimaryLink": "/contact",
+    "ctaPrimaryText": "Talk to us",
+    "ctaSecondaryLink": "/services",
+    "ctaSecondaryText": "Browse services",
+    "faqs": [
+      {
+        "q": "How do you prevent data loss during migration?",
+        "a": "We use continuous CDC replication, automated checksum comparisons, row-level verification scripts, and dual-run validation phases to ensure zero data is lost or altered."
+      },
+      {
+        "q": "Will our business experience downtime during data migration?",
+        "a": "We design migrations using Change Data Capture (CDC) and live synchronization, reducing production cutover downtime to just a few minutes during scheduled off-peak hours."
+      },
+      {
+        "q": "Can you migrate data between different database engines (e.g., Oracle to PostgreSQL)?",
+        "a": "Yes, we specialize in heterogeneous migrations including data type mapping, stored procedure translation, and schema refactoring."
+      },
+      {
+        "q": "What rollback options are in place if an issue arises during cutover?",
+        "a": "We maintain reverse replication from target back to source or keep the source database active in read-only mode until full acceptance is confirmed, enabling instantaneous rollback if necessary."
+      }
+    ],
+    "heroSubtitle": "Safe, Seamless Moves Between Systems with Minimal Downtime",
+    "heroTitle": "Data Migration Services",
+    "name": "Data Migration",
+    "subServicesIntro": "Whether moving on-premise databases to AWS/Azure/GCP or upgrading legacy systems to modern cloud warehouses, our migration solutions minimize risks and downtime.",
+    "subServicesItems": [
+      {
+        "title": "Database & Schema Migration",
+        "desc": "Migrate relational and NoSQL databases (Oracle, SQL Server, MySQL, PostgreSQL, MongoDB) to managed cloud database instances with automated schema conversion and indexing."
+      },
+      {
+        "title": "Legacy Warehouse to Cloud Modernization",
+        "desc": "Transition from legacy appliances (Teradata, Netezza, Exadata) to modern cloud warehouses (Snowflake, BigQuery, Databricks, Redshift) with refactored SQL scripts and data pipelines."
+      },
+      {
+        "title": "Live Data Replication & CDC",
+        "desc": "Implement Change Data Capture (CDC) with tools like Debezium and AWS DMS to continuously synchronize live production data and enable zero-downtime cutovers."
+      },
+      {
+        "title": "Automated Data Reconciliation & Validation",
+        "desc": "Run comprehensive checksums, row count verifications, and business metric reconciliations to guarantee 100% data fidelity between source and target systems."
+      }
+    ],
+    "subServicesTitle": "Our Data Migration Capabilities",
+    "tech": [
+      "AWS DMS",
+      "Debezium",
+      "Apache Kafka",
+      "Snowflake Snowpipe",
+      "Azure Data Factory",
+      "Google Cloud Database Migration Service",
+      "Flyway",
+      "Liquibase"
+    ],
+    "techDesc": "We utilize enterprise-grade migration frameworks, CDC streaming tools, and automated validation software.",
+    "techTitle": "Tools & Technologies",
+    "useCasesIntro": "Tailored migration strategies designed for mission-critical enterprise transformations.",
+    "useCasesItems": [
+      {
+        "title": "On-Premise to Cloud Migration",
+        "desc": "Move aging on-premise data centers to AWS, GCP, or Azure to reduce capital expenditure and increase elastic scaling capabilities."
+      },
+      {
+        "title": "Platform Consolidation & M&A",
+        "desc": "Consolidate multiple ERP and database systems acquired during mergers & acquisitions into a single unified data architecture."
+      },
+      {
+        "title": "Monolith to Microservices Database Decoupling",
+        "desc": "Safely split monolithic databases into isolated, domain-driven microservice datastores with continuous sync."
+      }
+    ],
+    "useCasesTitle": "Use Cases",
+    "whyChooseIntro": "Risk mitigation, data fidelity, and seamless business continuity are at the core of our approach.",
+    "whyChooseItems": [
+      {
+        "title": "Near-Zero Business Downtime",
+        "desc": "Using continuous change data capture (CDC), we ensure your business continues operating uninterrupted during the migration process."
+      },
+      {
+        "title": "100% Data Integrity Guarantee",
+        "desc": "Automated verification tests inspect record counts, checksums, and business logic to ensure zero data loss."
+      },
+      {
+        "title": "Comprehensive Rollback Safety",
+        "desc": "Every migration is equipped with proven rollback procedures and dual-write capabilities to eliminate risks."
+      },
+      {
+        "title": "Post-Migration Optimization",
+        "desc": "We optimize queries, partitions, and indexing on the new target system to maximize performance and minimize cloud costs."
+      }
+    ],
+    "whyChooseTitle": "Why Choose Cubixsol for Data Migration?"
   },
   {
     "practices": {
@@ -4014,35 +4193,35 @@ const initialSolutions = [
       "subtitle": "Our structured process to design, build, test, and deploy reliable data science and machine learning solutions.",
       "steps": [
         {
-          "_id": "6aa7ff6c7d66eee8a3dbdbaa",
+          "_id": "6aa8d2fbaff22c02c5080c91",
           "stepNumber": "01",
           "title": "Discover",
           "desc": "We begin by understanding your business goals, available data, current systems, and technical requirements. Early discovery helps define the problem and establish clear project goals.",
           "bullets": []
         },
         {
-          "_id": "6aa7ff6c7d66eee8a3dbdbab",
+          "_id": "6aa8d2fbaff22c02c5080c92",
           "stepNumber": "02",
           "title": "Design",
           "desc": "Our team plans the solution around the identified requirements. We define the data needs, model approach, technical setup, success measures, and development stages before implementation starts.",
           "bullets": []
         },
         {
-          "_id": "6aa7ff6c7d66eee8a3dbdbac",
+          "_id": "6aa8d2fbaff22c02c5080c93",
           "stepNumber": "03",
           "title": "Build",
           "desc": "Developers prepare the required data, develop the models, and test the solution against agreed requirements. We review results during development so issues can be addressed before deployment.",
           "bullets": []
         },
         {
-          "_id": "6aa7ff6c7d66eee8a3dbdbad",
+          "_id": "6aa8d2fbaff22c02c5080c94",
           "stepNumber": "04",
           "title": "Deploy",
           "desc": "Once the solution meets the required standards, we prepare it for production use. Deployment can include model integration, data workflows, cloud infrastructure, and other required system components.",
           "bullets": []
         },
         {
-          "_id": "6aa7ff6c7d66eee8a3dbdbae",
+          "_id": "6aa8d2fbaff22c02c5080c95",
           "stepNumber": "05",
           "title": "Monitor & Improve",
           "desc": "We monitor the solution after deployment and review its performance over time. Updates may be required when new data, business requirements, or system changes affect model results.",
