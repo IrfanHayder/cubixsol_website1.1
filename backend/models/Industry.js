@@ -32,9 +32,26 @@ const industrySchema = new mongoose.Schema({
     title: { type: String },
     body: { type: String }
   }],
+  workAreasTitle: { type: String },
   workAreas: [{
     title: { type: String },
     body: { type: String }
+  }],
+  techTitle: { type: String },
+  techItems: [{
+    title: { type: String },
+    desc: { type: String }
+  }],
+  whyChooseTitle: { type: String },
+  whyChooseItems: [{
+    title: { type: String },
+    desc: { type: String }
+  }],
+  ctaTitle: { type: String },
+  ctaDesc: { type: String },
+  faqs: [{
+    q: { type: String },
+    a: { type: String }
   }],
   productsBuilt: [{
     name: { type: String },
@@ -46,7 +63,8 @@ const industrySchema = new mongoose.Schema({
     result: { type: String },
     tags: [{ type: String }]
   }],
-  servicesWeOffer: [{ type: String }]
-}, { timestamps: true });
+  servicesWeOffer: [{ type: String }],
+  heroTitle: { type: String },
+}, { timestamps: true, strict: false });
 
 module.exports = mongoose.model('Industry', industrySchema);

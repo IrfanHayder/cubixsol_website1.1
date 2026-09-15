@@ -810,7 +810,7 @@ export default function IndustryDetail() {
 
                 {/* Open, Readable Heading with generous line height and non-cramped typography */}
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-normal leading-[1.25] sm:leading-[1.2] lg:leading-[1.18] mb-6">
-                  {getHeroHeadline(ind.slug, ind.title, theme)}
+                  {ind.heroTitle ? formatInline(ind.heroTitle) : getHeroHeadline(ind.slug, ind.title, theme)}
                 </h1>
 
                 <p className={`text-base sm:text-lg leading-relaxed sm:leading-8 mb-8 max-w-2xl font-normal ${
@@ -821,7 +821,7 @@ export default function IndustryDetail() {
 
                 <div className="flex flex-wrap items-center gap-3.5 pt-1">
                   <Link to="/contact" className={`btn-primary flex items-center gap-2 shadow-md ${theme.heroButton}`}>
-                    {ind.slug === 'healthcare' ? 'Discuss your project' : 'Discuss Your Project'} <ArrowRight className="w-4 h-4" />
+                    {ind.slug === 'healthcare' || ind.slug === 'ecommerce' ? 'Discuss your Project' : 'Discuss Your Project'} <ArrowRight className="w-4 h-4" />
                   </Link>
                   <button
                     onClick={openEstimateModal}
@@ -832,7 +832,7 @@ export default function IndustryDetail() {
                         : 'border-gray-300 bg-white text-ink hover:border-primary-500'
                     }`}
                   >
-                    <Sparkles className="w-4 h-4 text-primary-500" /> {ind.slug === 'healthcare' ? 'Get a proposal' : 'Get Free Estimate'}
+                    <Sparkles className="w-4 h-4 text-primary-500" /> {ind.slug === 'healthcare' || ind.slug === 'ecommerce' ? 'Get a Proposal' : 'Get Free Estimate'}
                   </button>
                 </div>
 
@@ -925,29 +925,33 @@ export default function IndustryDetail() {
             <div className="absolute -right-10 -top-10 w-64 h-64 rounded-full bg-primary-500/20 blur-3xl pointer-events-none" />
             <div className="relative space-y-2.5">
               <span className="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-white/10 text-primary-300">
-                {ind.slug === 'healthcare' ? 'Services' : 'Ready to Build?'}
+                {ind.slug === 'healthcare' || ind.slug === 'ecommerce' ? 'Services' : 'Ready to Build?'}
               </span>
               <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-snug">
-                {ind.slug === 'healthcare'
+                {ind.ctaTitle
+                  ? ind.ctaTitle
+                  : ind.slug === 'healthcare'
                   ? 'Have a Healthcare Product in Mind?'
                   : `Planning a custom ${ind.title.toLowerCase()} software project?`}
               </h3>
               <p className="text-white/70 text-sm sm:text-base max-w-xl leading-relaxed">
-                {ind.slug === 'healthcare'
+                {ind.ctaDesc
+                  ? ind.ctaDesc
+                  : ind.slug === 'healthcare'
                   ? "Share the workflow you want to improve, the systems you use, and your delivery priorities. We'll help you define a practical starting point."
                   : 'Connect directly with our senior software architects. We will evaluate your technical requirements, constraints, and provide an actionable scope roadmap.'}
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-3.5 relative shrink-0">
               <Link to="/contact" className="btn-primary">
-                {ind.slug === 'healthcare' ? 'Talk to Cubixsol' : 'Book Consultation'} <ArrowRight className="w-4 h-4" />
+                {ind.slug === 'healthcare' ? 'Talk to Cubixsol' : ind.slug === 'ecommerce' ? 'Discuss your Project' : 'Book Consultation'} <ArrowRight className="w-4 h-4" />
               </Link>
               <button
                 onClick={openEstimateModal}
                 type="button"
                 className="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider border border-white/20 transition"
               >
-                {ind.slug === 'healthcare' ? 'Get a Proposal' : 'Get Cost Estimate'}
+                {ind.slug === 'healthcare' || ind.slug === 'ecommerce' ? 'Get a Proposal' : 'Get Cost Estimate'}
               </button>
             </div>
           </div>

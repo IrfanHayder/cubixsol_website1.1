@@ -3,9 +3,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import {
   ShoppingCart, Zap, TrendingUp, Sparkles, CheckCircle2,
   PackageCheck, ArrowRight, Smartphone, RefreshCw, BarChart3,
-  CreditCard, Flame, Layers, Box
+  CreditCard, Flame, Layers, Box, ShieldCheck, Shield, Server,
+  Lock, Cpu, Users, Building2, Store, DollarSign
 } from 'lucide-react';
 import Reveal, { Stagger, StaggerItem } from '../Reveal';
+import { formatInline } from '../../utils/formatText';
 
 export default function EcommerceLayout({ industry }) {
   const [activeTab, setActiveTab] = useState(0);
@@ -45,13 +47,109 @@ export default function EcommerceLayout({ industry }) {
     },
   ];
 
-  const workAreas = industry.workAreas || [];
+  // 1. Software We Build
+  const softwareTitle = industry.solutionsTitle || 'E-Commerce Software We Build';
+  const softwareSubtitle = industry.solutionsSubtitle || '';
+  const softwareItems = Array.isArray(industry.solutionsItems) && industry.solutionsItems.length > 0
+    ? industry.solutionsItems
+    : [
+        {
+          title: 'Custom E-Commerce Stores',
+          body: 'We create custom e-commerce stores for businesses that need functionality beyond standard templates. Our solutions can support custom product catalogues, customer accounts, promotions, inventory workflows, third-party integrations, and unique purchasing journeys. Each store can align with your brand and operational requirements.',
+        },
+        {
+          title: 'Shopify Development Services',
+          body: 'Our Shopify development services launch, customise, and expand Shopify stores without sacrificing user experience or performance. We can customise storefronts, integrate essential apps, improve product pages, and create features that support specific business requirements. Shopify also provides a practical foundation for brands that want a flexible platform without managing the entire infrastructure themselves.',
+        },
+        {
+          title: 'B2B E-Commerce Development',
+          body: 'B2B ecommerce development services focus on the complex purchasing requirements of wholesalers, manufacturers, distributors, and enterprise sellers. Our experts can build features such as account-based pricing, bulk orders, customer-specific catalogues, approval workflows, recurring purchases, and business account management. The result is a commerce experience that simplifies purchasing for professional buyers.',
+        },
+        {
+          title: 'E-Commerce App Development',
+          body: 'E-commerce app development services extend your store experience to mobile customers. We can develop mobile commerce applications with product discovery, personalised accounts, secure payments, order tracking, push notifications, and other features that support repeat purchases. A well-structured app can give customers a convenient channel for browsing and purchasing products.',
+        },
+      ];
+
+  // 2. Tech We Use
+  const techTitle = industry.techTitle || 'Tech We Use';
+  const techItems = Array.isArray(industry.techItems) && industry.techItems.length > 0
+    ? industry.techItems
+    : [
+        {
+          title: 'Shopify',
+          desc: 'Shopify supports fast, flexible store development. We customise themes, storefronts, apps, and integrations to create branded shopping experiences with reliable product management, payments, and third-party functionality.',
+        },
+        {
+          title: 'WooCommerce',
+          desc: 'WooCommerce offers flexible store development through WordPress. Our team builds customised stores with product catalogues, payment gateways, integrations, and features that support unique business requirements and customer experiences.',
+        },
+        {
+          title: 'Next.js',
+          desc: 'Next.js enables fast, scalable e-commerce websites with modern architecture. We use it for responsive storefronts, dynamic product pages, optimised performance, API integrations, and customised commerce functionality.',
+        },
+        {
+          title: 'Stripe',
+          desc: 'Stripe provides secure payment infrastructure for e-commerce platforms. We integrate Stripe for card payments, subscriptions, refunds, checkout experiences, and transaction workflows across online stores and applications.',
+        },
+      ];
+
+  // 3. Use Cases & Examples
+  const useCasesTitle = industry.workAreasTitle || 'E-Commerce Use Cases & Examples';
+  const useCasesItems = Array.isArray(industry.workAreas) && industry.workAreas.length > 0
+    ? industry.workAreas
+    : [
+        {
+          title: 'D2C E-Commerce Stores',
+          body: 'Direct-to-consumer brands can use custom commerce experiences to showcase products, manage customer accounts, support promotions, and create frictionless purchasing journeys.',
+        },
+        {
+          title: 'B2B Commerce Portals',
+          body: 'B2B businesses can provide buyers with personalised catalogues, negotiated pricing, bulk ordering, account management, and streamlined repeat purchasing.',
+        },
+        {
+          title: 'E-Commerce Marketplaces',
+          body: 'Marketplace businesses can connect multiple sellers with customers through product listings, seller accounts, payment workflows, order management, and centralised administration.',
+        },
+      ];
+
+  // 4. Why Teams Choose Cubixsol
+  const whyChooseTitle = industry.whyChooseTitle || 'Why E-Commerce Teams Choose Cubixsol';
+  const whyChooseItems = Array.isArray(industry.whyChooseItems) && industry.whyChooseItems.length > 0
+    ? industry.whyChooseItems
+    : [
+        {
+          title: 'E-Commerce Expertise',
+          desc: 'Our team understands D2C, B2B, marketplace, payment, and customer experience requirements.',
+        },
+        {
+          title: 'Custom Solutions',
+          desc: 'We develop e-commerce platforms around your business model, workflows, customers, and growth objectives.',
+        },
+        {
+          title: 'Security-Focused Development',
+          desc: 'Our developers use secure practices and trusted payment integrations to protect commerce transactions.',
+        },
+        {
+          title: 'Scalable Architecture',
+          desc: 'Our solutions support growing traffic, larger catalogues, increased orders, and evolving business requirements.',
+        },
+        {
+          title: 'Reliable Delivery',
+          desc: 'Clear planning, regular communication, and structured development support a smooth path from requirements to launch.',
+        },
+        {
+          title: 'Ongoing Support',
+          desc: 'Our team provides technical support, improvements, integrations, and platform enhancements after your e-commerce solution goes live.',
+        },
+      ];
+
   const cases = industry.caseStudies || [];
   const services = industry.servicesWeOffer || [];
 
   return (
     <div className="space-y-16 sm:space-y-24">
-      {/* Interactive E-Commerce Funnel Visualizer */}
+      {/* 🚀 Interactive E-Commerce Architecture Showcase */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="rounded-3xl bg-gradient-to-br from-[#1a1a2e] via-[#241f48] to-[#122844] text-white p-6 sm:p-10 lg:p-12 border border-primary-500/30 shadow-2xl relative overflow-hidden">
           <div className="absolute right-0 top-0 w-96 h-96 bg-brand-cyan/10 rounded-full blur-3xl pointer-events-none" />
@@ -66,7 +164,7 @@ export default function EcommerceLayout({ industry }) {
                 High-Volume Commerce Built for <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan via-primary-300 to-white">Peak Traffic &amp; Sales</span>
               </h2>
               <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-                Whether powering multi-million dollar Black Friday rushes or bespoke marketplace ecosystems, our commerce engineering delivers lightning speeds, zero cart abandonment, and automated logistics.
+                Whether powering multi-million dollar flash sales or bespoke marketplace ecosystems, our commerce engineering delivers lightning speeds, zero cart abandonment, and automated logistics.
               </p>
 
               {/* Conversion Stats */}
@@ -141,88 +239,165 @@ export default function EcommerceLayout({ industry }) {
         </div>
       </section>
 
-      {/* Feature Grid */}
+      {/* 🛒 1. E-Commerce Software We Build */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-10">
-          <p className="eyebrow mb-2">Commerce Engineering</p>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-ink tracking-tight">
-            Built for Modern Omnichannel Retailers
+        <Reveal className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-50 text-primary-700 border border-primary-200 text-xs font-bold uppercase tracking-wider mb-3 shadow-sm">
+            <Store className="w-3.5 h-3.5 text-primary-600" />
+            <span>Commerce Capabilities</span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink tracking-tight mb-3">
+            {softwareTitle}
           </h2>
-        </div>
+          {softwareSubtitle && (
+            <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+              {softwareSubtitle}
+            </p>
+          )}
+        </Reveal>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {[
-            {
-              icon: Zap,
-              title: 'Headless Commerce Architecture',
-              desc: 'Decoupled frontends with Shopify Plus, MedusaJS, Commerce Layer, and BigCommerce backends.',
-            },
-            {
-              icon: CreditCard,
-              title: 'Global Payment Gateways',
-              desc: 'Seamless multi-currency checkout with local payment methods (iDEAL, Klarna, Pix, Alipay).',
-            },
-            {
-              icon: Box,
-              title: 'Automated 3PL & ERP Sync',
-              desc: 'Real-time stock synchronization, automatic label printing, and multi-location tracking.',
-            },
-            {
-              icon: TrendingUp,
-              title: 'Conversion Funnel Analytics',
-              desc: 'Custom GA4 / PostHog event instrumentation and checkout abandonment heatmapping.',
-            },
-          ].map((item) => (
-            <motion.div
-              key={item.title}
-              whileHover={{ y: -4 }}
-              className="p-5 rounded-2xl bg-white border border-gray-100 shadow-card hover:border-primary-300 transition-all"
-            >
-              <div className="w-10 h-10 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center mb-3">
-                <item.icon className="w-5 h-5" />
-              </div>
-              <h3 className="font-bold text-ink text-base mb-1.5">{item.title}</h3>
-              <p className="text-xs text-gray-500 leading-relaxed">{item.desc}</p>
-            </motion.div>
-          ))}
+        <Stagger className="grid sm:grid-cols-2 gap-6" staggerDelay={0.06}>
+          {softwareItems.map((item, idx) => {
+            const icons = [Store, ShoppingCart, Building2, Smartphone];
+            const SIcon = icons[idx % icons.length];
+            return (
+              <StaggerItem key={item.title || idx}>
+                <div className="p-6 sm:p-7 rounded-2xl bg-white border border-gray-100 shadow-card hover:shadow-elev hover:border-primary-200 transition-all duration-300 h-full flex flex-col group">
+                  <div className="flex items-center gap-3.5 mb-4">
+                    <span className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-50 to-blue-50 border border-primary-100 flex items-center justify-center text-primary-600 group-hover:scale-110 transition-transform">
+                      <SIcon className="w-6 h-6" />
+                    </span>
+                    <h3 className="font-extrabold text-ink text-lg sm:text-xl group-hover:text-primary-600 transition-colors">
+                      {item.title}
+                    </h3>
+                  </div>
+                  <p className="text-sm text-gray-600 leading-relaxed flex-1">
+                    {formatInline(item.body || item.desc || '')}
+                  </p>
+                </div>
+              </StaggerItem>
+            );
+          })}
+        </Stagger>
+      </section>
+
+      {/* ⚙️ 2. Tech We Use */}
+      <section className="bg-slate-50/80 py-14 sm:py-20 border-y border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Reveal className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white text-primary-700 border border-primary-200 text-xs font-bold uppercase tracking-wider mb-3 shadow-sm">
+              <Cpu className="w-3.5 h-3.5 text-primary-600" />
+              <span>Technology Stack</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink tracking-tight mb-3">
+              {techTitle}
+            </h2>
+            <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+              We select dependable, scalable technologies that fit your product requirements, support maintainability, and deliver high performance.
+            </p>
+          </Reveal>
+
+          <Stagger className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5" staggerDelay={0.05}>
+            {techItems.map((tech, idx) => {
+              const techIcons = [ShoppingBag, Store, Zap, CreditCard];
+              const TIcon = techIcons[idx % techIcons.length] || Box;
+              return (
+                <StaggerItem key={tech.title || idx}>
+                  <div className="p-6 rounded-2xl bg-white border border-gray-100 shadow-card hover:border-primary-300 hover:shadow-elev transition-all duration-300 h-full flex flex-col group">
+                    <div className="w-12 h-12 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                      <TIcon className="w-6 h-6" />
+                    </div>
+                    <h3 className="font-bold text-ink text-lg mb-2 group-hover:text-primary-600 transition-colors">
+                      {tech.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed flex-1">
+                      {formatInline(tech.desc || '')}
+                    </p>
+                  </div>
+                </StaggerItem>
+              );
+            })}
+          </Stagger>
         </div>
       </section>
 
-      {/* Work Areas */}
-      {workAreas.length > 0 && (
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-10">
-            <p className="eyebrow mb-2">Where We Specialize</p>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-ink tracking-tight">
-              E-Commerce Product Capabilities
-            </h2>
+      {/* 📦 3. E-Commerce Use Cases & Examples */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Reveal className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-50 text-primary-700 border border-primary-200 text-xs font-bold uppercase tracking-wider mb-3 shadow-sm">
+            <Layers className="w-3.5 h-3.5 text-primary-600" />
+            <span>Market Segments</span>
           </div>
-          <div className="grid md:grid-cols-2 gap-6">
-            {workAreas.map((w, idx) => (
-              <motion.div
-                key={w.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-card hover:border-primary-200 transition-all group"
-              >
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="w-8 h-8 rounded-lg bg-primary-gradient text-white font-mono text-xs font-bold flex items-center justify-center">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink tracking-tight mb-3">
+            {useCasesTitle}
+          </h2>
+          <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+            Tailored architecture models engineered for retail brands, wholesale enterprises, and high-scale multi-vendor marketplaces.
+          </p>
+        </Reveal>
+
+        <Stagger className="grid md:grid-cols-3 gap-6" staggerDelay={0.06}>
+          {useCasesItems.map((u, idx) => (
+            <StaggerItem key={u.title || idx}>
+              <div className="p-7 rounded-2xl bg-white border border-gray-100 shadow-card hover:border-primary-300 hover:shadow-elev transition-all duration-300 h-full flex flex-col group">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="w-9 h-9 rounded-xl bg-primary-gradient text-white font-mono text-xs font-extrabold flex items-center justify-center shadow-sm">
                     0{idx + 1}
                   </span>
-                  <h3 className="text-lg font-extrabold text-ink group-hover:text-primary-600 transition-colors">
-                    {w.title}
+                  <h3 className="font-extrabold text-ink text-lg group-hover:text-primary-600 transition-colors">
+                    {u.title}
                   </h3>
                 </div>
-                <p className="text-sm text-gray-600 leading-relaxed">{w.body}</p>
-              </motion.div>
-            ))}
-          </div>
-        </section>
-      )}
+                <p className="text-sm text-gray-600 leading-relaxed flex-1">
+                  {formatInline(u.body || u.desc || '')}
+                </p>
+              </div>
+            </StaggerItem>
+          ))}
+        </Stagger>
+      </section>
 
-      {/* Case Studies */}
+      {/* 🏆 4. Why E-Commerce Teams Choose Cubixsol */}
+      <section className="bg-gradient-to-b from-white via-primary-50/30 to-white py-14 sm:py-20 border-y border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Reveal className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-50 text-primary-700 border border-primary-200 text-xs font-bold uppercase tracking-wider mb-3 shadow-sm">
+              <ShieldCheck className="w-3.5 h-3.5 text-primary-600" />
+              <span>The Cubixsol Difference</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink tracking-tight mb-3">
+              {whyChooseTitle}
+            </h2>
+            <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+              We combine deep commerce experience with secure engineering practices to deliver digital platforms built to scale.
+            </p>
+          </Reveal>
+
+          <Stagger className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.05}>
+            {whyChooseItems.map((item, idx) => {
+              const icons = [Store, Cpu, ShieldCheck, TrendingUp, CheckCircle2, RefreshCw];
+              const BIcon = icons[idx % icons.length];
+              return (
+                <StaggerItem key={item.title || idx}>
+                  <div className="p-6 rounded-2xl bg-white border border-gray-100 shadow-card hover:border-primary-300 hover:shadow-elev transition-all duration-300 h-full flex flex-col group">
+                    <div className="w-11 h-11 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                      <BIcon className="w-5 h-5" />
+                    </div>
+                    <h3 className="font-bold text-ink text-lg mb-2 group-hover:text-primary-600 transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-gray-600 leading-relaxed flex-1">
+                      {formatInline(item.desc || '')}
+                    </p>
+                  </div>
+                </StaggerItem>
+              );
+            })}
+          </Stagger>
+        </div>
+      </section>
+
+      {/* Case Studies (if any) */}
       {cases.length > 0 && (
         <section className="bg-gradient-to-br from-[#1a1a2e] via-[#241f48] to-[#122844] text-white py-14 rounded-3xl max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border border-primary-500/20">
           <div className="max-w-3xl mb-10">
@@ -249,7 +424,7 @@ export default function EcommerceLayout({ industry }) {
         </section>
       )}
 
-      {/* Services Grid */}
+      {/* Services Grid (if any) */}
       {services.length > 0 && (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="p-8 rounded-3xl bg-primary-50/60 border border-primary-100">

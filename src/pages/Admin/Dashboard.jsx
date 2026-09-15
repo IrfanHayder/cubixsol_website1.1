@@ -289,13 +289,63 @@ const SECTION_CONFIGS = {
     ],
     fields: [
       { name: 'title', label: 'Industry Name', required: true },
-      { name: 'slug', label: 'Slug (e.g. education, healthcare, fintech)', required: true },
+      { name: 'slug', label: 'Slug (e.g. education, healthcare, fintech, ecommerce)', required: true },
+      { name: 'heroTitle', label: 'Custom Hero H1 Title (e.g. E-Commerce Development Services for Growing Businesses)', fullWidth: true },
       { name: 'icon', label: 'Industry Icon (Image/SVG or Lucide Icon Name)', type: 'image', fullWidth: true, hint: 'Select an SVG/Image from Media Library or enter a Lucide icon name' },
       { name: 'short', label: 'Short Description', type: 'textarea', fullWidth: true, rows: 2 },
       { name: 'desc', label: 'Full Hero Description', type: 'textarea', fullWidth: true, rows: 4 },
       { name: 'points', label: 'Key Highlights & Points (one per line)', type: 'textarea', fullWidth: true, rows: 4, isArray: true },
       { name: 'servicesWeOffer', label: 'Services We Offer (one per line)', type: 'textarea', fullWidth: true, rows: 3, isArray: true },
-      
+
+      // Software We Build / Solutions Section
+      { name: 'solutionsTitle', label: 'Software We Build Section Title (e.g. E-Commerce Software We Build)', fullWidth: true },
+      { name: 'solutionsSubtitle', label: 'Software We Build Section Subtitle', type: 'textarea', fullWidth: true, rows: 2 },
+      {
+        name: 'solutionsItemsText',
+        label: 'Software We Build Items (Format: Title | Description, one item per block/line)',
+        type: 'textarea',
+        fullWidth: true,
+        rows: 6,
+        isCustomArray: 'industrySolutions',
+        hint: 'Example:\nCustom E-Commerce Stores | We create custom e-commerce stores for businesses that need functionality...\nShopify Development Services | Our Shopify development services launch, customise, and expand...',
+      },
+
+      // Tech Stack Section
+      { name: 'techTitle', label: 'Tech Stack Section Title (e.g. Tech We Use)', fullWidth: true },
+      {
+        name: 'techItemsText',
+        label: 'Tech Stack Items (Format: Title | Description, one item per block/line)',
+        type: 'textarea',
+        fullWidth: true,
+        rows: 6,
+        isCustomArray: 'industryTech',
+        hint: 'Example:\nShopify | Shopify supports fast, flexible store development...\nWooCommerce | WooCommerce offers flexible store development through WordPress...',
+      },
+
+      // Use Cases & Examples Section
+      { name: 'workAreasTitle', label: 'Use Cases & Examples Title (e.g. E-Commerce Use Cases & Examples)', fullWidth: true },
+      {
+        name: 'workAreasText',
+        label: 'Use Cases Items (Format: Title | Description, one item per block/line)',
+        type: 'textarea',
+        fullWidth: true,
+        rows: 6,
+        isCustomArray: 'industryWorkAreas',
+        hint: 'Example:\nD2C E-Commerce Stores | Direct-to-consumer brands can use custom commerce experiences...\nB2B Commerce Portals | B2B businesses can provide buyers with personalised catalogues...',
+      },
+
+      // Why Choose Us Section
+      { name: 'whyChooseTitle', label: 'Why Teams Choose Us Title (e.g. Why E-Commerce Teams Choose Cubixsol)', fullWidth: true },
+      {
+        name: 'whyChooseItemsText',
+        label: 'Why Teams Choose Us Items (Format: Title | Description, one item per block/line)',
+        type: 'textarea',
+        fullWidth: true,
+        rows: 6,
+        isCustomArray: 'industryWhyChoose',
+        hint: 'Example:\nE-Commerce Expertise | Our team understands D2C, B2B, marketplace, payment...\nCustom Solutions | We develop e-commerce platforms around your business model...',
+      },
+
       // Stats Strip
       {
         name: 'statsText',
@@ -307,7 +357,7 @@ const SECTION_CONFIGS = {
         hint: 'Example:\n19+ | years of proven market experience\n750+ | experts in Engineering, Data, AI, Design & QA\n550+ | partnerships spanning across six verticals\n80% | clients rate us better than others',
       },
 
-      // Approach Section
+      // Approach Section (for Education/Healthcare/etc.)
       { name: 'approachTitle', label: 'Approach Section Title (e.g. The Cubixsol Approach)', fullWidth: true },
       {
         name: 'approachItemsText',
@@ -316,20 +366,22 @@ const SECTION_CONFIGS = {
         fullWidth: true,
         rows: 6,
         isCustomArray: 'industryApproach',
-        hint: 'Example:\nWe Lead with Design | Our team of designers create experiences that are: | Timely: We design at the pace users need; Useful: Success is measured by goals; Delightful: We create thoughtful experiences\n\nWe Leverage Open Source | With thousands of contributions, we deliver: | Sovereignty: Avoid vendor lock-in; Flexibility: Customize source code; Economy: Reduce hosting and maintenance costs\n\nWe Accelerate with AI | We apply generative AI to: | Build Smarter Software: We integrate agentic workflows; Build It Faster Than Ever: Our teams use Claude and Codex',
+        hint: 'Example:\nWe Lead with Design | Our team of designers create experiences that are: | Timely: We design at the pace users need; Useful: Success is measured by goals',
       },
 
-      // Solutions Section
-      { name: 'solutionsTitle', label: 'Domain Solutions Title (e.g. Our EdTech Solutions)', fullWidth: true },
-      { name: 'solutionsSubtitle', label: 'Domain Solutions Subtitle', type: 'textarea', fullWidth: true, rows: 2 },
+      // Mid Consultation CTA Banner
+      { name: 'ctaTitle', label: 'Mid Banner Title (e.g. Ready to Build Your E-Commerce Platform?)', fullWidth: true },
+      { name: 'ctaDesc', label: 'Mid Banner Description', type: 'textarea', fullWidth: true, rows: 3 },
+
+      // FAQs
       {
-        name: 'solutionsItemsText',
-        label: 'Domain Solutions Items (Format: Title | Description, one item per block/line)',
+        name: 'faqsText',
+        label: 'Frequently Asked Questions (Format: Question | Answer, one item per line/block)',
         type: 'textarea',
         fullWidth: true,
         rows: 6,
-        isCustomArray: 'industrySolutions',
-        hint: 'Example:\nModern LMS Systems for Desktop and Mobile | We have deep expertise in best-in-class open-source LMS systems including Open edX, Moodle, and Edly.\nAccelerated Content Production | We have world-class capability to produce learning content of every kind.\nData Management, Analytics and ML | Our data engineering team has deep expertise in edTech data standards like Caliper and xAPI.',
+        isCustomArray: 'faqs',
+        hint: 'Example:\nHow much do e-commerce development services cost? | E-commerce development costs depend on platform choice, design requirements...',
       },
 
       // Testimonial
@@ -700,6 +752,21 @@ function DbSection({ sectionKey, showToast }) {
             title: i.title,
             body: i.desc,
           }));
+        } else if (f.isCustomArray === 'industryTech') {
+          parsed.techItems = parseCustomListItems(parsed[f.name]).map((i) => ({
+            title: i.title,
+            desc: i.desc,
+          }));
+        } else if (f.isCustomArray === 'industryWorkAreas') {
+          parsed.workAreas = parseCustomListItems(parsed[f.name]).map((i) => ({
+            title: i.title,
+            body: i.desc,
+          }));
+        } else if (f.isCustomArray === 'industryWhyChoose') {
+          parsed.whyChooseItems = parseCustomListItems(parsed[f.name]).map((i) => ({
+            title: i.title,
+            desc: i.desc,
+          }));
         } else if (f.isCustomArray === 'industryApproach') {
           parsed.approachItems = (parsed[f.name] || '')
             .split('\n\n')
@@ -808,7 +875,16 @@ function DbSection({ sectionKey, showToast }) {
       stringified.statsText = stringified.stats.map((s) => `${s.value} | ${s.label}`).join('\n');
     }
     if (Array.isArray(stringified.solutionsItems) && stringified.solutionsItems.length > 0) {
-      stringified.solutionsItemsText = stringified.solutionsItems.map((s) => `${s.title} | ${s.body}`).join('\n\n');
+      stringified.solutionsItemsText = stringified.solutionsItems.map((s) => `${s.title} | ${s.body || s.desc || ''}`).join('\n\n');
+    }
+    if (Array.isArray(stringified.techItems) && stringified.techItems.length > 0) {
+      stringified.techItemsText = stringified.techItems.map((s) => `${s.title} | ${s.desc || ''}`).join('\n\n');
+    }
+    if (Array.isArray(stringified.workAreas) && stringified.workAreas.length > 0) {
+      stringified.workAreasText = stringified.workAreas.map((s) => `${s.title} | ${s.body || s.desc || ''}`).join('\n\n');
+    }
+    if (Array.isArray(stringified.whyChooseItems) && stringified.whyChooseItems.length > 0) {
+      stringified.whyChooseItemsText = stringified.whyChooseItems.map((s) => `${s.title} | ${s.desc || ''}`).join('\n\n');
     }
     if (Array.isArray(stringified.approachItems) && stringified.approachItems.length > 0) {
       stringified.approachItemsText = stringified.approachItems
