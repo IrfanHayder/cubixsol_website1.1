@@ -11,6 +11,8 @@
     "share": "npm run build && concurrently \"npm run start --prefix backend\" \"node tunnel-keeper.cjs\" --names \"SERVER,TUNNEL\" --prefix-colors \"cyan,magenta\"",
     "build": "vite build",
     "start": "npm run start --prefix backend",
+    "db:export": "npm run seed:export --prefix backend",
+    "db:seed": "npm run seed --prefix backend",
 
     "lint": "oxlint",
     "preview": "vite preview"

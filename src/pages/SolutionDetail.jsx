@@ -11,7 +11,6 @@ import SolutionBestPractices from '../components/SolutionBestPractices';
 import Reveal, { Stagger, StaggerItem } from '../components/Reveal';
 import { apiFetch } from '../utils/api';
 import { useSEO } from '../utils/seo';
-import { solutionPractices } from '../data/solutionPractices';
 
 function SolutionFaqSection({ faqs, solutionTitle }) {
   const [openFaq, setOpenFaq] = useState(null);
@@ -154,7 +153,7 @@ export default function SolutionDetail() {
   const hasUseCases = Array.isArray(currentSolution.useCasesItems) && currentSolution.useCasesItems.length > 0;
   const hasTech = Boolean(currentSolution.techDesc || (Array.isArray(currentSolution.tech) && currentSolution.tech.length > 0));
   const hasWhyChoose = Array.isArray(currentSolution.whyChooseItems) && currentSolution.whyChooseItems.length > 0;
-  const hasPractices = (Array.isArray(currentSolution.practices?.items) && currentSolution.practices.items.length > 0) || Boolean(solutionPractices[slug]);
+  const hasPractices = Array.isArray(currentSolution.practices?.items) && currentSolution.practices.items.length > 0;
   const hasCustomImpact = Array.isArray(currentSolution.impact?.rows) && currentSolution.impact.rows.length > 0;
   const hasCustomProcess = Array.isArray(currentSolution.process?.steps) && currentSolution.process.steps.length > 0;
   const hasCustomFaqs = Array.isArray(currentSolution.faqs) && currentSolution.faqs.length > 0;

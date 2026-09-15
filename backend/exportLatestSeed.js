@@ -112,65 +112,58 @@ async function exportSeed() {
     const pages = (await PageContent.find().sort({ slug: 1 })).map(cleanDoc);
     const contactInfo = (await ContactInfo.find().sort({ order: 1 })).map(cleanDoc);
 
+    const fullData = {
+      initialServices: services,
+      initialSolutions: solutions,
+      initialProducts: products,
+      initialIndustries: industries,
+      initialProjects: projects,
+      initialTeam: team,
+      initialFaqs: faqs,
+      initialTestimonials: testimonials,
+      initialBlogs: blogs,
+      initialAuthors: authors,
+      initialCategories: categories,
+      initialTags: tags,
+      initialCareers: careers,
+      initialSiteSettings: siteSettings,
+      initialSeoSettings: seoSettings,
+      initialPages: pages,
+      initialContactInfo: contactInfo,
+    };
+
+    // Save JSON version for ultra-fast light reading
+    const seedJsonPath = path.join(__dirname, 'seedData.json');
+    fs.writeFileSync(seedJsonPath, JSON.stringify(fullData, null, 2), 'utf-8');
+
+    // Save JS version for standard server imports
     const fileContent = `// Auto-generated complete seed data from live MongoDB database
-const initialServices = ${JSON.stringify(services, null, 2)};
-
-const initialSolutions = ${JSON.stringify(solutions, null, 2)};
-
-const initialProducts = ${JSON.stringify(products, null, 2)};
-
-const initialIndustries = ${JSON.stringify(industries, null, 2)};
-
-const initialProjects = ${JSON.stringify(projects, null, 2)};
-
-const initialTeam = ${JSON.stringify(team, null, 2)};
-
-const initialFaqs = ${JSON.stringify(faqs, null, 2)};
-
-const initialTestimonials = ${JSON.stringify(testimonials, null, 2)};
-
-const initialBlogs = ${JSON.stringify(blogs, null, 2)};
-
-const initialAuthors = ${JSON.stringify(authors, null, 2)};
-
-const initialCategories = ${JSON.stringify(categories, null, 2)};
-
-const initialTags = ${JSON.stringify(tags, null, 2)};
-
-const initialCareers = ${JSON.stringify(careers, null, 2)};
-
-const initialSiteSettings = ${JSON.stringify(siteSettings, null, 2)};
-
-const initialSeoSettings = ${JSON.stringify(seoSettings, null, 2)};
-
-const initialPages = ${JSON.stringify(pages, null, 2)};
-
-const initialContactInfo = ${JSON.stringify(contactInfo, null, 2)};
+const data = require('./seedData.json');
 
 module.exports = {
-  initialServices,
-  initialSolutions,
-  initialProducts,
-  initialIndustries,
-  initialProjects,
-  initialTeam,
-  initialFaqs,
-  initialTestimonials,
-  initialBlogs,
-  initialAuthors,
-  initialCategories,
-  initialTags,
-  initialCareers,
-  initialSiteSettings,
-  initialSeoSettings,
-  initialPages,
-  initialContactInfo,
+  initialServices: data.initialServices || [],
+  initialSolutions: data.initialSolutions || [],
+  initialProducts: data.initialProducts || [],
+  initialIndustries: data.initialIndustries || [],
+  initialProjects: data.initialProjects || [],
+  initialTeam: data.initialTeam || [],
+  initialFaqs: data.initialFaqs || [],
+  initialTestimonials: data.initialTestimonials || [],
+  initialBlogs: data.initialBlogs || [],
+  initialAuthors: data.initialAuthors || [],
+  initialCategories: data.initialCategories || [],
+  initialTags: data.initialTags || [],
+  initialCareers: data.initialCareers || [],
+  initialSiteSettings: data.initialSiteSettings || [],
+  initialSeoSettings: data.initialSeoSettings || [],
+  initialPages: data.initialPages || [],
+  initialContactInfo: data.initialContactInfo || [],
 };
 `;
 
     const seedPath = path.join(__dirname, 'seedData.js');
     fs.writeFileSync(seedPath, fileContent, 'utf-8');
-    console.log(`Successfully updated ${seedPath} with all latest MongoDB data!`);
+    console.log(`Successfully updated ${seedPath} and ${seedJsonPath} with all latest MongoDB data!`);
     console.log(`- Services: ${services.length}`);
     console.log(`- Industries: ${industries.length}`);
     console.log(`- Pages: ${pages.length}`);
