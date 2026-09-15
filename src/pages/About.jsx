@@ -135,7 +135,7 @@ export default function About() {
                 </li>
               ))}
             </ul>
-            <Link to="/services" className="btn-primary">
+            <Link to="/all-services" className="btn-primary">
               Explore Our Services <ArrowRight className="w-4 h-4" />
             </Link>
           </Reveal>

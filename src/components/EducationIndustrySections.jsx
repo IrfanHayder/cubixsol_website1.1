@@ -278,7 +278,7 @@ export default function EducationIndustrySections({ industry }) {
                   <Link to="/contact" className="btn-primary">
                     Start a project <ArrowRight className="w-4 h-4" />
                   </Link>
-                  <Link to="/services" className="btn-outline">
+                  <Link to="/all-services" className="btn-outline">
                     View services
                   </Link>
                 </div>

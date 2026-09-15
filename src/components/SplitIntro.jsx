@@ -21,7 +21,7 @@ export default function SplitIntro() {
               Whether you need a polished MVP, a scalable platform, or an AI-powered workflow —
               our team ships with clarity, speed and care.
             </p>
-            <Link to="/services" className="btn-primary">
+            <Link to="/all-services" className="btn-primary">
               Discover more <ArrowRight className="w-4 h-4" />
             </Link>
           </Reveal>

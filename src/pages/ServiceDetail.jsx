@@ -86,7 +86,7 @@ export default function ServiceDetail() {
     );
   }
 
-  if (!service) return <Navigate to="/services" replace />;
+  if (!service) return <Navigate to="/all-services" replace />;
 
   const others = (Array.isArray(services) ? services : [])
     .filter((s) => s && s.slug && !isServiceSlugMatch(slug, s.slug))
@@ -117,7 +117,7 @@ export default function ServiceDetail() {
 
   return (
     <div className="bg-white">
-      <Breadcrumb current={service.title} items={[{ label: 'Services', to: '/services' }]} />
+      <Breadcrumb current={service.title} items={[{ label: 'Services', to: '/all-services' }]} />
 
       {/* Hero Section */}
       <section
@@ -127,7 +127,7 @@ export default function ServiceDetail() {
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
           <Reveal direction="right" scale>
             <Link
-              to="/services"
+              to="/all-services"
               className="inline-flex items-center gap-1.5 text-sm font-semibold text-gray-500 hover:text-[#00a4d8] mb-5 transition"
             >
               <ArrowLeft className="w-4 h-4" /> All services
@@ -600,7 +600,7 @@ export default function ServiceDetail() {
                 <h2 className="text-xl sm:text-2xl font-extrabold text-ink">Other Services</h2>
               </div>
               <Link
-                to="/services"
+                to="/all-services"
                 className="text-sm font-semibold text-[#00a4d8] inline-flex items-center gap-1 hover:gap-2 transition-all"
               >
                 View all <ArrowRight className="w-4 h-4" />

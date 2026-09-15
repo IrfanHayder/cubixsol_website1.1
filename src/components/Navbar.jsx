@@ -186,7 +186,7 @@ export default function Navbar() {
               }}
               onMouseLeave={() => setServicesOpen(false)}
             >
-              <NavLink to="/services" className={linkClass}>
+              <NavLink to="/all-services" className={linkClass}>
                 <span className="flex items-center gap-1">
                   Services <ChevronDown className="w-3.5 h-3.5" />
                 </span>
@@ -229,7 +229,7 @@ export default function Navbar() {
                     </div>
                     <div className="mt-4 pt-3 border-t border-gray-100 flex justify-end">
                       <NavLink
-                        to="/services"
+                        to="/all-services"
                         className="text-sm font-semibold text-primary-600 inline-flex items-center gap-1 hover:gap-2 transition-all"
                       >
                         View all services <ArrowRight className="w-4 h-4" />
@@ -537,7 +537,7 @@ export default function Navbar() {
               {mobileServices && (
                 <div className="pl-3 pb-2 space-y-0.5">
                   <NavLink
-                    to="/services"
+                    to="/all-services"
                     onClick={() => setOpen(false)}
                     className="block px-3 py-2 text-sm text-primary-600 font-semibold"
                   >

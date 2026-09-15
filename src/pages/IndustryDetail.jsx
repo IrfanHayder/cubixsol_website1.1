@@ -891,7 +891,7 @@ export default function IndustryDetail() {
                   : `Often Paired with ${ind.title} Software`}
               </h2>
             </div>
-            <Link to="/services" className="text-sm font-bold text-primary-600 inline-flex items-center gap-1 hover:gap-2 transition-all">
+            <Link to="/all-services" className="text-sm font-bold text-primary-600 inline-flex items-center gap-1 hover:gap-2 transition-all">
               All services <ArrowRight className="w-4 h-4" />
             </Link>
           </Reveal>
