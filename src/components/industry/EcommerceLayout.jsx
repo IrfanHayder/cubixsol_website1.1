@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  ShoppingCart, Zap, TrendingUp, Sparkles, CheckCircle2,
+  ShoppingCart, ShoppingBag, Zap, TrendingUp, Sparkles, CheckCircle2,
   PackageCheck, ArrowRight, Smartphone, RefreshCw, BarChart3,
   CreditCard, Flame, Layers, Box, ShieldCheck, Shield, Server,
   Lock, Cpu, Users, Building2, Store, DollarSign
