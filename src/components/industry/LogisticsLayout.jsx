@@ -3,9 +3,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import {
   Truck, Navigation, MapPin, Radio, Activity, CheckCircle2,
   Package, Clock, ShieldCheck, ArrowRight, Gauge, Layers, Cpu,
-  RefreshCw, BarChart2
+  RefreshCw, BarChart2, Check, Smartphone, Box, Shield, Server,
+  Database, Network, Zap, Anchor
 } from 'lucide-react';
 import Reveal, { Stagger, StaggerItem } from '../Reveal';
+import { formatInline } from '../../utils/formatText';
 
 export default function LogisticsLayout({ industry }) {
   const [selectedVehicle, setSelectedVehicle] = useState(0);
@@ -49,13 +51,80 @@ export default function LogisticsLayout({ industry }) {
     },
   ];
 
-  const workAreas = industry.workAreas || [];
+  // 1. Software We Build
+  const softwareTitle = industry.solutionsTitle || 'Logistics Software We Build';
+  const softwareSubtitle = industry.solutionsSubtitle || '';
+  const softwareItems = Array.isArray(industry.solutionsItems) && industry.solutionsItems.length > 0
+    ? industry.solutionsItems
+    : [
+        {
+          title: 'Fleet Management Software',
+          body: 'Our fleet management software development solutions help businesses monitor vehicles, drivers, and routes in real time. We create systems with GPS tracking, maintenance alerts, fuel monitoring, and performance analytics. Businesses can improve fleet efficiency and reduce operational costs through better visibility.',
+        },
+        {
+          title: 'Dispatch and Tracking Software',
+          body: 'We develop dispatch and tracking platforms that simplify shipment coordination and delivery management. Real-time updates allow teams to assign tasks, track orders, and improve delivery accuracy. Our solutions support faster communication between drivers, customers, and operations teams.',
+        },
+        {
+          title: 'Warehouse Management Software',
+          body: 'Our warehouse management solutions optimise inventory control, order processing, and storage operations. We build systems that improve stock visibility, automate workflows, and reduce manual errors. Companies can manage warehouse activities with greater speed and accuracy.',
+        },
+        {
+          title: 'Logistics Mobile Apps',
+          body: 'We build logistics mobile apps that connect drivers, managers, and customers through convenient digital tools. Apps can include delivery tracking, notifications, digital proof of delivery, and order updates. Our custom solutions improve accessibility and create smoother logistics experiences.',
+        },
+      ];
+
+  // 2. Built for Logistics Standards (Work Areas / Standards)
+  const standardsTitle = industry.workAreasTitle || 'Built for Logistics Standards';
+  const standardsItems = Array.isArray(industry.workAreas) && industry.workAreas.length > 0
+    ? industry.workAreas
+    : [
+        {
+          title: 'Real-Time Tracking and Visibility',
+          body: 'Our logistics platforms provide real-time tracking for shipments, vehicles, and delivery operations. Businesses gain complete visibility into movement, status updates, and operational performance.',
+        },
+        {
+          title: 'Smooth System Integrations',
+          body: 'We build logistics software that connects with essential systems such as ELD, ERP, TMS, and third-party APIs. These integrations create smooth data flow across logistics operations.',
+        },
+        {
+          title: 'Reliable and Scalable Infrastructure',
+          body: 'Our solutions are designed for high performance, security, and reliability. Scalable architecture supports growing fleets, increasing shipments, and expanding business needs.',
+        },
+        {
+          title: 'Data-Driven Logistics Management',
+          body: 'Advanced analytics and reporting features provide valuable insights into routes, costs, and delivery performance. Businesses can use real-time data to improve efficiency and decision-making.',
+        },
+      ];
+
+  // 3. Why Logistics Teams Choose Cubixsol
+  const whyChooseTitle = industry.whyChooseTitle || 'Why Logistics Teams Choose Cubixsol';
+  const whyChooseItems = Array.isArray(industry.whyChooseItems) && industry.whyChooseItems.length > 0
+    ? industry.whyChooseItems
+    : (Array.isArray(industry.points) && industry.points.length > 0
+        ? industry.points.map((p) => {
+            if (typeof p === 'string') {
+              const [t, ...d] = p.split('|');
+              return { title: t.trim(), desc: d.join('|').trim() || 'Engineered for operational excellence and high-frequency telematics.' };
+            }
+            return p;
+          })
+        : [
+            { title: 'Custom-Built Logistics Solutions', desc: 'Tailored architecture designed around your fleet size, dispatch workflows, and operational requirements.' },
+            { title: 'Scalable Technology Solutions', desc: 'Engineered to handle high-frequency telematics and expanding shipment volumes.' },
+            { title: 'Seamless Integration Capabilities', desc: 'Frictionless connection with ELD, ERP, TMS, and existing dispatch platforms.' },
+            { title: 'Real-Time Data Insights', desc: 'Actionable telematics, route optimization, and live delivery analytics.' },
+            { title: 'Flexible Cloud-Based Solutions', desc: 'Secure, resilient cloud infrastructure with high uptime and disaster recovery.' },
+            { title: 'Long-Term Technology Partnership', desc: 'Continuous maintenance, feature expansion, and dedicated technical support.' },
+          ]);
+
   const cases = industry.caseStudies || [];
   const services = industry.servicesWeOffer || [];
 
   return (
     <div className="space-y-16 sm:space-y-24">
-      {/* Interactive Logistics Control Tower */}
+      {/* 📡 Interactive Logistics Control Tower */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="rounded-3xl bg-gradient-to-br from-[#071326] via-[#0c1f3d] to-[#040e1c] text-white p-6 sm:p-10 lg:p-12 border border-sky-500/30 shadow-2xl relative overflow-hidden">
           <div className="absolute right-0 top-0 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -148,88 +217,129 @@ export default function LogisticsLayout({ industry }) {
         </div>
       </section>
 
-      {/* Feature Grid */}
+      {/* 🚛 1. Logistics Software We Build */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-10">
-          <p className="eyebrow text-sky-600 mb-2">Logistics Technology Stack</p>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-ink tracking-tight">
-            Visibility from Warehouse Shelf to Doorstep
+        <Reveal className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-50 text-sky-700 border border-sky-200 text-xs font-bold uppercase tracking-wider mb-3 shadow-sm">
+            <Truck className="w-3.5 h-3.5 text-sky-600" />
+            <span>Operational Capabilities</span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink tracking-tight mb-3">
+            {softwareTitle}
           </h2>
-        </div>
+          {softwareSubtitle && (
+            <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+              {softwareSubtitle}
+            </p>
+          )}
+        </Reveal>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {[
-            {
-              icon: Navigation,
-              title: 'AI Multi-Stop Route Optimization',
-              desc: 'Dynamic re-routing factoring in traffic conditions, time windows, and vehicle capacity constraints.',
-            },
-            {
-              icon: MapPin,
-              title: 'Geo-Fencing & Micro-Milestones',
-              desc: 'Automated arrival alerts, gate pass generation, and dwell time tracking with sub-meter accuracy.',
-            },
-            {
-              icon: Package,
-              title: 'Digital Proof of Delivery (ePOD)',
-              desc: 'Instant barcode scanning, photo capture, sign-on-glass, and automated customer SMS confirmation.',
-            },
-            {
-              icon: Gauge,
-              title: 'TMS & WMS Integration',
-              desc: 'Seamless data sync with SAP, Oracle Transportation Management, Blue Yonder, and Manhattan Associates.',
-            },
-          ].map((item) => (
-            <motion.div
-              key={item.title}
-              whileHover={{ y: -4 }}
-              className="p-5 rounded-2xl bg-white border border-gray-100 shadow-card hover:border-sky-300 transition-all"
-            >
-              <div className="w-10 h-10 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center mb-3">
-                <item.icon className="w-5 h-5" />
-              </div>
-              <h3 className="font-bold text-ink text-base mb-1.5">{item.title}</h3>
-              <p className="text-xs text-gray-500 leading-relaxed">{item.desc}</p>
-            </motion.div>
-          ))}
+        <Stagger className="grid sm:grid-cols-2 gap-6" staggerDelay={0.06}>
+          {softwareItems.map((item, idx) => {
+            const icons = [Truck, Navigation, Box, Smartphone];
+            const LIcon = icons[idx % icons.length];
+            return (
+              <StaggerItem key={item.title || idx}>
+                <div className="p-6 sm:p-7 rounded-2xl bg-white border border-gray-100 shadow-card hover:shadow-elev hover:border-sky-300 transition-all duration-300 h-full flex flex-col group">
+                  <div className="flex items-center gap-3.5 mb-4">
+                    <span className="w-12 h-12 rounded-xl bg-gradient-to-br from-sky-50 to-blue-50 border border-sky-100 flex items-center justify-center text-sky-600 group-hover:scale-110 transition-transform">
+                      <LIcon className="w-6 h-6" />
+                    </span>
+                    <h3 className="font-extrabold text-ink text-lg sm:text-xl group-hover:text-sky-600 transition-colors">
+                      {item.title}
+                    </h3>
+                  </div>
+                  <p className="text-sm text-gray-600 leading-relaxed flex-1">
+                    {formatInline(item.body || item.desc || '')}
+                  </p>
+                </div>
+              </StaggerItem>
+            );
+          })}
+        </Stagger>
+      </section>
+
+      {/* 🛡️ 2. Built for Logistics Standards */}
+      <section className="bg-gradient-to-b from-slate-900 via-[#071326] to-slate-900 text-white py-14 sm:py-20 border-y border-sky-900/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Reveal className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-500/20 text-sky-300 border border-sky-500/30 text-xs font-bold uppercase tracking-wider mb-3">
+              <ShieldCheck className="w-3.5 h-3.5 text-sky-400" />
+              <span>Reliability &amp; Architecture</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight mb-3">
+              {standardsTitle}
+            </h2>
+            <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+              Engineered with modern protocols, fault tolerance, and secure integrations to keep your supply chain running without disruption.
+            </p>
+          </Reveal>
+
+          <Stagger className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5" staggerDelay={0.05}>
+            {standardsItems.map((item, idx) => {
+              const standardIcons = [Radio, Network, Server, BarChart2];
+              const SIcon = standardIcons[idx % standardIcons.length];
+              return (
+                <StaggerItem key={item.title || idx}>
+                  <div className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-sky-400/50 hover:bg-white/10 transition-all duration-300 h-full flex flex-col group">
+                    <div className="w-12 h-12 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                      <SIcon className="w-6 h-6" />
+                    </div>
+                    <h3 className="font-bold text-white text-lg mb-2 group-hover:text-sky-300 transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed flex-1">
+                      {formatInline(item.body || item.desc || '')}
+                    </p>
+                  </div>
+                </StaggerItem>
+              );
+            })}
+          </Stagger>
         </div>
       </section>
 
-      {/* Work Areas */}
-      {workAreas.length > 0 && (
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-10">
-            <p className="eyebrow text-sky-600 mb-2">Operations Focus</p>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-ink tracking-tight">
-              Logistics Software We Build
-            </h2>
+      {/* 🏆 3. Why Logistics Teams Choose Cubixsol */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Reveal className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-50 text-sky-700 border border-sky-200 text-xs font-bold uppercase tracking-wider mb-3 shadow-sm">
+            <CheckCircle2 className="w-3.5 h-3.5 text-sky-600" />
+            <span>The Cubixsol Edge</span>
           </div>
-          <div className="grid md:grid-cols-2 gap-6">
-            {workAreas.map((w, idx) => (
-              <motion.div
-                key={w.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="p-6 rounded-2xl bg-sky-50/40 border border-sky-100 hover:bg-white hover:shadow-card hover:border-sky-300 transition-all"
-              >
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="w-8 h-8 rounded-lg bg-sky-600 text-white font-mono text-xs font-bold flex items-center justify-center">
-                    0{idx + 1}
-                  </span>
-                  <h3 className="text-lg font-extrabold text-ink">{w.title}</h3>
-                </div>
-                <p className="text-sm text-gray-600 leading-relaxed">{w.body}</p>
-              </motion.div>
-            ))}
-          </div>
-        </section>
-      )}
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink tracking-tight mb-3">
+            {whyChooseTitle}
+          </h2>
+          <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+            We deliver enterprise-grade logistics platforms that eliminate operational blind spots, automate workflows, and reduce delivery delays.
+          </p>
+        </Reveal>
 
-      {/* Case Studies */}
+        <Stagger className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.05}>
+          {whyChooseItems.map((item, idx) => {
+            const icons = [Truck, Cpu, Network, Activity, Server, RefreshCw];
+            const BIcon = icons[idx % icons.length];
+            return (
+              <StaggerItem key={item.title || idx}>
+                <div className="p-6 rounded-2xl bg-white border border-gray-100 shadow-card hover:border-sky-300 hover:shadow-elev transition-all duration-300 h-full flex flex-col group">
+                  <div className="w-11 h-11 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <BIcon className="w-5 h-5" />
+                  </div>
+                  <h3 className="font-bold text-ink text-lg mb-2 group-hover:text-sky-600 transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-gray-600 leading-relaxed flex-1">
+                    {formatInline(item.desc || '')}
+                  </p>
+                </div>
+              </StaggerItem>
+            );
+          })}
+        </Stagger>
+      </section>
+
+      {/* Case Studies (if any) */}
       {cases.length > 0 && (
-        <section className="bg-[#071326] text-white py-14 rounded-3xl max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="bg-[#071326] text-white py-14 rounded-3xl max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border border-sky-500/20">
           <div className="max-w-3xl mb-10">
             <p className="text-sky-400 text-xs font-bold uppercase tracking-wider mb-2">Operational Results</p>
             <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
@@ -254,11 +364,11 @@ export default function LogisticsLayout({ industry }) {
         </section>
       )}
 
-      {/* Services Grid */}
+      {/* Services Grid (if any) */}
       {services.length > 0 && (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="p-8 rounded-3xl bg-sky-50/60 border border-sky-100">
-            <h3 className="text-xl font-extrabold text-ink mb-6">Logistics Engineering Offerings</h3>
+            <h3 className="text-xl font-extrabold text-ink mb-6">Logistics Engineering Capabilities</h3>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {services.map((s) => (
                 <div key={s} className="flex items-center gap-2.5 p-3 rounded-xl bg-white shadow-sm border border-sky-100/60">

@@ -821,7 +821,7 @@ export default function IndustryDetail() {
 
                 <div className="flex flex-wrap items-center gap-3.5 pt-1">
                   <Link to="/contact" className={`btn-primary flex items-center gap-2 shadow-md ${theme.heroButton}`}>
-                    {ind.slug === 'real-estate' ? 'Build Your Real Estate Solution' : ind.slug === 'healthcare' || ind.slug === 'ecommerce' ? 'Discuss your Project' : 'Discuss Your Project'} <ArrowRight className="w-4 h-4" />
+                    {ind.slug === 'logistics' ? 'Discuss Your Logistics Project' : ind.slug === 'real-estate' ? 'Build Your Real Estate Solution' : ind.slug === 'healthcare' || ind.slug === 'ecommerce' ? 'Discuss your Project' : 'Discuss Your Project'} <ArrowRight className="w-4 h-4" />
                   </Link>
                   <button
                     onClick={openEstimateModal}
@@ -832,7 +832,7 @@ export default function IndustryDetail() {
                         : 'border-gray-300 bg-white text-ink hover:border-primary-500'
                     }`}
                   >
-                    <Sparkles className="w-4 h-4 text-primary-500" /> {ind.slug === 'real-estate' ? 'Talk to Our Experts' : ind.slug === 'healthcare' || ind.slug === 'ecommerce' ? 'Get a Proposal' : 'Get Free Estimate'}
+                    <Sparkles className="w-4 h-4 text-primary-500" /> {ind.slug === 'logistics' ? 'Get a Free Consultation' : ind.slug === 'real-estate' ? 'Talk to Our Experts' : ind.slug === 'healthcare' || ind.slug === 'ecommerce' ? 'Get a Proposal' : 'Get Free Estimate'}
                   </button>
                 </div>
 
@@ -944,14 +944,14 @@ export default function IndustryDetail() {
             </div>
             <div className="flex flex-wrap items-center gap-3.5 relative shrink-0">
               <Link to="/contact" className="btn-primary">
-                {ind.slug === 'real-estate' ? 'Start Your Real Estate Project' : ind.slug === 'healthcare' ? 'Talk to Cubixsol' : ind.slug === 'ecommerce' ? 'Discuss your Project' : 'Book Consultation'} <ArrowRight className="w-4 h-4" />
+                {ind.slug === 'logistics' ? 'Start Your Logistics Project' : ind.slug === 'real-estate' ? 'Start Your Real Estate Project' : ind.slug === 'healthcare' ? 'Talk to Cubixsol' : ind.slug === 'ecommerce' ? 'Discuss your Project' : 'Book Consultation'} <ArrowRight className="w-4 h-4" />
               </Link>
               <button
                 onClick={openEstimateModal}
                 type="button"
                 className="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider border border-white/20 transition"
               >
-                {ind.slug === 'real-estate' ? 'Talk to Our Experts' : ind.slug === 'healthcare' || ind.slug === 'ecommerce' ? 'Get a Proposal' : 'Get Cost Estimate'}
+                {ind.slug === 'logistics' ? 'Get Cost Estimate' : ind.slug === 'real-estate' ? 'Talk to Our Experts' : ind.slug === 'healthcare' || ind.slug === 'ecommerce' ? 'Get a Proposal' : 'Get Cost Estimate'}
               </button>
             </div>
           </div>
