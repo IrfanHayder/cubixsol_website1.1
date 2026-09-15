@@ -430,120 +430,145 @@ const updatedIndustries = [
   {
     slug: 'real-estate',
     title: 'Real Estate',
+    heroTitle: 'Real Estate Software Development',
     icon: 'Building2',
-    short: 'Listings, portals, and property operations platforms.',
-    desc: 'Property search, agent tools, and operations software for developers and agencies — fast listing experiences and reliable backend workflows.',
+    short: 'Cubixsol delivers real estate software development solutions that simplify property listings, sales, leasing, payments, and portfolio management through one connected platform.',
+    desc: 'Cubixsol delivers **real estate software development** solutions that simplify property listings, sales, leasing, payments, and portfolio management through one connected platform. Our custom software supports real estate companies, agencies, property managers, and property owners with practical tools built around their workflows.',
     points: [
-      'Sub-minute MLS / IDX & RESO Web API synchronization',
-      'Interactive spatial map search with Mapbox polygon filters',
-      'Integrated 3D Matterport virtual tour & floor plan viewers',
-      'Intelligent agent CRM & round-robin lead routing',
-      'Digital offer management & e-signature closing vaults',
-      'PMS integrations (Yardi, RealPage, AppFolio)',
+      'Real Estate Domain Expertise',
+      'Secure Software Architecture',
+      'Scalable Technology Architecture',
+      'Transparent Project Delivery',
+      'Seamless Third-Party Integrations',
+      'Reliable Post-Launch Support',
     ],
-    testimonial: {
-      quote: 'Listings and leads finally lived in one system our agents actually use.',
-      name: 'Sales Director',
-      role: 'Property group',
-    },
-    stats: [
-      { value: '< 60s', label: 'MLS & RESO Feed Synchronization Frequency' },
-      { value: '+65%', label: 'Online Tour Booking & Lead Conversion Lift' },
-      { value: '3.4x', label: 'Average On-Page Property Dwell Time' },
-      { value: 'RESO API', label: 'Certified Real Estate Standard Standardized' },
-    ],
-    approachTitle: 'The Cubixsol Approach to Real Estate',
-    approachItems: [
-      {
-        title: 'We Engineer for Spatial Immersion & Speed',
-        subtitle: 'Our PropTech software engineers and real estate UX specialists craft listing platforms that are:',
-        points: [
-          { heading: 'Sub-Minute Sync', text: 'RESO Web API synchronization that reflects new listings and price cuts in under 60 seconds.' },
-          { heading: 'Immersive Spatial UX', text: 'Embedded 3D Matterport virtual walkthroughs and Mapbox polygon spatial search.' },
-          { heading: 'High-Converting Flow', text: 'Frictionless tour booking and automated SMS routing to local on-duty agents.' },
-        ],
-      },
-      {
-        title: 'We Ensure Full MLS & RESO Compliance',
-        subtitle: 'With deep integration expertise across North American & global real estate feeds:',
-        points: [
-          { heading: 'RESO Web API Standard', text: 'Certified data pipelines ensuring accurate listing status, photos, and agent attribution.' },
-          { heading: 'Fair Housing & WCAG 2.1', text: 'Built-in accessibility compliance, screen reader support, and equal housing opportunity notices.' },
-          { heading: 'PMS Interoperability', text: 'Two-way synchronization with Yardi, RealPage, AppFolio, and Entrata property databases.' },
-        ],
-      },
-      {
-        title: 'We Accelerate Brokerage & Agent Conversions',
-        subtitle: 'We build automated intelligence pipelines that convert casual website visitors into signed clients:',
-        points: [
-          { heading: 'Sub-45s Lead Routing', text: 'Round-robin agent assignment with instant push alerts that maximize lead response rates.' },
-          { heading: 'Automated CMA Reports', text: 'Instant Comparative Market Analysis generation powered by live neighborhood comps.' },
-          { heading: 'Digital Escrow Vaults', text: 'Secure digital offer submission, automated e-signatures, and transaction milestone tracking.' },
-        ],
-      },
-    ],
-    solutionsTitle: 'Our Real Estate & PropTech Solutions',
-    solutionsSubtitle: 'Enterprise MLS listing portals, spatial map search engines, brokerage CRMs, and property management suites designed for modern agencies.',
+    solutionsTitle: 'Real Estate Software We Build',
+    solutionsSubtitle: 'Our real estate software development services build solutions that connect real estate businesses with buyers, sellers, tenants, agents, and property owners.',
     solutionsItems: [
       {
-        title: 'MLS / IDX Search Portals & Interactive Map GIS',
-        body: 'Custom polygon drawing search filters, commute-time radius calculations, school district boundary layers, automated price drop notifications, and high-speed image CDN delivery.',
+        title: 'Property Listing & Portal Software',
+        body: `Property platforms give buyers and tenants a simple way to discover properties, compare options, and contact agents.
+
+- **Listing platforms** let agents publish property details, photos, pricing, availability, and location information.
+- **Property portals** connect buyers, sellers, landlords, tenants, and agents through searchable property marketplaces.
+- **Property search features** let users filter listings by location, price, property type, size, amenities, and availability.`,
       },
       {
-        title: 'Brokerage CRM & Agent Round-Robin Automation',
-        body: 'Automated lead qualification and routing engine with instant SMS alerts, showing calendar scheduling, agent commission pipelines, and digital transaction document vaults.',
+        title: 'Real Estate CRM & Management Software',
+        body: `Real estate CRM and management systems organise customer relationships alongside property operations.
+
+- **Real estate CRM software** helps agents track leads, client interactions, follow-ups, deals, and sales pipelines.
+- **Property management software** supports rent collection, lease records, tenant communication, maintenance requests, and property records.
+- **Administrative dashboards** give teams centralized access to clients, properties, transactions, tasks, and performance data.`,
       },
       {
-        title: 'Property Management & Digital Tenant Onboarding',
-        body: 'End-to-end tenant portals for online rent collection (ACH/Credit), digital lease execution, maintenance ticketing with photo uploads, and real-time landlord financial reporting.',
+        title: 'Real Estate App Development',
+        body: `Our **real estate app development services** create mobile experiences to support property discovery, communication, transactions, and account management.
+
+- **Property apps** let users browse listings, save properties, schedule visits, and contact agents from mobile devices.
+- **Agent apps** provide tools for managing leads, appointments, listings, client communication, and property updates.
+- **Owner and tenant apps** support rent payments, maintenance requests, lease information, notifications, and property communication.`,
       },
     ],
+    workAreasTitle: 'Use Cases & Examples',
+    workAreasIntro: 'Real estate businesses use custom software to manage property transactions, customer relationships, and rental operations.',
     workAreas: [
       {
-        title: 'MLS/IDX Listing Portals',
-        body: 'High-speed property search portals with neighborhood school ratings, transit scores, tax history, and automated price alert notifications.',
+        title: 'Property Marketplace Platform',
+        body: 'A property marketplace connects buyers and tenants with property owners and agents through a searchable digital platform. Users can discover properties, compare listings, contact sellers, and schedule property visits from one place.',
       },
       {
-        title: 'Interactive Spatial & Map Exploration',
-        body: 'Custom polygon drawing search, commute time radius filters, and interactive 3D site plan maps for master-planned communities.',
+        title: 'Real Estate Agent CRM',
+        body: 'A real estate CRM gives agencies a centralised system for managing leads, clients, properties, and sales activities. Agents can track prospects from their first inquiry through property viewings, negotiations, and completed transactions.',
       },
       {
-        title: 'Agent CRM & Lead Automation',
-        body: 'Automated lead scoring, instant SMS notifications to on-duty agents, showing calendar scheduling, and commission pipeline tracking.',
-      },
-      {
-        title: 'Property Management & Tenant Portals',
-        body: 'Online rent collection, digital lease signing, maintenance ticketing with photo uploads, and owner payout reporting.',
+        title: 'Rental Management Software',
+        body: 'A rental management app connects property owners, managers, and tenants through a single platform for daily rental operations. The solution simplifies rent collection, lease administration, maintenance requests, and tenant communication.',
       },
     ],
-    productsBuilt: [
-      { name: 'PropView IDX', slug: 'propview', blurb: 'Blazing-fast MLS search engine with interactive map filtering.' },
-      { name: 'LeasePilot', slug: 'leasepilot', blurb: 'Digital tenant onboarding, screening, and automated lease signing.' },
+    techTitle: 'Technology Stack for Real Estate Software',
+    techIntro: 'Our technology stack supports secure, scalable, and responsive real estate platforms across web and mobile devices. We selects technologies based on your product requirements, integrations, performance goals, and long-term growth.',
+    techItems: [
+      {
+        title: 'React for Real Estate Web Applications',
+        desc: 'React supports responsive interfaces for property portals, listing platforms, dashboards, and customer-facing web applications. Its component-based architecture allows teams to create consistent interfaces across complex real estate platforms.',
+      },
+      {
+        title: 'Node.js for Backend Development',
+        desc: 'Node.js provides a scalable backend for real estate platforms that manage users, listings, transactions, communications, and property data. Its event-driven architecture supports real-time features such as notifications, chat, and property updates.',
+      },
+      {
+        title: 'Maps APIs for Property Location Features',
+        desc: 'Maps APIs add location-based features to property platforms and mobile applications. Users can search properties by location, view listings on interactive maps, calculate distances, and explore nearby amenities.',
+      },
+      {
+        title: 'Flutter for Real Estate Mobile Apps',
+        desc: 'Flutter enables development of cross-platform real estate mobile applications from a shared codebase. Businesses can launch apps for Android and iOS with consistent interfaces and core functionality.',
+      },
     ],
-    caseStudies: [
+    whyChooseTitle: 'Why Real Estate Teams Choose Cubixsol',
+    whyChooseItems: [
       {
-        title: 'Luxury Brokerage Web & Map Portal',
-        result: 'Designed and built a custom RESO-compliant listing platform that drove a 65% increase in online tour bookings across 8 metropolitan markets.',
-        tags: ['RESO API', 'Mapbox', 'PropTech'],
+        title: 'Real Estate Domain Expertise',
+        desc: 'Deep industry experience building specialized platforms for property developers, brokerages, and managers.',
       },
       {
-        title: 'Commercial Property Management Suite',
-        result: 'Delivered an integrated tenant portal for 1.2M sq. ft. of commercial office space, automating lease renewals and maintenance tracking.',
-        tags: ['PMS', 'Tenant Portal', 'SaaS'],
+        title: 'Secure Software Architecture',
+        desc: 'Enterprise-grade encryption, secure user authentication, and data privacy protecting every real estate deal.',
       },
       {
-        title: 'Automated Real Estate Lead Router',
-        result: 'Engineered an AI-assisted lead qualification and SMS dispatch engine that reduced agent response times from 3 hours to 45 seconds.',
-        tags: ['CRM', 'Automation', 'SMS'],
+        title: 'Scalable Technology Architecture',
+        desc: 'Cloud-native infrastructure designed to handle millions of listings, concurrent searches, and image media.',
+      },
+      {
+        title: 'Transparent Project Delivery',
+        desc: 'Agile sprints, milestone demos, clear timelines, and dedicated engineering pods for predictable delivery.',
+      },
+      {
+        title: 'Seamless Third-Party Integrations',
+        desc: 'Direct integration with MLS/IDX feeds, Maps APIs, payment processors, and property management systems.',
+      },
+      {
+        title: 'Reliable Post-Launch Support',
+        desc: 'Continuous monitoring, routine security patches, performance tuning, and ongoing feature enhancements.',
       },
     ],
+    ctaTitle: 'Ready to Build Real Estate Software?',
+    ctaDesc: 'Turn your property workflows into a secure, scalable digital platform with **real estate software development** from Cubixsol. Share your requirements with our team to discuss the right technology, features, integrations, and development approach for your project.',
+    faqs: [
+      {
+        q: 'How Much Does Real Estate Software Development Cost?',
+        a: 'The cost depends on your software type, feature set, integrations, design requirements, and platform choice. A basic property platform may require less investment than a large marketplace with CRM, payment, MLS, and management features. We can provide a project estimate after reviewing your requirements.',
+      },
+      {
+        q: 'How Long Does It Take to Build Real Estate Software?',
+        a: 'A real estate software project can take several weeks to several months, depending on its scope and complexity. A simple application may require less development time, while a feature-rich platform needs more time for integrations, testing, and deployment. We define milestones and timelines based on your project requirements.',
+      },
+      {
+        q: 'Can You Integrate MLS With Real Estate Software?',
+        a: 'Yes, we can integrate MLS data into real estate platforms through available MLS APIs and approved data access methods. MLS integration can support property listings, search, updates, and other relevant property information. Integration requirements depend on the MLS provider and the access rules that apply to your market.',
+      },
+      {
+        q: 'Can You Build a Mobile Real Estate App?',
+        a: 'Yes, we provide **real estate app development services** for businesses that need mobile applications on Android, iOS, or both platforms. Mobile apps can include property search, listings, user accounts, notifications, appointments, payments, and communication features. Flutter can support cross-platform development from a shared codebase.',
+      },
+      {
+        q: 'Do You Provide Maintenance for Real Estate Software?',
+        a: 'Yes, we provide post-launch maintenance and technical support for real estate software.',
+      },
+    ],
+    testimonial: {
+      quote: 'Cubixsol delivered exactly what our real estate product roadmap needed with domain precision and high speed.',
+      name: 'Sales Director',
+      role: 'Property Group',
+    },
     servicesWeOffer: [
-      'Custom MLS / IDX listing portal development',
-      'Interactive Mapbox & GIS spatial search tools',
-      'Virtual tour & 3D walkthrough integrations',
-      'Real estate CRM & agent automation tools',
-      'Property management software (PMS) sync',
-      'Digital contract & escrow workflow systems',
+      'Custom Real Estate Portal Development',
+      'Property CRM & Brokerage Platforms',
+      'Real Estate Mobile Apps (iOS & Android)',
+      'Maps APIs & Geofenced Property Search',
+      'Property Management & Tenant Portals',
+      'Third-Party MLS / IDX Integrations',
     ],
   },
   {
