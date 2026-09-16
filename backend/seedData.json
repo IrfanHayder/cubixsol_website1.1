@@ -2771,52 +2771,52 @@
         {
           "name": "Shopify Plus",
           "category": "Enterprise eCommerce",
-          "icon": "ShoppingBag"
+          "icon": "shopify plus"
         },
         {
           "name": "Klaviyo",
           "category": "Email & SMS Marketing",
-          "icon": "Mail"
+          "icon": "klaviyo"
         },
         {
           "name": "Recharge",
           "category": "Subscription Billing",
-          "icon": "RefreshCw"
+          "icon": "recharge"
         },
         {
           "name": "Gorgias",
           "category": "Customer Support Helpdesk",
-          "icon": "MessageSquare"
+          "icon": "gorgias"
         },
         {
           "name": "Yotpo",
           "category": "Reviews & Loyalty",
-          "icon": "Star"
+          "icon": "yotpo"
         },
         {
           "name": "Stripe",
           "category": "Payment Gateway",
-          "icon": "CreditCard"
+          "icon": "stripe"
         },
         {
           "name": "PageFly",
           "category": "Advanced Page Builder",
-          "icon": "Layers"
+          "icon": "pagefly"
         },
         {
           "name": "Shogun",
           "category": "Visual Storefront Builder",
-          "icon": "Sliders"
+          "icon": "shogun"
         },
         {
           "name": "Loox",
           "category": "Photo Reviews",
-          "icon": "Sparkles"
+          "icon": "loox"
         },
         {
           "name": "Judge.me",
           "category": "Product Reviews",
-          "icon": "CheckCircle2"
+          "icon": "judge.me"
         }
       ],
       "tech": [

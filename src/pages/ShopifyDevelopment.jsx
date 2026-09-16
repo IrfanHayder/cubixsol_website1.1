@@ -141,16 +141,16 @@ const DEFAULT_DATA = {
     },
   ],
   supportedPlatforms: [
-    { name: 'Shopify Plus', category: 'Enterprise eCommerce', icon: 'ShoppingBag' },
-    { name: 'Klaviyo', category: 'Email & SMS Marketing', icon: 'Mail' },
-    { name: 'Recharge', category: 'Subscription Billing', icon: 'RefreshCw' },
-    { name: 'Gorgias', category: 'Customer Support Helpdesk', icon: 'MessageSquare' },
-    { name: 'Yotpo', category: 'Reviews & Loyalty', icon: 'Star' },
-    { name: 'Stripe', category: 'Payment Gateway', icon: 'CreditCard' },
-    { name: 'PageFly', category: 'Advanced Page Builder', icon: 'Layers' },
-    { name: 'Shogun', category: 'Visual Storefront Builder', icon: 'Sliders' },
-    { name: 'Loox', category: 'Photo Reviews', icon: 'Sparkles' },
-    { name: 'Judge.me', category: 'Product Reviews', icon: 'CheckCircle2' },
+    { name: 'Shopify Plus', category: 'Enterprise eCommerce', icon: 'shopify plus' },
+    { name: 'Klaviyo', category: 'Email & SMS Marketing', icon: 'klaviyo' },
+    { name: 'Recharge', category: 'Subscription Billing', icon: 'recharge' },
+    { name: 'Gorgias', category: 'Customer Support Helpdesk', icon: 'gorgias' },
+    { name: 'Yotpo', category: 'Reviews & Loyalty', icon: 'yotpo' },
+    { name: 'Stripe', category: 'Payment Gateway', icon: 'stripe' },
+    { name: 'PageFly', category: 'Advanced Page Builder', icon: 'pagefly' },
+    { name: 'Shogun', category: 'Visual Storefront Builder', icon: 'shogun' },
+    { name: 'Loox', category: 'Photo Reviews', icon: 'loox' },
+    { name: 'Judge.me', category: 'Product Reviews', icon: 'judge.me' },
   ],
   faqs: [
     {
@@ -702,8 +702,8 @@ export default function ShopifyDevelopment() {
                 key={i}
                 className="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-gray-200/80 hover:border-[#00a4d8]/50 hover:bg-white hover:shadow-md transition-all text-center flex flex-col items-center justify-center group"
               >
-                <div className="w-10 h-10 rounded-xl bg-white border border-gray-200/80 flex items-center justify-center text-[#00a4d8] mb-2.5 group-hover:scale-110 group-hover:bg-[#00a4d8] group-hover:text-white transition-all">
-                  <DynamicIcon name={p.icon || 'Check'} size={18} fallback={ShoppingBag} />
+                <div className="w-10 h-10 rounded-xl bg-white border border-gray-200/80 flex items-center justify-center text-[#00a4d8] mb-2.5 group-hover:scale-110 group-hover:bg-[#00a4d8] group-hover:text-white transition-all shadow-xs">
+                  <DynamicIcon icon={p.icon} title={p.name} className="w-5 h-5 transition-colors" fallbackName="ShoppingBag" />
                 </div>
                 <div className="text-xs sm:text-sm font-bold text-ink group-hover:text-[#00a4d8] transition-colors">
                   {p.name}
