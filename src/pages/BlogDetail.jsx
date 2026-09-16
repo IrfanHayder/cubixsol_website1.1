@@ -10,14 +10,30 @@ import { FormatRichText } from '../utils/formatText';
 
 export default function BlogDetail() {
   const { slug } = useParams();
-  const [post, setPost] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [post, setPost] = useState(() => {
+    try {
+      const cached = localStorage.getItem(`cubixsol_blog_${slug}`);
+      if (cached) {
+        const parsed = JSON.parse(cached);
+        if (parsed && parsed.slug === slug && parsed.title) return parsed;
+      }
+    } catch (_) {}
+    return null;
+  });
+  const [loading, setLoading] = useState(() => {
+    try {
+      const cached = localStorage.getItem(`cubixsol_blog_${slug}`);
+      if (cached) {
+        const parsed = JSON.parse(cached);
+        if (parsed && parsed.slug === slug && parsed.title) return false;
+      }
+    } catch (_) {}
+    return true;
+  });
   const [notFound, setNotFound] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
-    setLoading(true);
-    setNotFound(false);
 
     apiFetch(`blogs/${slug}`)
       .catch(async () => {
@@ -32,6 +48,9 @@ export default function BlogDetail() {
         if (cancelled) return;
         if (data && data.title) {
           setPost(data);
+          try {
+            localStorage.setItem(`cubixsol_blog_${slug}`, JSON.stringify(data));
+          } catch (_) {}
         } else {
           setNotFound(true);
         }

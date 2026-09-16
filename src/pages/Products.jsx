@@ -8,13 +8,36 @@ import Reveal, { Stagger, StaggerItem } from '../components/Reveal';
 import { apiFetch } from '../utils/api';
 
 export default function Products() {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [products, setProducts] = useState(() => {
+    try {
+      const cached = localStorage.getItem('cubixsol_products_cache');
+      if (cached) {
+        const parsed = JSON.parse(cached);
+        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+      }
+    } catch (_) {}
+    return [];
+  });
+  const [loading, setLoading] = useState(() => {
+    try {
+      const cached = localStorage.getItem('cubixsol_products_cache');
+      if (cached) {
+        const parsed = JSON.parse(cached);
+        if (Array.isArray(parsed) && parsed.length > 0) return false;
+      }
+    } catch (_) {}
+    return true;
+  });
 
   useEffect(() => {
     apiFetch('products')
       .then(data => {
-        setProducts(Array.isArray(data) ? data : []);
+        if (Array.isArray(data) && data.length > 0) {
+          setProducts(data);
+          try {
+            localStorage.setItem('cubixsol_products_cache', JSON.stringify(data));
+          } catch (_) {}
+        }
         setLoading(false);
       })
       .catch(err => {

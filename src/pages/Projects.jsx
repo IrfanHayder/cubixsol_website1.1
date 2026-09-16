@@ -12,13 +12,36 @@ const techs = ['Laravel', 'PHP', 'React', 'Next.js', 'Vue.js', 'Node.js', 'Flutt
 export default function Projects() {
   const [filter, setFilter] = useState('All Projects');
   const [visibleCount, setVisibleCount] = useState(6);
-  const [projects, setProjects] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [projects, setProjects] = useState(() => {
+    try {
+      const cached = localStorage.getItem('cubixsol_projects_cache');
+      if (cached) {
+        const parsed = JSON.parse(cached);
+        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+      }
+    } catch (_) {}
+    return [];
+  });
+  const [loading, setLoading] = useState(() => {
+    try {
+      const cached = localStorage.getItem('cubixsol_projects_cache');
+      if (cached) {
+        const parsed = JSON.parse(cached);
+        if (Array.isArray(parsed) && parsed.length > 0) return false;
+      }
+    } catch (_) {}
+    return true;
+  });
 
   useEffect(() => {
     apiFetch('projects')
       .then(data => {
-        setProjects(Array.isArray(data) ? data : []);
+        if (Array.isArray(data) && data.length > 0) {
+          setProjects(data);
+          try {
+            localStorage.setItem('cubixsol_projects_cache', JSON.stringify(data));
+          } catch (_) {}
+        }
         setLoading(false);
       })
       .catch(err => {

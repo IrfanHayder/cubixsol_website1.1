@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Plane, Compass, Map, Calendar, Hotel, CheckCircle2,
-  Sparkles, Globe2, ArrowRight, ShieldCheck, Clock, Luggage
+  Sparkles, Globe2, ArrowRight, ShieldCheck, Clock, Luggage,
+  CreditCard, Network, Smartphone, Laptop, Cpu, Shield, RefreshCw
 } from 'lucide-react';
 import Reveal, { Stagger, StaggerItem } from '../Reveal';
+import { formatInline } from '../../utils/formatText';
 
 export default function TravelLayout({ industry }) {
   const [activeTab, setActiveTab] = useState(0);
@@ -44,7 +46,74 @@ export default function TravelLayout({ industry }) {
     },
   ];
 
-  const workAreas = industry.workAreas || [];
+  // 1. Travel Software Solutions We Build
+  const softwareTitle = industry.solutionsTitle || 'Travel Software Solutions We Build';
+  const softwareSubtitle = industry.solutionsSubtitle || '';
+  const softwareItems = Array.isArray(industry.solutionsItems) && industry.solutionsItems.length > 0
+    ? industry.solutionsItems
+    : [
+        {
+          title: 'Travel Booking Platforms',
+          body: 'We develop booking platforms that allow travellers to search, compare, and reserve flights, hotels, tours, and other travel services. Custom booking systems can integrate payment gateways, availability management, and third-party APIs for smooth reservation experiences.',
+        },
+        {
+          title: 'Travel Mobile Apps',
+          body: 'Our travel app development services create mobile experiences that help users discover destinations, manage bookings, receive updates, and access travel services from anywhere. We build apps with intuitive interfaces and features that improve engagement throughout the customer journey.',
+        },
+        {
+          title: 'Travel Management Software',
+          body: 'Travel companies can streamline daily operations with custom management software that handles customer records, supplier coordination, itinerary planning, and reporting. These platforms provide better control over business workflows and operational data.',
+        },
+        {
+          title: 'Hospitality Integration Solutions',
+          body: 'We build software that connects travel platforms with hotels, airlines, payment providers, and external service systems. These integrations create synchronised workflows and improve accuracy across multiple travel operations.',
+        },
+      ];
+
+  // 2. Built for Travel Industry Standards (Work Areas / Standards)
+  const standardsTitle = industry.workAreasTitle || 'Built for Travel Industry Standards';
+  const standardsItems = Array.isArray(industry.workAreas) && industry.workAreas.length > 0
+    ? industry.workAreas
+    : [
+        {
+          title: 'Secure Payment Integration',
+          body: 'We develop travel platforms with secure payment integrations that support smooth transactions, multiple payment methods, and reliable checkout experiences for global travellers.',
+        },
+        {
+          title: 'PMS & GDS Connectivity',
+          body: 'Our travel solutions connect with Property Management Systems (PMS) and Global Distribution Systems (GDS) to synchronise availability, bookings, and travel inventory across platforms.',
+        },
+        {
+          title: 'Multi-Currency & Global Support',
+          body: 'We build travel software that supports multiple currencies, regional payment preferences, and international operations to serve customers across different markets.',
+        },
+        {
+          title: 'Real-Time Data & API Integration',
+          body: 'Our experts integrate real-time APIs for flights, hotels, transportation, and other travel services to provide accurate information and seamless user experiences.',
+        },
+      ];
+
+  // 3. Why Travel & Hospitality Teams Choose Cubixsol
+  const whyChooseTitle = industry.whyChooseTitle || 'Why Travel & Hospitality Teams Choose Cubixsol';
+  const whyChooseItems = Array.isArray(industry.whyChooseItems) && industry.whyChooseItems.length > 0
+    ? industry.whyChooseItems
+    : (Array.isArray(industry.points) && industry.points.length > 0
+        ? industry.points.map((p) => {
+            if (typeof p === 'string') {
+              const [t, ...d] = p.split('|');
+              return { title: t.trim(), desc: d.join('|').trim() || 'Engineered for seamless guest satisfaction and high-speed booking performance.' };
+            }
+            return p;
+          })
+        : [
+            { title: 'Custom-Built Travel Platforms', desc: 'Tailored booking engines and hospitality software designed around your workflows, multi-channel distribution, and guest experience requirements.' },
+            { title: 'Enhanced Customer Experiences', desc: 'Intuitive, high-speed mobile and web interfaces that simplify reservations, itineraries, and contactless guest services.' },
+            { title: 'Strong Security Practices', desc: 'Robust data protection, PCI-DSS compliance, and zero-trust safeguards for guest records and payment transactions.' },
+            { title: 'Advanced Automation Features', desc: 'Automated itinerary dispatch, dynamic rate adjustments, cancellation handling, and channel manager sync.' },
+            { title: 'Modern Technology Approach', desc: 'Cloud-native architectures, real-time caching, and sub-second API connectors for high-traffic peak seasons.' },
+            { title: 'Long-Term Partnership Support', desc: 'Continuous technical maintenance, GDS/OTA API version updates, and dedicated engineering support.' },
+          ]);
+
   const cases = industry.caseStudies || [];
   const services = industry.servicesWeOffer || [];
 
@@ -140,88 +209,129 @@ export default function TravelLayout({ industry }) {
         </div>
       </section>
 
-      {/* Feature Grid */}
+      {/* ✈️ 1. Travel Software Solutions We Build */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-10">
-          <p className="eyebrow text-sky-600 mb-2">Travel Tech Capabilities</p>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-ink tracking-tight">
-            Engineered for Modern Travel Brands
+        <Reveal className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 text-cyan-800 border border-cyan-200 text-xs font-bold uppercase tracking-wider mb-3 shadow-sm">
+            <Plane className="w-3.5 h-3.5 text-cyan-600" />
+            <span>Travel Tech Solutions</span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink tracking-tight mb-3">
+            {softwareTitle}
           </h2>
-        </div>
+          {softwareSubtitle && (
+            <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+              {softwareSubtitle}
+            </p>
+          )}
+        </Reveal>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {[
-            {
-              icon: Globe2,
-              title: 'Multi-Supplier GDS / NDC Connectors',
-              desc: 'Seamless connections to Amadeus, Sabre, and direct NDC airline pipes with smart fallback routing.',
-            },
-            {
-              icon: Compass,
-              title: 'Dynamic Packaging Engines',
-              desc: 'Automate flight + hotel + transfer bundle pricing with custom margin controls and real-time availability.',
-            },
-            {
-              icon: Luggage,
-              title: 'Guest Mobile Itinerary & Loyalty',
-              desc: 'Offline flight updates, mobile room key cards, gate change push notifications, and points redemption.',
-            },
-            {
-              icon: Hotel,
-              title: 'PMS & Channel Manager Sync',
-              desc: 'Bi-directional rate and inventory sync with Opera, Cloudbeds, Mews, and SiteMinder.',
-            },
-          ].map((item) => (
-            <motion.div
-              key={item.title}
-              whileHover={{ y: -4 }}
-              className="p-5 rounded-2xl bg-white border border-gray-100 shadow-card hover:border-sky-300 transition-all"
-            >
-              <div className="w-10 h-10 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center mb-3">
-                <item.icon className="w-5 h-5" />
-              </div>
-              <h3 className="font-bold text-ink text-base mb-1.5">{item.title}</h3>
-              <p className="text-xs text-gray-500 leading-relaxed">{item.desc}</p>
-            </motion.div>
-          ))}
+        <Stagger className="grid sm:grid-cols-2 gap-6" staggerDelay={0.06}>
+          {softwareItems.map((item, idx) => {
+            const icons = [Compass, Smartphone, Laptop, Network];
+            const SIcon = icons[idx % icons.length];
+            return (
+              <StaggerItem key={item.title || idx}>
+                <div className="p-6 sm:p-7 rounded-2xl bg-white border border-gray-100 shadow-card hover:shadow-elev hover:border-cyan-300 transition-all duration-300 h-full flex flex-col group">
+                  <div className="flex items-center gap-3.5 mb-4">
+                    <span className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-50 to-sky-50 border border-cyan-100 flex items-center justify-center text-cyan-600 group-hover:scale-110 transition-transform">
+                      <SIcon className="w-6 h-6" />
+                    </span>
+                    <h3 className="font-extrabold text-ink text-lg sm:text-xl group-hover:text-cyan-700 transition-colors">
+                      {item.title}
+                    </h3>
+                  </div>
+                  <p className="text-sm text-gray-600 leading-relaxed flex-1">
+                    {formatInline(item.body || item.desc || '')}
+                  </p>
+                </div>
+              </StaggerItem>
+            );
+          })}
+        </Stagger>
+      </section>
+
+      {/* 🛡️ 2. Built for Travel Industry Standards */}
+      <section className="bg-gradient-to-b from-[#061826] via-[#0b2942] to-[#04121f] text-white py-14 sm:py-20 border-y border-sky-800/40">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Reveal className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 text-xs font-bold uppercase tracking-wider mb-3">
+              <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" />
+              <span>Security &amp; Connectivity</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight mb-3">
+              {standardsTitle}
+            </h2>
+            <p className="text-sky-100/75 text-sm sm:text-base leading-relaxed">
+              Engineered with world-class security protocols, global distribution integrations, and fault-tolerant cloud systems.
+            </p>
+          </Reveal>
+
+          <Stagger className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5" staggerDelay={0.05}>
+            {standardsItems.map((item, idx) => {
+              const standardIcons = [CreditCard, Globe2, Network, Clock];
+              const StIcon = standardIcons[idx % standardIcons.length];
+              return (
+                <StaggerItem key={item.title || idx}>
+                  <div className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-400/50 hover:bg-white/10 transition-all duration-300 h-full flex flex-col group">
+                    <div className="w-12 h-12 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                      <StIcon className="w-6 h-6" />
+                    </div>
+                    <h3 className="font-bold text-white text-lg mb-2 group-hover:text-cyan-300 transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-sky-100/70 leading-relaxed flex-1">
+                      {formatInline(item.body || item.desc || '')}
+                    </p>
+                  </div>
+                </StaggerItem>
+              );
+            })}
+          </Stagger>
         </div>
       </section>
 
-      {/* Work Areas */}
-      {workAreas.length > 0 && (
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-10">
-            <p className="eyebrow text-sky-600 mb-2">Specialized Domains</p>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-ink tracking-tight">
-              Travel Platforms We Deliver
-            </h2>
+      {/* 🏆 3. Why Travel & Hospitality Teams Choose Cubixsol */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Reveal className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 text-cyan-800 border border-cyan-200 text-xs font-bold uppercase tracking-wider mb-3 shadow-sm">
+            <CheckCircle2 className="w-3.5 h-3.5 text-cyan-600" />
+            <span>The Cubixsol Edge</span>
           </div>
-          <div className="grid md:grid-cols-2 gap-6">
-            {workAreas.map((w, idx) => (
-              <motion.div
-                key={w.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="p-6 rounded-2xl bg-sky-50/40 border border-sky-100 hover:bg-white hover:shadow-card hover:border-sky-300 transition-all"
-              >
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="w-8 h-8 rounded-lg bg-sky-600 text-white font-mono text-xs font-bold flex items-center justify-center">
-                    0{idx + 1}
-                  </span>
-                  <h3 className="text-lg font-extrabold text-ink">{w.title}</h3>
-                </div>
-                <p className="text-sm text-gray-600 leading-relaxed">{w.body}</p>
-              </motion.div>
-            ))}
-          </div>
-        </section>
-      )}
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink tracking-tight mb-3">
+            {whyChooseTitle}
+          </h2>
+          <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+            Partner with a team that combines deep travel industry insight with resilient engineering to deliver high-converting platforms.
+          </p>
+        </Reveal>
 
-      {/* Case Studies */}
+        <Stagger className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.05}>
+          {whyChooseItems.map((item, idx) => {
+            const icons = [Plane, Smartphone, ShieldCheck, Sparkles, Cpu, RefreshCw];
+            const BIcon = icons[idx % icons.length];
+            return (
+              <StaggerItem key={item.title || idx}>
+                <div className="p-6 rounded-2xl bg-white border border-gray-100 shadow-card hover:border-cyan-300 hover:shadow-elev transition-all duration-300 h-full flex flex-col group">
+                  <div className="w-11 h-11 rounded-xl bg-cyan-50 text-cyan-700 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <BIcon className="w-5 h-5" />
+                  </div>
+                  <h3 className="font-bold text-ink text-lg mb-2 group-hover:text-cyan-700 transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-gray-600 leading-relaxed flex-1">
+                    {formatInline(item.desc || '')}
+                  </p>
+                </div>
+              </StaggerItem>
+            );
+          })}
+        </Stagger>
+      </section>
+
+      {/* Case Studies (if any) */}
       {cases.length > 0 && (
-        <section className="bg-[#061826] text-white py-14 rounded-3xl max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="bg-[#061826] text-white py-14 rounded-3xl max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border border-sky-400/20">
           <div className="max-w-3xl mb-10">
             <p className="text-sky-400 text-xs font-bold uppercase tracking-wider mb-2">Case Studies</p>
             <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
@@ -246,15 +356,15 @@ export default function TravelLayout({ industry }) {
         </section>
       )}
 
-      {/* Services Grid */}
+      {/* Services Grid (if any) */}
       {services.length > 0 && (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="p-8 rounded-3xl bg-sky-50/60 border border-sky-100">
+          <div className="p-8 rounded-3xl bg-cyan-50/60 border border-cyan-100">
             <h3 className="text-xl font-extrabold text-ink mb-6">Travel Engineering Capabilities</h3>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {services.map((s) => (
-                <div key={s} className="flex items-center gap-2.5 p-3 rounded-xl bg-white shadow-sm border border-sky-100/60">
-                  <CheckCircle2 className="w-4 h-4 text-sky-600 shrink-0" />
+                <div key={s} className="flex items-center gap-2.5 p-3 rounded-xl bg-white shadow-sm border border-cyan-100/60">
+                  <CheckCircle2 className="w-4 h-4 text-cyan-700 shrink-0" />
                   <span className="text-xs font-semibold text-ink">{s}</span>
                 </div>
               ))}

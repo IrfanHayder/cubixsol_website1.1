@@ -653,13 +653,13 @@ function getHeroHeadline(slug, title, theme) {
     case 'ecommerce':
       return (
         <>
-          High-Converting <span className={theme.accentText}>Headless Commerce</span> &amp; Retail
+          E-Commerce Development <span className={theme.accentText}>Services for Growing Businesses</span>
         </>
       );
     case 'logistics':
       return (
         <>
-          Real-Time <span className={theme.accentText}>Fleet Telematics</span> &amp; Logistics Control
+          Logistics Software Development <span className={theme.accentText}>Solutions Built for Smarter Operations</span>
         </>
       );
     case 'saas':
@@ -701,14 +701,40 @@ export default function IndustryDetail() {
   const { openEstimateModal } = useEstimateModal();
   const [faqOpen, setFaqOpen] = useState(0);
 
-  const [industryData, setIndustryData] = useState(null);
-  const [allIndustries, setAllIndustries] = useState(defaultIndustries);
-  const [loading, setLoading] = useState(true);
+  const [industryData, setIndustryData] = useState(() => {
+    try {
+      const cached = localStorage.getItem(`cubixsol_industry_${slug}`);
+      if (cached) {
+        const parsed = JSON.parse(cached);
+        if (parsed && parsed.slug === slug && parsed.title) return parsed;
+      }
+    } catch (_) {}
+    return null;
+  });
+  const [allIndustries, setAllIndustries] = useState(() => {
+    try {
+      const cached = localStorage.getItem('cubixsol_industries_list_cache');
+      if (cached) {
+        const parsed = JSON.parse(cached);
+        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+      }
+    } catch (_) {}
+    return defaultIndustries;
+  });
+  const [loading, setLoading] = useState(() => {
+    try {
+      const cached = localStorage.getItem(`cubixsol_industry_${slug}`);
+      if (cached) {
+        const parsed = JSON.parse(cached);
+        if (parsed && parsed.slug === slug && parsed.title) return false;
+      }
+    } catch (_) {}
+    return true;
+  });
 
   useEffect(() => {
     let isMounted = true;
     const fetchIndustryData = async () => {
-      setLoading(true);
       try {
         const [singleInd, list] = await Promise.all([
           apiFetch(`industries/${slug}`).catch(() => null),
@@ -718,9 +744,15 @@ export default function IndustryDetail() {
         if (isMounted) {
           if (Array.isArray(list) && list.length > 0) {
             setAllIndustries(list);
+            try {
+              localStorage.setItem('cubixsol_industries_list_cache', JSON.stringify(list));
+            } catch (_) {}
           }
           if (singleInd && singleInd.title) {
             setIndustryData(singleInd);
+            try {
+              localStorage.setItem(`cubixsol_industry_${slug}`, JSON.stringify(singleInd));
+            } catch (_) {}
           } else {
             const fallback = defaultIndustries.find((i) => i.slug === slug);
             setIndustryData(fallback || null);
@@ -742,7 +774,35 @@ export default function IndustryDetail() {
     };
   }, [slug]);
 
-  const ind = industryData || defaultIndustries.find((i) => i.slug === slug);
+  const ind = industryData || (!loading ? defaultIndustries.find((i) => i.slug === slug) : null);
+
+  if (loading && !ind) {
+    return (
+      <div className="min-h-screen bg-white">
+        <section className="relative overflow-hidden pt-10 pb-16 sm:pt-14 sm:pb-22 lg:pb-24 bg-slate-50/50">
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-pulse">
+            <div className="mb-6 w-28 h-5 bg-gray-200 rounded-lg" />
+            <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+              <div className="lg:col-span-7 space-y-5">
+                <div className="w-48 h-7 bg-gray-200 rounded-full" />
+                <div className="w-full max-w-lg h-12 bg-gray-200 rounded-2xl" />
+                <div className="w-full max-w-md h-6 bg-gray-200 rounded-lg" />
+                <div className="w-full max-w-sm h-6 bg-gray-100 rounded-lg" />
+                <div className="flex gap-4 pt-2">
+                  <div className="w-44 h-12 bg-primary-200/50 rounded-2xl" />
+                  <div className="w-40 h-12 bg-gray-200 rounded-2xl" />
+                </div>
+              </div>
+              <div className="lg:col-span-5">
+                <div className="w-full h-64 bg-gray-200 rounded-3xl" />
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    );
+  }
+
   if (!ind && !loading) return <Navigate to="/industries" replace />;
   if (!ind) return <div className="min-h-screen bg-white" />;
 
@@ -751,7 +811,11 @@ export default function IndustryDetail() {
   const relatedServices = services.slice(0, 6);
   const faqs = (ind.faqs && ind.faqs.length > 0) ? ind.faqs : (domainFaqs[ind.slug] || domainFaqs.education);
   const statsList = (ind.stats && ind.stats.length > 0) ? ind.stats.map(s => [s.value, s.label]) : theme.stats;
-  const trustPills = theme.trustPills || [];
+  const trustPills = (Array.isArray(ind.trustPills) && ind.trustPills.length > 0)
+    ? ind.trustPills
+    : (Array.isArray(ind.points) && ind.points.length > 0 && ind.points.every(p => typeof p === 'string' && p.length < 50)
+        ? ind.points
+        : (theme.trustPills || []));
 
   // Render bespoke layout per industry
   const renderBespokeLayout = () => {
@@ -820,20 +884,69 @@ export default function IndustryDetail() {
                 </p>
 
                 <div className="flex flex-wrap items-center gap-3.5 pt-1">
-                  <Link to="/contact" className={`btn-primary flex items-center gap-2 shadow-md ${theme.heroButton}`}>
-                    {ind.slug === 'logistics' ? 'Discuss Your Logistics Project' : ind.slug === 'real-estate' ? 'Build Your Real Estate Solution' : ind.slug === 'healthcare' || ind.slug === 'ecommerce' ? 'Discuss your Project' : 'Discuss Your Project'} <ArrowRight className="w-4 h-4" />
-                  </Link>
-                  <button
-                    onClick={openEstimateModal}
-                    type="button"
-                    className={`btn-outline flex items-center gap-2 ${
-                      isDarkHero
-                        ? 'border-slate-700 bg-white/5 text-white hover:bg-white/10 hover:border-white/30'
-                        : 'border-gray-300 bg-white text-ink hover:border-primary-500'
-                    }`}
-                  >
-                    <Sparkles className="w-4 h-4 text-primary-500" /> {ind.slug === 'logistics' ? 'Get a Free Consultation' : ind.slug === 'real-estate' ? 'Talk to Our Experts' : ind.slug === 'healthcare' || ind.slug === 'ecommerce' ? 'Get a Proposal' : 'Get Free Estimate'}
-                  </button>
+                  {ind.ctaPrimaryLink && ind.ctaPrimaryLink.startsWith('http') ? (
+                    <a
+                      href={ind.ctaPrimaryLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`btn-primary flex items-center gap-2 shadow-md ${theme.heroButton}`}
+                    >
+                      {ind.ctaPrimaryText || (ind.slug === 'logistics' ? 'Discuss Your Logistics Project' : ind.slug === 'real-estate' ? 'Build Your Real Estate Solution' : ind.slug === 'healthcare' || ind.slug === 'ecommerce' ? 'Discuss your Project' : 'Discuss Your Project')} <ArrowRight className="w-4 h-4" />
+                    </a>
+                  ) : ind.ctaPrimaryLink && ind.ctaPrimaryLink === '#estimate' ? (
+                    <button
+                      onClick={openEstimateModal}
+                      type="button"
+                      className={`btn-primary flex items-center gap-2 shadow-md ${theme.heroButton}`}
+                    >
+                      {ind.ctaPrimaryText || (ind.slug === 'logistics' ? 'Discuss Your Logistics Project' : ind.slug === 'real-estate' ? 'Build Your Real Estate Solution' : ind.slug === 'healthcare' || ind.slug === 'ecommerce' ? 'Discuss your Project' : 'Discuss Your Project')} <ArrowRight className="w-4 h-4" />
+                    </button>
+                  ) : (
+                    <Link
+                      to={ind.ctaPrimaryLink || '/contact'}
+                      className={`btn-primary flex items-center gap-2 shadow-md ${theme.heroButton}`}
+                    >
+                      {ind.ctaPrimaryText || (ind.slug === 'logistics' ? 'Discuss Your Logistics Project' : ind.slug === 'real-estate' ? 'Build Your Real Estate Solution' : ind.slug === 'healthcare' || ind.slug === 'ecommerce' ? 'Discuss your Project' : 'Discuss Your Project')} <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  )}
+
+                  {ind.ctaSecondaryLink && ind.ctaSecondaryLink.startsWith('http') ? (
+                    <a
+                      href={ind.ctaSecondaryLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`btn-outline flex items-center gap-2 ${
+                        isDarkHero
+                          ? 'border-slate-700 bg-white/5 text-white hover:bg-white/10 hover:border-white/30'
+                          : 'border-gray-300 bg-white text-ink hover:border-primary-500'
+                      }`}
+                    >
+                      <Sparkles className="w-4 h-4 text-primary-500" /> {ind.ctaSecondaryText || (ind.slug === 'logistics' ? 'Get a Free Consultation' : ind.slug === 'real-estate' ? 'Talk to Our Experts' : ind.slug === 'healthcare' || ind.slug === 'ecommerce' ? 'Get a Proposal' : 'Get Free Estimate')}
+                    </a>
+                  ) : ind.ctaSecondaryLink && ind.ctaSecondaryLink !== '#estimate' && !ind.ctaSecondaryLink.startsWith('#') ? (
+                    <Link
+                      to={ind.ctaSecondaryLink}
+                      className={`btn-outline flex items-center gap-2 ${
+                        isDarkHero
+                          ? 'border-slate-700 bg-white/5 text-white hover:bg-white/10 hover:border-white/30'
+                          : 'border-gray-300 bg-white text-ink hover:border-primary-500'
+                      }`}
+                    >
+                      <Sparkles className="w-4 h-4 text-primary-500" /> {ind.ctaSecondaryText || (ind.slug === 'logistics' ? 'Get a Free Consultation' : ind.slug === 'real-estate' ? 'Talk to Our Experts' : ind.slug === 'healthcare' || ind.slug === 'ecommerce' ? 'Get a Proposal' : 'Get Free Estimate')}
+                    </Link>
+                  ) : (
+                    <button
+                      onClick={openEstimateModal}
+                      type="button"
+                      className={`btn-outline flex items-center gap-2 ${
+                        isDarkHero
+                          ? 'border-slate-700 bg-white/5 text-white hover:bg-white/10 hover:border-white/30'
+                          : 'border-gray-300 bg-white text-ink hover:border-primary-500'
+                      }`}
+                    >
+                      <Sparkles className="w-4 h-4 text-primary-500" /> {ind.ctaSecondaryText || (ind.slug === 'logistics' ? 'Get a Free Consultation' : ind.slug === 'real-estate' ? 'Talk to Our Experts' : ind.slug === 'healthcare' || ind.slug === 'ecommerce' ? 'Get a Proposal' : 'Get Free Estimate')}
+                    </button>
+                  )}
                 </div>
 
                 {/* Trust Verification Badges */}
@@ -943,16 +1056,52 @@ export default function IndustryDetail() {
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-3.5 relative shrink-0">
-              <Link to="/contact" className="btn-primary">
-                {ind.slug === 'logistics' ? 'Start Your Logistics Project' : ind.slug === 'real-estate' ? 'Start Your Real Estate Project' : ind.slug === 'healthcare' ? 'Talk to Cubixsol' : ind.slug === 'ecommerce' ? 'Discuss your Project' : 'Book Consultation'} <ArrowRight className="w-4 h-4" />
-              </Link>
-              <button
-                onClick={openEstimateModal}
-                type="button"
-                className="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider border border-white/20 transition"
-              >
-                {ind.slug === 'logistics' ? 'Get Cost Estimate' : ind.slug === 'real-estate' ? 'Talk to Our Experts' : ind.slug === 'healthcare' || ind.slug === 'ecommerce' ? 'Get a Proposal' : 'Get Cost Estimate'}
-              </button>
+              {ind.ctaBannerButtonLink && ind.ctaBannerButtonLink.startsWith('http') ? (
+                <a
+                  href={ind.ctaBannerButtonLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary"
+                >
+                  {ind.ctaBannerButtonText || (ind.slug === 'logistics' ? 'Start Your Logistics Project' : ind.slug === 'real-estate' ? 'Start Your Real Estate Project' : ind.slug === 'healthcare' ? 'Talk to Cubixsol' : ind.slug === 'ecommerce' ? 'Discuss your Project' : 'Book Consultation')} <ArrowRight className="w-4 h-4" />
+                </a>
+              ) : (
+                <Link
+                  to={ind.ctaBannerButtonLink || '/contact'}
+                  className="btn-primary"
+                >
+                  {ind.ctaBannerButtonText || (ind.slug === 'logistics' ? 'Start Your Logistics Project' : ind.slug === 'real-estate' ? 'Start Your Real Estate Project' : ind.slug === 'healthcare' ? 'Talk to Cubixsol' : ind.slug === 'ecommerce' ? 'Discuss your Project' : 'Book Consultation')} <ArrowRight className="w-4 h-4" />
+                </Link>
+              )}
+
+              {ind.ctaBannerSecondaryButtonLink && ind.ctaBannerSecondaryButtonLink.startsWith('http') ? (
+                <a
+                  href={ind.ctaBannerSecondaryButtonLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider border border-white/20 transition flex items-center gap-2"
+                >
+                  <Sparkles className="w-4 h-4 text-primary-300" />
+                  {ind.ctaBannerSecondaryButtonText || (ind.slug === 'logistics' ? 'Get Cost Estimate' : ind.slug === 'real-estate' ? 'Talk to Our Experts' : ind.slug === 'healthcare' || ind.slug === 'ecommerce' ? 'Get a Proposal' : 'Get Cost Estimate')}
+                </a>
+              ) : ind.ctaBannerSecondaryButtonLink && ind.ctaBannerSecondaryButtonLink !== '#estimate' && !ind.ctaBannerSecondaryButtonLink.startsWith('#') ? (
+                <Link
+                  to={ind.ctaBannerSecondaryButtonLink}
+                  className="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider border border-white/20 transition flex items-center gap-2"
+                >
+                  <Sparkles className="w-4 h-4 text-primary-300" />
+                  {ind.ctaBannerSecondaryButtonText || (ind.slug === 'logistics' ? 'Get Cost Estimate' : ind.slug === 'real-estate' ? 'Talk to Our Experts' : ind.slug === 'healthcare' || ind.slug === 'ecommerce' ? 'Get a Proposal' : 'Get Cost Estimate')}
+                </Link>
+              ) : (
+                <button
+                  onClick={openEstimateModal}
+                  type="button"
+                  className="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider border border-white/20 transition flex items-center gap-2"
+                >
+                  <Sparkles className="w-4 h-4 text-primary-300" />
+                  {ind.ctaBannerSecondaryButtonText || (ind.slug === 'logistics' ? 'Get Cost Estimate' : ind.slug === 'real-estate' ? 'Talk to Our Experts' : ind.slug === 'healthcare' || ind.slug === 'ecommerce' ? 'Get a Proposal' : 'Get Cost Estimate')}
+                </button>
+              )}
             </div>
           </div>
         </Reveal>

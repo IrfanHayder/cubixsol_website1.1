@@ -111,9 +111,38 @@ const defaultPageData = {
 };
 
 export default function Industries() {
-  const [pageData, setPageData] = useState(defaultPageData);
-  const [industries, setIndustries] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [pageData, setPageData] = useState(() => {
+    try {
+      const cached = localStorage.getItem('cubixsol_page_industries_cache');
+      if (cached) {
+        const parsed = JSON.parse(cached);
+        if (parsed && parsed.heroTitle) return { ...defaultPageData, ...parsed };
+      }
+    } catch (_) {}
+    return defaultPageData;
+  });
+
+  const [industries, setIndustries] = useState(() => {
+    try {
+      const cached = localStorage.getItem('cubixsol_industries_list_cache');
+      if (cached) {
+        const parsed = JSON.parse(cached);
+        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+      }
+    } catch (_) {}
+    return [];
+  });
+
+  const [loading, setLoading] = useState(() => {
+    try {
+      const cached = localStorage.getItem('cubixsol_page_industries_cache');
+      if (cached) {
+        const parsed = JSON.parse(cached);
+        if (parsed && parsed.heroTitle) return false;
+      }
+    } catch (_) {}
+    return true;
+  });
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
 
   useEffect(() => {
@@ -127,24 +156,31 @@ export default function Industries() {
       .then(([pageRes, indRes]) => {
         if (!cancelled) {
           if (pageRes && pageRes.slug) {
-            setPageData((prev) => ({
-              ...prev,
+            const mergedPage = {
+              ...defaultPageData,
               ...pageRes,
-              heroBadges: Array.isArray(pageRes.heroBadges) ? pageRes.heroBadges : prev.heroBadges,
+              heroBadges: Array.isArray(pageRes.heroBadges) ? pageRes.heroBadges : defaultPageData.heroBadges,
               builtAroundPoints: Array.isArray(pageRes.builtAroundPoints)
                 ? pageRes.builtAroundPoints
-                : prev.builtAroundPoints,
+                : defaultPageData.builtAroundPoints,
               domainExpertiseParagraphs: Array.isArray(pageRes.domainExpertiseParagraphs)
                 ? pageRes.domainExpertiseParagraphs
-                : prev.domainExpertiseParagraphs,
+                : defaultPageData.domainExpertiseParagraphs,
               domainExpertisePillars: Array.isArray(pageRes.domainExpertisePillars)
                 ? pageRes.domainExpertisePillars
-                : prev.domainExpertisePillars,
-              faqs: Array.isArray(pageRes.faqs) && pageRes.faqs.length > 0 ? pageRes.faqs : prev.faqs,
-            }));
+                : defaultPageData.domainExpertisePillars,
+              faqs: Array.isArray(pageRes.faqs) && pageRes.faqs.length > 0 ? pageRes.faqs : defaultPageData.faqs,
+            };
+            setPageData(mergedPage);
+            try {
+              localStorage.setItem('cubixsol_page_industries_cache', JSON.stringify(mergedPage));
+            } catch (_) {}
           }
           if (Array.isArray(indRes) && indRes.length > 0) {
             setIndustries(indRes);
+            try {
+              localStorage.setItem('cubixsol_industries_list_cache', JSON.stringify(indRes));
+            } catch (_) {}
           }
           setLoading(false);
         }

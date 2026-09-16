@@ -7,6 +7,7 @@ const industrySchema = new mongoose.Schema({
   short: { type: String },
   desc: { type: String },
   points: [{ type: String }],
+  trustPills: [{ type: String }],
   tagline: { type: String },
   stats: [{
     value: { type: String },
@@ -65,6 +66,23 @@ const industrySchema = new mongoose.Schema({
   }],
   servicesWeOffer: [{ type: String }],
   heroTitle: { type: String },
+  ctaPrimaryText: { type: String },
+  ctaPrimaryLink: { type: String },
+  ctaSecondaryText: { type: String },
+  ctaSecondaryLink: { type: String },
+  ctaBannerButtonText: { type: String },
+  ctaBannerButtonLink: { type: String },
+  ctaBannerSecondaryButtonText: { type: String },
+  ctaBannerSecondaryButtonLink: { type: String },
+  seo: {
+    metaTitle: { type: String },
+    metaDescription: { type: String },
+    keywords: { type: String },
+    ogTitle: { type: String },
+    ogDescription: { type: String },
+    ogImage: { type: String },
+    canonicalUrl: { type: String }
+  },
 }, { timestamps: true, strict: false });
 
 module.exports = mongoose.model('Industry', industrySchema);

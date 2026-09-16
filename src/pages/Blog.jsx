@@ -8,37 +8,56 @@ import { apiFetch } from '../utils/api';
 
 
 export default function Blog() {
-  const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [posts, setPosts] = useState(() => {
+    try {
+      const cached = localStorage.getItem('cubixsol_blogs_cache');
+      if (cached) {
+        const parsed = JSON.parse(cached);
+        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+      }
+    } catch (_) {}
+    return [];
+  });
+  const [loading, setLoading] = useState(() => {
+    try {
+      const cached = localStorage.getItem('cubixsol_blogs_cache');
+      if (cached) {
+        const parsed = JSON.parse(cached);
+        if (Array.isArray(parsed) && parsed.length > 0) return false;
+      }
+    } catch (_) {}
+    return true;
+  });
 
   useEffect(() => {
     let cancelled = false;
-    setLoading(true);
     apiFetch('blogs')
       .then((data) => {
         if (cancelled) return;
         const list = Array.isArray(data)
           ? data.filter((p) => !p.status || p.status === 'Published')
           : [];
-        setPosts(
-          list.map((p) => ({
-            title: p.title,
-            slug: p.slug,
-            tag: p.tag || p.category || 'Blog',
-            date:
-              p.date ||
-              (p.createdAt
-                ? new Date(p.createdAt).toLocaleDateString('en-US', {
-                    month: 'short',
-                    day: 'numeric',
-                    year: 'numeric',
-                  })
-                : ''),
-            color: p.color || 'from-primary-700 to-indigo-900',
-            excerpt: p.excerpt,
-            coverImage: p.coverImage,
-          }))
-        );
+        const formatted = list.map((p) => ({
+          title: p.title,
+          slug: p.slug,
+          tag: p.tag || p.category || 'Blog',
+          date:
+            p.date ||
+            (p.createdAt
+              ? new Date(p.createdAt).toLocaleDateString('en-US', {
+                  month: 'short',
+                  day: 'numeric',
+                  year: 'numeric',
+                })
+              : ''),
+          color: p.color || 'from-primary-700 to-indigo-900',
+          excerpt: p.excerpt,
+          coverImage: p.coverImage,
+        }));
+        setPosts(formatted);
+        try {
+          localStorage.setItem('cubixsol_blogs_cache', JSON.stringify(formatted));
+        } catch (_) {}
       })
       .catch(() => {
         if (!cancelled) setPosts([]);

@@ -76,14 +76,30 @@ function SolutionFaqSection({ faqs, solutionTitle }) {
 export default function SolutionDetail() {
   const { slug } = useParams();
   const fallback = staticSolutions.find((s) => s.slug === slug);
-  const [solution, setSolution] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [solution, setSolution] = useState(() => {
+    try {
+      const cached = localStorage.getItem(`cubixsol_solution_${slug}`);
+      if (cached) {
+        const parsed = JSON.parse(cached);
+        if (parsed && parsed.slug === slug && parsed.title) return parsed;
+      }
+    } catch (_) {}
+    return null;
+  });
+  const [loading, setLoading] = useState(() => {
+    try {
+      const cached = localStorage.getItem(`cubixsol_solution_${slug}`);
+      if (cached) {
+        const parsed = JSON.parse(cached);
+        if (parsed && parsed.slug === slug && parsed.title) return false;
+      }
+    } catch (_) {}
+    return true;
+  });
   const [notFound, setNotFound] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
-    setLoading(true);
-    setNotFound(false);
 
     async function loadSolution() {
       try {
@@ -91,6 +107,9 @@ export default function SolutionDetail() {
         if (cancelled) return;
         if (live && live.slug) {
           setSolution(live);
+          try {
+            localStorage.setItem(`cubixsol_solution_${slug}`, JSON.stringify(live));
+          } catch (_) {}
           setLoading(false);
         } else if (fallback) {
           setSolution(fallback);

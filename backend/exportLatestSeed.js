@@ -53,47 +53,7 @@ async function exportSeed() {
     await mongoose.connect(mongoUri);
     console.log('Connected to MongoDB.');
 
-    // 1. Sync & ensure the 8 industries have their updated clean descriptions
-    const industriesUpdateMap = {
-      healthcare: {
-        short: 'Our healthcare software development services cover patient portals, telehealth platforms, clinical workflows, healthcare applications, data integrations, and secure administrative systems.',
-        desc: 'Our **healthcare software development services** cover patient portals, telehealth platforms, clinical workflows, healthcare applications, data integrations, and secure administrative systems.',
-      },
-      saas: {
-        short: 'As a results-focused SaaS development company, Cubixsol builds subscription platforms, multi-tenant applications, customer dashboards, billing systems, and scalable cloud-based products.',
-        desc: 'As a results-focused **SaaS development company**, Cubixsol builds subscription platforms, multi-tenant applications, customer dashboards, billing systems, and scalable cloud-based products.',
-      },
-      fintech: {
-        short: 'Our fintech software development team creates secure payment platforms, financial dashboards, digital wallets, lending applications, and automated financial workflows.',
-        desc: 'Our **fintech software development** team creates secure payment platforms, financial dashboards, digital wallets, lending applications, and automated financial workflows.',
-      },
-      logistics: {
-        short: 'Through our logistics software development expertise, we build fleet management platforms, shipment tracking systems, warehouse tools, route-planning applications, and supply-chain dashboards.',
-        desc: 'Through our **logistics software development** expertise, we build fleet management platforms, shipment tracking systems, warehouse tools, route-planning applications, and supply-chain dashboards.',
-      },
-      'real-estate': {
-        short: 'Our real estate software development services support property portals, listing platforms, CRM systems, tenant applications, property management tools, and virtual viewing experiences.',
-        desc: 'Our **real estate software development** services support property portals, listing platforms, CRM systems, tenant applications, property management tools, and virtual viewing experiences.',
-      },
-      education: {
-        short: 'With our education software development services, institutions and education businesses can launch learning platforms, student portals, assessment tools, virtual classrooms, and administrative systems.',
-        desc: 'With our **education software development** services, institutions and education businesses can launch learning platforms, student portals, assessment tools, virtual classrooms, and administrative systems.',
-      },
-      ecommerce: {
-        short: 'Our ecommerce development services help retailers build fast online stores, multivendor marketplaces, inventory systems, checkout experiences, and integrations with payment and fulfilment platforms.',
-        desc: 'Our **ecommerce development services** help retailers build fast online stores, multivendor marketplaces, inventory systems, checkout experiences, and integrations with payment and fulfilment platforms.',
-      },
-      travel: {
-        short: 'As an experienced travel software development company, we create booking platforms, reservation systems, itinerary tools, travel portals, mobile applications, and third-party service integrations.',
-        desc: 'As an experienced **travel software development company**, we create booking platforms, reservation systems, itinerary tools, travel portals, mobile applications, and third-party service integrations.',
-      },
-    };
-
-    for (const [slug, data] of Object.entries(industriesUpdateMap)) {
-      await Industry.updateOne({ slug }, { $set: data });
-    }
-
-    // 2. Fetch all latest collections
+    // Fetch all latest collections from current live/cloud DB
     const services = (await Service.find().sort({ title: 1 })).map(cleanDoc);
     const solutions = (await Solution.find().sort({ title: 1 })).map(cleanDoc);
     const products = (await Product.find().sort({ name: 1 })).map(cleanDoc);

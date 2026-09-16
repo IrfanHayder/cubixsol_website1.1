@@ -4,25 +4,11 @@ import { Link } from 'react-router-dom';
 import {
   ShieldCheck, ArrowRight, CheckCircle2, Lock, Zap, Activity,
   CreditCard, Landmark, RefreshCw, BarChart2, ShieldAlert,
-  Fingerprint, Sparkles, TrendingUp, Layers, Terminal, Check
+  Fingerprint, Sparkles, TrendingUp, Layers, Terminal, Check,
+  Smartphone, Wallet, LineChart, Shield, Server, Database, Globe2, Cpu
 } from 'lucide-react';
 import Reveal, { Stagger, StaggerItem } from '../Reveal';
-
-const FINTECH_IMAGES = {
-  hero: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&h=800&q=75',
-  card: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=900&h=700&q=75',
-  dashboard: 'https://images.unsplash.com/photo-1642543492481-44e81e3914a7?auto=format&fit=crop&w=900&h=700&q=75',
-  mobile: 'https://images.unsplash.com/photo-1556742049-0a67e557b640?auto=format&fit=crop&w=900&h=700&q=75',
-  trading: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=900&h=600&q=75',
-  office: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&h=600&q=75',
-};
-
-const workVisual = [
-  { img: FINTECH_IMAGES.card, icon: CreditCard, key: 0 },
-  { img: FINTECH_IMAGES.dashboard, icon: Landmark, key: 1 },
-  { img: FINTECH_IMAGES.mobile, icon: Zap, key: 2 },
-  { img: FINTECH_IMAGES.trading, icon: BarChart2, key: 3 },
-];
+import { formatInline } from '../../utils/formatText';
 
 export default function FintechLayout({ industry }) {
   const [isSimulating, setIsSimulating] = useState(false);
@@ -41,201 +27,101 @@ export default function FintechLayout({ industry }) {
     }, 900);
   };
 
-  const approachTitle = industry.approachTitle || 'The Cubixsol Approach to Fintech';
-  const approachItems = industry.approachItems && industry.approachItems.length > 0 ? industry.approachItems : [
-    {
-      title: 'We Engineer for Financial Security & Trust',
-      subtitle: 'Our financial systems architects and fintech engineers build payment products that are:',
-      points: [
-        { heading: 'Ultra-Fast', text: 'Sub-25ms API response times, instant transaction settlement, and distributed cache performance.' },
-        { heading: 'Bank-Grade Secure', text: 'Hardware-level AES-256 encryption, zero-trust tokenization, and strict PCI-DSS Level 1 compliance.' },
-        { heading: 'Frictionless UX', text: '1-click checkout experiences and biometric mobile authentication that maximize conversion.' },
-      ],
-    },
-    {
-      title: 'We Ensure Full Regulatory Compliance',
-      subtitle: 'With deep integration experience across payment rails and open banking protocols, we ensure:',
-      points: [
-        { heading: 'Open Banking & ISO 20022', text: 'Interoperable APIs for Plaid, Stripe, Yodlee, SWIFT, and SEPA cross-border networks.' },
-        { heading: 'Automated KYC & AML', text: 'Real-time biometric liveness checks, document verification, and sanction list screening.' },
-        { heading: 'Immutable Audit Ledgers', text: 'Double-entry accounting systems with cryptographically verified transaction histories.' },
-      ],
-    },
-    {
-      title: 'We Accelerate with Real-Time AI & Risk Intelligence',
-      subtitle: 'We embed predictive machine learning models directly into transaction processing pipelines:',
-      points: [
-        { heading: 'Real-Time Fraud Prevention', text: 'Zero-shot anomaly scoring that stops fraudulent transfers before settlement occurs.' },
-        { heading: 'Dynamic Routing & Failover', text: 'Multi-processor smart routing that minimizes interchange fees and boosts authorization rates.' },
-        { heading: 'Automated Underwriting', text: 'Instant credit decisioning algorithms that evaluate multi-source borrower risk.' },
-      ],
-    },
-  ];
+  // 1. Finance & Fintech Software We Build
+  const softwareTitle = industry.solutionsTitle || 'Finance & Fintech Software We Build';
+  const softwareSubtitle = industry.solutionsSubtitle || 'We combine product strategy, user experience, software design, data, and security to simplify financial operations and give teams greater control.';
+  const softwareItems = Array.isArray(industry.solutionsItems) && industry.solutionsItems.length > 0
+    ? industry.solutionsItems
+    : [
+        {
+          title: 'Payment Systems',
+          body: 'Create payment gateways, checkout experiences, subscription payment systems, and payment orchestration platforms that connect to processors and alternative payment methods. Our team creates clear transaction journeys and robust APIs for smooth, reliable payment operations.',
+        },
+        {
+          title: 'Fintech Apps',
+          body: 'Our fintech mobile app services give businesses secure, intuitive applications for bank accounts, payments, credit, and personal finance. Each app can include secure login, alerts, transaction histories, account controls, and customer-support tools.',
+        },
+        {
+          title: 'Digital Wallets',
+          body: 'Create digital wallets that support account deposits, peer-to-peer transfers, multiple currencies, transaction categories, card links, and ledger-aware processes. Our team pairs simple user journeys with strong security and clear operational controls.',
+        },
+        {
+          title: 'Trading Platforms',
+          body: 'Create portfolio, market-data, order-management, and investment dashboards for users who need timely information and a clear view of their options. Secure APIs with clear documentation link market-data and execution services to each platform.',
+        },
+      ];
 
-  const solutionsTitle = industry.solutionsTitle || 'Our Financial & Fintech Solutions';
-  const solutionsSubtitle = industry.solutionsSubtitle || 'Institutional-grade payment gateways, digital wallets, core banking ledgers, and KYC pipelines designed to scale with complete reliability.';
-  const solutionsItems = industry.solutionsItems && industry.solutionsItems.length > 0 ? industry.solutionsItems : [
-    {
-      title: 'Payment Orchestration & Checkout Engines',
-      body: 'Multi-processor routing gateways with 3D Secure 2.2 authentication, recurring subscription billing, localized alternative payment methods (Apple Pay, Google Pay, Pix, iDEAL), and automated chargeback dispute resolution.',
-    },
-    {
-      title: 'Neo-Banking & Digital Wallet Infrastructure',
-      body: 'Full-featured digital banking applications with virtual/physical card issuance (Marqeta, Lithic), real-time P2P balance transfers, instant ACH/SEPA payments, and automated financial health analytics.',
-    },
-    {
-      title: 'Core Ledgers, KYC & Risk Automation',
-      body: 'High-throughput double-entry ledgers capable of handling 50,000+ operations/sec with automated multi-bank reconciliation, automated SAR filing, and real-time KYC/AML identity verification.',
-    },
-  ];
+  // 2. Built for Finance & Fintech Standards (Work Areas / Standards)
+  const standardsTitle = industry.workAreasTitle || 'Built for Finance & Fintech Standards';
+  const standardsItems = Array.isArray(industry.workAreas) && industry.workAreas.length > 0
+    ? industry.workAreas
+    : [
+        {
+          title: 'PCI-DSS-Aware Architecture',
+          body: 'Our architects design payment flows around security controls, secure data, and transaction integrity.',
+        },
+        {
+          title: 'Encryption and Tokenisation',
+          body: 'Encryption, tokenization, secure authentication, and controlled access protect sensitive information.',
+        },
+        {
+          title: 'KYC and AML Workflow Support',
+          body: 'Create customer enrollment and verification workflows for identity checks, document review, sanctions checks, and audit-ready records.',
+        },
+        {
+          title: 'Secure APIs and Audit Controls',
+          body: 'Authenticated APIs, permission controls, audit records, and system alerts give each system clear, traceable data flows.',
+        },
+      ];
 
-  const workAreas = industry.workAreas || [];
-  const products = industry.productsBuilt || [];
+  // 3. Tech We Use
+  const techTitle = industry.techTitle || 'Tech We Use';
+  const techItems = Array.isArray(industry.techItems) && industry.techItems.length > 0
+    ? industry.techItems
+    : [
+        {
+          title: 'Node.js',
+          desc: 'Node.js powers high-throughput backend microservices and ultra-secure financial APIs with sub-second execution.',
+        },
+        {
+          title: 'React & TypeScript',
+          desc: 'React delivers interactive real-time dashboards, portals, and financial analytics interfaces with zero latency.',
+        },
+        {
+          title: 'Stripe & Plaid',
+          desc: 'Stripe, Plaid, and third-party financial integrations connect payment rails, bank accounts, and core product functions.',
+        },
+        {
+          title: 'AWS, Kotlin & Swift',
+          desc: 'AWS provides resilient cloud infrastructure, while native Kotlin and Swift power biometric mobile banking applications.',
+        },
+      ];
+
+  // 4. Why Teams Choose Cubixsol / Core Pillars
+  const whyChooseTitle = industry.whyChooseTitle || 'Why Choose Cubixsol for Fintech';
+  const whyChooseItems = Array.isArray(industry.whyChooseItems) && industry.whyChooseItems.length > 0
+    ? industry.whyChooseItems
+    : (Array.isArray(industry.points) && industry.points.length > 0
+        ? industry.points.map((p) => {
+            if (typeof p === 'string') {
+              const [t, ...d] = p.split('|');
+              return { title: t.trim(), desc: d.join('|').trim() || 'Engineered for financial security and high-frequency performance.' };
+            }
+            return p;
+          })
+        : [
+            { title: 'Scalable', desc: 'Cloud-ready architecture designed to scale seamlessly with transaction surges and user growth.' },
+            { title: 'Secure', desc: 'Protected data flows, zero-trust tokenization, and end-to-end encryption for every transaction.' },
+            { title: 'Connected', desc: 'API-first integrations linking core ledgers with open banking protocols and modern processors.' },
+            { title: 'Reliable', desc: 'Tested and monitored releases with 99.999% uptime guarantees and real-time observability.' },
+          ]);
+
   const cases = industry.caseStudies || [];
   const services = industry.servicesWeOffer || [];
 
   return (
     <div className="space-y-16 sm:space-y-24">
-      {/* 1. The Approach Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Reveal className="mb-8 sm:mb-10">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink tracking-tight">
-            {approachTitle}
-          </h2>
-        </Reveal>
-
-        <div className="grid md:grid-cols-3 gap-6">
-          {approachItems.map((item, idx) => (
-            <motion.div
-              key={item.title}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="rounded-2xl bg-[#f4f7fa] border border-slate-200/80 p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden shadow-sm hover:shadow-md transition-shadow"
-            >
-              {/* Red Accent Top Indicator Bar */}
-              <div className="absolute top-0 left-0 right-0 h-1.5 bg-[#e11d48]" />
-
-              <div className="space-y-4">
-                <h3 className="text-xl sm:text-2xl font-extrabold text-ink tracking-tight pt-1">
-                  {item.title}
-                </h3>
-                {item.subtitle && (
-                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-normal">
-                    {item.subtitle}
-                  </p>
-                )}
-
-                <div className="space-y-3.5 pt-2">
-                  {item.points && item.points.map((pt, pIdx) => (
-                    <div key={pIdx} className="text-xs sm:text-sm text-gray-700 leading-relaxed">
-                      <strong className="font-extrabold text-ink block mb-0.5">{pt.heading}</strong>
-                      <span className="text-gray-600 text-xs sm:text-sm">{pt.text}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* 2. Fintech Solutions Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Reveal className="mb-8 sm:mb-10 max-w-3xl">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink tracking-tight mb-2">
-            {solutionsTitle}
-          </h2>
-          <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-            {solutionsSubtitle}
-          </p>
-        </Reveal>
-
-        <div className="grid md:grid-cols-3 gap-6">
-          {solutionsItems.map((sol, idx) => (
-            <motion.div
-              key={sol.title}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="rounded-2xl bg-[#f4f7fa] border border-slate-200/80 p-6 sm:p-8 flex flex-col justify-start relative overflow-hidden shadow-sm hover:shadow-md transition-shadow"
-            >
-              {/* Red Accent Top Indicator Bar */}
-              <div className="w-12 h-1 bg-[#e11d48] rounded-full mb-4" />
-
-              <h3 className="text-lg sm:text-xl font-extrabold text-ink tracking-tight mb-3">
-                {sol.title}
-              </h3>
-              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                {sol.body}
-              </p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* 3. Financial Visual Band */}
-      <section className="relative overflow-hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-12 gap-5">
-          <Reveal className="lg:col-span-7" scale>
-            <div className="relative rounded-3xl overflow-hidden aspect-[16/10] sm:aspect-[16/9] shadow-elev group">
-              <motion.img
-                src={FINTECH_IMAGES.hero}
-                alt="Fintech digital payments and charts"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                initial={{ scale: 1.05 }}
-                whileInView={{ scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.9 }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/40 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-500/30 backdrop-blur-md text-primary-200 text-xs font-bold uppercase tracking-wider mb-2">
-                  <ShieldCheck className="w-3.5 h-3.5 text-brand-cyan" /> Institutional Fintech Engineering
-                </div>
-                <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white max-w-xl leading-snug">
-                  Software that handles millions of transactions — with microsecond precision
-                </h2>
-              </div>
-            </div>
-          </Reveal>
-
-          <div className="lg:col-span-5 grid grid-cols-2 gap-4">
-            <div className="relative rounded-2xl overflow-hidden min-h-[140px] shadow-card group">
-              <img src={FINTECH_IMAGES.card} alt="Card issuing" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-              <div className="absolute inset-0 bg-ink/35" />
-              <p className="absolute bottom-3 left-3 right-3 text-white text-xs font-bold">
-                Virtual &amp; Physical Card Issuing
-              </p>
-            </div>
-            <div className="relative rounded-2xl overflow-hidden min-h-[140px] shadow-card group">
-              <img src={FINTECH_IMAGES.trading} alt="Trading ledgers" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-              <div className="absolute inset-0 bg-primary-950/40" />
-              <p className="absolute bottom-3 left-3 right-3 text-white text-xs font-bold">
-                High-Frequency Ledgers &amp; FX
-              </p>
-            </div>
-            <div className="col-span-2 rounded-2xl bg-gradient-to-br from-[#1a1a2e] via-[#241f48] to-[#122844] text-white p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-soft border border-primary-500/20">
-              <div>
-                <p className="text-xl sm:text-2xl font-extrabold">Fintech-Ready Tech</p>
-                <p className="text-white/75 text-xs sm:text-sm mt-1">
-                  Discovery &rarr; Build &rarr; Launch for Neo-Banks, Payments &amp; WealthTech
-                </p>
-              </div>
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center gap-2 bg-white text-primary-700 font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl hover:bg-primary-50 transition shrink-0 shadow"
-              >
-                Talk to us <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. Interactive Live Transaction & Security Architecture Simulator */}
+      {/* 🚀 Interactive Live Transaction & Security Architecture Showcase */}
       <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="rounded-3xl bg-gradient-to-br from-[#1a1a2e] via-[#241f48] to-[#122844] border border-primary-500/30 shadow-2xl p-6 sm:p-10 lg:p-12 overflow-hidden text-white relative">
           <div className="absolute -right-20 -top-20 w-96 h-96 bg-brand-cyan/10 rounded-full blur-3xl pointer-events-none" />
@@ -250,7 +136,7 @@ export default function FintechLayout({ industry }) {
                 High-Frequency, <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan via-primary-300 to-white">Zero-Compromise</span> Financial Software
               </h2>
               <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-                From micro-lending algorithms and neo-banking engines to PCI-DSS compliant checkout pipelines, we engineer institutional-grade fintech products that handle millions of transactions securely.
+                From payment systems and digital wallets to trading platforms and KYC pipelines, we engineer institutional-grade fintech products that handle millions of transactions securely.
               </p>
 
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
@@ -326,215 +212,194 @@ export default function FintechLayout({ industry }) {
         </div>
       </section>
 
-      {/* 5. Security & Regulatory Compliance Matrix */}
+      {/* 💳 1. Finance & Fintech Software We Build */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-10">
-          <p className="eyebrow mb-2">Security &amp; Regulatory Compliance</p>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-ink tracking-tight">
-            Engineered for Strict Financial Protocols
+        <Reveal className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-50 text-primary-700 border border-primary-200 text-xs font-bold uppercase tracking-wider mb-3 shadow-sm">
+            <CreditCard className="w-3.5 h-3.5 text-primary-600" />
+            <span>Fintech Engineering Capabilities</span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink tracking-tight mb-3">
+            {softwareTitle}
           </h2>
-          <p className="text-gray-500 text-sm mt-2">
-            Every line of code complies with strict international financial security standards.
-          </p>
-        </div>
+          {softwareSubtitle && (
+            <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+              {softwareSubtitle}
+            </p>
+          )}
+        </Reveal>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {[
-            {
-              icon: Lock,
-              title: 'PCI-DSS Level 1',
-              desc: 'End-to-end tokenization, vaulting, and secure PAN handling without storing sensitive CVVs.',
-            },
-            {
-              icon: Fingerprint,
-              title: 'KYC / AML Pipelines',
-              desc: 'Biometric liveness detection, government ID verification, and sanction list screening integrations.',
-            },
-            {
-              icon: Landmark,
-              title: 'Open Banking & ISO 20022',
-              desc: 'Seamless aggregation and messaging compliance with Plaid, Stripe, Yodlee, and Swift networks.',
-            },
-            {
-              icon: ShieldAlert,
-              title: 'Real-Time Fraud Radar',
-              desc: 'Multi-factor velocity checks, device fingerprinting, and risk-based step-up authentication.',
-            },
-          ].map((item) => (
-            <motion.div
-              key={item.title}
-              whileHover={{ y: -4 }}
-              className="p-5 rounded-2xl bg-white border border-gray-100 shadow-card hover:border-primary-300 transition-all"
-            >
-              <div className="w-10 h-10 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center mb-3">
-                <item.icon className="w-5 h-5" />
-              </div>
-              <h3 className="font-bold text-ink text-base mb-1.5">{item.title}</h3>
-              <p className="text-xs text-gray-500 leading-relaxed">{item.desc}</p>
-            </motion.div>
-          ))}
+        <Stagger className="grid sm:grid-cols-2 gap-6" staggerDelay={0.06}>
+          {softwareItems.map((item, idx) => {
+            const icons = [CreditCard, Smartphone, Wallet, LineChart];
+            const SIcon = icons[idx % icons.length];
+            return (
+              <StaggerItem key={item.title || idx}>
+                <div className="p-6 sm:p-7 rounded-2xl bg-white border border-gray-100 shadow-card hover:shadow-elev hover:border-primary-300 transition-all duration-300 h-full flex flex-col group">
+                  <div className="flex items-center gap-3.5 mb-4">
+                    <span className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-50 to-blue-50 border border-primary-100 flex items-center justify-center text-primary-600 group-hover:scale-110 transition-transform">
+                      <SIcon className="w-6 h-6" />
+                    </span>
+                    <h3 className="font-extrabold text-ink text-lg sm:text-xl group-hover:text-primary-600 transition-colors">
+                      {item.title}
+                    </h3>
+                  </div>
+                  <p className="text-sm text-gray-600 leading-relaxed flex-1">
+                    {formatInline(item.body || item.desc || '')}
+                  </p>
+                </div>
+              </StaggerItem>
+            );
+          })}
+        </Stagger>
+      </section>
+
+      {/* 🛡️ 2. Built for Finance & Fintech Standards */}
+      <section className="bg-gradient-to-b from-[#1a1a2e] via-[#241f48] to-[#122844] text-white py-14 sm:py-20 border-y border-primary-800/40">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Reveal className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-500/20 text-primary-200 border border-primary-400/30 text-xs font-bold uppercase tracking-wider mb-3">
+              <ShieldCheck className="w-3.5 h-3.5 text-brand-cyan" />
+              <span>Compliance &amp; Data Protection</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight mb-3">
+              {standardsTitle}
+            </h2>
+            <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+              Every system is engineered around security controls, tokenization, and strict regulatory compliance.
+            </p>
+          </Reveal>
+
+          <Stagger className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5" staggerDelay={0.05}>
+            {standardsItems.map((item, idx) => {
+              const standardIcons = [Lock, ShieldCheck, Fingerprint, ShieldAlert];
+              const StIcon = standardIcons[idx % standardIcons.length];
+              return (
+                <StaggerItem key={item.title || idx}>
+                  <div className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-brand-cyan/50 hover:bg-white/10 transition-all duration-300 h-full flex flex-col group">
+                    <div className="w-12 h-12 rounded-xl bg-primary-500/20 text-brand-cyan flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                      <StIcon className="w-6 h-6" />
+                    </div>
+                    <h3 className="font-bold text-white text-lg mb-2 group-hover:text-brand-cyan transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed flex-1">
+                      {formatInline(item.body || item.desc || '')}
+                    </p>
+                  </div>
+                </StaggerItem>
+              );
+            })}
+          </Stagger>
         </div>
       </section>
 
-      {/* 6. Work Areas with Alternating Layout */}
-      {workAreas.length > 0 && (
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mb-10">
-            <p className="eyebrow mb-2">Core Competencies</p>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-ink tracking-tight mb-3">
-              Fintech Product Domains We Build
-            </h2>
-            <p className="text-gray-500 text-sm sm:text-base leading-relaxed">
-              From high-frequency payments to internal risk intelligence — we engineer secure, auditable software that moves money and data with clarity.
-            </p>
-          </div>
-          <div className="space-y-8 lg:space-y-12">
-            {workAreas.map((w, i) => {
-              const vis = workVisual[i % workVisual.length];
-              const Icon = vis.icon;
-              const flip = i % 2 === 1;
-              return (
-                <motion.div
-                  key={w.title}
-                  className={`grid lg:grid-cols-2 gap-6 lg:gap-10 items-center ${
-                    flip ? 'lg:[&>*:first-child]:order-2' : ''
-                  }`}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.25 }}
-                  transition={{ duration: 0.6 }}
-                >
-                  <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden aspect-[16/11] shadow-elev group">
-                    <img
-                      src={vis.img}
-                      alt={w.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      loading="lazy"
-                    />
-                    <div className="absolute top-4 left-4 w-10 h-10 rounded-xl bg-white/95 text-primary-600 flex items-center justify-center shadow">
-                      <Icon className="w-5 h-5" />
-                    </div>
-                  </div>
-                  <div className={flip ? 'lg:pr-4' : 'lg:pl-4'}>
-                    <p className="text-xs font-bold tracking-widest uppercase text-primary-600 mb-2">
-                      Fintech Focus {String(i + 1).padStart(2, '0')}
-                    </p>
-                    <h3 className="text-xl sm:text-2xl font-extrabold text-ink mb-3">{w.title}</h3>
-                    <p className="text-gray-500 text-sm leading-relaxed mb-5">{w.body}</p>
-                    <ul className="space-y-2">
-                      {(industry.points || []).slice(i, i + 2).map((pt) => (
-                        <li key={pt} className="flex gap-2 text-xs sm:text-sm font-medium text-ink">
-                          <CheckCircle2 className="w-4 h-4 text-primary-500 shrink-0 mt-0.5" />
-                          {pt}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </section>
-      )}
-
-      {/* 7. Fintech Products Suite */}
-      {products.length > 0 && (
-        <section className="relative py-12 lg:py-16 rounded-3xl max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#1a1a2e] via-[#241f48] to-[#122844] text-white">
-          <div className="mb-8 max-w-xl">
-            <p className="text-primary-300 text-xs font-bold tracking-widest uppercase mb-2">
-              Our Products
-            </p>
-            <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight mb-2">
-              Fintech Products We Design &amp; Ship
-            </h2>
-            <p className="text-white/70 text-xs sm:text-sm leading-relaxed">
-              Tested for high concurrency — checkout gateways, double-entry accounting ledgers, and KYC automation.
-            </p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {products.map((p, idx) => {
-              const imgs = [FINTECH_IMAGES.card, FINTECH_IMAGES.dashboard, FINTECH_IMAGES.mobile];
-              return (
-                <div
-                  key={p.slug || p.name}
-                  className="group block h-full rounded-2xl overflow-hidden bg-white/5 border border-white/10 hover:border-primary-400/40 transition"
-                >
-                  <div className="aspect-[16/10] overflow-hidden">
-                    <img
-                      src={imgs[idx % imgs.length]}
-                      alt={p.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="p-5">
-                    <p className="text-xs font-bold uppercase tracking-wide text-primary-300 mb-1">
-                      {p.name}
-                    </p>
-                    <p className="text-xs text-white/80 leading-relaxed mb-3">{p.blurb}</p>
-                    <Link
-                      to="/contact"
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-primary-300 group-hover:gap-2.5 transition-all"
-                    >
-                      Request Architecture Demo <ArrowRight className="w-3.5 h-3.5" />
-                    </Link>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </section>
-      )}
-
-      {/* 8. Case Studies */}
-      {cases.length > 0 && (
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-            <div>
-              <p className="eyebrow mb-2">Track Record</p>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-ink tracking-tight">
-                Fintech Work We Have Shipped
-              </h2>
+      {/* ⚙️ 3. Tech We Use */}
+      <section className="bg-slate-50/80 py-14 sm:py-20 border-y border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Reveal className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white text-primary-700 border border-primary-200 text-xs font-bold uppercase tracking-wider mb-3 shadow-sm">
+              <Cpu className="w-3.5 h-3.5 text-primary-600" />
+              <span>Technology Stack</span>
             </div>
-            <Link to="/projects" className="text-sm font-bold text-primary-600 inline-flex items-center gap-1 hover:gap-2 transition-all">
-              All projects <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-          <div className="grid md:grid-cols-3 gap-5">
-            {cases.map((c, i) => {
-              const imgs = [FINTECH_IMAGES.mobile, FINTECH_IMAGES.dashboard, FINTECH_IMAGES.trading];
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink tracking-tight mb-3">
+              {techTitle}
+            </h2>
+            <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+              Node.js, React, Stripe, Plaid, AWS, Kotlin, and Swift form a reliable stack for secure, scalable, user-friendly financial products.
+            </p>
+          </Reveal>
+
+          <Stagger className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5" staggerDelay={0.05}>
+            {techItems.map((tech, idx) => {
+              const techIcons = [Server, Landmark, CreditCard, Smartphone];
+              const TIcon = techIcons[idx % techIcons.length] || Cpu;
               return (
-                <article key={c.title} className="h-full rounded-2xl border border-gray-100 bg-white overflow-hidden shadow-card hover:shadow-elev transition flex flex-col">
-                  <div className="aspect-[16/10] overflow-hidden relative">
-                    <img
-                      src={imgs[i % imgs.length]}
-                      alt={c.title}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
-                    <div className="absolute top-3 left-3 flex flex-wrap gap-1.5">
-                      {c.tags?.slice(0, 2).map((tag) => (
-                        <span
-                          key={tag}
-                          className="text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded-full bg-primary-50 text-primary-800 border border-primary-200 shadow-sm"
-                        >
-                          {tag}
-                        </span>
-                      ))}
+                <StaggerItem key={tech.title || idx}>
+                  <div className="p-6 rounded-2xl bg-white border border-gray-100 shadow-card hover:border-primary-300 hover:shadow-elev transition-all duration-300 h-full flex flex-col group">
+                    <div className="w-12 h-12 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                      <TIcon className="w-6 h-6" />
                     </div>
+                    <h3 className="font-bold text-ink text-lg mb-2 group-hover:text-primary-600 transition-colors">
+                      {tech.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed flex-1">
+                      {formatInline(tech.desc || '')}
+                    </p>
                   </div>
-                  <div className="p-5 flex flex-col flex-1">
-                    <h3 className="font-extrabold text-ink mb-2 text-sm sm:text-base leading-snug">{c.title}</h3>
-                    <p className="text-xs text-gray-500 leading-relaxed flex-1">{c.result}</p>
-                  </div>
-                </article>
+                </StaggerItem>
               );
             })}
+          </Stagger>
+        </div>
+      </section>
+
+      {/* 🏆 4. Why Teams Choose Cubixsol */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Reveal className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-50 text-primary-700 border border-primary-200 text-xs font-bold uppercase tracking-wider mb-3 shadow-sm">
+            <CheckCircle2 className="w-3.5 h-3.5 text-primary-600" />
+            <span>The Cubixsol Edge</span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink tracking-tight mb-3">
+            {whyChooseTitle}
+          </h2>
+          <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+            We deliver fintech software that connects with essential systems, preserves data integrity, and scales with your business.
+          </p>
+        </Reveal>
+
+        <Stagger className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" staggerDelay={0.05}>
+          {whyChooseItems.map((item, idx) => {
+            const icons = [TrendingUp, ShieldCheck, Layers, RefreshCw];
+            const BIcon = icons[idx % icons.length];
+            return (
+              <StaggerItem key={item.title || idx}>
+                <div className="p-6 rounded-2xl bg-white border border-gray-100 shadow-card hover:border-primary-300 hover:shadow-elev transition-all duration-300 h-full flex flex-col group">
+                  <div className="w-11 h-11 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <BIcon className="w-5 h-5" />
+                  </div>
+                  <h3 className="font-bold text-ink text-lg mb-2 group-hover:text-primary-600 transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-gray-600 leading-relaxed flex-1">
+                    {formatInline(item.desc || '')}
+                  </p>
+                </div>
+              </StaggerItem>
+            );
+          })}
+        </Stagger>
+      </section>
+
+      {/* Case Studies (if any) */}
+      {cases.length > 0 && (
+        <section className="bg-gradient-to-br from-[#1a1a2e] via-[#241f48] to-[#122844] text-white py-14 rounded-3xl max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border border-primary-500/20">
+          <div className="max-w-3xl mb-10">
+            <p className="text-primary-300 text-xs font-bold uppercase tracking-wider mb-2">Track Record</p>
+            <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
+              Fintech Work We Have Shipped
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {cases.map((c) => (
+              <div key={c.title} className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-primary-400/40 transition">
+                <div className="flex flex-wrap gap-1.5 mb-3">
+                  {c.tags?.map((tag) => (
+                    <span key={tag} className="text-[10px] font-mono px-2 py-0.5 rounded bg-primary-500/20 text-primary-200">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <h3 className="text-base font-bold text-white mb-2">{c.title}</h3>
+                <p className="text-xs text-slate-300 leading-relaxed">{c.result}</p>
+              </div>
+            ))}
           </div>
         </section>
       )}
 
-      {/* 9. Services Grid */}
+      {/* Services Grid (if any) */}
       {services.length > 0 && (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="p-8 rounded-3xl bg-primary-50/60 border border-primary-100">

@@ -6333,15 +6333,295 @@
   "initialIndustries": [
     {
       "testimonial": {
+        "quote": "Cubixsol delivered a clean payment experience without cutting corners on controls.",
+        "name": "CTO",
+        "role": "Fintech startup"
+      },
+      "seo": {
+        "metaTitle": "Fintech Software Development Services | Cubixsol",
+        "metaDescription": "Custom fintech software development for payment gateways, mobile banking apps, digital wallets, and trading platforms.",
+        "keywords": "fintech software development, payment gateway development, digital wallet, trading platform, fintech mobile app"
+      },
+      "slug": "fintech",
+      "title": "Banking & FinTech",
+      "icon": "Landmark",
+      "short": "Cubixsol builds secure, scalable financial products through fintech software development services that align with your customers, workflows, and growth goals. We give fintech startups, payment providers, lenders, and financial businesses a clear path from complex ideas to reliable web and mobile experiences.",
+      "desc": "Cubixsol builds secure, scalable financial products through fintech software development services that align with your customers, workflows, and growth goals. We give fintech startups, payment providers, lenders, and financial businesses a clear path from complex ideas to reliable web and mobile experiences.",
+      "points": [
+        "150+ Clients Served",
+        "10+ Years Shipping Digital Products",
+        "98% Client Satisfaction",
+        "20+ Countries Served"
+      ],
+      "servicesWeOffer": [
+        "PCI-DSS compliant architecture design",
+        "Payment processor integrations (Stripe, Adyen, Plaid)",
+        "Digital wallet & ledger engineering",
+        "KYC/AML identity verification flows",
+        "Risk modeling & fraud detection portals",
+        "Financial data visualization & analytics"
+      ],
+      "workAreas": [
+        {
+          "title": "PCI-DSS-Aware Architecture",
+          "body": "Our architects design payment flows around security controls, secure data, and transaction integrity."
+        },
+        {
+          "title": "Encryption and Tokenisation",
+          "body": "Encryption, tokenization, secure authentication, and controlled access protect sensitive information."
+        },
+        {
+          "title": "KYC and AML Workflow Support",
+          "body": "Create customer enrollment and verification workflows for identity checks, document review, sanctions checks, and audit-ready records."
+        },
+        {
+          "title": "Secure APIs and Audit Controls",
+          "body": "Authenticated APIs, permission controls, audit records, and system alerts give each system clear, traceable data flows."
+        }
+      ],
+      "productsBuilt": [
+        {
+          "name": "PayFlow Gateway",
+          "slug": "payflow",
+          "blurb": "Unified multi-currency payment checkout & tokenization engine."
+        },
+        {
+          "name": "LedgerPro",
+          "slug": "ledgerpro",
+          "blurb": "Double-entry accounting and automated transaction reconciliation."
+        }
+      ],
+      "caseStudies": [
+        {
+          "title": "High-Volume Micro-Lending Engine",
+          "result": "Engineered an automated credit underwriting API processing $45M+ in loan disbursements with sub-2-second decision latency.",
+          "tags": [
+            "Credit Scoring",
+            "Microservices",
+            "Fintech"
+          ]
+        },
+        {
+          "title": "Cross-Border B2B Payment Hub",
+          "result": "Delivered an FX settlement platform supporting 28 currencies with automated SWIFT / SEPA routing and real-time reconciliation.",
+          "tags": [
+            "FX Payments",
+            "ISO 20022",
+            "Multi-currency"
+          ]
+        },
+        {
+          "title": "Embedded Neo-Bank Mobile Experience",
+          "result": "Shipped a full-featured digital banking app with virtual cards and instant Apple Wallet / Google Pay provisioning in 4 months.",
+          "tags": [
+            "Mobile Banking",
+            "Card Issuance",
+            "Security"
+          ]
+        }
+      ],
+      "approachItems": [
+        {
+          "title": "We Engineer for Financial Security & Trust",
+          "subtitle": "Our financial systems architects and fintech engineers build payment products that are:",
+          "points": [
+            {
+              "heading": "Ultra-Fast",
+              "text": "Sub-25ms API response times, instant transaction settlement, and distributed cache performance.",
+              "_id": "6aaa36fd044371edda9845f9"
+            },
+            {
+              "heading": "Bank-Grade Secure",
+              "text": "Hardware-level AES-256 encryption, zero-trust tokenization, and strict PCI-DSS Level 1 compliance.",
+              "_id": "6aaa36fd044371edda9845fa"
+            },
+            {
+              "heading": "Frictionless UX",
+              "text": "1-click checkout experiences and biometric mobile authentication that maximize conversion.",
+              "_id": "6aaa36fd044371edda9845fb"
+            }
+          ]
+        },
+        {
+          "title": "We Ensure Full Regulatory Compliance",
+          "subtitle": "With deep integration experience across payment rails and open banking protocols, we ensure:",
+          "points": [
+            {
+              "heading": "Open Banking & ISO 20022",
+              "text": "Interoperable APIs for Plaid, Stripe, Yodlee, SWIFT, and SEPA cross-border networks.",
+              "_id": "6aaa36fd044371edda9845fd"
+            },
+            {
+              "heading": "Automated KYC & AML",
+              "text": "Real-time biometric liveness checks, document verification, and sanction list screening.",
+              "_id": "6aaa36fd044371edda9845fe"
+            },
+            {
+              "heading": "Immutable Audit Ledgers",
+              "text": "Double-entry accounting systems with cryptographically verified transaction histories.",
+              "_id": "6aaa36fd044371edda9845ff"
+            }
+          ]
+        },
+        {
+          "title": "We Accelerate with Real-Time AI & Risk Intelligence",
+          "subtitle": "We embed predictive machine learning models directly into transaction processing pipelines:",
+          "points": [
+            {
+              "heading": "Real-Time Fraud Prevention",
+              "text": "Zero-shot anomaly scoring that stops fraudulent transfers before settlement occurs.",
+              "_id": "6aaa36fd044371edda984601"
+            },
+            {
+              "heading": "Dynamic Routing & Failover",
+              "text": "Multi-processor smart routing that minimizes interchange fees and boosts authorization rates.",
+              "_id": "6aaa36fd044371edda984602"
+            },
+            {
+              "heading": "Automated Underwriting",
+              "text": "Instant credit decisioning algorithms that evaluate multi-source borrower risk.",
+              "_id": "6aaa36fd044371edda984603"
+            }
+          ]
+        }
+      ],
+      "approachTitle": "The Cubixsol Approach to Fintech",
+      "solutionsItems": [
+        {
+          "title": "Payment Systems",
+          "body": "Create payment gateways, checkout experiences, subscription payment systems, and payment orchestration platforms that connect to processors and alternative payment methods. Our team creates clear transaction journeys and robust APIs for smooth, reliable payment operations."
+        },
+        {
+          "title": "Fintech Apps",
+          "body": "Our fintech mobile app services give businesses secure, intuitive applications for bank accounts, payments, credit, and personal finance. Each app can include secure login, alerts, transaction histories, account controls, and customer-support tools."
+        },
+        {
+          "title": "Digital Wallets",
+          "body": "Create digital wallets that support account deposits, peer-to-peer transfers, multiple currencies, transaction categories, card links, and ledger-aware processes. Our team pairs simple user journeys with strong security and clear operational controls."
+        },
+        {
+          "title": "Trading Platforms",
+          "body": "Create portfolio, market-data, order-management, and investment dashboards for users who need timely information and a clear view of their options. Secure APIs with clear documentation link market-data and execution services to each platform."
+        }
+      ],
+      "solutionsSubtitle": "We combine product strategy, user experience, software design, data, and security to simplify financial operations and give teams greater control.",
+      "solutionsTitle": "Finance & Fintech Software We Build",
+      "stats": [
+        {
+          "value": "150+",
+          "label": "Clients Served"
+        },
+        {
+          "value": "10+",
+          "label": "Years Shipping Digital Products"
+        },
+        {
+          "value": "98%",
+          "label": "Client Satisfaction"
+        },
+        {
+          "value": "20+",
+          "label": "Countries Served"
+        }
+      ],
+      "faqs": [
+        {
+          "q": "What security and compliance measures should fintech software include?",
+          "a": "Product scope, user roles, jurisdictions, and vendor relationships determine the required controls. Typical safeguards include encryption, strong authentication, role-based access, audit records, secure API controls, tokenization, system alerts, and PCI-DSS-aware payment flows. A qualified compliance adviser or independent audit may also be necessary."
+        },
+        {
+          "q": "How much do custom fintech software development services cost?",
+          "a": "Project scope, integrations, platforms, data needs, security controls, and delivery timelines shape the total cost. A focused MVP needs a different budget than a multi-tenant platform for deposits, credit, or payments. Our team sets priorities and prepares a proposal after we assess your goals and technical requirements."
+        },
+        {
+          "q": "How long do fintech app development services take?",
+          "a": "Product complexity determines the delivery timeline. A focused first release may take several weeks to a few months. More integrations, mobile applications, compliance workflows, and quality checks extend the schedule for a broader platform. Our team divides delivery into milestones, so your business can release valuable functions in stages."
+        },
+        {
+          "q": "Can you integrate Stripe, Plaid, and other payment or financial APIs?",
+          "a": "Yes. Our team can connect payment processors, financial-data providers, identity-verification tools, bank services, ledger platforms, and other approved APIs. We assess authentication, webhooks, data mapping, error recovery, reconciliation, and system alerts so every connection performs reliably in live conditions."
+        },
+        {
+          "q": "Can fintech software scale as transaction volumes and users grow?",
+          "a": "Yes. Our team prepares for growth through modular services, efficient data models, cloud infrastructure, background tasks, system observability, and staged performance checks. Expected traffic and transaction patterns determine the right architecture. Our goal is to support growth and preserve security, reliability, and user experience."
+        }
+      ],
+      "techItems": [
+        {
+          "title": "Node.js",
+          "desc": "Node.js powers backend services and secure APIs with high-throughput event processing and real-time ledger settlement."
+        },
+        {
+          "title": "React",
+          "desc": "React delivers dashboards, portals, and financial interfaces with sub-second responsiveness."
+        },
+        {
+          "title": "Stripe & Plaid",
+          "desc": "Stripe, Plaid, and third-party financial integrations connect core product functions and banking rails."
+        },
+        {
+          "title": "AWS, Kotlin & Swift",
+          "desc": "AWS provides cloud infrastructure, and Kotlin and Swift power mobile applications."
+        }
+      ],
+      "whyChooseItems": [
+        {
+          "title": "Scalable",
+          "desc": "Cloud-ready architecture engineered to process high-volume transactions and growing user bases."
+        },
+        {
+          "title": "Secure",
+          "desc": "Protected data flows, zero-trust tokenization, and strict encryption safeguards."
+        },
+        {
+          "title": "Connected",
+          "desc": "API-first integrations connecting core ledgers with global financial networks."
+        },
+        {
+          "title": "Reliable",
+          "desc": "Tested and monitored releases with high uptime and real-time observability."
+        }
+      ],
+      "approachItemsText": "We Engineer for Financial Security & Trust | Our financial systems architects and fintech engineers build payment products that are: | Ultra-Fast: Sub-25ms API response times, instant transaction settlement, and distributed cache performance.; Bank-Grade Secure: Hardware-level AES-256 encryption, zero-trust tokenization, and strict PCI-DSS Level 1 compliance.; Frictionless UX: 1-click checkout experiences and biometric mobile authentication that maximize conversion.\n\nWe Ensure Full Regulatory Compliance | With deep integration experience across payment rails and open banking protocols, we ensure: | Open Banking & ISO 20022: Interoperable APIs for Plaid, Stripe, Yodlee, SWIFT, and SEPA cross-border networks.; Automated KYC & AML: Real-time biometric liveness checks, document verification, and sanction list screening.; Immutable Audit Ledgers: Double-entry accounting systems with cryptographically verified transaction histories.\n\nWe Accelerate with Real-Time AI & Risk Intelligence | We embed predictive machine learning models directly into transaction processing pipelines: | Real-Time Fraud Prevention: Zero-shot anomaly scoring that stops fraudulent transfers before settlement occurs.; Dynamic Routing & Failover: Multi-processor smart routing that minimizes interchange fees and boosts authorization rates.; Automated Underwriting: Instant credit decisioning algorithms that evaluate multi-source borrower risk.",
+      "ctaPrimaryText": "Discuss Your Project",
+      "ctaSecondaryText": "Get a Proposal",
+      "solutionsItemsText": "Payment Orchestration & Checkout Engines | Multi-processor routing gateways with 3D Secure 2.2 authentication, recurring subscription billing, localized alternative payment methods (Apple Pay, Google Pay, Pix, iDEAL), and automated chargeback dispute resolution.\n\nNeo-Banking & Digital Wallet Infrastructure | Full-featured digital banking applications with virtual/physical card issuance (Marqeta, Lithic), real-time P2P balance transfers, instant ACH/SEPA payments, and automated financial health analytics.\n\nCore Ledgers, KYC & Risk Automation | High-throughput double-entry ledgers capable of handling 50,000+ operations/sec with automated multi-bank reconciliation, automated SAR filing, and real-time KYC/AML identity verification.",
+      "statsText": "< 25ms | Average Execution & Ledger Latency\n$250M+ | Annual Processed Transaction Volume\n99.999% | Uptime SLA for Critical Core Services\nPCI-DSS L1 | Certified Bank-Grade Security Defaults",
+      "testimonialName": "CTO",
+      "testimonialQuote": "Cubixsol delivered a clean payment experience without cutting corners on controls.",
+      "testimonialRole": "Fintech startup",
+      "workAreasText": "Payment Gateways & Checkout Orchestration | Smart routing across multiple payment processors (Stripe, Adyen, Braintree) with automatic fallbacks and 3D-Secure 2.2 support.\n\nNeo-Banking & Digital Wallets | Virtual/physical debit card issuance (Marqeta/Lithic), account balances, P2P money transfers, and transaction categorization.\n\nKYC, Identity & Compliance Workflows | Automated biometric liveness checks, document verification, AML sanctions screening, and audit trail record keeping.\n\nRisk & Fraud Intelligence Dashboards | Machine learning velocity models, suspicious activity report (SAR) generation, and real-time transaction limits.",
+      "ctaBannerButtonLink": "/contact",
+      "ctaBannerButtonText": "Start Your Fintech Project",
+      "ctaBannerSecondaryButtonLink": "#estimate",
+      "ctaBannerSecondaryButtonText": "Get a Proposal",
+      "ctaDesc": "Do you have a fintech idea? Partner with Cubixsol for fintech software development. Share your goals, and our team will map a practical path from discovery to launch.",
+      "ctaPrimaryLink": "/contact",
+      "ctaSecondaryLink": "#estimate",
+      "ctaTitle": "Ready to Build?",
+      "heroTitle": "Fintech Software Development Services for Modern Financial Products",
+      "techTitle": "Tech We Use",
+      "whyChooseTitle": "Why Choose Cubixsol for Fintech",
+      "workAreasTitle": "Built for Finance & Fintech Standards",
+      "trustPills": [
+        "150+ Clients Served",
+        "10+ Years Shipping Digital Products",
+        "98% Client Satisfaction",
+        "20+ Countries Served"
+      ]
+    },
+    {
+      "testimonial": {
         "quote": "Our conversion and ops visibility improved in the same release cycle.",
         "name": "Head of Digital",
         "role": "Retail brand"
       },
+      "trustPills": [],
       "slug": "ecommerce",
       "title": "E-Commerce",
       "icon": "ShoppingCart",
-      "short": "Our ecommerce development services help retailers build fast online stores, multivendor marketplaces, inventory systems, checkout experiences, and integrations with payment and fulfilment platforms.",
-      "desc": "Our **ecommerce development services** help retailers build fast online stores, multivendor marketplaces, inventory systems, checkout experiences, and integrations with payment and fulfilment platforms.",
+      "short": "Cubixsol provides e-commerce development services to build secure, scalable, and conversion-focused digital commerce experiences. Our team develops custom stores, Shopify solutions, B2B commerce platforms, and e-commerce apps designed around your products, customers, and business goals.",
+      "desc": "Cubixsol provides e-commerce development services to build secure, scalable, and conversion-focused digital commerce experiences. Our team develops custom stores, Shopify solutions, B2B commerce platforms, and e-commerce apps designed around your products, customers, and business goals.",
       "points": [
         "Custom E-Commerce Stores & Multi-Vendor Marketplaces",
         "Shopify & WooCommerce Custom Theme & App Development",
@@ -6506,7 +6786,23 @@
         }
       ],
       "whyChooseTitle": "Why E-Commerce Teams Choose Cubixsol",
-      "workAreasTitle": "E-Commerce Use Cases & Examples"
+      "workAreasTitle": "E-Commerce Use Cases & Examples",
+      "faqsText": "How much do e-commerce development services cost? | E-commerce development costs depend on platform choice, design requirements, integrations, functionality, and project complexity. A basic Shopify store can require less development work than a custom B2B platform or marketplace. We can assess your requirements and provide a project-specific estimate.\n\nHow long does e-commerce development take? | Development timelines vary according to the scope and technology stack. A standard store can reach launch faster than a custom platform with complex integrations, workflows, and business logic. A defined project scope allows the development team to provide a more accurate timeline.\n\nIs Shopify better than custom e-commerce development? | Shopify can suit businesses that want a reliable commerce platform with faster deployment and a broad ecosystem of apps and integrations. Custom development can suit businesses with specialised workflows, complex integrations, or functionality that standard platforms cannot provide easily. The right choice depends on your business model, budget, technical requirements, and growth plans.\n\nCan you integrate payment gateways into an e-commerce platform? | Yes. We can integrate payment gateways such as Stripe and other suitable providers into e-commerce platforms. Payment integration can support secure transactions, multiple payment methods, refunds, subscriptions, and other requirements based on the selected provider.\n\nCan an e-commerce platform scale as the business grows? | A scalable architecture can support higher traffic, larger product catalogues, increased transaction volumes, and additional integrations. We consider performance, infrastructure, database architecture, APIs, and platform capabilities during development to support future growth.",
+      "solutionsItemsText": "Custom E-Commerce Stores | We create custom e-commerce stores for businesses that need functionality beyond standard templates. Our solutions can support custom product catalogues, customer accounts, promotions, inventory workflows, third-party integrations, and unique purchasing journeys. Each store can align with your brand and operational requirements.\n\nShopify Development Services | Our Shopify development services launch, customise, and expand Shopify stores without sacrificing user experience or performance. We can customise storefronts, integrate essential apps, improve product pages, and create features that support specific business requirements. Shopify also provides a practical foundation for brands that want a flexible platform without managing the entire infrastructure themselves.\n\nB2B E-Commerce Development | B2B ecommerce development services focus on the complex purchasing requirements of wholesalers, manufacturers, distributors, and enterprise sellers. Our experts can build features such as account-based pricing, bulk orders, customer-specific catalogues, approval workflows, recurring purchases, and business account management. The result is a commerce experience that simplifies purchasing for professional buyers.\n\nE-Commerce App Development | E-commerce app development services extend your store experience to mobile customers. We can develop mobile commerce applications with product discovery, personalised accounts, secure payments, order tracking, push notifications, and other features that support repeat purchases. A well-structured app can give customers a convenient channel for browsing and purchasing products.",
+      "techItemsText": "Shopify | Shopify supports fast, flexible store development. We customise themes, storefronts, apps, and integrations to create branded shopping experiences with reliable product management, payments, and third-party functionality.\n\nWooCommerce | WooCommerce offers flexible store development through WordPress. Our team builds customised stores with product catalogues, payment gateways, integrations, and features that support unique business requirements and customer experiences.\n\nNext.js | Next.js enables fast, scalable e-commerce websites with modern architecture. We use it for responsive storefronts, dynamic product pages, optimised performance, API integrations, and customised commerce functionality.\n\nStripe | Stripe provides secure payment infrastructure for e-commerce platforms. We integrate Stripe for card payments, subscriptions, refunds, checkout experiences, and transaction workflows across online stores and applications.",
+      "testimonialName": "Head of Digital",
+      "testimonialQuote": "Our conversion and ops visibility improved in the same release cycle.",
+      "testimonialRole": "Retail brand",
+      "whyChooseItemsText": "E-Commerce Expertise | Our team understands D2C, B2B, marketplace, payment, and customer experience requirements.\n\nCustom Solutions | We develop e-commerce platforms around your business model, workflows, customers, and growth objectives.\n\nSecurity-Focused Development | Our developers use secure practices and trusted payment integrations to protect commerce transactions.\n\nScalable Architecture | Our solutions support growing traffic, larger catalogues, increased orders, and evolving business requirements.\n\nReliable Delivery | Clear planning, regular communication, and structured development support a smooth path from requirements to launch.\n\nOngoing Support | Our team provides technical support, improvements, integrations, and platform enhancements after your e-commerce solution goes live.",
+      "workAreasText": "D2C E-Commerce Stores | Direct-to-consumer brands can use custom commerce experiences to showcase products, manage customer accounts, support promotions, and create frictionless purchasing journeys.\n\nB2B Commerce Portals | B2B businesses can provide buyers with personalised catalogues, negotiated pricing, bulk ordering, account management, and streamlined repeat purchasing.\n\nE-Commerce Marketplaces | Marketplace businesses can connect multiple sellers with customers through product listings, seller accounts, payment workflows, order management, and centralised administration.",
+      "ctaBannerButtonLink": "/contact",
+      "ctaBannerButtonText": "Discuss your Project",
+      "ctaBannerSecondaryButtonLink": "#estimate",
+      "ctaBannerSecondaryButtonText": "Get a Proposal",
+      "ctaPrimaryLink": "#estimate",
+      "ctaPrimaryText": "Get a Proposal",
+      "ctaSecondaryLink": "/contact",
+      "ctaSecondaryText": "Discuss your Project"
     },
     {
       "testimonial": {
@@ -6514,6 +6810,7 @@
         "name": "Product Lead",
         "role": "EdTech scale-up"
       },
+      "trustPills": [],
       "slug": "education",
       "title": "Education",
       "icon": "GraduationCap",
@@ -6700,200 +6997,11 @@
     },
     {
       "testimonial": {
-        "quote": "Cubixsol delivered a clean payment experience without cutting corners on controls.",
-        "name": "CTO",
-        "role": "Fintech startup"
-      },
-      "slug": "fintech",
-      "title": "Finance & Fintech",
-      "icon": "Landmark",
-      "short": "Our fintech software development team creates secure payment platforms, financial dashboards, digital wallets, lending applications, and automated financial workflows.",
-      "desc": "Our **fintech software development** team creates secure payment platforms, financial dashboards, digital wallets, lending applications, and automated financial workflows.",
-      "points": [
-        "PCI-DSS compliant payment & checkout flows",
-        "Automated KYC / AML verification pipelines",
-        "High-frequency ledger & reconciliation engines",
-        "Open Banking & ISO 20022 messaging APIs",
-        "Multi-currency digital wallet architectures",
-        "Real-time fraud anomaly scoring & risk dashboards"
-      ],
-      "servicesWeOffer": [
-        "PCI-DSS compliant architecture design",
-        "Payment processor integrations (Stripe, Adyen, Plaid)",
-        "Digital wallet & ledger engineering",
-        "KYC/AML identity verification flows",
-        "Risk modeling & fraud detection portals",
-        "Financial data visualization & analytics"
-      ],
-      "workAreas": [
-        {
-          "title": "Payment Gateways & Checkout Orchestration",
-          "body": "Smart routing across multiple payment processors (Stripe, Adyen, Braintree) with automatic fallbacks and 3D-Secure 2.2 support."
-        },
-        {
-          "title": "Neo-Banking & Digital Wallets",
-          "body": "Virtual/physical debit card issuance (Marqeta/Lithic), account balances, P2P money transfers, and transaction categorization."
-        },
-        {
-          "title": "KYC, Identity & Compliance Workflows",
-          "body": "Automated biometric liveness checks, document verification, AML sanctions screening, and audit trail record keeping."
-        },
-        {
-          "title": "Risk & Fraud Intelligence Dashboards",
-          "body": "Machine learning velocity models, suspicious activity report (SAR) generation, and real-time transaction limits."
-        }
-      ],
-      "productsBuilt": [
-        {
-          "name": "PayFlow Gateway",
-          "slug": "payflow",
-          "blurb": "Unified multi-currency payment checkout & tokenization engine."
-        },
-        {
-          "name": "LedgerPro",
-          "slug": "ledgerpro",
-          "blurb": "Double-entry accounting and automated transaction reconciliation."
-        }
-      ],
-      "caseStudies": [
-        {
-          "title": "High-Volume Micro-Lending Engine",
-          "result": "Engineered an automated credit underwriting API processing $45M+ in loan disbursements with sub-2-second decision latency.",
-          "tags": [
-            "Credit Scoring",
-            "Microservices",
-            "Fintech"
-          ]
-        },
-        {
-          "title": "Cross-Border B2B Payment Hub",
-          "result": "Delivered an FX settlement platform supporting 28 currencies with automated SWIFT / SEPA routing and real-time reconciliation.",
-          "tags": [
-            "FX Payments",
-            "ISO 20022",
-            "Multi-currency"
-          ]
-        },
-        {
-          "title": "Embedded Neo-Bank Mobile Experience",
-          "result": "Shipped a full-featured digital banking app with virtual cards and instant Apple Wallet / Google Pay provisioning in 4 months.",
-          "tags": [
-            "Mobile Banking",
-            "Card Issuance",
-            "Security"
-          ]
-        }
-      ],
-      "approachItems": [
-        {
-          "title": "We Engineer for Financial Security & Trust",
-          "subtitle": "Our financial systems architects and fintech engineers build payment products that are:",
-          "points": [
-            {
-              "heading": "Ultra-Fast",
-              "text": "Sub-25ms API response times, instant transaction settlement, and distributed cache performance.",
-              "_id": "6aa5572aa3de33dce3741b4f"
-            },
-            {
-              "heading": "Bank-Grade Secure",
-              "text": "Hardware-level AES-256 encryption, zero-trust tokenization, and strict PCI-DSS Level 1 compliance.",
-              "_id": "6aa5572aa3de33dce3741b50"
-            },
-            {
-              "heading": "Frictionless UX",
-              "text": "1-click checkout experiences and biometric mobile authentication that maximize conversion.",
-              "_id": "6aa5572aa3de33dce3741b51"
-            }
-          ]
-        },
-        {
-          "title": "We Ensure Full Regulatory Compliance",
-          "subtitle": "With deep integration experience across payment rails and open banking protocols, we ensure:",
-          "points": [
-            {
-              "heading": "Open Banking & ISO 20022",
-              "text": "Interoperable APIs for Plaid, Stripe, Yodlee, SWIFT, and SEPA cross-border networks.",
-              "_id": "6aa5572aa3de33dce3741b53"
-            },
-            {
-              "heading": "Automated KYC & AML",
-              "text": "Real-time biometric liveness checks, document verification, and sanction list screening.",
-              "_id": "6aa5572aa3de33dce3741b54"
-            },
-            {
-              "heading": "Immutable Audit Ledgers",
-              "text": "Double-entry accounting systems with cryptographically verified transaction histories.",
-              "_id": "6aa5572aa3de33dce3741b55"
-            }
-          ]
-        },
-        {
-          "title": "We Accelerate with Real-Time AI & Risk Intelligence",
-          "subtitle": "We embed predictive machine learning models directly into transaction processing pipelines:",
-          "points": [
-            {
-              "heading": "Real-Time Fraud Prevention",
-              "text": "Zero-shot anomaly scoring that stops fraudulent transfers before settlement occurs.",
-              "_id": "6aa5572aa3de33dce3741b57"
-            },
-            {
-              "heading": "Dynamic Routing & Failover",
-              "text": "Multi-processor smart routing that minimizes interchange fees and boosts authorization rates.",
-              "_id": "6aa5572aa3de33dce3741b58"
-            },
-            {
-              "heading": "Automated Underwriting",
-              "text": "Instant credit decisioning algorithms that evaluate multi-source borrower risk.",
-              "_id": "6aa5572aa3de33dce3741b59"
-            }
-          ]
-        }
-      ],
-      "approachTitle": "The Cubixsol Approach to Fintech",
-      "solutionsItems": [
-        {
-          "title": "Payment Orchestration & Checkout Engines",
-          "body": "Multi-processor routing gateways with 3D Secure 2.2 authentication, recurring subscription billing, localized alternative payment methods (Apple Pay, Google Pay, Pix, iDEAL), and automated chargeback dispute resolution."
-        },
-        {
-          "title": "Neo-Banking & Digital Wallet Infrastructure",
-          "body": "Full-featured digital banking applications with virtual/physical card issuance (Marqeta, Lithic), real-time P2P balance transfers, instant ACH/SEPA payments, and automated financial health analytics."
-        },
-        {
-          "title": "Core Ledgers, KYC & Risk Automation",
-          "body": "High-throughput double-entry ledgers capable of handling 50,000+ operations/sec with automated multi-bank reconciliation, automated SAR filing, and real-time KYC/AML identity verification."
-        }
-      ],
-      "solutionsSubtitle": "Institutional-grade payment gateways, digital wallets, core banking ledgers, and KYC pipelines designed to scale with complete reliability.",
-      "solutionsTitle": "Our Financial & Fintech Solutions",
-      "stats": [
-        {
-          "value": "< 25ms",
-          "label": "Average Execution & Ledger Latency"
-        },
-        {
-          "value": "$250M+",
-          "label": "Annual Processed Transaction Volume"
-        },
-        {
-          "value": "99.999%",
-          "label": "Uptime SLA for Critical Core Services"
-        },
-        {
-          "value": "PCI-DSS L1",
-          "label": "Certified Bank-Grade Security Defaults"
-        }
-      ],
-      "faqs": [],
-      "techItems": [],
-      "whyChooseItems": []
-    },
-    {
-      "testimonial": {
         "quote": "They balanced usability for clinicians with the compliance constraints we cannot ignore.",
         "name": "Operations Manager",
         "role": "Health services provider"
       },
+      "trustPills": [],
       "slug": "healthcare",
       "title": "Healthcare",
       "icon": "HeartPulse",
@@ -7082,11 +7190,12 @@
         "name": "Fleet Manager",
         "role": "Regional logistics"
       },
+      "trustPills": [],
       "slug": "logistics",
       "title": "Logistics & Supply Chain",
       "icon": "Truck",
-      "short": "Through our logistics software development expertise, we build fleet management platforms, shipment tracking systems, warehouse tools, route-planning applications, and supply-chain dashboards.",
-      "desc": "Through our **logistics software development** expertise, we build fleet management platforms, shipment tracking systems, warehouse tools, route-planning applications, and supply-chain dashboards.",
+      "short": "We optimise transportation, inventory, and supply chain processes with custom logistics software development solutions designed for modern businesses. We build scalable platforms that improve shipment visibility, automate workflows, enhance fleet performance, and support data-driven decisions across logistics operations.",
+      "desc": "We optimise transportation, inventory, and supply chain processes with custom logistics software development solutions designed for modern businesses. We build scalable platforms that improve shipment visibility, automate workflows, enhance fleet performance, and support data-driven decisions across logistics operations.",
       "points": [
         "Custom-Built Logistics Solutions",
         "Scalable Technology Solutions",
@@ -7237,7 +7346,22 @@
       "solutionsSubtitle": "We engineer end-to-end logistics platforms that digitize workflows, improve driver productivity, and provide real-time shipment transparency.",
       "solutionsTitle": "Logistics Software We Build",
       "whyChooseTitle": "Why Logistics Teams Choose Cubixsol",
-      "workAreasTitle": "Built for Logistics Standards"
+      "workAreasTitle": "Built for Logistics Standards",
+      "ctaBannerButtonLink": "/contact",
+      "ctaBannerButtonText": "Start Your Logistics Project",
+      "ctaBannerSecondaryButtonLink": "#estimate",
+      "ctaBannerSecondaryButtonText": "Get Cost Estimate",
+      "ctaPrimaryLink": "/contact",
+      "ctaPrimaryText": "Discuss Your Logistics Project",
+      "ctaSecondaryLink": "#estimate",
+      "ctaSecondaryText": "Get a Free Consultation",
+      "faqsText": "How much does logistics software development cost? | The cost of logistics software development depends on project scope, features, integrations, platforms, and customisation requirements. A basic logistics application requires less investment than a complete platform with fleet management, tracking, analytics, and enterprise integrations.\n\nHow long does it take to develop custom logistics software? | Development timelines depend on software complexity, required features, and testing needs. A focused logistics solution may take a few months, while advanced platforms with multiple integrations require a longer development cycle.\n\nCan logistics software provide real-time shipment and vehicle tracking? | Yes, logistics software can include real-time tracking features through GPS, IoT devices, and connected systems. Businesses can monitor vehicle locations, delivery progress, and shipment status through centralised dashboards.\n\nCan logistics software integrate with existing ERP and ELD systems? | Yes, custom solutions can connect with ERP, ELD, TMS, payment systems, and other third-party platforms. Integrations allow businesses to synchronise data and improve workflow efficiency.\n\nIs custom logistics software scalable for growing businesses? | Yes, scalable architecture allows logistics software to support increasing users, vehicles, shipments, and operational demands. A well-designed platform can expand with business growth without major system changes.",
+      "solutionsItemsText": "Fleet Management Software | Our fleet management software development solutions help businesses monitor vehicles, drivers, and routes in real time. We create systems with GPS tracking, maintenance alerts, fuel monitoring, and performance analytics. Businesses can improve fleet efficiency and reduce operational costs through better visibility.\n\nDispatch and Tracking Software | We develop dispatch and tracking platforms that simplify shipment coordination and delivery management. Real-time updates allow teams to assign tasks, track orders, and improve delivery accuracy. Our solutions support faster communication between drivers, customers, and operations teams.\n\nWarehouse Management Software | Our warehouse management solutions optimise inventory control, order processing, and storage operations. We build systems that improve stock visibility, automate workflows, and reduce manual errors. Companies can manage warehouse activities with greater speed and accuracy.\n\nLogistics Mobile Apps | We build logistics mobile apps that connect drivers, managers, and customers through convenient digital tools. Apps can include delivery tracking, notifications, digital proof of delivery, and order updates. Our custom solutions improve accessibility and create smoother logistics experiences.",
+      "testimonialName": "Fleet Manager",
+      "testimonialQuote": "Field and office teams finally saw the same status in real time.",
+      "testimonialRole": "Regional logistics",
+      "whyChooseItemsText": "Custom-Built Logistics Solutions | We engineer custom logistics platforms shaped specifically around your fleet size, dispatch workflows, and operational requirements.\n\nScalable Technology Solutions | High-throughput cloud architecture engineered to process telemetry, live GPS coordinates, and high-frequency dispatch updates.\n\nSeamless Integration Capabilities | Frictionless integration with existing ELD hardware, ERP systems (SAP, NetSuite), TMS platforms, and mapping APIs.\n\nReal-Time Data Insights | Actionable live dashboards, automated driver scorecards, fuel optimization algorithms, and delivery tracking metrics.\n\nFlexible Cloud-Based Solutions | Resilient cloud infrastructure with enterprise-grade security, automated backups, and 99.99% uptime guarantees.\n\nLong-Term Technology Partnership | Ongoing post-launch technical support, continuous system enhancements, security patches, and platform scaling support.",
+      "workAreasText": "Real-Time Tracking and Visibility | Our logistics platforms provide real-time tracking for shipments, vehicles, and delivery operations. Businesses gain complete visibility into movement, status updates, and operational performance.\n\nSmooth System Integrations | We build logistics software that connects with essential systems such as ELD, ERP, TMS, and third-party APIs. These integrations create smooth data flow across logistics operations.\n\nReliable and Scalable Infrastructure | Our solutions are designed for high performance, security, and reliability. Scalable architecture supports growing fleets, increasing shipments, and expanding business needs.\n\nData-Driven Logistics Management | Advanced analytics and reporting features provide valuable insights into routes, costs, and delivery performance. Businesses can use real-time data to improve efficiency and decision-making."
     },
     {
       "testimonial": {
@@ -7245,11 +7369,12 @@
         "name": "Sales Director",
         "role": "Property group"
       },
+      "trustPills": [],
       "slug": "real-estate",
-      "title": "Real Estate",
+      "title": "Real Estate Software Development",
       "icon": "Building2",
-      "short": "Our real estate software development services support property portals, listing platforms, CRM systems, tenant applications, property management tools, and virtual viewing experiences.",
-      "desc": "Our **real estate software development** services support property portals, listing platforms, CRM systems, tenant applications, property management tools, and virtual viewing experiences.",
+      "short": "Cubixsol delivers real estate software development solutions that simplify property listings, sales, leasing, payments, and portfolio management through one connected platform.",
+      "desc": "Cubixsol delivers real estate software development solutions that simplify property listings, sales, leasing, payments, and portfolio management through one connected platform. Our custom software supports real estate companies, agencies, property managers, and property owners with practical tools built around their workflows.",
       "points": [
         "Real Estate Domain Expertise",
         "Secure Software Architecture",
@@ -7329,17 +7454,17 @@
             {
               "heading": "Sub-Minute Sync",
               "text": "RESO Web API synchronization that reflects new listings and price cuts in under 60 seconds.",
-              "_id": "6aa952428d497fb1617e4915"
+              "_id": "6aaa313b044371edda983303"
             },
             {
               "heading": "Immersive Spatial UX",
               "text": "Embedded 3D Matterport virtual walkthroughs and Mapbox polygon spatial search.",
-              "_id": "6aa952428d497fb1617e4916"
+              "_id": "6aaa313b044371edda983304"
             },
             {
               "heading": "High-Converting Flow",
               "text": "Frictionless tour booking and automated SMS routing to local on-duty agents.",
-              "_id": "6aa952428d497fb1617e4917"
+              "_id": "6aaa313b044371edda983305"
             }
           ]
         },
@@ -7350,17 +7475,17 @@
             {
               "heading": "RESO Web API Standard",
               "text": "Certified data pipelines ensuring accurate listing status, photos, and agent attribution.",
-              "_id": "6aa952428d497fb1617e4919"
+              "_id": "6aaa313b044371edda983307"
             },
             {
               "heading": "Fair Housing & WCAG 2.1",
               "text": "Built-in accessibility compliance, screen reader support, and equal housing opportunity notices.",
-              "_id": "6aa952428d497fb1617e491a"
+              "_id": "6aaa313b044371edda983308"
             },
             {
               "heading": "PMS Interoperability",
               "text": "Two-way synchronization with Yardi, RealPage, AppFolio, and Entrata property databases.",
-              "_id": "6aa952428d497fb1617e491b"
+              "_id": "6aaa313b044371edda983309"
             }
           ]
         },
@@ -7371,17 +7496,17 @@
             {
               "heading": "Sub-45s Lead Routing",
               "text": "Round-robin agent assignment with instant push alerts that maximize lead response rates.",
-              "_id": "6aa952428d497fb1617e491d"
+              "_id": "6aaa313b044371edda98330b"
             },
             {
               "heading": "Automated CMA Reports",
               "text": "Instant Comparative Market Analysis generation powered by live neighborhood comps.",
-              "_id": "6aa952428d497fb1617e491e"
+              "_id": "6aaa313b044371edda98330c"
             },
             {
               "heading": "Digital Escrow Vaults",
               "text": "Secure digital offer submission, automated e-signatures, and transaction milestone tracking.",
-              "_id": "6aa952428d497fb1617e491f"
+              "_id": "6aaa313b044371edda98330d"
             }
           ]
         }
@@ -7497,14 +7622,18 @@
       "workAreasTitle": "Use Cases & Examples",
       "approachItemsText": "We Engineer for Spatial Immersion & Speed | Our PropTech software engineers and real estate UX specialists craft listing platforms that are: | Sub-Minute Sync: RESO Web API synchronization that reflects new listings and price cuts in under 60 seconds.; Immersive Spatial UX: Embedded 3D Matterport virtual walkthroughs and Mapbox polygon spatial search.; High-Converting Flow: Frictionless tour booking and automated SMS routing to local on-duty agents.\n\nWe Ensure Full MLS & RESO Compliance | With deep integration expertise across North American & global real estate feeds: | RESO Web API Standard: Certified data pipelines ensuring accurate listing status, photos, and agent attribution.; Fair Housing & WCAG 2.1: Built-in accessibility compliance, screen reader support, and equal housing opportunity notices.; PMS Interoperability: Two-way synchronization with Yardi, RealPage, AppFolio, and Entrata property databases.\n\nWe Accelerate Brokerage & Agent Conversions | We build automated intelligence pipelines that convert casual website visitors into signed clients: | Sub-45s Lead Routing: Round-robin agent assignment with instant push alerts that maximize lead response rates.; Automated CMA Reports: Instant Comparative Market Analysis generation powered by live neighborhood comps.; Digital Escrow Vaults: Secure digital offer submission, automated e-signatures, and transaction milestone tracking.",
       "faqsText": "How Much Does Real Estate Software Development Cost? | The cost depends on your software type, feature set, integrations, design requirements, and platform choice. A basic property platform may require less investment than a large marketplace with CRM, payment, MLS, and management features. We can provide a project estimate after reviewing your requirements.\n\nHow Long Does It Take to Build Real Estate Software? | A real estate software project can take several weeks to several months, depending on its scope and complexity. A simple application may require less development time, while a feature-rich platform needs more time for integrations, testing, and deployment. We define milestones and timelines based on your project requirements.\n\nCan You Integrate MLS With Real Estate Software? | Yes, we can integrate MLS data into real estate platforms through available MLS APIs and approved data access methods. MLS integration can support property listings, search, updates, and other relevant property information. Integration requirements depend on the MLS provider and the access rules that apply to your market.\n\nCan You Build a Mobile Real Estate App? | Yes, we provide **real estate app development services** for businesses that need mobile applications on Android, iOS, or both platforms. Mobile apps can include property search, listings, user accounts, notifications, appointments, payments, and communication features. Flutter can support cross-platform development from a shared codebase.\n\nDo You Provide Maintenance for Real Estate Software? | Yes, we provide post-launch maintenance and technical support for real estate software.",
-      "solutionsItemsText": "Property Listing & Portal Software | Property platforms give buyers and tenants a simple way to discover properties, compare options, and contact agents.\n\n- **Listing platforms** let agents publish property details, photos, pricing, availability, and location information.\n- **Property portals** connect buyers, sellers, landlords, tenants, and agents through searchable property marketplaces.\n- **Property search features** let users filter listings by location, price, property type, size, amenities, and availability.\n\nReal Estate CRM & Management Software | Real estate CRM and management systems organise customer relationships alongside property operations.\n\n- **Real estate CRM software** helps agents track leads, client interactions, follow-ups, deals, and sales pipelines.\n- **Property management software** supports rent collection, lease records, tenant communication, maintenance requests, and property records.\n- **Administrative dashboards** give teams centralized access to clients, properties, transactions, tasks, and performance data.\n\nReal Estate App Development | Our **real estate app development services** create mobile experiences to support property discovery, communication, transactions, and account management.\n\n- **Property apps** let users browse listings, save properties, schedule visits, and contact agents from mobile devices.\n- **Agent apps** provide tools for managing leads, appointments, listings, client communication, and property updates.\n- **Owner and tenant apps** support rent payments, maintenance requests, lease information, notifications, and property communication.",
-      "statsText": "< 60s | MLS & RESO Feed Synchronization Frequency\n+65% | Online Tour Booking & Lead Conversion Lift\n3.4x | Average On-Page Property Dwell Time\nRESO API | Certified Real Estate Standard Standardized",
+      "solutionsItemsText": "Property Listing & Portal Software | Property platforms give buyers and tenants a simple way to discover properties, compare options, and contact agents.\n\n- **Listing platforms** let agents publish property details, photos, pricing, availability, and location information.\n\n- **Property portals** connect buyers, sellers, landlords, tenants, and agents through searchable property marketplaces.\n\n- **Property search features** let users filter listings by location, price, property type, size, amenities, and availability.\n\nReal Estate CRM & Management Software | Real estate CRM and management systems organise customer relationships alongside property operations.\n\n- **Real estate CRM software** helps agents track leads, client interactions, follow-ups, deals, and sales pipelines.\n\n- **Property management software** supports rent collection, lease records, tenant communication, maintenance requests, and property records.\n\n- **Administrative dashboards** give teams centralized access to clients, properties, transactions, tasks, and performance data.\n\nReal Estate App Development | Our **real estate app development services** create mobile experiences to support property discovery, communication, transactions, and account management.\n\n- **Property apps** let users browse listings, save properties, schedule visits, and contact agents from mobile devices.\n\n- **Agent apps** provide tools for managing leads, appointments, listings, client communication, and property updates.\n\n- **Owner and tenant apps** support rent payments, maintenance requests, lease information, notifications, and property communication.",
+      "statsText": "< 60s | MLS & RESO Feed Synchronization Frequency\n% | Online Tour Booking & Lead Conversion Lift\nx | Average On-Page Property Dwell Time\nRESO API | Certified Real Estate Standard Standardized",
       "techItemsText": "React for Real Estate Web Applications | React supports responsive interfaces for property portals, listing platforms, dashboards, and customer-facing web applications. Its component-based architecture allows teams to create consistent interfaces across complex real estate platforms.\n\nNode.js for Backend Development | Node.js provides a scalable backend for real estate platforms that manage users, listings, transactions, communications, and property data. Its event-driven architecture supports real-time features such as notifications, chat, and property updates.\n\nMaps APIs for Property Location Features | Maps APIs add location-based features to property platforms and mobile applications. Users can search properties by location, view listings on interactive maps, calculate distances, and explore nearby amenities.\n\nFlutter for Real Estate Mobile Apps | Flutter enables development of cross-platform real estate mobile applications from a shared codebase. Businesses can launch apps for Android and iOS with consistent interfaces and core functionality.",
       "testimonialName": "Sales Director",
       "testimonialQuote": "Listings and leads finally lived in one system our agents actually use.",
       "testimonialRole": "Property group",
       "whyChooseItemsText": "Real Estate Domain Expertise | Deep industry experience building specialized platforms for property developers, brokerages, and managers.\n\nSecure Software Architecture | Enterprise-grade encryption, secure user authentication, and data privacy protecting every real estate deal.\n\nScalable Technology Architecture | Cloud-native infrastructure designed to handle millions of listings, concurrent searches, and image media.\n\nTransparent Project Delivery | Agile sprints, milestone demos, clear timelines, and dedicated engineering pods for predictable delivery.\n\nSeamless Third-Party Integrations | Direct integration with MLS/IDX feeds, Maps APIs, payment processors, and property management systems.\n\nReliable Post-Launch Support | Continuous monitoring, routine security patches, performance tuning, and ongoing feature enhancements.",
-      "workAreasText": "Property Marketplace Platform | A property marketplace connects buyers and tenants with property owners and agents through a searchable digital platform. Users can discover properties, compare listings, contact sellers, and schedule property visits from one place.\n\nReal Estate Agent CRM | A real estate CRM gives agencies a centralised system for managing leads, clients, properties, and sales activities. Agents can track prospects from their first inquiry through property viewings, negotiations, and completed transactions.\n\nRental Management Software | A rental management app connects property owners, managers, and tenants through a single platform for daily rental operations. The solution simplifies rent collection, lease administration, maintenance requests, and tenant communication."
+      "workAreasText": "Property Marketplace Platform | A property marketplace connects buyers and tenants with property owners and agents through a searchable digital platform. Users can discover properties, compare listings, contact sellers, and schedule property visits from one place.\n\nReal Estate Agent CRM | A real estate CRM gives agencies a centralised system for managing leads, clients, properties, and sales activities. Agents can track prospects from their first inquiry through property viewings, negotiations, and completed transactions.\n\nRental Management Software | A rental management app connects property owners, managers, and tenants through a single platform for daily rental operations. The solution simplifies rent collection, lease administration, maintenance requests, and tenant communication.",
+      "ctaPrimaryLink": "#estimate",
+      "ctaPrimaryText": "Build Your Real Estate Solution",
+      "ctaSecondaryLink": "/contact",
+      "ctaSecondaryText": "Talk to Our Experts"
     },
     {
       "testimonial": {
@@ -7512,6 +7641,7 @@
         "name": "Founder",
         "role": "B2B SaaS"
       },
+      "trustPills": [],
       "slug": "saas",
       "title": "SaaS",
       "icon": "Cloud",
@@ -7702,6 +7832,7 @@
         "name": "VP Engineering",
         "role": "Tech company"
       },
+      "trustPills": [],
       "slug": "technology",
       "title": "Technology",
       "icon": "Cpu",
@@ -7795,18 +7926,24 @@
         "name": "Digital Manager",
         "role": "Hospitality group"
       },
+      "seo": {
+        "metaTitle": "Travel Software Development Company | Cubixsol",
+        "metaDescription": "Cubixsol is a travel software development company building booking platforms, mobile apps, and hospitality solutions.",
+        "keywords": "travel software development, travel booking platform, travel app development, hospitality software"
+      },
+      "trustPills": [],
       "slug": "travel",
       "title": "Travel & Hospitality",
       "icon": "Plane",
-      "short": "As an experienced travel software development company, we create booking platforms, reservation systems, itinerary tools, travel portals, mobile applications, and third-party service integrations.",
-      "desc": "As an experienced **travel software development company**, we create booking platforms, reservation systems, itinerary tools, travel portals, mobile applications, and third-party service integrations.",
+      "short": "Cubixsol is a travel software development company that builds scalable digital solutions for travel businesses, agencies, and hospitality providers. We create custom platforms that simplify bookings, improve customer experiences, and optimise travel operations through modern technology.",
+      "desc": "Cubixsol is a travel software development company that builds scalable digital solutions for travel businesses, agencies, and hospitality providers. We create custom platforms that simplify bookings, improve customer experiences, and optimise travel operations through modern technology.",
       "points": [
-        "Multi-GDS & airline NDC aggregator APIs (Amadeus, Sabre)",
-        "Dynamic packaging engines (Flights + Hotels + Activities)",
-        "High-concurrency stress-tested booking infrastructure",
-        "Mobile guest apps with BLE contactless room key access",
-        "PMS & Channel Manager sync (Opera, Cloudbeds, Mews)",
-        "Multi-currency pricing & automated loyalty rewards"
+        "Custom-Built Travel Platforms",
+        "Enhanced Customer Experiences",
+        "Strong Security Practices",
+        "Advanced Automation Features",
+        "Modern Technology Approach",
+        "Long-Term Partnership Support"
       ],
       "servicesWeOffer": [
         "Custom travel booking engine development",
@@ -7818,20 +7955,20 @@
       ],
       "workAreas": [
         {
-          "title": "Flight & Hotel Booking Engines",
-          "body": "High-speed flight search, fare matrix comparison, seat map selection, hotel room filtering, and instant PNR generation."
+          "title": "Secure Payment Integration",
+          "body": "We develop travel platforms with secure payment integrations that support smooth transactions, multiple payment methods, and reliable checkout experiences for global travellers."
         },
         {
-          "title": "Dynamic Packaging & Yield Management",
-          "body": "Automated bundle pricing algorithms combining flights, hotels, and excursions with customizable supplier commission markups."
+          "title": "PMS & GDS Connectivity",
+          "body": "Our travel solutions connect with Property Management Systems (PMS) and Global Distribution Systems (GDS) to synchronise availability, bookings, and travel inventory across platforms."
         },
         {
-          "title": "Guest Experience & Mobile Room Keys",
-          "body": "Native mobile guest apps supporting online check-in, Bluetooth digital door locks, in-app room service, and concierge chat."
+          "title": "Multi-Currency & Global Support",
+          "body": "We build travel software that supports multiple currencies, regional payment preferences, and international operations to serve customers across different markets."
         },
         {
-          "title": "Hospitality PMS & Channel Management",
-          "body": "Real-time two-way synchronization of rates, availability, and guest profiles across Booking.com, Expedia, Airbnb, and direct booking channels."
+          "title": "Real-Time Data & API Integration",
+          "body": "Our experts integrate real-time APIs for flights, hotels, transportation, and other travel services to provide accurate information and seamless user experiences."
         }
       ],
       "productsBuilt": [
@@ -7876,11 +8013,93 @@
         }
       ],
       "approachItems": [],
-      "solutionsItems": [],
+      "solutionsItems": [
+        {
+          "title": "Travel Booking Platforms",
+          "body": "We develop booking platforms that allow travellers to search, compare, and reserve flights, hotels, tours, and other travel services. Custom booking systems can integrate payment gateways, availability management, and third-party APIs for smooth reservation experiences."
+        },
+        {
+          "title": "Travel Mobile Apps",
+          "body": "Our travel app development services create mobile experiences that help users discover destinations, manage bookings, receive updates, and access travel services from anywhere. We build apps with intuitive interfaces and features that improve engagement throughout the customer journey."
+        },
+        {
+          "title": "Travel Management Software",
+          "body": "Travel companies can streamline daily operations with custom management software that handles customer records, supplier coordination, itinerary planning, and reporting. These platforms provide better control over business workflows and operational data."
+        },
+        {
+          "title": "Hospitality Integration Solutions",
+          "body": "We build software that connects travel platforms with hotels, airlines, payment providers, and external service systems. These integrations create synchronised workflows and improve accuracy across multiple travel operations."
+        }
+      ],
       "stats": [],
-      "faqs": [],
+      "faqs": [
+        {
+          "q": "How much does travel software development cost?",
+          "a": "The cost of travel software development depends on platform complexity, features, integrations, design requirements, and scalability needs. A basic booking application requires a different investment compared to a complete travel management platform with multiple integrations and automation features."
+        },
+        {
+          "q": "How long does travel app development take?",
+          "a": "The development timeline depends on the scope, technology stack, and number of features involved. A focused travel application may require several weeks, while a complete platform with advanced booking systems, integrations, and custom workflows may require additional development time."
+        },
+        {
+          "q": "Can travel software integrate with existing booking systems and APIs?",
+          "a": "Yes, custom travel solutions can connect with third-party APIs, payment gateways, airline systems, hotel platforms, CRM tools, and other business systems. These integrations allow travel companies to manage services efficiently through connected digital platforms."
+        },
+        {
+          "q": "Can custom travel platforms support business growth?",
+          "a": "Yes, scalable travel software can support increasing users, transactions, and service expansion. We develop flexible architectures that allow businesses to add new features, integrations, and services as their requirements evolve."
+        },
+        {
+          "q": "What features should a travel booking system include?",
+          "a": "A modern travel booking system can include search and filtering, real-time availability, online payments, booking management, customer profiles, notifications, reviews, and third-party integrations. The required features depend on the business model and customer journey."
+        }
+      ],
       "techItems": [],
-      "whyChooseItems": []
+      "whyChooseItems": [
+        {
+          "title": "Custom-Built Travel Platforms",
+          "desc": "Tailored booking engines and hospitality software designed around your workflows, multi-channel distribution, and guest experience requirements."
+        },
+        {
+          "title": "Enhanced Customer Experiences",
+          "desc": "Intuitive, high-speed mobile and web interfaces that simplify reservations, itineraries, and contactless guest services."
+        },
+        {
+          "title": "Strong Security Practices",
+          "desc": "Robust data protection, PCI-DSS compliance, and zero-trust safeguards for guest records and payment transactions."
+        },
+        {
+          "title": "Advanced Automation Features",
+          "desc": "Automated itinerary dispatch, dynamic rate adjustments, cancellation handling, and channel manager sync."
+        },
+        {
+          "title": "Modern Technology Approach",
+          "desc": "Cloud-native architectures, real-time caching, and sub-second API connectors for high-traffic peak seasons."
+        },
+        {
+          "title": "Long-Term Partnership Support",
+          "desc": "Continuous technical maintenance, GDS/OTA API version updates, and dedicated engineering support."
+        }
+      ],
+      "ctaPrimaryText": "Build Your Travel Solution",
+      "ctaSecondaryText": "Get a free proposal",
+      "testimonialName": "Digital Manager",
+      "testimonialQuote": "Peak season held up — and the booking UX stayed simple.",
+      "testimonialRole": "Hospitality group",
+      "workAreasText": "Flight & Hotel Booking Engines | High-speed flight search, fare matrix comparison, seat map selection, hotel room filtering, and instant PNR generation.\n\nDynamic Packaging & Yield Management | Automated bundle pricing algorithms combining flights, hotels, and excursions with customizable supplier commission markups.\n\nGuest Experience & Mobile Room Keys | Native mobile guest apps supporting online check-in, Bluetooth digital door locks, in-app room service, and concierge chat.\n\nHospitality PMS & Channel Management | Real-time two-way synchronization of rates, availability, and guest profiles across Booking.com, Expedia, Airbnb, and direct booking channels.",
+      "ctaBannerButtonLink": "/contact",
+      "ctaBannerButtonText": "Start Your Travel Software Project Today",
+      "ctaBannerSecondaryButtonLink": "#estimate",
+      "ctaBannerSecondaryButtonText": "Get a free proposal",
+      "ctaDesc": "Partner with Cubixsol, a trusted travel software development company, to create secure and scalable platforms that improve bookings, automate operations, and deliver better traveller experiences. Our team builds custom travel solutions designed around your business objectives.",
+      "ctaPrimaryLink": "/contact",
+      "ctaSecondaryLink": "#estimate",
+      "ctaTitle": "Ready to Build Your Travel Software Solution?",
+      "heroTitle": "Travel Software Development Company",
+      "solutionsSubtitle": "We develop custom travel and hospitality platforms that streamline bookings, empower travelers, and automate complex workflows.",
+      "solutionsTitle": "Travel Software Solutions We Build",
+      "whyChooseTitle": "Why Travel & Hospitality Teams Choose Cubixsol",
+      "workAreasTitle": "Built for Travel Industry Standards"
     }
   ],
   "initialProjects": [

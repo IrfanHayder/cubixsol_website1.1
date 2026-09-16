@@ -295,7 +295,14 @@ const SECTION_CONFIGS = {
       { name: 'short', label: 'Short Description', type: 'textarea', fullWidth: true, rows: 2 },
       { name: 'desc', label: 'Full Hero Description', type: 'textarea', fullWidth: true, rows: 4 },
       { name: 'points', label: 'Key Highlights & Points (one per line)', type: 'textarea', fullWidth: true, rows: 4, isArray: true },
+      { name: 'trustPills', label: 'Trust Badges / Points Below Hero Buttons (one per line, e.g. 150+ Clients Served)', type: 'textarea', fullWidth: true, rows: 4, isArray: true, hint: 'Badges displayed with checkmarks below the CTA buttons in the hero section.' },
       { name: 'servicesWeOffer', label: 'Services We Offer (one per line)', type: 'textarea', fullWidth: true, rows: 3, isArray: true },
+
+      // Hero Action Buttons
+      { name: 'ctaPrimaryText', label: 'Hero Primary Button Text (e.g. Discuss your Project)', hint: 'Text for main CTA button (defaults to domain-specific label like "Discuss your Project")' },
+      { name: 'ctaPrimaryLink', label: 'Hero Primary Button Link (e.g. /contact)', hint: 'Defaults to /contact' },
+      { name: 'ctaSecondaryText', label: 'Hero Secondary Button Text (e.g. Get a Proposal)', hint: 'Text for secondary CTA button (defaults to "Get a Proposal" or "Get Free Estimate")' },
+      { name: 'ctaSecondaryLink', label: 'Hero Secondary Button Link (e.g. #estimate or /contact)', hint: 'Enter #estimate to open Estimate Modal, or provide a URL/path' },
 
       // Software We Build / Solutions Section
       { name: 'solutionsTitle', label: 'Software We Build Section Title (e.g. E-Commerce Software We Build)', fullWidth: true },
@@ -372,6 +379,10 @@ const SECTION_CONFIGS = {
       // Mid Consultation CTA Banner
       { name: 'ctaTitle', label: 'Mid Banner Title (e.g. Ready to Build Your E-Commerce Platform?)', fullWidth: true },
       { name: 'ctaDesc', label: 'Mid Banner Description', type: 'textarea', fullWidth: true, rows: 3 },
+      { name: 'ctaBannerButtonText', label: 'Mid Banner Primary Button Text (e.g. Discuss your Project / Book Consultation)' },
+      { name: 'ctaBannerButtonLink', label: 'Mid Banner Primary Button Link (e.g. /contact)' },
+      { name: 'ctaBannerSecondaryButtonText', label: 'Mid Banner Secondary Button Text (e.g. Get a Proposal / Get Free Estimate)' },
+      { name: 'ctaBannerSecondaryButtonLink', label: 'Mid Banner Secondary Button Link (e.g. #estimate)' },
 
       // FAQs
       {
@@ -1046,9 +1057,26 @@ function DbSection({ sectionKey, showToast }) {
       );
       closeForm();
       fetchData();
-      if (sectionKey === 'services') {
-        refreshServices();
-      }
+
+      // Invalidate frontend caches
+      try {
+        if (sectionKey === 'industries') {
+          if (payload.slug) localStorage.removeItem(`cubixsol_industry_${payload.slug}`);
+          localStorage.removeItem('cubixsol_industries_list_cache');
+        } else if (sectionKey === 'solutions') {
+          if (payload.slug) localStorage.removeItem(`cubixsol_solution_${payload.slug}`);
+        } else if (sectionKey === 'blogs') {
+          if (payload.slug) localStorage.removeItem(`cubixsol_blog_${payload.slug}`);
+          localStorage.removeItem('cubixsol_blogs_cache');
+        } else if (sectionKey === 'projects') {
+          localStorage.removeItem('cubixsol_projects_cache');
+        } else if (sectionKey === 'products') {
+          localStorage.removeItem('cubixsol_products_cache');
+        } else if (sectionKey === 'services') {
+          localStorage.removeItem('cubixsol_services_cache');
+          refreshServices();
+        }
+      } catch (_) {}
     } catch (err) {
       showToast(err.message || 'Error saving. Check required fields.', 'error');
     } finally {
@@ -1069,9 +1097,26 @@ function DbSection({ sectionKey, showToast }) {
       if (!res.ok) throw new Error('Failed to delete');
       showToast(`${config.label.slice(0, -1)} deleted successfully.`, 'success');
       fetchData();
-      if (sectionKey === 'services') {
-        refreshServices();
-      }
+
+      // Invalidate frontend caches
+      try {
+        if (sectionKey === 'industries') {
+          if (confirmDelete.slug) localStorage.removeItem(`cubixsol_industry_${confirmDelete.slug}`);
+          localStorage.removeItem('cubixsol_industries_list_cache');
+        } else if (sectionKey === 'solutions') {
+          if (confirmDelete.slug) localStorage.removeItem(`cubixsol_solution_${confirmDelete.slug}`);
+        } else if (sectionKey === 'blogs') {
+          if (confirmDelete.slug) localStorage.removeItem(`cubixsol_blog_${confirmDelete.slug}`);
+          localStorage.removeItem('cubixsol_blogs_cache');
+        } else if (sectionKey === 'projects') {
+          localStorage.removeItem('cubixsol_projects_cache');
+        } else if (sectionKey === 'products') {
+          localStorage.removeItem('cubixsol_products_cache');
+        } else if (sectionKey === 'services') {
+          localStorage.removeItem('cubixsol_services_cache');
+          refreshServices();
+        }
+      } catch (_) {}
     } catch (err) {
       console.error(err);
       showToast('Error deleting item.', 'error');
