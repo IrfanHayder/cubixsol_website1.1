@@ -26,7 +26,6 @@ CubixSol is an enterprise digital agency application designed to showcase missio
 ## 3. The Problem
 
 Enterprise technology agencies frequently encounter several fundamental technical and operational bottlenecks:
-
 - **Rigid Content Workflows**: Marketing and business teams depend heavily on developer cycles to deploy new case studies, industry service lines, pricing models, and blog publications.
 - **Fragmented Interactive Tooling**: Prospect engagement remains low when platforms lack dynamic value-add tools (e.g., automated SEO auditing, scope estimators, dynamic journey wizards).
 - **Sub-optimal Asset & Media Governance**: Disconnected file uploads often lead to orphaned server artifacts, untracked media assets, and storage bloat.
@@ -37,7 +36,6 @@ Enterprise technology agencies frequently encounter several fundamental technica
 ## 4. The Solution
 
 CubixSol delivers a high-performance, single-codebase solution that bridges modern UI responsiveness with an enterprise CMS backend:
-
 - **Unified Full-Stack Architecture**: React 19 Single Page Application (SPA) backed by an Express 5 REST API and MongoDB cluster with automated self-healing schema seeders.
 - **Integrated Admin CMS**: Centralized management for 15+ domain entities including Services, Solutions, Industries, Projects, Careers, Testimonials, FAQs, Authors, and Site Settings.
 - **Embedded Interactive Tools**: Built-in AI SEO Auditor and Project Estimator with interactive score calculation, breakdown metrics, and instant lead capture.
@@ -67,7 +65,6 @@ graph TD
     Client[Client Browser / Mobile Device] -->|HTTPS Requests| CDN_Nginx[Vercel / Nginx Reverse Proxy]
     CDN_Nginx -->|Static SPA Assets| ReactApp[React 19 + Vite Frontend]
     CDN_Nginx -->|API Requests /api/*| ExpressServer[Node.js / Express 5 API Server]
-
     subgraph Frontend Architecture
         ReactApp --> Router[React Router v7]
         Router --> Contexts[AuthContext & ServicesContext]
@@ -122,13 +119,11 @@ graph TD
 Follow these step-by-step instructions to get a local development instance running in under 2 minutes.
 
 ### Prerequisites
-
 - **Node.js**: `v18.0.0` or higher ([Download](https://nodejs.org/))
 - **npm**: `v9.0.0` or higher
 - **MongoDB**: Local MongoDB instance or active [MongoDB Atlas](https://cloud.mongodb.com/) cluster connection string.
 
 ### Step 1: Clone the Repository
-
 ```bash
 git clone https://github.com/aasimghaffar/cubixsol.com.git
 cd cubixsol.com
@@ -189,7 +184,6 @@ npm run dev
 ## 10. Usage & Operational Guide
 
 ### Public Navigation
-
 - **Homepage (`/`)**: Main landing experience with dynamic Hero slider, services showcase, dynamic statistics counter, client marquee, and interactive CTAs.
 - **Services Catalog (`/services`, `/services/:slug`)**: Dynamic service offerings with category filtering, technical process breakdowns, and integrated inquiry modals.
 - **Solutions & Industries (`/solutions/:slug`, `/industries/:slug`)**: Enterprise vertical landing pages with structured architecture overviews.
@@ -197,7 +191,6 @@ npm run dev
 - **Interactive Project Journey (`/contact`, components)**: Multi-step interactive budget and scope calculator.
 
 ### Administrative Control Panel (`/admin`)
-
 1. Navigate to `/admin/login`.
 2. Authenticate using configured administrator credentials.
 3. Access real-time management panels:
@@ -227,7 +220,6 @@ npm run dev
 ### Request Examples
 
 #### 1. cURL: Create New Service
-
 ```bash
 curl -X POST http://localhost:5000/api/services \
   -H "Content-Type: application/json" \
@@ -263,7 +255,6 @@ async function submitInquiry(formData) {
 ```
 
 #### 3. PHP (cURL): Retrieve Services List
-
 ```php
 <?php
 $ch = curl_init();
@@ -397,7 +388,6 @@ npm run build
 ```
 
 ### Manual Verification Matrix
-
 - [x] Responsive layout testing across mobile (375px), tablet (768px), and 4K desktop viewports.
 - [x] Multi-file media upload test with validation of physical file creation and DB document mapping.
 - [x] Interactive SEO audit analysis across diverse live URLs with real-time score output.
@@ -434,7 +424,6 @@ This project is open-source and available under the [MIT License](LICENSE).
 ## 21. Author & Maintainer
 
 **Aasim Ghaffar** — Full-Stack Software Engineer & Solutions Architect
-
 - **GitHub**: [@aasimghaffar](https://github.com/aasimghaffar)
 - **Email**: `contact@cubixsol.com`
 - **Website**: [cubixsol.com](https://cubixsol.com)
