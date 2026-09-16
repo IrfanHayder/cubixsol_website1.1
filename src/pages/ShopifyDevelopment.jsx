@@ -23,7 +23,7 @@ const DEFAULT_DATA = {
   title: 'Shopify Store Development',
   heroTitle: 'Shopify Store Development',
   cardTitle: 'Shopify Development',
-  desc: 'Shopify is the best way for eCommerce stores for all types of businesses to build, manage, and grow their online stores. If you want to start a startup or establish a brand, Shopify offers a user-friendly, secure solution to selling your products worldwide. Suppose you are looking to create a user-friendly and attractive Shopify store. In that case, Cubixsol offers you the best Shopify Development Services that help to create a seamless, high conversion, and attractive Shopify store to grab the attention of target customers. Cubixsol is a reliable Shopify development partner, where we offer customized Shopify store development and Shopify app development services to boost your Shopify store operations with attractive Shopify website design and advanced functionalities.',
+  desc: "Shopify is the premier eCommerce platform empowering businesses of all sizes to build, manage, and scale global online stores. Whether launching an ambitious startup or scaling an established brand, Shopify provides a rock-solid, secure, and user-friendly foundation to sell products worldwide.\n\nAt **Cubixsol**, we offer full-lifecycle **Shopify Development Services** designed to create seamless, high-converting, and attractive stores that captivate target customers. As a reliable Shopify development partner, we combine customized store development, responsive theme design, and bespoke app integrations to boost your store operations with attractive website design and advanced functionalities.",
   ctaPrimaryText: 'Talk to an Expert',
   ctaSecondaryText: 'Explore Shopify Services',
   features: [
@@ -334,14 +334,39 @@ export default function ShopifyDevelopment() {
                   </h1>
 
                   {/* Paragraphs with Clear Separation */}
-                  <div className="space-y-4 sm:space-y-5">
-                    <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-normal">
-                      {data.desc ? (
-                        formatInline(data.desc, { linkClass: 'text-[#00a4d8] hover:text-cyan-300 underline font-semibold' })
-                      ) : (
-                        formatInline(DEFAULT_DATA.desc, { linkClass: 'text-[#00a4d8] hover:text-cyan-300 underline font-semibold' })
-                      )}
-                    </p>
+                  {(() => {
+                    const rawDesc = data.desc || DEFAULT_DATA.desc || '';
+                    const paragraphs = rawDesc.split(/\n\n+/).map((p) => p.trim()).filter(Boolean);
+                    const lead = paragraphs[0] || rawDesc;
+                    const callout = paragraphs.length > 1 ? paragraphs.slice(1).join('\n\n') : null;
+                    return (
+                      <div className="space-y-4 sm:space-y-5">
+                        <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-normal">
+                          {formatInline(lead, { linkClass: 'text-[#00a4d8] hover:text-cyan-300 underline font-semibold' })}
+                        </p>
+                        {callout && (
+                          <div className="text-slate-300 text-xs sm:text-sm leading-relaxed font-normal bg-white/[0.04] border border-white/10 rounded-2xl p-4 sm:p-5 backdrop-blur-sm">
+                            {formatInline(callout, { linkClass: 'text-[#00a4d8] hover:text-cyan-300 underline font-semibold' })}
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })()}
+
+                  {/* Trust Highlights Badges */}
+                  <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-slate-300 pt-1">
+                    <div className="flex items-center gap-1.5">
+                      <CheckCircle2 className="w-4 h-4 text-[#00a4d8] shrink-0" />
+                      <span>Online Store 2.0 Themes</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <CheckCircle2 className="w-4 h-4 text-[#00a4d8] shrink-0" />
+                      <span>Sub-Second Performance</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <CheckCircle2 className="w-4 h-4 text-[#00a4d8] shrink-0" />
+                      <span>Custom Apps &amp; ERP Sync</span>
+                    </div>
                   </div>
 
                   {/* Hero CTA Buttons */}
