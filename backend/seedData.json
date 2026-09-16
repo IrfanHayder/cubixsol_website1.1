@@ -2428,7 +2428,20 @@
       "ctaPrimaryText": "Get API Developers",
       "ctaSecondaryText": "Get a Proposal",
       "desc": "Property Management Systems are software programs that enable landlords and property managers to optimize and manage their properties' regular tasks. PMSs work with CMS software to give an extensive range of features and capabilities for managing and tracking rental contracts, landlord information, repair requests, finances, and others. PMS rentals streamline everything from guest check-in to financial tracking, providing a centralized system that boosts operational efficiency.",
-      "faqs": [],
+      "faqs": [
+        {
+          "q": "What is a PMS integration, and why is it important?",
+          "a": "A Property Management System (PMS) integration connects your PMS with other software solutions like payment gateways, booking engines, and keyless entry systems. This integration centralizes operations, reduces manual work, ensures accurate data flow between systems, and improves efficiency – helping you manage bookings, payments, guest access, and more from one platform."
+        },
+        {
+          "q": "How does PMS integration work?",
+          "a": "PMS integration works by seamlessly exchanging and updating data between your PMS and connected systems. For example, when a booking is made through an online travel agent, the information flows directly into your PMS, which then updates availability and rates across all platforms automatically – eliminating the need for manual updates and minimizing errors."
+        },
+        {
+          "q": "Which systems can Cubixsol integrate with my PMS?",
+          "a": "Cubixsol can integrate your PMS with a wide range of solutions, including:\n\n• Booking engines & channel managers\n• Keyless room access systems\n• Revenue management software\n• Payment processing networks\n• POS systems\n• Guest review plug-ins\n\nThis ensures that all aspects of your property – from reservations to guest feedback – are efficiently managed."
+        }
+      ],
       "features": [
         "1K+ Clients around the world",
         "30+ Award Winning Integrations",

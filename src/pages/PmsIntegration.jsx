@@ -20,6 +20,7 @@ export default function PmsIntegration() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [activePmsSimulator, setActivePmsSimulator] = useState(0);
+  const [openFaq, setOpenFaq] = useState(0);
   const [isSyncing, setIsSyncing] = useState(false);
   const [syncStatus, setSyncStatus] = useState({
     state: 'synced',
@@ -228,6 +229,24 @@ export default function PmsIntegration() {
     { title: 'Investment & REITs', desc: 'Portfolio yield analytics & centralized NOI dashboards' },
     { title: 'Lending & Credit', desc: 'Mortgage-backed rental underwriting & cashflow feeds' },
   ];
+
+  // Default FAQs
+  const defaultFaqs = [
+    {
+      q: 'What is a PMS integration, and why is it important?',
+      a: 'A Property Management System (PMS) integration connects your PMS with other software solutions like payment gateways, booking engines, and keyless entry systems. This integration centralizes operations, reduces manual work, ensures accurate data flow between systems, and improves efficiency – helping you manage bookings, payments, guest access, and more from one platform.',
+    },
+    {
+      q: 'How does PMS integration work?',
+      a: 'PMS integration works by seamlessly exchanging and updating data between your PMS and connected systems. For example, when a booking is made through an online travel agent, the information flows directly into your PMS, which then updates availability and rates across all platforms automatically – eliminating the need for manual updates and minimizing errors.',
+    },
+    {
+      q: 'Which systems can Cubixsol integrate with my PMS?',
+      a: 'Cubixsol can integrate your PMS with a wide range of solutions, including:\n\n• Booking engines & channel managers\n• Keyless room access systems\n• Revenue management software\n• Payment processing networks\n• POS systems\n• Guest review plug-ins\n\nThis ensures that all aspects of your property – from reservations to guest feedback – are efficiently managed.',
+    },
+  ];
+
+  const faqs = (data?.faqs && data.faqs.length > 0) ? data.faqs : defaultFaqs;
 
   return (
     <div className="bg-white min-h-screen">
@@ -593,7 +612,98 @@ export default function PmsIntegration() {
         </div>
       </section>
 
-      {/* 🚀 7. Bottom Call to Action Banner */}
+      {/* ❓ 7. Frequently Asked Questions Section */}
+      <section className="py-16 sm:py-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Reveal className="text-center max-w-3xl mx-auto mb-12">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-50 text-sky-700 border border-sky-200 text-xs font-bold uppercase tracking-wider mb-3 shadow-sm">
+            <HelpCircle className="w-3.5 h-3.5 text-sky-600" />
+            <span>Common Questions</span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink tracking-tight mb-3">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+            Find quick answers to the most common questions our users ask. Whether you need help with our services, products, or policies, this section provides clear and helpful information to guide you.
+          </p>
+        </Reveal>
+
+        <div className="space-y-4">
+          {faqs.map((faq, idx) => {
+            const isOpen = openFaq === idx;
+            return (
+              <motion.div
+                key={faq.q || idx}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: idx * 0.05 }}
+                className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
+                  isOpen
+                    ? 'bg-white border-sky-300 shadow-md shadow-sky-500/5'
+                    : 'bg-slate-50/70 border-gray-200/80 hover:bg-white hover:border-gray-300'
+                }`}
+              >
+                <button
+                  onClick={() => setOpenFaq(isOpen ? null : idx)}
+                  type="button"
+                  className="w-full px-6 py-5 flex items-center justify-between text-left gap-4 cursor-pointer select-none"
+                >
+                  <span className="font-bold text-ink text-base sm:text-lg">
+                    {faq.q}
+                  </span>
+                  <span
+                    className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 ${
+                      isOpen
+                        ? 'bg-sky-600 text-white rotate-180'
+                        : 'bg-white border border-gray-200 text-gray-500'
+                    }`}
+                  >
+                    <ChevronRight className="w-4 h-4 rotate-90" />
+                  </span>
+                </button>
+
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: 'easeInOut' }}
+                    >
+                      <div className="px-6 pb-6 pt-1 text-gray-600 text-sm sm:text-base leading-relaxed border-t border-gray-100 mt-1">
+                        {faq.a.includes('•') ? (
+                          <div className="space-y-3 pt-2">
+                            {faq.a.split('\n\n').map((paragraph, pIdx) => {
+                              if (paragraph.includes('•')) {
+                                const bulletLines = paragraph.split('\n').filter(Boolean);
+                                return (
+                                  <ul key={pIdx} className="space-y-1.5 pl-2 my-2">
+                                    {bulletLines.map((line, lIdx) => (
+                                      <li key={lIdx} className="flex items-start gap-2.5 text-slate-700">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-sky-500 mt-2 shrink-0" />
+                                        <span>{line.replace(/^[•\-\*]\s*/, '')}</span>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                );
+                              }
+                              return <p key={pIdx}>{paragraph}</p>;
+                            })}
+                          </div>
+                        ) : (
+                          <p className="pt-2">{faq.a}</p>
+                        )}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* 🚀 8. Bottom Call to Action Banner */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <CtaBanner
           eyebrow="READY TO SCALE YOUR PROPERTY OPERATIONS?"

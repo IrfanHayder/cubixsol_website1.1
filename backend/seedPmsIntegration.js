@@ -129,6 +129,20 @@ async function seedPms() {
         { name: 'Opera PMS', category: 'Oracle Hospitality', icon: 'Database' },
         { name: 'Mews', category: 'Cloud Hotel PMS', icon: 'Boxes' },
       ],
+      faqs: [
+        {
+          q: 'What is a PMS integration, and why is it important?',
+          a: 'A Property Management System (PMS) integration connects your PMS with other software solutions like payment gateways, booking engines, and keyless entry systems. This integration centralizes operations, reduces manual work, ensures accurate data flow between systems, and improves efficiency – helping you manage bookings, payments, guest access, and more from one platform.',
+        },
+        {
+          q: 'How does PMS integration work?',
+          a: 'PMS integration works by seamlessly exchanging and updating data between your PMS and connected systems. For example, when a booking is made through an online travel agent, the information flows directly into your PMS, which then updates availability and rates across all platforms automatically – eliminating the need for manual updates and minimizing errors.',
+        },
+        {
+          q: 'Which systems can Cubixsol integrate with my PMS?',
+          a: 'Cubixsol can integrate your PMS with a wide range of solutions, including:\n\n• Booking engines & channel managers\n• Keyless room access systems\n• Revenue management software\n• Payment processing networks\n• POS systems\n• Guest review plug-ins\n\nThis ensures that all aspects of your property – from reservations to guest feedback – are efficiently managed.',
+        },
+      ],
       seo: {
         metaTitle: 'Property Management Systems (PMS) Integration Services | Cubixsol',
         metaDescription: 'Expert PMS integration services for Guesty, Hostaway, Cloudbeds, Opera, and custom channel managers, keyless access, and payment workflows.',
