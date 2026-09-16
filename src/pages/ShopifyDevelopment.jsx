@@ -22,8 +22,8 @@ const DEFAULT_DATA = {
   slug: 'shopify-development',
   title: 'Shopify Store Development',
   heroTitle: 'Shopify Store Development',
-  cardTitle: 'Shopify Development',
-  desc: "Shopify is the premier eCommerce platform empowering businesses of all sizes to build, manage, and scale global online stores. Whether launching an ambitious startup or scaling an established brand, Shopify provides a rock-solid, secure, and user-friendly foundation to sell products worldwide.\n\nAt **Cubixsol**, we offer full-lifecycle **Shopify Development Services** designed to create seamless, high-converting, and attractive stores that captivate target customers. As a reliable Shopify development partner, we combine customized store development, responsive theme design, and bespoke app integrations to boost your store operations with attractive website design and advanced functionalities.",
+  desc: "Shopify is the premier eCommerce platform empowering businesses of all sizes to build, manage, and scale global online stores. Whether launching an ambitious startup or scaling an established brand, Shopify provides a rock-solid, secure, and user-friendly foundation to sell products worldwide.",
+  longDesc: "At **Cubixsol**, we offer full-lifecycle **Shopify Development Services** designed to create seamless, high-converting, and attractive stores that captivate target customers. As a reliable Shopify development partner, we combine customized store development, responsive theme design, and bespoke app integrations to boost your store operations with attractive website design and advanced functionalities.",
   ctaPrimaryText: 'Talk to an Expert',
   ctaSecondaryText: 'Explore Shopify Services',
   features: [
@@ -338,15 +338,24 @@ export default function ShopifyDevelopment() {
                     const rawDesc = data.desc || DEFAULT_DATA.desc || '';
                     const paragraphs = rawDesc.split(/\n\n+/).map((p) => p.trim()).filter(Boolean);
                     const lead = paragraphs[0] || rawDesc;
-                    const callout = paragraphs.length > 1 ? paragraphs.slice(1).join('\n\n') : null;
+                    const callout =
+                      paragraphs.length > 1
+                        ? paragraphs.slice(1).join('\n\n')
+                        : data.longDesc || data.additionalParagraph || DEFAULT_DATA.longDesc;
                     return (
                       <div className="space-y-4 sm:space-y-5">
                         <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-normal">
-                          {formatInline(lead, { linkClass: 'text-[#00a4d8] hover:text-cyan-300 underline font-semibold' })}
+                          {formatInline(lead, {
+                            linkClass: 'text-[#00a4d8] hover:text-cyan-300 underline font-semibold',
+                            strongClass: 'text-white font-bold',
+                          })}
                         </p>
                         {callout && (
                           <div className="text-slate-300 text-xs sm:text-sm leading-relaxed font-normal bg-white/[0.04] border border-white/10 rounded-2xl p-4 sm:p-5 backdrop-blur-sm">
-                            {formatInline(callout, { linkClass: 'text-[#00a4d8] hover:text-cyan-300 underline font-semibold' })}
+                            {formatInline(callout, {
+                              linkClass: 'text-[#00a4d8] hover:text-cyan-300 underline font-semibold',
+                              strongClass: 'text-white font-bold',
+                            })}
                           </div>
                         )}
                       </div>
