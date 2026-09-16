@@ -8065,43 +8065,48 @@
         "name": "VP Engineering",
         "role": "Tech company"
       },
+      "seo": {
+        "metaTitle": "Custom Software Development for Tech Companies | Cubixsol",
+        "metaDescription": "Custom software development services for technology companies, startups, and enterprises. Scalable cloud architectures, SaaS, and API integrations.",
+        "keywords": "custom software development for tech companies, tech software company, saas platform development, mvp development, enterprise technology solutions"
+      },
       "slug": "technology",
       "title": "Technology",
       "icon": "Cpu",
-      "short": "Platforms, developer tools, and internal tech products.",
-      "desc": "For technology companies building platforms or internal tools, we embed as an engineering partner — architecture, delivery, and UI that matches product standards.",
+      "short": "Technology companies need software solutions that support innovation, improve operations, and adapt to changing market demands. Cubixsol is a custom software development company that builds secure, scalable, and high-performance applications for technology-driven businesses.",
+      "desc": "Technology companies need software solutions that support innovation, improve operations, and adapt to changing market demands. Cubixsol is a custom software development company that builds secure, scalable, and high-performance applications for technology-driven businesses.",
       "points": [
-        "Internal Developer Platforms (IDP) on Kubernetes & Terraform",
-        "High-throughput microservice & Kafka event bus backbones",
-        "Distributed tracing & OpenTelemetry observability stacks",
-        "Enterprise React & TypeScript design systems / component SDKs",
-        "Zero-downtime CI/CD GitOps pipelines",
-        "API gateway orchestration with gRPC & GraphQL"
+        "Startup Software Development",
+        "Digital Transformation Solutions",
+        "AI & Automation Software",
+        "Mobile & Web Applications",
+        "Cloud-Based Software Development",
+        "Enterprise Software Solutions"
       ],
       "servicesWeOffer": [
-        "Internal developer platform (IDP) engineering",
-        "Event-driven architecture & microservices delivery",
-        "Enterprise design systems & React component SDKs",
-        "Cloud infrastructure as code (Terraform, AWS, GCP)",
-        "API gateway & gRPC/GraphQL development",
-        "Site Reliability Engineering (SRE) & observability setup"
+        "Startup Software Development",
+        "Digital Transformation Solutions",
+        "AI & Automation Software",
+        "Mobile & Web Applications",
+        "Cloud-Based Software Development",
+        "Enterprise Software Solutions"
       ],
       "workAreas": [
         {
-          "title": "Internal Developer Platforms & Tooling",
-          "body": "Self-serve developer portals (Backstage), ephemeral preview environment spin-up, and standardized service scaffolding templates."
+          "title": "Scalable Software Architecture",
+          "body": "Our development approach focuses on flexible architectures that support future updates, increased users, and evolving business requirements."
         },
         {
-          "title": "Event-Driven Microservice Architecture",
-          "body": "Decoupled asynchronous event pipelines using Apache Kafka, RabbitMQ, and AWS SQS for resilient, high-volume data streams."
+          "title": "Secure Development Practices",
+          "body": "Security remains a core part of our development process. We apply industry-standard practices for data protection, authentication, access control, and application reliability."
         },
         {
-          "title": "Design Systems & Component Libraries",
-          "body": "Accessible, tokenized UI component libraries with automated Storybook testing, zero-runtime styling, and npm package publishing."
+          "title": "Seamless API & System Integration",
+          "body": "Modern technology platforms often depend on multiple services. We build and connect APIs that allow applications, databases, and third-party tools to work together efficiently."
         },
         {
-          "title": "Observability, SRE & Cloud Infrastructure",
-          "body": "Full-stack instrumentation with Prometheus, Grafana, OpenTelemetry, and Datadog to ensure 99.999% system availability."
+          "title": "Performance-Focused Engineering",
+          "body": "Fast and responsive software creates better user experiences. Our team optimizes applications for speed, stability, and consistent performance across different platforms."
         }
       ],
       "productsBuilt": [
@@ -8146,12 +8151,76 @@
         }
       ],
       "approachItems": [],
-      "solutionsItems": [],
+      "solutionsItems": [
+        {
+          "title": "Product Development & MVP Solutions",
+          "body": "We help technology companies convert concepts into functional digital products. Our team develops MVPs that validate ideas, test market demand, and create a foundation for future growth."
+        },
+        {
+          "title": "SaaS Platform Development",
+          "body": "We build scalable SaaS applications with flexible architectures, user management systems, subscription models, and cloud-based infrastructure. Our solutions support businesses that need reliable software products for multiple users and markets."
+        },
+        {
+          "title": "Enterprise Software Development",
+          "body": "Large organisations require software that connects teams, manages complex processes, and integrates with existing systems. Our experts develop enterprise platforms that improve efficiency, security, and operational control."
+        },
+        {
+          "title": "Cloud-Based Application Development",
+          "body": "Cloud technology enables businesses to access flexible and scalable infrastructure. We develop cloud applications that support performance, reliability, and seamless expansion as business requirements grow."
+        }
+      ],
       "stats": [],
-      "faqs": [],
+      "faqs": [
+        {
+          "q": "What does a custom software development company do?",
+          "a": "A custom software development company creates software solutions based on specific business requirements instead of using ready-made products. The development process includes planning, design, coding, testing, deployment, and ongoing improvements."
+        },
+        {
+          "q": "How much do custom software development services cost?",
+          "a": "The cost depends on project complexity, features, integrations, platforms, and development requirements. A simple MVP requires a different investment compared with a large enterprise software platform."
+        },
+        {
+          "q": "How long does custom software development take?",
+          "a": "Development timelines vary according to scope, technology requirements, and product complexity. Smaller applications may take several weeks, while advanced platforms require longer development cycles."
+        },
+        {
+          "q": "Does Cubixsol work with startups?",
+          "a": "Yes, we work as a software development company for startups by helping founders transform ideas into functional products, validate concepts, and build scalable solutions."
+        },
+        {
+          "q": "Can custom software integrate with existing systems?",
+          "a": "Yes, custom software can connect with existing platforms through APIs, databases, cloud services, and third-party integrations to improve workflow efficiency."
+        }
+      ],
       "techItems": [],
-      "whyChooseItems": [],
-      "trustPills": []
+      "whyChooseItems": [
+        {
+          "title": "Full Lifecycle Engineering",
+          "desc": "From initial architecture and rapid prototyping to production deployment and 24/7 observability."
+        },
+        {
+          "title": "Enterprise-Grade Security",
+          "desc": "Built-in security compliance, RBAC, OAuth2/OIDC, and automated vulnerability scanning."
+        },
+        {
+          "title": "High-Throughput Performance",
+          "desc": "Optimized microservices, distributed caching with Redis, and zero-downtime CI/CD delivery pipelines."
+        }
+      ],
+      "trustPills": [],
+      "ctaBannerButtonLink": "/contact",
+      "ctaBannerButtonText": "Start Your Software Project Today",
+      "ctaDesc": "Cubixsol helps businesses create secure, scalable, and future-ready software products. Partner with our team to develop solutions designed around your technology goals.",
+      "ctaPrimaryLink": "#estimate",
+      "ctaPrimaryText": "Get a Free Proposal",
+      "ctaSecondaryLink": "/contact",
+      "ctaSecondaryText": "Discuss your project",
+      "ctaTitle": "Ready to Build Your Custom Software Solution?",
+      "heroTitle": "Custom Software Development for Tech Companies",
+      "solutionsSubtitle": "We work as a technology partner that understands complex development needs, from MVP creation for startups to advanced platforms for growing enterprises.",
+      "solutionsTitle": "Software Solutions Designed for Technology Companies",
+      "whyChooseTitle": "Why Tech Companies Choose Cubixsol",
+      "workAreasTitle": "Built for Modern Technology Standards"
     },
     {
       "testimonial": {
