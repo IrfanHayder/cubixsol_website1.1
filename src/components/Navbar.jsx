@@ -14,6 +14,7 @@ const serviceMenuGroups = [
       'ios-development',
       'android-development',
       'android',
+      'shopify-development',
     ],
   },
   {
@@ -21,8 +22,9 @@ const serviceMenuGroups = [
     slugs: [
       'laravel-development',
       'php-development',
-      'api-development',
       'cms-development',
+      'pms-integration',
+      'api-development',
     ],
   },
   {
@@ -38,13 +40,13 @@ const serviceMenuGroups = [
   {
     title: 'Design & Growth',
     slugs: [
-      'ui-ux-design',
       'graphic-designing',
       'graphic-design',
       'ecommerce-solutions',
       'ecommerce-development',
       'ecommerce',
       'digital-marketing',
+      'ui-ux-design',
     ],
   },
 ];
@@ -89,14 +91,14 @@ export default function Navbar() {
     const uncategorized = services.filter(s => s && s.slug && !matchedSlugs.has(s.slug));
     uncategorized.forEach((s) => {
       const text = `${s.slug} ${s.title}`.toLowerCase();
-      if (text.includes('design') || text.includes('graphic') || text.includes('brand') || text.includes('marketing') || text.includes('commerce')) {
+      if (text.includes('shopify') || text.includes('app') || text.includes('mobile') || text.includes('ios') || text.includes('android')) {
+        const targetGroup = groups.find(g => g.title.includes('Build')) || groups[0];
+        targetGroup.servicesList.push(s);
+      } else if (text.includes('design') || text.includes('graphic') || text.includes('brand') || text.includes('marketing') || text.includes('commerce')) {
         const targetGroup = groups.find(g => g.title.includes('Design')) || groups[groups.length - 1];
         targetGroup.servicesList.push(s);
       } else if (text.includes('cloud') || text.includes('ai') || text.includes('data') || text.includes('devops')) {
         const targetGroup = groups.find(g => g.title.includes('Cloud')) || groups[2];
-        targetGroup.servicesList.push(s);
-      } else if (text.includes('app') || text.includes('mobile') || text.includes('ios') || text.includes('android')) {
-        const targetGroup = groups.find(g => g.title.includes('Build')) || groups[0];
         targetGroup.servicesList.push(s);
       } else {
         const targetGroup = groups.find(g => g.title.includes('Engineering')) || groups[1];
