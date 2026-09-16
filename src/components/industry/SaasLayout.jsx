@@ -4,7 +4,8 @@ import {
   Cloud, Server, Layers, Key, CreditCard, CheckCircle2,
   Zap, Code2, Users, Database, Terminal, Shield, ArrowRight,
   TrendingUp, Sparkles, Sliders, RefreshCw, Lock, Check,
-  ShieldCheck, Activity, Cpu, Rocket, Boxes, Laptop, Globe
+  ShieldCheck, Activity, Cpu, Rocket, Boxes, Laptop, Globe,
+  Building2
 } from 'lucide-react';
 import Reveal, { Stagger, StaggerItem } from '../Reveal';
 import { formatInline } from '../../utils/formatText';
