@@ -61,6 +61,9 @@ function isServiceSlugMatch(routeSlug, serviceSlug) {
 
 export default function ServiceDetail() {
   const { slug } = useParams();
+  if (slug === 'shopify-development' || slug === 'shopify-store-development') {
+    return <Navigate to="/shopify-development" replace />;
+  }
   const { services, loading, resolveIcon } = useServices();
   const [openFaq, setOpenFaq] = useState(null);
 

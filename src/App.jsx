@@ -25,6 +25,7 @@ import Blog from './pages/Blog';
 import BlogDetail from './pages/BlogDetail';
 import Careers from './pages/Careers';
 import PmsIntegration from './pages/PmsIntegration';
+import ShopifyDevelopment from './pages/ShopifyDevelopment';
 import AdminDashboard from './pages/Admin/Dashboard';
 import AdminLogin from './pages/Admin/Login';
 
@@ -89,6 +90,8 @@ function AppRoutes() {
         <Route path="/solutions/:slug" element={<SolutionDetail />} />
         <Route path="/pms-integration" element={<PmsIntegration />} />
         <Route path="/services/pms-integration" element={<PmsIntegration />} />
+        <Route path="/shopify-development" element={<ShopifyDevelopment />} />
+        <Route path="/services/shopify-development" element={<ShopifyDevelopment />} />
         <Route path="/services/:slug" element={<ServiceDetail />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/industries" element={<Industries />} />
