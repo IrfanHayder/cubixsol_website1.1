@@ -246,6 +246,15 @@ const SECTION_CONFIGS = {
       { name: 'tech', label: 'Tech Stack (one per line)', type: 'textarea', fullWidth: true, rows: 3, isArray: true },
       { name: 'outcomes', label: 'Outcomes (one per line)', type: 'textarea', fullWidth: true, rows: 3, isArray: true },
       { name: 'faqsText', label: 'FAQs (Format: Question | Answer, one per line)', type: 'textarea', fullWidth: true, rows: 6, isCustomArray: 'faqs' },
+      {
+        name: 'supportedPlatformsText',
+        label: 'Supported PMS Platforms & Ecosystem (Format: Platform Name | Category | Icon / Image URL or Lucide Name, one per line)',
+        type: 'textarea',
+        fullWidth: true,
+        rows: 8,
+        hint: 'Example: Guesty | Enterprise PMS | Hotel or Hostaway | Vacation Rental PMS | https://.../hostaway.svg',
+        isCustomArray: 'supportedPlatforms',
+      },
       { name: 'ctaBannerEyebrow', label: 'Bottom Banner Eyebrow (e.g. READY TO GROW?)' },
       { name: 'ctaBannerTitle', label: 'Bottom Banner Title (e.g. Ready to Build Your Web App?)', fullWidth: true },
       { name: 'ctaBannerDesc', label: 'Bottom Banner Description', type: 'textarea', fullWidth: true, rows: 3 },
@@ -801,6 +810,20 @@ function DbSection({ sectionKey, showToast }) {
             q: i.title,
             a: i.desc,
           }));
+        } else if (f.isCustomArray === 'supportedPlatforms') {
+          parsed.supportedPlatforms = (parsed[f.name] || '')
+            .split(/\r?\n/)
+            .map((line) => line.trim())
+            .filter(Boolean)
+            .map((line) => {
+              const parts = line.split('|').map((s) => s.trim());
+              return {
+                name: parts[0] || '',
+                category: parts[1] || '',
+                icon: parts[2] || '',
+              };
+            })
+            .filter((p) => p.name);
         } else {
           parsed[f.isCustomArray] = parseCustomListItems(parsed[f.name]);
         }
@@ -920,6 +943,10 @@ function DbSection({ sectionKey, showToast }) {
         if (Array.isArray(arr) && arr.length > 0) {
           if (f.isCustomArray === 'faqs') {
             stringified[f.name] = arr.map((i) => `${i.q} | ${i.a}`).join('\n\n');
+          } else if (f.isCustomArray === 'supportedPlatforms') {
+            stringified[f.name] = arr
+              .map((p) => `${p.name || ''} | ${p.category || ''} | ${p.icon || ''}`)
+              .join('\n');
           } else if (f.isCustomArray === 'serviceProcessSteps') {
             stringified[f.name] = arr
               .map((i) => {

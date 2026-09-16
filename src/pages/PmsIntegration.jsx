@@ -13,6 +13,7 @@ import { apiFetch } from '../utils/api';
 import { formatInline } from '../utils/formatText';
 import Reveal, { Stagger, StaggerItem } from '../components/Reveal';
 import CtaBanner from '../components/CtaBanner';
+import DynamicIcon from '../components/DynamicIcon';
 
 export default function PmsIntegration() {
   const { openEstimateModal } = useEstimateModal();
@@ -192,24 +193,28 @@ export default function PmsIntegration() {
   ];
 
   // Supported Platforms Ecosystem
-  const supportedPlatforms = [
-    { name: 'Guesty', category: 'Enterprise PMS' },
-    { name: 'Hostaway', category: 'Vacation Rental PMS' },
-    { name: 'Hostfully', category: 'Hospitality Platform' },
-    { name: 'Zeevou', category: 'Direct Booking PMS' },
-    { name: 'Smoobu', category: 'Channel Manager PMS' },
-    { name: 'Newbook', category: 'Hotel & Park PMS' },
-    { name: 'Hostify', category: 'All-in-One PMS' },
-    { name: 'Jurny', category: 'AI Hospitality PMS' },
-    { name: 'Lodgify', category: 'Short-Term Rental PMS' },
-    { name: 'OwnerRez', category: 'Direct Channel PMS' },
-    { name: 'Rentals United', category: 'Global OTA Hub' },
-    { name: 'Tokeet', category: 'Multi-Calendar PMS' },
-    { name: 'Uplisting', category: 'Automated PMS' },
-    { name: 'Cloudbeds', category: 'Hotel Management System' },
-    { name: 'Opera PMS', category: 'Oracle Hospitality' },
-    { name: 'Mews', category: 'Cloud Hotel PMS' },
+  const defaultPlatforms = [
+    { name: 'Guesty', category: 'Enterprise PMS', icon: 'Hotel' },
+    { name: 'Hostaway', category: 'Vacation Rental PMS', icon: 'Home' },
+    { name: 'Hostfully', category: 'Hospitality Platform', icon: 'Compass' },
+    { name: 'Zeevou', category: 'Direct Booking PMS', icon: 'Sparkles' },
+    { name: 'Smoobu', category: 'Channel Manager PMS', icon: 'RefreshCw' },
+    { name: 'Newbook', category: 'Hotel & Park PMS', icon: 'BookOpen' },
+    { name: 'Hostify', category: 'All-in-One PMS', icon: 'Server' },
+    { name: 'Jurny', category: 'AI Hospitality PMS', icon: 'Bot' },
+    { name: 'Lodgify', category: 'Short-Term Rental PMS', icon: 'Globe' },
+    { name: 'OwnerRez', category: 'Direct Channel PMS', icon: 'KeyRound' },
+    { name: 'Rentals United', category: 'Global OTA Hub', icon: 'Network' },
+    { name: 'Tokeet', category: 'Multi-Calendar PMS', icon: 'CalendarCheck' },
+    { name: 'Uplisting', category: 'Automated PMS', icon: 'TrendingUp' },
+    { name: 'Cloudbeds', category: 'Hotel Management System', icon: 'Cloud' },
+    { name: 'Opera PMS', category: 'Oracle Hospitality', icon: 'Database' },
+    { name: 'Mews', category: 'Cloud Hotel PMS', icon: 'Boxes' },
   ];
+
+  const supportedPlatforms = (data?.supportedPlatforms && data.supportedPlatforms.length > 0)
+    ? data.supportedPlatforms
+    : defaultPlatforms;
 
   // Featured Industries
   const featuredIndustries = [
@@ -517,13 +522,26 @@ export default function PmsIntegration() {
         <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-4">
           {supportedPlatforms.map((p, idx) => (
             <motion.div
-              key={p.name}
-              whileHover={{ y: -3 }}
-              className="p-4 rounded-xl bg-slate-50 border border-gray-100 hover:border-sky-300 hover:bg-white hover:shadow-card transition-all text-center flex flex-col justify-center items-center group"
+              key={p.name || idx}
+              whileHover={{ y: -4, scale: 1.02 }}
+              transition={{ duration: 0.2 }}
+              className="p-5 rounded-2xl bg-gradient-to-b from-white to-slate-50/80 border border-slate-200/80 hover:border-sky-400 hover:shadow-lg hover:shadow-sky-500/10 transition-all text-center flex flex-col justify-center items-center group relative overflow-hidden"
             >
-              <Building2 className="w-5 h-5 text-sky-600 mb-2 group-hover:scale-110 transition-transform" />
-              <p className="font-extrabold text-ink text-sm group-hover:text-sky-600 transition-colors">{p.name}</p>
-              <p className="text-[11px] text-gray-500 mt-0.5">{p.category}</p>
+              <div className="w-12 h-12 rounded-xl bg-sky-50/80 border border-sky-100 flex items-center justify-center mb-3 group-hover:bg-gradient-to-br group-hover:from-sky-500 group-hover:to-blue-600 group-hover:border-transparent transition-all duration-300 shadow-sm">
+                <DynamicIcon
+                  icon={p.icon || p.name}
+                  alt={p.name}
+                  title={p.name}
+                  className="w-6 h-6 text-sky-600 group-hover:text-white transition-colors duration-300 object-contain"
+                  fallbackName="Building2"
+                />
+              </div>
+              <p className="font-bold text-ink text-sm sm:text-base group-hover:text-sky-600 transition-colors tracking-tight">
+                {p.name}
+              </p>
+              <p className="text-[11px] font-medium text-slate-500 mt-1 line-clamp-1">
+                {p.category || 'PMS Integration'}
+              </p>
             </motion.div>
           ))}
         </div>

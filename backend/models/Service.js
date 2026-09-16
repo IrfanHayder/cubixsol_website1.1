@@ -49,6 +49,11 @@ const serviceSchema = new mongoose.Schema({
     title: { type: String },
     desc: { type: String }
   }],
+  supportedPlatforms: [{
+    name: { type: String },
+    category: { type: String },
+    icon: { type: String },
+  }],
   pricingSectionTitle: { type: String },
   pricingSectionText: { type: String },
   heroSubtitle: { type: String },

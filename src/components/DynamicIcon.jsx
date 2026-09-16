@@ -17,6 +17,22 @@ const FALLBACK_NAME_MAP = {
   'real estate': 'Building2',
   realestate: 'Building2',
   education: 'GraduationCap',
+  guesty: 'Hotel',
+  hostaway: 'Home',
+  hostfully: 'Compass',
+  zeevou: 'Sparkles',
+  smoobu: 'RefreshCw',
+  newbook: 'BookOpen',
+  hostify: 'Server',
+  jurny: 'Bot',
+  lodgify: 'Globe',
+  ownerrez: 'KeyRound',
+  'rentals united': 'Network',
+  tokeet: 'CalendarCheck',
+  uplisting: 'TrendingUp',
+  cloudbeds: 'Cloud',
+  opera: 'Database',
+  mews: 'Boxes',
 };
 
 export default function DynamicIcon({
@@ -26,12 +42,14 @@ export default function DynamicIcon({
   fallbackName = 'Building2',
   title = '',
 }) {
-  if (!icon && title) {
-    const lowerTitle = title.toLowerCase();
+  const queryText = (icon || title || '').toLowerCase();
+  if (queryText) {
     for (const [key, iconName] of Object.entries(FALLBACK_NAME_MAP)) {
-      if (lowerTitle.includes(key)) {
+      if (queryText === key || queryText.includes(key)) {
         const Matched = LucideIcons[iconName];
-        if (Matched) return <Matched className={className} />;
+        if (Matched && !icon?.startsWith?.('http') && !icon?.startsWith?.('/') && !icon?.startsWith?.('data:')) {
+          return <Matched className={className} />;
+        }
       }
     }
   }

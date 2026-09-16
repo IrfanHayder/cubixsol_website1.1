@@ -148,7 +148,8 @@
       "whyChooseTitle": "Quality-Focused Development",
       "faqsText": "How much does Android app development cost? | Android app development costs depend on the number of features, interface complexity, backend requirements, third-party integrations, security needs, and development approach. A basic application generally requires less investment than a platform involving multiple user roles, payments, live tracking, or custom administrative tools. We review the requirements before providing an estimate.\nHow long does it take to build an Android app? | The timeline depends on the project’s scope and technical complexity. A focused application with standard features may take a few months, while a larger product can require additional planning, development, testing, and integration work. We provide a milestone-based timeline after reviewing the requirements.\nShould I choose Kotlin or cross-platform development? | Kotlin is well suited to native Android applications requiring deep device integration, Android-specific features, or maximum platform control. Cross-platform development can be more efficient when a business wants to launch on Android and iOS with similar functionality. We recommend an approach after estimating the product goals and technical needs.\nCan Cubixsol publish my app on the Google Play Store? | Yes. We can prepare the release build, review relevant store requirements, and support the Google Play Store submission process. Final approval remains subject to Google’s current policies and review procedures.\nCan you update or improve an existing Android application? | Yes. Our developers review the existing application, identify performance and compatibility issues, fix bugs, update dependencies, and add new features. They then recommend the most effective path: optimising the current codebase or rebuilding specific components.",
       "serviceProcessText": "01 | Discover | We begin by defining the product idea, target users, business objectives, core features, integrations, and technical constraints. Early discovery helps the team separate essential requirements from lower-priority additions.\n02 | Plan | Our team organises the features, user journeys, development phases, technology choices, and delivery milestones. The plan gives stakeholders a clearer view of the project scope before full development starts.\n03 | Build | Developers create the application in structured stages while designers refine its interface and user experience. Regular progress updates help keep technical decisions and business expectations aligned.\n04 | Test | We test functionality, usability, performance, device compatibility, integrations, and common failure scenarios. We review and resolve identified issues before the production release.\n05 | Launch and Support | Once the application is approved, we prepare it for deployment and support the Play Store submission process. Post-launch services can include monitoring, maintenance, bug fixes, and planned improvements.",
-      "serviceProcessTitle": "Our Android Development Process"
+      "serviceProcessTitle": "Our Android Development Process",
+      "supportedPlatforms": []
     },
     {
       "seo": {
@@ -308,7 +309,8 @@
       "subServicesTitle": "Our Laravel Development Services",
       "whyChooseIntro": "Our experts combine disciplined development with clear project coordination. They help businesses move from an idea or an outdated system to a dependable Laravel product.",
       "whyChooseText": "Quality-Focused Engineering | We use structured architecture, coding standards, reviews, and testing to reduce avoidable defects and simplify future improvements. Every technical decision must support the product’s real requirements.\nDependable Delivery | We divide the project into defined phases with practical milestones and clear responsibilities. Potential blockers, changing requirements, and external dependencies are raised early to protect the schedule.\nTransparent Collaboration | You receive regular progress updates, working demonstrations, and direct explanations of technical decisions. The shared scope and priorities keep both teams aligned throughout development.\nOngoing Technical Support | Our involvement can continue after launch with monitoring, maintenance, upgrades, fixes, and feature development. Your application keeps receiving attention as user needs and business priorities change.",
-      "whyChooseTitle": "Why Choose Cubixsol for Laravel Development?"
+      "whyChooseTitle": "Why Choose Cubixsol for Laravel Development?",
+      "supportedPlatforms": []
     },
     {
       "seo": {
@@ -433,7 +435,8 @@
       "pricingSectionText": "AI can support different workflows across industries. Healthcare organizations can improve document processing and patient communication, while financial platforms can strengthen data analysis and fraud monitoring. Retail and e-commerce businesses can personalize recommendations, automate support, and forecast demand. Logistics companies can improve planning and operational visibility, while professional-service teams can search large document collections and generate structured reports.\nEvery solution begins with the operating problem—not with a predetermined model or platform.\n",
       "pricingSectionTitle": "AI Use Cases by Industry",
       "serviceProcessTitle": "Our AI Development Process",
-      "ctaBannerEyebrow": "INTELLIGENT WORKFLOWS & AUTOMATION"
+      "ctaBannerEyebrow": "INTELLIGENT WORKFLOWS & AUTOMATION",
+      "supportedPlatforms": []
     },
     {
       "seo": {
@@ -619,7 +622,8 @@
       "subServicesTitle": "Our API Development & Integration Services",
       "whyChooseText": "Quality-Focused Development | We build APIs around your product requirements and technical setup. Clean architecture, reliable data handling, proper testing, and clear documentation help keep the API easier to manage.\n\nOn-Time Delivery | Clear requirements and defined project stages help keep development organised. You can see what is being worked on and what comes next during the project.\n\nTransparent Communication | You should know what is happening during development. We keep communication clear and explain important technical decisions without unnecessary complexity.\n\nOngoing Support | APIs often need updates when applications or connected services change. Cubixsol can help with maintenance, integration updates, technical issues, and future improvements after launch.",
       "whyChooseTitle": "",
-      "cardTitle": "API Development Services"
+      "cardTitle": "API Development Services",
+      "supportedPlatforms": []
     },
     {
       "seo": {
@@ -777,7 +781,8 @@
       "subServicesIntro": "Choose a CMS solution that supports how your business publishes content, serves customers, and manages products. We shape each project around your workflows, design requirements, integrations, and plans for growth.",
       "subServicesTitle": "Our CMS Development Services",
       "whyChooseIntro": "We focus on the details that make a CMS project easier to review, launch, and manage.",
-      "whyChooseTitle": "Why Choose Cubixsol"
+      "whyChooseTitle": "Why Choose Cubixsol",
+      "supportedPlatforms": []
     },
     {
       "seo": {
@@ -967,7 +972,8 @@
       "whyChooseIntro": "A successful cloud project needs clear planning, reliable implementation, open communication, and support after launch. Cubixsol focuses on each part of the project to help businesses build and maintain dependable cloud environments.",
       "whyChooseText": "Quality-Focused Delivery | We focus on reliable infrastructure, suitable technologies, and clear project requirements. Each part of the work is planned around the needs of your applications and cloud environment.\nOn-Time Delivery | Clear planning and defined project stages help keep work organised. We set priorities and milestones so you have a clear view of project progress from discovery through launch.\nTransparent Communication | We keep communication simple and clear throughout the project. You receive updates on progress, requirements, issues, and upcoming work, so you know what is happening at each stage.\nOngoing Support | Cloud infrastructure can need updates, optimisation, monitoring, and technical support after launch. Our team can continue working with you to maintain and improve your cloud environment as your needs change.",
       "whyChooseTitle": "Why Choose Cubixsol?",
-      "serviceProcessIntro": "A structured path from assessing your environment to ongoing support after deployment — so releases stay fast and systems stay stable."
+      "serviceProcessIntro": "A structured path from assessing your environment to ongoing support after deployment — so releases stay fast and systems stay stable.",
+      "supportedPlatforms": []
     },
     {
       "seo": {
@@ -1155,7 +1161,8 @@
       "ctaBannerButtonText": "Get a Free Consultation",
       "ctaBannerDesc": "Choose us as your **custom web development company** and move from idea to launch with a clear plan, experienced specialists, and dependable technical support.",
       "ctaBannerEyebrow": "HAVE A WEB PROJECT IN MIND?",
-      "ctaBannerTitle": "Ready to Build Your Web Application? Let’s Talk"
+      "ctaBannerTitle": "Ready to Build Your Web Application? Let’s Talk",
+      "supportedPlatforms": []
     },
     {
       "seo": {
@@ -1350,7 +1357,8 @@
       "ctaPrimaryText": "Start a Project",
       "ctaSecondaryText": "Get a Free Estimate",
       "whyChooseText": "Quality-Focused Migration | We focus on accurate data transfer, careful planning, testing, and validation. Each stage is reviewed to help reduce errors and maintain data quality throughout the migration.\n\nPlanned Delivery | Clear milestones keep the project organised and make progress easier to review. Any changes to the project scope are discussed before work continues.\n\nTransparent Communication | You receive clear updates about completed work, current tasks, upcoming milestones, and possible risks. Our team keeps communication simple so you can make informed decisions throughout the project.\n\nOngoing Technical Support | Our work does not have to end after the migration is complete. We can continue helping with validation, troubleshooting, system changes, and other technical needs after launch.",
-      "cardTitle": "Data Migration"
+      "cardTitle": "Data Migration",
+      "supportedPlatforms": []
     },
     {
       "seo": {
@@ -1511,7 +1519,8 @@
       "subServicesText": "Our DevOps Services | Our DevOps team helps businesses improve software delivery through automation, cloud infrastructure, monitoring, and modern development practices. Each service can support a new application, an existing system, or a wider infrastructure improvement project.\nCI/CD Pipeline Development | We build CI/CD pipelines to automate code building, testing, and deployment. Automated workflows reduce repetitive manual tasks and create a consistent process for moving application updates between development, staging, and production environments.\nInfrastructure as Code | Infrastructure as Code helps teams manage servers, networks, and other infrastructure through configuration files instead of repeated manual setup. We use tools such as Terraform to create consistent and repeatable environments.\nCloud Operations | We help businesses manage cloud infrastructure with a focus on stability, resource management, and application performance. Our AWS consulting services cover cloud setup, infrastructure management, deployment workflows, and operational improvements.\nMonitoring and Observability | Application and infrastructure monitoring gives your team better visibility into system performance and health. We set up monitoring and alerts to help identify errors, performance issues, resource problems, and other concerns early.\nKubernetes Consulting Services | We help businesses deploy and manage containerised applications using Kubernetes. Our Kubernetes consulting services cover Kubernetes planning, configuration, deployment, scaling, and ongoing management.\n\n\n\n\n\n",
       "subServicesTitle": "DevOps Consulting Services for Reliable Software Delivery",
       "whyChooseText": "Quality-Focused Development | We focus on reliable infrastructure, consistent deployment workflows, maintainable configurations, and stable application environments. Each project receives an approach based on its technical requirements.\nPlanned Delivery | Clear milestones keep the project organised and make progress easier to review. We define the work, delivery stages, and technical requirements before implementation moves forward.\nTransparent Communication | You receive clear updates about completed work, current tasks, upcoming steps, and possible project concerns. Direct communication keeps technical work aligned with your requirements throughout development.\nOngoing Technical Support | DevOps needs can change after deployment. We can continue supporting infrastructure, monitoring, deployment workflows, troubleshooting, and technical improvements as your applications and workloads grow.\n\n",
-      "whyChooseTitle": "Why Choose Cubixsol?"
+      "whyChooseTitle": "Why Choose Cubixsol?",
+      "supportedPlatforms": []
     },
     {
       "seo": {
@@ -1741,7 +1750,8 @@
       "pricingSectionTitle": "Affordable, Transparent Pricing",
       "ctaBannerEyebrow": "SCALE YOUR QUALIFIED TRAFFIC",
       "businessTypesText": "Small Businesses | Our **digital marketing services for small businesses** prioritize the channels most likely to generate near-term value. Focused campaigns, practical budgets, and clear reporting help smaller teams compete without paying for activity they do not need.\n\nB2B Companies | Our **B2B digital marketing services** connect search, content, paid media, and lead nurturing with longer sales cycles. Campaigns target relevant decision-makers and support the journey from initial research to sales conversation.\n\nFinancial Services | **Digital marketing for financial services** requires credibility, careful messaging, and close attention to platform and industry requirements. We create campaigns that explain complex offers clearly while supporting trust, lead quality, and responsible customer acquisition.\n\nE-Commerce Brands | Our **ecommerce digital marketing services** combine product-focused SEO, paid acquisition, remarketing, email automation, and conversion insights. The goal is to attract purchase-ready shoppers, recover missed sales, and increase customer value over time.\n\nHome Service Providers | Our approach to **home services digital marketing** focuses on local intent, service-area visibility, calls, quote requests, and booked jobs. SEO, paid search, and location-focused landing pages help customers find the right service when demand is highest.",
-      "cardTitle": "Digital Marketing Services"
+      "cardTitle": "Digital Marketing Services",
+      "supportedPlatforms": []
     },
     {
       "seo": {
@@ -1919,7 +1929,8 @@
       "ctaBannerTitle": "Ready to Build Your E-Commerce Platform?",
       "businessTypesIntro": "Tailored digital commerce architectures for consumer brands, enterprise wholesalers, and multi-vendor marketplaces.",
       "businessTypesTitle": "E-Commerce Use Cases & Examples",
-      "cardTitle": "E-Commerce Solutions"
+      "cardTitle": "E-Commerce Solutions",
+      "supportedPlatforms": []
     },
     {
       "seo": {
@@ -2071,7 +2082,8 @@
       "whyChooseText": "Quality-Focused Development | Code reviews, structured testing, and clear technical standards help us create stable applications that remain easier to maintain and improve.\n\nOrganised, On-Time Delivery | Defined milestones and focused development cycles keep the project moving. Regular progress reviews help identify delays early and protect delivery priorities.\n\nTransparent Communication | You receive clear updates on scope, progress, technical decisions, and upcoming work. Our team discusses changes before they affect the budget or timeline.\n\nOngoing Technical Support | Launch marks the start of continuous product improvement. We can monitor the application, resolve issues, update dependencies, improve performance, and develop new features as user needs change.",
       "whyChooseTitle": "Why Choose Cubixsol?",
       "menuTitle": "Mobile App",
-      "cardTitle": "Mobile App Development"
+      "cardTitle": "Mobile App Development",
+      "supportedPlatforms": []
     },
     {
       "seo": {
@@ -2241,7 +2253,8 @@
       "subServicesTitle": "Our PHP Development Services",
       "whyChooseIntro": "Our experts combines practical engineering with clear project communication to deliver PHP solutions built for real business use.\n",
       "whyChooseText": "- Quality-focused development: We follow clean coding practices, review important components, and test critical workflows before deployment.\n- Reliable project delivery: Defined milestones, realistic schedules, and regular progress reviews keep development moving in the right direction.\n- Transparent communication: You receive clear updates about completed work, upcoming priorities, technical decisions, and potential project risks.\n- Ongoing technical support: Our team can handle updates, security improvements, performance optimization, bug fixes, and future feature development after launch.",
-      "whyChooseTitle": "Why Choose Cubixsol?"
+      "whyChooseTitle": "Why Choose Cubixsol?",
+      "supportedPlatforms": []
     },
     {
       "seo": {
@@ -2399,7 +2412,8 @@
       "ctaBannerButtonText": "Request a Design Quote",
       "ctaBannerDesc": "Transform your visual presence with Cubixsol’s **professional graphic design services** for branding, marketing assets, and scalable design systems.",
       "ctaBannerEyebrow": "STAND OUT WITH DISTINCTIVE DESIGN",
-      "ctaBannerTitle": "Ready to Elevate Your Brand Identity?"
+      "ctaBannerTitle": "Ready to Elevate Your Brand Identity?",
+      "supportedPlatforms": []
     },
     {
       "seo": {
@@ -2521,7 +2535,89 @@
           "desc": "Specialized API developers experienced across all major PMS platforms and channel managers."
         }
       ],
-      "whyChooseTitle": "Why Choose Cubixsol For PMS Integration"
+      "whyChooseTitle": "Why Choose Cubixsol For PMS Integration",
+      "supportedPlatforms": [
+        {
+          "name": "Guesty",
+          "category": "Enterprise PMS",
+          "icon": "Hotel"
+        },
+        {
+          "name": "Hostaway",
+          "category": "Vacation Rental PMS",
+          "icon": "Home"
+        },
+        {
+          "name": "Hostfully",
+          "category": "Hospitality Platform",
+          "icon": "Compass"
+        },
+        {
+          "name": "Zeevou",
+          "category": "Direct Booking PMS",
+          "icon": "Sparkles"
+        },
+        {
+          "name": "Smoobu",
+          "category": "Channel Manager PMS",
+          "icon": "RefreshCw"
+        },
+        {
+          "name": "Newbook",
+          "category": "Hotel & Park PMS",
+          "icon": "BookOpen"
+        },
+        {
+          "name": "Hostify",
+          "category": "All-in-One PMS",
+          "icon": "Server"
+        },
+        {
+          "name": "Jurny",
+          "category": "AI Hospitality PMS",
+          "icon": "Bot"
+        },
+        {
+          "name": "Lodgify",
+          "category": "Short-Term Rental PMS",
+          "icon": "Globe"
+        },
+        {
+          "name": "OwnerRez",
+          "category": "Direct Channel PMS",
+          "icon": "KeyRound"
+        },
+        {
+          "name": "Rentals United",
+          "category": "Global OTA Hub",
+          "icon": "Network"
+        },
+        {
+          "name": "Tokeet",
+          "category": "Multi-Calendar PMS",
+          "icon": "CalendarCheck"
+        },
+        {
+          "name": "Uplisting",
+          "category": "Automated PMS",
+          "icon": "TrendingUp"
+        },
+        {
+          "name": "Cloudbeds",
+          "category": "Hotel Management System",
+          "icon": "Cloud"
+        },
+        {
+          "name": "Opera PMS",
+          "category": "Oracle Hospitality",
+          "icon": "Database"
+        },
+        {
+          "name": "Mews",
+          "category": "Cloud Hotel PMS",
+          "icon": "Boxes"
+        }
+      ]
     },
     {
       "seo": {
@@ -2675,7 +2771,8 @@
       "subServicesTitle": "Our UI/UX Design Services",
       "whyChooseText": "Quality-Focused Design | We focus on clear layouts, simple navigation, consistent interfaces, and practical user flows. Each screen has a clear purpose and supports the tasks users need to complete.\n\nPlanned Delivery | We divide the work into clear stages so you can review progress throughout the project. If requirements change, we discuss the effect on the design scope and delivery plan before moving forward.\n\nTransparent Communication | You receive clear updates on completed work, current tasks, upcoming steps, and any issues that need your input. Regular communication keeps the project aligned with your requirements.\n\nOngoing Design Support | Your design needs can change as your product grows. We can support new features, additional screens, design updates, and changes to your existing design system after the initial project.",
       "whyChooseTitle": "Why Choose Cubixsol?",
-      "cardTitle": "UI UX Design Services"
+      "cardTitle": "UI UX Design Services",
+      "supportedPlatforms": []
     },
     {
       "seo": {
@@ -2830,7 +2927,8 @@
       "subServicesText": "Native iOS App Development | We build native iPhone applications with Swift and Apple frameworks to deliver responsive performance, secure data handling, and direct access to device features. Native development works well for products that require advanced functionality, complex integrations, or a deeply optimised iOS experience.\nSwiftUI App Development | Our developers use SwiftUI to create clean, consistent interfaces across supported Apple devices. Reusable components, clear state management, and modern development practices help us accelerate implementation while keeping the codebase maintainable as the application grows.\niPad App Development | We develop iPad applications that use larger displays, multitasking features, adaptable layouts, and touch-based interactions effectively. Our team can create a dedicated iPad product or extend an existing iPhone application to provide a stronger tablet experience.\nApp Store Launch | We prepare release builds, configure required app information, support TestFlight testing, and manage the technical submission process. Our team also addresses review feedback and resolves submission issues to help move the application toward approval.\niOS App Maintenance and Upgrades | We monitor performance, fix bugs, update dependencies, improve compatibility, and add features after launch. Regular maintenance helps the application remain stable as Apple releases new iOS versions, devices, frameworks, and App Store requirements.",
       "subServicesTitle": "Our iOS Development Services",
       "whyChooseText": "Quality-Focused Engineering | Code reviews, structured testing, and clear development standards help us create stable applications that remain easier to maintain and extend.\nOrganised, On-Time Delivery | Defined milestones, prioritised features, and regular progress reviews keep the project focused and help the team meet agreed delivery targets.\nTransparent Collaboration | You receive clear updates, working builds, and direct visibility into priorities, progress, risks, and upcoming decisions throughout development.\nOngoing Product Support | Our involvement can continue after launch through performance monitoring, bug fixes, compatibility updates, feature development, and technical guidance.\n\n\n\n\n",
-      "whyChooseTitle": "Why Choose Cubixsol for iOS Development?"
+      "whyChooseTitle": "Why Choose Cubixsol for iOS Development?",
+      "supportedPlatforms": []
     }
   ],
   "initialSolutions": [
