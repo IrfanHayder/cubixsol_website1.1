@@ -17,6 +17,7 @@ import * as LucideIcons from 'lucide-react';
 import Breadcrumb from '../components/Breadcrumb';
 import CtaBanner from '../components/CtaBanner';
 import Reveal, { Stagger, StaggerItem } from '../components/Reveal';
+import DynamicIcon from '../components/DynamicIcon';
 import { useServices } from '../context/ServicesContext';
 import { formatInline, FormatRichText } from '../utils/formatText';
 import { apiFetch } from '../utils/api';
@@ -70,18 +71,22 @@ const defaultPageData = {
     {
       title: 'Business-first planning',
       desc: 'We connect technical decisions to user needs, operational requirements, and commercial goals.',
+      icon: '/uploads/media-1789566441929-109737117.svg',
     },
     {
       title: 'Cross-functional expertise',
       desc: 'Developers, designers, QA specialists, consultants, and marketers collaborate throughout delivery.',
+      icon: '/uploads/media-1789566441929-4433635.svg',
     },
     {
       title: 'Enterprise-ready thinking',
       desc: 'Our **custom enterprise software development services** prioritize scalability, integrations, maintainability, and long-term product performance.',
+      icon: '/uploads/media-1789566441929-227301020.svg',
     },
     {
       title: 'Transparent execution',
       desc: 'Defined milestones, regular communication, testing, and documented feedback keep the project moving in the right direction.',
+      icon: '/uploads/media-1789566441930-7622150.svg',
     },
   ],
 
@@ -419,22 +424,46 @@ export default function Services() {
               </div>
 
               <div className="lg:col-span-7 grid sm:grid-cols-2 gap-4">
-                {whyChooseItems.map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="bg-white/95 backdrop-blur-sm rounded-2xl p-5 border border-gray-100/90 shadow-card hover:shadow-elev hover:-translate-y-1 transition-all duration-300"
-                  >
-                    <div className="w-8 h-8 rounded-xl bg-primary-100/70 text-primary-700 flex items-center justify-center mb-3.5 font-bold text-xs">
-                      <ShieldCheck className="w-4 h-4 text-primary-600" />
+                {whyChooseItems.map((item, idx) => {
+                  const getWhyChooseIcon = (it, i) => {
+                    if (it?.icon) return it.icon;
+                    const title = (it?.title || '').toLowerCase();
+                    if (title.includes('business') || title.includes('planning')) return '/uploads/media-1789566441929-109737117.svg';
+                    if (title.includes('cross') || title.includes('expertise')) return '/uploads/media-1789566441929-4433635.svg';
+                    if (title.includes('enterprise')) return '/uploads/media-1789566441929-227301020.svg';
+                    if (title.includes('transparent') || title.includes('execution')) return '/uploads/media-1789566441930-7622150.svg';
+                    const list = [
+                      '/uploads/media-1789566441929-109737117.svg',
+                      '/uploads/media-1789566441929-4433635.svg',
+                      '/uploads/media-1789566441929-227301020.svg',
+                      '/uploads/media-1789566441930-7622150.svg',
+                    ];
+                    return list[i % list.length] || 'ShieldCheck';
+                  };
+
+                  const iconSrc = getWhyChooseIcon(item, idx);
+
+                  return (
+                    <div
+                      key={idx}
+                      className="group bg-white/95 backdrop-blur-sm rounded-2xl p-5 sm:p-6 border border-gray-100/90 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_-12px_rgba(0,164,216,0.16)] hover:border-cyan-200 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-start"
+                    >
+                      <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-sky-50 via-cyan-50 to-blue-50/80 border border-cyan-100/90 flex items-center justify-center mb-4 group-hover:bg-gradient-to-br group-hover:from-[#00a4d8] group-hover:via-[#0284c7] group-hover:to-[#0369a1] group-hover:border-transparent group-hover:shadow-lg group-hover:shadow-[#00a4d8]/30 group-hover:scale-105 group-hover:-translate-y-0.5 transition-all duration-300 ease-out shrink-0 overflow-hidden">
+                        <DynamicIcon
+                          icon={iconSrc}
+                          title={item.title}
+                          className="w-7 h-7 sm:w-8 sm:h-8 object-contain text-[#00a4d8] group-hover:brightness-0 group-hover:invert transition-all duration-300"
+                        />
+                      </div>
+                      <h3 className="font-extrabold text-base sm:text-lg text-ink mb-2 group-hover:text-[#00a4d8] transition-colors">
+                        {item.title}
+                      </h3>
+                      <p className="text-xs sm:text-sm text-gray-500 leading-relaxed">
+                        {formatInline(item.desc)}
+                      </p>
                     </div>
-                    <h3 className="font-bold text-sm sm:text-base text-ink mb-1.5">
-                      {item.title}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-gray-500 leading-relaxed">
-                      {formatInline(item.desc)}
-                    </p>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </Reveal>

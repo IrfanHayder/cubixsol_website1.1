@@ -14,7 +14,9 @@ import {
   ChevronDown,
   ChevronUp,
   Loader2,
+  Image as ImageIcon,
 } from 'lucide-react';
+import DynamicIcon from '../DynamicIcon';
 import { API_BASE, apiFetch } from '../../utils/api';
 
 export default function ServicesPageEditor({ showToast }) {
@@ -72,18 +74,22 @@ export default function ServicesPageEditor({ showToast }) {
       {
         title: 'Business-first planning',
         desc: 'We connect technical decisions to user needs, operational requirements, and commercial goals.',
+        icon: '/uploads/media-1789566441929-109737117.svg',
       },
       {
         title: 'Cross-functional expertise',
         desc: 'Developers, designers, QA specialists, consultants, and marketers collaborate throughout delivery.',
+        icon: '/uploads/media-1789566441929-4433635.svg',
       },
       {
         title: 'Enterprise-ready thinking',
         desc: 'Our **custom enterprise software development services** prioritize scalability, integrations, maintainability, and long-term product performance.',
+        icon: '/uploads/media-1789566441929-227301020.svg',
       },
       {
         title: 'Transparent execution',
         desc: 'Defined milestones, regular communication, testing, and documented feedback keep the project moving in the right direction.',
+        icon: '/uploads/media-1789566441930-7622150.svg',
       },
     ],
 
@@ -678,6 +684,22 @@ export default function ServicesPageEditor({ showToast }) {
                   >
                     <Trash2 size={16} />
                   </button>
+                </div>
+                <div className="flex items-center gap-2 pt-1">
+                  <div className="w-8 h-8 rounded-lg bg-white border border-gray-200 flex items-center justify-center shrink-0 shadow-xs overflow-hidden">
+                    <DynamicIcon
+                      icon={item.icon || 'ShieldCheck'}
+                      title={item.title}
+                      className="w-5 h-5 object-contain text-primary-600"
+                    />
+                  </div>
+                  <input
+                    type="text"
+                    value={item.icon || ''}
+                    onChange={(e) => handleListItemChange('whyChooseItems', idx, 'icon', e.target.value)}
+                    placeholder="Icon SVG / Image URL (e.g. /uploads/media-...svg)"
+                    className="flex-1 px-3 py-1.5 rounded-lg border border-gray-200 text-xs text-gray-700 font-mono focus:border-primary-500 outline-none"
+                  />
                 </div>
                 <textarea
                   rows={2}
