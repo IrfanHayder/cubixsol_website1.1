@@ -2403,6 +2403,128 @@
     },
     {
       "seo": {
+        "metaTitle": "Property Management Systems (PMS) Integration Services | Cubixsol",
+        "metaDescription": "Expert PMS integration services for Guesty, Hostaway, Cloudbeds, Opera, and custom channel managers, keyless access, and payment workflows.",
+        "keywords": "PMS integration, property management systems, guesty integration, hostaway api, channel manager sync, keyless access pms"
+      },
+      "slug": "pms-integration",
+      "businessTypesItems": [],
+      "cardTitle": "PMS Integration",
+      "color": "text-sky-600 bg-sky-50",
+      "ctaPrimaryText": "Get API Developers",
+      "ctaSecondaryText": "Get a Proposal",
+      "desc": "Property Management Systems are software programs that enable landlords and property managers to optimize and manage their properties' regular tasks. PMSs work with CMS software to give an extensive range of features and capabilities for managing and tracking rental contracts, landlord information, repair requests, finances, and others. PMS rentals streamline everything from guest check-in to financial tracking, providing a centralized system that boosts operational efficiency.",
+      "faqs": [],
+      "features": [
+        "1K+ Clients around the world",
+        "30+ Award Winning Integrations",
+        "97% Business Growth Rate",
+        "60+ Expert Team Members"
+      ],
+      "gradient": "from-sky-500 to-blue-600",
+      "heroImage": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&h=800&q=75",
+      "icon": "Building2",
+      "longDesc": "Property management systems (PMS) control all property elements, including tenants' onboarding process, rent collection, upkeep arrangements, and monitoring. They can also provide analytics and reports that will assist homeowners and managers in making smart choices about the properties they own.",
+      "menuTitle": "PMS Integration",
+      "outcomes": [],
+      "serviceProcessIntro": "Our structured 5-phase execution ensures safe data migrations, minimal disruption to active reservations, and reliable go-live delivery.",
+      "serviceProcessSteps": [
+        {
+          "stepNumber": "01",
+          "title": "Consultation",
+          "desc": "This phase allows experts to define the optimum PMS integration solutions for your needs. For a smooth integration, our professionals will handle any technological or safety issues that may arise.",
+          "points": []
+        },
+        {
+          "stepNumber": "02",
+          "title": "Planning",
+          "desc": "In the planning phase, we create a comprehensive integration plan based on your requirements. It entails defining the task's scope, selecting suitable PMSs rental, and developing timelines. We establish critical milestones to maintain consistency with your business operations and system development.",
+          "points": []
+        },
+        {
+          "stepNumber": "03",
+          "title": "Implementation",
+          "desc": "When the plan of action is approved, we start the integration process. Our expertise will integrate your present systems with the suitable PMS rentals, ensuring that data transfers safely and quickly. We manage all of the back work, allowing your business activities to continue uninterrupted.",
+          "points": []
+        },
+        {
+          "stepNumber": "04",
+          "title": "Testing",
+          "desc": "Before moving live, we thoroughly test the integration to ensure that everything functions properly. This includes tests for operation, optimization of performance, and safety inspections to guarantee that the PMS operates as intended.",
+          "points": []
+        },
+        {
+          "stepNumber": "05",
+          "title": "Deployment",
+          "desc": "After successful testing, we will begin integrating the PMS rental into your existing system. Once tested, we deploy the system into your live environment. Every module is fully functional, from the key management system for property management to payment and booking synchronization.",
+          "points": []
+        }
+      ],
+      "serviceProcessTitle": "Organized Strategy For PMS Integration",
+      "subServicesIntro": "Many options stand out if you're looking for complete property management software to help you optimize the vacation rental business. Industry leaders like Guesty, Hostaway, Hostfully, Zeevou, Smoobu, Lodgify, OwnerRez, Rentals United, Tokeet, Uplisting, Cloudbeds, and Opera provide comprehensive solutions for booking, guest communication, payment processing, keyless access, and smooth multi-property monitoring.",
+      "subServicesItems": [
+        {
+          "title": "Booking engine / Channel Manager",
+          "desc": "Channel executives assist hotels in managing their online distribution by connecting them to various online platforms and their online booking sites. Hotels can use a channel manager to modify inventory and rates throughout the PMS integrations system. Connecting your PMS systems with channel manager and PMS integration solutions saves valuable time by providing central control over stock, pricing, and bookings."
+        },
+        {
+          "title": "Room Access / Keyless Access Solution",
+          "desc": "Keyless entry systems with our key management system for property management allow visitors to open their hotel entrances without using a genuine key. Rather, visitors enter an authorization code or mobile key from their smartphone. Connecting your PMS to access-to-space solutions like smart keycards simplifies check-in and access control significantly, eliminating manual front-desk keycard encoding."
+        },
+        {
+          "title": "Revenue Management System",
+          "desc": "A revenue management system forecasts traveler habits and demand by using previous information, market trends, and live indicators. With this information, hotels determine the best price for rooms to maximize profits. Two-way connectivity between your PMS and revenue management software enables precise forecasting, dynamic nightly rate adjustments, and real-time inventory pricing optimization."
+        },
+        {
+          "title": "Payment Processing Network",
+          "desc": "A payment processing network enables hotels and property managers to take credit card payments smoothly. Linking your PMS with a secure payment gateway makes bookings and departures at the reception desk seamless. After guests enter payment information, transactions are transmitted to the payment handling network and invoices in the PMS are promptly updated in real time."
+        },
+        {
+          "title": "POS System Integration",
+          "desc": "Point-of-sale (POS) systems allow hotel and resort staff to handle reservations for rooms or collect transactions for onsite amenities like restaurants, bars, and spas. By connecting your PMS and POS systems, amenity expenses can be charged to guest room folios automatically, decreasing human error and streamlining guest checkout."
+        },
+        {
+          "title": "Guest Review Plug-In",
+          "desc": "Guest Review Plug-In services provide an easy way to collect, organize, and display feedback from guests directly on property management systems (PMS). The system enables hotel businesses to track and present guest experiences, improving online reputation and attracting new guests with real-time feedback synchronization across booking channels."
+        }
+      ],
+      "subServicesTitle": "Our PMS Integration Services",
+      "tech": [
+        "Guesty API",
+        "Hostaway",
+        "Opera PMS",
+        "Cloudbeds",
+        "Stripe",
+        "Node.js",
+        "Webhooks",
+        "REST APIs"
+      ],
+      "techDesc": "We build custom two-way APIs and webhooks for all top-tier PMS and vacation rental platforms including Guesty, Hostaway, Hostfully, Zeevou, Smoobu, Newbook, Hostify, Jurny, Lodgify, OwnerRez, Rentals United, Tokeet, Uplisting, Cloudbeds, Opera PMS, and Mews.",
+      "techTitle": "Supported Property Management Platforms & Ecosystem",
+      "title": "Property Management Systems Integration",
+      "whyChooseIntro": "Proven integration engineering backed by global delivery, deep API expertise, and high-uptime connectivity.",
+      "whyChooseItems": [
+        {
+          "title": "1K+ Clients Worldwide",
+          "desc": "Trusted by vacation rental managers, boutique hotels, and global property portfolios."
+        },
+        {
+          "title": "30+ Industry Awards",
+          "desc": "Recognized for high-speed API aggregation and robust PMS sync architectures."
+        },
+        {
+          "title": "97% Business Growth",
+          "desc": "Clients experience significant uplift in direct bookings, automated guest workflows, and lower operational overhead."
+        },
+        {
+          "title": "60+ Senior Engineers",
+          "desc": "Specialized API developers experienced across all major PMS platforms and channel managers."
+        }
+      ],
+      "whyChooseTitle": "Why Choose Cubixsol For PMS Integration"
+    },
+    {
+      "seo": {
         "metaTitle": "UI/UX Design Services | Cubixsol",
         "metaDescription": "Give users a clear and enjoyable path through your product. Our UI/UX specialists turn research and business requirements into user flows, wireframes, interactive prototypes, accessible interfaces, and consistent design systems.",
         "keywords": "Figma, FigJam, Principle, Storybook",
@@ -6616,7 +6738,6 @@
         "name": "Head of Digital",
         "role": "Retail brand"
       },
-      "trustPills": [],
       "slug": "ecommerce",
       "title": "E-Commerce",
       "icon": "ShoppingCart",
@@ -6802,7 +6923,8 @@
       "ctaPrimaryLink": "#estimate",
       "ctaPrimaryText": "Get a Proposal",
       "ctaSecondaryLink": "/contact",
-      "ctaSecondaryText": "Discuss your Project"
+      "ctaSecondaryText": "Discuss your Project",
+      "trustPills": []
     },
     {
       "testimonial": {
@@ -6810,7 +6932,6 @@
         "name": "Product Lead",
         "role": "EdTech scale-up"
       },
-      "trustPills": [],
       "slug": "education",
       "title": "Education",
       "icon": "GraduationCap",
@@ -6993,7 +7114,8 @@
       ],
       "faqs": [],
       "techItems": [],
-      "whyChooseItems": []
+      "whyChooseItems": [],
+      "trustPills": []
     },
     {
       "testimonial": {
@@ -7001,7 +7123,6 @@
         "name": "Operations Manager",
         "role": "Health services provider"
       },
-      "trustPills": [],
       "slug": "healthcare",
       "title": "Healthcare",
       "icon": "HeartPulse",
@@ -7182,7 +7303,8 @@
       ],
       "faqs": [],
       "techItems": [],
-      "whyChooseItems": []
+      "whyChooseItems": [],
+      "trustPills": []
     },
     {
       "testimonial": {
@@ -7190,7 +7312,6 @@
         "name": "Fleet Manager",
         "role": "Regional logistics"
       },
-      "trustPills": [],
       "slug": "logistics",
       "title": "Logistics & Supply Chain",
       "icon": "Truck",
@@ -7361,7 +7482,8 @@
       "testimonialQuote": "Field and office teams finally saw the same status in real time.",
       "testimonialRole": "Regional logistics",
       "whyChooseItemsText": "Custom-Built Logistics Solutions | We engineer custom logistics platforms shaped specifically around your fleet size, dispatch workflows, and operational requirements.\n\nScalable Technology Solutions | High-throughput cloud architecture engineered to process telemetry, live GPS coordinates, and high-frequency dispatch updates.\n\nSeamless Integration Capabilities | Frictionless integration with existing ELD hardware, ERP systems (SAP, NetSuite), TMS platforms, and mapping APIs.\n\nReal-Time Data Insights | Actionable live dashboards, automated driver scorecards, fuel optimization algorithms, and delivery tracking metrics.\n\nFlexible Cloud-Based Solutions | Resilient cloud infrastructure with enterprise-grade security, automated backups, and 99.99% uptime guarantees.\n\nLong-Term Technology Partnership | Ongoing post-launch technical support, continuous system enhancements, security patches, and platform scaling support.",
-      "workAreasText": "Real-Time Tracking and Visibility | Our logistics platforms provide real-time tracking for shipments, vehicles, and delivery operations. Businesses gain complete visibility into movement, status updates, and operational performance.\n\nSmooth System Integrations | We build logistics software that connects with essential systems such as ELD, ERP, TMS, and third-party APIs. These integrations create smooth data flow across logistics operations.\n\nReliable and Scalable Infrastructure | Our solutions are designed for high performance, security, and reliability. Scalable architecture supports growing fleets, increasing shipments, and expanding business needs.\n\nData-Driven Logistics Management | Advanced analytics and reporting features provide valuable insights into routes, costs, and delivery performance. Businesses can use real-time data to improve efficiency and decision-making."
+      "workAreasText": "Real-Time Tracking and Visibility | Our logistics platforms provide real-time tracking for shipments, vehicles, and delivery operations. Businesses gain complete visibility into movement, status updates, and operational performance.\n\nSmooth System Integrations | We build logistics software that connects with essential systems such as ELD, ERP, TMS, and third-party APIs. These integrations create smooth data flow across logistics operations.\n\nReliable and Scalable Infrastructure | Our solutions are designed for high performance, security, and reliability. Scalable architecture supports growing fleets, increasing shipments, and expanding business needs.\n\nData-Driven Logistics Management | Advanced analytics and reporting features provide valuable insights into routes, costs, and delivery performance. Businesses can use real-time data to improve efficiency and decision-making.",
+      "trustPills": []
     },
     {
       "testimonial": {
@@ -7369,7 +7491,6 @@
         "name": "Sales Director",
         "role": "Property group"
       },
-      "trustPills": [],
       "slug": "real-estate",
       "title": "Real Estate Software Development",
       "icon": "Building2",
@@ -7633,7 +7754,8 @@
       "ctaPrimaryLink": "#estimate",
       "ctaPrimaryText": "Build Your Real Estate Solution",
       "ctaSecondaryLink": "/contact",
-      "ctaSecondaryText": "Talk to Our Experts"
+      "ctaSecondaryText": "Talk to Our Experts",
+      "trustPills": []
     },
     {
       "testimonial": {
@@ -7641,7 +7763,6 @@
         "name": "Founder",
         "role": "B2B SaaS"
       },
-      "trustPills": [],
       "slug": "saas",
       "title": "SaaS",
       "icon": "Cloud",
@@ -7824,7 +7945,8 @@
       ],
       "faqs": [],
       "techItems": [],
-      "whyChooseItems": []
+      "whyChooseItems": [],
+      "trustPills": []
     },
     {
       "testimonial": {
@@ -7832,7 +7954,6 @@
         "name": "VP Engineering",
         "role": "Tech company"
       },
-      "trustPills": [],
       "slug": "technology",
       "title": "Technology",
       "icon": "Cpu",
@@ -7918,7 +8039,8 @@
       "stats": [],
       "faqs": [],
       "techItems": [],
-      "whyChooseItems": []
+      "whyChooseItems": [],
+      "trustPills": []
     },
     {
       "testimonial": {
@@ -7931,7 +8053,6 @@
         "metaDescription": "Cubixsol is a travel software development company building booking platforms, mobile apps, and hospitality solutions.",
         "keywords": "travel software development, travel booking platform, travel app development, hospitality software"
       },
-      "trustPills": [],
       "slug": "travel",
       "title": "Travel & Hospitality",
       "icon": "Plane",
@@ -8099,7 +8220,8 @@
       "solutionsSubtitle": "We develop custom travel and hospitality platforms that streamline bookings, empower travelers, and automate complex workflows.",
       "solutionsTitle": "Travel Software Solutions We Build",
       "whyChooseTitle": "Why Travel & Hospitality Teams Choose Cubixsol",
-      "workAreasTitle": "Built for Travel Industry Standards"
+      "workAreasTitle": "Built for Travel Industry Standards",
+      "trustPills": []
     }
   ],
   "initialProjects": [
@@ -8617,6 +8739,20 @@
       "engagementItems": [],
       "industriesItems": [],
       "highlights": []
+    },
+    {
+      "slug": "pms-integration",
+      "content": "Property management systems (PMS) control all property elements, including tenants' onboarding process, rent collection, upkeep arrangements, and monitoring. They can also provide analytics and reports that will assist homeowners and managers in making smart choices about the properties they own.",
+      "engagementItems": [],
+      "faqs": [],
+      "heroBadges": [],
+      "heroDesc": "Property Management Systems are software programs that enable landlords and property managers to optimize and manage their properties' regular tasks. PMSs work with CMS software to give an extensive range of features and capabilities for managing and tracking rental contracts, landlord information, repair requests, finances, and others. PMS rentals streamline everything from guest check-in to financial tracking, providing a centralized system that boosts operational efficiency.",
+      "heroTitle": "Property Management Systems Integration",
+      "highlights": [],
+      "industriesItems": [],
+      "processSteps": [],
+      "title": "Property Management Systems Integration",
+      "whyChooseItems": []
     },
     {
       "seo": {

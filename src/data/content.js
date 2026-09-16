@@ -425,6 +425,30 @@ export const services = [
       'Faster design-to-dev handoff',
     ],
   },
+  {
+    icon: Boxes,
+    slug: 'pms-integration',
+    heroImage: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&h=750&q=70',
+    title: 'Property Management Systems Integration',
+    desc: 'Automate reservations, payments, and guest management across major property channels with two-way PMS API connectivity.',
+    color: 'text-indigo-600 bg-indigo-50',
+    gradient: 'from-indigo-500 to-sky-600',
+    longDesc: 'PMS software empowers property managers to streamline residential or commercial operations. We connect PMS platforms with booking engines, smart locks, payment gateways, and guest communications for real-time synchronization.',
+    features: [
+      'Booking engine & Channel Manager multi-OTA sync',
+      'Keyless access & smart lock automation',
+      'Revenue management & RMS dynamic pricing',
+      'PCI-DSS compliant payment processing & folios',
+      'POS system amenity & incidentals routing',
+      'Guest review & multi-channel reputation sync',
+    ],
+    tech: ['Node.js', 'REST APIs', 'Webhooks', 'GraphQL', 'Guesty', 'Hostaway', 'Cloudbeds', 'Mews'],
+    outcomes: [
+      'Zero double-bookings & instant calendar parity',
+      'Fully automated self check-in workflows',
+      'Higher RevPAR through intelligent dynamic rates',
+    ],
+  },
 ];
 
 export const whyChoose = [
