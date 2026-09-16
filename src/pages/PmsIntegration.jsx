@@ -238,53 +238,63 @@ export default function PmsIntegration() {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Breadcrumb */}
-          <div className="mb-6">
+          <div className="mb-8">
             <Link
               to="/services"
-              className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-400 hover:text-white transition"
+              className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-400 hover:text-white transition group"
             >
-              <ArrowRight className="w-4 h-4 rotate-180" /> Back to Services
+              <ArrowRight className="w-4 h-4 rotate-180 group-hover:-translate-x-1 transition-transform" /> Back to Services
             </Link>
           </div>
 
-          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            {/* Left Copy */}
-            <div className="lg:col-span-6 space-y-6">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            {/* Left Copy with Generous Spacing */}
+            <div className="lg:col-span-6">
               <Reveal scale>
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-500/15 border border-sky-500/30 text-sky-300 text-xs font-bold uppercase tracking-wider mb-2">
-                  <Radio className="w-3.5 h-3.5 text-sky-400 animate-pulse" />
-                  <span>Enterprise PMS Integration &amp; API Engineering</span>
-                </div>
+                <div className="flex flex-col space-y-6 sm:space-y-7">
+                  {/* Eyebrow Badge */}
+                  <div>
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-500/15 border border-sky-500/30 text-sky-300 text-xs font-bold uppercase tracking-wider shadow-sm">
+                      <Radio className="w-3.5 h-3.5 text-sky-400 animate-pulse" />
+                      <span>Enterprise PMS Integration &amp; API Engineering</span>
+                    </div>
+                  </div>
 
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.2]">
-                  Property Management <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-cyan-300 to-white">Systems Integration</span>
-                </h1>
+                  {/* Main Title */}
+                  <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.22]">
+                    Property Management <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-cyan-300 to-white">Systems Integration</span>
+                  </h1>
 
-                <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-normal">
-                  Property Management Systems are software programs that enable landlords and property managers to optimize and manage their properties' regular tasks. PMSs work with <strong className="text-white font-semibold">CMS software</strong> to give an extensive range of features and capabilities for managing and tracking rental contracts, landlord information, repair requests, finances, and others. PMS rentals streamline everything from guest check-in to financial tracking, providing a centralized system that boosts operational efficiency.
-                </p>
-                <p className="text-slate-300 text-xs sm:text-sm leading-relaxed font-normal">
-                  <strong className="text-white font-semibold">Property management systems (PMS)</strong> control all property elements, including tenants' onboarding process, rent collection, upkeep arrangements, and monitoring. They can also provide analytics and reports that will assist homeowners and managers in making smart choices about the properties they own.
-                </p>
+                  {/* Paragraphs with Clear Separation */}
+                  <div className="space-y-4 sm:space-y-5">
+                    <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-normal">
+                      Property Management Systems are software programs that enable landlords and property managers to optimize and manage their properties' regular tasks. PMSs work with <strong className="text-white font-semibold">CMS software</strong> to give an extensive range of features and capabilities for managing and tracking rental contracts, landlord information, repair requests, finances, and others. PMS rentals streamline everything from guest check-in to financial tracking, providing a centralized system that boosts operational efficiency.
+                    </p>
 
-                {/* Hero CTA Buttons */}
-                <div className="flex flex-wrap items-center gap-3.5 pt-2">
-                  <Link
-                    to="/contact"
-                    className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold text-sm shadow-lg shadow-sky-500/20 transition-all"
-                  >
-                    <span>Get API Developers</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
+                    <p className="text-slate-300 text-xs sm:text-sm leading-relaxed font-normal bg-white/[0.04] border border-white/10 rounded-2xl p-4 sm:p-5 backdrop-blur-sm">
+                      <strong className="text-white font-semibold">Property management systems (PMS)</strong> control all property elements, including tenants' onboarding process, rent collection, upkeep arrangements, and monitoring. They can also provide analytics and reports that will assist homeowners and managers in making smart choices about the properties they own.
+                    </p>
+                  </div>
 
-                  <button
-                    onClick={openEstimateModal}
-                    type="button"
-                    className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm border border-white/20 transition-all backdrop-blur-sm"
-                  >
-                    <Sparkles className="w-4 h-4 text-sky-300" />
-                    <span>Get a Proposal</span>
-                  </button>
+                  {/* Hero CTA Buttons */}
+                  <div className="flex flex-wrap items-center gap-4 pt-2">
+                    <Link
+                      to="/contact"
+                      className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold text-sm shadow-lg shadow-sky-500/25 transition-all hover:scale-[1.02]"
+                    >
+                      <span>Get API Developers</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+
+                    <button
+                      onClick={openEstimateModal}
+                      type="button"
+                      className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm border border-white/20 transition-all backdrop-blur-sm hover:scale-[1.02]"
+                    >
+                      <Sparkles className="w-4 h-4 text-sky-300" />
+                      <span>Get a Proposal</span>
+                    </button>
+                  </div>
                 </div>
               </Reveal>
             </div>
