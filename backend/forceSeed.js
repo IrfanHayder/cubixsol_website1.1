@@ -20,6 +20,7 @@ const Faq = require('./models/Faq');
 const SiteSetting = require('./models/SiteSetting');
 const PageContent = require('./models/PageContent');
 const ContactInfo = require('./models/ContactInfo');
+const Media = require('./models/Media');
 
 async function forceSeed() {
   try {
@@ -55,6 +56,7 @@ async function forceSeed() {
       initialSeoSettings = [],
       initialPages = [],
       initialContactInfo = [],
+      initialMedia = [],
     } = seedData;
 
     // Helper to replace/upsert collections safely
@@ -86,6 +88,7 @@ async function forceSeed() {
     await syncCollection(Industry, initialIndustries, 'slug', 'Industries');
     await syncCollection(PageContent, initialPages, 'slug', 'Pages');
     await syncCollection(ContactInfo, initialContactInfo, 'type', 'Contact Info');
+    await syncCollection(Media, initialMedia, 'url', 'Media Library');
     await syncCollection(Category, initialCategories, 'slug', 'Categories');
     await syncCollection(Tag, initialTags, 'slug', 'Tags');
     await syncCollection(Author, initialAuthors, 'name', 'Authors');

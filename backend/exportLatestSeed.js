@@ -20,6 +20,7 @@ const Faq = require('./models/Faq');
 const SiteSetting = require('./models/SiteSetting');
 const PageContent = require('./models/PageContent');
 const ContactInfo = require('./models/ContactInfo');
+const Media = require('./models/Media');
 
 function cleanDoc(doc) {
   if (!doc) return doc;
@@ -71,6 +72,7 @@ async function exportSeed() {
     const seoSettings = (await SeoSetting.find()).map(cleanDoc);
     const pages = (await PageContent.find().sort({ slug: 1 })).map(cleanDoc);
     const contactInfo = (await ContactInfo.find().sort({ order: 1 })).map(cleanDoc);
+    const media = (await Media.find().sort({ createdAt: -1 })).map(cleanDoc);
 
     const fullData = {
       initialServices: services,
@@ -90,6 +92,7 @@ async function exportSeed() {
       initialSeoSettings: seoSettings,
       initialPages: pages,
       initialContactInfo: contactInfo,
+      initialMedia: media,
     };
 
     // Save JSON version for ultra-fast light reading
@@ -118,6 +121,7 @@ module.exports = {
   initialSeoSettings: data.initialSeoSettings || [],
   initialPages: data.initialPages || [],
   initialContactInfo: data.initialContactInfo || [],
+  initialMedia: data.initialMedia || [],
 };
 `;
 
@@ -131,6 +135,7 @@ module.exports = {
     console.log(`- Solutions: ${solutions.length}`);
     console.log(`- Products: ${products.length}`);
     console.log(`- Blogs: ${blogs.length}`);
+    console.log(`- Media: ${media.length}`);
 
     await mongoose.disconnect();
     console.log('Done.');

@@ -9485,5 +9485,429 @@
       "order": 4,
       "status": "Active"
     }
+  ],
+  "initialMedia": [
+    {
+      "title": "Transparent execution 1",
+      "url": "/uploads/media-1789566441930-7622150.svg",
+      "type": "image",
+      "alt": "Transparent execution 1",
+      "size": 14244,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "Enterprise-ready thinking 1",
+      "url": "/uploads/media-1789566441929-227301020.svg",
+      "type": "image",
+      "alt": "Enterprise-ready thinking 1",
+      "size": 9003,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "Cross-functional expertise 1",
+      "url": "/uploads/media-1789566441929-4433635.svg",
+      "type": "image",
+      "alt": "Cross-functional expertise 1",
+      "size": 9580,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "Business First Planning 1",
+      "url": "/uploads/media-1789566441929-109737117.svg",
+      "type": "image",
+      "alt": "Business First Planning 1",
+      "size": 19341,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "Travel 1",
+      "url": "/uploads/media-1789563172794-101604180.svg",
+      "type": "image",
+      "alt": "Travel 1",
+      "size": 23945,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "SaaS 1",
+      "url": "/uploads/media-1789563172794-630766494.svg",
+      "type": "image",
+      "alt": "SaaS 1",
+      "size": 5266,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "Healthcare 1",
+      "url": "/uploads/media-1789563172793-99943126.svg",
+      "type": "image",
+      "alt": "Healthcare 1",
+      "size": 10217,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "FinTech 1",
+      "url": "/uploads/media-1789563172793-389883725.svg",
+      "type": "image",
+      "alt": "FinTech 1",
+      "size": 8500,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "Education 1",
+      "url": "/uploads/media-1789563172792-808819694.svg",
+      "type": "image",
+      "alt": "Education 1",
+      "size": 7234,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "E-Commerce 1",
+      "url": "/uploads/media-1789563172789-64334141.svg",
+      "type": "image",
+      "alt": "E-Commerce 1",
+      "size": 7223,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "Staff Augmentation Services 1",
+      "url": "/uploads/media-1789561953441-522401966.svg",
+      "type": "image",
+      "alt": "Staff Augmentation Services 1",
+      "size": 30788,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "Project-Based Development 1",
+      "url": "/uploads/media-1789561953441-462599001.svg",
+      "type": "image",
+      "alt": "Project-Based Development 1",
+      "size": 5409,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "MVP and Startup Development 1",
+      "url": "/uploads/media-1789561953441-738702052.svg",
+      "type": "image",
+      "alt": "MVP and Startup Development 1",
+      "size": 14225,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "Dedicated Team 1",
+      "url": "/uploads/media-1789561953440-395086681.svg",
+      "type": "image",
+      "alt": "Dedicated Team 1",
+      "size": 9266,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "IOS Development",
+      "url": "/uploads/media-1789561623444-165382668.svg",
+      "type": "image",
+      "alt": "IOS Development",
+      "size": 2836,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "Digital Marketing Services",
+      "url": "/uploads/media-1789561623444-19393662.svg",
+      "type": "image",
+      "alt": "Digital Marketing Services",
+      "size": 4436,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "API Development & Integration Services",
+      "url": "/uploads/media-1789561623444-438197349.svg",
+      "type": "image",
+      "alt": "API Development & Integration Services",
+      "size": 7029,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "Android",
+      "url": "/uploads/media-1789561623441-626462644.svg",
+      "type": "image",
+      "alt": "Android",
+      "size": 3836,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "iOS App Development",
+      "url": "/uploads/media-1789560135399-101149756.svg",
+      "type": "image",
+      "alt": "iOS App Development",
+      "size": 118665,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "API Development & Integration Services",
+      "url": "/uploads/media-1789560135388-197492584.svg",
+      "type": "image",
+      "alt": "API Development & Integration Services",
+      "size": 117193,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "Android App Development",
+      "url": "/uploads/media-1789560135379-550495563.svg",
+      "type": "image",
+      "alt": "Android App Development",
+      "size": 82249,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "Web-Development",
+      "url": "/uploads/media-1788761191369-567281372.svg",
+      "type": "image",
+      "alt": "Web-Development",
+      "size": 17721,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "UI_UX",
+      "url": "/uploads/media-1788761191369-156079565.svg",
+      "type": "image",
+      "alt": "UI_UX",
+      "size": 3638,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "PHP Development",
+      "url": "/uploads/media-1788761191368-719289353.svg",
+      "type": "image",
+      "alt": "PHP Development",
+      "size": 5133,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "Laravel Development",
+      "url": "/uploads/media-1788761191368-839736527.svg",
+      "type": "image",
+      "alt": "Laravel Development",
+      "size": 4746,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "Graphic design",
+      "url": "/uploads/media-1788761191368-22630739.svg",
+      "type": "image",
+      "alt": "Graphic design",
+      "size": 14928,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "E-commerce",
+      "url": "/uploads/media-1788761191368-374799161.svg",
+      "type": "image",
+      "alt": "E-commerce",
+      "size": 3934,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "DEV-OPS",
+      "url": "/uploads/media-1788761191368-235481978.svg",
+      "type": "image",
+      "alt": "DEV-OPS",
+      "size": 6310,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "Data Migration",
+      "url": "/uploads/media-1788761191368-367855789.svg",
+      "type": "image",
+      "alt": "Data Migration",
+      "size": 16918,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "CMS Development",
+      "url": "/uploads/media-1788761191368-390026375.svg",
+      "type": "image",
+      "alt": "CMS Development",
+      "size": 7035,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "Clouds",
+      "url": "/uploads/media-1788761191367-247242232.svg",
+      "type": "image",
+      "alt": "Clouds",
+      "size": 3738,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "App-Development",
+      "url": "/uploads/media-1788761191366-9651825.svg",
+      "type": "image",
+      "alt": "App-Development",
+      "size": 8931,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "AI Product Development",
+      "url": "/uploads/media-1788761191364-90843475.svg",
+      "type": "image",
+      "alt": "AI Product Development",
+      "size": 13147,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "PHP Development",
+      "url": "/uploads/media-1788760355443-290359679.svg",
+      "type": "image",
+      "alt": "PHP Development",
+      "size": 34464,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "Laravel Development",
+      "url": "/uploads/media-1788760355443-70201310.svg",
+      "type": "image",
+      "alt": "Laravel Development",
+      "size": 33084,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "Graphic Design ",
+      "url": "/uploads/media-1788760355440-864999462.svg",
+      "type": "image",
+      "alt": "Graphic Design ",
+      "size": 37521,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "Digital Marketing Services",
+      "url": "/uploads/media-1788760355439-537523465.svg",
+      "type": "image",
+      "alt": "Digital Marketing Services",
+      "size": 68187,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "DEV-OPS",
+      "url": "/uploads/media-1788760355429-241403522.svg",
+      "type": "image",
+      "alt": "DEV-OPS",
+      "size": 77808,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "Data Migration",
+      "url": "/uploads/media-1788760355428-88132272.svg",
+      "type": "image",
+      "alt": "Data Migration",
+      "size": 67819,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "CMS Development",
+      "url": "/uploads/media-1788760355423-686594247.svg",
+      "type": "image",
+      "alt": "CMS Development",
+      "size": 46112,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "Web-Development",
+      "url": "/uploads/media-1788439771584-672653979.svg",
+      "type": "image",
+      "alt": "Web-Development",
+      "size": 82037,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "UI_UX",
+      "url": "/uploads/media-1788439771583-988230600.svg",
+      "type": "image",
+      "alt": "UI_UX",
+      "size": 75642,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "E-commerce",
+      "url": "/uploads/media-1788439771571-862411230.svg",
+      "type": "image",
+      "alt": "E-commerce",
+      "size": 70893,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "Clouds Devops",
+      "url": "/uploads/media-1788439771568-239387480.svg",
+      "type": "image",
+      "alt": "Clouds Devops",
+      "size": 80304,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "App-Development",
+      "url": "/uploads/media-1788439771557-360010811.svg",
+      "type": "image",
+      "alt": "App-Development",
+      "size": 82124,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "AI Product Development",
+      "url": "/uploads/media-1788439771541-852484829.svg",
+      "type": "image",
+      "alt": "AI Product Development",
+      "size": 95816,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "Travel & Hospitality",
+      "url": "/uploads/media-1788421050341-423557658.svg",
+      "type": "image",
+      "alt": "Travel & Hospitality"
+    },
+    {
+      "title": "Technology",
+      "url": "/uploads/media-1788421050320-328223291.svg",
+      "type": "image",
+      "alt": "Technology"
+    },
+    {
+      "title": "SaaS",
+      "url": "/uploads/media-1788421050317-66609444.svg",
+      "type": "image",
+      "alt": "SaaS"
+    },
+    {
+      "title": "Real Estate",
+      "url": "/uploads/media-1788421050310-764937006.svg",
+      "type": "image",
+      "alt": "Real Estate"
+    },
+    {
+      "title": "Logistics",
+      "url": "/uploads/media-1788421050308-313091127.svg",
+      "type": "image",
+      "alt": "Logistics"
+    },
+    {
+      "title": "Healthcare",
+      "url": "/uploads/media-1788421050303-234659715.svg",
+      "type": "image",
+      "alt": "Healthcare"
+    },
+    {
+      "title": "Finance & Fintech",
+      "url": "/uploads/media-1788421050295-842693555.svg",
+      "type": "image",
+      "alt": "Finance & Fintech"
+    },
+    {
+      "title": "Education",
+      "url": "/uploads/media-1788421050282-718579643.svg",
+      "type": "image",
+      "alt": "Education"
+    },
+    {
+      "title": "E-Commerce",
+      "url": "/uploads/media-1788421040721-524946062.svg",
+      "type": "image",
+      "alt": "E-Commerce"
+    }
   ]
 }

@@ -19,4 +19,5 @@ module.exports = {
   initialSeoSettings: data.initialSeoSettings || [],
   initialPages: data.initialPages || [],
   initialContactInfo: data.initialContactInfo || [],
+  initialMedia: data.initialMedia || [],
 };
