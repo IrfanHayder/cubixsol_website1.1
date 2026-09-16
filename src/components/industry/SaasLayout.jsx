@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import {
   Cloud, Server, Layers, Key, CreditCard, CheckCircle2,
   Zap, Code2, Users, Database, Terminal, Shield, ArrowRight,
   TrendingUp, Sparkles, Sliders, RefreshCw, Lock, Check,
-  ShieldCheck, Activity, Cpu
+  ShieldCheck, Activity, Cpu, Rocket, Boxes, Laptop, Globe
 } from 'lucide-react';
 import Reveal, { Stagger, StaggerItem } from '../Reveal';
+import { formatInline } from '../../utils/formatText';
 
 const SAAS_IMAGES = {
   cloud: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&h=700&q=75',
@@ -55,53 +55,110 @@ export default function SaasLayout({ industry }) {
     }, 850);
   };
 
-  const approachTitle = industry.approachTitle || 'The Cubixsol Approach to SaaS & Cloud Platforms';
-  const approachItems = industry.approachItems && industry.approachItems.length > 0 ? industry.approachItems : [
-    {
-      title: 'We Architect for Multi-Tenancy & Isolation',
-      subtitle: 'Our cloud architects and SaaS systems engineers build multi-tenant backends that are:',
-      points: [
-        { heading: 'Row-Level Secure', text: 'PostgreSQL RLS and schema isolation guaranteeing zero cross-tenant data leakage.' },
-        { heading: 'Subdomain Automated', text: 'Instant dynamic DNS tenant routing (tenant.yourplatform.com) with automated TLS certificates.' },
-        { heading: 'High-Throughput Pool', text: 'Tenant-aware connection pooling and Redis caching for sub-20ms database queries.' },
-      ],
-    },
-    {
-      title: 'We Implement Frictionless Monetization & Billing',
-      subtitle: 'From product-led growth freemium models to complex enterprise contracts, we build:',
-      points: [
-        { heading: 'Stripe & Paddle Metering', text: 'Real-time usage aggregation, tiered seat management, and self-serve upgrade flows.' },
-        { heading: 'Automated Dunning', text: 'Smart credit card retry logic and automated email recovery flows that reduce involuntary churn.' },
-        { heading: 'Global Tax Compliance', text: 'Automated sales tax and VAT calculation via Stripe Tax and TaxJar integration.' },
-      ],
-    },
-    {
-      title: 'We Accelerate Product-Led Growth & Retention',
-      subtitle: 'We embed behavioral analytics and activation loops directly into the application UX:',
-      points: [
-        { heading: 'Self-Serve Onboarding', text: 'Interactive product walkthroughs and checklist empty-states that cut time-to-value to minutes.' },
-        { heading: 'Feature Flag Canary', text: 'LaunchDarkly and PostHog integration for progressive rollouts and zero-downtime releases.' },
-        { heading: 'Enterprise Security Ready', text: 'One-click Okta, Azure AD, and Google Workspace SAML SSO with automated SCIM provisioning.' },
-      ],
-    },
-  ];
+  // 1. SaaS & Technology Software We Build
+  const solutionsTitle = industry.solutionsTitle || 'SaaS & Technology Software We Build';
+  const solutionsSubtitle = industry.solutionsSubtitle || 'From MVP development to complete SaaS ecosystems, we create solutions that help businesses launch faster and adapt to changing market needs.';
+  const solutionsItems = Array.isArray(industry.solutionsItems) && industry.solutionsItems.length > 0
+    ? industry.solutionsItems
+    : [
+        {
+          title: 'SaaS MVP Development',
+          body: 'We build MVP solutions that transform ideas into functional SaaS products. Our MVP development process focuses on essential features, user validation, and faster market entry while creating a foundation for future growth.',
+        },
+        {
+          title: 'Multi-Tenant SaaS Architecture',
+          body: 'Our team builds multi-tenant SaaS platforms that let multiple customers use the same application securely. We design flexible architectures with efficient resource management, data separation, and scalable performance.',
+        },
+        {
+          title: 'Subscription & Billing Systems',
+          body: 'We create subscription-based platforms with integrated payment workflows, automated billing, pricing plans, and customer management features. Our solutions support flexible revenue models for SaaS businesses.',
+        },
+        {
+          title: 'SaaS Application Development',
+          body: 'Our SaaS application development services cover web platforms, enterprise solutions, and industry-specific software products. We build applications with reliable performance, modern interfaces, and cloud-ready infrastructure.',
+        },
+      ];
 
-  const solutionsTitle = industry.solutionsTitle || 'Our SaaS & Cloud Architecture Solutions';
-  const solutionsSubtitle = industry.solutionsSubtitle || 'Enterprise multi-tenant microservices, automated subscription engines, SSO/SCIM security, and real-time product telemetry engineered to scale seamlessly.';
-  const solutionsItems = industry.solutionsItems && industry.solutionsItems.length > 0 ? industry.solutionsItems : [
-    {
-      title: 'Multi-Tenant Cloud Infrastructure & PostgreSQL RLS',
-      body: 'Distributed multi-tenant database clusters with Row-Level Security, custom tenant subdomains, automated database backup snapshots, and zero-downtime migrations.',
-    },
-    {
-      title: 'Subscription Monetization, Stripe Billing & Usage Meters',
-      body: 'Custom billing portals with seat allocation, metered API usage tracking, automated invoice generation, proration calculations, and self-serve tier upgrades.',
-    },
-    {
-      title: 'Enterprise SSO, SAML 2.0 & Role-Based Access Control',
-      body: 'Universal identity orchestration supporting Okta, Azure AD, Google Workspace, automated SCIM user provisioning, and granular RBAC permission matrices.',
-    },
-  ];
+  // 2. SaaS Use Cases & Business Solutions (Work Areas)
+  const workAreasTitle = industry.workAreasTitle || 'SaaS Use Cases & Business Solutions';
+  const workAreas = Array.isArray(industry.workAreas) && industry.workAreas.length > 0
+    ? industry.workAreas
+    : [
+        {
+          title: 'B2B SaaS Platforms',
+          body: 'We develop cloud-based SaaS solutions that help businesses automate operations, streamline workflows, and improve team collaboration through centralised platforms.',
+        },
+        {
+          title: 'Vertical SaaS Solutions',
+          body: 'Our experts create industry-specific SaaS applications designed around unique business processes, customer requirements, and specialised market needs.',
+        },
+        {
+          title: 'Enterprise SaaS Applications',
+          body: 'We create scalable enterprise solutions that support complex operations, multiple user roles, advanced reporting, and secure data management.',
+        },
+        {
+          title: 'Customer Management Platforms',
+          body: 'Our SaaS solutions help businesses manage customer relationships, improve communication, and deliver better experiences through organised digital workflows.',
+        },
+        {
+          title: 'Internal Business Automation Tools',
+          body: 'We build custom SaaS platforms that automate repetitive tasks, optimise internal processes, and improve productivity across different departments.',
+        },
+        {
+          title: 'Product-Led Growth Features',
+          body: 'We develop onboarding flows, analytics dashboards, self-service options, and engagement features that support user adoption and long-term SaaS growth.',
+        },
+      ];
+
+  // 3. Technologies We Use for SaaS Development (Tech Stack)
+  const techTitle = industry.techTitle || 'Technologies We Use for SaaS Development';
+  const techItems = Array.isArray(industry.techItems) && industry.techItems.length > 0
+    ? industry.techItems
+    : [
+        {
+          title: 'React & Modern Frontend Frameworks',
+          desc: 'React and modern frontend frameworks for responsive user experiences.',
+        },
+        {
+          title: 'Node.js & Backend Architecture',
+          desc: 'Node.js and backend technologies for scalable application logic.',
+        },
+        {
+          title: 'AWS Cloud Services',
+          desc: 'AWS cloud services for reliable infrastructure.',
+        },
+        {
+          title: 'PostgreSQL Databases',
+          desc: 'PostgreSQL databases for secure and structured data management.',
+        },
+        {
+          title: 'Stripe & Payment Gateways',
+          desc: 'Stripe and payment APIs for subscription-based platforms.',
+        },
+      ];
+
+  // 4. Why SaaS Teams Choose Cubixsol
+  const whyChooseTitle = industry.whyChooseTitle || 'Why SaaS Teams Choose Cubixsol';
+  const whyChooseItems = Array.isArray(industry.whyChooseItems) && industry.whyChooseItems.length > 0
+    ? industry.whyChooseItems
+    : [
+        {
+          title: 'Experience With Modern SaaS Architecture',
+          desc: 'Our developers understand SaaS requirements, including cloud infrastructure, subscription models, and scalable application design.',
+        },
+        {
+          title: 'Flexible Development Approach',
+          desc: 'We build solutions that adapt to changing business needs, new features, and increasing customer demands.',
+        },
+        {
+          title: 'Security-Focused Solutions',
+          desc: 'Our development process prioritizes secure coding practices, data protection, and reliable system performance.',
+        },
+        {
+          title: 'Continuous Technical Support',
+          desc: 'Cubixsol provides ongoing improvements, maintenance, and technical guidance after product launch.',
+        },
+      ];
 
   const architectureLayers = [
     {
@@ -174,164 +231,56 @@ if (isEnabled) telemetry.track('ai_copilot_activated');`,
     },
   ];
 
-  const workAreas = industry.workAreas || [];
-  const products = industry.productsBuilt || [];
-  const cases = industry.caseStudies || [];
-  const services = industry.servicesWeOffer || [];
+  const solutionIcons = [Rocket, Boxes, CreditCard, Laptop];
+  const useCaseIcons = [Building2, Layers, ShieldCheck, Users, RefreshCw, TrendingUp];
 
   return (
     <div className="space-y-16 sm:space-y-24">
-      {/* 1. The Approach Section */}
+      {/* 🚀 1. SaaS & Technology Software We Build */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <span className="inline-block px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-primary-50 text-primary-700 border border-primary-200 mb-3">
-            Strategic Methodology
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-ink tracking-tight">
-            {approachTitle}
-          </h2>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
-          {approachItems.map((item, idx) => (
-            <motion.div
-              key={item.title || idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="bg-white rounded-2xl p-7 sm:p-8 border border-gray-100 shadow-card hover:border-primary-300 hover:shadow-xl transition-all flex flex-col justify-between"
-            >
-              <div>
-                {/* Red Indicator Stripe as per design system */}
-                <div className="h-1.5 w-16 bg-red-600 rounded-full mb-6" />
-                <h3 className="text-xl font-bold text-ink mb-3 leading-snug">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-gray-600 mb-6 leading-relaxed">
-                  {item.subtitle}
-                </p>
-                <div className="space-y-4">
-                  {item.points?.map((pt, pIdx) => (
-                    <div key={pIdx} className="flex items-start gap-2.5">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary-600 mt-2 shrink-0" />
-                      <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">
-                        <strong className="text-ink font-semibold">{pt.heading}:</strong>{' '}
-                        {pt.text}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* 2. Solutions Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <span className="inline-block px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-primary-50 text-primary-700 border border-primary-200 mb-3">
-            SaaS Capabilities
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-ink tracking-tight mb-4">
+        <Reveal className="text-center max-w-3xl mx-auto mb-12">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-50 text-primary-700 border border-primary-200 text-xs font-bold uppercase tracking-wider mb-3 shadow-sm">
+            <Sparkles className="w-3.5 h-3.5 text-primary-600" />
+            <span>SaaS Solutions</span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink tracking-tight mb-3">
             {solutionsTitle}
           </h2>
-          <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-            {solutionsSubtitle}
-          </p>
-        </div>
+          {solutionsSubtitle && (
+            <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+              {formatInline(solutionsSubtitle)}
+            </p>
+          )}
+        </Reveal>
 
-        <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
-          {solutionsItems.map((sol, idx) => (
-            <motion.div
-              key={sol.title || idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="bg-white rounded-2xl border border-gray-100 shadow-card hover:border-primary-300 hover:shadow-xl transition-all flex flex-col overflow-hidden group"
-            >
-              {/* Top Accent Gradient Bar */}
-              <div className="h-1.5 w-full bg-gradient-to-r from-red-600 via-[#00a4d8] to-[#5d53a3]" />
-              <div className="p-7 sm:p-8 flex-1 flex flex-col">
-                <div className="w-12 h-12 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center mb-6 group-hover:bg-primary-600 group-hover:text-white transition-colors">
-                  {idx === 0 ? <Database className="w-6 h-6" /> : idx === 1 ? <CreditCard className="w-6 h-6" /> : <Key className="w-6 h-6" />}
-                </div>
-                <h3 className="text-lg sm:text-xl font-bold text-ink mb-3 group-hover:text-primary-600 transition-colors">
-                  {sol.title}
-                </h3>
-                <p className="text-sm text-gray-600 leading-relaxed mb-6 flex-1">
-                  {sol.body}
-                </p>
-                <div className="pt-4 border-t border-gray-100 flex items-center text-xs font-bold text-primary-600 group-hover:text-primary-700">
-                  <span>Explore Architecture</span>
-                  <ArrowRight className="w-3.5 h-3.5 ml-1.5 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* 3. SaaS High Impact Visual Band */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-primary-100/60 bg-gradient-to-br from-slate-900 via-[#1a1a2e] to-[#241f48] text-white p-8 sm:p-12">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-[#00a4d8]/10 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#5d53a3]/20 rounded-full blur-3xl pointer-events-none" />
-
-          <div className="relative z-10 grid lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-5 space-y-5">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-semibold uppercase tracking-wider text-[#00a4d8]">
-                <Sparkles className="w-3.5 h-3.5 text-[#00a4d8]" /> Multi-Tenant Cloud Engineering
-              </div>
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white">
-                Engineered to <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00a4d8] to-purple-300">Onboard, Retain &amp; Scale</span>
-              </h3>
-              <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
-                From initial zero-to-one MVP launch to self-serve enterprise billing, automated Okta SAML SSO, and high-velocity product iterations, we build software foundations that support millions in ARR.
-              </p>
-              <div className="flex flex-wrap gap-3 pt-2">
-                <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/10 border border-white/15 text-xs font-semibold text-white">
-                  <Check className="w-4 h-4 text-[#00a4d8]" /> PostgreSQL RLS
-                </div>
-                <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/10 border border-white/15 text-xs font-semibold text-white">
-                  <Check className="w-4 h-4 text-[#00a4d8]" /> Stripe Metered API
-                </div>
-                <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/10 border border-white/15 text-xs font-semibold text-white">
-                  <Check className="w-4 h-4 text-[#00a4d8]" /> SAML 2.0 / SCIM
-                </div>
-              </div>
-            </div>
-
-            <div className="lg:col-span-7 grid grid-cols-2 gap-3 sm:gap-4">
-              {workVisual.map((item) => (
-                <div
-                  key={item.key}
-                  className="relative group rounded-2xl overflow-hidden border border-white/10 bg-white/5 aspect-[4/3] shadow-lg"
-                >
-                  <img
-                    src={item.img}
-                    alt={item.label}
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent flex flex-col justify-end p-3.5 sm:p-4">
-                    <div className="flex items-center gap-2 text-white font-bold text-xs sm:text-sm">
-                      <div className="w-6 h-6 rounded-lg bg-primary-600/80 backdrop-blur-sm flex items-center justify-center shrink-0">
-                        <item.icon className="w-3.5 h-3.5 text-white" />
-                      </div>
-                      <span className="truncate">{item.label}</span>
-                    </div>
+        <div className="grid md:grid-cols-2 gap-6">
+          {solutionsItems.map((item, idx) => {
+            const Icon = solutionIcons[idx % solutionIcons.length];
+            return (
+              <motion.div
+                key={item.title || idx}
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.2 }}
+                className="p-7 rounded-2xl bg-white border border-gray-100 shadow-card hover:border-primary-300 hover:shadow-elev transition-all flex flex-col justify-between group"
+              >
+                <div>
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-50 to-blue-50 border border-primary-100 flex items-center justify-center mb-5 text-primary-600 group-hover:scale-110 group-hover:bg-primary-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                    <Icon className="w-6 h-6" />
                   </div>
+                  <h3 className="text-xl font-bold text-ink mb-3 group-hover:text-primary-600 transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-gray-600 leading-relaxed font-normal">
+                    {formatInline(item.body || item.desc || '')}
+                  </p>
                 </div>
-              ))}
-            </div>
-          </div>
+              </motion.div>
+            );
+          })}
         </div>
       </section>
 
-      {/* 4. Interactive Multi-Tenant Architecture & Telemetry Simulator */}
+      {/* 💻 2. Interactive Multi-Tenant Architecture Simulator */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-gradient-to-br from-[#1a1a2e] via-[#241f48] to-[#121824] rounded-3xl p-6 sm:p-10 lg:p-12 text-white border border-primary-500/30 shadow-2xl relative overflow-hidden">
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#00a4d8]/15 rounded-full blur-3xl pointer-events-none" />
@@ -459,173 +408,117 @@ if (isEnabled) telemetry.track('ai_copilot_activated');`,
         </div>
       </section>
 
-      {/* 5. SaaS Standards & Security Compliance Matrix */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-10">
-          <span className="inline-block px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-primary-50 text-primary-700 border border-primary-200 mb-3">
-            Standards &amp; Frameworks
-          </span>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-ink tracking-tight">
-            Enterprise SaaS Compliance &amp; Integrations
-          </h2>
-        </div>
+      {/* 🏢 3. SaaS Use Cases & Business Solutions (Work Areas) */}
+      <section className="bg-slate-50/70 py-16 sm:py-24 border-y border-gray-200/70">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Reveal className="text-center max-w-3xl mx-auto mb-12">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white text-primary-700 border border-primary-200 text-xs font-bold uppercase tracking-wider mb-3 shadow-sm">
+              <Boxes className="w-3.5 h-3.5 text-primary-600" />
+              <span>Use Cases &amp; Solutions</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink tracking-tight mb-3">
+              {workAreasTitle}
+            </h2>
+            <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+              Tailored SaaS product engineering designed around real business operations and commercial scalability.
+            </p>
+          </Reveal>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {[
-            {
-              title: 'PostgreSQL Row-Level Security',
-              desc: 'Cryptographic schema and row isolation ensuring zero cross-tenant data bleed across multi-tenant databases.',
-              badge: 'Data Security',
-            },
-            {
-              title: 'Stripe Billing & Tax Engine',
-              desc: 'Automated recurring billing, tiered seat allocation, usage meters, and global tax compliance calculation.',
-              badge: 'Monetization',
-            },
-            {
-              title: 'Okta & Azure AD SAML 2.0',
-              desc: 'Enterprise identity federation with automated SCIM user provisioning, group mapping, and SSO enforcement.',
-              badge: 'Enterprise Auth',
-            },
-            {
-              title: 'SOC 2 Type II & ISO 27001',
-              desc: 'Tamper-evident audit trails, role-based access control (RBAC), and encryption at rest and in transit.',
-              badge: 'Compliance',
-            },
-            {
-              title: 'LaunchDarkly & PostHog Flags',
-              desc: 'Dynamic feature management, gradual canary rollouts, and real-time user engagement telemetry.',
-              badge: 'DevOps & Flags',
-            },
-            {
-              title: 'OpenTelemetry & Prometheus',
-              desc: 'Distributed request tracing, custom SLI/SLA metric collection, and automated incident alert webhooks.',
-              badge: 'Observability',
-            },
-          ].map((item) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {workAreas.map((w, idx) => {
+              const Icon = useCaseIcons[idx % useCaseIcons.length];
+              return (
+                <motion.div
+                  key={w.title || idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: idx * 0.08 }}
+                  className="p-7 rounded-2xl bg-white border border-gray-100 shadow-sm hover:border-primary-300 hover:shadow-card transition-all flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="flex items-center gap-3.5 mb-4">
+                      <span className="w-10 h-10 rounded-xl bg-primary-50 text-primary-600 border border-primary-100 flex items-center justify-center shrink-0">
+                        <Icon className="w-5 h-5" />
+                      </span>
+                      <h3 className="text-lg font-bold text-ink leading-snug">{w.title}</h3>
+                    </div>
+                    <p className="text-sm text-gray-600 leading-relaxed font-normal">
+                      {formatInline(w.body || w.desc || '')}
+                    </p>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ⚙️ 4. Technologies We Use for SaaS Development (Tech Stack) */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-primary-50/70 via-blue-50/40 to-white border border-primary-100/80 shadow-sm">
+          <div className="max-w-3xl mb-8">
+            <span className="text-xs font-bold text-primary-600 uppercase tracking-wider block mb-1">
+              Tech Stack
+            </span>
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-ink tracking-tight">
+              {techTitle}
+            </h3>
+            <p className="text-sm text-gray-600 mt-2 leading-relaxed">
+              We use modern technology stacks to create dependable, performant SaaS products.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {techItems.map((tech, idx) => (
+              <div
+                key={idx}
+                className="p-5 rounded-2xl bg-white border border-primary-100 shadow-sm hover:border-primary-300 hover:shadow-card transition-all"
+              >
+                <div className="flex items-center gap-3 mb-2">
+                  <span className="w-7 h-7 rounded-lg bg-primary-100/60 text-primary-700 flex items-center justify-center shrink-0">
+                    <Code2 className="w-4 h-4 text-primary-600" />
+                  </span>
+                  <h4 className="font-bold text-ink text-sm sm:text-base">{tech.title}</h4>
+                </div>
+                <p className="text-xs text-gray-600 leading-relaxed">{tech.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 🏆 5. Why SaaS Teams Choose Cubixsol */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Reveal className="text-center max-w-3xl mx-auto mb-12">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-50 text-primary-700 border border-primary-200 text-xs font-bold uppercase tracking-wider mb-3 shadow-sm">
+            <ShieldCheck className="w-3.5 h-3.5 text-primary-600" />
+            <span>Why Cubixsol</span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink tracking-tight mb-3">
+            {whyChooseTitle}
+          </h2>
+        </Reveal>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {whyChooseItems.map((item, idx) => (
             <motion.div
-              key={item.title}
-              whileHover={{ y: -3 }}
-              className="p-5 rounded-2xl bg-white border border-gray-100 shadow-card hover:border-primary-300 transition-all flex flex-col justify-between"
+              key={item.title || idx}
+              whileHover={{ y: -4 }}
+              transition={{ duration: 0.2 }}
+              className="p-6 rounded-2xl bg-white border border-gray-100 shadow-card hover:border-primary-300 hover:shadow-elev transition-all flex flex-col justify-between"
             >
               <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-primary-50 text-primary-700 border border-primary-200">
-                    {item.badge}
-                  </span>
-                  <CheckCircle2 className="w-4 h-4 text-primary-600" />
-                </div>
-                <h3 className="font-bold text-ink text-base mb-1.5">{item.title}</h3>
-                <p className="text-xs text-gray-600 leading-relaxed">{item.desc}</p>
+                <span className="w-8 h-8 rounded-lg bg-primary-50 text-primary-600 font-mono font-bold text-xs flex items-center justify-center mb-4 border border-primary-100">
+                  0{idx + 1}
+                </span>
+                <h3 className="font-bold text-ink text-base mb-2">{item.title}</h3>
+                <p className="text-xs text-gray-600 leading-relaxed font-normal">{item.desc}</p>
               </div>
             </motion.div>
           ))}
         </div>
       </section>
-
-      {/* 6. Work Areas / Specialized Domains */}
-      {workAreas.length > 0 && (
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-10 text-center max-w-2xl mx-auto">
-            <span className="inline-block px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-primary-50 text-primary-700 border border-primary-200 mb-3">
-              Specialized Domains
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-ink tracking-tight">
-              SaaS Solutions We Deliver
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-2 gap-6">
-            {workAreas.map((w, idx) => (
-              <motion.div
-                key={w.title || idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="p-6 sm:p-7 rounded-2xl bg-white border border-gray-100 shadow-card hover:border-primary-300 hover:shadow-xl transition-all"
-              >
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="w-9 h-9 rounded-xl bg-gradient-to-r from-[#00a4d8] to-[#5d53a3] text-white font-mono text-xs font-bold flex items-center justify-center shadow-md">
-                    0{idx + 1}
-                  </span>
-                  <h3 className="text-lg font-extrabold text-ink">{w.title}</h3>
-                </div>
-                <p className="text-sm text-gray-600 leading-relaxed">{w.body}</p>
-              </motion.div>
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* 7. Products Built & Case Studies */}
-      {(products.length > 0 || cases.length > 0) && (
-        <section className="bg-gradient-to-br from-[#1a1a2e] via-[#241f48] to-[#121824] text-white py-14 rounded-3xl max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border border-primary-500/20 shadow-2xl">
-          <div className="max-w-3xl mb-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00a4d8]/20 border border-[#00a4d8]/30 text-[#00a4d8] text-xs font-semibold mb-2">
-              <Sparkles className="w-3.5 h-3.5" /> Proven Track Record
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
-              SaaS Platforms Built by Cubixsol
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {(cases.length > 0 ? cases : products).map((c, idx) => (
-              <div
-                key={c.title || idx}
-                className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-[#00a4d8]/50 transition duration-300 flex flex-col justify-between"
-              >
-                <div>
-                  <div className="flex flex-wrap gap-1.5 mb-3">
-                    {c.tags?.map((tag) => (
-                      <span key={tag} className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#00a4d8]/20 text-[#00a4d8] border border-[#00a4d8]/30">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <h3 className="text-base font-bold text-white mb-2">{c.title}</h3>
-                  <p className="text-xs text-gray-300 leading-relaxed mb-4">
-                    {c.result || c.description}
-                  </p>
-                </div>
-                {c.metrics && (
-                  <div className="pt-3 border-t border-white/10 text-xs font-mono font-bold text-green-400">
-                    {c.metrics}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* 8. Services Grid */}
-      {services.length > 0 && (
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="p-8 sm:p-10 rounded-3xl bg-primary-50/50 border border-primary-200/80">
-            <div className="text-center max-w-2xl mx-auto mb-8">
-              <span className="inline-block px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-white text-primary-700 border border-primary-200 mb-2">
-                End-to-End Capabilities
-              </span>
-              <h3 className="text-xl sm:text-2xl font-extrabold text-ink">
-                Full-Lifecycle SaaS Engineering Services
-              </h3>
-            </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
-              {services.map((s) => (
-                <div
-                  key={s}
-                  className="flex items-center gap-3 p-3.5 rounded-xl bg-white shadow-sm border border-primary-200/60 hover:border-primary-400 transition"
-                >
-                  <div className="w-6 h-6 rounded-lg bg-primary-600 text-white flex items-center justify-center shrink-0">
-                    <CheckCircle2 className="w-4 h-4" />
-                  </div>
-                  <span className="text-xs sm:text-sm font-semibold text-ink">{s}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
     </div>
   );
 }
