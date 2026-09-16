@@ -12,7 +12,10 @@ const serviceMenuGroups = [
       'web-development',
       'mobile-app-development',
       'shopify-development',
+      'ios-app-development',
       'ios-development',
+      'ios',
+      'android-app-development',
       'android-development',
       'android',
     ],
@@ -24,13 +27,16 @@ const serviceMenuGroups = [
       'php-development',
       'cms-development',
       'pms-integration',
+      'api-development-and-integration',
       'api-development',
+      'api',
     ],
   },
   {
     title: 'Cloud & AI',
     slugs: [
       'cloud-solutions',
+      'cloud',
       'devops',
       'data-migration-services',
       'data-migration',
@@ -46,6 +52,7 @@ const serviceMenuGroups = [
       'ecommerce-development',
       'ecommerce',
       'digital-marketing',
+      'ui-ux-designing',
       'ui-ux-design',
       'ui-ux',
       'uiux',
@@ -62,17 +69,38 @@ export default function Navbar() {
   services.forEach((s) => {
     if (s && s.slug) {
       serviceBySlug[s.slug] = s;
-      if (s.slug === 'graphic-designing') serviceBySlug['graphic-design'] = s;
-      if (s.slug === 'graphic-design') serviceBySlug['graphic-designing'] = s;
-      if (s.slug === 'ecommerce-solutions') {
+      if (s.slug === 'graphic-designing' || s.slug === 'graphic-design') {
+        serviceBySlug['graphic-design'] = s;
+        serviceBySlug['graphic-designing'] = s;
+      }
+      if (s.slug === 'ecommerce-solutions' || s.slug === 'ecommerce') {
         serviceBySlug['ecommerce'] = s;
         serviceBySlug['ecommerce-development'] = s;
+        serviceBySlug['ecommerce-solutions'] = s;
       }
-      if (s.slug === 'data-migration-services') serviceBySlug['data-migration'] = s;
-      if (s.slug === 'android-development') serviceBySlug['android'] = s;
-      if (s.slug === 'ui-ux' || s.slug === 'ui-ux-design' || s.slug === 'uiux') {
+      if (s.slug === 'data-migration-services' || s.slug === 'data-migration') {
+        serviceBySlug['data-migration'] = s;
+        serviceBySlug['data-migration-services'] = s;
+      }
+      if (s.slug === 'android-app-development' || s.slug === 'android-development' || s.slug === 'android') {
+        serviceBySlug['android'] = s;
+        serviceBySlug['android-app-development'] = s;
+        serviceBySlug['android-development'] = s;
+      }
+      if (s.slug === 'ios-app-development' || s.slug === 'ios-development' || s.slug === 'ios') {
+        serviceBySlug['ios'] = s;
+        serviceBySlug['ios-app-development'] = s;
+        serviceBySlug['ios-development'] = s;
+      }
+      if (s.slug === 'api-development-and-integration' || s.slug === 'api-development' || s.slug === 'api') {
+        serviceBySlug['api'] = s;
+        serviceBySlug['api-development'] = s;
+        serviceBySlug['api-development-and-integration'] = s;
+      }
+      if (s.slug === 'ui-ux-designing' || s.slug === 'ui-ux' || s.slug === 'ui-ux-design' || s.slug === 'uiux') {
         serviceBySlug['ui-ux'] = s;
         serviceBySlug['ui-ux-design'] = s;
+        serviceBySlug['ui-ux-designing'] = s;
         serviceBySlug['uiux'] = s;
       }
     }
@@ -97,14 +125,15 @@ export default function Navbar() {
 
     const uncategorized = services.filter(s => s && s.slug && !matchedSlugs.has(s.slug));
     uncategorized.forEach((s) => {
-      const text = `${s.slug} ${s.title}`.toLowerCase();
-      if (text.includes('ui') || text.includes('ux') || text.includes('design') || text.includes('graphic') || text.includes('brand') || text.includes('marketing') || text.includes('commerce')) {
-        const targetGroup = groups.find(g => g.title.includes('Design')) || groups[groups.length - 1];
-        targetGroup.servicesList.push(s);
-      } else if (text.includes('shopify') || text.includes('app') || text.includes('mobile') || text.includes('ios') || text.includes('android')) {
+      const slug = (s.slug || '').toLowerCase();
+      const title = (s.title || '').toLowerCase();
+      if (slug.includes('android') || slug.includes('ios') || slug.includes('mobile') || slug.includes('web') || slug.includes('shopify') || title.includes('android') || title.includes('ios') || title.includes('mobile') || title.includes('shopify')) {
         const targetGroup = groups.find(g => g.title.includes('Build')) || groups[0];
         targetGroup.servicesList.push(s);
-      } else if (text.includes('cloud') || text.includes('ai') || text.includes('data') || text.includes('devops')) {
+      } else if (slug.includes('ui-ux') || slug.includes('uiux') || slug.includes('graphic') || slug.includes('ecommerce') || slug.includes('marketing') || title.includes('ui/ux') || title.includes('graphic') || title.includes('marketing')) {
+        const targetGroup = groups.find(g => g.title.includes('Design')) || groups[groups.length - 1];
+        targetGroup.servicesList.push(s);
+      } else if (slug.includes('cloud') || slug.includes('devops') || slug.includes('data-migration') || slug.includes('ai-') || title.includes('cloud') || title.includes('devops') || title.includes('ai ')) {
         const targetGroup = groups.find(g => g.title.includes('Cloud')) || groups[2];
         targetGroup.servicesList.push(s);
       } else {
