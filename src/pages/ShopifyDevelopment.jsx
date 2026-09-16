@@ -7,7 +7,7 @@ import {
   Globe, Users, Award, Cpu, Server, Lock, Layers, Sliders,
   HelpCircle, ChevronRight, Star, ExternalLink, Mail, MessageSquare,
   CreditCard, Search, Palette, Rocket, Store, PackageCheck, Repeat,
-  ArrowUpRight, BarChart3, Gauge
+  ArrowUpRight, BarChart3, Gauge, Radio, Activity
 } from 'lucide-react';
 import { useEstimateModal } from '../context/EstimateModalContext';
 import { apiFetch } from '../utils/api';
@@ -297,552 +297,364 @@ export default function ShopifyDevelopment() {
   const currentMode = STORE_MODES[activeStoreMode] || STORE_MODES[0];
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-emerald-500 selection:text-white relative overflow-hidden">
-      {/* Dynamic Background Mesh Gradients */}
-      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        <div className="absolute top-[-10%] left-[-10%] w-[60vw] h-[60vw] rounded-full bg-gradient-to-br from-emerald-600/15 via-teal-500/10 to-transparent blur-3xl" />
-        <div className="absolute top-[35%] right-[-15%] w-[55vw] h-[55vw] rounded-full bg-gradient-to-bl from-cyan-600/15 via-sky-500/10 to-transparent blur-3xl" />
-        <div className="absolute bottom-[-10%] left-[20%] w-[50vw] h-[50vw] rounded-full bg-gradient-to-tr from-emerald-800/10 via-emerald-600/5 to-transparent blur-3xl" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b15_1px,transparent_1px),linear-gradient(to_bottom,#1e293b15_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
-      </div>
+    <div className="min-h-screen bg-white text-ink font-sans selection:bg-[#00a4d8] selection:text-white relative">
+      {/* ================= HERO SECTION (Cubixsol Midnight & Cyan Mesh) ================= */}
+      <section className="relative overflow-hidden pt-12 pb-16 sm:pt-16 sm:pb-24 bg-gradient-to-br from-slate-950 via-[#071326] to-[#040e1c] text-white">
+        <div className="absolute right-0 top-0 w-96 h-96 bg-[#00a4d8]/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute left-0 bottom-0 w-96 h-96 bg-primary-600/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b15_1px,transparent_1px),linear-gradient(to_bottom,#1e293b15_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
 
-      <div className="relative z-10">
-        {/* ================= HERO SECTION ================= */}
-        <section className="pt-32 pb-20 md:pt-40 md:pb-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-          {/* Breadcrumb Strip */}
-          <div className="flex items-center gap-2 text-xs font-medium text-slate-400 mb-8">
-            <Link to="/" className="hover:text-emerald-400 transition-colors">Home</Link>
-            <ChevronRight size={13} className="text-slate-600" />
-            <Link to="/services" className="hover:text-emerald-400 transition-colors">Services</Link>
-            <ChevronRight size={13} className="text-slate-600" />
-            <span className="text-emerald-400 font-semibold">Shopify Store Development</span>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+          {/* Breadcrumb */}
+          <div className="mb-8">
+            <Link
+              to="/services"
+              className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-400 hover:text-white transition group"
+            >
+              <ArrowRight className="w-4 h-4 rotate-180 group-hover:-translate-x-1 transition-transform" /> Back to Services
+            </Link>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-            {/* Left Hero Column */}
-            <div className="lg:col-span-7 space-y-7">
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-xs sm:text-sm font-semibold tracking-wide backdrop-blur-md">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-                </span>
-                <span>Certified Shopify Partner & eCommerce Engineers</span>
-              </div>
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            {/* Left Copy */}
+            <div className="lg:col-span-6">
+              <Reveal scale>
+                <div className="flex flex-col space-y-6 sm:space-y-7">
+                  {/* Eyebrow Badge */}
+                  <div>
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#00a4d8]/15 border border-[#00a4d8]/30 text-cyan-300 text-xs font-bold uppercase tracking-wider shadow-sm backdrop-blur-sm">
+                      <Radio className="w-3.5 h-3.5 text-[#00a4d8] animate-pulse" />
+                      <span>Certified Shopify Partner &amp; eCommerce Engineering</span>
+                    </div>
+                  </div>
 
-              {/* Main H1 Title */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.12]">
-                Shopify Store <br />
-                <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">
-                  Development
-                </span>
-              </h1>
+                  {/* Main Title */}
+                  <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.2]">
+                    Shopify Store <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00a4d8] via-cyan-300 to-white">Development</span>
+                  </h1>
 
-              {/* Rich Description */}
-              <div className="text-base sm:text-lg text-slate-300 leading-relaxed space-y-4 font-normal">
-                {data.desc ? (
-                  <p>{formatInline(data.desc, { linkClass: 'text-emerald-400 hover:text-emerald-300 underline font-medium' })}</p>
-                ) : (
-                  <p>{formatInline(DEFAULT_DATA.desc, { linkClass: 'text-emerald-400 hover:text-emerald-300 underline font-medium' })}</p>
-                )}
-              </div>
+                  {/* Paragraphs with Clear Separation */}
+                  <div className="space-y-4 sm:space-y-5">
+                    <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-normal">
+                      {data.desc ? (
+                        formatInline(data.desc, { linkClass: 'text-[#00a4d8] hover:text-cyan-300 underline font-semibold' })
+                      ) : (
+                        formatInline(DEFAULT_DATA.desc, { linkClass: 'text-[#00a4d8] hover:text-cyan-300 underline font-semibold' })
+                      )}
+                    </p>
+                  </div>
 
-              {/* Action CTAs */}
-              <div className="pt-2 flex flex-wrap items-center gap-4">
-                <button
-                  type="button"
-                  onClick={() => openEstimateModal('Shopify Store Development')}
-                  className="px-7 py-4 rounded-2xl bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-600 text-slate-950 font-bold text-base shadow-xl shadow-emerald-500/25 hover:shadow-emerald-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 flex items-center gap-3 group cursor-pointer"
-                >
-                  <ShoppingBag size={20} className="text-slate-950 group-hover:rotate-6 transition-transform" />
-                  <span>{data.ctaPrimaryText || 'Talk to an Expert'}</span>
-                  <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                </button>
+                  {/* Hero CTA Buttons */}
+                  <div className="flex flex-wrap items-center gap-4 pt-2">
+                    <button
+                      type="button"
+                      onClick={() => openEstimateModal('Shopify Store Development')}
+                      className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#00a4d8] to-blue-600 hover:opacity-95 text-white font-bold text-sm shadow-lg shadow-[#00a4d8]/25 transition-all hover:scale-[1.02] cursor-pointer"
+                    >
+                      <ShoppingBag className="w-4 h-4" />
+                      <span>{data.ctaPrimaryText || 'Talk to an Expert'}</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </button>
 
-                <a
-                  href="#services-matrix"
-                  className="px-6 py-4 rounded-2xl bg-slate-900/90 hover:bg-slate-800 text-slate-200 hover:text-white font-semibold text-base border border-slate-700/80 hover:border-emerald-500/40 transition-all duration-300 backdrop-blur-md flex items-center gap-2"
-                >
-                  <span>{data.ctaSecondaryText || 'Explore Shopify Services'}</span>
-                  <ChevronRight size={16} className="text-emerald-400" />
-                </a>
-              </div>
-
-              {/* Trust Indicators */}
-              <div className="pt-4 flex flex-wrap items-center gap-6 text-xs sm:text-sm text-slate-400">
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 size={16} className="text-emerald-400 shrink-0" />
-                  <span>Shopify Online Store 2.0</span>
+                    <a
+                      href="#services-matrix"
+                      className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm border border-white/20 transition-all backdrop-blur-sm hover:scale-[1.02]"
+                    >
+                      <Sparkles className="w-4 h-4 text-cyan-300" />
+                      <span>{data.ctaSecondaryText || 'Explore Shopify Services'}</span>
+                    </a>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 size={16} className="text-emerald-400 shrink-0" />
-                  <span>Core Web Vitals 99+</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 size={16} className="text-emerald-400 shrink-0" />
-                  <span>Custom Liquid & Apps</span>
-                </div>
-              </div>
+              </Reveal>
             </div>
 
-            {/* Right Hero Column: Interactive Store Engine Visualizer */}
-            <div className="lg:col-span-5">
-              <div className="relative rounded-3xl bg-slate-900/90 border border-slate-800/90 p-6 sm:p-7 shadow-2xl backdrop-blur-xl overflow-hidden group hover:border-emerald-500/40 transition-all duration-500">
-                {/* Decorative glow */}
-                <div className="absolute -top-24 -right-24 w-60 h-60 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
-
-                {/* Visualizer Top Bar */}
-                <div className="flex items-center justify-between pb-5 border-b border-slate-800">
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
-                      <Store size={19} />
+            {/* Right: Live Interactive Shopify Performance Telemetry Node */}
+            <div className="lg:col-span-6">
+              <Reveal direction="left" delay={0.1}>
+                <div className="rounded-3xl bg-slate-900/90 border border-[#00a4d8]/30 p-6 sm:p-7 shadow-2xl backdrop-blur-xl relative">
+                  <div className="flex items-center justify-between border-b border-slate-800 pb-4 mb-4">
+                    <div className="flex items-center gap-2">
+                      <span className="w-2.5 h-2.5 rounded-full bg-[#00a4d8] animate-ping" />
+                      <span className="text-xs font-mono text-cyan-300 font-bold">SHOPIFY ARCHITECTURE HUB &bull; LIVE</span>
                     </div>
-                    <div>
-                      <div className="text-sm font-bold text-white flex items-center gap-2">
-                        <span>Shopify Performance Engine</span>
-                        <span className="px-2 py-0.5 text-[10px] rounded-full bg-emerald-500/20 text-emerald-300 font-semibold">
-                          Live Active
-                        </span>
-                      </div>
-                      <div className="text-xs text-slate-400">Cubixsol High-Speed Architecture</div>
-                    </div>
-                  </div>
-
-                  <button
-                    onClick={handleSimulateAudit}
-                    disabled={isAuditing}
-                    className="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors border border-slate-700 text-xs flex items-center gap-1.5 cursor-pointer disabled:opacity-50"
-                    title="Run Store Performance Audit"
-                  >
-                    <RefreshCw size={13} className={isAuditing ? 'animate-spin text-emerald-400' : ''} />
-                    <span className="hidden sm:inline">Speed Test</span>
-                  </button>
-                </div>
-
-                {/* Score Gauges */}
-                <div className="grid grid-cols-3 gap-3 my-5">
-                  <div className="rounded-2xl bg-slate-950/80 border border-slate-800/80 p-3.5 text-center">
-                    <div className="text-2xl font-black text-emerald-400">
-                      {auditScore.speed}{typeof auditScore.speed === 'number' && <span className="text-xs text-slate-500 font-medium">/100</span>}
-                    </div>
-                    <div className="text-[11px] font-semibold text-slate-300 mt-1">Mobile Speed</div>
-                    <div className="text-[10px] text-emerald-500 mt-0.5">0.35s TTFB</div>
-                  </div>
-
-                  <div className="rounded-2xl bg-slate-950/80 border border-slate-800/80 p-3.5 text-center">
-                    <div className="text-2xl font-black text-cyan-400">
-                      {auditScore.mobile}{typeof auditScore.mobile === 'number' && <span className="text-xs text-slate-500 font-medium">%</span>}
-                    </div>
-                    <div className="text-[11px] font-semibold text-slate-300 mt-1">Checkout UX</div>
-                    <div className="text-[10px] text-cyan-400 mt-0.5">1-Click Fast Pay</div>
-                  </div>
-
-                  <div className="rounded-2xl bg-slate-950/80 border border-slate-800/80 p-3.5 text-center">
-                    <div className="text-2xl font-black text-teal-400">
-                      {auditScore.seo}{typeof auditScore.seo === 'number' && <span className="text-xs text-slate-500 font-medium">%</span>}
-                    </div>
-                    <div className="text-[11px] font-semibold text-slate-300 mt-1">SEO Schema</div>
-                    <div className="text-[10px] text-teal-400 mt-0.5">Rich Snippets</div>
-                  </div>
-                </div>
-
-                {/* Simulated Terminal / Store Status Output */}
-                <div className="rounded-2xl bg-slate-950 border border-slate-800/80 p-4 space-y-2.5 font-mono text-xs">
-                  <div className="flex items-center justify-between text-[11px] text-slate-400 border-b border-slate-800/60 pb-2">
-                    <span className="flex items-center gap-1.5 text-emerald-400">
-                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                      Status: {auditScore.status}
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#00a4d8]/20 text-cyan-300 border border-[#00a4d8]/30">
+                      Store 2.0 Engine
                     </span>
-                    <span className="text-slate-500">Shopify CLI v3.x</span>
                   </div>
 
-                  <div className="space-y-1.5 pt-1 text-slate-300">
-                    <div className="flex justify-between">
-                      <span className="text-slate-500">Theme Engine:</span>
-                      <span className="text-emerald-300 font-semibold">Liquid 2.0 Modular</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-slate-500">App Overhead:</span>
-                      <span className="text-cyan-300">0% Layout Shift (Async)</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-slate-500">Checkout API:</span>
-                      <span className="text-slate-200">Shopify Cart & Checkout Ext.</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-slate-500">Multi-Currency:</span>
-                      <span className="text-teal-300">Enabled (Shopify Markets)</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Quick Action in Widget */}
-                <div className="mt-5 pt-4 border-t border-slate-800 flex items-center justify-between">
-                  <div className="text-xs text-slate-400">
-                    Need a custom Shopify audit?
-                  </div>
-                  <button
-                    type="button"
-                    onClick={() => openEstimateModal('Shopify Store Audit')}
-                    className="text-xs font-bold text-emerald-400 hover:text-emerald-300 flex items-center gap-1 hover:underline cursor-pointer"
-                  >
-                    <span>Get Free Audit</span>
-                    <ArrowRight size={13} />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ================= STATS STRIP ================= */}
-        <section className="py-12 border-y border-slate-800/80 bg-slate-900/40 backdrop-blur-md">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-              {stats.map((st, i) => {
-                const IconComponent = st.icon;
-                return (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
-                    className="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-emerald-500/40 hover:bg-slate-900 transition-all duration-300 group"
-                  >
-                    <div className="flex items-center justify-between mb-3">
-                      <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform">
-                        <IconComponent size={20} />
-                      </div>
-                      <span className="text-[11px] font-semibold tracking-wider uppercase text-emerald-400/90 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20">
-                        {st.highlight}
-                      </span>
-                    </div>
-                    <div className="text-3xl sm:text-4xl font-black text-white tracking-tight group-hover:text-emerald-300 transition-colors">
-                      {st.value}
-                    </div>
-                    <div className="text-sm font-medium text-slate-400 mt-1">
-                      {st.label}
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* ================= SECTION 2: WHY CHOOSE CUBIXSOL ================= */}
-        <section className="py-20 md:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold uppercase tracking-wider">
-              Why Choose Us
-            </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
-              {data.whyChooseTitle || DEFAULT_DATA.whyChooseTitle}
-            </h2>
-            <p className="text-base sm:text-lg text-slate-400 leading-relaxed">
-              {data.whyChooseIntro || DEFAULT_DATA.whyChooseIntro}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {(data.whyChooseItems && data.whyChooseItems.length > 0 ? data.whyChooseItems : DEFAULT_DATA.whyChooseItems).map((item, idx) => {
-              const icons = [Globe, Award, TrendingUp, Users];
-              const ItemIcon = icons[idx % icons.length];
-              return (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 25 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="rounded-3xl bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800/90 p-7 hover:border-emerald-500/40 hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300 flex flex-col justify-between group"
-                >
-                  <div className="space-y-4">
-                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-teal-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:scale-110 group-hover:bg-emerald-500/30 transition-all duration-300">
-                      <ItemIcon size={24} />
-                    </div>
-                    <h3 className="text-xl font-bold text-white group-hover:text-emerald-300 transition-colors">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm text-slate-400 leading-relaxed">
-                      {item.desc}
+                  {/* Mode Selector */}
+                  <div className="space-y-2.5 mb-5">
+                    <p className="text-[11px] font-mono text-slate-400 uppercase tracking-wider">
+                      Shopify Architecture Frameworks:
                     </p>
-                  </div>
-                  <div className="pt-6 border-t border-slate-800/60 mt-6 flex items-center text-xs font-semibold text-emerald-400 gap-1.5 group-hover:translate-x-1 transition-transform">
-                    <span>Verified Success Pillar</span>
-                    <CheckCircle2 size={14} />
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </section>
-
-        {/* ================= INTERACTIVE SHOPIFY ARCHITECTURE STUDIO ================= */}
-        <section className="py-16 md:py-24 bg-gradient-to-b from-slate-900/60 via-slate-950 to-slate-900/60 border-y border-slate-800/80">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold uppercase tracking-wider">
-                Interactive Architecture Studio
-              </div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-                Modern Shopify Development Stacks
-              </h2>
-              <p className="text-slate-400 text-sm sm:text-base">
-                Explore how we architect scalable, lightning-fast Shopify stores tailored to your business model.
-              </p>
-            </div>
-
-            {/* Mode Switcher Tabs */}
-            <div className="flex flex-wrap justify-center gap-2.5 sm:gap-3 mb-10">
-              {STORE_MODES.map((mode, i) => (
-                <button
-                  key={mode.id}
-                  onClick={() => setActiveStoreMode(i)}
-                  className={`px-5 py-3 rounded-2xl text-xs sm:text-sm font-bold transition-all duration-300 flex items-center gap-2 cursor-pointer ${
-                    activeStoreMode === i
-                      ? 'bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 shadow-lg shadow-emerald-500/20 scale-105'
-                      : 'bg-slate-900 text-slate-300 hover:text-white hover:bg-slate-800 border border-slate-800'
-                  }`}
-                >
-                  <span>{mode.name}</span>
-                  <span className={`text-[10px] px-2 py-0.5 rounded-full ${
-                    activeStoreMode === i ? 'bg-slate-950/20 text-slate-950' : 'bg-slate-800 text-slate-400'
-                  }`}>
-                    {mode.badge}
-                  </span>
-                </button>
-              ))}
-            </div>
-
-            {/* Active Mode Display Panel */}
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentMode.id}
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.3 }}
-                className="rounded-3xl bg-slate-900/90 border border-slate-800 p-6 sm:p-8 lg:p-10 shadow-2xl backdrop-blur-xl"
-              >
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                  <div className="lg:col-span-6 space-y-6">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-400 text-xs font-semibold">
-                      <Sparkles size={14} />
-                      <span>{currentMode.badge}</span>
-                    </div>
-
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
-                      {currentMode.name}
-                    </h3>
-
-                    <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-                      {currentMode.desc}
-                    </p>
-
-                    <div className="space-y-3 pt-2">
-                      <div className="text-xs font-bold uppercase tracking-wider text-slate-400">
-                        Engineering Highlights:
-                      </div>
-                      {currentMode.highlights.map((hl, idx) => (
-                        <div key={idx} className="flex items-center gap-3 text-sm text-slate-200">
-                          <div className="w-5 h-5 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
-                            <CheckCircle2 size={14} />
-                          </div>
-                          <span>{hl}</span>
-                        </div>
+                    <div className="grid grid-cols-2 gap-2">
+                      {STORE_MODES.map((mode, i) => (
+                        <button
+                          key={mode.id}
+                          onClick={() => setActiveStoreMode(i)}
+                          className={`p-2.5 rounded-xl text-left border transition-all text-xs font-sans cursor-pointer ${
+                            activeStoreMode === i
+                              ? 'bg-[#00a4d8]/20 border-[#00a4d8] text-white font-bold'
+                              : 'bg-white/5 border-white/10 text-slate-400 hover:text-white hover:bg-white/10'
+                          }`}
+                        >
+                          <p className="font-semibold truncate">{mode.name}</p>
+                          <p className="text-[10px] text-cyan-300/80 font-mono mt-0.5">{mode.badge}</p>
+                        </button>
                       ))}
                     </div>
-
-                    <div className="pt-3">
-                      <button
-                        type="button"
-                        onClick={() => openEstimateModal(`Shopify - ${currentMode.name}`)}
-                        className="px-6 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm flex items-center gap-2 transition-all cursor-pointer shadow-lg shadow-emerald-500/20"
-                      >
-                        <span>Build with {currentMode.name}</span>
-                        <ArrowRight size={16} />
-                      </button>
-                    </div>
                   </div>
 
-                  <div className="lg:col-span-6">
-                    <div className="rounded-2xl bg-slate-950 border border-slate-800 p-6 space-y-5">
-                      <div className="flex items-center justify-between border-b border-slate-800/80 pb-4">
-                        <span className="text-xs font-mono text-emerald-400">Benchmark Telemetry</span>
-                        <span className="text-[11px] text-slate-500 font-mono">Lighthouse v11 Audit</span>
+                  {/* Telemetry Display */}
+                  <div className="rounded-2xl bg-black/50 border border-slate-800 p-4 space-y-3 font-mono text-xs">
+                    <div className="flex justify-between items-center border-b border-slate-800/80 pb-2">
+                      <span className="text-slate-400 font-sans font-semibold">Active Framework:</span>
+                      <span className="text-cyan-300 font-bold">{currentMode.name}</span>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-2.5 text-[11px]">
+                      <div className="p-2.5 rounded-lg bg-white/5 border border-slate-800">
+                        <p className="text-slate-400 text-[10px]">SPEED INDEX</p>
+                        <p className="text-[#00a4d8] font-bold mt-0.5">{currentMode.metrics.speed}</p>
                       </div>
-
-                      <div className="grid grid-cols-2 gap-4">
-                        <div className="p-4 rounded-xl bg-slate-900/90 border border-slate-800">
-                          <div className="text-xs text-slate-400">Performance Index</div>
-                          <div className="text-2xl font-black text-emerald-400 mt-1">{currentMode.metrics.speed}</div>
-                          <div className="text-[10px] text-emerald-500/80 mt-1">Google Core Web Vitals Ready</div>
-                        </div>
-
-                        <div className="p-4 rounded-xl bg-slate-900/90 border border-slate-800">
-                          <div className="text-xs text-slate-400">Time To First Byte</div>
-                          <div className="text-2xl font-black text-cyan-400 mt-1">{currentMode.metrics.ttfb}</div>
-                          <div className="text-[10px] text-cyan-500/80 mt-1">Edge Cached via CDN</div>
-                        </div>
-
-                        <div className="p-4 rounded-xl bg-slate-900/90 border border-slate-800">
-                          <div className="text-xs text-slate-400">Conversion Rate Lift</div>
-                          <div className="text-2xl font-black text-teal-400 mt-1">{currentMode.metrics.conversion}</div>
-                          <div className="text-[10px] text-teal-500/80 mt-1">Frictionless Checkout</div>
-                        </div>
-
-                        <div className="p-4 rounded-xl bg-slate-900/90 border border-slate-800">
-                          <div className="text-xs text-slate-400">Mobile Responsiveness</div>
-                          <div className="text-2xl font-black text-white mt-1">{currentMode.metrics.mobileScore}</div>
-                          <div className="text-[10px] text-slate-400 mt-1">100% Fluid Breakpoints</div>
-                        </div>
+                      <div className="p-2.5 rounded-lg bg-white/5 border border-slate-800">
+                        <p className="text-slate-400 text-[10px]">CONVERSION LIFT</p>
+                        <p className="text-emerald-400 font-bold mt-0.5">{currentMode.metrics.conversion}</p>
                       </div>
                     </div>
+
+                    <div className="p-2.5 rounded-lg bg-sky-950/40 border border-[#00a4d8]/30 flex justify-between items-center text-[11px]">
+                      <div className="flex items-center gap-1.5 text-cyan-200">
+                        <Activity className="w-3.5 h-3.5 text-[#00a4d8] animate-pulse" />
+                        <span className="truncate">{auditScore.status}</span>
+                      </div>
+                      <span className="text-[10px] text-[#00a4d8] font-bold shrink-0">{currentMode.metrics.ttfb}</span>
+                    </div>
+
+                    <button
+                      onClick={handleSimulateAudit}
+                      disabled={isAuditing}
+                      className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-[#00a4d8] to-blue-600 hover:opacity-90 text-white font-sans font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition disabled:opacity-50 cursor-pointer"
+                    >
+                      <RefreshCw className={`w-3.5 h-3.5 ${isAuditing ? 'animate-spin' : ''}`} />
+                      {isAuditing ? 'Testing Core Web Vitals...' : 'Test Real-Time Shopify Speed Audit'}
+                    </button>
                   </div>
                 </div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-        </section>
-
-        {/* ================= SECTION 3: HOW WE WORK (PROCESS STEPS) ================= */}
-        <section className="py-20 md:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold uppercase tracking-wider">
-              Step-by-Step Delivery
+              </Reveal>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+          </div>
+        </div>
+      </section>
+
+      {/* ================= 2. WHY CHOOSE CUBIXSOL (Stats Strip) ================= */}
+      <section className="border-y border-gray-200/80 bg-slate-50/80 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Reveal className="text-center max-w-2xl mx-auto mb-8">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-ink tracking-tight">
+              {data.whyChooseTitle || DEFAULT_DATA.whyChooseTitle}
+            </h2>
+            <p className="text-gray-500 text-sm mt-1">
+              {data.whyChooseIntro || DEFAULT_DATA.whyChooseIntro}
+            </p>
+          </Reveal>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 divide-y sm:divide-y-0 sm:divide-x divide-gray-200 text-center">
+            <div className="px-3 sm:px-4 py-2">
+              <p className="text-3xl sm:text-5xl font-extrabold text-[#00a4d8] tracking-tight">1K+</p>
+              <p className="text-xs sm:text-sm text-gray-700 font-semibold mt-1.5">Clients around the world</p>
+            </div>
+            <div className="px-3 sm:px-4 py-2">
+              <p className="text-3xl sm:text-5xl font-extrabold text-ink tracking-tight">30+</p>
+              <p className="text-xs sm:text-sm text-gray-700 font-semibold mt-1.5">Award Winning</p>
+            </div>
+            <div className="px-3 sm:px-4 py-2">
+              <p className="text-3xl sm:text-5xl font-extrabold text-emerald-600 tracking-tight">97%</p>
+              <p className="text-xs sm:text-sm text-gray-700 font-semibold mt-1.5">Business Growth</p>
+            </div>
+            <div className="px-3 sm:px-4 py-2">
+              <p className="text-3xl sm:text-5xl font-extrabold text-blue-600 tracking-tight">60+</p>
+              <p className="text-xs sm:text-sm text-gray-700 font-semibold mt-1.5">Team Members</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= 3. WHY CHOOSE CARDS MATRIX ================= */}
+      <section className="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {(data.whyChooseItems && data.whyChooseItems.length > 0 ? data.whyChooseItems : DEFAULT_DATA.whyChooseItems).map((item, idx) => {
+            const icons = [Globe, Award, TrendingUp, Users];
+            const ItemIcon = icons[idx % icons.length];
+            return (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="rounded-2xl bg-white border border-gray-200/90 p-6 sm:p-7 shadow-sm hover:border-[#00a4d8]/60 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group"
+              >
+                <div className="space-y-3.5">
+                  <div className="w-12 h-12 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-center text-[#00a4d8] group-hover:scale-110 group-hover:bg-[#00a4d8] group-hover:text-white transition-all duration-300">
+                    <ItemIcon size={22} />
+                  </div>
+                  <h3 className="text-lg font-bold text-ink group-hover:text-[#00a4d8] transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+                <div className="pt-5 border-t border-gray-100 mt-5 flex items-center text-xs font-semibold text-[#00a4d8] gap-1.5">
+                  <span>Verified Capability</span>
+                  <CheckCircle2 size={14} />
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* ================= 4. HOW WE WORK (PROCESS ROADMAP) ================= */}
+      <section className="py-16 sm:py-24 bg-slate-50/80 border-y border-gray-200/80">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Reveal className="text-center max-w-3xl mx-auto mb-14">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-50 text-[#00a4d8] border border-sky-200 text-xs font-bold uppercase tracking-wider mb-3 shadow-sm">
+              <Layers className="w-3.5 h-3.5 text-[#00a4d8]" />
+              <span>Step-by-Step Delivery</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink tracking-tight mb-3">
               {data.serviceProcessTitle || DEFAULT_DATA.serviceProcessTitle}
             </h2>
-            <p className="text-base sm:text-lg text-slate-400 leading-relaxed">
+            <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
               {data.serviceProcessIntro || DEFAULT_DATA.serviceProcessIntro}
             </p>
-          </div>
+          </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {processSteps.map((step, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 25 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.12 }}
+                transition={{ delay: idx * 0.1 }}
                 onClick={() => setActiveStep(idx)}
-                className={`p-7 rounded-3xl border transition-all duration-300 cursor-pointer flex flex-col justify-between ${
+                className={`p-6 sm:p-7 rounded-2xl border transition-all duration-300 cursor-pointer flex flex-col justify-between ${
                   activeStep === idx
-                    ? 'bg-slate-900 border-emerald-500 shadow-xl shadow-emerald-500/10 scale-[1.02]'
-                    : 'bg-slate-900/60 border-slate-800 hover:border-slate-700 hover:bg-slate-900'
+                    ? 'bg-white border-[#00a4d8] shadow-lg shadow-[#00a4d8]/10 ring-2 ring-[#00a4d8]/20'
+                    : 'bg-white border-gray-200/90 hover:border-gray-300 shadow-sm'
                 }`}
               >
-                <div className="space-y-4">
-                  {/* Step Number Tag */}
+                <div className="space-y-3.5">
                   <div className="flex items-center justify-between">
                     <span className={`text-2xl font-black font-mono ${
-                      activeStep === idx ? 'text-emerald-400' : 'text-slate-600'
+                      activeStep === idx ? 'text-[#00a4d8]' : 'text-gray-300'
                     }`}>
                       {step.stepNumber || `0${idx + 1}`}
                     </span>
-                    <span className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">
+                    <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wider">
                       Phase {idx + 1}
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-bold text-white leading-snug">
+                  <h3 className="text-base sm:text-lg font-bold text-ink leading-snug">
                     {step.title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                     {step.desc}
                   </p>
                 </div>
 
-                <div className="pt-6 border-t border-slate-800/80 mt-6 flex items-center justify-between text-xs font-semibold">
-                  <span className={activeStep === idx ? 'text-emerald-400' : 'text-slate-500'}>
-                    {activeStep === idx ? 'Active Focus Phase' : 'Methodology Standard'}
+                <div className="pt-5 border-t border-gray-100 mt-5 flex items-center justify-between text-xs font-semibold">
+                  <span className={activeStep === idx ? 'text-[#00a4d8]' : 'text-gray-400'}>
+                    {activeStep === idx ? 'Selected Phase' : 'Roadmap Standard'}
                   </span>
-                  <ArrowRight size={14} className={activeStep === idx ? 'text-emerald-400' : 'text-slate-600'} />
+                  <ArrowRight size={14} className={activeStep === idx ? 'text-[#00a4d8]' : 'text-gray-400'} />
                 </div>
               </motion.div>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* ================= SECTION 4: OUR SHOPIFY SERVICES (SUB-SERVICES MATRIX) ================= */}
-        <section id="services-matrix" className="py-20 md:py-28 bg-slate-900/50 border-t border-slate-800/80">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold uppercase tracking-wider">
-                Full-Lifecycle Solutions
-              </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
-                {data.subServicesTitle || DEFAULT_DATA.subServicesTitle}
-              </h2>
-              <p className="text-base sm:text-lg text-slate-400 leading-relaxed">
-                {data.subServicesIntro || DEFAULT_DATA.subServicesIntro}
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {subServices.map((srv, idx) => {
-                const IconComponent = SUB_SERVICE_ICONS[idx % SUB_SERVICE_ICONS.length];
-                return (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: (idx % 4) * 0.1 }}
-                    className="p-7 rounded-3xl bg-slate-950/80 border border-slate-800/90 hover:border-emerald-500/40 hover:bg-slate-900 hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300 flex flex-col justify-between group"
-                  >
-                    <div className="space-y-4">
-                      <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center text-emerald-400 group-hover:scale-110 group-hover:bg-emerald-500/20 group-hover:text-emerald-300 transition-all duration-300">
-                        <IconComponent size={22} />
-                      </div>
-
-                      <h3 className="text-lg font-bold text-white group-hover:text-emerald-300 transition-colors leading-snug">
-                        {srv.title}
-                      </h3>
-
-                      <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                        {srv.desc}
-                      </p>
-                    </div>
-
-                    <div className="pt-6 border-t border-slate-800/70 mt-6 flex items-center justify-between">
-                      <button
-                        type="button"
-                        onClick={() => openEstimateModal(`Inquire: ${srv.title}`)}
-                        className="text-xs font-bold text-emerald-400 hover:text-emerald-300 flex items-center gap-1.5 group-hover:translate-x-0.5 transition-transform cursor-pointer"
-                      >
-                        <span>Request Service</span>
-                        <ArrowRight size={14} />
-                      </button>
-                      <span className="text-[11px] font-mono text-slate-600">0{idx + 1}</span>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
+      {/* ================= 5. OUR SHOPIFY SERVICES (SUB-SERVICES MATRIX) ================= */}
+      <section id="services-matrix" className="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Reveal className="text-center max-w-3xl mx-auto mb-16">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-50 text-[#00a4d8] border border-sky-200 text-xs font-bold uppercase tracking-wider mb-3 shadow-sm">
+            <ShoppingBag className="w-3.5 h-3.5 text-[#00a4d8]" />
+            <span>Full-Lifecycle Solutions</span>
           </div>
-        </section>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink tracking-tight mb-3">
+            {data.subServicesTitle || DEFAULT_DATA.subServicesTitle}
+          </h2>
+          <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+            {data.subServicesIntro || DEFAULT_DATA.subServicesIntro}
+          </p>
+        </Reveal>
 
-        {/* ================= SECTION 5: KEY FEATURES WE FOLLOW TO HELP YOU SUCCEED ================= */}
-        <section className="py-20 md:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold uppercase tracking-wider">
-              Success Principles
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {subServices.map((srv, idx) => {
+            const IconComponent = SUB_SERVICE_ICONS[idx % SUB_SERVICE_ICONS.length];
+            return (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: (idx % 4) * 0.08 }}
+                className="p-6 sm:p-7 rounded-2xl bg-white border border-gray-200/90 hover:border-[#00a4d8]/60 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
+              >
+                <div className="space-y-3.5">
+                  <div className="w-12 h-12 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-center text-[#00a4d8] group-hover:scale-110 group-hover:bg-[#00a4d8] group-hover:text-white transition-all duration-300">
+                    <IconComponent size={22} />
+                  </div>
+
+                  <h3 className="text-base sm:text-lg font-bold text-ink group-hover:text-[#00a4d8] transition-colors leading-snug">
+                    {srv.title}
+                  </h3>
+
+                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                    {srv.desc}
+                  </p>
+                </div>
+
+                <div className="pt-5 border-t border-gray-100 mt-5 flex items-center justify-between">
+                  <button
+                    type="button"
+                    onClick={() => openEstimateModal(`Inquire: ${srv.title}`)}
+                    className="text-xs font-bold text-[#00a4d8] hover:text-[#0284c7] flex items-center gap-1.5 group-hover:translate-x-0.5 transition-transform cursor-pointer"
+                  >
+                    <span>Request Service</span>
+                    <ArrowRight size={14} />
+                  </button>
+                  <span className="text-[11px] font-mono text-gray-400">0{idx + 1}</span>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* ================= 6. KEY FEATURES WE FOLLOW TO HELP YOU SUCCEED ================= */}
+      <section className="py-16 sm:py-24 bg-slate-50/80 border-t border-gray-200/80">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Reveal className="text-center max-w-3xl mx-auto mb-16">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-50 text-[#00a4d8] border border-sky-200 text-xs font-bold uppercase tracking-wider mb-3 shadow-sm">
+              <Sparkles className="w-3.5 h-3.5 text-[#00a4d8]" />
+              <span>Success Principles</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink tracking-tight mb-3">
               {data.businessTypesTitle || DEFAULT_DATA.businessTypesTitle}
             </h2>
-            <p className="text-base sm:text-lg text-slate-400 leading-relaxed">
+            <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
               {data.businessTypesIntro || DEFAULT_DATA.businessTypesIntro}
             </p>
-          </div>
+          </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
             {keyFeatures.map((feat, idx) => {
               const FeatureIcon = FEATURE_ICONS[idx % FEATURE_ICONS.length];
               return (
@@ -852,158 +664,158 @@ export default function ShopifyDevelopment() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.08 }}
-                  className="p-7 rounded-3xl bg-slate-900/60 border border-slate-800 hover:border-cyan-500/40 hover:bg-slate-900 transition-all duration-300 group"
+                  className="p-6 sm:p-7 rounded-2xl bg-white border border-gray-200/90 hover:border-[#00a4d8]/60 hover:shadow-lg transition-all duration-300 group"
                 >
-                  <div className="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/25 flex items-center justify-center text-cyan-400 mb-5 group-hover:scale-110 group-hover:bg-cyan-500/20 transition-transform">
+                  <div className="w-12 h-12 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-center text-[#00a4d8] mb-4 group-hover:scale-110 group-hover:bg-[#00a4d8] group-hover:text-white transition-all">
                     <FeatureIcon size={22} />
                   </div>
 
-                  <h3 className="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors mb-2.5">
+                  <h3 className="text-base sm:text-lg font-bold text-ink group-hover:text-[#00a4d8] transition-colors mb-2">
                     {feat.title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                     {feat.desc}
                   </p>
                 </motion.div>
               );
             })}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* ================= SECTION 6: TRUSTED BRANDS & PARTNERS ================= */}
-        <section className="py-16 md:py-24 border-t border-slate-800/80 bg-slate-900/30">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
-              <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-                Trusted Brands & Ecosystem Partners
-              </h2>
-              <p className="text-slate-400 text-xs sm:text-sm">
-                Seamless API connectivity with top-tier marketing, billing, analytics, and logistics tools.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
-              {platforms.map((p, i) => (
-                <div
-                  key={i}
-                  className="p-5 rounded-2xl bg-slate-900/80 border border-slate-800/90 hover:border-emerald-500/40 hover:bg-slate-900 transition-all text-center flex flex-col items-center justify-center group"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-emerald-400 mb-3 group-hover:scale-110 group-hover:bg-emerald-500/20 transition-all">
-                    <DynamicIcon name={p.icon || 'Check'} size={20} fallback={ShoppingBag} />
-                  </div>
-                  <div className="text-sm font-bold text-white group-hover:text-emerald-300 transition-colors">
-                    {p.name}
-                  </div>
-                  <div className="text-[11px] text-slate-500 mt-0.5">
-                    {p.category}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ================= SECTION 7: FREQUENTLY ASKED QUESTIONS ================= */}
-        <section className="py-20 md:py-28 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-          <div className="text-center space-y-4 mb-16">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold uppercase tracking-wider">
-              Common Inquiries
-            </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
-              Frequently Asked Questions
+      {/* ================= 7. TRUSTED BRANDS & PARTNERS ================= */}
+      <section className="py-16 sm:py-20 border-t border-gray-200/80 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-10 space-y-2">
+            <h2 className="text-xl sm:text-2xl font-bold text-ink tracking-tight">
+              Trusted Brands &amp; Ecosystem Partners
             </h2>
-            <p className="text-sm sm:text-base text-slate-400">
-              Find quick answers to the most common questions our users ask. Whether you need help with our services, products, or policies, this section provides clear and helpful information to guide you.
+            <p className="text-gray-500 text-xs sm:text-sm">
+              Seamless API connectivity with top-tier marketing, billing, analytics, and logistics tools.
             </p>
           </div>
 
-          <div className="space-y-4">
-            {faqs.map((faq, index) => {
-              const isOpen = openFaq === index;
-              return (
-                <div
-                  key={index}
-                  className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
-                    isOpen
-                      ? 'bg-slate-900 border-emerald-500/50 shadow-xl shadow-emerald-500/5'
-                      : 'bg-slate-900/60 border-slate-800 hover:border-slate-700'
-                  }`}
-                >
-                  <button
-                    onClick={() => setOpenFaq(isOpen ? null : index)}
-                    className="w-full p-6 text-left flex items-center justify-between gap-4 cursor-pointer"
-                  >
-                    <span className="text-base sm:text-lg font-bold text-white">
-                      {faq.q}
-                    </span>
-                    <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 ${
-                      isOpen ? 'bg-emerald-500 text-slate-950 rotate-90' : 'bg-slate-800 text-slate-400'
-                    }`}>
-                      <ChevronRight size={18} />
-                    </div>
-                  </button>
-
-                  <AnimatePresence>
-                    {isOpen && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.25 }}
-                        className="px-6 pb-6 text-sm sm:text-base text-slate-300 leading-relaxed border-t border-slate-800/80 pt-4"
-                      >
-                        {formatInline(faq.a, { linkClass: 'text-emerald-400 hover:text-emerald-300 underline font-medium' })}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+            {platforms.map((p, i) => (
+              <div
+                key={i}
+                className="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-gray-200/80 hover:border-[#00a4d8]/50 hover:bg-white hover:shadow-md transition-all text-center flex flex-col items-center justify-center group"
+              >
+                <div className="w-10 h-10 rounded-xl bg-white border border-gray-200/80 flex items-center justify-center text-[#00a4d8] mb-2.5 group-hover:scale-110 group-hover:bg-[#00a4d8] group-hover:text-white transition-all">
+                  <DynamicIcon name={p.icon || 'Check'} size={18} fallback={ShoppingBag} />
                 </div>
-              );
-            })}
-          </div>
-        </section>
-
-        {/* ================= SECTION 8: BOTTOM CTA BANNER & VALUE PROP ================= */}
-        <section className="pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-          <div className="relative rounded-3xl bg-gradient-to-r from-emerald-950 via-slate-900 to-teal-950 border border-emerald-500/30 p-8 sm:p-12 lg:p-16 overflow-hidden text-center shadow-2xl">
-            {/* Background Decorative Blur */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
-
-            <div className="relative z-10 max-w-3xl mx-auto space-y-6">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold uppercase tracking-wider border border-emerald-500/30">
-                {data.ctaBannerEyebrow || DEFAULT_DATA.ctaBannerEyebrow}
+                <div className="text-xs sm:text-sm font-bold text-ink group-hover:text-[#00a4d8] transition-colors">
+                  {p.name}
+                </div>
+                <div className="text-[10px] sm:text-[11px] text-gray-400 mt-0.5">
+                  {p.category}
+                </div>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight">
-                {data.ctaBannerTitle || DEFAULT_DATA.ctaBannerTitle}
-              </h2>
+      {/* ================= 8. FREQUENTLY ASKED QUESTIONS ================= */}
+      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+        <div className="text-center space-y-3 mb-14">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-50 text-[#00a4d8] border border-sky-200 text-xs font-bold uppercase tracking-wider shadow-sm">
+            <HelpCircle className="w-3.5 h-3.5 text-[#00a4d8]" />
+            <span>Common Inquiries</span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink tracking-tight">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-xs sm:text-sm text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            Find quick answers to the most common questions our users ask. Whether you need help with our services, products, or policies, this section provides clear and helpful information to guide you.
+          </p>
+        </div>
 
-              <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-                {data.ctaBannerDesc || DEFAULT_DATA.ctaBannerDesc}
-              </p>
-
-              <div className="pt-4 flex flex-wrap justify-center gap-4">
+        <div className="space-y-3.5">
+          {faqs.map((faq, index) => {
+            const isOpen = openFaq === index;
+            return (
+              <div
+                key={index}
+                className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
+                  isOpen
+                    ? 'bg-sky-50/40 border-[#00a4d8]/60 shadow-md'
+                    : 'bg-white border-gray-200/90 hover:border-gray-300'
+                }`}
+              >
                 <button
-                  type="button"
-                  onClick={() => openEstimateModal('Shopify Store Development - Bottom CTA')}
-                  className="px-8 py-4 rounded-2xl bg-gradient-to-r from-emerald-400 to-teal-400 text-slate-950 font-black text-base shadow-xl shadow-emerald-500/25 hover:shadow-emerald-500/40 hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 flex items-center gap-3 cursor-pointer"
+                  onClick={() => setOpenFaq(isOpen ? null : index)}
+                  className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 cursor-pointer"
                 >
-                  <ShoppingBag size={20} className="text-slate-950" />
-                  <span>{data.ctaBannerButtonText || 'Talk to an Expert'}</span>
-                  <ArrowRight size={18} />
+                  <span className="text-sm sm:text-base font-bold text-ink">
+                    {faq.q}
+                  </span>
+                  <div className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 ${
+                    isOpen ? 'bg-[#00a4d8] text-white rotate-90' : 'bg-gray-100 text-gray-500'
+                  }`}>
+                    <ChevronRight size={16} />
+                  </div>
                 </button>
 
-                <Link
-                  to="/contact"
-                  className="px-7 py-4 rounded-2xl bg-slate-900/90 hover:bg-slate-800 text-slate-200 hover:text-white font-bold text-base border border-slate-700 hover:border-emerald-500/40 transition-all duration-300"
-                >
-                  Contact Our Team
-                </Link>
+                <AnimatePresence>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.25 }}
+                      className="px-5 sm:px-6 pb-5 sm:pb-6 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100 pt-3.5"
+                    >
+                      {formatInline(faq.a, { linkClass: 'text-[#00a4d8] hover:text-[#0284c7] underline font-semibold' })}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* ================= 9. BOTTOM CTA BANNER & VALUE PROP ================= */}
+      <section className="pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="relative rounded-3xl bg-gradient-to-br from-slate-950 via-[#071326] to-[#040e1c] border border-sky-500/30 p-8 sm:p-12 lg:p-16 overflow-hidden text-center shadow-2xl text-white">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#00a4d8]/15 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="relative z-10 max-w-3xl mx-auto space-y-6">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00a4d8]/20 text-cyan-300 text-xs font-bold uppercase tracking-wider border border-[#00a4d8]/30">
+              {data.ctaBannerEyebrow || DEFAULT_DATA.ctaBannerEyebrow}
+            </div>
+
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-tight">
+              {data.ctaBannerTitle || DEFAULT_DATA.ctaBannerTitle}
+            </h2>
+
+            <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
+              {data.ctaBannerDesc || DEFAULT_DATA.ctaBannerDesc}
+            </p>
+
+            <div className="pt-2 flex flex-wrap justify-center gap-4">
+              <button
+                type="button"
+                onClick={() => openEstimateModal('Shopify Store Development - Bottom CTA')}
+                className="px-7 py-3.5 rounded-xl bg-gradient-to-r from-[#00a4d8] to-blue-600 hover:opacity-95 text-white font-bold text-sm shadow-xl shadow-[#00a4d8]/25 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 flex items-center gap-2.5 cursor-pointer"
+              >
+                <ShoppingBag size={18} />
+                <span>{data.ctaBannerButtonText || 'Talk to an Expert'}</span>
+                <ArrowRight size={16} />
+              </button>
+
+              <Link
+                to="/contact"
+                className="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm border border-white/20 transition-all backdrop-blur-sm hover:scale-[1.02]"
+              >
+                Contact Our Team
+              </Link>
             </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </div>
   );
 }
