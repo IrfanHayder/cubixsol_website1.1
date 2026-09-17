@@ -71,22 +71,22 @@ const defaultPageData = {
     {
       title: 'Business-first planning',
       desc: 'We connect technical decisions to user needs, operational requirements, and commercial goals.',
-      icon: '/uploads/media-1789566441929-109737117.svg',
+      icon: '/uploads/media-1789629897582-729673598.svg',
     },
     {
       title: 'Cross-functional expertise',
       desc: 'Developers, designers, QA specialists, consultants, and marketers collaborate throughout delivery.',
-      icon: '/uploads/media-1789566441929-4433635.svg',
+      icon: '/uploads/media-1789629897944-669462569.svg',
     },
     {
       title: 'Enterprise-ready thinking',
       desc: 'Our **custom enterprise software development services** prioritize scalability, integrations, maintainability, and long-term product performance.',
-      icon: '/uploads/media-1789566441929-227301020.svg',
+      icon: '/uploads/media-1789629898314-560238011.svg',
     },
     {
       title: 'Transparent execution',
       desc: 'Defined milestones, regular communication, testing, and documented feedback keep the project moving in the right direction.',
-      icon: '/uploads/media-1789566441930-7622150.svg',
+      icon: '/uploads/media-1789629898681-73665576.svg',
     },
   ],
 
@@ -428,15 +428,15 @@ export default function Services() {
                   const getWhyChooseIcon = (it, i) => {
                     if (it?.icon) return it.icon;
                     const title = (it?.title || '').toLowerCase();
-                    if (title.includes('business') || title.includes('planning')) return '/uploads/media-1789566441929-109737117.svg';
-                    if (title.includes('cross') || title.includes('expertise')) return '/uploads/media-1789566441929-4433635.svg';
-                    if (title.includes('enterprise')) return '/uploads/media-1789566441929-227301020.svg';
-                    if (title.includes('transparent') || title.includes('execution')) return '/uploads/media-1789566441930-7622150.svg';
+                    if (title.includes('business') || title.includes('planning')) return '/uploads/media-1789629897582-729673598.svg';
+                    if (title.includes('cross') || title.includes('expertise')) return '/uploads/media-1789629897944-669462569.svg';
+                    if (title.includes('enterprise')) return '/uploads/media-1789629898314-560238011.svg';
+                    if (title.includes('transparent') || title.includes('execution')) return '/uploads/media-1789629898681-73665576.svg';
                     const list = [
-                      '/uploads/media-1789566441929-109737117.svg',
-                      '/uploads/media-1789566441929-4433635.svg',
-                      '/uploads/media-1789566441929-227301020.svg',
-                      '/uploads/media-1789566441930-7622150.svg',
+                      '/uploads/media-1789629897582-729673598.svg',
+                      '/uploads/media-1789629897944-669462569.svg',
+                      '/uploads/media-1789629898314-560238011.svg',
+                      '/uploads/media-1789629898681-73665576.svg',
                     ];
                     return list[i % list.length] || 'ShieldCheck';
                   };

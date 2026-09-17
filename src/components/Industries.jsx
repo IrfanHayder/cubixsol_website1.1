@@ -13,7 +13,7 @@ const fallbackIndustries = [
     slug: 'technology',
   },
   {
-    icon: '/uploads/media-1789563172794-101604180.svg',
+    icon: '/uploads/media-1789629897091-423633034.svg',
     title: 'Travel & Hospitality',
     short: 'Booking journeys and guest experiences that convert.',
     slug: 'travel',
@@ -25,25 +25,25 @@ const fallbackIndustries = [
     slug: 'logistics',
   },
   {
-    icon: '/uploads/media-1789563172793-389883725.svg',
+    icon: '/uploads/media-1789629896004-230130745.svg',
     title: 'Finance & Fintech',
     short: 'Payments, dashboards, and compliant financial products.',
     slug: 'fintech',
   },
   {
-    icon: '/uploads/media-1789563172793-99943126.svg',
+    icon: '/uploads/media-1789629896392-271884177.svg',
     title: 'Healthcare',
     short: 'Secure patient experiences and clinical operations software.',
     slug: 'healthcare',
   },
   {
-    icon: '/uploads/media-1789563172794-630766494.svg',
+    icon: '/uploads/media-1789629896735-172269423.svg',
     title: 'SaaS',
     short: 'Multi-tenant products built to onboard, retain, and scale.',
     slug: 'saas',
   },
   {
-    icon: '/uploads/media-1789563172789-64334141.svg',
+    icon: '/uploads/media-1789629895179-631856734.svg',
     title: 'E-Commerce',
     short: 'Stores, marketplaces, and conversion-focused commerce.',
     slug: 'ecommerce',
@@ -55,7 +55,7 @@ const fallbackIndustries = [
     slug: 'real-estate',
   },
   {
-    icon: '/uploads/media-1789563172792-808819694.svg',
+    icon: '/uploads/media-1789629895637-491263709.svg',
     title: 'Education',
     short: 'Learning platforms, school systems, and engagement tools.',
     slug: 'education',
