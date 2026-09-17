@@ -861,120 +861,128 @@ export const industries = [
   {
     slug: 'education',
     title: 'Education',
+    heroTitle: 'Software Development Company for Modern Education',
     icon: 'GraduationCap',
-    short: 'Learning platforms, school systems, and engagement tools.',
-    desc: 'Cubixsol designs and builds digital products for schools, universities, and EdTech companies — from learner engagement and LMS features to parent communication and multi-institution content delivery.',
+    short: 'Cubixsol is an education software development company that creates digital platforms for schools, universities, training providers, and education businesses. We build secure learning ecosystems, custom LMS platforms, student management solutions, and interactive education applications that improve teaching efficiency and learner engagement.',
+    desc: 'Cubixsol is an education software development company that creates digital platforms for schools, universities, training providers, and education businesses. We build secure learning ecosystems, custom LMS platforms, student management solutions, and interactive education applications that improve teaching efficiency and learner engagement.',
+    ctaPrimaryText: 'Get a Free Proposal',
+    ctaPrimaryLink: '#estimate',
+    ctaSecondaryText: 'Build Your Education Solution',
+    ctaSecondaryLink: '/contact',
+    ctaBannerButtonText: 'Start Your Education Software Project Today',
+    ctaBannerButtonLink: '/contact',
+    ctaBannerSecondaryButtonText: 'Get a Free Proposal',
+    ctaBannerSecondaryButtonLink: '#estimate',
     points: [
-      'Learning platforms & LMS modules',
-      'School & parent communication apps',
-      'Content delivery at scale',
-      'Progress & completion analytics',
-      'Assessment and quiz engines',
-      'Role-based portals for staff and students',
+      'LMS Development & Virtual Classrooms',
+      'eLearning Platform & Course Management',
+      'FERPA-Aware Data Privacy & WCAG Compliance',
+      'Student Portals & Academic Analytics',
     ],
-    testimonial: {
-      quote: 'Working with Cubixsol felt like gaining a product team, not just a vendor. They understood our learners and shipped with care.',
-      name: 'Product Lead',
-      role: 'EdTech scale-up',
-    },
-    workAreas: [
-      {
-        title: 'K-12 school systems',
-        body: 'Attendance-friendly portals, parent messaging, announcements, and class updates that staff actually use day to day.',
-      },
-      {
-        title: 'Higher education & training',
-        body: 'Program catalogs, cohort management, and completion tracking across departments or partner institutions.',
-      },
-      {
-        title: 'EdTech product teams',
-        body: 'Feature delivery on your roadmap — onboarding, engagement loops, and analytics that improve retention.',
-      },
-      {
-        title: 'Corporate L&D',
-        body: 'Role-based learning paths, manager visibility, and content that fits how employees actually learn at work.',
-      },
+    trustPills: [
+      'FERPA & COPPA Compliant',
+      'WCAG 2.1 AA Accessibility',
+      'LTI & xAPI Interoperable',
+      'Scalable Cloud Architecture',
     ],
-    productsBuilt: [
-      { name: 'Schoolgram', slug: 'schoolgram', blurb: 'School communication suite for parents, teachers, and admin.' },
-      { name: 'Image to Text', slug: 'image-to-text', blurb: 'OCR for worksheets, notes, and scanned materials.' },
-      { name: 'JPG to PDF', slug: 'jpg-to-pdf', blurb: 'Bundle scans and images into shareable PDFs.' },
-    ],
-    caseStudies: [
-      {
-        title: 'Parent–school messaging platform',
-        result: 'Real-time announcements and secure threads replaced scattered WhatsApp groups for a multi-campus school network.',
-        tags: ['Mobile', 'Messaging', 'Admin portal'],
-      },
-      {
-        title: 'Learner engagement product',
-        result: 'Modular courses, quizzes, and progress dashboards shipped for an EdTech team scaling beyond their MVP.',
-        tags: ['LMS', 'Analytics', 'Web app'],
-      },
-      {
-        title: 'Multi-org learning catalog',
-        result: 'Unified catalog and reporting so institutions could see completion without juggling spreadsheets.',
-        tags: ['SaaS', 'Reporting', 'Roles'],
-      },
-    ],
-    stats: [
-      { value: '19+', label: 'years of proven market experience' },
-      { value: '750+', label: 'experts in Engineering, Data, AI, Design & QA' },
-      { value: '550+', label: 'partnerships spanning across six verticals' },
-      { value: '80%', label: 'clients rate us better than others' },
-    ],
-    approachTitle: 'The Cubixsol Approach',
-    approachItems: [
-      {
-        title: 'We Lead with Design',
-        subtitle: 'Our team of designers, skilled in product design, UI/UX, and accessibility, create experiences that are:',
-        points: [
-          { heading: 'Timely', text: 'We design at the pace users need, with rapid learning and iteration built in.' },
-          { heading: 'Useful', text: 'Success is measured by how easily users achieve their goals.' },
-          { heading: 'Delightful', text: 'We create thoughtful experiences that feel worthwhile.' },
-        ],
-      },
-      {
-        title: 'We Leverage Open Source',
-        subtitle: 'With thousands of contributions to dozens of open-source projects, we have deep expertise that translates into:',
-        points: [
-          { heading: 'Sovereignty', text: 'Avoid vendor lock-in and securely deploy on-premises or in private clouds.' },
-          { heading: 'Flexibility', text: 'Customize source code and choose licensing that fits your requirements.' },
-          { heading: 'Economy', text: 'Reduce hosting, maintenance, and development costs through free, adaptable, AI-ready open-source technologies at greater scale.' },
-        ],
-      },
-      {
-        title: 'We Accelerate with AI',
-        subtitle: 'We have been working with generative AI for over a decade, applying it to:',
-        points: [
-          { heading: 'Build Smarter Software', text: 'We integrate agentic workflows using LangGraph, open-weight, and frontier models tailored to user needs, prioritizing sovereignty and adaptability.' },
-          { heading: 'Build It Faster Than Ever', text: 'Our teams use Codex, Claude, and multi-agent workflows while managing security, performance, cost, and governance without compromising speed or quality.' },
-        ],
-      },
-    ],
-    solutionsTitle: 'Our EdTech Solutions',
-    solutionsSubtitle: 'Purpose-built solutions for education organizations, backed by the cross-industry capabilities every technology team needs.',
+    solutionsTitle: 'Education Software We Build',
+    solutionsSubtitle: 'We develop secure, reliable, and user-friendly education software solutions that simplify academic workflows and enhance digital learning.',
     solutionsItems: [
       {
-        title: 'Modern LMS Systems for Desktop and Mobile',
-        body: 'We have deep expertise in best-in-class open-source learning management systems, including Open edX, Moodle, and Edly — our own Open edX fork designed for the enterprise. Every solution comes with self-hosting or managed hosting on AWS, GCP, Oracle, and Azure.',
+        title: 'LMS Development',
+        body: 'Cubixsol provides LMS development services for schools, universities, and training organisations that need complete control over digital learning environments. We develop custom LMS platforms with course management, student tracking, assessments, reporting dashboards, and collaboration features.',
       },
       {
-        title: 'Accelerated Content Production',
-        body: "We have world-class capability to produce learning content of every kind: videos, interactive activities, assessments, and AI-based evaluations. Our Edly division's Compose product delivers the fastest possible course authoring experience, driven by AI and letting creators author directly in all major LMSes, including Canvas and Blackboard.",
+        title: 'eLearning Platform Development',
+        body: 'Our eLearning software development solutions help businesses and institutions deliver engaging online education experiences. We create platforms with interactive lessons, video learning, quizzes, certifications, and personalised learning paths that improve knowledge delivery.',
       },
       {
-        title: 'Data Management, Analytics and ML',
-        body: "Our data engineering team has deep expertise in edTech data standards like Caliper and xAPI. Understanding, warehousing, and analyzing this data, and building ML-based prediction and forecasting pipelines on top of it, is Cubixsol's forte.",
+        title: 'Student Portals and Learning Dashboards',
+        body: 'We build student portals that provide easy access to courses, assignments, grades, schedules, and communication tools. Educators and learners receive dedicated dashboards that improve visibility and simplify academic interactions.',
+      },
+      {
+        title: 'EdTech Software Solutions',
+        body: 'Cubixsol delivers edtech software development services for startups and established education companies. We create innovative platforms such as virtual classrooms, AI-powered learning tools, tutoring systems, and education marketplaces.',
       },
     ],
-    servicesWeOffer: [
-      'Custom LMS and learning portals',
-      'Mobile apps for students and parents',
-      'Assessment and certification flows',
-      'Integrations (SIS, payment, SSO)',
-      'Analytics and admin dashboards',
-      'UI/UX for education products',
+    workAreasTitle: 'Use Cases & Examples',
+    workAreas: [
+      {
+        title: 'Online Course Platforms',
+        body: 'We create online course platforms that allow educators and organisations to publish content, manage learners, conduct assessments, and track progress through a centralised system.',
+      },
+      {
+        title: 'University Learning Management Systems',
+        body: 'Higher education institutions can use custom LMS solutions to manage courses, virtual classrooms, assignments, grading, and student engagement across multiple departments.',
+      },
+      {
+        title: 'Corporate Training Platforms',
+        body: 'Organisations can launch employee learning platforms with certification programs, skill tracking, and professional development resources.',
+      },
+    ],
+    approachTitle: 'Built for Education Standards',
+    approachSubtitle: 'Cubixsol develops education platforms with security, accessibility, and compliance requirements',
+    approachItems: [
+      {
+        title: 'FERPA-Aware Data Protection',
+        subtitle: 'Cubixsol creates education platforms with privacy-focused architecture designed around academic compliance.',
+        points: [
+          { heading: 'Access Controls', text: 'We develop systems with secure access controls to protect educational records.' },
+          { heading: 'Role-Based Permissions', text: 'Our platforms support role-based permissions for students, teachers, and administrators.' },
+          { heading: 'Privacy Management', text: 'We follow privacy-focused practices for managing sensitive academic information.' },
+        ],
+      },
+      {
+        title: 'WCAG Accessibility Compliance',
+        subtitle: 'Cubixsol builds inclusive digital learning interfaces that serve all students.',
+        points: [
+          { heading: 'Universal Interfaces', text: 'We create accessible interfaces that support diverse learner requirements.' },
+          { heading: 'Adaptable Structures', text: 'Our platforms include user-friendly navigation and adaptable content structures.' },
+          { heading: 'Continuous Auditing', text: 'We consider accessibility standards throughout the design and development process.' },
+        ],
+      },
+      {
+        title: 'Student Data Privacy & Security',
+        subtitle: 'We implement robust protections for learner privacy and communications.',
+        points: [
+          { heading: 'Encrypted Storage', text: 'We protect student information through secure data storage and communication practices.' },
+          { heading: 'Minor Privacy Controls', text: 'Our solutions support privacy controls for managing minors\' educational data.' },
+          { heading: 'Safe Environments', text: 'We build trusted platforms that promote safe digital learning environments.' },
+        ],
+      },
+      {
+        title: 'Secure & Reliable Education Infrastructure',
+        subtitle: 'High-availability cloud architectures built for campus-wide scale.',
+        points: [
+          { heading: 'Scalable Scaling', text: 'We develop scalable platforms that support growing users and learning content.' },
+          { heading: 'Tool Integrations', text: 'Our solutions integrate securely with third-party education tools and services.' },
+          { heading: 'Long-Term Reliability', text: 'We provide reliable architectures designed for long-term performance.' },
+        ],
+      },
+    ],
+    ctaTitle: 'Ready to Build Your Education Software Solution?',
+    ctaDesc: 'Partner with our team to transform your education idea into a secure and user-focused solution.',
+    faqs: [
+      {
+        q: 'How much does education software development cost?',
+        a: 'The cost of education software development depends on platform complexity, required features, integrations, user capacity, and technology choices. A basic learning platform requires fewer resources compared with a complete LMS or school management ecosystem.',
+      },
+      {
+        q: 'How long does it take to build an education platform?',
+        a: 'Development timelines vary based on project scope and functionality. A simple education application may take a few months, while advanced platforms with custom features and integrations require additional development time.',
+      },
+      {
+        q: 'What is the difference between an LMS and custom education software?',
+        a: 'An LMS mainly focuses on managing courses, learners, assessments, and educational content. Custom education software can include broader functionality such as school administration, AI learning tools, marketplaces, and specialised workflows.',
+      },
+      {
+        q: 'Can Cubixsol integrate existing education systems?',
+        a: 'Yes, education platforms can connect with existing tools such as payment systems, student databases, video conferencing solutions, authentication systems, and third-party educational services.',
+      },
+      {
+        q: 'Do you build accessible education platforms?',
+        a: 'Yes, Cubixsol develops education solutions with accessibility considerations based on modern standards such as WCAG guidelines to create better experiences for all learners.',
+      },
     ],
   },
 
