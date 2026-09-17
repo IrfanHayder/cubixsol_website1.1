@@ -6349,126 +6349,6 @@
       "title": "Eshaal Innovations — Tech Solutions & Digital Agency"
     },
     {
-      "slug": "fix-alert",
-      "name": "FixAlert",
-      "title": "Real-time Maintenance Reporting",
-      "tagline": "Report issues. Dispatch teams. Close the loop — from any site.",
-      "desc": "Instantly report and resolve infrastructure issues with a centralized, mobile-friendly system.",
-      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&h=750&q=80",
-      "accent": "from-orange-100 to-amber-50",
-      "heroTheme": "orange",
-      "layout": "A",
-      "stats": [
-        [
-          "40%",
-          "Faster response"
-        ],
-        [
-          "2x",
-          "Issues closed"
-        ],
-        [
-          "1 app",
-          "Field + office"
-        ]
-      ],
-      "challenges": [
-        {
-          "title": "Scattered tickets",
-          "body": "Issues live in chats, email, and spreadsheets — nothing is the source of truth."
-        },
-        {
-          "title": "Slow handoffs",
-          "body": "Field teams wait on unclear ownership while downtime grows."
-        },
-        {
-          "title": "No visibility",
-          "body": "Managers cannot see open work, SLAs, or recurring problem sites."
-        }
-      ],
-      "steps": [
-        {
-          "title": "Capture on site",
-          "body": "Mobile report with photos, location, and priority in seconds."
-        },
-        {
-          "title": "Route smartly",
-          "body": "Auto-assign by skill, zone, or severity."
-        },
-        {
-          "title": "Resolve & verify",
-          "body": "Close with evidence and optional sign-off."
-        },
-        {
-          "title": "Learn patterns",
-          "body": "Dashboards show hotspots and repeat failures."
-        }
-      ],
-      "answers": [],
-      "category": "enterprise",
-      "externalUrl": ""
-    },
-    {
-      "slug": "hirestream",
-      "name": "Hirestream",
-      "title": "Recruitment Automation Tool",
-      "tagline": "Pipelines that move candidates forward — not spreadsheets that stall them.",
-      "desc": "Automate hiring pipelines, reduce manual effort, and make smarter recruitment decisions.",
-      "image": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&h=750&q=80",
-      "accent": "from-cyan-100 to-teal-50",
-      "heroTheme": "teal",
-      "layout": "C",
-      "stats": [
-        [
-          "3x",
-          "Faster shortlists"
-        ],
-        [
-          "60%",
-          "Less admin"
-        ],
-        [
-          "1 view",
-          "Every role"
-        ]
-      ],
-      "challenges": [
-        {
-          "title": "Lost candidates",
-          "body": "Applications scatter across inboxes and job boards."
-        },
-        {
-          "title": "Inconsistent process",
-          "body": "Every recruiter runs a different pipeline."
-        },
-        {
-          "title": "Weak decisions",
-          "body": "Hiring managers lack structured feedback and history."
-        }
-      ],
-      "steps": [
-        {
-          "title": "Intake roles",
-          "body": "Structured requisitions with scorecards."
-        },
-        {
-          "title": "Source & screen",
-          "body": "Central applications and collaborative notes."
-        },
-        {
-          "title": "Interview loops",
-          "body": "Schedules, feedback, and stage gates."
-        },
-        {
-          "title": "Offer & onboard",
-          "body": "Clean handoff to HR with full history."
-        }
-      ],
-      "answers": [],
-      "category": "enterprise",
-      "externalUrl": ""
-    },
-    {
       "slug": "image-to-text",
       "name": "Image to Text",
       "title": "Free Online OCR — Extract Text from Images",
@@ -6589,21 +6469,6 @@
       ],
       "answers": [],
       "statsText": "undefined | undefined\nundefined | undefined\nundefined | undefined"
-    },
-    {
-      "slug": "jpg-to-pdf",
-      "accent": "from-cyan-100 to-teal-50",
-      "answers": [],
-      "category": "tools",
-      "challenges": [],
-      "desc": "Convert JPG files into PDF documents online — built for everyday document workflows and multi-page needs.",
-      "externalUrl": "https://jpg2pdf.io/",
-      "image": "/uploads/media-1789647461835-804443603.png",
-      "name": "JPG to PDF",
-      "stats": [],
-      "steps": [],
-      "tagline": "Reliable image-to-PDF for documents, scans, and photo sets.",
-      "title": "JPG to PDF Converter"
     },
     {
       "slug": "jpg-a-pdf",
@@ -6742,79 +6607,6 @@
       "answers": []
     },
     {
-      "slug": "schoolgram",
-      "name": "Schoolgram",
-      "title": "School Communication Suite",
-      "tagline": "Parents informed. Staff aligned. One secure channel for the whole school.",
-      "desc": "Bridge the gap between schools and parents with secure, real-time messaging and announcements.",
-      "image": "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&h=750&q=80",
-      "accent": "from-violet-100 to-purple-50",
-      "heroTheme": "violet",
-      "layout": "B",
-      "stats": [
-        [
-          "Real-time",
-          "Updates"
-        ],
-        [
-          "Secure",
-          "Messaging"
-        ],
-        [
-          "School-wide",
-          "Reach"
-        ]
-      ],
-      "challenges": [
-        {
-          "title": "Missed messages",
-          "body": "Important updates get buried in group chats."
-        },
-        {
-          "title": "Fragmented channels",
-          "body": "SMS, email, and paper notices never stay in sync."
-        },
-        {
-          "title": "Trust & privacy",
-          "body": "Schools need controlled, auditable communication."
-        }
-      ],
-      "answers": [
-        {
-          "title": "One inbox",
-          "body": "Announcements, class updates, and alerts in a single app experience."
-        },
-        {
-          "title": "Role-based access",
-          "body": "Teachers, admin, and parents see only what they should."
-        },
-        {
-          "title": "Attendance-friendly",
-          "body": "Works alongside how schools already operate day to day."
-        }
-      ],
-      "steps": [
-        {
-          "title": "Onboard school",
-          "body": "Classes, roles, and parent links."
-        },
-        {
-          "title": "Broadcast clearly",
-          "body": "Targeted announcements with read signals."
-        },
-        {
-          "title": "Message safely",
-          "body": "Threaded, moderated conversations."
-        },
-        {
-          "title": "Stay aligned",
-          "body": "Calendar and event reminders built in."
-        }
-      ],
-      "category": "enterprise",
-      "externalUrl": ""
-    },
-    {
       "slug": "toolmad",
       "accent": "from-blue-100 to-indigo-50",
       "answers": [],
@@ -6828,79 +6620,6 @@
       "steps": [],
       "tagline": "Free online utility tools, text converters, formatters and web helpers.",
       "title": "ToolMad — All-in-One Online Web Utilities & Tools"
-    },
-    {
-      "slug": "workstream",
-      "name": "Workstream",
-      "title": "The All-in-One Management Tool Built for Enterprise Needs",
-      "tagline": "Simplify workflows by 50%, boost communication, and empower employees — one platform.",
-      "desc": "Streamline team operations and approvals with customizable workflows and real-time tracking.",
-      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&h=750&q=80",
-      "accent": "from-blue-100 to-sky-50",
-      "heroTheme": "navy",
-      "layout": "B",
-      "stats": [
-        [
-          "50%",
-          "Less process friction"
-        ],
-        [
-          "2x",
-          "Faster approvals"
-        ],
-        [
-          "1",
-          "Source of truth"
-        ]
-      ],
-      "challenges": [
-        {
-          "title": "Drowning in paperwork?",
-          "body": "Leave, expenses, and training requests pile up across tools and inboxes."
-        },
-        {
-          "title": "Unclear ownership",
-          "body": "Teams chase updates instead of shipping work."
-        },
-        {
-          "title": "Tool sprawl",
-          "body": "HR, ops, and finance each run a different stack — nothing talks."
-        }
-      ],
-      "answers": [
-        {
-          "title": "Cost efficiency",
-          "body": "One modular suite covers HR and ops workflows so you are not paying for five partial tools."
-        },
-        {
-          "title": "Security & access",
-          "body": "SSO-ready design with role-based access for every module."
-        },
-        {
-          "title": "Scalability",
-          "body": "Turn modules on as you grow — from leave and expenses to training and analytics."
-        }
-      ],
-      "steps": [
-        {
-          "title": "Effortless setup",
-          "body": "Sign in, invite teams, and go — no heavy configuration theater."
-        },
-        {
-          "title": "Modular features",
-          "body": "Pick project logs, training, leave, expenses, and more."
-        },
-        {
-          "title": "Streamlined workflow",
-          "body": "Automate repetitive approvals and reminders."
-        },
-        {
-          "title": "Powerful insights",
-          "body": "See capacity, bottlenecks, and completion in one place."
-        }
-      ],
-      "category": "enterprise",
-      "externalUrl": ""
     }
   ],
   "initialIndustries": [
@@ -9657,7 +9376,7 @@
   "initialContactInfo": [
     {
       "title": "Our Location",
-      "desc": "UK\nUAE\nPakistan",
+      "desc": "Pakistan\nUnited kingdom\nUnited Arab Emirates",
       "icon": "MapPin",
       "link": "https://www.google.com/maps/place/United+Kingdom/@54.1034466,-15.0008131,5z/data=!3m1!4b1!4m6!3m5!1s0x25a3b1142c791a9:0xc4f8a0433288257a!8m2!3d55.378051!4d-3.435973!16zL20vMDdzc2M?hl=en-US&entry=ttu&g_ep=EgoyMDI2MDkwMi4wIKXMDSoASAFQAw%3D%3D",
       "order": 1,

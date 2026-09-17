@@ -24,8 +24,10 @@ const Media = require('./models/Media');
 
 async function forceSeed() {
   try {
-    const mongoUri = process.env.MONGO_URI || process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/cubixsol';
-    console.log('Connecting to MongoDB for full sync/seed:', mongoUri);
+    // Support MONGO_URI from command-line argument (e.g. `node forceSeed.js "mongodb+srv://..."`) or env
+    const cliUri = process.argv[2];
+    const mongoUri = cliUri || process.env.MONGO_URI || process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/cubixsol';
+    console.log('Connecting to MongoDB for full sync/seed:', mongoUri.includes('@') ? mongoUri.split('@')[1] : mongoUri);
     await mongoose.connect(mongoUri);
     console.log('Connected to MongoDB.');
 
@@ -59,35 +61,45 @@ async function forceSeed() {
       initialMedia = [],
     } = seedData;
 
-    // Helper to replace/upsert collections safely
+    // Helper to replace/upsert collections safely without breaking existing IDs or duplicating records
     const syncCollection = async (Model, data, matchField = 'slug', name = 'items') => {
       if (!Array.isArray(data) || data.length === 0) return;
       console.log(`Syncing ${data.length} ${name}...`);
+      let successCount = 0;
       for (const item of data) {
+        let filter = null;
         if (item[matchField]) {
+          filter = { [matchField]: item[matchField] };
+        } else if (item.slug) {
+          filter = { slug: item.slug };
+        } else if (item.title) {
+          filter = { title: item.title };
+        } else if (item.name) {
+          filter = { name: item.name };
+        } else if (item.key) {
+          filter = { key: item.key };
+        } else if (item.page) {
+          filter = { page: item.page };
+        }
+
+        if (filter) {
           await Model.findOneAndUpdate(
-            { [matchField]: item[matchField] },
+            filter,
             { $set: item },
-            { upsert: true, new: true }
-          );
-        } else if (item.title || item.name) {
-          const key = item.title ? 'title' : 'name';
-          await Model.findOneAndUpdate(
-            { [key]: item[key] },
-            { $set: item },
-            { upsert: true, new: true }
+            { upsert: true, new: true, setDefaultsOnInsert: true }
           );
         } else {
           await Model.create(item);
         }
+        successCount++;
       }
-      console.log(`✓ ${name} synced successfully.`);
+      console.log(`✓ ${name}: ${successCount}/${data.length} synced successfully.`);
     };
 
     await syncCollection(Service, initialServices, 'slug', 'Services');
     await syncCollection(Industry, initialIndustries, 'slug', 'Industries');
     await syncCollection(PageContent, initialPages, 'slug', 'Pages');
-    await syncCollection(ContactInfo, initialContactInfo, 'type', 'Contact Info');
+    await syncCollection(ContactInfo, initialContactInfo, 'title', 'Contact Info');
     await syncCollection(Media, initialMedia, 'url', 'Media Library');
     await syncCollection(Category, initialCategories, 'slug', 'Categories');
     await syncCollection(Tag, initialTags, 'slug', 'Tags');
@@ -108,6 +120,7 @@ async function forceSeed() {
     console.log('====================================================');
 
     await mongoose.disconnect();
+    console.log('Disconnected cleanly from MongoDB.');
   } catch (err) {
     console.error('Force seed error:', err);
     process.exit(1);
