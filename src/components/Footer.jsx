@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { Send } from 'lucide-react';
 import logo from '../assets/logo.svg';
 import { useState } from 'react';
-import { LinkedinIcon, FacebookIcon, TwitterIcon, InstagramIcon, GithubIcon } from './SocialIcons';
+import { LinkedinIcon, FacebookIcon, InstagramIcon, YoutubeIcon } from './SocialIcons';
 
 const columns = [
   {
@@ -54,6 +54,13 @@ const columns = [
       { label: 'Support', to: '/contact' },
     ],
   },
+];
+
+const socialLinks = [
+  { name: 'Facebook', href: 'https://www.facebook.com/CubixSol', icon: FacebookIcon },
+  { name: 'Instagram', href: 'https://www.instagram.com/cubixsolution', icon: InstagramIcon },
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/company/cubixsol', icon: LinkedinIcon },
+  { name: 'YouTube', href: 'https://www.youtube.com/@Cubixsolution', icon: YoutubeIcon },
 ];
 
 /** Real Cubixsol profiles only */
@@ -170,19 +177,23 @@ export default function Footer() {
             </p>
 
             {/* Social Links */}
-            <div className="flex gap-3 mt-5">
-              {[LinkedinIcon, FacebookIcon, TwitterIcon, InstagramIcon, GithubIcon].map(
-                (Icon, i) => (
+            <div className="flex items-center gap-3 mt-5">
+              {socialLinks.map((social) => {
+                const Icon = social.icon;
+                return (
                   <a
-                    key={i}
-                    href="#"
-                    aria-label="social link"
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.name}
+                    title={social.name}
                     className="w-9 h-9 rounded-full bg-gray-100 hover:bg-primary-100 hover:text-primary-600 flex items-center justify-center text-gray-500 transition"
                   >
                     <Icon className="w-4 h-4" />
                   </a>
-                )
-              )}
+                );
+              })}
             </div>
 
             {/* Awards & Certifications Badges under Social Icons */}
