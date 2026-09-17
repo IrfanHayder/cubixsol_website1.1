@@ -981,66 +981,134 @@ export const industries = [
   {
     slug: 'healthcare',
     title: 'Healthcare',
+    heroTitle: 'Healthcare Software Development Services',
     icon: 'HeartPulse',
-    short: 'Secure patient experiences and clinical operations software.',
+    short: 'Cubixsol builds healthcare software that helps patients access care and gives clinical teams simpler ways to manage daily tasks. Our healthcare software development services cover patient portals, appointment scheduling, telehealth, and internal tools, with privacy, usability, and reliable integrations built into the project plan.',
     desc: 'Cubixsol builds healthcare software that helps patients access care and gives clinical teams simpler ways to manage daily tasks. Our healthcare software development services cover patient portals, appointment scheduling, telehealth, and internal tools, with privacy, usability, and reliable integrations built into the project plan.',
+    ctaPrimaryText: 'Discuss your project',
+    ctaPrimaryLink: '/contact',
+    ctaSecondaryText: 'Get a proposal',
+    ctaSecondaryLink: '#estimate',
+    ctaBannerButtonText: 'Talk to Cubixsol',
+    ctaBannerButtonLink: '/contact',
+    ctaBannerSecondaryButtonText: 'Get a Proposal',
+    ctaBannerSecondaryButtonLink: '#estimate',
     points: [
-      'Patient portals and mobile apps',
-      'Appointment and care workflows',
-      'Telemedicine app development services',
-      'EHR software development and integrations',
+      'Healthcare-Focused Development Approach',
+      'Security-First Engineering',
+      'Scalable Technology Solutions',
+      'Long-Term Technical Support',
     ],
-    testimonial: {
-      quote: 'They balanced usability for clinicians with the compliance constraints we cannot ignore.',
-      name: 'Operations Manager',
-      role: 'Health services provider',
-    },
+    trustPills: [
+      '100% HIPAA & BAA Ready',
+      'HL7 FHIR v4 Certified',
+      'Encrypted WebRTC Telehealth',
+      'Zero-Trust Data Protection',
+    ],
+    solutionsTitle: 'Healthcare Software We Build',
+    solutionsSubtitle: 'We develop secure, reliable, and user-friendly healthcare software solutions that simplify clinical workflows and improve patient care.',
+    solutionsItems: [
+      {
+        title: 'Patient Portals',
+        body: 'Cubixsol develops secure patient portals that connect individuals with healthcare providers through convenient digital experiences. Patients can access appointments, medical records, prescriptions, test results, and healthcare information from a centralized platform. Our solutions improve communication between patients and providers through secure messaging, notifications, and personalized healthcare access.',
+      },
+      {
+        title: 'Telemedicine Apps',
+        body: 'Our telemedicine app development services enable healthcare organizations to provide remote consultations through secure and reliable digital platforms. Cubixsol builds telehealth applications with features such as video consultations, appointment scheduling, patient management, and virtual follow-ups. These solutions help clinics, hospitals, and healthcare professionals expand access to care beyond traditional facilities.',
+      },
+      {
+        title: 'EHR/EMR Software Development',
+        body: 'Cubixsol provides EHR software development solutions that help healthcare organizations manage electronic health records efficiently. We build customized systems for storing patient information, clinical documentation, medical histories, and healthcare data. Our EHR solutions support integrations with existing healthcare platforms through modern healthcare standards while maintaining secure data management.',
+      },
+      {
+        title: 'Practice Management Software',
+        body: 'Cubixsol creates practice management software that simplifies administrative and operational workflows for healthcare providers. Our platforms support appointment management, billing processes, staff coordination, and daily clinic operations through streamlined digital tools. Custom dashboards provide healthcare teams with better visibility and control over their practice activities.',
+      },
+    ],
+    approachTitle: 'Built for Healthcare Standards',
+    approachSubtitle: 'Cubixsol develops healthcare software with security-focused practices that support privacy, compliance requirements, and reliable data management.',
+    approachItems: [
+      {
+        title: 'HIPAA-Aware Healthcare Solutions',
+        subtitle: 'Cubixsol builds healthcare applications with privacy-focused architecture designed around HIPAA requirements.',
+        points: [
+          { heading: 'Data Protection', text: 'Our solutions protect sensitive patient information through secure data handling practices.' },
+          { heading: 'Controlled Access', text: 'Healthcare platforms are designed with controlled access and user authentication features.' },
+          { heading: 'Lifecycle Privacy', text: 'Development processes consider healthcare privacy standards throughout the software lifecycle.' },
+        ],
+      },
+      {
+        title: 'Data Encryption & PHI Protection',
+        subtitle: 'Cubixsol prioritises data security through encryption methods that protect protected health information (PHI).',
+        points: [
+          { heading: 'Encrypted Storage', text: 'Patient data is secured through encrypted storage and secure data transmission.' },
+          { heading: 'Exposure Controls', text: 'Access controls limit sensitive information exposure to authorised users.' },
+          { heading: 'Risk Reduction', text: 'Healthcare applications are designed to reduce risks associated with unauthorised data access.' },
+        ],
+      },
+      {
+        title: 'Audit Trails & Secure Monitoring',
+        subtitle: 'Cubixsol creates healthcare systems with tracking capabilities that improve transparency and accountability.',
+        points: [
+          { heading: 'Activity Logs', text: 'Audit trails record important user activities and system changes.' },
+          { heading: 'Usage Visibility', text: 'Monitoring features provide visibility into data access and application usage.' },
+          { heading: 'Secure Logging', text: 'Secure logging supports better management of healthcare information workflows.' },
+        ],
+      },
+    ],
+    workAreasTitle: 'Use Cases & Examples',
     workAreas: [
       {
-        title: 'Patient Engagement & Portals',
-        body: 'Frictionless patient self-scheduling, pre-visit intake questionnaires, lab result viewing, and secure clinician messaging.',
+        title: 'Telehealth Platforms',
+        body: 'Cubixsol builds telehealth platforms that connect patients with healthcare professionals through virtual consultations, scheduling systems, and secure communication tools.',
       },
       {
-        title: 'Telehealth & Virtual Care',
-        body: 'Browser-based HD video consultation rooms with zero downloads, screen sharing, digital whiteboard, and live vitals telemetry.',
+        title: 'Appointment Management Systems',
+        body: 'Healthcare organizations can manage appointments, reminders, cancellations, and patient interactions through customized scheduling solutions.',
       },
       {
-        title: 'Clinical Operations & Workflow',
-        body: 'EHR-integrated staff dashboards that streamline nurse charting, patient room assignments, and diagnostic handoffs.',
-      },
-      {
-        title: 'Remote Patient Monitoring (RPM)',
-        body: 'IoT health device synchronization (blood pressure, glucose, pulse oximetry) with automated clinical threshold alert triggers.',
+        title: 'Patient Engagement Applications',
+        body: 'We develop patient-focused applications that improve communication, provide health resources, and support continuous engagement outside clinical visits.',
       },
     ],
-    productsBuilt: [
-      { name: 'MediConnect Telehealth', slug: 'mediconnect', blurb: 'Encrypted virtual clinic suite for outpatient care.' },
-      { name: 'DocuCare Patient Portal', slug: 'docucare', blurb: 'Self-service patient appointment, charts, and billing access.' },
-    ],
-    caseStudies: [
+    whyChooseTitle: 'Why Healthcare Teams Choose Cubixsol',
+    whyChooseItems: [
       {
-        title: 'Multi-Specialty Telehealth Platform',
-        result: 'Built an encrypted WebRTC telehealth system handling 12,000+ monthly clinical consultations with 99.98% video reliability.',
-        tags: ['WebRTC', 'HIPAA', 'Telehealth'],
+        title: 'Healthcare-Focused Development Approach',
+        desc: 'Cubixsol creates software solutions based on healthcare workflows, user needs, and operational requirements.',
       },
       {
-        title: 'FHIR EHR Integration Pipeline',
-        result: 'Unified legacy Cerner and Epic medical records into a single patient summary dashboard, cutting physician charting time by 32%.',
-        tags: ['HL7 FHIR', 'EHR', 'Security'],
+        title: 'Security-First Engineering',
+        desc: 'Our development process prioritises secure architecture, data protection, and reliable system performance.',
       },
       {
-        title: 'Digital Patient Intake & Triage Suite',
-        result: 'Replaced paper intake forms with contactless mobile check-in across 18 regional clinics, eliminating waiting room bottlenecks.',
-        tags: ['Mobile UX', 'Triage', 'Portal'],
+        title: 'Scalable Technology Solutions',
+        desc: 'We build healthcare platforms that support future growth, additional users, and expanding service requirements.',
+      },
+      {
+        title: 'Long-Term Technical Support',
+        desc: 'Cubixsol provides ongoing improvements, maintenance, and technical support after software deployment.',
       },
     ],
-    servicesWeOffer: [
-      'Custom HIPAA-compliant web & mobile apps',
-      'EHR / EMR interoperability (HL7 FHIR, SMART on FHIR)',
-      'Encrypted telehealth & WebRTC video rooms',
-      'Medical billing & insurance eligibility APIs',
-      'Clinical workflow automation dashboards',
-      'Healthcare UI/UX design & accessibility audits',
+    ctaTitle: 'Ready to Build Healthcare Software?',
+    ctaDesc: 'Partner with Cubixsol for reliable healthcare software development services that improve patient experiences, optimize workflows, and support modern healthcare delivery.',
+    faqs: [
+      {
+        q: 'What can your healthcare software development services cover?',
+        a: 'We develop patient portals, scheduling tools, telehealth workflows, and internal applications for healthcare operations. We define the features, integrations, and data requirements around your users and the problem you need to solve.',
+      },
+      {
+        q: 'Do you provide healthcare mobile app development services?',
+        a: 'Yes. Our healthcare mobile app development services support patient and staff experiences such as appointment booking, care information access, and task coordination. We help you choose a mobile approach based on your users, required features, and existing systems.',
+      },
+      {
+        q: 'Can you connect new software with our existing healthcare systems?',
+        a: 'We assess the interfaces and data access your systems provide before planning integrations. For EHR software development projects, we clarify which records need to move between systems, who can access them, and how updates should flow.',
+      },
+      {
+        q: 'How does a healthcare software project start, and who owns the code?',
+        a: 'We begin with discovery to agree on users, workflows, scope, and a practical first release. Your contract defines ownership and handover terms. We typically transfer project deliverables to you and provide documentation to support your internal team.',
+      },
     ],
   },
 

@@ -10,7 +10,7 @@
         "ogImage": "https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?auto=format&fit=crop&w=1000&h=750&q=70",
         "canonicalUrl": ""
       },
-      "icon": "/uploads/media-1788761191366-9651825.svg",
+      "icon": "/uploads/media-1789561623441-626462644.svg",
       "slug": "android-app-development",
       "heroImage": "/uploads/media-1789560135379-550495563.svg",
       "title": " Android App Development Services Built for Business Growth",
@@ -470,7 +470,7 @@
         "ogImage": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&h=750&q=70",
         "canonicalUrl": ""
       },
-      "icon": "/uploads/media-1788761191368-839736527.svg",
+      "icon": "/uploads/media-1789561623444-438197349.svg",
       "slug": "api-development-and-integration",
       "heroImage": "/uploads/media-1789560135388-197492584.svg",
       "title": "API Development & Integration Services",
@@ -1545,7 +1545,7 @@
         "ogImage": "https://images.unsplash.com/photo-1432888622747-4eb9a8f2c1c9?auto=format&fit=crop&w=1000&h=750&q=70",
         "canonicalUrl": ""
       },
-      "icon": "/uploads/media-1788760355439-537523465.svg",
+      "icon": "/uploads/media-1789561623444-19393662.svg",
       "slug": "digital-marketing",
       "heroImage": "/uploads/media-1788760355439-537523465.svg",
       "title": "Digital Marketing Services",
@@ -1576,33 +1576,23 @@
       "faqs": [
         {
           "q": "How much do digital marketing services cost?",
-          "a": "Cost depends on the channels, market competition, campaign scope, advertising budget, and level of support required. After the initial audit, Cubixsol recommends a practical scope and explains the cost before work begins.",
-          "title": "How much do digital marketing services cost?",
-          "desc": "Cost depends on the channels, market competition, campaign scope, advertising budget, and level of support required. After the initial audit, Cubixsol recommends a practical scope and explains the cost before work begins."
+          "a": "Cost depends on the channels, market competition, campaign scope, advertising budget, and level of support required. After the initial audit, Cubixsol recommends a practical scope and explains the cost before work begins."
         },
         {
           "q": "How long does digital marketing take to produce results?",
-          "a": "Paid campaigns may start generating traffic and leads soon after launch, while SEO and content usually need more time to build momentum. Timelines also depend on your starting position, competition, budget, and offer.",
-          "title": "How long does digital marketing take to produce results?",
-          "desc": "Paid campaigns may start generating traffic and leads soon after launch, while SEO and content usually need more time to build momentum. Timelines also depend on your starting position, competition, budget, and offer."
+          "a": "Paid campaigns may start generating traffic and leads soon after launch, while SEO and content usually need more time to build momentum. Timelines also depend on your starting position, competition, budget, and offer."
         },
         {
           "q": "Should I invest in SEO or PPC?",
-          "a": "SEO supports long-term organic visibility, while PPC can capture demand more quickly. Many businesses benefit from using both: paid campaigns create immediate reach while SEO develops a sustainable acquisition channel.",
-          "title": "Should I invest in SEO or PPC?",
-          "desc": "SEO supports long-term organic visibility, while PPC can capture demand more quickly. Many businesses benefit from using both: paid campaigns create immediate reach while SEO develops a sustainable acquisition channel."
+          "a": "SEO supports long-term organic visibility, while PPC can capture demand more quickly. Many businesses benefit from using both: paid campaigns create immediate reach while SEO develops a sustainable acquisition channel."
         },
         {
           "q": "What reporting will I receive?",
-          "a": "Reports focus on the metrics connected to your goals, including qualified traffic, conversions, lead quality, acquisition cost, sales, and return on investment. We also explain what changed and what happens next.",
-          "title": "What reporting will I receive?",
-          "desc": "Reports focus on the metrics connected to your goals, including qualified traffic, conversions, lead quality, acquisition cost, sales, and return on investment. We also explain what changed and what happens next."
+          "a": "Reports focus on the metrics connected to your goals, including qualified traffic, conversions, lead quality, acquisition cost, sales, and return on investment. We also explain what changed and what happens next."
         },
         {
           "q": "Do you require long-term contracts?",
-          "a": "Engagement terms depend on the selected services and campaign needs. We define the scope, deliverables, reporting schedule, and contract terms upfront so you can make an informed decision.",
-          "title": "Do you require long-term contracts?",
-          "desc": "Engagement terms depend on the selected services and campaign needs. We define the scope, deliverables, reporting schedule, and contract terms upfront so you can make an informed decision."
+          "a": "Engagement terms depend on the selected services and campaign needs. We define the scope, deliverables, reporting schedule, and contract terms upfront so you can make an informed decision."
         }
       ],
       "techDesc": "We select technologies according to the project’s functionality, performance requirements, integrations, and future roadmap.\n\nThe goal is not to use the newest technology for its own sake. It is to choose a dependable stack that fits your product, supports maintainability, and avoids unnecessary technical complexity.",
@@ -1712,7 +1702,7 @@
       "faqsText": "How much do digital marketing services cost? | Cost depends on the channels, market competition, campaign scope, advertising budget, and level of support required. After the initial audit, Cubixsol recommends a practical scope and explains the cost before work begins.\n\nHow long does digital marketing take to produce results? | Paid campaigns may start generating traffic and leads soon after launch, while SEO and content usually need more time to build momentum. Timelines also depend on your starting position, competition, budget, and offer.\n\nShould I invest in SEO or PPC? | SEO supports long-term organic visibility, while PPC can capture demand more quickly. Many businesses benefit from using both: paid campaigns create immediate reach while SEO develops a sustainable acquisition channel.\n\nWhat reporting will I receive? | Reports focus on the metrics connected to your goals, including qualified traffic, conversions, lead quality, acquisition cost, sales, and return on investment. We also explain what changed and what happens next.\n\nDo you require long-term contracts? | Engagement terms depend on the selected services and campaign needs. We define the scope, deliverables, reporting schedule, and contract terms upfront so you can make an informed decision.",
       "serviceProcessText": "01 | Audit | We review your website, analytics, campaigns, competitors, audience, and current conversion path to identify gaps and opportunities.\n\n02 | Strategy | The findings become a prioritized channel plan with clear goals, target audiences, messaging, budgets, and performance indicators.\n\n03 | Execute | Our team launches and manages the agreed campaigns, content, optimization work, and tracking setup.\n\n04 | Report | Regular reports connect marketing activity with meaningful measures such as qualified traffic, leads, sales, acquisition cost, and return on investment.\n\n05 | Optimize | We test, learn, and adjust campaigns based on performance data, market changes, and new business priorities.",
       "subServicesText": "Search Engine Optimization | Our digital marketing and SEO services include technical audits, keyword strategy, on-page optimization, content planning, internal linking, and performance tracking. These digital marketing SEO services focus on sustainable traffic and qualified inquiries rather than rankings with little commercial value.\n\nPPC and Google Ads | Reach high-intent prospects through carefully structured paid search and display campaigns. We manage targeting, ad copy, landing-page alignment, conversion tracking, bid strategy, and ongoing testing to reduce wasted spend and improve return on ad investment.\n\nSocial Media Marketing | We build a consistent presence on the platforms your audience actually uses. Our team plans content, manages publishing, supports paid social campaigns, and reviews engagement data to strengthen awareness and create demand.\n\nContent Marketing | Give potential customers useful answers at every stage of their journey. We develop content strategies for service pages, landing pages, blogs, lead magnets, and campaign assets that support search visibility, authority, and conversions.\n\nEmail Marketing | We help businesses re-engage subscribers and past customers to encourage repeat purchases.  We create segmented campaigns, automated sequences, promotional emails, and retention flows designed around the actions you want recipients to take.\n\nLocal SEO | Our local digital marketing services cover location targeting, Google Business Profile optimization, local landing pages, citation consistency, reviews, and local search reporting. Businesses comparing digital marketing services near me can assess our approach through a focused audit and clear campaign plan. For organizations seeking DC digital marketing services, we develop campaigns based on local audience behavior and market demand.",
-      "whyChooseText": "**Results-focused strategies:** | Every recommendation supports a defined traffic, lead, sales, or retention goal.\n\n**Transparent communication:** | You receive clear updates on completed work, campaign performance, and next priorities.\n\n**A dedicated team:** | Specialists across search, paid media, content, social, and analytics work toward the same objectives.\n\n**ROI-focused decisions: ** | Budget shifts and campaign changes are guided by evidence, not assumptions or vanity metrics.",
+      "whyChooseText": "Results-focused strategies:** | Every recommendation supports a defined traffic, lead, sales, or retention goal.\n\nTransparent communication:** | You receive clear updates on completed work, campaign performance, and next priorities.\n\nA dedicated team:** | Specialists across search, paid media, content, social, and analytics work toward the same objectives.\n\nROI-focused decisions: ** | Budget shifts and campaign changes are guided by evidence, not assumptions or vanity metrics.",
       "additionalParagraph": "We combine strategy, execution, and performance analysis in one coordinated service. Our digital marketing agency services cover SEO, PPC, social media, content, email, and local search, while our digital marketing consulting services give internal teams a clear plan for improving campaigns, budgets, and channel performance.",
       "ctaSecondaryText": "Talk to Our Marketing Team",
       "heroSubtitle": "Turn online attention into measurable business growth.",
@@ -3042,7 +3032,7 @@
         "ogImage": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1000&h=750&q=70",
         "canonicalUrl": ""
       },
-      "icon": "/uploads/media-1789560135399-101149756.svg",
+      "icon": "/uploads/media-1789561623444-165382668.svg",
       "slug": "ios-app-development",
       "heroImage": "/uploads/media-1789560135399-101149756.svg",
       "title": "iOS App Development Services for High-Performing Apple Products",
@@ -7500,14 +7490,14 @@
       },
       "slug": "healthcare",
       "title": "Healthcare",
-      "icon": "/uploads/media-1789629896392-271884177.svg",
-      "short": "Our healthcare software development services cover patient portals, telehealth platforms, clinical workflows, healthcare applications, data integrations, and secure administrative systems.",
-      "desc": "Our **healthcare software development services** cover patient portals, telehealth platforms, clinical workflows, healthcare applications, data integrations, and secure administrative systems.",
+      "icon": "Activity",
+      "short": "Cubixsol builds healthcare software that helps patients access care and gives clinical teams simpler ways to manage daily tasks. Our healthcare software development services cover patient portals, appointment scheduling, telehealth, and internal tools, with privacy, usability, and reliable integrations built into the project plan.",
+      "desc": "Cubixsol builds healthcare software that helps patients access care and gives clinical teams simpler ways to manage daily tasks. Our healthcare software development services cover patient portals, appointment scheduling, telehealth, and internal tools, with privacy, usability, and reliable integrations built into the project plan.",
       "points": [
-        "Patient portals and mobile apps",
-        "Appointment and care workflows",
-        "Telemedicine app development services",
-        "EHR software development and integrations"
+        "Healthcare-Focused Development Approach",
+        "Security-First Engineering",
+        "Scalable Technology Solutions",
+        "Long-Term Technical Support"
       ],
       "servicesWeOffer": [
         "Custom HIPAA-compliant web & mobile apps",
@@ -7519,20 +7509,16 @@
       ],
       "workAreas": [
         {
-          "title": "Patient Engagement & Portals",
-          "body": "Frictionless patient self-scheduling, pre-visit intake questionnaires, lab result viewing, and secure clinician messaging."
+          "title": "Telehealth Platforms",
+          "body": "Cubixsol builds telehealth platforms that connect patients with healthcare professionals through virtual consultations, scheduling systems, and secure communication tools."
         },
         {
-          "title": "Telehealth & Virtual Care",
-          "body": "Browser-based HD video consultation rooms with zero downloads, screen sharing, digital whiteboard, and live vitals telemetry."
+          "title": "Appointment Management Systems",
+          "body": "Healthcare organizations can manage appointments, reminders, cancellations, and patient interactions through customized scheduling solutions."
         },
         {
-          "title": "Clinical Operations & Workflow",
-          "body": "EHR-integrated staff dashboards that streamline nurse charting, patient room assignments, and diagnostic handoffs."
-        },
-        {
-          "title": "Remote Patient Monitoring (RPM)",
-          "body": "IoT health device synchronization (blood pressure, glucose, pulse oximetry) with automated clinical threshold alert triggers."
+          "title": "Patient Engagement Applications",
+          "body": "We develop patient-focused applications that improve communication, provide health resources, and support continuous engagement outside clinical visits."
         }
       ],
       "productsBuilt": [
@@ -7578,86 +7564,90 @@
       ],
       "approachItems": [
         {
-          "title": "We Engineer for Patient Safety & Trust",
-          "subtitle": "Our digital health engineers and medical UX specialists create intuitive care experiences that are:",
+          "title": "HIPAA-Aware Healthcare Solutions",
+          "subtitle": "Cubixsol builds healthcare applications with privacy-focused architecture designed around HIPAA requirements.",
           "points": [
             {
-              "heading": "Timely",
-              "text": "Fast, frictionless patient intake, instant appointment scheduling, and rapid clinical alerts.",
-              "_id": "6aa5572aa3de33dce3741b17"
+              "heading": "Data Protection",
+              "text": "Our solutions protect sensitive patient information through secure data handling practices.",
+              "_id": "6aabcdf5510c2390a58c3604"
             },
             {
-              "heading": "Safe & Compliant",
-              "text": "Zero-trust data vaults, end-to-end WebRTC encryption, and complete audit trails protecting PHI.",
-              "_id": "6aa5572aa3de33dce3741b18"
+              "heading": "Controlled Access",
+              "text": "Healthcare platforms are designed with controlled access and user authentication features.",
+              "_id": "6aabcdf5510c2390a58c3605"
             },
             {
-              "heading": "Clinician-Friendly",
-              "text": "Thoughtful workflows that reduce electronic documentation fatigue and clicks for providers.",
-              "_id": "6aa5572aa3de33dce3741b19"
+              "heading": "Lifecycle Privacy",
+              "text": "Development processes consider healthcare privacy standards throughout the software lifecycle.",
+              "_id": "6aabcdf5510c2390a58c3606"
             }
           ]
         },
         {
-          "title": "We Ensure Interoperability & Compliance",
-          "subtitle": "With deep integration expertise across healthcare ecosystems, we ensure your software seamlessly connects:",
+          "title": "Data Encryption & PHI Protection",
+          "subtitle": "Cubixsol prioritises data security through encryption methods that protect protected health information (PHI).",
           "points": [
             {
-              "heading": "EHR & EMR Systems",
-              "text": "Bi-directional integration with Epic, Cerner, Allscripts, and AthenaHealth via HL7 FHIR v4.",
-              "_id": "6aa5572aa3de33dce3741b1b"
+              "heading": "Encrypted Storage",
+              "text": "Patient data is secured through encrypted storage and secure data transmission.",
+              "_id": "6aabcdf5510c2390a58c3608"
             },
             {
-              "heading": "Regulatory Standards",
-              "text": "Guaranteed adherence to HIPAA, HITECH, FDA 21 CFR Part 11, and GDPR health privacy rules.",
-              "_id": "6aa5572aa3de33dce3741b1c"
+              "heading": "Exposure Controls",
+              "text": "Access controls limit sensitive information exposure to authorised users.",
+              "_id": "6aabcdf5510c2390a58c3609"
             },
             {
-              "heading": "Medical Device APIs",
-              "text": "Stream real-time vitals and diagnostic telemetry from FDA-cleared remote patient monitoring (RPM) hardware.",
-              "_id": "6aa5572aa3de33dce3741b1d"
+              "heading": "Risk Reduction",
+              "text": "Healthcare applications are designed to reduce risks associated with unauthorised data access.",
+              "_id": "6aabcdf5510c2390a58c360a"
             }
           ]
         },
         {
-          "title": "We Accelerate Clinical AI & Telehealth",
-          "subtitle": "We integrate medical-grade intelligence and WebRTC communication into modern clinical products:",
+          "title": "Audit Trails & Secure Monitoring",
+          "subtitle": "Cubixsol creates healthcare systems with tracking capabilities that improve transparency and accountability.",
           "points": [
             {
-              "heading": "Intelligent Symptom Triage",
-              "text": "AI-assisted clinical questionnaires that route patients to appropriate care tiers.",
-              "_id": "6aa5572aa3de33dce3741b1f"
+              "heading": "Activity Logs",
+              "text": "Audit trails record important user activities and system changes.",
+              "_id": "6aabcdf5510c2390a58c360c"
             },
             {
-              "heading": "Sub-100ms HD Telehealth",
-              "text": "Browser-based WebRTC video consultations with zero downloads and live vitals overlay.",
-              "_id": "6aa5572aa3de33dce3741b20"
+              "heading": "Usage Visibility",
+              "text": "Monitoring features provide visibility into data access and application usage.",
+              "_id": "6aabcdf5510c2390a58c360d"
             },
             {
-              "heading": "Automated Clinical Charting",
-              "text": "AI-generated consultation summaries and ICD-10 diagnostic coding assistance.",
-              "_id": "6aa5572aa3de33dce3741b21"
+              "heading": "Secure Logging",
+              "text": "Secure logging supports better management of healthcare information workflows.",
+              "_id": "6aabcdf5510c2390a58c360e"
             }
           ]
         }
       ],
-      "approachTitle": "The Cubixsol Approach to Healthcare",
+      "approachTitle": "Built for Healthcare Standards",
       "solutionsItems": [
         {
-          "title": "Telehealth & Virtual Care Delivery Suites",
-          "body": "We engineer HIPAA-compliant telehealth applications with WebRTC HD video, multi-party family consultations, in-call chat, screen sharing, and integrated digital prescription (e-Rx) dispatch. Works seamlessly on desktop browsers, iOS, and Android with zero installation required."
+          "title": "Patient Portals",
+          "body": "Cubixsol develops secure patient portals that connect individuals with healthcare providers through convenient digital experiences. Patients can access appointments, medical records, prescriptions, test results, and healthcare information from a centralized platform. Our solutions improve communication between patients and providers through secure messaging, notifications, and personalized healthcare access."
         },
         {
-          "title": "EHR / EMR Interoperability & FHIR Middleware",
-          "body": "Connect modern wellness apps and patient portals with legacy hospital systems. We build robust HL7 v2/v3, C-CDA, and SMART on FHIR middleware pipelines that sync clinical notes, lab results, and patient demographics in sub-second intervals."
+          "title": "Telemedicine Apps",
+          "body": "Our telemedicine app development services enable healthcare organizations to provide remote consultations through secure and reliable digital platforms. Cubixsol builds telehealth applications with features such as video consultations, appointment scheduling, patient management, and virtual follow-ups. These solutions help clinics, hospitals, and healthcare professionals expand access to care beyond traditional facilities."
         },
         {
-          "title": "Remote Patient Monitoring (RPM) & Medical AI",
-          "body": "Continuous care pipelines that ingest telemetry from Bluetooth and cellular medical devices (blood pressure cuffs, continuous glucose monitors, pulse oximeters). Includes automated threshold alert systems for nurse dispatch and ML-based early warning scoring."
+          "title": "EHR/EMR Software Development",
+          "body": "Cubixsol provides EHR software development solutions that help healthcare organizations manage electronic health records efficiently. We build customized systems for storing patient information, clinical documentation, medical histories, and healthcare data. Our EHR solutions support integrations with existing healthcare platforms through modern healthcare standards while maintaining secure data management."
+        },
+        {
+          "title": "Practice Management Software",
+          "body": "Cubixsol creates practice management software that simplifies administrative and operational workflows for healthcare providers. Our platforms support appointment management, billing processes, staff coordination, and daily clinic operations through streamlined digital tools. Custom dashboards provide healthcare teams with better visibility and control over their practice activities."
         }
       ],
-      "solutionsSubtitle": "Enterprise-grade digital health platforms, clinical workflow automation, and EHR interoperability built for hospitals, clinics, and healthtech startups.",
-      "solutionsTitle": "Our Healthcare & Life Sciences Solutions",
+      "solutionsSubtitle": "We develop secure, reliable, and user-friendly healthcare software solutions that simplify clinical workflows and improve patient care.",
+      "solutionsTitle": "Healthcare Software We Build",
       "stats": [
         {
           "value": "150+",
@@ -7676,10 +7666,63 @@
           "label": "Countries"
         }
       ],
-      "faqs": [],
+      "faqs": [
+        {
+          "q": "What can your healthcare software development services cover?",
+          "a": "We develop patient portals, scheduling tools, telehealth workflows, and internal applications for healthcare operations. We define the features, integrations, and data requirements around your users and the problem you need to solve."
+        },
+        {
+          "q": "Do you provide healthcare mobile app development services?",
+          "a": "Yes. Our healthcare mobile app development services support patient and staff experiences such as appointment booking, care information access, and task coordination. We help you choose a mobile approach based on your users, required features, and existing systems."
+        },
+        {
+          "q": "Can you connect new software with our existing healthcare systems?",
+          "a": "We assess the interfaces and data access your systems provide before planning integrations. For EHR software development projects, we clarify which records need to move between systems, who can access them, and how updates should flow."
+        },
+        {
+          "q": "How does a healthcare software project start, and who owns the code?",
+          "a": "We begin with discovery to agree on users, workflows, scope, and a practical first release. Your contract defines ownership and handover terms. We typically transfer project deliverables to you and provide documentation to support your internal team."
+        }
+      ],
       "techItems": [],
-      "whyChooseItems": [],
-      "trustPills": []
+      "whyChooseItems": [
+        {
+          "title": "Healthcare-Focused Development Approach",
+          "desc": "Cubixsol creates software solutions based on healthcare workflows, user needs, and operational requirements."
+        },
+        {
+          "title": "Security-First Engineering",
+          "desc": "Our development process prioritises secure architecture, data protection, and reliable system performance."
+        },
+        {
+          "title": "Scalable Technology Solutions",
+          "desc": "We build healthcare platforms that support future growth, additional users, and expanding service requirements."
+        },
+        {
+          "title": "Long-Term Technical Support",
+          "desc": "Cubixsol provides ongoing improvements, maintenance, and technical support after software deployment."
+        }
+      ],
+      "trustPills": [
+        "100% HIPAA & BAA Ready",
+        "HL7 FHIR v4 Certified",
+        "Encrypted WebRTC Telehealth",
+        "Zero-Trust Data Protection"
+      ],
+      "approachSubtitle": "Cubixsol develops healthcare software with security-focused practices that support privacy, compliance requirements, and reliable data management.",
+      "ctaBannerButtonLink": "/contact",
+      "ctaBannerButtonText": "Talk to Cubixsol",
+      "ctaBannerSecondaryButtonLink": "#estimate",
+      "ctaBannerSecondaryButtonText": "Get a Proposal",
+      "ctaDesc": "Partner with Cubixsol for reliable healthcare software development services that improve patient experiences, optimize workflows, and support modern healthcare delivery.",
+      "ctaPrimaryLink": "/contact",
+      "ctaPrimaryText": "Discuss your project",
+      "ctaSecondaryLink": "#estimate",
+      "ctaSecondaryText": "Get a proposal",
+      "ctaTitle": "Ready to Build Healthcare Software?",
+      "heroTitle": "Healthcare Software Development Services",
+      "whyChooseTitle": "Why Healthcare Teams Choose Cubixsol",
+      "workAreasTitle": "Use Cases & Examples"
     },
     {
       "testimonial": {
