@@ -701,16 +701,24 @@ export default function IndustryDetail() {
   const { openEstimateModal } = useEstimateModal();
   const [faqOpen, setFaqOpen] = useState(0);
 
+  const getFallbackIndustry = (s) => {
+    return defaultIndustries.find((i) => i.slug?.toLowerCase() === (s || '').toLowerCase()) || defaultIndustries[0];
+  };
+
   const [industryData, setIndustryData] = useState(() => {
     try {
       const cached = localStorage.getItem(`cubixsol_industry_${slug}`);
       if (cached) {
         const parsed = JSON.parse(cached);
-        if (parsed && parsed.slug === slug && parsed.title) return parsed;
+        if (parsed && parsed.slug?.toLowerCase() === slug?.toLowerCase() && parsed.title) {
+          const fb = getFallbackIndustry(slug);
+          return { ...fb, ...parsed };
+        }
       }
     } catch (_) {}
-    return null;
+    return getFallbackIndustry(slug);
   });
+
   const [allIndustries, setAllIndustries] = useState(() => {
     try {
       const cached = localStorage.getItem('cubixsol_industries_list_cache');
@@ -721,21 +729,14 @@ export default function IndustryDetail() {
     } catch (_) {}
     return defaultIndustries;
   });
-  const [loading, setLoading] = useState(() => {
-    try {
-      const cached = localStorage.getItem(`cubixsol_industry_${slug}`);
-      if (cached) {
-        const parsed = JSON.parse(cached);
-        if (parsed && parsed.slug === slug && parsed.title) return false;
-      }
-    } catch (_) {}
-    return true;
-  });
+
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     let isMounted = true;
     const fetchIndustryData = async () => {
       try {
+        const fb = getFallbackIndustry(slug);
         const [singleInd, list] = await Promise.all([
           apiFetch(`industries/${slug}`).catch(() => null),
           apiFetch('industries').catch(() => defaultIndustries),
@@ -749,19 +750,18 @@ export default function IndustryDetail() {
             } catch (_) {}
           }
           if (singleInd && singleInd.title) {
-            setIndustryData(singleInd);
+            const merged = { ...fb, ...singleInd };
+            setIndustryData(merged);
             try {
-              localStorage.setItem(`cubixsol_industry_${slug}`, JSON.stringify(singleInd));
+              localStorage.setItem(`cubixsol_industry_${slug}`, JSON.stringify(merged));
             } catch (_) {}
           } else {
-            const fallback = defaultIndustries.find((i) => i.slug === slug);
-            setIndustryData(fallback || null);
+            setIndustryData(fb);
           }
         }
       } catch (err) {
         if (isMounted) {
-          const fallback = defaultIndustries.find((i) => i.slug === slug);
-          setIndustryData(fallback || null);
+          setIndustryData(getFallbackIndustry(slug));
         }
       } finally {
         if (isMounted) setLoading(false);
@@ -774,37 +774,9 @@ export default function IndustryDetail() {
     };
   }, [slug]);
 
-  const ind = industryData || (!loading ? defaultIndustries.find((i) => i.slug === slug) : null);
+  const ind = industryData || getFallbackIndustry(slug);
 
-  if (loading && !ind) {
-    return (
-      <div className="min-h-screen bg-white">
-        <section className="relative overflow-hidden pt-10 pb-16 sm:pt-14 sm:pb-22 lg:pb-24 bg-slate-50/50">
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-pulse">
-            <div className="mb-6 w-28 h-5 bg-gray-200 rounded-lg" />
-            <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-center">
-              <div className="lg:col-span-7 space-y-5">
-                <div className="w-48 h-7 bg-gray-200 rounded-full" />
-                <div className="w-full max-w-lg h-12 bg-gray-200 rounded-2xl" />
-                <div className="w-full max-w-md h-6 bg-gray-200 rounded-lg" />
-                <div className="w-full max-w-sm h-6 bg-gray-100 rounded-lg" />
-                <div className="flex gap-4 pt-2">
-                  <div className="w-44 h-12 bg-primary-200/50 rounded-2xl" />
-                  <div className="w-40 h-12 bg-gray-200 rounded-2xl" />
-                </div>
-              </div>
-              <div className="lg:col-span-5">
-                <div className="w-full h-64 bg-gray-200 rounded-3xl" />
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-    );
-  }
-
-  if (!ind && !loading) return <Navigate to="/industries" replace />;
-  if (!ind) return <div className="min-h-screen bg-white" />;
+  if (!ind) return <Navigate to="/industries" replace />;
 
   const theme = industryThemes[ind.slug] || industryThemes.education;
   const others = allIndustries.filter((i) => i.slug !== slug).slice(0, 4);
