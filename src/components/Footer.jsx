@@ -91,35 +91,34 @@ const awards = [
 function AwardBadge({ award }) {
   const icons = {
     goodfirms: (
-      <div className="w-[4.25rem] h-[4.25rem] rounded-xl bg-gradient-to-b from-[#4b8bff] to-[#1a56db] shadow-lg flex flex-col items-center justify-center text-white relative overflow-hidden">
-        <span className="text-[10px] font-black tracking-tight z-10">GoodFirms</span>
-        <span className="mt-1 text-[7px] font-bold bg-[#ff7a00] px-2 py-0.5 rounded-sm z-10">
+      <div className="w-9 h-9 rounded-lg bg-gradient-to-b from-[#4b8bff] to-[#1a56db] shadow-xs flex flex-col items-center justify-center text-white relative overflow-hidden shrink-0">
+        <span className="text-[7.5px] font-black tracking-tight z-10 leading-none">GoodFirms</span>
+        <span className="mt-0.5 text-[5px] font-bold bg-[#ff7a00] px-1 py-0.5 rounded-[2px] z-10 leading-none">
           PARTNER
         </span>
-        <div className="absolute -bottom-3 -right-3 w-10 h-10 rounded-full bg-white/10" />
       </div>
     ),
     clutch: (
-      <div className="w-[4.25rem] h-[4.25rem] rounded-xl bg-[#16325c] shadow-lg flex flex-col items-center justify-center text-white border border-white/10">
-        <span className="text-[8px] font-bold text-sky-300 tracking-wider">TOP</span>
-        <span className="text-sm font-black tracking-tight">Clutch</span>
-        <span className="text-[7px] text-white/60 mt-0.5">Profile</span>
+      <div className="w-9 h-9 rounded-lg bg-[#16325c] shadow-xs flex flex-col items-center justify-center text-white border border-white/10 shrink-0">
+        <span className="text-[6px] font-bold text-sky-300 tracking-wider leading-none">TOP</span>
+        <span className="text-[9.5px] font-black tracking-tight leading-tight">Clutch</span>
+        <span className="text-[5px] text-white/60 leading-none">Profile</span>
       </div>
     ),
     'clutch-gold': (
-      <div className="w-[4.25rem] h-[4.25rem] rounded-full bg-gradient-to-b from-[#f6d365] via-[#fda085] to-[#c77932] shadow-lg flex flex-col items-center justify-center text-[#1a1a2e] border-2 border-amber-200">
-        <span className="text-[7px] font-black leading-none">Best of</span>
-        <span className="text-[11px] font-black leading-tight">CLUTCH</span>
+      <div className="w-9 h-9 rounded-full bg-gradient-to-b from-[#f6d365] via-[#fda085] to-[#c77932] shadow-xs flex flex-col items-center justify-center text-[#1a1a2e] border border-amber-200 shrink-0">
+        <span className="text-[5px] font-black leading-none">Best of</span>
+        <span className="text-[8px] font-black leading-tight">CLUTCH</span>
       </div>
     ),
     uk: (
-      <div className="w-[4.25rem] h-[4.25rem] rounded-xl bg-white shadow-lg flex flex-col items-center justify-center border border-gray-200">
-        <span className="text-[8px] font-black text-[#012169] text-center leading-tight px-1">
+      <div className="w-9 h-9 rounded-lg bg-white shadow-xs flex flex-col items-center justify-center border border-gray-200 shrink-0">
+        <span className="text-[6px] font-black text-[#012169] text-center leading-tight px-0.5">
           Companies
           <br />
           House
         </span>
-        <span className="mt-1 text-[8px] font-extrabold text-red-600 tracking-wide">UK</span>
+        <span className="text-[6px] font-extrabold text-red-600 tracking-wide mt-0.5">UK</span>
       </div>
     ),
   };
@@ -129,15 +128,16 @@ function AwardBadge({ award }) {
       href={award.href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex flex-col items-center justify-center rounded-2xl bg-[#121a2b] border border-white/10 p-4 sm:p-5 min-h-[140px] sm:min-h-[150px] hover:border-primary-400/50 hover:-translate-y-1 hover:shadow-[0_12px_40px_-12px_rgba(59,130,246,0.35)] transition-all duration-300"
+      className="group flex flex-col items-center justify-center rounded-xl bg-[#0e1726] border border-white/10 p-2 hover:border-primary-400 hover:-translate-y-0.5 hover:shadow-md transition-all duration-300"
+      title={`${award.title} - ${award.sub}`}
     >
       <div className="group-hover:scale-105 transition-transform duration-300">
         {icons[award.style]}
       </div>
-      <span className="mt-3 text-xs sm:text-sm font-bold text-white text-center leading-tight">
+      <span className="mt-1.5 text-[10px] font-bold text-white text-center leading-tight truncate w-full">
         {award.title}
       </span>
-      <span className="text-[10px] sm:text-[11px] text-white/50 text-center mt-1">
+      <span className="text-[8.5px] text-white/50 text-center leading-tight truncate w-full mt-0.5">
         {award.sub}
       </span>
     </a>
@@ -168,6 +168,8 @@ export default function Footer() {
               We help businesses grow, automate, and achieve long-term success through innovative
               digital solutions.
             </p>
+
+            {/* Social Links */}
             <div className="flex gap-3 mt-5">
               {[LinkedinIcon, FacebookIcon, TwitterIcon, InstagramIcon, GithubIcon].map(
                 (Icon, i) => (
@@ -183,8 +185,21 @@ export default function Footer() {
               )}
             </div>
 
-            <div className="mt-8 w-full">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-ink mb-3">
+            {/* Awards & Certifications Badges under Social Icons */}
+            <div className="mt-6 pt-4 border-t border-gray-100">
+              <p className="text-[10px] font-bold tracking-widest uppercase text-gray-400 mb-2.5">
+                Awards &amp; Certifications
+              </p>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                {awards.map((a) => (
+                  <AwardBadge key={a.id} award={a} />
+                ))}
+              </div>
+            </div>
+
+            {/* Newsletter */}
+            <div className="mt-6 w-full">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-ink mb-2">
                 Newsletter
               </h4>
               <p className="text-sm text-gray-500 mb-3">
@@ -236,19 +251,7 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Awards & Certifications */}
-        <div className="mt-12 rounded-2xl sm:rounded-3xl bg-[#0b1220] px-4 sm:px-8 py-8 sm:py-10 border border-white/5">
-          <h3 className="text-center text-lg sm:text-xl font-extrabold text-white mb-6 sm:mb-8 tracking-tight">
-            Awards &amp; Certifications
-          </h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-3xl mx-auto">
-            {awards.map((a) => (
-              <AwardBadge key={a.id} award={a} />
-            ))}
-          </div>
-        </div>
-
-        <div className="mt-10 pt-6 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-gray-400">
+        <div className="mt-12 pt-6 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-gray-400">
           <p>© {new Date().getFullYear()} Cubixsol. All Rights Reserved.</p>
           <p className="text-xs text-center sm:text-right">
             Building reliable software for teams that ship.
