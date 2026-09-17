@@ -292,32 +292,6 @@ export default function Products() {
           })}
         </Stagger>
 
-        {/* Custom Solution Callout Box */}
-        <div className="mt-16 sm:mt-20">
-          <Reveal>
-            <div className="rounded-3xl bg-gradient-to-br from-slate-900 to-[#1a1a2e] text-white p-6 sm:p-10 relative overflow-hidden flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-xl">
-              <div className="absolute -right-16 -top-16 w-56 h-56 rounded-full bg-[#00a4d8]/20 blur-3xl pointer-events-none" />
-              <div className="relative max-w-xl">
-                <span className="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest uppercase text-[#00a4d8] mb-2">
-                  <Sparkles className="w-3.5 h-3.5" /> Bespoke Engineering
-                </span>
-                <h3 className="text-xl sm:text-2xl font-extrabold text-white mb-2 leading-tight">
-                  Need a custom software product built for your business?
-                </h3>
-                <p className="text-white/70 text-sm leading-relaxed">
-                  We design, architect, and engineer dedicated web platforms, mobile apps, and SaaS solutions tailored to your exact workflows.
-                </p>
-              </div>
-              <Link
-                to="/contact"
-                className="relative inline-flex items-center gap-2 bg-primary-gradient hover:opacity-95 text-white font-bold px-7 py-3.5 rounded-2xl transition-all duration-300 shadow-lg shadow-[#00a4d8]/25 shrink-0 cursor-pointer"
-              >
-                <span>Start a Project</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </Reveal>
-        </div>
       </main>
 
       {/* Global CTA Banner */}
