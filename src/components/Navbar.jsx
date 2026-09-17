@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Menu, X, ChevronDown, ArrowRight } from 'lucide-react';
-import { solutionGroups, products, industries } from '../data/content';
+import { solutionGroups, industries } from '../data/content';
 import { useServices } from '../context/ServicesContext';
 
 const serviceMenuGroups = [
@@ -151,11 +151,9 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
-  const [productsOpen, setProductsOpen] = useState(false);
   const [industriesOpen, setIndustriesOpen] = useState(false);
   const [activeIndustry, setActiveIndustry] = useState(industries[0]?.slug || 'education');
   const [mobileIndustries, setMobileIndustries] = useState(false);
-  const [mobileProducts, setMobileProducts] = useState(false);
   const [mobileSolutions, setMobileSolutions] = useState(false);
   const [mobileServices, setMobileServices] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -174,7 +172,6 @@ export default function Navbar() {
     setOpen(false);
     setServicesOpen(false);
     setSolutionsOpen(false);
-    setProductsOpen(false);
     setIndustriesOpen(false);
   }, [pathname]);
 
@@ -219,7 +216,6 @@ export default function Navbar() {
               onMouseEnter={() => {
                 setServicesOpen(true);
                 setSolutionsOpen(false);
-                setProductsOpen(false);
                 setIndustriesOpen(false);
               }}
               onMouseLeave={() => setServicesOpen(false)}
@@ -284,7 +280,6 @@ export default function Navbar() {
               onMouseEnter={() => {
                 setSolutionsOpen(true);
                 setServicesOpen(false);
-                setProductsOpen(false);
                 setIndustriesOpen(false);
               }}
               onMouseLeave={() => setSolutionsOpen(false)}
@@ -358,7 +353,6 @@ export default function Navbar() {
                 setIndustriesOpen(true);
                 setServicesOpen(false);
                 setSolutionsOpen(false);
-                setProductsOpen(false);
               }}
               onMouseLeave={() => setIndustriesOpen(false)}
             >
@@ -431,69 +425,9 @@ export default function Navbar() {
               )}
             </div>
 
-            {/* Our Products mega menu */}
-            <div
-              className="relative"
-              onMouseEnter={() => {
-                setProductsOpen(true);
-                setServicesOpen(false);
-                setSolutionsOpen(false);
-                setIndustriesOpen(false);
-              }}
-              onMouseLeave={() => setProductsOpen(false)}
-            >
-              <NavLink to="/products" className={linkClass}>
-                <span className="flex items-center gap-1">
-                  Our Products <ChevronDown className="w-3.5 h-3.5" />
-                </span>
-              </NavLink>
-              {productsOpen && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 w-[min(96vw,920px)]">
-                  <div className="bg-white rounded-2xl shadow-soft border border-gray-100 p-4 sm:p-5">
-                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
-                      {products.slice(0, 7).map((p) => (
-                        <NavLink
-                          key={p.slug}
-                          to={`/products/${p.slug}`}
-                          className="group flex flex-col rounded-xl border border-gray-100 overflow-hidden hover:border-primary-200 hover:shadow-card transition bg-white"
-                        >
-                          <div className={`aspect-[16/10] bg-gradient-to-br ${p.accent} overflow-hidden`}>
-                            <img
-                              src={p.image}
-                              alt={p.name}
-                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-400"
-                              loading="lazy"
-                              width={400}
-                              height={250}
-                            />
-                          </div>
-                          <div className="p-2.5 sm:p-3 flex-1 flex flex-col">
-                            <span className="text-[10px] font-bold uppercase tracking-wide text-primary-600 mb-0.5">
-                              {p.name}
-                            </span>
-                            <span className="text-[12px] font-bold text-ink leading-snug line-clamp-2 mb-1">
-                              {p.title}
-                            </span>
-                            <span className="text-[11px] text-gray-500 leading-snug line-clamp-2 mb-2 flex-1">
-                              {p.desc}
-                            </span>
-                            <span className="text-[11px] font-semibold text-primary-600">
-                              Discover More →
-                            </span>
-                          </div>
-                        </NavLink>
-                      ))}
-                      <NavLink
-                        to="/products"
-                        className="flex items-center justify-center rounded-xl border-2 border-dashed border-primary-200 bg-primary-50/40 hover:bg-primary-50 text-primary-700 font-semibold text-sm min-h-[140px] transition"
-                      >
-                        View All Products →
-                      </NavLink>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
+            <NavLink to="/products" className={linkClass}>
+              Our Products
+            </NavLink>
 
             <NavLink to="/projects" className={linkClass}>
               Projects
@@ -693,37 +627,17 @@ export default function Navbar() {
                 </div>
               )}
 
-              <button
-                type="button"
-                onClick={() => setMobileProducts((v) => !v)}
-                className="flex items-center justify-between px-3 py-3 rounded-lg text-sm font-semibold text-ink/80 w-full text-left"
+              <NavLink
+                to="/products"
+                onClick={() => setOpen(false)}
+                className={({ isActive }) =>
+                  `px-3 py-3 rounded-lg text-sm font-semibold ${
+                    isActive ? 'bg-primary-50 text-primary-600' : 'text-ink/80'
+                  }`
+                }
               >
                 Our Products
-                <ChevronDown
-                  className={`w-4 h-4 transition ${mobileProducts ? 'rotate-180' : ''}`}
-                />
-              </button>
-              {mobileProducts && (
-                <div className="pl-3 pb-2 space-y-0.5">
-                  <NavLink
-                    to="/products"
-                    onClick={() => setOpen(false)}
-                    className="block px-3 py-2 text-sm text-primary-600 font-semibold"
-                  >
-                    All products
-                  </NavLink>
-                  {products.map((p) => (
-                    <NavLink
-                      key={p.slug}
-                      to={`/products/${p.slug}`}
-                      onClick={() => setOpen(false)}
-                      className="block px-3 py-2 text-sm text-gray-600"
-                    >
-                      {p.name}
-                    </NavLink>
-                  ))}
-                </div>
-              )}
+              </NavLink>
 
               {[
                 ['Projects', '/projects'],
