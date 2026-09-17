@@ -152,6 +152,16 @@ export default function Navbar() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const [industriesOpen, setIndustriesOpen] = useState(false);
+  const [navIndustries, setNavIndustries] = useState(() => {
+    try {
+      const cached = localStorage.getItem('cubixsol_industries_list_cache');
+      if (cached) {
+        const parsed = JSON.parse(cached);
+        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+      }
+    } catch (_) {}
+    return industries;
+  });
   const [activeIndustry, setActiveIndustry] = useState(industries[0]?.slug || 'education');
   const [mobileIndustries, setMobileIndustries] = useState(false);
   const [mobileSolutions, setMobileSolutions] = useState(false);
@@ -369,7 +379,7 @@ export default function Navbar() {
                         Industries
                       </p>
                       <ul className="space-y-0.5">
-                        {industries.map((ind) => (
+                        {(navIndustries || industries).map((ind) => (
                           <li key={ind.slug}>
                             <button
                               type="button"
@@ -390,29 +400,38 @@ export default function Navbar() {
                     </div>
                     <div className="p-5 sm:p-6">
                       {(() => {
-                        const ind = industries.find((i) => i.slug === activeIndustry) || industries[0];
+                        const allList = (navIndustries && navIndustries.length > 0) ? navIndustries : industries;
+                        const ind = allList.find((i) => i.slug === activeIndustry) || allList[0] || industries[0];
                         if (!ind) return null;
+                        const points = Array.isArray(ind.points) && ind.points.length > 0
+                          ? ind.points
+                          : (Array.isArray(ind.trustPills) && ind.trustPills.length > 0 ? ind.trustPills : []);
                         return (
                           <div>
-                            <p className="text-sm text-gray-600 leading-relaxed mb-4">{ind.desc}</p>
-                            <ul className="grid sm:grid-cols-2 gap-2 mb-5">
-                              {ind.points.map((pt) => (
-                                <li key={pt} className="text-xs font-medium text-ink flex gap-2">
-                                  <span className="w-1.5 h-1.5 rounded-full bg-primary-500 mt-1.5 shrink-0" />
-                                  {pt}
-                                </li>
-                              ))}
-                            </ul>
-                            <div className="rounded-xl bg-primary-50/60 border border-primary-100 p-4 mb-5">
-                              <p className="text-sm text-ink/80 leading-relaxed italic mb-2">
-                                &ldquo;{ind.testimonial.quote}&rdquo;
-                              </p>
-                              <p className="text-xs font-bold text-ink">{ind.testimonial.name}</p>
-                              <p className="text-[11px] text-gray-500">{ind.testimonial.role}</p>
-                            </div>
+                            <p className="text-sm font-bold text-ink mb-1">{ind.title}</p>
+                            <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4">{ind.desc || ind.short || ''}</p>
+                            {points.length > 0 && (
+                              <ul className="grid sm:grid-cols-2 gap-2 mb-4">
+                                {points.slice(0, 4).map((pt) => (
+                                  <li key={pt} className="text-xs font-medium text-ink flex items-start gap-2">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-primary-500 mt-1.5 shrink-0" />
+                                    <span className="line-clamp-1">{pt}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            )}
+                            {ind.testimonial && ind.testimonial.quote && (
+                              <div className="rounded-xl bg-primary-50/60 border border-primary-100 p-3.5 mb-4">
+                                <p className="text-xs text-ink/80 leading-relaxed italic mb-1">
+                                  &ldquo;{ind.testimonial.quote}&rdquo;
+                                </p>
+                                {ind.testimonial.name && <p className="text-[11px] font-bold text-ink">{ind.testimonial.name}</p>}
+                                {ind.testimonial.role && <p className="text-[10px] text-gray-500">{ind.testimonial.role}</p>}
+                              </div>
+                            )}
                             <NavLink
                               to={`/industries/${ind.slug}`}
-                              className="inline-flex items-center gap-1.5 text-sm font-bold text-primary-600 hover:gap-2 transition-all"
+                              className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-primary-600 hover:gap-2 transition-all"
                             >
                               Discover More <ArrowRight className="w-4 h-4" />
                             </NavLink>
@@ -614,7 +633,7 @@ export default function Navbar() {
                   <NavLink to="/industries" onClick={() => setOpen(false)} className="block px-3 py-2 text-sm text-primary-600 font-semibold">
                     All industries
                   </NavLink>
-                  {industries.map((ind) => (
+                  {(navIndustries || industries).map((ind) => (
                     <NavLink
                       key={ind.slug}
                       to={`/industries/${ind.slug}`}
