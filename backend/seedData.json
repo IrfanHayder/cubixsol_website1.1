@@ -6269,7 +6269,7 @@
       "heroTheme": "teal",
       "layout": "B",
       "externalUrl": "/tools/ai-seo-auditor",
-      "category": "accessibility",
+      "category": "ai",
       "stats": [
         [
           "AI",
@@ -6317,6 +6317,36 @@
         }
       ],
       "answers": []
+    },
+    {
+      "slug": "couponsbeast",
+      "accent": "from-green-100 to-emerald-50",
+      "answers": [],
+      "category": "tools",
+      "challenges": [],
+      "desc": "Comprehensive coupon and deals platform helping shoppers save money with verified discounts across top global brands and stores.",
+      "externalUrl": "https://couponsbeast.com/",
+      "image": "/uploads/media-1789647461792-921582557.png",
+      "name": "CouponsBeast",
+      "stats": [],
+      "steps": [],
+      "tagline": "Discover the best discount coupons, promo codes, and cashback offers online.",
+      "title": "CouponsBeast — Verified Promo Codes, Coupons & Online Deals"
+    },
+    {
+      "slug": "eshaalinnovations",
+      "accent": "from-purple-100 to-indigo-50",
+      "answers": [],
+      "category": "enterprise",
+      "challenges": [],
+      "desc": "Digital solutions and software development platform empowering businesses with modern web, mobile, and digital growth services.",
+      "externalUrl": "https://eshaalinnovations.com/",
+      "image": "/uploads/media-1789647461805-229919531.png",
+      "name": "Eshaal Innovations",
+      "stats": [],
+      "steps": [],
+      "tagline": "Transform your business with cutting-edge digital products and tech solutions.",
+      "title": "Eshaal Innovations — Tech Solutions & Digital Agency"
     },
     {
       "slug": "fix-alert",
@@ -6374,7 +6404,9 @@
           "body": "Dashboards show hotspots and repeat failures."
         }
       ],
-      "answers": []
+      "answers": [],
+      "category": "enterprise",
+      "externalUrl": ""
     },
     {
       "slug": "hirestream",
@@ -6432,7 +6464,9 @@
           "body": "Clean handoff to HR with full history."
         }
       ],
-      "answers": []
+      "answers": [],
+      "category": "enterprise",
+      "externalUrl": ""
     },
     {
       "slug": "image-to-text",
@@ -6440,12 +6474,12 @@
       "title": "Free Online OCR — Extract Text from Images",
       "tagline": "Upload an image, get editable text. 200+ languages, privacy-first, no signup.",
       "desc": "Professional OCR that converts JPG, PNG, PDF, HEIC and 70+ formats into accurate, editable text. Free, no registration, files auto-deleted after recognition.",
-      "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&h=750&q=80",
+      "image": "/uploads/media-1789647461822-981103321.png",
       "accent": "from-sky-100 to-blue-50",
       "heroTheme": "navy",
       "layout": "B",
       "externalUrl": "https://imagetotext.best/",
-      "category": "accessibility",
+      "category": "tools",
       "stats": [
         [
           "200+",
@@ -6492,15 +6526,16 @@
           "body": "Files are removed after processing for privacy."
         }
       ],
-      "answers": []
+      "answers": [],
+      "statsText": "undefined | undefined\nundefined | undefined\nundefined | undefined"
     },
     {
-      "slug": "jpg-to-pdf",
-      "name": "JPG to PDF",
-      "title": "JPG to PDF Converter",
-      "tagline": "Reliable image-to-PDF for documents, scans, and photo sets.",
+      "slug": "jpg-2-pdf",
+      "name": "JPG 2 PDF",
+      "title": "JPG 2 PDF Converter",
+      "tagline": "Reliable image-2-PDF for documents, scans, and photo sets.",
       "desc": "Convert JPG files into PDF documents online — built for everyday document workflows and multi-page needs.",
-      "image": "https://images.unsplash.com/photo-1568667256549-094345857347?auto=format&fit=crop&w=1200&h=750&q=80",
+      "image": "/uploads/media-1789647461835-804443603.png",
       "accent": "from-cyan-100 to-teal-50",
       "heroTheme": "teal",
       "layout": "A",
@@ -6552,7 +6587,23 @@
           "body": "Come back anytime you need another conversion."
         }
       ],
-      "answers": []
+      "answers": [],
+      "statsText": "undefined | undefined\nundefined | undefined\nundefined | undefined"
+    },
+    {
+      "slug": "jpg-to-pdf",
+      "accent": "from-cyan-100 to-teal-50",
+      "answers": [],
+      "category": "tools",
+      "challenges": [],
+      "desc": "Convert JPG files into PDF documents online — built for everyday document workflows and multi-page needs.",
+      "externalUrl": "https://jpg2pdf.io/",
+      "image": "/uploads/media-1789647461835-804443603.png",
+      "name": "JPG to PDF",
+      "stats": [],
+      "steps": [],
+      "tagline": "Reliable image-to-PDF for documents, scans, and photo sets.",
+      "title": "JPG to PDF Converter"
     },
     {
       "slug": "jpg-a-pdf",
@@ -6560,12 +6611,12 @@
       "title": "Convert JPG Images to PDF Online",
       "tagline": "Fast JPG → PDF conversion in the browser — simple and reliable.",
       "desc": "Turn one or more JPG images into a clean PDF document. Ideal for forms, scans, and sharing files that need a universal format.",
-      "image": "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=1200&h=750&q=80",
+      "image": "/uploads/media-1789647461868-484257972.png",
       "accent": "from-orange-100 to-amber-50",
       "heroTheme": "orange",
       "layout": "C",
       "externalUrl": "https://jpgapdf.io/",
-      "category": "accessibility",
+      "category": "tools",
       "stats": [
         [
           "JPG",
@@ -6612,20 +6663,36 @@
           "body": "No account required for standard use."
         }
       ],
-      "answers": []
+      "answers": [],
+      "statsText": "undefined | undefined\nundefined | undefined\nundefined | undefined"
+    },
+    {
+      "slug": "move-compass",
+      "accent": "from-emerald-100 to-teal-50",
+      "answers": [],
+      "category": "enterprise",
+      "challenges": [],
+      "desc": "A smart comparison and booking platform for UK home and office removals, storage solutions, and relocation services.",
+      "externalUrl": "https://movecompass.co.uk/",
+      "image": "/uploads/media-1789647461874-459519001.png",
+      "name": "MoveCompass",
+      "stats": [],
+      "steps": [],
+      "tagline": "Find trusted removal companies, compare quotes, and plan seamless moves across the UK.",
+      "title": "MoveCompass — UK Removals & Moving Comparison Platform"
     },
     {
       "slug": "reescrever-texto",
       "name": "Reescrever Texto",
       "title": "Rewrite Text for Clarity and Style",
       "tagline": "Improve tone, readability, and structure without losing your meaning.",
-      "desc": "Online text rewriting tool to refine drafts, simplify language, and produce clearer copy for work, study, or publishing.",
-      "image": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1200&h=750&q=80",
+      "desc": "Online text rewriting and paraphrasing tool to refine drafts, simplify language, and produce clearer copy for work, study, or publishing.",
+      "image": "/uploads/media-1789647461880-944716453.png",
       "accent": "from-violet-100 to-purple-50",
       "heroTheme": "violet",
       "layout": "A",
       "externalUrl": "https://reescrevertexto.io/",
-      "category": "accessibility",
+      "category": "ai",
       "stats": [
         [
           "Fast",
@@ -6743,7 +6810,24 @@
           "title": "Stay aligned",
           "body": "Calendar and event reminders built in."
         }
-      ]
+      ],
+      "category": "enterprise",
+      "externalUrl": ""
+    },
+    {
+      "slug": "toolmad",
+      "accent": "from-blue-100 to-indigo-50",
+      "answers": [],
+      "category": "tools",
+      "challenges": [],
+      "desc": "ToolMad provides a comprehensive suite of online utility tools for developers, content creators, and digital professionals.",
+      "externalUrl": "https://toolmad.com/",
+      "image": "/uploads/media-1789647461884-622147573.png",
+      "name": "ToolMad",
+      "stats": [],
+      "steps": [],
+      "tagline": "Free online utility tools, text converters, formatters and web helpers.",
+      "title": "ToolMad — All-in-One Online Web Utilities & Tools"
     },
     {
       "slug": "workstream",
@@ -6814,7 +6898,9 @@
           "title": "Powerful insights",
           "body": "See capacity, bottlenecks, and completion in one place."
         }
-      ]
+      ],
+      "category": "enterprise",
+      "externalUrl": ""
     }
   ],
   "initialIndustries": [
@@ -9603,6 +9689,70 @@
     }
   ],
   "initialMedia": [
+    {
+      "title": "toolmad.com",
+      "url": "/uploads/media-1789647461884-622147573.png",
+      "type": "image",
+      "alt": "toolmad.com",
+      "size": 273936,
+      "mimetype": "image/png"
+    },
+    {
+      "title": "reescrevertexto.io",
+      "url": "/uploads/media-1789647461880-944716453.png",
+      "type": "image",
+      "alt": "reescrevertexto.io",
+      "size": 278395,
+      "mimetype": "image/png"
+    },
+    {
+      "title": "movecompass.co.uk",
+      "url": "/uploads/media-1789647461874-459519001.png",
+      "type": "image",
+      "alt": "movecompass.co.uk",
+      "size": 311950,
+      "mimetype": "image/png"
+    },
+    {
+      "title": "jpgapdf.io",
+      "url": "/uploads/media-1789647461868-484257972.png",
+      "type": "image",
+      "alt": "jpgapdf.io",
+      "size": 405620,
+      "mimetype": "image/png"
+    },
+    {
+      "title": "jpg2pdf.io",
+      "url": "/uploads/media-1789647461835-804443603.png",
+      "type": "image",
+      "alt": "jpg2pdf.io",
+      "size": 198415,
+      "mimetype": "image/png"
+    },
+    {
+      "title": "imagetotext.best",
+      "url": "/uploads/media-1789647461822-981103321.png",
+      "type": "image",
+      "alt": "imagetotext.best",
+      "size": 206342,
+      "mimetype": "image/png"
+    },
+    {
+      "title": "eshaalinnovations.com",
+      "url": "/uploads/media-1789647461805-229919531.png",
+      "type": "image",
+      "alt": "eshaalinnovations.com",
+      "size": 372539,
+      "mimetype": "image/png"
+    },
+    {
+      "title": "couponsbeast.com",
+      "url": "/uploads/media-1789647461792-921582557.png",
+      "type": "image",
+      "alt": "couponsbeast.com",
+      "size": 451637,
+      "mimetype": "image/png"
+    },
     {
       "title": "Transparent execution 1",
       "url": "/uploads/media-1789629898681-73665576.svg",

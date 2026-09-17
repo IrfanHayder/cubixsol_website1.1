@@ -36,13 +36,13 @@ const PRODUCT_META = {
     category: 'FREE ONLINE OCR',
     tags: ['DESIGN', 'BUILD'],
     filterGroup: 'tools',
-    featured: false,
+    featured: true,
   },
   'reescrever-texto': {
     category: 'AI TEXT REWRITER',
     tags: ['DESIGN', 'BUILD'],
     filterGroup: 'ai',
-    featured: false,
+    featured: true,
   },
   'jpg-a-pdf': {
     category: 'CONVERT JPG TO PDF',
@@ -55,6 +55,30 @@ const PRODUCT_META = {
     tags: ['DESIGN', 'BUILD'],
     filterGroup: 'tools',
     featured: false,
+  },
+  'toolmad': {
+    category: 'ONLINE WEB UTILITIES',
+    tags: ['DESIGN', 'BUILD'],
+    filterGroup: 'tools',
+    featured: true,
+  },
+  'move-compass': {
+    category: 'REMOVALS & MOVING PLATFORM',
+    tags: ['DESIGN', 'BUILD'],
+    filterGroup: 'enterprise',
+    featured: true,
+  },
+  'eshaalinnovations': {
+    category: 'DIGITAL TECH AGENCY',
+    tags: ['DESIGN', 'BUILD'],
+    filterGroup: 'enterprise',
+    featured: true,
+  },
+  'couponsbeast': {
+    category: 'VERIFIED COUPONS & DEALS',
+    tags: ['DESIGN', 'BUILD'],
+    filterGroup: 'tools',
+    featured: true,
   },
   'ai-seo-auditor': {
     category: 'AI-POWERED SEO AUDITOR',
