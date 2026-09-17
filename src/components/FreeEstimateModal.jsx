@@ -4,8 +4,10 @@ import {
   X,
   ChevronRight,
   ChevronDown,
+  ChevronLeft,
   User,
   Mail,
+  Phone,
   Lock,
   ArrowRight,
   CheckCircle2,
@@ -107,21 +109,13 @@ export const ESTIMATE_CATEGORIES = [
   },
 ];
 
-const COMPANY_SIZES = [
-  '1-10 employees',
-  '11-50 employees',
-  '51-200 employees',
-  '201-500 employees',
-  '500+ employees',
-];
-
 export default function FreeEstimateModal({ isOpen, onClose }) {
   const [step, setStep] = useState(1);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedOption, setSelectedOption] = useState('');
   const [firstName, setFirstName] = useState('');
   const [workEmail, setWorkEmail] = useState('');
-  const [companySize, setCompanySize] = useState('');
+  const [phone, setPhone] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [submitted, setSubmitted] = useState(false);
@@ -134,7 +128,7 @@ export default function FreeEstimateModal({ isOpen, onClose }) {
       setSelectedOption('');
       setFirstName('');
       setWorkEmail('');
-      setCompanySize('');
+      setPhone('');
       setError('');
       setSubmitted(false);
       setLoading(false);
@@ -174,15 +168,15 @@ export default function FreeEstimateModal({ isOpen, onClose }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!firstName.trim()) {
-      setError('Please enter your first name.');
+      setError('Please enter your name.');
       return;
     }
     if (!workEmail.trim() || !workEmail.includes('@')) {
       setError('Please enter a valid work email.');
       return;
     }
-    if (!companySize) {
-      setError('Please select your company size.');
+    if (!phone.trim()) {
+      setError('Please enter your phone number.');
       return;
     }
 
@@ -197,8 +191,9 @@ export default function FreeEstimateModal({ isOpen, onClose }) {
         body: JSON.stringify({
           name: firstName.trim(),
           email: workEmail.trim(),
+          phone: phone.trim(),
           subject: `Free Estimate Request - ${categoryTitle} (${selectedOption || 'General'})`,
-          message: `Free Estimate Assessment Request:\n\n• Primary Goal: ${categoryTitle}\n• Specific Requirement: ${selectedOption || 'Not specified'}\n• First Name: ${firstName.trim()}\n• Work Email: ${workEmail.trim()}\n• Company Size: ${companySize}`,
+          message: `Free Estimate Assessment Request:\n\n• Primary Goal: ${categoryTitle}\n• Specific Requirement: ${selectedOption || 'Not specified'}\n• Name: ${firstName.trim()}\n• Work Email: ${workEmail.trim()}\n• Phone Number: ${phone.trim()}`,
           status: 'Unread',
         }),
       });
@@ -241,7 +236,7 @@ export default function FreeEstimateModal({ isOpen, onClose }) {
             <button
               type="button"
               onClick={onClose}
-              className="absolute top-4 right-4 sm:top-5 sm:right-5 p-2 rounded-full text-gray-400 hover:text-ink hover:bg-gray-100 transition-colors z-20"
+              className="absolute top-4 right-4 sm:top-5 sm:right-5 p-2 rounded-full text-gray-400 hover:text-ink hover:bg-gray-100 transition-colors z-20 cursor-pointer"
               aria-label="Close modal"
             >
               <X className="w-5 h-5" />
@@ -250,20 +245,21 @@ export default function FreeEstimateModal({ isOpen, onClose }) {
             {!submitted ? (
               <div className="overflow-y-auto pr-1 -mr-1">
                 {/* Header with Step Indicator & Progress Bar */}
-                <div className="mb-5 sm:mb-6">
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs sm:text-sm font-bold text-[#00a4d8] tracking-wide uppercase">
-                      Step {step} of 3
-                    </span>
+                <div className="mb-5 sm:mb-6 pr-10">
+                  <div className="flex items-center gap-2.5">
                     {step > 1 && (
                       <button
                         type="button"
                         onClick={() => setStep((prev) => Math.max(1, prev - 1))}
-                        className="text-xs font-semibold text-gray-400 hover:text-[#00a4d8] transition-colors"
+                        className="inline-flex items-center gap-1 text-xs font-semibold text-gray-500 hover:text-[#00a4d8] transition-colors py-1 px-2 rounded-lg bg-gray-100/80 hover:bg-sky-50 border border-gray-200/60 cursor-pointer"
                       >
-                        ← Back
+                        <ChevronLeft className="w-3.5 h-3.5" />
+                        <span>Back</span>
                       </button>
                     )}
+                    <span className="text-xs sm:text-sm font-bold text-[#00a4d8] tracking-wide uppercase">
+                      Step {step} of 3
+                    </span>
                   </div>
                   {/* 3-Step Progress Bar */}
                   <div className="w-full h-1.5 bg-gray-100 rounded-full mt-2.5 overflow-hidden">
@@ -457,27 +453,17 @@ export default function FreeEstimateModal({ isOpen, onClose }) {
                         />
                       </div>
 
-                      {/* Company Size Select */}
-                      <div>
-                        <div className="relative">
-                          <Building2 className="w-4.5 h-4.5 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none" />
-                          <select
-                            value={companySize}
-                            onChange={(e) => setCompanySize(e.target.value)}
-                            required
-                            className="w-full pl-11 pr-10 py-3 rounded-2xl border border-gray-200/90 bg-white focus:border-[#00a4d8] focus:ring-2 focus:ring-[#00a4d8]/15 outline-none text-sm text-ink transition-all appearance-none cursor-pointer"
-                          >
-                            <option value="" disabled>
-                              Select company size
-                            </option>
-                            {COMPANY_SIZES.map((size) => (
-                              <option key={size} value={size}>
-                                {size}
-                              </option>
-                            ))}
-                          </select>
-                          <ChevronDown className="w-4 h-4 text-gray-400 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" />
-                        </div>
+                      {/* Phone Number Input */}
+                      <div className="relative">
+                        <Phone className="w-4.5 h-4.5 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none" />
+                        <input
+                          type="tel"
+                          value={phone}
+                          onChange={(e) => setPhone(e.target.value)}
+                          placeholder="Phone number"
+                          required
+                          className="w-full pl-11 pr-4 py-3 rounded-2xl border border-gray-200/90 bg-white focus:bg-white focus:border-[#00a4d8] focus:ring-2 focus:ring-[#00a4d8]/15 outline-none text-sm text-ink placeholder:text-gray-400 transition-all"
+                        />
                       </div>
 
                       {error && (
