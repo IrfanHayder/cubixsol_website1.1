@@ -6312,7 +6312,7 @@
       "title": "AI-Powered SEO Auditor",
       "tagline": "Scan your site for SEO issues, content gaps, and technical fixes — guided by AI.",
       "desc": "Cubixsol AI SEO Auditor reviews pages for technical SEO, on-page signals, and prioritised recommendations so teams know what to fix first.",
-      "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=1200&h=750&q=80",
+      "image": "/uploads/media-1789739974079-564779945.png",
       "accent": "from-emerald-100 to-teal-50",
       "heroTheme": "teal",
       "layout": "B",
@@ -6364,7 +6364,8 @@
           "body": "Work the checklist and re-run to confirm progress."
         }
       ],
-      "answers": []
+      "answers": [],
+      "statsText": "undefined | undefined\nundefined | undefined\nundefined | undefined"
     },
     {
       "slug": "couponsbeast",
@@ -9548,6 +9549,14 @@
     }
   ],
   "initialMedia": [
+    {
+      "title": "AI SEO Auditor",
+      "url": "/uploads/media-1789739974079-564779945.png",
+      "type": "image",
+      "alt": "AI SEO Auditor",
+      "size": 538077,
+      "mimetype": "image/png"
+    },
     {
       "title": "Shopify Development",
       "url": "/uploads/media-1789727429969-500233105.svg",

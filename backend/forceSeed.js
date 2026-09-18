@@ -107,7 +107,7 @@ async function forceSeed() {
     await syncCollection(Blog, initialBlogs, 'slug', 'Blogs');
     await syncCollection(Solution, initialSolutions, 'slug', 'Solutions');
     await syncCollection(Product, initialProducts, 'slug', 'Products');
-    await syncCollection(Project, initialProjects, 'slug', 'Projects');
+    await syncCollection(Project, initialProjects, 'title', 'Projects');
     await syncCollection(Team, initialTeam, 'name', 'Team');
     await syncCollection(Faq, initialFaqs, 'q', 'FAQs');
     await syncCollection(Testimonial, initialTestimonials, 'author', 'Testimonials');
