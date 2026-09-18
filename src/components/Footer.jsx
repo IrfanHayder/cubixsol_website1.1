@@ -98,34 +98,51 @@ const awards = [
 function AwardBadge({ award }) {
   const icons = {
     goodfirms: (
-      <div className="w-9 h-9 rounded-lg bg-gradient-to-b from-[#4b8bff] to-[#1a56db] shadow-xs flex flex-col items-center justify-center text-white relative overflow-hidden shrink-0">
-        <span className="text-[7.5px] font-black tracking-tight z-10 leading-none">GoodFirms</span>
-        <span className="mt-0.5 text-[5px] font-bold bg-[#ff7a00] px-1 py-0.5 rounded-[2px] z-10 leading-none">
-          PARTNER
-        </span>
+      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#2458ff] to-[#1541d4] shadow-xs flex flex-col items-center justify-center text-white shrink-0 relative overflow-hidden p-1">
+        <svg className="w-4 h-4 mb-0.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M12 2L20.66 7V17L12 22L3.34 17V7L12 2Z"
+            fill="#1e40af"
+            stroke="white"
+            strokeWidth="1.2"
+          />
+          <path
+            d="M10 8.5C8.07 8.5 6.5 10.07 6.5 12C6.5 13.93 8.07 15.5 10 15.5C11.5 15.5 12.78 14.56 13.26 13.24H10V11.24H15.15C15.22 11.49 15.25 11.74 15.25 12C15.25 14.9 12.9 17.25 10 17.25C7.1 17.25 4.75 14.9 4.75 12C4.75 9.1 7.1 6.75 10 6.75C11.45 6.75 12.76 7.34 13.71 8.29L12.47 9.53C11.84 8.9 10.97 8.5 10 8.5Z"
+            fill="white"
+          />
+          <circle cx="18" cy="6" r="2" fill="#FF7A00" />
+        </svg>
+        <span className="text-[6.5px] font-black tracking-tight leading-none text-white">GoodFirms</span>
       </div>
     ),
     clutch: (
-      <div className="w-9 h-9 rounded-lg bg-[#16325c] shadow-xs flex flex-col items-center justify-center text-white border border-white/10 shrink-0">
-        <span className="text-[6px] font-bold text-sky-300 tracking-wider leading-none">TOP</span>
-        <span className="text-[9.5px] font-black tracking-tight leading-tight">Clutch</span>
-        <span className="text-[5px] text-white/60 leading-none">Profile</span>
+      <div className="w-10 h-10 rounded-xl bg-[#16325c] shadow-xs flex flex-col items-center justify-center text-white shrink-0 p-1">
+        <svg className="w-4 h-4 mb-0.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="9.5" stroke="white" strokeWidth="1.2" />
+          <path d="M12 7C9.24 7 7 9.24 7 12C7 14.76 9.24 17 12 17C14.1 17 15.89 15.7 16.6 13.8L14.7 13.2C14.2 14.3 13.2 15.1 12 15.1C10.3 15.1 8.9 13.7 8.9 12C8.9 10.3 10.3 8.9 12 8.9C13.2 8.9 14.2 9.7 14.7 10.8L16.6 10.2C15.89 8.3 14.1 7 12 7Z" fill="white"/>
+          <circle cx="12" cy="12" r="2.2" fill="#E44933"/>
+        </svg>
+        <span className="text-[6.5px] font-black tracking-tight leading-none text-white">Clutch</span>
       </div>
     ),
     'clutch-gold': (
-      <div className="w-9 h-9 rounded-full bg-gradient-to-b from-[#f6d365] via-[#fda085] to-[#c77932] shadow-xs flex flex-col items-center justify-center text-[#1a1a2e] border border-amber-200 shrink-0">
-        <span className="text-[5px] font-black leading-none">Best of</span>
-        <span className="text-[8px] font-black leading-tight">CLUTCH</span>
+      <div className="w-10 h-10 rounded-xl bg-gradient-to-b from-[#FFFBEB] via-[#FEF3C7] to-[#FDE68A] shadow-xs flex flex-col items-center justify-center border border-amber-300/80 shrink-0 p-1">
+        <svg className="w-4 h-4 text-amber-600 mb-0.5" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+        </svg>
+        <span className="text-[6px] font-black tracking-tight leading-none text-amber-900 text-center">Top Clutch</span>
       </div>
     ),
     uk: (
-      <div className="w-9 h-9 rounded-lg bg-white shadow-xs flex flex-col items-center justify-center border border-gray-200 shrink-0">
-        <span className="text-[6px] font-black text-[#012169] text-center leading-tight px-0.5">
+      <div className="w-10 h-10 rounded-xl bg-white shadow-xs flex flex-col items-center justify-center border border-gray-200 shrink-0 p-1">
+        <svg className="w-4 h-4 text-[#012169] mb-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M3 21h18M3 10h18M5 10v11M19 10v11M9 10v11M15 10v11M12 3l9 7H3z"/>
+        </svg>
+        <span className="text-[5.5px] font-black text-[#012169] leading-tight text-center">
           Companies
           <br />
           House
         </span>
-        <span className="text-[6px] font-extrabold text-red-600 tracking-wide mt-0.5">UK</span>
       </div>
     ),
   };
@@ -135,16 +152,16 @@ function AwardBadge({ award }) {
       href={award.href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex flex-col items-center justify-center rounded-xl bg-[#0e1726] border border-white/10 p-2 hover:border-primary-400 hover:-translate-y-0.5 hover:shadow-md transition-all duration-300"
+      className="group flex flex-col items-center justify-center rounded-xl bg-gray-50/80 hover:bg-white border border-gray-200/80 hover:border-primary-400 hover:shadow-md hover:-translate-y-0.5 p-2 transition-all duration-300"
       title={`${award.title} - ${award.sub}`}
     >
       <div className="group-hover:scale-105 transition-transform duration-300">
         {icons[award.style]}
       </div>
-      <span className="mt-1.5 text-[10px] font-bold text-white text-center leading-tight truncate w-full">
+      <span className="mt-1.5 text-[10px] font-bold text-gray-800 group-hover:text-primary-600 text-center leading-tight truncate w-full transition-colors">
         {award.title}
       </span>
-      <span className="text-[8.5px] text-white/50 text-center leading-tight truncate w-full mt-0.5">
+      <span className="text-[8.5px] text-gray-500 text-center leading-tight truncate w-full mt-0.5">
         {award.sub}
       </span>
     </a>

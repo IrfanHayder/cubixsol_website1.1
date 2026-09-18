@@ -799,36 +799,37 @@
     },
     {
       "seo": {
-        "metaTitle": "Cloud and DevOps Services | Cubixsol",
+        "metaTitle": "Cloud Consulting Services | Cubixsol",
         "metaDescription": "Cubixsol offers cloud consulting, migration & DevOps — scalable, secure AWS infrastructure with high availability. Get a free cloud assessment.",
-        "keywords": "",
-        "ogTitle": "Cloud and DevOps Services | Cubixsol",
-        "ogDescription": "Create a reliable technical foundation for your product through cloud architecture, automated deployment, monitoring, security, and performance optimization. Our DevOps approach helps teams release updates faster while reducing downtime and infrastructure risks.",
+        "keywords": "cloud consulting services, cloud migration, AWS consulting, kubernetes consulting, cloud security, cubixsol",
+        "ogTitle": "Cloud Consulting Services | Cubixsol",
+        "ogDescription": "Cubixsol offers cloud consulting, migration & DevOps — scalable, secure AWS infrastructure with high availability. Get a free cloud assessment.",
         "ogImage": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1000&h=750&q=70",
         "canonicalUrl": ""
       },
-      "icon": "/uploads/media-1788761191367-247242232.svg",
+      "icon": "Cloud",
       "slug": "cloud-solutions",
-      "heroImage": "/uploads/media-1788439771568-239387480.svg",
+      "heroImage": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&h=800&q=75",
       "title": "Cloud Consulting & Solutions for Your Business",
-      "desc": "Cubixsol provides cloud consulting services to help businesses plan, build, migrate, and manage reliable cloud environments.",
+      "desc": "Cubixsol provides **cloud consulting services** to help businesses plan, build, migrate, and manage reliable cloud environments. Our team helps you assess your current infrastructure, select suitable cloud technologies, improve performance, and support secure applications. We work across cloud strategy, migration, AWS, Kubernetes, security, and infrastructure management.",
       "color": "text-sky-600 bg-sky-50",
       "gradient": "from-sky-500 to-blue-600",
-      "longDesc": "Cubixsol provides cloud consulting services to help businesses plan, build, migrate, and manage reliable cloud environments. Our team helps you assess your current infrastructure, select suitable cloud technologies, improve performance, and support secure applications. We work across cloud strategy, migration, AWS, Kubernetes, security, and infrastructure management.",
+      "longDesc": "Cubixsol provides **cloud consulting services** to help businesses plan, build, migrate, and manage reliable cloud environments. Our team helps you assess your current infrastructure, select suitable cloud technologies, improve performance, and support secure applications. We work across cloud strategy, migration, AWS, Kubernetes, security, and infrastructure management.",
       "features": [
-        "AWS / Azure / GCP setup",
-        "CI/CD pipelines",
-        "Docker & Kubernetes",
-        "Monitoring & alerts",
-        "Cost optimization",
-        "Disaster recovery plans"
+        "Cloud Strategy & Assessment",
+        "Seamless Cloud Migration",
+        "AWS & Kubernetes Architecture",
+        "Zero-Downtime Migration Planning",
+        "Enterprise Cloud Security & Access Control",
+        "Ongoing Cloud Optimization & Support"
       ],
       "tech": [
         "AWS",
+        "Azure",
+        "Google Cloud Platform (GCP)",
         "Docker",
         "Kubernetes",
-        "Terraform",
-        "GitHub Actions"
+        "Terraform"
       ],
       "outcomes": [
         "Faster deployments",
@@ -857,7 +858,7 @@
           "a": "Some applications can be migrated with little or no downtime, but the approach depends on the application, infrastructure, dependencies, and migration method. We review your environment first and recommend a migration plan designed to reduce disruption."
         }
       ],
-      "techDesc": "We work with widely used cloud and infrastructure technologies, including AWS, Azure, Google Cloud Platform (GCP), Docker, Kubernetes, and Terraform. The technology used for a project depends on its infrastructure, applications, technical requirements, and business goals.",
+      "techDesc": "We work with widely used cloud and infrastructure technologies, including **AWS, Azure, Google Cloud Platform (GCP), Docker, Kubernetes, and Terraform**. The technology used for a project depends on its infrastructure, applications, technical requirements, and business goals.",
       "techTitle": "Technologies We Use",
       "businessTypesItems": [],
       "ctaBannerButtonText": "Start Your Project",
@@ -867,88 +868,56 @@
       "serviceProcessSteps": [
         {
           "stepNumber": "01",
-          "title": "Assessment",
-          "desc": "We thoroughly analyze your requirements and evaluate your existing IT architecture and workflows to ensure the best outcomes.",
+          "title": "Discover",
+          "desc": "We start by reviewing your existing infrastructure, applications, workloads, business goals, and technical challenges. This gives our team a clear understanding of your current environment and project needs.",
           "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=560&q=70",
-          "points": [
-            "Software Development Lifecycle (SDLC) Review",
-            "Infrastructure & IT Resource Assessment",
-            "Business Expectation Mapping",
-            "Capability & Constraint Analysis",
-            "DevOps Strategy Development"
-          ]
+          "points": []
         },
         {
           "stepNumber": "02",
-          "title": "Roadmap",
-          "desc": "During this phase, we create a detailed roadmap that serves as the foundation for implementing your DevOps project.",
+          "title": "Plan",
+          "desc": "We create a practical cloud plan based on your requirements. The plan can cover cloud architecture, technology selection, migration needs, security, project priorities, and the steps required for implementation.",
           "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&h=560&q=70",
-          "points": [
-            "Containerization Strategy",
-            "CI/CD Pipeline Design",
-            "Test Automation Integration",
-            "IaC & Configuration Management",
-            "Monitoring Architecture",
-            "Security & Compliance Guidelines",
-            "DevOps Challenge Analysis & Solutions"
-          ]
+          "points": []
         },
         {
           "stepNumber": "03",
-          "title": "Execution",
-          "desc": "We implement the roadmap with a focus on aligning teams, automating workflows, and ensuring stability across your DevOps environment.",
+          "title": "Build",
+          "desc": "Our team develops or configures the required cloud infrastructure and services based on the approved plan. We focus on reliable setup, suitable configurations, and the requirements defined during the planning stage.",
           "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&h=560&q=70",
-          "points": [
-            "CI/CD Pipeline Setup",
-            "Test Automation Deployment",
-            "IaC Implementation",
-            "Team Enablement & Tool Training",
-            "DevOps Process Setup",
-            "Tool Chain Integration"
-          ]
+          "points": []
         },
         {
           "stepNumber": "04",
-          "title": "Optimization",
-          "desc": "We continuously monitor system performance and make adjustments to ensure the solution aligns with your goals and delivers optimal results.",
+          "title": "Test",
+          "desc": "We test the cloud environment before launch. Testing can cover performance, reliability, security, configuration, and deployment to identify issues before the system becomes fully operational.",
           "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=800&h=560&q=70",
-          "points": [
-            "Performance Tuning",
-            "Auto-scaling & Load Management",
-            "Release Cycle Acceleration",
-            "Monitoring & Alerting Setup",
-            "Security & Compliance Enhancements"
-          ]
+          "points": []
         },
         {
           "stepNumber": "05",
-          "title": "Support",
-          "desc": "We provide ongoing support to ensure your DevOps ecosystem remains operational, stable, and in sync with your business goals.",
+          "title": "Launch & Support",
+          "desc": "Once testing is complete, we launch the cloud solution. Our support can continue after launch to help monitor the environment, resolve issues, improve performance, and support changes as your applications and requirements grow.",
           "image": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&h=560&q=70",
-          "points": [
-            "Infrastructure Operability Support",
-            "Change Implementation",
-            "Load Distribution Management",
-            "Environment Scaling & Maintenance"
-          ]
+          "points": []
         }
       ],
       "subServicesItems": [
         {
           "title": "Cloud Consulting",
-          "desc": "Our cloud consulting services help businesses assess their current infrastructure and plan a suitable cloud strategy. We review applications, workloads, infrastructure, technical requirements, and business goals to recommend a practical approach. Our team can also identify areas where performance, scalability, reliability, or cloud costs can be improved."
+          "desc": "Our **cloud consulting services** help businesses assess their current infrastructure and plan a suitable cloud strategy. We review applications, workloads, infrastructure, technical requirements, and business goals to recommend a practical approach. Our team can also identify areas where performance, scalability, reliability, or cloud costs can be improved."
         },
         {
           "title": "Cloud Migration Services",
-          "desc": "Our cloud migration services help businesses move applications, workloads, and data to the cloud. We assess the existing environment, identify migration requirements, and create a clear plan for each stage. Careful planning and testing can help reduce service disruption and make the move more manageable."
+          "desc": "Our **cloud migration services** help businesses move applications, workloads, and data to the cloud. We assess the existing environment, identify migration requirements, and create a clear plan for each stage. Careful planning and testing can help reduce service disruption and make the move more manageable."
         },
         {
           "title": "AWS Consulting Services",
-          "desc": "Our AWS consulting services support businesses with cloud architecture, infrastructure setup, deployment, optimisation, and ongoing improvements. We help create AWS environments for applications and workloads while considering performance, security, reliability, and scalability."
+          "desc": "Our **AWS consulting services** support businesses with cloud architecture, infrastructure setup, deployment, optimisation, and ongoing improvements. We help create AWS environments for applications and workloads while considering performance, security, reliability, and scalability."
         },
         {
           "title": "Kubernetes Consulting Services",
-          "desc": "Our Kubernetes consulting services help businesses manage containerised applications and improve application deployment. We can help set up and manage Kubernetes environments, support scaling, and improve the way applications run across cloud infrastructure."
+          "desc": "Our **Kubernetes consulting services** help businesses manage containerised applications and improve application deployment. We can help set up and manage Kubernetes environments, support scaling, and improve the way applications run across cloud infrastructure."
         },
         {
           "title": "Cloud Security",
@@ -976,17 +945,21 @@
       "ctaPrimaryText": "Start a Project",
       "ctaSecondaryText": "Free Estimate",
       "faqsText": "How much do cloud migration services cost? | Cloud migration costs depend on your current infrastructure, applications, data, cloud platform, and project complexity. Cubixsol can review your environment and provide an estimate based on your specific migration requirements.\nHow long does a cloud migration take? | Migration time depends on the number of applications, amount of data, infrastructure complexity, and migration method. Smaller projects may take less time, while larger environments can require more planning, testing, and staged migration.\nAWS vs Azure: Which is better for my business? | The right platform depends on your applications, existing systems, technical needs, budget, and plans. Our team can review your requirements and help you select a suitable cloud platform.\nHow do you keep cloud environments secure? | We consider security during cloud planning, setup, and implementation. Our approach can include access controls, data protection, monitoring, secure configurations, and other measures based on your infrastructure and application requirements.\nCan you migrate applications without downtime? | Some applications can be migrated with little or no downtime, but the approach depends on the application, infrastructure, dependencies, and migration method. We review your environment first and recommend a migration plan designed to reduce disruption.",
-      "menuTitle": "Cloud",
+      "menuTitle": "Cloud Solutions",
       "serviceProcessText": "01 | Assessment | We thoroughly analyze your requirements and evaluate your existing IT architecture and workflows to ensure the best outcomes. | https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=560&q=70 | Software Development Lifecycle (SDLC) Review; Infrastructure & IT Resource Assessment; Business Expectation Mapping; Capability & Constraint Analysis; DevOps Strategy Development\n02 | Roadmap | During this phase, we create a detailed roadmap that serves as the foundation for implementing your DevOps project. | https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&h=560&q=70 | Containerization Strategy; CI/CD Pipeline Design; Test Automation Integration; IaC & Configuration Management; Monitoring Architecture; Security & Compliance Guidelines; DevOps Challenge Analysis & Solutions\n03 | Execution | We implement the roadmap with a focus on aligning teams, automating workflows, and ensuring stability across your DevOps environment. | https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&h=560&q=70 | CI/CD Pipeline Setup; Test Automation Deployment; IaC Implementation; Team Enablement & Tool Training; DevOps Process Setup; Tool Chain Integration\n04 | Optimization | We continuously monitor system performance and make adjustments to ensure the solution aligns with your goals and delivers optimal results. | https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=800&h=560&q=70 | Performance Tuning; Auto-scaling & Load Management; Release Cycle Acceleration; Monitoring & Alerting Setup; Security & Compliance Enhancements\n05 | Support | We provide ongoing support to ensure your DevOps ecosystem remains operational, stable, and in sync with your business goals. | https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&h=560&q=70 | Infrastructure Operability Support; Change Implementation; Load Distribution Management; Environment Scaling & Maintenance",
-      "serviceProcessTitle": "Our 5-step DevOps process",
+      "serviceProcessTitle": "Our Cloud Solutions Process",
       "subServicesIntro": "Our team provides practical cloud services for businesses at different stages of their cloud journey. We can help you plan a new cloud environment, move existing workloads, improve infrastructure, or address specific cloud requirements.",
       "subServicesText": "Cloud Consulting | Our cloud consulting services help businesses assess their current infrastructure and plan a suitable cloud strategy. We review applications, workloads, infrastructure, technical requirements, and business goals to recommend a practical approach. Our team can also identify areas where performance, scalability, reliability, or cloud costs can be improved.\nCloud Migration Services | Our cloud migration services help businesses move applications, workloads, and data to the cloud. We assess the existing environment, identify migration requirements, and create a clear plan for each stage. Careful planning and testing can help reduce service disruption and make the move more manageable.\nAWS Consulting Services | Our AWS consulting services support businesses with cloud architecture, infrastructure setup, deployment, optimisation, and ongoing improvements. We help create AWS environments for applications and workloads while considering performance, security, reliability, and scalability.\nKubernetes Consulting Services | Our Kubernetes consulting services help businesses manage containerised applications and improve application deployment. We can help set up and manage Kubernetes environments, support scaling, and improve the way applications run across cloud infrastructure.\nCloud Security | Cloud security is an important part of every cloud environment. Our team helps businesses improve protection for infrastructure, applications, and data through suitable access controls, data protection, monitoring, and security practices. Security requirements are considered during planning and implementation.",
       "subServicesTitle": "Our Cloud Consulting Services",
       "whyChooseIntro": "A successful cloud project needs clear planning, reliable implementation, open communication, and support after launch. Cubixsol focuses on each part of the project to help businesses build and maintain dependable cloud environments.",
       "whyChooseText": "Quality-Focused Delivery | We focus on reliable infrastructure, suitable technologies, and clear project requirements. Each part of the work is planned around the needs of your applications and cloud environment.\nOn-Time Delivery | Clear planning and defined project stages help keep work organised. We set priorities and milestones so you have a clear view of project progress from discovery through launch.\nTransparent Communication | We keep communication simple and clear throughout the project. You receive updates on progress, requirements, issues, and upcoming work, so you know what is happening at each stage.\nOngoing Support | Cloud infrastructure can need updates, optimisation, monitoring, and technical support after launch. Our team can continue working with you to maintain and improve your cloud environment as your needs change.",
       "whyChooseTitle": "Why Choose Cubixsol?",
-      "serviceProcessIntro": "A structured path from assessing your environment to ongoing support after deployment — so releases stay fast and systems stay stable.",
-      "supportedPlatforms": []
+      "serviceProcessIntro": "A clear process helps keep cloud projects organised and gives you a better view of each project stage. Cubixsol follows five main steps from initial discovery through launch and support.",
+      "supportedPlatforms": [],
+      "cardTitle": "Cloud Solutions",
+      "ctaBannerButtonLink": "/contact",
+      "ctaBannerSecondaryButtonLink": "/contact",
+      "ctaBannerSecondaryButtonText": "Free Estimate"
     },
     {
       "seo": {
@@ -2443,7 +2416,11 @@
         },
         {
           "q": "Which systems can Cubixsol integrate with my PMS?",
-          "a": "Cubixsol can integrate your PMS with a wide range of solutions, including:\n\n• Booking engines & channel managers\n• Keyless room access systems\n• Revenue management software\n• Payment processing networks\n• POS systems\n• Guest review plug-ins\n\nThis ensures that all aspects of your property – from reservations to guest feedback – are efficiently managed."
+          "a": "Cubixsol can integrate your PMS with a wide range of solutions, including:\n\n• Booking engines & channel managers\n\n• Keyless room access systems\n\n• Revenue management software\n\n• Payment processing networks\n\n• POS systems\n\n• Guest review plug-ins"
+        },
+        {
+          "q": "This ensures that all aspects of your property",
+          "a": "from reservations to guest feedback – are efficiently managed."
         }
       ],
       "features": [
@@ -2453,8 +2430,8 @@
         "60+ Expert Team Members"
       ],
       "gradient": "from-sky-500 to-blue-600",
-      "heroImage": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&h=800&q=75",
-      "icon": "Building2",
+      "heroImage": "/uploads/media-1789727429960-623030859.svg",
+      "icon": "/uploads/media-1789727119629-286851325.svg",
       "longDesc": "Property management systems (PMS) control all property elements, including tenants' onboarding process, rent collection, upkeep arrangements, and monitoring. They can also provide analytics and reports that will assist homeowners and managers in making smart choices about the properties they own.",
       "menuTitle": "PMS Integration",
       "outcomes": [],
@@ -2464,30 +2441,35 @@
           "stepNumber": "01",
           "title": "Consultation",
           "desc": "This phase allows experts to define the optimum PMS integration solutions for your needs. For a smooth integration, our professionals will handle any technological or safety issues that may arise.",
+          "image": "",
           "points": []
         },
         {
           "stepNumber": "02",
           "title": "Planning",
           "desc": "In the planning phase, we create a comprehensive integration plan based on your requirements. It entails defining the task's scope, selecting suitable PMSs rental, and developing timelines. We establish critical milestones to maintain consistency with your business operations and system development.",
+          "image": "",
           "points": []
         },
         {
           "stepNumber": "03",
           "title": "Implementation",
           "desc": "When the plan of action is approved, we start the integration process. Our expertise will integrate your present systems with the suitable PMS rentals, ensuring that data transfers safely and quickly. We manage all of the back work, allowing your business activities to continue uninterrupted.",
+          "image": "",
           "points": []
         },
         {
           "stepNumber": "04",
           "title": "Testing",
           "desc": "Before moving live, we thoroughly test the integration to ensure that everything functions properly. This includes tests for operation, optimization of performance, and safety inspections to guarantee that the PMS operates as intended.",
+          "image": "",
           "points": []
         },
         {
           "stepNumber": "05",
           "title": "Deployment",
           "desc": "After successful testing, we will begin integrating the PMS rental into your existing system. Once tested, we deploy the system into your live environment. Every module is fully functional, from the key management system for property management to payment and booking synchronization.",
+          "image": "",
           "points": []
         }
       ],
@@ -2496,27 +2478,39 @@
       "subServicesItems": [
         {
           "title": "Booking engine / Channel Manager",
-          "desc": "Channel executives assist hotels in managing their online distribution by connecting them to various online platforms and their online booking sites. Hotels can use a channel manager to modify inventory and rates throughout the PMS integrations system. Connecting your PMS systems with channel manager and PMS integration solutions saves valuable time by providing central control over stock, pricing, and bookings."
+          "desc": "Channel executives assist hotels in managing their online distribution by connecting them to various online platforms and their online booking sites. Hotels can use a channel manager to modify inventory and rates throughout the PMS integrations system. Connecting your PMS systems with channel manager and PMS integration solutions saves valuable time by providing central control over stock, pricing, and bookings.",
+          "q": "Booking engine / Channel Manager",
+          "a": "Channel executives assist hotels in managing their online distribution by connecting them to various online platforms and their online booking sites. Hotels can use a channel manager to modify inventory and rates throughout the PMS integrations system. Connecting your PMS systems with channel manager and PMS integration solutions saves valuable time by providing central control over stock, pricing, and bookings."
         },
         {
           "title": "Room Access / Keyless Access Solution",
-          "desc": "Keyless entry systems with our key management system for property management allow visitors to open their hotel entrances without using a genuine key. Rather, visitors enter an authorization code or mobile key from their smartphone. Connecting your PMS to access-to-space solutions like smart keycards simplifies check-in and access control significantly, eliminating manual front-desk keycard encoding."
+          "desc": "Keyless entry systems with our key management system for property management allow visitors to open their hotel entrances without using a genuine key. Rather, visitors enter an authorization code or mobile key from their smartphone. Connecting your PMS to access-to-space solutions like smart keycards simplifies check-in and access control significantly, eliminating manual front-desk keycard encoding.",
+          "q": "Room Access / Keyless Access Solution",
+          "a": "Keyless entry systems with our key management system for property management allow visitors to open their hotel entrances without using a genuine key. Rather, visitors enter an authorization code or mobile key from their smartphone. Connecting your PMS to access-to-space solutions like smart keycards simplifies check-in and access control significantly, eliminating manual front-desk keycard encoding."
         },
         {
           "title": "Revenue Management System",
-          "desc": "A revenue management system forecasts traveler habits and demand by using previous information, market trends, and live indicators. With this information, hotels determine the best price for rooms to maximize profits. Two-way connectivity between your PMS and revenue management software enables precise forecasting, dynamic nightly rate adjustments, and real-time inventory pricing optimization."
+          "desc": "A revenue management system forecasts traveler habits and demand by using previous information, market trends, and live indicators. With this information, hotels determine the best price for rooms to maximize profits. Two-way connectivity between your PMS and revenue management software enables precise forecasting, dynamic nightly rate adjustments, and real-time inventory pricing optimization.",
+          "q": "Revenue Management System",
+          "a": "A revenue management system forecasts traveler habits and demand by using previous information, market trends, and live indicators. With this information, hotels determine the best price for rooms to maximize profits. Two-way connectivity between your PMS and revenue management software enables precise forecasting, dynamic nightly rate adjustments, and real-time inventory pricing optimization."
         },
         {
           "title": "Payment Processing Network",
-          "desc": "A payment processing network enables hotels and property managers to take credit card payments smoothly. Linking your PMS with a secure payment gateway makes bookings and departures at the reception desk seamless. After guests enter payment information, transactions are transmitted to the payment handling network and invoices in the PMS are promptly updated in real time."
+          "desc": "A payment processing network enables hotels and property managers to take credit card payments smoothly. Linking your PMS with a secure payment gateway makes bookings and departures at the reception desk seamless. After guests enter payment information, transactions are transmitted to the payment handling network and invoices in the PMS are promptly updated in real time.",
+          "q": "Payment Processing Network",
+          "a": "A payment processing network enables hotels and property managers to take credit card payments smoothly. Linking your PMS with a secure payment gateway makes bookings and departures at the reception desk seamless. After guests enter payment information, transactions are transmitted to the payment handling network and invoices in the PMS are promptly updated in real time."
         },
         {
           "title": "POS System Integration",
-          "desc": "Point-of-sale (POS) systems allow hotel and resort staff to handle reservations for rooms or collect transactions for onsite amenities like restaurants, bars, and spas. By connecting your PMS and POS systems, amenity expenses can be charged to guest room folios automatically, decreasing human error and streamlining guest checkout."
+          "desc": "Point-of-sale (POS) systems allow hotel and resort staff to handle reservations for rooms or collect transactions for onsite amenities like restaurants, bars, and spas. By connecting your PMS and POS systems, amenity expenses can be charged to guest room folios automatically, decreasing human error and streamlining guest checkout.",
+          "q": "POS System Integration",
+          "a": "Point-of-sale (POS) systems allow hotel and resort staff to handle reservations for rooms or collect transactions for onsite amenities like restaurants, bars, and spas. By connecting your PMS and POS systems, amenity expenses can be charged to guest room folios automatically, decreasing human error and streamlining guest checkout."
         },
         {
           "title": "Guest Review Plug-In",
-          "desc": "Guest Review Plug-In services provide an easy way to collect, organize, and display feedback from guests directly on property management systems (PMS). The system enables hotel businesses to track and present guest experiences, improving online reputation and attracting new guests with real-time feedback synchronization across booking channels."
+          "desc": "Guest Review Plug-In services provide an easy way to collect, organize, and display feedback from guests directly on property management systems (PMS). The system enables hotel businesses to track and present guest experiences, improving online reputation and attracting new guests with real-time feedback synchronization across booking channels.",
+          "q": "Guest Review Plug-In",
+          "a": "Guest Review Plug-In services provide an easy way to collect, organize, and display feedback from guests directly on property management systems (PMS). The system enables hotel businesses to track and present guest experiences, improving online reputation and attracting new guests with real-time feedback synchronization across booking channels."
         }
       ],
       "subServicesTitle": "Our PMS Integration Services",
@@ -2536,20 +2530,28 @@
       "whyChooseIntro": "Proven integration engineering backed by global delivery, deep API expertise, and high-uptime connectivity.",
       "whyChooseItems": [
         {
-          "title": "1K+ Clients Worldwide",
-          "desc": "Trusted by vacation rental managers, boutique hotels, and global property portfolios."
+          "title": "K+ Clients Worldwide",
+          "desc": "Trusted by vacation rental managers, boutique hotels, and global property portfolios.",
+          "q": "K+ Clients Worldwide",
+          "a": "Trusted by vacation rental managers, boutique hotels, and global property portfolios."
         },
         {
-          "title": "30+ Industry Awards",
-          "desc": "Recognized for high-speed API aggregation and robust PMS sync architectures."
+          "title": "Industry Awards",
+          "desc": "Recognized for high-speed API aggregation and robust PMS sync architectures.",
+          "q": "Industry Awards",
+          "a": "Recognized for high-speed API aggregation and robust PMS sync architectures."
         },
         {
-          "title": "97% Business Growth",
-          "desc": "Clients experience significant uplift in direct bookings, automated guest workflows, and lower operational overhead."
+          "title": "% Business Growth",
+          "desc": "Clients experience significant uplift in direct bookings, automated guest workflows, and lower operational overhead.",
+          "q": "% Business Growth",
+          "a": "Clients experience significant uplift in direct bookings, automated guest workflows, and lower operational overhead."
         },
         {
-          "title": "60+ Senior Engineers",
-          "desc": "Specialized API developers experienced across all major PMS platforms and channel managers."
+          "title": "Senior Engineers",
+          "desc": "Specialized API developers experienced across all major PMS platforms and channel managers.",
+          "q": "Senior Engineers",
+          "a": "Specialized API developers experienced across all major PMS platforms and channel managers."
         }
       ],
       "whyChooseTitle": "Why Choose Cubixsol For PMS Integration",
@@ -2634,7 +2636,13 @@
           "category": "Cloud Hotel PMS",
           "icon": "Boxes"
         }
-      ]
+      ],
+      "faqsText": "What is a PMS integration, and why is it important? | A Property Management System (PMS) integration connects your PMS with other software solutions like payment gateways, booking engines, and keyless entry systems. This integration centralizes operations, reduces manual work, ensures accurate data flow between systems, and improves efficiency – helping you manage bookings, payments, guest access, and more from one platform.\n\nHow does PMS integration work? | PMS integration works by seamlessly exchanging and updating data between your PMS and connected systems. For example, when a booking is made through an online travel agent, the information flows directly into your PMS, which then updates availability and rates across all platforms automatically – eliminating the need for manual updates and minimizing errors.\n\nWhich systems can Cubixsol integrate with my PMS? | Cubixsol can integrate your PMS with a wide range of solutions, including:\n\n• Booking engines & channel managers\n• Keyless room access systems\n• Revenue management software\n• Payment processing networks\n• POS systems\n• Guest review plug-ins\n\nThis ensures that all aspects of your property – from reservations to guest feedback – are efficiently managed.",
+      "serviceProcessText": "01 | Consultation | This phase allows experts to define the optimum PMS integration solutions for your needs. For a smooth integration, our professionals will handle any technological or safety issues that may arise.\n\n02 | Planning | In the planning phase, we create a comprehensive integration plan based on your requirements. It entails defining the task's scope, selecting suitable PMSs rental, and developing timelines. We establish critical milestones to maintain consistency with your business operations and system development.\n\n03 | Implementation | When the plan of action is approved, we start the integration process. Our expertise will integrate your present systems with the suitable PMS rentals, ensuring that data transfers safely and quickly. We manage all of the back work, allowing your business activities to continue uninterrupted.\n\n04 | Testing | Before moving live, we thoroughly test the integration to ensure that everything functions properly. This includes tests for operation, optimization of performance, and safety inspections to guarantee that the PMS operates as intended.\n\n05 | Deployment | After successful testing, we will begin integrating the PMS rental into your existing system. Once tested, we deploy the system into your live environment. Every module is fully functional, from the key management system for property management to payment and booking synchronization.",
+      "subServicesText": "Booking engine / Channel Manager | Channel executives assist hotels in managing their online distribution by connecting them to various online platforms and their online booking sites. Hotels can use a channel manager to modify inventory and rates throughout the PMS integrations system. Connecting your PMS systems with channel manager and PMS integration solutions saves valuable time by providing central control over stock, pricing, and bookings.\n\nRoom Access / Keyless Access Solution | Keyless entry systems with our key management system for property management allow visitors to open their hotel entrances without using a genuine key. Rather, visitors enter an authorization code or mobile key from their smartphone. Connecting your PMS to access-to-space solutions like smart keycards simplifies check-in and access control significantly, eliminating manual front-desk keycard encoding.\n\nRevenue Management System | A revenue management system forecasts traveler habits and demand by using previous information, market trends, and live indicators. With this information, hotels determine the best price for rooms to maximize profits. Two-way connectivity between your PMS and revenue management software enables precise forecasting, dynamic nightly rate adjustments, and real-time inventory pricing optimization.\n\nPayment Processing Network | A payment processing network enables hotels and property managers to take credit card payments smoothly. Linking your PMS with a secure payment gateway makes bookings and departures at the reception desk seamless. After guests enter payment information, transactions are transmitted to the payment handling network and invoices in the PMS are promptly updated in real time.\n\nPOS System Integration | Point-of-sale (POS) systems allow hotel and resort staff to handle reservations for rooms or collect transactions for onsite amenities like restaurants, bars, and spas. By connecting your PMS and POS systems, amenity expenses can be charged to guest room folios automatically, decreasing human error and streamlining guest checkout.\n\nGuest Review Plug-In | Guest Review Plug-In services provide an easy way to collect, organize, and display feedback from guests directly on property management systems (PMS). The system enables hotel businesses to track and present guest experiences, improving online reputation and attracting new guests with real-time feedback synchronization across booking channels.",
+      "supportedPlatformsText": "Guesty | Enterprise PMS | Hotel\nHostaway | Vacation Rental PMS | Home\nHostfully | Hospitality Platform | Compass\nZeevou | Direct Booking PMS | Sparkles\nSmoobu | Channel Manager PMS | RefreshCw\nNewbook | Hotel & Park PMS | BookOpen\nHostify | All-in-One PMS | Server\nJurny | AI Hospitality PMS | Bot\nLodgify | Short-Term Rental PMS | Globe\nOwnerRez | Direct Channel PMS | KeyRound\nRentals United | Global OTA Hub | Network\nTokeet | Multi-Calendar PMS | CalendarCheck\nUplisting | Automated PMS | TrendingUp\nCloudbeds | Hotel Management System | Cloud\nOpera PMS | Oracle Hospitality | Database\nMews | Cloud Hotel PMS | Boxes",
+      "whyChooseItemsText": "1K+ Clients Worldwide | Trusted by vacation rental managers, boutique hotels, and global property portfolios.\n\n30+ Industry Awards | Recognized for high-speed API aggregation and robust PMS sync architectures.\n\n97% Business Growth | Clients experience significant uplift in direct bookings, automated guest workflows, and lower operational overhead.\n\n60+ Senior Engineers | Specialized API developers experienced across all major PMS platforms and channel managers.",
+      "whyChooseText": "1K+ Clients Worldwide | Trusted by vacation rental managers, boutique hotels, and global property portfolios.\n\n30+ Industry Awards | Recognized for high-speed API aggregation and robust PMS sync architectures.\n\n97% Business Growth | Clients experience significant uplift in direct bookings, automated guest workflows, and lower operational overhead.\n\n60+ Senior Engineers | Specialized API developers experienced across all major PMS platforms and channel managers."
     },
     {
       "seo": {
@@ -2647,27 +2655,39 @@
       "businessTypesItems": [
         {
           "title": "Detailed Business Analysis",
-          "desc": "Based on your specifications and desired outcome, we develop a well-thought-out strategy that includes an extensive awareness of the operations of every part."
+          "desc": "Based on your specifications and desired outcome, we develop a well-thought-out strategy that includes an extensive awareness of the operations of every part.",
+          "q": "Detailed Business Analysis",
+          "a": "Based on your specifications and desired outcome, we develop a well-thought-out strategy that includes an extensive awareness of the operations of every part."
         },
         {
           "title": "User-Centered Design",
-          "desc": "With a smart Shopify front-end development technique, we can make your new Shopify design attractive. Easy-to-use methodology eliminates the possibility of losing a consumer owing to an unattractive storefront."
+          "desc": "With a smart Shopify front-end development technique, we can make your new Shopify design attractive. Easy-to-use methodology eliminates the possibility of losing a consumer owing to an unattractive storefront.",
+          "q": "User-Centered Design",
+          "a": "With a smart Shopify front-end development technique, we can make your new Shopify design attractive. Easy-to-use methodology eliminates the possibility of losing a consumer owing to an unattractive storefront."
         },
         {
           "title": "Mobile-First Approach",
-          "desc": "With the majority of eCommerce transactions occurring on mobile devices, our responsive Shopify architectures ensure blazing-fast mobile rendering, touch-optimized checkout, and zero layout shifts."
+          "desc": "With the majority of eCommerce transactions occurring on mobile devices, our responsive Shopify architectures ensure blazing-fast mobile rendering, touch-optimized checkout, and zero layout shifts.",
+          "q": "Mobile-First Approach",
+          "a": "With the majority of eCommerce transactions occurring on mobile devices, our responsive Shopify architectures ensure blazing-fast mobile rendering, touch-optimized checkout, and zero layout shifts."
         },
         {
           "title": "Ongoing Support and Consulting",
-          "desc": "Our Shopify development agency will always be here to assist you. Don't be afraid to ask questions or raise concerns — the more we know, the more reliable the result."
+          "desc": "Our Shopify development agency will always be here to assist you. Don't be afraid to ask questions or raise concerns — the more we know, the more reliable the result.",
+          "q": "Ongoing Support and Consulting",
+          "a": "Our Shopify development agency will always be here to assist you. Don't be afraid to ask questions or raise concerns — the more we know, the more reliable the result."
         },
         {
           "title": "Proactive Maintenance Plans",
-          "desc": "Building an appealing Shopify store with your Shopify development partner is only the first step. Customers' needs are continuously changing, and we are ready to build on success."
+          "desc": "Building an appealing Shopify store with your Shopify development partner is only the first step. Customers' needs are continuously changing, and we are ready to build on success.",
+          "q": "Proactive Maintenance Plans",
+          "a": "Building an appealing Shopify store with your Shopify development partner is only the first step. Customers' needs are continuously changing, and we are ready to build on success."
         },
         {
           "title": "Site Speed & Seo Optimization",
-          "desc": "Optimisation is important for both search engines and consumers. With custom features, we add new ones without affecting the loading performance."
+          "desc": "Optimisation is important for both search engines and consumers. With custom features, we add new ones without affecting the loading performance.",
+          "q": "Site Speed & Seo Optimization",
+          "a": "Optimisation is important for both search engines and consumers. With custom features, we add new ones without affecting the loading performance."
         }
       ],
       "businessTypesTitle": "Key Feature We Follow To Help You Succeed",
@@ -2702,8 +2722,8 @@
         "60+ Team Members"
       ],
       "gradient": "from-emerald-500 to-teal-600",
-      "heroImage": "https://images.unsplash.com/photo-1556742049-0a67e55722c0?auto=format&fit=crop&w=1200&h=800&q=75",
-      "icon": "ShoppingBag",
+      "heroImage": "/uploads/media-1789727429969-500233105.svg",
+      "icon": "/uploads/media-1789727119631-452879393.svg",
       "longDesc": "At **Cubixsol**, we offer full-lifecycle **Shopify Development Services** designed to create seamless, high-converting, and attractive stores that captivate target customers. As a reliable Shopify development partner, we combine customized store development, responsive theme design, and bespoke app integrations to boost your store operations with attractive website design and advanced functionalities.",
       "menuTitle": "Shopify Development",
       "outcomes": [],
@@ -2713,24 +2733,28 @@
           "stepNumber": "01",
           "title": "Consultation and discussing the requirement",
           "desc": "As such, you tell us what you expect from Shopify custom development for your business. We assess your needs and provide numerous options so that you can select the most effective and affordable solution.",
+          "image": "",
           "points": []
         },
         {
           "stepNumber": "02",
           "title": "Timetable and price approval",
           "desc": "Together we finalize the plan, milestones, deadlines, and cost for your unique Shopify website development based on the number of hours needed to complete the project.",
+          "image": "",
           "points": []
         },
         {
           "stepNumber": "03",
           "title": "Development and implementation",
           "desc": "We use a step-by-step development strategy to give initial results as quickly as feasible. You will be informed of each phase, the logical areas of functionality will be sent to the operational team only after approval by you.",
+          "image": "",
           "points": []
         },
         {
           "stepNumber": "04",
           "title": "Warranty and post-release support",
           "desc": "The major purpose of all of our Shopify development services is to ensure that the project works as planned and generates cash for you, thus we accept inquiries and feedback even after the project is completed.",
+          "image": "",
           "points": []
         }
       ],
@@ -2739,35 +2763,51 @@
       "subServicesItems": [
         {
           "title": "Custom Shopify Theme Development",
-          "desc": "An attractive Shopify ecommerce website development is the foundation of your business success. At Cubixsol, our custom Shopify theme development services focus on building an attractive, high-performance theme that meets your brand visibility and business goals. Our customized Shopify theme ensures your eCommerce store is more attractive and user-friendly. Our Shopify experts make your website efficient and make your site mobile-friendly."
+          "desc": "An attractive Shopify ecommerce website development is the foundation of your business success. At Cubixsol, our custom Shopify theme development services focus on building an attractive, high-performance theme that meets your brand visibility and business goals. Our customized Shopify theme ensures your eCommerce store is more attractive and user-friendly. Our Shopify experts make your website efficient and make your site mobile-friendly.",
+          "q": "Custom Shopify Theme Development",
+          "a": "An attractive Shopify ecommerce website development is the foundation of your business success. At Cubixsol, our custom Shopify theme development services focus on building an attractive, high-performance theme that meets your brand visibility and business goals. Our customized Shopify theme ensures your eCommerce store is more attractive and user-friendly. Our Shopify experts make your website efficient and make your site mobile-friendly."
         },
         {
           "title": "Theme Customization",
-          "desc": "If you already have a Shopify theme and want to increase the features and look, our theme customization services offer you the perfect solution. Our best Shopify developers upgrade the existing theme that match your business requirements and goals. Shopify themes come with the best customization options but do not optimize your store, expert modifications make your eCommerce store attractive. At Cubixsol, we ensure that your Shopify e-commerce store is responsive."
+          "desc": "If you already have a Shopify theme and want to increase the features and look, our theme customization services offer you the perfect solution. Our best Shopify developers upgrade the existing theme that match your business requirements and goals. Shopify themes come with the best customization options but do not optimize your store, expert modifications make your eCommerce store attractive. At Cubixsol, we ensure that your Shopify e-commerce store is responsive.",
+          "q": "Theme Customization",
+          "a": "If you already have a Shopify theme and want to increase the features and look, our theme customization services offer you the perfect solution. Our best Shopify developers upgrade the existing theme that match your business requirements and goals. Shopify themes come with the best customization options but do not optimize your store, expert modifications make your eCommerce store attractive. At Cubixsol, we ensure that your Shopify e-commerce store is responsive."
         },
         {
           "title": "App Integrations",
-          "desc": "With seamless app integrations, you can easily increase your store's features. The Shopify app ecosystem includes many Shopify developer tools for advertising, payments, management of stocks, analytics, and customer service. However, integrating several apps while maintaining the performance of your store. Our web designer Shopify implements the Shopify ecommerce website design element that helps to improve user engagement and increase the best conversions."
+          "desc": "With seamless app integrations, you can easily increase your store's features. The Shopify app ecosystem includes many Shopify developer tools for advertising, payments, management of stocks, analytics, and customer service. However, integrating several apps while maintaining the performance of your store. Our web designer Shopify implements the Shopify ecommerce website design element that helps to improve user engagement and increase the best conversions.",
+          "q": "App Integrations",
+          "a": "With seamless app integrations, you can easily increase your store's features. The Shopify app ecosystem includes many Shopify developer tools for advertising, payments, management of stocks, analytics, and customer service. However, integrating several apps while maintaining the performance of your store. Our web designer Shopify implements the Shopify ecommerce website design element that helps to improve user engagement and increase the best conversions."
         },
         {
           "title": "Ongoing Support",
-          "desc": "Our team of Shopify experts, developers, focuses on integrating third-party apps and APIs to increase your business's features while maintaining the speed or security of your online business. If you require complex email marketing automation, AI-powered chatbots, social media sales channels, or CRM connection, we assure a smooth installation that fits into your business process."
+          "desc": "Our team of Shopify experts, developers, focuses on integrating third-party apps and APIs to increase your business's features while maintaining the speed or security of your online business. If you require complex email marketing automation, AI-powered chatbots, social media sales channels, or CRM connection, we assure a smooth installation that fits into your business process.",
+          "q": "Ongoing Support",
+          "a": "Our team of Shopify experts, developers, focuses on integrating third-party apps and APIs to increase your business's features while maintaining the speed or security of your online business. If you require complex email marketing automation, AI-powered chatbots, social media sales channels, or CRM connection, we assure a smooth installation that fits into your business process."
         },
         {
           "title": "Custom Shopify Apps",
-          "desc": "Our Shopify app development and integration services enable businesses to create effective apps that enhance the performance of their Shopify store. We provide custom Shopify apps that meet unique requirements, such as automated inventory tracking, personalized discounts, price change, and a variety of platforms. We also integrate third-party apps, ensuring that they perform seamlessly with your Shopify store without slowing it down."
+          "desc": "Our Shopify app development and integration services enable businesses to create effective apps that enhance the performance of their Shopify store. We provide custom Shopify apps that meet unique requirements, such as automated inventory tracking, personalized discounts, price change, and a variety of platforms. We also integrate third-party apps, ensuring that they perform seamlessly with your Shopify store without slowing it down.",
+          "q": "Custom Shopify Apps",
+          "a": "Our Shopify app development and integration services enable businesses to create effective apps that enhance the performance of their Shopify store. We provide custom Shopify apps that meet unique requirements, such as automated inventory tracking, personalized discounts, price change, and a variety of platforms. We also integrate third-party apps, ensuring that they perform seamlessly with your Shopify store without slowing it down."
         },
         {
           "title": "Shopify Migration Services",
-          "desc": "If you want to move your store from a different platform to Shopify, our Shopify migration services will make the process go smoothly. Migration between systems such as WooCommerce, Magento, BigCommerce, or OpenCart might be difficult, but our staff can manage all that from product transfers to customer data migration, history of transactions, SEO retention, and design replication."
+          "desc": "If you want to move your store from a different platform to Shopify, our Shopify migration services will make the process go smoothly. Migration between systems such as WooCommerce, Magento, BigCommerce, or OpenCart might be difficult, but our staff can manage all that from product transfers to customer data migration, history of transactions, SEO retention, and design replication.",
+          "q": "Shopify Migration Services",
+          "a": "If you want to move your store from a different platform to Shopify, our Shopify migration services will make the process go smoothly. Migration between systems such as WooCommerce, Magento, BigCommerce, or OpenCart might be difficult, but our staff can manage all that from product transfers to customer data migration, history of transactions, SEO retention, and design replication."
         },
         {
           "title": "Shopify SEO & Performance Optimization",
-          "desc": "An effective Shopify store is only useful if it appears among the top search results and has quick-loading pages. Our Shopify SEO and performance optimization services boost your store's presence in search engines while providing an excellent user experience. We optimize site speed, simplify navigation and increase mobile responsiveness."
+          "desc": "An effective Shopify store is only useful if it appears among the top search results and has quick-loading pages. Our Shopify SEO and performance optimization services boost your store's presence in search engines while providing an excellent user experience. We optimize site speed, simplify navigation and increase mobile responsiveness.",
+          "q": "Shopify SEO & Performance Optimization",
+          "a": "An effective Shopify store is only useful if it appears among the top search results and has quick-loading pages. Our Shopify SEO and performance optimization services boost your store's presence in search engines while providing an excellent user experience. We optimize site speed, simplify navigation and increase mobile responsiveness."
         },
         {
           "title": "Shopify Dropshipping Store Setup",
-          "desc": "Our professionals set up supplier integrations, product listings, payment gateways, and marketing tools to get your store ready for business. Whether you want to sell fashion, electronics, beauty products, or specialty items, we will create a professional Shopify store that is optimized for dropshipping success. Our dropshipping solutions allowing entrepreneurs to easily begin and expand a profitable online business."
+          "desc": "Our professionals set up supplier integrations, product listings, payment gateways, and marketing tools to get your store ready for business. Whether you want to sell fashion, electronics, beauty products, or specialty items, we will create a professional Shopify store that is optimized for dropshipping success. Our dropshipping solutions allowing entrepreneurs to easily begin and expand a profitable online business.",
+          "q": "Shopify Dropshipping Store Setup",
+          "a": "Our professionals set up supplier integrations, product listings, payment gateways, and marketing tools to get your store ready for business. Whether you want to sell fashion, electronics, beauty products, or specialty items, we will create a professional Shopify store that is optimized for dropshipping success. Our dropshipping solutions allowing entrepreneurs to easily begin and expand a profitable online business."
         }
       ],
       "subServicesTitle": "Our Shopify Services",
@@ -2841,20 +2881,28 @@
       "whyChooseIntro": "We combine eCommerce strategy, pixel-perfect Liquid theme engineering, custom app development, and conversion rate optimization to build revenue-driving online stores.",
       "whyChooseItems": [
         {
-          "title": "1K+ Clients around the world",
-          "desc": "Trusted by global DTC brands, high-growth startups, and multi-channel retailers worldwide for scalable Shopify storefronts."
+          "title": "K+ Clients around the world",
+          "desc": "Trusted by global DTC brands, high-growth startups, and multi-channel retailers worldwide for scalable Shopify storefronts.",
+          "q": "K+ Clients around the world",
+          "a": "Trusted by global DTC brands, high-growth startups, and multi-channel retailers worldwide for scalable Shopify storefronts."
         },
         {
-          "title": "30+ Award Winning",
-          "desc": "Recognized internationally for exceptional UI/UX design, custom theme performance, and headless Shopify solutions."
+          "title": "Award Winning",
+          "desc": "Recognized internationally for exceptional UI/UX design, custom theme performance, and headless Shopify solutions.",
+          "q": "Award Winning",
+          "a": "Recognized internationally for exceptional UI/UX design, custom theme performance, and headless Shopify solutions."
         },
         {
-          "title": "97% Business Growth",
-          "desc": "Our clients experience record-breaking conversion improvements, faster page loads, and sustained sales momentum."
+          "title": "% Business Growth",
+          "desc": "Our clients experience record-breaking conversion improvements, faster page loads, and sustained sales momentum.",
+          "q": "% Business Growth",
+          "a": "Our clients experience record-breaking conversion improvements, faster page loads, and sustained sales momentum."
         },
         {
-          "title": "60+ Team Members",
-          "desc": "Dedicated Shopify experts, certified Liquid developers, full-stack engineers, and conversion rate specialists."
+          "title": "Team Members",
+          "desc": "Dedicated Shopify experts, certified Liquid developers, full-stack engineers, and conversion rate specialists.",
+          "q": "Team Members",
+          "a": "Dedicated Shopify experts, certified Liquid developers, full-stack engineers, and conversion rate specialists."
         }
       ],
       "whyChooseTitle": "Why Choose Cubixsol For Shopify Development",
@@ -8669,46 +8717,124 @@
   ],
   "initialProjects": [
     {
-      "title": "FinGo Mobile App",
-      "category": "Mobile Apps",
-      "desc": "A personal finance app for budgeting, tracking expenses and achieving financial goals.",
-      "tag": "Mobile Apps",
-      "color": "from-blue-600 to-cyan-500"
-    },
-    {
-      "title": "HomeHub",
+      "title": "ADLIV",
       "category": "Web Development",
-      "desc": "A real estate platform for buying, renting and selling properties with advanced search.",
-      "tag": "Web Development",
-      "color": "from-slate-800 to-slate-950"
-    },
-    {
-      "title": "InsightAI",
-      "category": "AI Solutions",
-      "desc": "AI-powered analytics platform that transforms data into actionable business insights.",
-      "tag": "AI Solutions",
-      "color": "from-slate-900 to-purple-950"
-    },
-    {
-      "title": "MediCare Plus",
-      "category": "Web Development",
-      "desc": "A healthcare platform connecting patients with doctors and managing appointments.",
-      "tag": "Healthcare",
-      "color": "from-sky-100 to-blue-200"
-    },
-    {
-      "title": "Pawfect Foods",
-      "category": "E-Commerce",
-      "desc": "An e-commerce store for premium pet food and accessories with seamless shopping.",
-      "tag": "E-Commerce",
-      "color": "from-amber-200 to-orange-300"
-    },
-    {
-      "title": "TaskFlow SaaS",
-      "category": "SaaS",
-      "desc": "A comprehensive project management SaaS for teams to plan, collaborate and deliver.",
+      "desc": "ADLIV is a modern short-term accommodation website built to showcase serviced apartments and rental properties. It provides visitors with detailed property information, amenities, locations and a convenient booking experience through an integrated property management system.",
       "tag": "SaaS",
-      "color": "from-indigo-500 to-blue-600"
+      "color": "from-indigo-600 to-purple-700",
+      "url": "https://adliv.co.uk",
+      "client": "ADLIV UK",
+      "industry": "Serviced Apartments & Property Management",
+      "year": "2024",
+      "description": "ADLIV is a modern short-term accommodation website built to showcase serviced apartments and rental properties. It provides visitors with detailed property information, amenities, locations and a convenient booking experience through an integrated property management system."
+    },
+    {
+      "title": "Cur8 Residences",
+      "category": "Web Development",
+      "desc": "Cur8 Residences is a modern property rental platform designed to showcase premium accommodation and simplify the guest booking journey. The website combines property discovery, detailed listings and reservation functionality with integrated property management services.",
+      "tag": "SaaS",
+      "color": "from-violet-600 to-indigo-800",
+      "url": "https://cur8residences.com",
+      "client": "Cur8 Residences",
+      "industry": "Premium Accommodation & Booking Engine",
+      "year": "2024",
+      "description": "Cur8 Residences is a modern property rental platform designed to showcase premium accommodation and simplify the guest booking journey. The website combines property discovery, detailed listings and reservation functionality with integrated property management services."
+    },
+    {
+      "title": "GoTo Poconos",
+      "category": "Web Development",
+      "desc": "GoTo Poconos is a vacation rental platform focused on showcasing properties across the Poconos region. The website provides an intuitive property discovery experience with detailed listings and a streamlined direct-booking workflow integrated with property management technology.",
+      "tag": "Web Development",
+      "color": "from-emerald-500 to-teal-700",
+      "url": "https://gotopoconos.com",
+      "client": "GoTo Poconos",
+      "industry": "Vacation Rental & Travel",
+      "year": "2024",
+      "description": "GoTo Poconos is a vacation rental platform focused on showcasing properties across the Poconos region. The website provides an intuitive property discovery experience with detailed listings and a streamlined direct-booking workflow integrated with property management technology."
+    },
+    {
+      "title": "Guest Cottage",
+      "category": "Web Development",
+      "desc": "Guest Cottage is a vacation rental website featuring a collection of holiday properties for short and extended stays. Visitors can explore individual properties, review accommodation details and use the integrated booking experience to plan their stay.",
+      "tag": "Web Development",
+      "color": "from-amber-500 to-orange-600",
+      "url": "https://guestcottage.com",
+      "client": "Guest Cottage",
+      "industry": "Holiday & Extended Stays",
+      "year": "2024",
+      "description": "Guest Cottage is a vacation rental website featuring a collection of holiday properties for short and extended stays. Visitors can explore individual properties, review accommodation details and use the integrated booking experience to plan their stay."
+    },
+    {
+      "title": "Mountain Cabins",
+      "category": "Web Development",
+      "desc": "Mountain Cabins is a vacation rental website focused on showcasing cabin and holiday accommodation. The platform presents property information and booking options while integrating with a property management system to support reservations and guest services.",
+      "tag": "Web Development",
+      "color": "from-emerald-700 to-stone-800",
+      "url": "https://mountaincab.wpenginepowered.com",
+      "client": "Mountain Cabins",
+      "industry": "Cabin & Holiday Accommodation",
+      "year": "2024",
+      "description": "Mountain Cabins is a vacation rental website focused on showcasing cabin and holiday accommodation. The platform presents property information and booking options while integrating with a property management system to support reservations and guest services."
+    },
+    {
+      "title": "Ocean City Retreats",
+      "category": "Web Development",
+      "desc": "Ocean City Retreats is a UK-based holiday accommodation website featuring vacation properties for travelers. The platform allows visitors to explore available properties, view accommodation details and proceed through an integrated booking process.",
+      "tag": "Web Development",
+      "color": "from-cyan-600 to-blue-800",
+      "url": "https://oceancityretreats.co.uk",
+      "client": "Ocean City Retreats UK",
+      "industry": "Coastal Holiday Accommodation",
+      "year": "2024",
+      "description": "Ocean City Retreats is a UK-based holiday accommodation website featuring vacation properties for travelers. The platform allows visitors to explore available properties, view accommodation details and proceed through an integrated booking process."
+    },
+    {
+      "title": "Open Air Homes",
+      "category": "Web Development",
+      "desc": "Open Air Homes is a vacation rental and property management platform focused on professionally managed homes and direct bookings. The website provides property discovery and booking functionality while connecting with a centralized property management ecosystem.",
+      "tag": "Web Development",
+      "color": "from-blue-600 to-cyan-600",
+      "url": "https://openairhomes.com",
+      "client": "Open Air Homes California",
+      "industry": "Luxury Vacation Rentals",
+      "year": "2024",
+      "description": "Open Air Homes is a vacation rental and property management platform focused on professionally managed homes and direct bookings. The website provides property discovery and booking functionality while connecting with a centralized property management ecosystem."
+    },
+    {
+      "title": "Sage Vacations",
+      "category": "Web Development",
+      "desc": "Sage Vacations is a professional vacation rental website designed to showcase holiday homes and accommodation options. The website presents property details, amenities and locations while providing guests with a simple and convenient reservation experience.",
+      "tag": "Web Development",
+      "color": "from-teal-500 to-emerald-600",
+      "url": "https://sagevacations.net",
+      "client": "Sage Vacations",
+      "industry": "Vacation Rental & Stays",
+      "year": "2024",
+      "description": "Sage Vacations is a professional vacation rental website designed to showcase holiday homes and accommodation options. The website presents property details, amenities and locations while providing guests with a simple and convenient reservation experience."
+    },
+    {
+      "title": "Stay Seekers",
+      "category": "Web Development",
+      "desc": "Stay Seekers is a holiday rental website featuring a range of accommodation options for travelers. The platform focuses on easy property discovery, detailed accommodation pages, availability and a smooth booking journey for guests.",
+      "tag": "E-Commerce",
+      "color": "from-rose-500 to-pink-600",
+      "url": "https://stayseekers.co.uk",
+      "client": "Stay Seekers UK",
+      "industry": "Holiday Accommodation",
+      "year": "2024",
+      "description": "Stay Seekers is a holiday rental website featuring a range of accommodation options for travelers. The platform focuses on easy property discovery, detailed accommodation pages, availability and a smooth booking journey for guests."
+    },
+    {
+      "title": "Sydney Dreams",
+      "category": "Web Development",
+      "desc": "Sydney Dreams is a professional vacation rental website designed to showcase holiday properties and provide guests with detailed accommodation information. The platform combines a user-friendly property browsing experience with an integrated booking solution for managing reservations and guest stays.",
+      "tag": "Web Development",
+      "color": "from-sky-500 to-blue-700",
+      "url": "https://sydneydreams.com.au",
+      "client": "Sydney Dreams Australia",
+      "industry": "Vacation Rental & Hospitality",
+      "year": "2024",
+      "description": "Sydney Dreams is a professional vacation rental website designed to showcase holiday properties and provide guests with detailed accommodation information. The platform combines a user-friendly property browsing experience with an integrated booking solution for managing reservations and guest stays."
     }
   ],
   "initialTeam": [
@@ -9050,6 +9176,20 @@
   "initialSiteSettings": [],
   "initialSeoSettings": [],
   "initialPages": [
+    {
+      "slug": "cloud-solutions",
+      "content": "Cubixsol provides **cloud consulting services** to help businesses plan, build, migrate, and manage reliable cloud environments. Our team helps you assess your current infrastructure, select suitable cloud technologies, improve performance, and support secure applications. We work across cloud strategy, migration, AWS, Kubernetes, security, and infrastructure management.",
+      "engagementItems": [],
+      "faqs": [],
+      "heroBadges": [],
+      "heroDesc": "Cubixsol provides **cloud consulting services** to help businesses plan, build, migrate, and manage reliable cloud environments. Our team helps you assess your current infrastructure, select suitable cloud technologies, improve performance, and support secure applications. We work across cloud strategy, migration, AWS, Kubernetes, security, and infrastructure management.",
+      "heroTitle": "Cloud Consulting & Solutions for Your Business",
+      "highlights": [],
+      "industriesItems": [],
+      "processSteps": [],
+      "title": "Cloud Consulting & Solutions for Your Business",
+      "whyChooseItems": []
+    },
     {
       "seo": {
         "metaTitle": "Contact Us | Cubixsol",
@@ -9408,6 +9548,38 @@
     }
   ],
   "initialMedia": [
+    {
+      "title": "Shopify Development",
+      "url": "/uploads/media-1789727429969-500233105.svg",
+      "type": "image",
+      "alt": "Shopify Development",
+      "size": 89378,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "PMS Integration",
+      "url": "/uploads/media-1789727429960-623030859.svg",
+      "type": "image",
+      "alt": "PMS Integration",
+      "size": 140263,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "Shopify Development 1",
+      "url": "/uploads/media-1789727119631-452879393.svg",
+      "type": "image",
+      "alt": "Shopify Development 1",
+      "size": 7845,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "PMS Integration 1",
+      "url": "/uploads/media-1789727119629-286851325.svg",
+      "type": "image",
+      "alt": "PMS Integration 1",
+      "size": 7363,
+      "mimetype": "image/svg+xml"
+    },
     {
       "title": "toolmad.com",
       "url": "/uploads/media-1789647461884-622147573.png",

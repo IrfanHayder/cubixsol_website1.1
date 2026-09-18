@@ -19,6 +19,7 @@ import CtaBanner from '../components/CtaBanner';
 import Reveal, { Stagger, StaggerItem } from '../components/Reveal';
 import DynamicIcon from '../components/DynamicIcon';
 import { useServices } from '../context/ServicesContext';
+import { useEstimateModal } from '../context/EstimateModalContext';
 import { formatInline, FormatRichText } from '../utils/formatText';
 import { apiFetch } from '../utils/api';
 import { useSEO } from '../utils/seo';
@@ -194,6 +195,7 @@ const defaultPageData = {
 
 export default function Services() {
   const { services: rawServices, loading: servicesLoading, resolveIcon } = useServices();
+  const { openEstimateModal } = useEstimateModal();
   const [openFaq, setOpenFaq] = useState(0);
 
   // Cached state for 0ms initial render
@@ -286,13 +288,24 @@ export default function Services() {
           {/* CTA Action Button & Badges */}
           <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
             {pageData.heroButtonText && (
-              <Link
-                to={pageData.heroButtonLink || '/contact#contact-form'}
-                className="btn-primary inline-flex items-center justify-center gap-2.5 self-start shadow-soft hover:shadow-glow hover:-translate-y-0.5 transition-all text-sm font-bold"
-              >
-                <span>{pageData.heroButtonText}</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
+              pageData.heroButtonLink && !pageData.heroButtonLink.startsWith('/contact') ? (
+                <Link
+                  to={pageData.heroButtonLink}
+                  className="btn-primary inline-flex items-center justify-center gap-2.5 self-start shadow-soft hover:shadow-glow hover:-translate-y-0.5 transition-all text-sm font-bold cursor-pointer"
+                >
+                  <span>{pageData.heroButtonText}</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              ) : (
+                <button
+                  type="button"
+                  onClick={openEstimateModal}
+                  className="btn-primary inline-flex items-center justify-center gap-2.5 self-start shadow-soft hover:shadow-glow hover:-translate-y-0.5 transition-all text-sm font-bold cursor-pointer"
+                >
+                  <span>{pageData.heroButtonText}</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              )
             )}
 
             {heroBadges.length > 0 && (

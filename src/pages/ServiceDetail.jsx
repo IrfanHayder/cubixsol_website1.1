@@ -28,6 +28,7 @@ import DevOpsProcess from '../components/DevOpsProcess';
 import SuccessStories from '../components/SuccessStories';
 import DynamicIcon from '../components/DynamicIcon';
 import { useServices } from '../context/ServicesContext';
+import { useEstimateModal } from '../context/EstimateModalContext';
 import { useSEO } from '../utils/seo';
 import { formatText, FormatRichText } from '../utils/formatText';
 
@@ -65,6 +66,7 @@ export default function ServiceDetail() {
     return <Navigate to="/shopify-development" replace />;
   }
   const { services, loading, resolveIcon } = useServices();
+  const { openEstimateModal } = useEstimateModal();
   const [openFaq, setOpenFaq] = useState(null);
 
   const service = (Array.isArray(services) ? services : []).find(
@@ -171,9 +173,23 @@ export default function ServiceDetail() {
               >
                 {service.ctaPrimaryText || "Let's Talk"} <ArrowRight className="w-4 h-4" />
               </a>
-              <Link to="/projects" className="btn-outline">
-                {service.ctaSecondaryText || 'See related work'}
-              </Link>
+              {service.ctaSecondaryLink &&
+              service.ctaSecondaryLink !== '/contact' &&
+              service.ctaSecondaryLink !== '#estimate' &&
+              !(service.ctaSecondaryText || '').toLowerCase().includes('estimate') &&
+              !(service.ctaSecondaryText || '').toLowerCase().includes('consultation') ? (
+                <Link to={service.ctaSecondaryLink} className="btn-outline">
+                  {service.ctaSecondaryText || 'See related work'}
+                </Link>
+              ) : (
+                <button
+                  type="button"
+                  onClick={openEstimateModal}
+                  className="btn-outline cursor-pointer"
+                >
+                  {service.ctaSecondaryText || 'Get a Free Estimate'}
+                </button>
+              )}
             </div>
 
             {/* Trust badges under CTAs */}
@@ -184,11 +200,21 @@ export default function ServiceDetail() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-xl border border-gray-100 bg-white px-3 py-2 shadow-sm hover:border-cyan-200 hover:shadow-md transition"
               >
-                <span className="w-8 h-8 rounded-lg bg-gradient-to-b from-[#4b8bff] to-[#1a56db] flex flex-col items-center justify-center text-white shrink-0">
-                  <span className="text-[5px] font-black leading-none">GF</span>
-                  <span className="text-[4px] font-bold bg-orange-500 px-0.5 rounded-[1px] mt-0.5">
-                    P
-                  </span>
+                <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#2458ff] to-[#1541d4] flex flex-col items-center justify-center text-white shrink-0 relative overflow-hidden p-1">
+                  <svg className="w-4 h-4 mb-0.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M12 2L20.66 7V17L12 22L3.34 17V7L12 2Z"
+                      fill="#1e40af"
+                      stroke="white"
+                      strokeWidth="1.2"
+                    />
+                    <path
+                      d="M10 8.5C8.07 8.5 6.5 10.07 6.5 12C6.5 13.93 8.07 15.5 10 15.5C11.5 15.5 12.78 14.56 13.26 13.24H10V11.24H15.15C15.22 11.49 15.25 11.74 15.25 12C15.25 14.9 12.9 17.25 10 17.25C7.1 17.25 4.75 14.9 4.75 12C4.75 9.1 7.1 6.75 10 6.75C11.45 6.75 12.76 7.34 13.71 8.29L12.47 9.53C11.84 8.9 10.97 8.5 10 8.5Z"
+                      fill="white"
+                    />
+                    <circle cx="18" cy="6" r="2" fill="#FF7A00" />
+                  </svg>
+                  <span className="text-[5px] font-black tracking-tight leading-none text-white">GoodFirms</span>
                 </span>
                 <span className="text-left">
                   <span className="block text-[11px] font-bold text-ink leading-tight">

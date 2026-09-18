@@ -9,6 +9,7 @@ import ServiceInquiryForm from '../components/ServiceInquiryForm';
 import { AgenticAiImpact, AgenticAiProcess } from '../components/AgenticAiSections';
 import SolutionBestPractices from '../components/SolutionBestPractices';
 import Reveal, { Stagger, StaggerItem } from '../components/Reveal';
+import { useEstimateModal } from '../context/EstimateModalContext';
 import { apiFetch } from '../utils/api';
 import { useSEO } from '../utils/seo';
 
@@ -151,6 +152,7 @@ export default function SolutionDetail() {
 
   if (notFound || !solution) return <Navigate to="/solutions" replace />;
 
+  const { openEstimateModal } = useEstimateModal();
   const currentSolution = solution;
 
   const accessibilitySlugs = ['image-to-text', 'reescrever-texto', 'jpg-a-pdf', 'jpg-to-pdf'];
@@ -210,12 +212,27 @@ export default function SolutionDetail() {
             >
               {currentSolution.ctaPrimaryText || 'Talk to us'} <ArrowRight className="w-4 h-4" />
             </Link>
-            <Link
-              to={currentSolution.ctaSecondaryLink || '/services'}
-              className="btn-outline"
-            >
-              {currentSolution.ctaSecondaryText || 'Browse services'}
-            </Link>
+            {currentSolution.ctaSecondaryLink &&
+            currentSolution.ctaSecondaryLink !== '/contact' &&
+            currentSolution.ctaSecondaryLink !== '#estimate' &&
+            !(currentSolution.ctaSecondaryText || '').toLowerCase().includes('estimate') &&
+            !(currentSolution.ctaSecondaryText || '').toLowerCase().includes('consultation') &&
+            !(currentSolution.ctaSecondaryText || '').toLowerCase().includes('assessment') ? (
+              <Link
+                to={currentSolution.ctaSecondaryLink}
+                className="btn-outline"
+              >
+                {currentSolution.ctaSecondaryText || 'Browse services'}
+              </Link>
+            ) : (
+              <button
+                type="button"
+                onClick={openEstimateModal}
+                className="btn-outline cursor-pointer"
+              >
+                {currentSolution.ctaSecondaryText || 'Get a Free Estimate'}
+              </button>
+            )}
           </div>
         </Reveal>
 

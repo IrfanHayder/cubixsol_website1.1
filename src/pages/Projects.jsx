@@ -1,6 +1,6 @@
 import { useMemo, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, RefreshCw, Sparkles, TrendingUp, Users2 } from 'lucide-react';
+import { ArrowRight, ExternalLink, RefreshCw, Sparkles, TrendingUp, Users2 } from 'lucide-react';
 import Breadcrumb from '../components/Breadcrumb';
 import CtaBanner from '../components/CtaBanner';
 import Reveal, { Stagger, StaggerItem } from '../components/Reveal';
@@ -91,7 +91,7 @@ export default function Projects() {
               key={f}
               onClick={() => { setFilter(f); setVisibleCount(6); }}
               className={`px-4 py-2 rounded-lg text-sm font-semibold transition ${
-                filter === f ? 'bg-primary-gradient text-white' : 'bg-white text-gray-500 border border-gray-200 hover:border-primary-300'
+                filter === f ? 'bg-primary-gradient text-white shadow-sm' : 'bg-white text-gray-500 border border-gray-200 hover:border-primary-300'
               }`}
             >
               {f}
@@ -109,17 +109,42 @@ export default function Projects() {
         ) : (
           <Stagger className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.06}>
             {shown.map((p) => (
-              <StaggerItem key={p.title}>
-                <div className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-card group hover:-translate-y-1.5 hover:shadow-soft transition-all duration-300">
-                  <div className={`h-44 bg-gradient-to-br ${p.color} flex items-start p-4`}>
-                    <span className="text-white/90 text-xs font-bold bg-black/25 px-2.5 py-1 rounded">{p.tag}</span>
+              <StaggerItem key={p._id || p.title}>
+                <div className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-card group hover:-translate-y-1.5 hover:shadow-soft transition-all duration-300 flex flex-col h-full">
+                  <div className={`h-44 bg-gradient-to-br ${p.color || 'from-primary-600 to-indigo-700'} flex flex-col justify-between p-4 relative overflow-hidden`}>
+                    <div className="flex items-center justify-between z-10">
+                      <span className="text-white/90 text-xs font-bold bg-black/30 backdrop-blur-sm px-2.5 py-1 rounded-md">{p.tag || p.category || 'Web Development'}</span>
+                      {p.industry && (
+                        <span className="text-white/80 text-[11px] font-medium bg-white/15 backdrop-blur-sm px-2 py-0.5 rounded">
+                          {p.industry}
+                        </span>
+                      )}
+                    </div>
+                    <div className="z-10">
+                      <h4 className="text-white text-xl font-bold tracking-wide drop-shadow-sm">{p.title}</h4>
+                    </div>
                   </div>
-                  <div className="p-5">
-                    <h3 className="font-bold text-ink mb-1.5">{p.title}</h3>
-                    <p className="text-sm text-gray-500 leading-relaxed mb-4">{p.desc}</p>
-                    <Link to="/contact" className="text-sm font-semibold text-primary-600 inline-flex items-center gap-1">
-                      View Case Study <ArrowRight className="w-3.5 h-3.5" />
-                    </Link>
+                  <div className="p-5 flex-1 flex flex-col justify-between">
+                    <div>
+                      <h3 className="font-bold text-ink mb-2">{p.title}</h3>
+                      <p className="text-sm text-gray-500 leading-relaxed mb-4">{p.desc || p.description}</p>
+                    </div>
+                    <div className="pt-2 border-t border-gray-100 mt-auto">
+                      {p.url ? (
+                        <a
+                          href={p.url.startsWith('http') ? p.url : `https://${p.url}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm font-semibold text-primary-600 hover:text-primary-700 inline-flex items-center gap-1.5 transition group-hover:underline"
+                        >
+                          Visit Website <ExternalLink className="w-3.5 h-3.5" />
+                        </a>
+                      ) : (
+                        <Link to="/contact" className="text-sm font-semibold text-primary-600 inline-flex items-center gap-1">
+                          View Case Study <ArrowRight className="w-3.5 h-3.5" />
+                        </Link>
+                      )}
+                    </div>
                   </div>
                 </div>
               </StaggerItem>

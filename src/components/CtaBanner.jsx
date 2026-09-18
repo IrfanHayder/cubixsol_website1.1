@@ -2,16 +2,53 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import Reveal from './Reveal';
 import { formatInline } from '../utils/formatText';
+import { useEstimateModal } from '../context/EstimateModalContext';
 
 export default function CtaBanner({
   eyebrow = 'Have a Project in Mind?',
   title = 'Ready to Build Your Product? Let’s Talk',
   desc = 'Choose us as your custom software development company and move from idea to launch with a clear plan, experienced specialists, and dependable technical support.',
   buttonText = 'Get a Free Consultation',
-  buttonLink = '/contact',
+  buttonLink,
+  onClick,
+  onButtonClick,
   secondaryButtonText,
   secondaryButtonLink,
+  onSecondaryClick,
 }) {
+  const { openEstimateModal } = useEstimateModal();
+
+  const isModalTrigger =
+    Boolean(onClick) ||
+    Boolean(onButtonClick) ||
+    !buttonLink ||
+    buttonLink === '/contact';
+
+  const handlePrimaryClick = (e) => {
+    if (onClick) {
+      e.preventDefault();
+      onClick(e);
+      return;
+    }
+    if (onButtonClick) {
+      e.preventDefault();
+      onButtonClick(e);
+      return;
+    }
+    if (isModalTrigger) {
+      e.preventDefault();
+      openEstimateModal();
+    }
+  };
+
+  const handleSecondaryClick = (e) => {
+    if (onSecondaryClick) {
+      e.preventDefault();
+      onSecondaryClick(e);
+      return;
+    }
+  };
+
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <Reveal>
@@ -37,16 +74,27 @@ export default function CtaBanner({
             )}
           </div>
           <div className="relative z-10 shrink-0 flex flex-wrap items-center gap-3">
-            <Link
-              to={buttonLink || '/contact'}
-              className="inline-flex items-center gap-2 bg-white text-[#00a4d8] font-bold px-7 py-3.5 rounded-2xl hover:bg-cyan-50 hover:shadow-lg hover:scale-105 transition-all duration-300"
-            >
-              {buttonText || 'Get a Free Consultation'} <ArrowRight className="w-4 h-4" />
-            </Link>
+            {isModalTrigger ? (
+              <button
+                type="button"
+                onClick={handlePrimaryClick}
+                className="inline-flex items-center gap-2 bg-white text-[#00a4d8] font-bold px-7 py-3.5 rounded-2xl hover:bg-cyan-50 hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer text-base"
+              >
+                {buttonText || 'Get a Free Consultation'} <ArrowRight className="w-4 h-4" />
+              </button>
+            ) : (
+              <Link
+                to={buttonLink}
+                className="inline-flex items-center gap-2 bg-white text-[#00a4d8] font-bold px-7 py-3.5 rounded-2xl hover:bg-cyan-50 hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer text-base"
+              >
+                {buttonText || 'Get a Free Consultation'} <ArrowRight className="w-4 h-4" />
+              </Link>
+            )}
             {secondaryButtonText && (
               <Link
                 to={secondaryButtonLink || '/contact'}
-                className="inline-flex items-center gap-2 bg-white/15 backdrop-blur border border-white/30 text-white font-bold px-7 py-3.5 rounded-2xl hover:bg-white/25 transition-all duration-300"
+                onClick={handleSecondaryClick}
+                className="inline-flex items-center gap-2 bg-white/15 backdrop-blur border border-white/30 text-white font-bold px-7 py-3.5 rounded-2xl hover:bg-white/25 transition-all duration-300 text-base"
               >
                 {secondaryButtonText}
               </Link>
