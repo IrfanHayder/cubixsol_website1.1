@@ -26,6 +26,7 @@ import BlogDetail from './pages/BlogDetail';
 import Careers from './pages/Careers';
 import PmsIntegration from './pages/PmsIntegration';
 import ShopifyDevelopment from './pages/ShopifyDevelopment';
+import GoHighLevelAutomation from './pages/GoHighLevelAutomation';
 import AdminDashboard from './pages/Admin/Dashboard';
 import AdminLogin from './pages/Admin/Login';
 
@@ -92,6 +93,10 @@ function AppRoutes() {
         <Route path="/services/pms-integration" element={<PmsIntegration />} />
         <Route path="/shopify-development" element={<ShopifyDevelopment />} />
         <Route path="/services/shopify-development" element={<ShopifyDevelopment />} />
+        <Route path="/ghl-automation" element={<GoHighLevelAutomation />} />
+        <Route path="/gohighlevel-automation" element={<GoHighLevelAutomation />} />
+        <Route path="/services/ghl-automation" element={<GoHighLevelAutomation />} />
+        <Route path="/services/gohighlevel-automation" element={<GoHighLevelAutomation />} />
         <Route path="/services/:slug" element={<ServiceDetail />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/industries" element={<Industries />} />
