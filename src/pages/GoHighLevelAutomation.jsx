@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence, useScroll, useSpring, useTransform } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
   Zap, Clock, Users, ArrowRight, CheckCircle2, ChevronRight,
@@ -303,14 +303,6 @@ export default function GoHighLevelAutomation() {
   const [selectedFix, setSelectedFix] = useState('appointments');
   const [openFaq, setOpenFaq] = useState(0);
 
-  // Smooth scroll progress indicator
-  const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
-
   // SEO Metadata
   useSEO(
     data.seo?.metaTitle || data.title,
@@ -352,12 +344,6 @@ export default function GoHighLevelAutomation() {
 
   return (
     <div className="min-h-screen bg-white text-ink selection:bg-rose-500 selection:text-white relative">
-      {/* Top Scroll Progress Bar */}
-      <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-rose-500 via-red-500 to-amber-500 z-50 origin-left"
-        style={{ scaleX }}
-      />
-
       {/* ===================== HERO SECTION ===================== */}
       <section className="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden bg-gradient-to-b from-rose-50/70 via-white to-white border-b border-rose-100/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
