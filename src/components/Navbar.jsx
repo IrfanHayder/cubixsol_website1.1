@@ -21,7 +21,18 @@ const serviceMenuGroups = [
     ],
   },
   {
-    title: 'Engineering',
+    title: 'Automate',
+    slugs: [
+      'ghl-automation',
+      'hubspot-crm',
+      'ai-workflows',
+      'ai-chatbots',
+      'email-lead-nurture',
+      'email-and-lead-nurture',
+    ],
+  },
+  {
+    title: 'Engineering & Cloud',
     slugs: [
       'laravel-development',
       'php-development',
@@ -30,11 +41,6 @@ const serviceMenuGroups = [
       'api-development-and-integration',
       'api-development',
       'api',
-    ],
-  },
-  {
-    title: 'Cloud & AI',
-    slugs: [
       'cloud-solutions',
       'cloud',
       'devops',
@@ -69,6 +75,22 @@ export default function Navbar() {
   services.forEach((s) => {
     if (s && s.slug) {
       serviceBySlug[s.slug] = s;
+      if (s.slug === 'ghl-automation') {
+        serviceBySlug['ghl-automation'] = s;
+      }
+      if (s.slug === 'hubspot-crm') {
+        serviceBySlug['hubspot-crm'] = s;
+      }
+      if (s.slug === 'ai-workflows') {
+        serviceBySlug['ai-workflows'] = s;
+      }
+      if (s.slug === 'ai-chatbots') {
+        serviceBySlug['ai-chatbots'] = s;
+      }
+      if (s.slug === 'email-lead-nurture' || s.slug === 'email-and-lead-nurture') {
+        serviceBySlug['email-lead-nurture'] = s;
+        serviceBySlug['email-and-lead-nurture'] = s;
+      }
       if (s.slug === 'graphic-designing' || s.slug === 'graphic-design') {
         serviceBySlug['graphic-design'] = s;
         serviceBySlug['graphic-designing'] = s;
@@ -127,17 +149,20 @@ export default function Navbar() {
     uncategorized.forEach((s) => {
       const slug = (s.slug || '').toLowerCase();
       const title = (s.title || '').toLowerCase();
-      if (slug.includes('android') || slug.includes('ios') || slug.includes('mobile') || slug.includes('web') || slug.includes('shopify') || title.includes('android') || title.includes('ios') || title.includes('mobile') || title.includes('shopify')) {
+      if (slug.includes('ghl') || slug.includes('hubspot') || slug.includes('workflow') || slug.includes('chatbot') || slug.includes('nurture') || slug.includes('automate') || title.includes('automate') || title.includes('ghl') || title.includes('hubspot') || title.includes('crm') || title.includes('nurture')) {
+        const targetGroup = groups.find(g => g.title.toLowerCase().includes('automate')) || groups[1];
+        targetGroup.servicesList.push(s);
+      } else if (slug.includes('android') || slug.includes('ios') || slug.includes('mobile') || slug.includes('web') || slug.includes('shopify') || title.includes('android') || title.includes('ios') || title.includes('mobile') || title.includes('shopify')) {
         const targetGroup = groups.find(g => g.title.includes('Build')) || groups[0];
         targetGroup.servicesList.push(s);
       } else if (slug.includes('ui-ux') || slug.includes('uiux') || slug.includes('graphic') || slug.includes('ecommerce') || slug.includes('marketing') || title.includes('ui/ux') || title.includes('graphic') || title.includes('marketing')) {
         const targetGroup = groups.find(g => g.title.includes('Design')) || groups[groups.length - 1];
         targetGroup.servicesList.push(s);
       } else if (slug.includes('cloud') || slug.includes('devops') || slug.includes('data-migration') || slug.includes('ai-') || title.includes('cloud') || title.includes('devops') || title.includes('ai ')) {
-        const targetGroup = groups.find(g => g.title.includes('Cloud')) || groups[2];
+        const targetGroup = groups.find(g => g.title.includes('Engineering') || g.title.includes('Cloud')) || groups[2];
         targetGroup.servicesList.push(s);
       } else {
-        const targetGroup = groups.find(g => g.title.includes('Engineering')) || groups[1];
+        const targetGroup = groups.find(g => g.title.includes('Engineering')) || groups[2];
         targetGroup.servicesList.push(s);
       }
     });
