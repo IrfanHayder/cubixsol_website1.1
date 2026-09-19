@@ -27,6 +27,8 @@ import Careers from './pages/Careers';
 import PmsIntegration from './pages/PmsIntegration';
 import ShopifyDevelopment from './pages/ShopifyDevelopment';
 import GoHighLevelAutomation from './pages/GoHighLevelAutomation';
+import HubSpotCrm from './pages/HubSpotCrm';
+import AiWorkflows from './pages/AiWorkflows';
 import AdminDashboard from './pages/Admin/Dashboard';
 import AdminLogin from './pages/Admin/Login';
 
@@ -97,6 +99,14 @@ function AppRoutes() {
         <Route path="/gohighlevel-automation" element={<GoHighLevelAutomation />} />
         <Route path="/services/ghl-automation" element={<GoHighLevelAutomation />} />
         <Route path="/services/gohighlevel-automation" element={<GoHighLevelAutomation />} />
+        <Route path="/hubspot-crm" element={<HubSpotCrm />} />
+        <Route path="/hubspot-automation" element={<HubSpotCrm />} />
+        <Route path="/services/hubspot-crm" element={<HubSpotCrm />} />
+        <Route path="/services/hubspot-automation" element={<HubSpotCrm />} />
+        <Route path="/ai-workflows" element={<AiWorkflows />} />
+        <Route path="/ai-workflow-automation" element={<AiWorkflows />} />
+        <Route path="/services/ai-workflows" element={<AiWorkflows />} />
+        <Route path="/services/ai-workflow-automation" element={<AiWorkflows />} />
         <Route path="/services/:slug" element={<ServiceDetail />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/industries" element={<Industries />} />

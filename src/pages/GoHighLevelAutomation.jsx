@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
@@ -6,7 +6,8 @@ import {
   TrendingUp, Sparkles, ShieldCheck, Database, Calendar,
   MessageSquare, Mail, Layers, PhoneCall, ExternalLink,
   Bot, RefreshCw, BarChart3, HelpCircle, Star, Sliders,
-  Workflow, Cpu, Settings, Smartphone, Award, Target, Rocket
+  Workflow, Cpu, Settings, Smartphone, Award, Target, Rocket,
+  Globe, CreditCard, Share2, Terminal, Code2, Check
 } from 'lucide-react';
 import { useEstimateModal } from '../context/EstimateModalContext';
 import { apiFetch } from '../utils/api';
@@ -19,251 +20,280 @@ import { useSEO } from '../utils/seo';
 // Default static data matching the exact high-converting GoHighLevel design
 const DEFAULT_DATA = {
   slug: 'ghl-automation',
-  title: 'GoHighLevel (GHL) Automation Services',
+  title: 'GoHighLevel Automation Services to Turn Leads into Revenue',
   heroEyebrow: 'GOHIGHLEVEL AUTOMATION SERVICES',
-  heroTitle: 'Turn missed leads into automated follow-ups & booked conversations',
-  heroDesc: 'Cubixsol designs and deploys custom GoHighLevel (GHL) workflows, snapshots, pipelines, and integrations that scale your operations without expanding headcounts.',
-  heroPrimaryBtnText: 'Book a Discovery Call',
-  heroSecondaryBtnText: 'View Case Studies',
-  heroBadges: ['★ 4.9/5 Client Rating', '500+ Automated Workflows', 'HighLevel Certified Partner'],
+  heroTitle: 'GoHighLevel Automation Services to Turn Leads into Revenue',
+  heroDesc: 'As a GoHighLevel automation agency, we handle GoHighLevel setup, integrations, and optimisation to help businesses manage leads faster and create consistent customer experiences. Our team creates complete GoHighLevel CRM marketing automation systems that connect lead capture, communication, pipelines, funnels, and reporting inside one powerful platform.',
+  heroPrimaryBtnText: 'Book A Free Strategy Call',
+  heroSecondaryBtnText: 'Explore Our Solutions',
+  heroBadges: [
+    'GoHighLevel Setup & Integrations',
+    'Lead Capture & CRM Automation',
+    'Marketing & Sales Pipelines',
+    'End-to-End Reporting'
+  ],
   heroImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&h=800&q=80',
 
-  // Problem Section
-  problemEyebrow: 'WHERE REVENUE LEAKS',
-  problemTitle: 'Most leads are lost after the first contact, not before it',
-  problemDesc: 'Without automation, response times drag, follow-ups drop, and valuable prospect interest cools down before a sales rep even dials.',
+  // Section 1: Why Businesses Choose Automation
+  problemEyebrow: 'WHY BUSINESSES CHOOSE AUTOMATION',
+  problemTitle: 'Your Leads Need A Complete Follow-Up System',
+  problemDesc: 'A CRM alone cannot solve missed opportunities caused by delayed responses, disconnected platforms, and manual tasks. GoHighLevel CRM automation creates structured workflows that capture leads, trigger communication, and guide prospects through every stage of the buying journey.',
   problemCards: [
     {
-      icon: 'Clock',
-      title: 'Delayed Response Times',
-      desc: 'Leads go cold within 5 minutes. Without automated instant SMS/email triggers, speed-to-lead drops by over 80%.',
+      icon: 'Workflow',
+      title: 'Capture Every Opportunity Automatically',
+      desc: 'GoHighLevel workflow automation collects leads from websites, forms, ads, and campaigns while sending them into organised pipelines.',
     },
     {
-      icon: 'Users',
-      title: 'Manual Pipeline Drag',
-      desc: 'Sales reps waste up to 4 hours daily manually copying contacts, logging calls, and typing repetitive messages instead of closing.',
-    },
-    {
-      icon: 'Layers',
-      title: 'Disconnected Tools',
-      desc: 'Funnels, calendar links, and CRM tools that do not talk to each other cause dropped prospects and missed revenue.',
+      icon: 'MessageSquare',
+      title: 'Respond To Customers Instantly',
+      desc: 'GoHighLevel email automation and SMS automation create immediate conversations through emails, messages, reminders, and follow-ups.',
     },
     {
       icon: 'TrendingUp',
-      title: 'No Follow-Up Persistence',
-      desc: 'Over 70% of conversions happen on follow-up 4 to 8, yet most businesses abandon leads after just 1 or 2 attempts.',
+      title: 'Create Predictable Sales Operations',
+      desc: 'GoHighLevel sales funnel automation organises prospects, deals, appointments, and sales activities into a clear process.',
+    },
+    {
+      icon: 'BarChart3',
+      title: 'Understand Your Growth Performance',
+      desc: 'GoHighLevel automation features provide reports about campaigns, conversions, customer activity, and pipeline performance.',
     },
   ],
 
-  // Capabilities Grid (6 Cards)
-  capabilitiesEyebrow: 'WHAT WE BUILD',
-  capabilitiesTitle: 'GHL systems that connect funnels, CRM and automation seamlessly',
-  capabilitiesDesc: 'Modular, reliable architectures built to convert traffic into booked calls and ongoing revenue.',
+  // Section 2: Complete GoHighLevel Systems (6 Cards)
+  capabilitiesEyebrow: 'OUR GOHIGHLEVEL SERVICES',
+  capabilitiesTitle: 'Complete GoHighLevel Systems For Your Business Objectives',
+  capabilitiesDesc: 'Every business requires a different automation strategy. Our GoHighLevel automation services combine CRM configuration, workflow development, integrations, and marketing systems to create a platform that supports growth.',
   capabilitiesCards: [
     {
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&h=450&q=80',
-      tag: 'Agency Scalability',
-      title: 'Turnkey Agency Snapshots',
-      desc: 'Pre-built, niche-specific funnels, custom fields, trigger links, and email/SMS workflows ready for 1-click sub-account deployment.',
-      pills: ['Custom Values', '1-Click Deploy', 'Funnels & Triggers'],
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=700&h=450&q=80',
+      tag: 'CRM Configuration',
+      title: 'GHL CRM Setup & Account Configuration',
+      desc: 'We configure GoHighLevel accounts with contacts, opportunities, custom fields, calendars, permissions, pipelines, and essential CRM settings.',
+      pills: ['Contacts & Deals', 'Custom Fields', 'Pipelines & Calendars'],
     },
     {
-      image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=700&h=450&q=80',
-      tag: 'Speed to Lead',
-      title: 'Automated Multi-Channel Follow-ups',
-      desc: 'Behavior-driven sequences across SMS, email, WhatsApp, and ringless voicemail drops timed perfectly around prospect engagement.',
-      pills: ['Instant SMS Triggers', 'Drip Sequences', 'Smart Delays'],
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&h=450&q=80',
+      tag: 'Agency Solutions',
+      title: 'GHL Subaccount Setup For Agencies',
+      desc: 'We create organised subaccounts, snapshots, templates, and workflows that allow agencies to manage multiple clients efficiently.',
+      pills: ['Subaccount Creation', 'Client Snapshots', 'Template Library'],
     },
     {
       image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=700&h=450&q=80',
-      tag: 'Zero No-Shows',
-      title: 'Smart Calendar & Booking Funnels',
-      desc: 'Frictionless scheduling with automatic timezone detection, deposit collection, round-robin staff distribution, and automated reminders.',
-      pills: ['Round-Robin Routing', 'Stripe Deposit', 'SMS Confirmations'],
+      tag: 'Funnel Building',
+      title: 'GHL Funnel & Landing Page Automation',
+      desc: 'We build sales funnels, landing pages, forms, and tracking systems that turn visitors into qualified leads.',
+      pills: ['Sales Funnels', 'Landing Pages', 'Lead Forms & Tracking'],
     },
     {
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=700&h=450&q=80',
-      tag: 'Custom Connectivity',
-      title: 'Custom Webhook & API Integrations',
-      desc: 'Connect HighLevel with Stripe, Shopify, WordPress, Zapier, Make, custom databases, and proprietary SaaS platforms.',
-      pills: ['Two-Way Sync', 'Custom Webhooks', 'REST APIs'],
-    },
-    {
-      image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=700&h=450&q=80',
-      tag: 'Sales Velocity',
-      title: 'Pipeline & Deal Stage Automation',
-      desc: 'Visual drag-and-drop pipelines with automated status progression, task assignments, team notifications, and revenue tracking.',
-      pills: ['Automated Tasks', 'Deal Stages', 'Revenue Tracking'],
+      image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=700&h=450&q=80',
+      tag: 'Workflow Automation',
+      title: 'GHL Workflow Automation',
+      desc: 'We create automated customer journeys using triggers, campaigns, email sequences, appointment reminders, and follow-up actions.',
+      pills: ['Trigger Actions', 'Email Sequences', 'Follow-Up Actions'],
     },
     {
       image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&h=450&q=80',
-      tag: 'Social Proof',
-      title: 'Review & Reputation Management',
-      desc: 'Automated post-purchase review requests on Google, Trustpilot, and Facebook to systematically build dominant social proof.',
-      pills: ['Google Reviews', 'Review Gate Filter', 'SMS Invitations'],
+      tag: 'Omnichannel Comms',
+      title: 'GHL Communication Automation',
+      desc: 'We implement GoHighLevel SMS automation, WhatsApp automation, Instagram DM automation, and missed call text-back automation to improve customer response.',
+      pills: ['SMS & WhatsApp', 'Instagram DM', 'Missed Call Text-Back'],
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=700&h=450&q=80',
+      tag: 'Integrations & BI',
+      title: 'CRM Integrations & Reporting',
+      desc: 'We connect GoHighLevel with payment tools, advertising platforms, calendars, Zapier, Make, and external applications while creating performance dashboards.',
+      pills: ['Zapier & Make', 'Payment Gateways', 'Dashboards & Reports'],
     },
   ],
 
-  // Interactive Problem Solver Section
-  fixFirstEyebrow: 'SOLVE YOUR BIGGEST BOTTLENECK',
-  fixFirstTitle: 'What do you need GHL to fix first?',
-  fixFirstDesc: 'Whether you want to automate agency client onboarding or supercharge inbound sales conversion, we tailor the exact automation setup for your goals.',
+  // Section 3: Interactive Problem Solver Section
+  fixFirstEyebrow: 'FIND THE RIGHT GOHIGHLEVEL SOLUTION',
+  fixFirstTitle: 'Which Part Of Your Business Needs Automation First?',
+  fixFirstDesc: 'A successful GoHighLevel implementation starts with identifying the biggest operational challenge and creating the right automation path.',
   fixFirstImage: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&h=600&q=80',
   fixFirstItems: [
     {
-      id: 'appointments',
-      title: 'I need more booked appointments',
-      desc: 'Deploy instant speed-to-lead SMS within 60 seconds of form fill, automated calendar reminders, and automated no-show rebooking sequences.',
-      tag: 'Instant Setup',
-      solution: 'Automated Speed-to-Lead + Smart Calendar',
+      id: 'marketing-leads',
+      title: 'We Want More Leads From Marketing Campaigns',
+      desc: 'Businesses that struggle with lead collection can use GoHighLevel marketing automation to capture enquiries and nurture prospects automatically.',
+      tag: 'Lead Acquisition',
+      solution: 'Lead Forms → CRM Pipeline → Automated Follow-Up → Appointment Booking',
     },
     {
-      id: 'agency',
-      title: 'I want to onboard agency clients faster',
-      desc: 'Master snapshot architecture that clones complete client setups in 1 click, with automated onboarding intake forms and custom values mapping.',
-      tag: 'Scale Agency',
-      solution: '1-Click Turnkey Snapshot System',
+      id: 'sales-management',
+      title: 'We Need A Better Sales Management System',
+      desc: 'Companies with growing sales teams can use GoHighLevel CRM automation to organise opportunities, track deals, and improve team coordination.',
+      tag: 'Sales Velocity',
+      solution: 'Opportunity Pipeline → Sales Workflows → Reporting Dashboard',
     },
     {
-      id: 'crm',
-      title: 'Our CRM data is chaotic & messy',
-      desc: 'Complete audit and restructuring of custom fields, tag architectures, duplicate management, and clean stage transitions.',
-      tag: 'Data Cleanup',
-      solution: 'Full Pipeline & Tag Restructuring',
+      id: 'account-improvement',
+      title: 'Our Existing GoHighLevel Account Needs Improvement',
+      desc: 'Businesses with confusing workflows or incomplete setups can rebuild their system through professional optimisation.',
+      tag: 'Account Rebuild',
+      solution: 'CRM Audit → Workflow Review → Automation Rebuild',
     },
     {
-      id: 'reactivation',
-      title: 'We need to reactivate past cold leads',
-      desc: 'Run targeted, high-converting 9-word email & SMS reactivation campaigns that generate immediate qualified pipeline from existing databases.',
-      tag: 'Fast ROI',
-      solution: 'Database Reactivation Engine',
+      id: 'agency-growth',
+      title: 'We Need GoHighLevel For Agency Growth',
+      desc: 'Marketing agencies can use GoHighLevel agency setup services to create repeatable systems for multiple clients.',
+      tag: 'Agency Scaling',
+      solution: 'Subaccounts → Snapshots → Templates → Client Automation',
     },
   ],
 
-  // Process / Roadmap Section
-  processEyebrow: 'HOW WE WORK',
-  processTitle: 'From scattered leads to a working automation system',
-  processDesc: 'A structured 5-step engineering sprint from architecture audit to live deployment.',
+  // Section 4: Process / Roadmap Section
+  processEyebrow: 'OUR IMPLEMENTATION PROCESS',
+  processTitle: 'From Initial Setup To A Fully Automated Customer Journey',
+  processDesc: 'Our process creates a reliable GoHighLevel system that matches your business workflow.',
   processSteps: [
     {
       step: '01',
-      title: 'Audit & Architecture',
-      desc: 'We map your existing lead sources, tools, bottlenecks, and design a custom end-to-end automation blueprint.',
+      title: 'Business Workflow Analysis',
+      desc: 'We review your sales process, customer journey, lead sources, and automation requirements.',
     },
     {
       step: '02',
-      title: 'Snapshot Build & Setup',
-      desc: 'Configure custom fields, pipelines, calendar routing, user roles, phone numbers, and email/SMS compliance.',
+      title: 'GoHighLevel Account Setup',
+      desc: 'We configure CRM settings, domains, calendars, communication channels, and account preferences.',
     },
     {
       step: '03',
-      title: 'Workflow Engineering',
-      desc: 'Build multi-branch trigger workflows, smart delays, conditional logic, dynamic custom values, and notification webhooks.',
+      title: 'Automation & Funnel Development',
+      desc: 'We create workflows, campaigns, sales funnels, email sequences, SMS campaigns, and customer journeys.',
     },
     {
       step: '04',
-      title: 'Integration & Testing',
-      desc: 'Connect payment gateways, ad accounts, webhooks, and perform rigorous end-to-end sandbox testing.',
+      title: 'Testing Every Customer Path',
+      desc: 'We check triggers, notifications, integrations, and automation steps before launching the system.',
     },
     {
       step: '05',
-      title: 'Go-Live & Team Training',
-      desc: 'Seamless production launch, domain verification, and step-by-step video SOP documentation for your team.',
+      title: 'Training & System Handover',
+      desc: 'We provide documentation and guidance so your team can confidently manage your GoHighLevel platform.',
     },
   ],
 
-  // Engagement / Working Models (3 Cards)
-  modelsEyebrow: 'COLLABORATION MODELS',
-  modelsTitle: 'Three ways to work with us on GHL',
-  modelsDesc: 'Choose the level of support that best fits your agency, business size, or technical requirements.',
+  // Section 5: Engagement / Working Models (3 Cards)
+  modelsEyebrow: 'WORK WITH OUR GOHIGHLEVEL EXPERTS',
+  modelsTitle: 'Flexible Options For Businesses And Agencies',
+  modelsDesc: 'Different businesses need different levels of support. Our engagement models adapt to your automation requirements.',
   models: [
     {
       number: '1',
-      title: 'Custom Build Sprint',
-      desc: 'For businesses that need a complete, bespoke GHL automation system built and launched from scratch with zero tech headaches.',
+      title: 'Complete GoHighLevel Setup Project',
+      desc: 'We build your complete CRM system with account configuration, pipelines, workflows, integrations, and documentation.',
       features: [
-        'Bespoke Architecture Design',
-        'Custom Funnels & Pipelines',
-        'Multi-Channel Workflows',
-        '3rd-Party Integrations',
-        'Team Handover & Training',
+        'Complete Account Configuration',
+        'Custom Fields & Opportunity Pipelines',
+        'Multi-Branch Automated Workflows',
+        'Platform & API Integrations',
+        'Full Training & System Documentation',
       ],
-      ctaText: 'Start Build Sprint',
+      ctaText: 'Start Setup Project',
     },
     {
       number: '2',
-      title: 'Dedicated Monthly Retainer',
-      desc: 'For growing businesses that want ongoing automation improvements, new campaigns, and continuous technical management.',
+      title: 'GoHighLevel Agency Implementation',
+      desc: 'We support agencies with subaccount creation, snapshots, templates, and scalable automation systems.',
       features: [
-        'Continuous Workflow Optimization',
-        'A/B Testing & Funnel Refinement',
-        'New Campaign Setup',
-        'Priority Technical Support',
-        'Monthly Strategy Reviews',
+        'Organised Subaccount Architecture',
+        'Turnkey Niche Snapshots',
+        'Client Onboarding Funnels & Forms',
+        'Multi-Client Workflow Templates',
+        'Scalable Agency Infrastructure',
       ],
-      ctaText: 'Explore Retainers',
+      ctaText: 'Scale Your Agency',
       isPopular: true,
     },
     {
       number: '3',
-      title: 'White-Label Agency Partner',
-      desc: 'For marketing agencies that want to deliver high-ticket GHL setups and sub-accounts to clients under their own brand.',
+      title: 'Continuous GoHighLevel Optimisation',
+      desc: 'We improve existing systems through workflow updates, automation improvements, troubleshooting, and platform enhancements.',
       features: [
-        'Turnkey Client Snapshots',
-        'Sub-Account Provisioning',
-        'White-Label Onboarding',
-        'Custom Webhooks & APIs',
-        'Behind-The-Scenes Tech Team',
+        'System & Workflow Performance Audit',
+        'Continuous Automation Troubleshooting',
+        'New Campaign & Sequence Setups',
+        'Funnel & Conversion Refinement',
+        'Priority Technical Support',
       ],
-      ctaText: 'Partner With Us',
+      ctaText: 'Optimize Existing Setup',
     },
   ],
 
-  // Spectrum / Features Tabs
-  spectrumEyebrow: 'ALL-IN-ONE AUTOMATION',
-  spectrumTitle: 'Everything needed to capture, nurture and track leads',
-  spectrumDesc: 'We utilize every capability inside and outside the HighLevel ecosystem to create seamless customer experiences.',
-  spectrumTabs: [
-    { id: 'funnels', label: 'Funnels', title: 'High-Converting Landing Pages & Forms', desc: 'Custom branded landing pages, multi-step forms, and popups engineered for maximum conversion.' },
-    { id: 'crm', label: 'CRM', title: 'Smart Pipelines & Contact Management', desc: 'Centralize every lead interaction, conversation history, notes, and tasks in a clean unified view.' },
-    { id: 'automation', label: 'Automation', title: 'Intelligent Multi-Branch Workflows', desc: 'Automate repetitive tasks with conditional if/else logic, webhook triggers, and automated follow-ups.' },
-    { id: 'marketing', label: 'Marketing', title: 'Multi-Channel Outreach & Drips', desc: 'Engage prospects on SMS, Email, WhatsApp, and Voice with automated personalization.' },
-    { id: 'tracking', label: 'Tracking', title: 'Attribution & Revenue Dashboards', desc: 'Track exactly which ad channels, keywords, and campaigns generate closed deals and revenue.' },
+  // Section 6: Platform Ecosystem
+  spectrumEyebrow: 'PLATFORM ECOSYSTEM',
+  spectrumTitle: 'GHL Integrations To Connect Your Entire Business',
+  spectrumDesc: 'GoHighLevel becomes more powerful when connected with the tools your business already uses.',
+  integrations: [
+    { name: 'GoHighLevel CRM', icon: 'Workflow', category: 'Core Platform', desc: 'Centralized lead data, pipelines, contacts, and unified conversation inbox.' },
+    { name: 'Google Calendar', icon: 'Calendar', category: 'Scheduling', desc: 'Two-way sync for appointments, round-robin booking, and event reminders.' },
+    { name: 'Payment Platforms', icon: 'CreditCard', category: 'Payments', desc: 'Stripe, PayPal, and Authorize.net integration for deposits and checkouts.' },
+    { name: 'Advertising Platforms', icon: 'Target', category: 'Ad Channels', desc: 'Facebook Lead Ads, Google Ads, and TikTok Ads direct webhook capture.' },
+    { name: 'Email Marketing Tools', icon: 'Mail', category: 'Outreach', desc: 'SMTP servers, Mailgun, SendGrid, and custom email delivery setup.' },
+    { name: 'Zapier', icon: 'Zap', category: 'Middleware', desc: 'Multi-step automation bridges connecting thousands of third-party apps.' },
+    { name: 'Make', icon: 'Sliders', category: 'Advanced Logic', desc: 'Complex scenario automations, routers, data transformers, and webhooks.' },
+    { name: 'Custom API Connections', icon: 'Code2', category: 'Custom Tech', desc: 'REST APIs, custom webhook endpoints, SQL sync, and proprietary app hooks.' },
   ],
 
-  // Case Studies / Real Outcomes (3 Cards)
-  outcomesEyebrow: 'PROVEN TRACK RECORD',
-  outcomesTitle: 'Real work, real clients, real measurable outcomes',
-  outcomesDesc: 'Explore how we helped businesses scale bookings and automate operations with GoHighLevel.',
+  // Section 7: Project Experience / Case Studies
+  outcomesEyebrow: 'PROJECT EXPERIENCE',
+  outcomesTitle: 'Automation Systems Built For Real Business Needs',
+  outcomesDesc: 'Our GoHighLevel projects focus on creating practical systems that improve marketing, sales, and customer communication.',
   outcomeCards: [
     {
-      image: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=700&h=450&q=80',
-      client: 'Dental & Aesthetics Clinic',
+      image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=700&h=450&q=80',
+      client: 'Lead Generation Automation Project',
       metric: '+310%',
       metricLabel: 'Increase in Booked Appointments',
-      title: 'Automated Speed-to-Lead & Smart SMS Booking Funnel',
-      desc: 'Replaced manual phone call follow-ups with instant 60-second SMS triggers and automated calendar scheduling, eliminating lead drop-off completely.',
-      results: ['Response time reduced from 4 hours to 45 seconds', 'Zero calendar no-shows with automated SMS reminders', '94% automated booking rate'],
-    },
-    {
-      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=700&h=450&q=80',
-      client: 'B2B Growth Agency',
-      metric: '4.5x',
-      metricLabel: 'Faster Client Onboarding Capacity',
-      title: 'Master Turnkey Agency Snapshot Architecture',
-      desc: 'Built custom niche snapshots that allowed the agency to deploy complete sub-accounts for new clients in under 5 minutes with zero manual setup.',
-      results: ['Onboarding time slashed from 3 days to 5 minutes', 'Scaled from 20 to 110+ active agency clients', 'Zero setup bugs across accounts'],
+      title: 'Multi-Channel Lead Generation & Instant Speed-to-Lead',
+      desc: 'Constructed an automated speed-to-lead workflow triggering SMS within 60 seconds of ad form fills with automated calendar scheduling.',
+      results: [
+        'Instant 60-second multi-channel response',
+        'Automated calendar booking and reminders',
+        'Zero drop-off from paid ad inquiries',
+      ],
+      isCaseStudy: true,
     },
     {
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&h=450&q=80',
-      client: 'Home Services Network',
-      metric: '$140K',
-      metricLabel: 'Revenue from Cold Database Reactivation',
-      title: 'Conversational 9-Word SMS Reactivation Campaign',
-      desc: 'Designed dynamic behavioral SMS campaigns that revived 12,000 inactive leads into active estimates and closed contracts within 30 days.',
-      results: ['28% response rate from cold leads', 'Over 180 qualified estimates booked', '64x ROI in first 3 weeks'],
+      client: '200+ Digital Projects Completed',
+      metric: '200+',
+      metricLabel: 'Digital Systems Delivered',
+      title: 'Comprehensive CRM & Workflow Ecosystems',
+      desc: 'Our experience includes CRM systems, automation workflows, marketing platforms, websites, and business technology solutions.',
+      results: [
+        'Full CRM architecture & database migrations',
+        'Turnkey snapshot engineering for agencies',
+        'Custom API endpoints & payment automations',
+      ],
+      isCaseStudy: false,
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=700&h=450&q=80',
+      client: 'Turnkey Agency Deployment',
+      metric: '4.5x',
+      metricLabel: 'Faster Client Onboarding Capacity',
+      title: 'Scalable Subaccount Snapshot Architecture',
+      desc: 'Engineered modular snapshots allowing marketing agencies to provision complete subaccounts for new clients in under 5 minutes.',
+      results: [
+        '1-Click client subaccount deployment',
+        'Pre-configured funnels, pipelines & tags',
+        'Standardized agency delivery process',
+      ],
+      isCaseStudy: false,
     },
   ],
+
+  // Section 8: Final CTA
+  ctaEyebrow: "LET'S AUTOMATE YOUR GROWTH",
+  ctaTitle: 'Ready To Build Your GoHighLevel Automation System?',
+  ctaDesc: "Get expert guidance for your next project. Share your details and let's get started.",
+  ctaButtonText: 'Get Your Free Consultation',
 
   // FAQs
   faqs: [
@@ -290,8 +320,8 @@ const DEFAULT_DATA = {
   ],
 
   seo: {
-    metaTitle: 'GoHighLevel (GHL) Automation Services | Cubixsol',
-    metaDescription: 'Expert GoHighLevel (GHL) automation services. Custom snapshots, CRM pipelines, instant speed-to-lead SMS, and API integrations.',
+    metaTitle: 'GoHighLevel Automation Services to Turn Leads into Revenue | Cubixsol',
+    metaDescription: 'Expert GoHighLevel (GHL) automation agency. Custom setups, integrations, CRM pipelines, instant speed-to-lead SMS, and subaccount snapshots.',
     keywords: 'GoHighLevel automation, GHL consultant, HighLevel snapshot, CRM automation, speed to lead, workflow automation',
   },
 };
@@ -299,8 +329,7 @@ const DEFAULT_DATA = {
 export default function GoHighLevelAutomation() {
   const { openModal } = useEstimateModal();
   const [data, setData] = useState(DEFAULT_DATA);
-  const [activeTab, setActiveTab] = useState('funnels');
-  const [selectedFix, setSelectedFix] = useState('appointments');
+  const [selectedFix, setSelectedFix] = useState('marketing-leads');
   const [openFaq, setOpenFaq] = useState(0);
 
   // SEO Metadata
@@ -312,7 +341,7 @@ export default function GoHighLevelAutomation() {
   );
 
   useEffect(() => {
-    // Attempt dynamic fetch from MongoDB
+    // Dynamic fetch from MongoDB
     apiFetch('services/ghl-automation')
       .then((res) => {
         if (res && (res.title || res.heroTitle)) {
@@ -324,7 +353,7 @@ export default function GoHighLevelAutomation() {
             fixFirstItems: res.fixFirstItems || prev.fixFirstItems,
             processSteps: res.processSteps || prev.processSteps,
             models: res.models || prev.models,
-            spectrumTabs: res.spectrumTabs || prev.spectrumTabs,
+            integrations: res.integrations || prev.integrations,
             outcomeCards: res.outcomeCards || prev.outcomeCards,
             faqs: res.faqs || prev.faqs,
           }));
@@ -376,7 +405,7 @@ export default function GoHighLevelAutomation() {
                     whileHover={{ scale: 1.03, y: -2 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => openModal({ service: 'GoHighLevel Automation' })}
-                    className="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl font-bold text-white bg-gradient-to-r from-rose-600 via-red-600 to-rose-700 hover:from-rose-700 hover:to-red-800 shadow-lg shadow-rose-500/25 hover:shadow-rose-500/35 transition-all duration-300 text-base"
+                    className="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl font-bold text-white bg-gradient-to-r from-rose-600 via-red-600 to-rose-700 hover:from-rose-700 hover:to-red-800 shadow-lg shadow-rose-500/25 hover:shadow-rose-500/35 transition-all duration-300 text-base cursor-pointer"
                   >
                     <span>{data.heroPrimaryBtnText}</span>
                     <ArrowRight className="w-5 h-5" />
@@ -385,7 +414,7 @@ export default function GoHighLevelAutomation() {
                   <motion.a
                     whileHover={{ scale: 1.02, y: -1 }}
                     whileTap={{ scale: 0.98 }}
-                    href="#case-studies"
+                    href="#solutions"
                     className="inline-flex items-center gap-2 px-6 py-4 rounded-xl font-semibold text-gray-700 bg-white border border-gray-200 hover:border-rose-300 hover:bg-rose-50/50 hover:text-rose-700 shadow-sm transition-all duration-200 text-base"
                   >
                     <span>{data.heroSecondaryBtnText}</span>
@@ -396,9 +425,9 @@ export default function GoHighLevelAutomation() {
 
               {/* Trust Badges */}
               <Reveal delay={0.4} duration={0.65}>
-                <div className="flex flex-wrap items-center gap-6 pt-6 border-t border-rose-100/80">
+                <div className="flex flex-wrap items-center gap-4 sm:gap-6 pt-6 border-t border-rose-100/80">
                   {data.heroBadges?.map((badge, i) => (
-                    <div key={i} className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-gray-600">
+                    <div key={i} className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-gray-700">
                       <span className="w-2 h-2 rounded-full bg-rose-500 shrink-0" />
                       <span>{badge}</span>
                     </div>
@@ -431,7 +460,7 @@ export default function GoHighLevelAutomation() {
                     </div>
                   </div>
 
-                  {/* Floating Scroll Micro-Badges */}
+                  {/* Floating Micro-Badges */}
                   <motion.div
                     animate={{ y: [0, -6, 0] }}
                     transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
@@ -466,7 +495,7 @@ export default function GoHighLevelAutomation() {
         </div>
       </section>
 
-      {/* ===================== PROBLEM / AGITATION SECTION ===================== */}
+      {/* ===================== SECTION 1: WHY BUSINESSES CHOOSE AUTOMATION ===================== */}
       <section className="py-20 bg-gray-50/70 border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -475,7 +504,7 @@ export default function GoHighLevelAutomation() {
               <h2 className="text-3xl sm:text-4xl font-extrabold text-ink leading-tight mb-4">
                 {data.problemTitle}
               </h2>
-              <p className="text-base sm:text-lg text-gray-500">
+              <p className="text-base sm:text-lg text-gray-500 leading-relaxed">
                 {data.problemDesc}
               </p>
             </Reveal>
@@ -502,8 +531,8 @@ export default function GoHighLevelAutomation() {
         </div>
       </section>
 
-      {/* ===================== CAPABILITIES GRID SECTION (6 CARDS) ===================== */}
-      <section className="py-24 bg-white">
+      {/* ===================== SECTION 2: OUR GOHIGHLEVEL SERVICES (6 CARDS) ===================== */}
+      <section id="solutions" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <Reveal direction="up" duration={0.6}>
@@ -511,7 +540,7 @@ export default function GoHighLevelAutomation() {
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-ink leading-tight mb-4">
                 {data.capabilitiesTitle}
               </h2>
-              <p className="text-base sm:text-lg text-gray-500">
+              <p className="text-base sm:text-lg text-gray-500 leading-relaxed">
                 {data.capabilitiesDesc}
               </p>
             </Reveal>
@@ -565,7 +594,7 @@ export default function GoHighLevelAutomation() {
         </div>
       </section>
 
-      {/* ===================== INTERACTIVE PROBLEM SOLVER ("What do you need GHL to fix first?") ===================== */}
+      {/* ===================== SECTION 3: FIND THE RIGHT GOHIGHLEVEL SOLUTION ===================== */}
       <section className="py-20 bg-gradient-to-b from-gray-50/80 via-rose-50/30 to-gray-50/80 border-y border-gray-200/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-12 gap-12 items-center">
@@ -587,7 +616,7 @@ export default function GoHighLevelAutomation() {
                     className="w-full h-64 object-cover rounded-xl"
                   />
                   <div className="p-4 bg-white">
-                    <p className="text-xs font-bold text-rose-600 uppercase tracking-wide">Selected Focus Area</p>
+                    <p className="text-xs font-bold text-rose-600 uppercase tracking-wide">Selected Blueprint</p>
                     <p className="text-sm font-bold text-ink mt-0.5">
                       {data.fixFirstItems?.find((f) => f.id === selectedFix)?.solution || 'Custom Workflow Sprint'}
                     </p>
@@ -631,7 +660,7 @@ export default function GoHighLevelAutomation() {
                           </p>
                           <div className="flex items-center gap-1.5 text-xs font-semibold text-rose-600">
                             <CheckCircle2 className="w-4 h-4" />
-                            <span>Recommended: {item.solution}</span>
+                            <span>Recommended Setup: {item.solution}</span>
                           </div>
                         </div>
 
@@ -654,7 +683,7 @@ export default function GoHighLevelAutomation() {
         </div>
       </section>
 
-      {/* ===================== IMPLEMENTATION ROADMAP SECTION ===================== */}
+      {/* ===================== SECTION 4: OUR IMPLEMENTATION PROCESS ===================== */}
       <section className="py-24 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-12 gap-12 items-center">
@@ -679,17 +708,17 @@ export default function GoHighLevelAutomation() {
                   <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    onClick={() => openModal({ service: 'GoHighLevel Automation Sprint' })}
-                    className="w-full py-3.5 px-6 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-bold text-sm inline-flex items-center justify-center gap-2 shadow-lg shadow-rose-600/30 transition-all duration-200"
+                    onClick={() => openModal({ service: 'GoHighLevel Implementation Sprint' })}
+                    className="w-full py-3.5 px-6 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-bold text-sm inline-flex items-center justify-center gap-2 shadow-lg shadow-rose-600/30 transition-all duration-200 cursor-pointer"
                   >
-                    <span>Start Automation Sprint</span>
+                    <span>Start Implementation Sprint</span>
                     <ArrowRight className="w-4 h-4" />
                   </motion.button>
                 </div>
               </Reveal>
             </div>
 
-            {/* Right 5 Steps Timeline with Staggered Scroll Reveal */}
+            {/* Right 5 Steps Timeline */}
             <div className="lg:col-span-7 space-y-5">
               {data.processSteps?.map((step, idx) => (
                 <Reveal key={idx} delay={idx * 0.08} duration={0.5}>
@@ -712,7 +741,7 @@ export default function GoHighLevelAutomation() {
         </div>
       </section>
 
-      {/* ===================== THREE WAYS TO WORK WITH US (MODELS) ===================== */}
+      {/* ===================== SECTION 5: WORK WITH OUR GOHIGHLEVEL EXPERTS (MODELS) ===================== */}
       <section className="py-24 bg-gradient-to-b from-white via-rose-50/25 to-white border-y border-rose-100/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -721,7 +750,7 @@ export default function GoHighLevelAutomation() {
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-ink leading-tight mb-4">
                 {data.modelsTitle}
               </h2>
-              <p className="text-base sm:text-lg text-gray-500">
+              <p className="text-base sm:text-lg text-gray-500 leading-relaxed">
                 {data.modelsDesc}
               </p>
             </Reveal>
@@ -769,7 +798,7 @@ export default function GoHighLevelAutomation() {
                   <motion.button
                     whileTap={{ scale: 0.98 }}
                     onClick={() => openModal({ service: `GoHighLevel: ${model.title}` })}
-                    className={`w-full py-3.5 rounded-xl font-bold text-sm transition-all duration-200 ${
+                    className={`w-full py-3.5 rounded-xl font-bold text-sm transition-all duration-200 cursor-pointer ${
                       model.isPopular
                         ? 'bg-rose-600 text-white hover:bg-rose-700 shadow-md shadow-rose-600/25'
                         : 'bg-gray-100 text-ink hover:bg-rose-50 hover:text-rose-700'
@@ -784,98 +813,59 @@ export default function GoHighLevelAutomation() {
         </div>
       </section>
 
-      {/* ===================== FEATURE SPECTRUM TABS SECTION ===================== */}
-      <section className="py-20 bg-white">
+      {/* ===================== SECTION 6: PLATFORM ECOSYSTEM & INTEGRATIONS ===================== */}
+      <section className="py-24 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-12">
+          <div className="text-center max-w-3xl mx-auto mb-16">
             <Reveal direction="up" duration={0.6}>
               <p className="text-xs font-bold tracking-widest uppercase text-rose-600 mb-3">{data.spectrumEyebrow}</p>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-ink leading-tight mb-4">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-ink leading-tight mb-4">
                 {data.spectrumTitle}
               </h2>
-              <p className="text-base text-gray-500">
+              <p className="text-base sm:text-lg text-gray-500 leading-relaxed">
                 {data.spectrumDesc}
               </p>
             </Reveal>
           </div>
 
-          {/* Tab Buttons with Animated layoutId Indicator */}
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12">
-            {data.spectrumTabs?.map((tab) => {
-              const isActive = activeTab === tab.id;
-              return (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  className={`relative px-5 py-2.5 rounded-xl text-sm font-bold transition-all duration-200 ${
-                    isActive ? 'text-white' : 'text-gray-600 bg-gray-100 hover:bg-gray-200'
-                  }`}
+          <Stagger className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" staggerDelay={0.06}>
+            {data.integrations?.map((item, idx) => (
+              <StaggerItem key={idx}>
+                <motion.div
+                  whileHover={{ y: -6, scale: 1.02, transition: { duration: 0.2 } }}
+                  className="bg-gradient-to-br from-white via-rose-50/30 to-white rounded-2xl p-6 border border-gray-200/80 shadow-sm hover:shadow-md hover:border-rose-300 transition-all duration-300 flex flex-col justify-between h-full group"
                 >
-                  {isActive && (
-                    <motion.div
-                      layoutId="activeGhlTab"
-                      className="absolute inset-0 bg-rose-600 rounded-xl shadow-md shadow-rose-600/20"
-                      transition={{ type: 'spring', stiffness: 400, damping: 30 }}
-                    />
-                  )}
-                  <span className="relative z-10">{tab.label}</span>
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Tab Content Display with AnimatePresence */}
-          <div className="bg-gradient-to-br from-rose-50/50 to-amber-50/30 rounded-3xl p-8 sm:p-12 border border-rose-100 overflow-hidden">
-            <AnimatePresence mode="wait">
-              {data.spectrumTabs
-                ?.filter((t) => t.id === activeTab)
-                .map((current) => (
-                  <motion.div
-                    key={current.id}
-                    initial={{ opacity: 0, y: 12 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -12 }}
-                    transition={{ duration: 0.35 }}
-                    className="grid md:grid-cols-2 gap-8 items-center"
-                  >
-                    <div>
-                      <span className="text-xs font-bold text-rose-600 uppercase tracking-widest">Capability Highlight</span>
-                      <h3 className="text-2xl sm:text-3xl font-extrabold text-ink mt-1 mb-4">{current.title}</h3>
-                      <p className="text-gray-600 leading-relaxed text-base mb-6">{current.desc}</p>
-                      <button
-                        onClick={() => openModal({ service: `GHL Feature: ${current.label}` })}
-                        className="inline-flex items-center gap-2 text-rose-600 font-bold hover:text-rose-700 transition"
-                      >
-                        <span>Explore this module</span>
-                        <ArrowRight className="w-4 h-4" />
-                      </button>
-                    </div>
-
-                    <div className="rounded-2xl bg-white p-6 border border-rose-100 shadow-sm">
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="w-10 h-10 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center font-bold">
-                          <Sliders className="w-5 h-5" />
-                        </div>
-                        <div>
-                          <p className="text-sm font-bold text-ink">Built for Scale</p>
-                          <p className="text-xs text-gray-400">Production-Ready Standards</p>
-                        </div>
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="w-12 h-12 rounded-xl bg-rose-50 border border-rose-100 flex items-center justify-center text-rose-600 group-hover:bg-rose-600 group-hover:text-white transition-colors duration-300">
+                        <DynamicIcon name={item.icon || 'Zap'} className="w-6 h-6" />
                       </div>
-                      <ul className="space-y-2.5 text-xs sm:text-sm text-gray-600">
-                        <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-rose-600 shrink-0" /> Enterprise data encryption & GDPR/HIPAA compliance</li>
-                        <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-rose-600 shrink-0" /> Sub-50ms trigger execution via HighLevel webhooks</li>
-                        <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-rose-600 shrink-0" /> Modular snapshot deployment with variable parameters</li>
-                      </ul>
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-rose-700 bg-rose-100/70 px-2 py-0.5 rounded">
+                        {item.category}
+                      </span>
                     </div>
-                  </motion.div>
-                ))}
-            </AnimatePresence>
-          </div>
+
+                    <h3 className="font-bold text-lg text-ink mb-2 group-hover:text-rose-600 transition-colors">
+                      {item.name}
+                    </h3>
+                    <p className="text-xs text-gray-500 leading-relaxed">
+                      {item.desc}
+                    </p>
+                  </div>
+
+                  <div className="mt-4 pt-3 border-t border-gray-100 flex items-center gap-1.5 text-xs font-semibold text-rose-600">
+                    <Check className="w-3.5 h-3.5" />
+                    <span>Native Sync & Webhook Ready</span>
+                  </div>
+                </motion.div>
+              </StaggerItem>
+            ))}
+          </Stagger>
         </div>
       </section>
 
-      {/* ===================== CASE STUDIES / REAL OUTCOMES SECTION ===================== */}
-      <section id="case-studies" className="py-24 bg-gray-50/60 border-t border-gray-100">
+      {/* ===================== SECTION 7: PROJECT EXPERIENCE & CASE STUDIES ===================== */}
+      <section id="case-studies" className="py-24 bg-gray-50/70 border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <Reveal direction="up" duration={0.6}>
@@ -883,7 +873,7 @@ export default function GoHighLevelAutomation() {
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-ink leading-tight mb-4">
                 {data.outcomesTitle}
               </h2>
-              <p className="text-base sm:text-lg text-gray-500">
+              <p className="text-base sm:text-lg text-gray-500 leading-relaxed">
                 {data.outcomesDesc}
               </p>
             </Reveal>
@@ -909,7 +899,7 @@ export default function GoHighLevelAutomation() {
 
                   <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between">
                     <div>
-                      <div className="mb-4">
+                      <div className="mb-4 flex items-baseline gap-2">
                         <span className="text-3xl font-extrabold text-rose-600">{card.metric}</span>
                         <p className="text-xs font-semibold text-gray-500">{card.metricLabel}</p>
                       </div>
@@ -929,10 +919,10 @@ export default function GoHighLevelAutomation() {
 
                     <div className="mt-6 pt-4">
                       <button
-                        onClick={() => openModal({ service: `Case Study: ${card.client}` })}
-                        className="w-full py-2.5 rounded-xl border border-rose-200 text-rose-600 font-bold text-xs hover:bg-rose-50 transition"
+                        onClick={() => openModal({ service: `Project Experience: ${card.client}` })}
+                        className="w-full py-2.5 rounded-xl border border-rose-200 text-rose-600 font-bold text-xs hover:bg-rose-50 transition cursor-pointer"
                       >
-                        Request Case Study Breakdown
+                        {card.isCaseStudy ? '(Case study)' : 'Request Project Breakdown'}
                       </button>
                     </div>
                   </div>
@@ -961,7 +951,7 @@ export default function GoHighLevelAutomation() {
                   <div className="border border-gray-200 rounded-2xl overflow-hidden transition-all duration-200">
                     <button
                       onClick={() => setOpenFaq(isOpen ? -1 : idx)}
-                      className="w-full px-6 py-5 text-left font-bold text-ink flex items-center justify-between gap-4 hover:bg-gray-50/80 transition"
+                      className="w-full px-6 py-5 text-left font-bold text-ink flex items-center justify-between gap-4 hover:bg-gray-50/80 transition cursor-pointer"
                     >
                       <span className="text-base sm:text-lg">{faq.q}</span>
                       <ChevronRight
@@ -991,17 +981,16 @@ export default function GoHighLevelAutomation() {
         </div>
       </section>
 
-      {/* ===================== BOTTOM CTA BANNER ===================== */}
+      {/* ===================== SECTION 8: FINAL CTA BANNER ===================== */}
       <CtaBanner
-        eyebrow="READY TO AUTOMATE YOUR REVENUE?"
-        title="Ready to discuss your next website, app or automation project?"
-        desc="Book a free discovery call with our GoHighLevel specialists to map out your custom automation roadmap."
-        primaryButtonText="Book a Discovery Call"
-        primaryButtonAction={() => openModal({ service: 'GoHighLevel Automation Discovery' })}
-        secondaryButtonText="Start a Project"
-        secondaryButtonLink="/contact"
+        eyebrow={data.ctaEyebrow || "LET'S AUTOMATE YOUR GROWTH"}
+        title={data.ctaTitle || "Ready To Build Your GoHighLevel Automation System?"}
+        desc={data.ctaDesc || "Get expert guidance for your next project. Share your details and let's get started."}
+        primaryButtonText={data.ctaButtonText || "Get Your Free Consultation"}
+        primaryButtonAction={() => openModal({ service: 'GoHighLevel Consultation' })}
+        secondaryButtonText="Explore Solutions"
+        secondaryButtonLink="#solutions"
       />
     </div>
   );
 }
-
