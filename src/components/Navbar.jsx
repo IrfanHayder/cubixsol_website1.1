@@ -232,7 +232,7 @@ export default function Navbar() {
           : 'bg-white/95 backdrop-blur border-b border-gray-100 shadow-sm'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div
           className={`flex items-center justify-between transition-all duration-300 ${
             scrolled ? 'h-16' : 'h-20'
@@ -252,7 +252,6 @@ export default function Navbar() {
 
             {/* Services */}
             <div
-              className="relative"
               onMouseEnter={() => {
                 setServicesOpen(true);
                 setSolutionsOpen(false);
@@ -266,9 +265,9 @@ export default function Navbar() {
                 </span>
               </NavLink>
               {servicesOpen && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 w-[min(98vw,1160px)]">
-                  <div className="bg-white rounded-2xl shadow-soft border border-gray-100 p-4 sm:p-5">
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-5">
+                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 w-[min(96vw,1200px)]">
+                  <div className="bg-white rounded-2xl shadow-soft border border-gray-100 p-5 sm:p-6">
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6">
                       {dynamicMenuGroups.map((group) => (
                         <div key={group.title}>
                           <p className="text-[10px] font-bold tracking-widest uppercase text-primary-600 mb-2.5 pb-2 border-b border-primary-100">
