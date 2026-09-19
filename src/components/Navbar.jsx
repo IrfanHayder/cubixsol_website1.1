@@ -32,7 +32,7 @@ const serviceMenuGroups = [
     ],
   },
   {
-    title: 'Engineering & Cloud',
+    title: 'Engineering',
     slugs: [
       'laravel-development',
       'php-development',
@@ -41,6 +41,11 @@ const serviceMenuGroups = [
       'api-development-and-integration',
       'api-development',
       'api',
+    ],
+  },
+  {
+    title: 'Cloud & AI',
+    slugs: [
       'cloud-solutions',
       'cloud',
       'devops',
@@ -159,7 +164,7 @@ export default function Navbar() {
         const targetGroup = groups.find(g => g.title.includes('Design')) || groups[groups.length - 1];
         targetGroup.servicesList.push(s);
       } else if (slug.includes('cloud') || slug.includes('devops') || slug.includes('data-migration') || slug.includes('ai-') || title.includes('cloud') || title.includes('devops') || title.includes('ai ')) {
-        const targetGroup = groups.find(g => g.title.includes('Engineering') || g.title.includes('Cloud')) || groups[2];
+        const targetGroup = groups.find(g => g.title.includes('Cloud')) || groups[3];
         targetGroup.servicesList.push(s);
       } else {
         const targetGroup = groups.find(g => g.title.includes('Engineering')) || groups[2];
@@ -261,9 +266,9 @@ export default function Navbar() {
                 </span>
               </NavLink>
               {servicesOpen && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 w-[min(96vw,900px)]">
+                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 w-[min(98vw,1160px)]">
                   <div className="bg-white rounded-2xl shadow-soft border border-gray-100 p-4 sm:p-5">
-                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-5">
                       {dynamicMenuGroups.map((group) => (
                         <div key={group.title}>
                           <p className="text-[10px] font-bold tracking-widest uppercase text-primary-600 mb-2.5 pb-2 border-b border-primary-100">
