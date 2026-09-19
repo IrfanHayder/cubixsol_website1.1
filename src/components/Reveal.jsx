@@ -17,10 +17,10 @@ export default function Reveal({
   children,
   direction = 'up',
   delay = 0,
-  duration = 0.5,
+  duration = 0.55,
   className = '',
   once = true,
-  amount = 0.1,
+  amount = 0.15,
   scale = false,
   as: Component = motion.div,
 }) {
@@ -37,7 +37,7 @@ export default function Reveal({
       initial={{
         opacity: 0,
         ...offset,
-        ...(scale ? { scale: 0.98 } : {}),
+        ...(scale ? { scale: 0.96 } : {}),
       }}
       whileInView={{
         opacity: 1,
@@ -45,13 +45,7 @@ export default function Reveal({
         x: 0,
         scale: 1,
       }}
-      animate={{
-        opacity: 1,
-        y: 0,
-        x: 0,
-        scale: 1,
-      }}
-      viewport={{ once, amount, margin: '0px 0px -20px 0px' }}
+      viewport={{ once, amount, margin: '0px 0px -40px 0px' }}
       transition={{ duration, delay, ease }}
     >
       {children}
@@ -75,12 +69,11 @@ export function Stagger({
       className={className}
       initial="hidden"
       whileInView="show"
-      animate="show"
-      viewport={{ once, amount, margin: '0px 0px -20px 0px' }}
+      viewport={{ once, amount, margin: '0px 0px -40px 0px' }}
       variants={{
         hidden: {},
         show: {
-          transition: { staggerChildren: staggerDelay, delayChildren: 0.02 },
+          transition: { staggerChildren: staggerDelay, delayChildren: 0.04 },
         },
       }}
     >

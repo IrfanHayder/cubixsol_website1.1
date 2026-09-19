@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence, useScroll, useSpring, useTransform } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
   Zap, Clock, Users, ArrowRight, CheckCircle2, ChevronRight,
@@ -303,6 +303,14 @@ export default function GoHighLevelAutomation() {
   const [selectedFix, setSelectedFix] = useState('appointments');
   const [openFaq, setOpenFaq] = useState(0);
 
+  // Smooth scroll progress indicator
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
   // SEO Metadata
   useSEO(
     data.seo?.metaTitle || data.title,
@@ -343,55 +351,65 @@ export default function GoHighLevelAutomation() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white text-ink selection:bg-rose-500 selection:text-white">
+    <div className="min-h-screen bg-white text-ink selection:bg-rose-500 selection:text-white relative">
+      {/* Top Scroll Progress Bar */}
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-rose-500 via-red-500 to-amber-500 z-50 origin-left"
+        style={{ scaleX }}
+      />
+
       {/* ===================== HERO SECTION ===================== */}
       <section className="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden bg-gradient-to-b from-rose-50/70 via-white to-white border-b border-rose-100/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
             {/* Left Content */}
             <div className="lg:col-span-7">
-              <Reveal>
+              <Reveal direction="down" duration={0.6}>
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-100/80 border border-rose-200 text-rose-700 text-xs font-bold tracking-widest uppercase mb-6 shadow-sm">
                   <Zap className="w-3.5 h-3.5 text-rose-600 fill-rose-600 animate-pulse" />
                   <span>{data.heroEyebrow}</span>
                 </div>
               </Reveal>
 
-              <Reveal delay={0.1}>
+              <Reveal delay={0.1} duration={0.65}>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-ink leading-[1.12] mb-6">
                   {formatInline(data.heroTitle)}
                 </h1>
               </Reveal>
 
-              <Reveal delay={0.2}>
+              <Reveal delay={0.2} duration={0.65}>
                 <p className="text-lg sm:text-xl text-gray-600 leading-relaxed mb-8 max-w-2xl font-normal">
                   {data.heroDesc}
                 </p>
               </Reveal>
 
               {/* Action Buttons */}
-              <Reveal delay={0.3}>
+              <Reveal delay={0.3} duration={0.65}>
                 <div className="flex flex-wrap items-center gap-4 mb-10">
-                  <button
+                  <motion.button
+                    whileHover={{ scale: 1.03, y: -2 }}
+                    whileTap={{ scale: 0.98 }}
                     onClick={() => openModal({ service: 'GoHighLevel Automation' })}
-                    className="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl font-bold text-white bg-gradient-to-r from-rose-600 via-red-600 to-rose-700 hover:from-rose-700 hover:to-red-800 shadow-lg shadow-rose-500/25 hover:shadow-rose-500/35 transition-all duration-300 transform hover:-translate-y-0.5 text-base"
+                    className="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl font-bold text-white bg-gradient-to-r from-rose-600 via-red-600 to-rose-700 hover:from-rose-700 hover:to-red-800 shadow-lg shadow-rose-500/25 hover:shadow-rose-500/35 transition-all duration-300 text-base"
                   >
                     <span>{data.heroPrimaryBtnText}</span>
                     <ArrowRight className="w-5 h-5" />
-                  </button>
+                  </motion.button>
 
-                  <a
+                  <motion.a
+                    whileHover={{ scale: 1.02, y: -1 }}
+                    whileTap={{ scale: 0.98 }}
                     href="#case-studies"
                     className="inline-flex items-center gap-2 px-6 py-4 rounded-xl font-semibold text-gray-700 bg-white border border-gray-200 hover:border-rose-300 hover:bg-rose-50/50 hover:text-rose-700 shadow-sm transition-all duration-200 text-base"
                   >
                     <span>{data.heroSecondaryBtnText}</span>
                     <ChevronRight className="w-4 h-4 text-gray-400" />
-                  </a>
+                  </motion.a>
                 </div>
               </Reveal>
 
               {/* Trust Badges */}
-              <Reveal delay={0.4}>
+              <Reveal delay={0.4} duration={0.65}>
                 <div className="flex flex-wrap items-center gap-6 pt-6 border-t border-rose-100/80">
                   {data.heroBadges?.map((badge, i) => (
                     <div key={i} className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-gray-600">
@@ -403,9 +421,9 @@ export default function GoHighLevelAutomation() {
               </Reveal>
             </div>
 
-            {/* Right Hero Visual / Isometric Platform Hub */}
+            {/* Right Hero Visual / Isometric Platform Hub with Floating Badges */}
             <div className="lg:col-span-5 relative">
-              <Reveal delay={0.2} direction="left">
+              <Reveal delay={0.2} direction="left" duration={0.7} scale>
                 <div className="relative rounded-3xl p-6 bg-gradient-to-br from-rose-500/10 via-rose-50 to-amber-50/40 border border-rose-200/80 shadow-2xl shadow-rose-500/10 backdrop-blur-sm">
                   <div className="relative rounded-2xl overflow-hidden shadow-inner bg-slate-900 border border-slate-800">
                     <img
@@ -426,6 +444,35 @@ export default function GoHighLevelAutomation() {
                       </div>
                     </div>
                   </div>
+
+                  {/* Floating Scroll Micro-Badges */}
+                  <motion.div
+                    animate={{ y: [0, -6, 0] }}
+                    transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
+                    className="absolute -top-4 -right-4 bg-white rounded-2xl p-3 shadow-xl border border-rose-100 hidden sm:flex items-center gap-2 text-xs font-bold text-ink"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-extrabold text-sm">
+                      +310%
+                    </div>
+                    <div>
+                      <p className="leading-tight">Booked Calls</p>
+                      <p className="text-[10px] text-gray-400 font-normal">Auto-Speed-to-Lead</p>
+                    </div>
+                  </motion.div>
+
+                  <motion.div
+                    animate={{ y: [0, 6, 0] }}
+                    transition={{ repeat: Infinity, duration: 4.5, ease: 'easeInOut', delay: 0.5 }}
+                    className="absolute -bottom-4 -left-4 bg-white rounded-2xl p-3 shadow-xl border border-rose-100 hidden sm:flex items-center gap-2 text-xs font-bold text-ink"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-rose-50 text-rose-600 flex items-center justify-center font-extrabold">
+                      <Zap className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <p className="leading-tight">60s Response</p>
+                      <p className="text-[10px] text-gray-400 font-normal">SMS + Email Drip</p>
+                    </div>
+                  </motion.div>
                 </div>
               </Reveal>
             </div>
@@ -437,7 +484,7 @@ export default function GoHighLevelAutomation() {
       <section className="py-20 bg-gray-50/70 border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <Reveal>
+            <Reveal direction="up" duration={0.6}>
               <p className="text-xs font-bold tracking-widest uppercase text-rose-600 mb-3">{data.problemEyebrow}</p>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-ink leading-tight mb-4">
                 {data.problemTitle}
@@ -451,7 +498,10 @@ export default function GoHighLevelAutomation() {
           <Stagger className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" staggerDelay={0.08}>
             {data.problemCards?.map((card, idx) => (
               <StaggerItem key={idx}>
-                <div className="bg-white rounded-2xl p-6 sm:p-7 border border-gray-100 shadow-sm hover:shadow-md hover:border-rose-200 hover:-translate-y-1 transition-all duration-300 h-full flex flex-col justify-between">
+                <motion.div
+                  whileHover={{ y: -6, transition: { duration: 0.25 } }}
+                  className="bg-white rounded-2xl p-6 sm:p-7 border border-gray-100 shadow-sm hover:shadow-md hover:border-rose-200 transition-all duration-300 h-full flex flex-col justify-between"
+                >
                   <div>
                     <div className="w-12 h-12 rounded-xl bg-rose-50 border border-rose-100 flex items-center justify-center text-rose-600 mb-5">
                       <DynamicIcon name={card.icon} className="w-6 h-6" />
@@ -459,7 +509,7 @@ export default function GoHighLevelAutomation() {
                     <h3 className="text-lg font-bold text-ink mb-2.5 leading-snug">{card.title}</h3>
                     <p className="text-sm text-gray-500 leading-relaxed">{card.desc}</p>
                   </div>
-                </div>
+                </motion.div>
               </StaggerItem>
             ))}
           </Stagger>
@@ -470,7 +520,7 @@ export default function GoHighLevelAutomation() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <Reveal>
+            <Reveal direction="up" duration={0.6}>
               <p className="text-xs font-bold tracking-widest uppercase text-rose-600 mb-3">{data.capabilitiesEyebrow}</p>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-ink leading-tight mb-4">
                 {data.capabilitiesTitle}
@@ -484,12 +534,15 @@ export default function GoHighLevelAutomation() {
           <Stagger className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8" staggerDelay={0.08}>
             {data.capabilitiesCards?.map((item, idx) => (
               <StaggerItem key={idx}>
-                <div className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-card hover:shadow-soft hover:border-rose-200 hover:-translate-y-1.5 transition-all duration-300 flex flex-col h-full group">
+                <motion.div
+                  whileHover={{ y: -8, scale: 1.01, transition: { duration: 0.25 } }}
+                  className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-card hover:shadow-soft hover:border-rose-200 transition-all duration-300 flex flex-col h-full group"
+                >
                   <div className="relative h-48 overflow-hidden bg-slate-100">
                     <img
                       src={item.image}
                       alt={item.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500"
                     />
                     <div className="absolute top-3 left-3">
                       <span className="text-[11px] font-bold uppercase tracking-wider bg-black/60 backdrop-blur-md text-white px-2.5 py-1 rounded-md">
@@ -519,7 +572,7 @@ export default function GoHighLevelAutomation() {
                       ))}
                     </div>
                   </div>
-                </div>
+                </motion.div>
               </StaggerItem>
             ))}
           </Stagger>
@@ -532,7 +585,7 @@ export default function GoHighLevelAutomation() {
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             {/* Left Graphic & Header */}
             <div className="lg:col-span-5">
-              <Reveal>
+              <Reveal direction="right" duration={0.65}>
                 <p className="text-xs font-bold tracking-widest uppercase text-rose-600 mb-3">{data.fixFirstEyebrow}</p>
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-ink leading-tight mb-4">
                   {data.fixFirstTitle}
@@ -559,11 +612,13 @@ export default function GoHighLevelAutomation() {
 
             {/* Right Interactive Cards */}
             <div className="lg:col-span-7 space-y-4">
-              {data.fixFirstItems?.map((item) => {
+              {data.fixFirstItems?.map((item, idx) => {
                 const isSelected = selectedFix === item.id;
                 return (
-                  <Reveal key={item.id}>
-                    <div
+                  <Reveal key={item.id} delay={idx * 0.08} duration={0.5}>
+                    <motion.div
+                      whileHover={{ scale: 1.01, x: 4 }}
+                      whileTap={{ scale: 0.99 }}
                       onClick={() => setSelectedFix(item.id)}
                       className={`cursor-pointer rounded-2xl p-6 transition-all duration-300 border ${
                         isSelected
@@ -604,7 +659,7 @@ export default function GoHighLevelAutomation() {
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </motion.div>
                   </Reveal>
                 );
               })}
@@ -614,12 +669,12 @@ export default function GoHighLevelAutomation() {
       </section>
 
       {/* ===================== IMPLEMENTATION ROADMAP SECTION ===================== */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             {/* Left Dark Blueprint Banner */}
             <div className="lg:col-span-5">
-              <Reveal>
+              <Reveal direction="right" duration={0.65}>
                 <div className="rounded-3xl p-8 sm:p-10 bg-gradient-to-br from-slate-900 via-slate-900 to-indigo-950 text-white shadow-2xl relative overflow-hidden border border-slate-800">
                   <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-rose-500/20 rounded-full blur-3xl pointer-events-none" />
                   
@@ -635,22 +690,27 @@ export default function GoHighLevelAutomation() {
                     {data.processDesc}
                   </p>
 
-                  <button
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
                     onClick={() => openModal({ service: 'GoHighLevel Automation Sprint' })}
                     className="w-full py-3.5 px-6 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-bold text-sm inline-flex items-center justify-center gap-2 shadow-lg shadow-rose-600/30 transition-all duration-200"
                   >
                     <span>Start Automation Sprint</span>
                     <ArrowRight className="w-4 h-4" />
-                  </button>
+                  </motion.button>
                 </div>
               </Reveal>
             </div>
 
-            {/* Right 5 Steps Timeline */}
-            <div className="lg:col-span-7 space-y-6">
+            {/* Right 5 Steps Timeline with Staggered Scroll Reveal */}
+            <div className="lg:col-span-7 space-y-5">
               {data.processSteps?.map((step, idx) => (
-                <Reveal key={idx} delay={idx * 0.08}>
-                  <div className="flex items-start gap-5 p-5 rounded-2xl bg-gray-50/70 border border-gray-100 hover:bg-white hover:border-rose-200 hover:shadow-sm transition-all duration-200">
+                <Reveal key={idx} delay={idx * 0.08} duration={0.5}>
+                  <motion.div
+                    whileHover={{ x: 6, transition: { duration: 0.2 } }}
+                    className="flex items-start gap-5 p-5 rounded-2xl bg-gray-50/70 border border-gray-100 hover:bg-white hover:border-rose-200 hover:shadow-sm transition-all duration-200"
+                  >
                     <span className="shrink-0 w-11 h-11 rounded-xl bg-rose-100 text-rose-700 font-extrabold flex items-center justify-center text-base border border-rose-200">
                       {step.step}
                     </span>
@@ -658,7 +718,7 @@ export default function GoHighLevelAutomation() {
                       <h4 className="font-bold text-ink text-base sm:text-lg mb-1">{step.title}</h4>
                       <p className="text-sm text-gray-500 leading-relaxed">{step.desc}</p>
                     </div>
-                  </div>
+                  </motion.div>
                 </Reveal>
               ))}
             </div>
@@ -670,7 +730,7 @@ export default function GoHighLevelAutomation() {
       <section className="py-24 bg-gradient-to-b from-white via-rose-50/25 to-white border-y border-rose-100/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <Reveal>
+            <Reveal direction="up" duration={0.6}>
               <p className="text-xs font-bold tracking-widest uppercase text-rose-600 mb-3">{data.modelsEyebrow}</p>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-ink leading-tight mb-4">
                 {data.modelsTitle}
@@ -684,7 +744,8 @@ export default function GoHighLevelAutomation() {
           <Stagger className="grid md:grid-cols-3 gap-8" staggerDelay={0.1}>
             {data.models?.map((model, idx) => (
               <StaggerItem key={idx}>
-                <div
+                <motion.div
+                  whileHover={{ y: -8, transition: { duration: 0.25 } }}
                   className={`rounded-3xl p-8 border flex flex-col justify-between h-full relative transition-all duration-300 ${
                     model.isPopular
                       ? 'bg-white border-rose-500 shadow-xl ring-2 ring-rose-500/20 -translate-y-2'
@@ -719,7 +780,8 @@ export default function GoHighLevelAutomation() {
                     </div>
                   </div>
 
-                  <button
+                  <motion.button
+                    whileTap={{ scale: 0.98 }}
                     onClick={() => openModal({ service: `GoHighLevel: ${model.title}` })}
                     className={`w-full py-3.5 rounded-xl font-bold text-sm transition-all duration-200 ${
                       model.isPopular
@@ -728,8 +790,8 @@ export default function GoHighLevelAutomation() {
                     }`}
                   >
                     {model.ctaText || 'Get Started'}
-                  </button>
-                </div>
+                  </motion.button>
+                </motion.div>
               </StaggerItem>
             ))}
           </Stagger>
@@ -740,7 +802,7 @@ export default function GoHighLevelAutomation() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <Reveal>
+            <Reveal direction="up" duration={0.6}>
               <p className="text-xs font-bold tracking-widest uppercase text-rose-600 mb-3">{data.spectrumEyebrow}</p>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-ink leading-tight mb-4">
                 {data.spectrumTitle}
@@ -751,60 +813,77 @@ export default function GoHighLevelAutomation() {
             </Reveal>
           </div>
 
-          {/* Tab Buttons */}
+          {/* Tab Buttons with Animated layoutId Indicator */}
           <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12">
-            {data.spectrumTabs?.map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`px-5 py-2.5 rounded-xl text-sm font-bold transition-all duration-200 ${
-                  activeTab === tab.id
-                    ? 'bg-rose-600 text-white shadow-md shadow-rose-600/20'
-                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                }`}
-              >
-                {tab.label}
-              </button>
-            ))}
+            {data.spectrumTabs?.map((tab) => {
+              const isActive = activeTab === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`relative px-5 py-2.5 rounded-xl text-sm font-bold transition-all duration-200 ${
+                    isActive ? 'text-white' : 'text-gray-600 bg-gray-100 hover:bg-gray-200'
+                  }`}
+                >
+                  {isActive && (
+                    <motion.div
+                      layoutId="activeGhlTab"
+                      className="absolute inset-0 bg-rose-600 rounded-xl shadow-md shadow-rose-600/20"
+                      transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                    />
+                  )}
+                  <span className="relative z-10">{tab.label}</span>
+                </button>
+              );
+            })}
           </div>
 
-          {/* Tab Content Display */}
-          <div className="bg-gradient-to-br from-rose-50/50 to-amber-50/30 rounded-3xl p-8 sm:p-12 border border-rose-100">
-            {data.spectrumTabs
-              ?.filter((t) => t.id === activeTab)
-              .map((current) => (
-                <div key={current.id} className="grid md:grid-cols-2 gap-8 items-center">
-                  <div>
-                    <span className="text-xs font-bold text-rose-600 uppercase tracking-widest">Capability Highlight</span>
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-ink mt-1 mb-4">{current.title}</h3>
-                    <p className="text-gray-600 leading-relaxed text-base mb-6">{current.desc}</p>
-                    <button
-                      onClick={() => openModal({ service: `GHL Feature: ${current.label}` })}
-                      className="inline-flex items-center gap-2 text-rose-600 font-bold hover:text-rose-700 transition"
-                    >
-                      <span>Explore this module</span>
-                      <ArrowRight className="w-4 h-4" />
-                    </button>
-                  </div>
-
-                  <div className="rounded-2xl bg-white p-6 border border-rose-100 shadow-sm">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center font-bold">
-                        <Sliders className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <p className="text-sm font-bold text-ink">Built for Scale</p>
-                        <p className="text-xs text-gray-400">Production-Ready Standards</p>
-                      </div>
+          {/* Tab Content Display with AnimatePresence */}
+          <div className="bg-gradient-to-br from-rose-50/50 to-amber-50/30 rounded-3xl p-8 sm:p-12 border border-rose-100 overflow-hidden">
+            <AnimatePresence mode="wait">
+              {data.spectrumTabs
+                ?.filter((t) => t.id === activeTab)
+                .map((current) => (
+                  <motion.div
+                    key={current.id}
+                    initial={{ opacity: 0, y: 12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -12 }}
+                    transition={{ duration: 0.35 }}
+                    className="grid md:grid-cols-2 gap-8 items-center"
+                  >
+                    <div>
+                      <span className="text-xs font-bold text-rose-600 uppercase tracking-widest">Capability Highlight</span>
+                      <h3 className="text-2xl sm:text-3xl font-extrabold text-ink mt-1 mb-4">{current.title}</h3>
+                      <p className="text-gray-600 leading-relaxed text-base mb-6">{current.desc}</p>
+                      <button
+                        onClick={() => openModal({ service: `GHL Feature: ${current.label}` })}
+                        className="inline-flex items-center gap-2 text-rose-600 font-bold hover:text-rose-700 transition"
+                      >
+                        <span>Explore this module</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </button>
                     </div>
-                    <ul className="space-y-2.5 text-xs sm:text-sm text-gray-600">
-                      <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-rose-600 shrink-0" /> Enterprise data encryption & GDPR/HIPAA compliance</li>
-                      <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-rose-600 shrink-0" /> Sub-50ms trigger execution via HighLevel webhooks</li>
-                      <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-rose-600 shrink-0" /> Modular snapshot deployment with variable parameters</li>
-                    </ul>
-                  </div>
-                </div>
-              ))}
+
+                    <div className="rounded-2xl bg-white p-6 border border-rose-100 shadow-sm">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-10 h-10 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center font-bold">
+                          <Sliders className="w-5 h-5" />
+                        </div>
+                        <div>
+                          <p className="text-sm font-bold text-ink">Built for Scale</p>
+                          <p className="text-xs text-gray-400">Production-Ready Standards</p>
+                        </div>
+                      </div>
+                      <ul className="space-y-2.5 text-xs sm:text-sm text-gray-600">
+                        <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-rose-600 shrink-0" /> Enterprise data encryption & GDPR/HIPAA compliance</li>
+                        <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-rose-600 shrink-0" /> Sub-50ms trigger execution via HighLevel webhooks</li>
+                        <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-rose-600 shrink-0" /> Modular snapshot deployment with variable parameters</li>
+                      </ul>
+                    </div>
+                  </motion.div>
+                ))}
+            </AnimatePresence>
           </div>
         </div>
       </section>
@@ -813,7 +892,7 @@ export default function GoHighLevelAutomation() {
       <section id="case-studies" className="py-24 bg-gray-50/60 border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <Reveal>
+            <Reveal direction="up" duration={0.6}>
               <p className="text-xs font-bold tracking-widest uppercase text-rose-600 mb-3">{data.outcomesEyebrow}</p>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-ink leading-tight mb-4">
                 {data.outcomesTitle}
@@ -827,7 +906,10 @@ export default function GoHighLevelAutomation() {
           <Stagger className="grid md:grid-cols-3 gap-8" staggerDelay={0.08}>
             {data.outcomeCards?.map((card, idx) => (
               <StaggerItem key={idx}>
-                <div className="bg-white rounded-3xl overflow-hidden border border-gray-200/80 shadow-card hover:shadow-soft hover:border-rose-200 hover:-translate-y-1.5 transition-all duration-300 flex flex-col h-full">
+                <motion.div
+                  whileHover={{ y: -8, transition: { duration: 0.25 } }}
+                  className="bg-white rounded-3xl overflow-hidden border border-gray-200/80 shadow-card hover:shadow-soft hover:border-rose-200 transition-all duration-300 flex flex-col h-full"
+                >
                   <div className="h-48 relative overflow-hidden bg-slate-900">
                     <img
                       src={card.image}
@@ -868,7 +950,7 @@ export default function GoHighLevelAutomation() {
                       </button>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               </StaggerItem>
             ))}
           </Stagger>
@@ -879,7 +961,7 @@ export default function GoHighLevelAutomation() {
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <Reveal>
+            <Reveal direction="up" duration={0.6}>
               <p className="text-xs font-bold tracking-widest uppercase text-rose-600 mb-3">FAQ</p>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-ink">Frequently Asked Questions</h2>
             </Reveal>
@@ -889,7 +971,7 @@ export default function GoHighLevelAutomation() {
             {data.faqs?.map((faq, idx) => {
               const isOpen = openFaq === idx;
               return (
-                <Reveal key={idx} delay={idx * 0.05}>
+                <Reveal key={idx} delay={idx * 0.05} duration={0.45}>
                   <div className="border border-gray-200 rounded-2xl overflow-hidden transition-all duration-200">
                     <button
                       onClick={() => setOpenFaq(isOpen ? -1 : idx)}
@@ -902,11 +984,19 @@ export default function GoHighLevelAutomation() {
                         }`}
                       />
                     </button>
-                    {isOpen && (
-                      <div className="px-6 pb-6 text-sm sm:text-base text-gray-500 leading-relaxed border-t border-gray-100 pt-4 bg-gray-50/40">
-                        {faq.a}
-                      </div>
-                    )}
+                    <AnimatePresence>
+                      {isOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: 'auto' }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.25 }}
+                          className="px-6 pb-6 text-sm sm:text-base text-gray-500 leading-relaxed border-t border-gray-100 pt-4 bg-gray-50/40"
+                        >
+                          {faq.a}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
                 </Reveal>
               );
@@ -928,3 +1018,4 @@ export default function GoHighLevelAutomation() {
     </div>
   );
 }
+
