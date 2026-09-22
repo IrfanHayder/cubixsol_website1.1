@@ -372,16 +372,16 @@ export default function GoHighLevelAutomation() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white text-ink selection:bg-rose-500 selection:text-white relative">
+    <div className="min-h-screen bg-white text-ink selection:bg-[#00a4d8] selection:text-white relative">
       {/* ===================== HERO SECTION ===================== */}
-      <section className="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden bg-gradient-to-b from-rose-50/70 via-white to-white border-b border-rose-100/50">
+      <section className="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden bg-gradient-to-b from-sky-50/70 via-indigo-50/25 to-white border-b border-sky-100/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
             {/* Left Content */}
             <div className="lg:col-span-7">
               <Reveal direction="down" duration={0.6}>
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-100/80 border border-rose-200 text-rose-700 text-xs font-bold tracking-widest uppercase mb-6 shadow-sm">
-                  <Zap className="w-3.5 h-3.5 text-rose-600 fill-rose-600 animate-pulse" />
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00a4d8]/10 border border-[#00a4d8]/20 text-[#00a4d8] text-xs font-bold tracking-widest uppercase mb-6 shadow-sm">
+                  <Zap className="w-3.5 h-3.5 text-[#00a4d8] fill-[#00a4d8]/20 animate-pulse" />
                   <span>{data.heroEyebrow}</span>
                 </div>
               </Reveal>
@@ -405,7 +405,7 @@ export default function GoHighLevelAutomation() {
                     whileHover={{ scale: 1.03, y: -2 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => openModal({ service: 'GoHighLevel Automation' })}
-                    className="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl font-bold text-white bg-gradient-to-r from-rose-600 via-red-600 to-rose-700 hover:from-rose-700 hover:to-red-800 shadow-lg shadow-rose-500/25 hover:shadow-rose-500/35 transition-all duration-300 text-base cursor-pointer"
+                    className="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl font-bold text-white bg-gradient-to-r from-[#00a4d8] via-blue-600 to-[#5d53a3] hover:from-[#0092c2] hover:to-[#4a4285] shadow-lg shadow-[#00a4d8]/25 hover:shadow-[#00a4d8]/35 transition-all duration-300 text-base cursor-pointer"
                   >
                     <span>{data.heroPrimaryBtnText}</span>
                     <ArrowRight className="w-5 h-5" />
@@ -415,7 +415,7 @@ export default function GoHighLevelAutomation() {
                     whileHover={{ scale: 1.02, y: -1 }}
                     whileTap={{ scale: 0.98 }}
                     href="#solutions"
-                    className="inline-flex items-center gap-2 px-6 py-4 rounded-xl font-semibold text-gray-700 bg-white border border-gray-200 hover:border-rose-300 hover:bg-rose-50/50 hover:text-rose-700 shadow-sm transition-all duration-200 text-base"
+                    className="inline-flex items-center gap-2 px-6 py-4 rounded-xl font-semibold text-gray-700 bg-white border border-gray-200 hover:border-[#00a4d8]/40 hover:bg-sky-50/40 hover:text-[#00a4d8] shadow-sm transition-all duration-200 text-base"
                   >
                     <span>{data.heroSecondaryBtnText}</span>
                     <ChevronRight className="w-4 h-4 text-gray-400" />
@@ -425,10 +425,10 @@ export default function GoHighLevelAutomation() {
 
               {/* Trust Badges */}
               <Reveal delay={0.4} duration={0.65}>
-                <div className="flex flex-wrap items-center gap-4 sm:gap-6 pt-6 border-t border-rose-100/80">
+                <div className="flex flex-wrap items-center gap-4 sm:gap-6 pt-6 border-t border-sky-100/80">
                   {data.heroBadges?.map((badge, i) => (
                     <div key={i} className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-gray-700">
-                      <span className="w-2 h-2 rounded-full bg-rose-500 shrink-0" />
+                      <span className="w-2 h-2 rounded-full bg-[#00a4d8] shrink-0" />
                       <span>{badge}</span>
                     </div>
                   ))}
@@ -439,7 +439,7 @@ export default function GoHighLevelAutomation() {
             {/* Right Hero Visual / Isometric Platform Hub with Floating Badges */}
             <div className="lg:col-span-5 relative">
               <Reveal delay={0.2} direction="left" duration={0.7} scale>
-                <div className="relative rounded-3xl p-6 bg-gradient-to-br from-rose-500/10 via-rose-50 to-amber-50/40 border border-rose-200/80 shadow-2xl shadow-rose-500/10 backdrop-blur-sm">
+                <div className="relative rounded-3xl p-6 bg-gradient-to-br from-[#00a4d8]/10 via-indigo-50/40 to-sky-50/40 border border-[#00a4d8]/20 shadow-2xl shadow-[#00a4d8]/10 backdrop-blur-sm">
                   <div className="relative rounded-2xl overflow-hidden shadow-inner bg-slate-900 border border-slate-800">
                     <img
                       src={data.heroImage}
@@ -448,7 +448,7 @@ export default function GoHighLevelAutomation() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex flex-col justify-end p-6">
                       <div className="flex items-center justify-between">
-                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-rose-600/90 text-white text-xs font-bold backdrop-blur-md">
+                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gradient-to-r from-[#00a4d8] to-[#5d53a3] text-white text-xs font-bold backdrop-blur-md shadow-md">
                           <Workflow className="w-4 h-4" />
                           <span>GHL Multi-Trigger Automation</span>
                         </div>
@@ -464,7 +464,7 @@ export default function GoHighLevelAutomation() {
                   <motion.div
                     animate={{ y: [0, -6, 0] }}
                     transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
-                    className="absolute -top-4 -right-4 bg-white rounded-2xl p-3 shadow-xl border border-rose-100 hidden sm:flex items-center gap-2 text-xs font-bold text-ink"
+                    className="absolute -top-4 -right-4 bg-white rounded-2xl p-3 shadow-xl border border-sky-100 hidden sm:flex items-center gap-2 text-xs font-bold text-ink"
                   >
                     <div className="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-extrabold text-sm">
                       +310%
@@ -478,9 +478,9 @@ export default function GoHighLevelAutomation() {
                   <motion.div
                     animate={{ y: [0, 6, 0] }}
                     transition={{ repeat: Infinity, duration: 4.5, ease: 'easeInOut', delay: 0.5 }}
-                    className="absolute -bottom-4 -left-4 bg-white rounded-2xl p-3 shadow-xl border border-rose-100 hidden sm:flex items-center gap-2 text-xs font-bold text-ink"
+                    className="absolute -bottom-4 -left-4 bg-white rounded-2xl p-3 shadow-xl border border-sky-100 hidden sm:flex items-center gap-2 text-xs font-bold text-ink"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-rose-50 text-rose-600 flex items-center justify-center font-extrabold">
+                    <div className="w-8 h-8 rounded-lg bg-sky-50 text-[#00a4d8] flex items-center justify-center font-extrabold">
                       <Zap className="w-4 h-4" />
                     </div>
                     <div>
@@ -500,7 +500,7 @@ export default function GoHighLevelAutomation() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <Reveal direction="up" duration={0.6}>
-              <p className="text-xs font-bold tracking-widest uppercase text-rose-600 mb-3">{data.problemEyebrow}</p>
+              <p className="text-xs font-bold tracking-widest uppercase text-[#00a4d8] mb-3">{data.problemEyebrow}</p>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-ink leading-tight mb-4">
                 {data.problemTitle}
               </h2>
@@ -515,10 +515,10 @@ export default function GoHighLevelAutomation() {
               <StaggerItem key={idx}>
                 <motion.div
                   whileHover={{ y: -6, transition: { duration: 0.25 } }}
-                  className="bg-white rounded-2xl p-6 sm:p-7 border border-gray-100 shadow-sm hover:shadow-md hover:border-rose-200 transition-all duration-300 h-full flex flex-col justify-between"
+                  className="bg-white rounded-2xl p-6 sm:p-7 border border-gray-100 shadow-sm hover:shadow-soft hover:border-[#00a4d8]/30 transition-all duration-300 h-full flex flex-col justify-between"
                 >
                   <div>
-                    <div className="w-12 h-12 rounded-xl bg-rose-50 border border-rose-100 flex items-center justify-center text-rose-600 mb-5">
+                    <div className="w-12 h-12 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-center text-[#00a4d8] mb-5">
                       <DynamicIcon name={card.icon} className="w-6 h-6" />
                     </div>
                     <h3 className="text-lg font-bold text-ink mb-2.5 leading-snug">{card.title}</h3>
@@ -536,7 +536,7 @@ export default function GoHighLevelAutomation() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <Reveal direction="up" duration={0.6}>
-              <p className="text-xs font-bold tracking-widest uppercase text-rose-600 mb-3">{data.capabilitiesEyebrow}</p>
+              <p className="text-xs font-bold tracking-widest uppercase text-[#00a4d8] mb-3">{data.capabilitiesEyebrow}</p>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-ink leading-tight mb-4">
                 {data.capabilitiesTitle}
               </h2>
@@ -551,7 +551,7 @@ export default function GoHighLevelAutomation() {
               <StaggerItem key={idx}>
                 <motion.div
                   whileHover={{ y: -8, scale: 1.01, transition: { duration: 0.25 } }}
-                  className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-card hover:shadow-soft hover:border-rose-200 transition-all duration-300 flex flex-col h-full group"
+                  className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-card hover:shadow-soft hover:border-[#00a4d8]/30 transition-all duration-300 flex flex-col h-full group"
                 >
                   <div className="relative h-48 overflow-hidden bg-slate-100">
                     <img
@@ -568,7 +568,7 @@ export default function GoHighLevelAutomation() {
 
                   <div className="p-6 flex-1 flex flex-col justify-between">
                     <div>
-                      <h3 className="text-xl font-bold text-ink mb-2.5 group-hover:text-rose-600 transition-colors">
+                      <h3 className="text-xl font-bold text-ink mb-2.5 group-hover:text-[#00a4d8] transition-colors">
                         {item.title}
                       </h3>
                       <p className="text-sm text-gray-500 leading-relaxed mb-6">
@@ -595,13 +595,13 @@ export default function GoHighLevelAutomation() {
       </section>
 
       {/* ===================== SECTION 3: FIND THE RIGHT GOHIGHLEVEL SOLUTION ===================== */}
-      <section className="py-20 bg-gradient-to-b from-gray-50/80 via-rose-50/30 to-gray-50/80 border-y border-gray-200/60">
+      <section className="py-20 bg-gradient-to-b from-gray-50/80 via-sky-50/30 to-gray-50/80 border-y border-gray-200/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             {/* Left Graphic & Header */}
             <div className="lg:col-span-5">
               <Reveal direction="right" duration={0.65}>
-                <p className="text-xs font-bold tracking-widest uppercase text-rose-600 mb-3">{data.fixFirstEyebrow}</p>
+                <p className="text-xs font-bold tracking-widest uppercase text-[#00a4d8] mb-3">{data.fixFirstEyebrow}</p>
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-ink leading-tight mb-4">
                   {data.fixFirstTitle}
                 </h2>
@@ -609,14 +609,14 @@ export default function GoHighLevelAutomation() {
                   {data.fixFirstDesc}
                 </p>
 
-                <div className="relative rounded-2xl overflow-hidden border border-rose-100 shadow-md bg-white p-3">
+                <div className="relative rounded-2xl overflow-hidden border border-sky-100 shadow-md bg-white p-3">
                   <img
                     src={data.fixFirstImage}
                     alt="Solve Your Bottlenecks with GoHighLevel"
                     className="w-full h-64 object-cover rounded-xl"
                   />
                   <div className="p-4 bg-white">
-                    <p className="text-xs font-bold text-rose-600 uppercase tracking-wide">Selected Blueprint</p>
+                    <p className="text-xs font-bold text-[#00a4d8] uppercase tracking-wide">Selected Blueprint</p>
                     <p className="text-sm font-bold text-ink mt-0.5">
                       {data.fixFirstItems?.find((f) => f.id === selectedFix)?.solution || 'Custom Workflow Sprint'}
                     </p>
@@ -637,8 +637,8 @@ export default function GoHighLevelAutomation() {
                       onClick={() => setSelectedFix(item.id)}
                       className={`cursor-pointer rounded-2xl p-6 transition-all duration-300 border ${
                         isSelected
-                          ? 'bg-white border-rose-500 shadow-lg ring-2 ring-rose-500/20 translate-x-1'
-                          : 'bg-white/80 border-gray-200 hover:border-rose-200 hover:bg-white'
+                          ? 'bg-white border-[#00a4d8] shadow-lg ring-2 ring-[#00a4d8]/20 translate-x-1'
+                          : 'bg-white/80 border-gray-200 hover:border-[#00a4d8]/30 hover:bg-white'
                       }`}
                     >
                       <div className="flex items-start justify-between gap-4">
@@ -646,19 +646,19 @@ export default function GoHighLevelAutomation() {
                           <div className="flex items-center gap-2.5 mb-2">
                             <span
                               className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded ${
-                                isSelected ? 'bg-rose-100 text-rose-700' : 'bg-gray-100 text-gray-600'
+                                isSelected ? 'bg-sky-100 text-[#00a4d8]' : 'bg-gray-100 text-gray-600'
                               }`}
                             >
                               {item.tag}
                             </span>
-                            <h3 className={`font-bold text-base sm:text-lg ${isSelected ? 'text-rose-700' : 'text-ink'}`}>
+                            <h3 className={`font-bold text-base sm:text-lg ${isSelected ? 'text-[#00a4d8]' : 'text-ink'}`}>
                               {item.title}
                             </h3>
                           </div>
                           <p className="text-sm text-gray-500 leading-relaxed mb-3">
                             {item.desc}
                           </p>
-                          <div className="flex items-center gap-1.5 text-xs font-semibold text-rose-600">
+                          <div className="flex items-center gap-1.5 text-xs font-semibold text-[#00a4d8]">
                             <CheckCircle2 className="w-4 h-4" />
                             <span>Recommended Setup: {item.solution}</span>
                           </div>
@@ -667,7 +667,7 @@ export default function GoHighLevelAutomation() {
                         <div className="shrink-0 mt-1">
                           <div
                             className={`w-6 h-6 rounded-full flex items-center justify-center border transition ${
-                              isSelected ? 'bg-rose-600 border-rose-600 text-white' : 'border-gray-300 text-transparent'
+                              isSelected ? 'bg-[#00a4d8] border-[#00a4d8] text-white' : 'border-gray-300 text-transparent'
                             }`}
                           >
                             <CheckCircle2 className="w-4 h-4" />
@@ -690,14 +690,14 @@ export default function GoHighLevelAutomation() {
             {/* Left Dark Blueprint Banner */}
             <div className="lg:col-span-5">
               <Reveal direction="right" duration={0.65}>
-                <div className="rounded-3xl p-8 sm:p-10 bg-gradient-to-br from-slate-900 via-slate-900 to-indigo-950 text-white shadow-2xl relative overflow-hidden border border-slate-800">
-                  <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-rose-500/20 rounded-full blur-3xl pointer-events-none" />
+                <div className="rounded-3xl p-8 sm:p-10 bg-gradient-to-br from-slate-900 via-[#0a192f] to-[#1e1b4b] text-white shadow-2xl relative overflow-hidden border border-slate-800">
+                  <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-[#00a4d8]/20 rounded-full blur-3xl pointer-events-none" />
                   
-                  <div className="w-12 h-12 rounded-2xl bg-rose-500/20 border border-rose-500/40 flex items-center justify-center text-rose-400 mb-6">
+                  <div className="w-12 h-12 rounded-2xl bg-[#00a4d8]/20 border border-[#00a4d8]/40 flex items-center justify-center text-cyan-300 mb-6">
                     <Target className="w-6 h-6" />
                   </div>
 
-                  <p className="text-xs font-bold uppercase tracking-widest text-rose-400 mb-3">{data.processEyebrow}</p>
+                  <p className="text-xs font-bold uppercase tracking-widest text-cyan-300 mb-3">{data.processEyebrow}</p>
                   <h3 className="text-2xl sm:text-3xl font-extrabold text-white leading-tight mb-4">
                     {data.processTitle}
                   </h3>
@@ -709,7 +709,7 @@ export default function GoHighLevelAutomation() {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => openModal({ service: 'GoHighLevel Implementation Sprint' })}
-                    className="w-full py-3.5 px-6 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-bold text-sm inline-flex items-center justify-center gap-2 shadow-lg shadow-rose-600/30 transition-all duration-200 cursor-pointer"
+                    className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-[#00a4d8] to-[#5d53a3] hover:from-[#0092c2] hover:to-[#4a4285] text-white font-bold text-sm inline-flex items-center justify-center gap-2 shadow-lg shadow-[#00a4d8]/25 transition-all duration-200 cursor-pointer"
                   >
                     <span>Start Implementation Sprint</span>
                     <ArrowRight className="w-4 h-4" />
@@ -724,9 +724,9 @@ export default function GoHighLevelAutomation() {
                 <Reveal key={idx} delay={idx * 0.08} duration={0.5}>
                   <motion.div
                     whileHover={{ x: 6, transition: { duration: 0.2 } }}
-                    className="flex items-start gap-5 p-5 rounded-2xl bg-gray-50/70 border border-gray-100 hover:bg-white hover:border-rose-200 hover:shadow-sm transition-all duration-200"
+                    className="flex items-start gap-5 p-5 rounded-2xl bg-gray-50/70 border border-gray-100 hover:bg-white hover:border-[#00a4d8]/30 hover:shadow-sm transition-all duration-200"
                   >
-                    <span className="shrink-0 w-11 h-11 rounded-xl bg-rose-100 text-rose-700 font-extrabold flex items-center justify-center text-base border border-rose-200">
+                    <span className="shrink-0 w-11 h-11 rounded-xl bg-gradient-to-br from-sky-100 to-indigo-100 text-[#5d53a3] font-extrabold flex items-center justify-center text-base border border-sky-200">
                       {step.step}
                     </span>
                     <div>
@@ -742,11 +742,11 @@ export default function GoHighLevelAutomation() {
       </section>
 
       {/* ===================== SECTION 5: WORK WITH OUR GOHIGHLEVEL EXPERTS (MODELS) ===================== */}
-      <section className="py-24 bg-gradient-to-b from-white via-rose-50/25 to-white border-y border-rose-100/60">
+      <section className="py-24 bg-gradient-to-b from-white via-sky-50/25 to-white border-y border-sky-100/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <Reveal direction="up" duration={0.6}>
-              <p className="text-xs font-bold tracking-widest uppercase text-rose-600 mb-3">{data.modelsEyebrow}</p>
+              <p className="text-xs font-bold tracking-widest uppercase text-[#00a4d8] mb-3">{data.modelsEyebrow}</p>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-ink leading-tight mb-4">
                 {data.modelsTitle}
               </h2>
@@ -763,13 +763,13 @@ export default function GoHighLevelAutomation() {
                   whileHover={{ y: -8, transition: { duration: 0.25 } }}
                   className={`rounded-3xl p-8 border flex flex-col justify-between h-full relative transition-all duration-300 ${
                     model.isPopular
-                      ? 'bg-white border-rose-500 shadow-xl ring-2 ring-rose-500/20 -translate-y-2'
-                      : 'bg-white border-gray-200/90 shadow-card hover:shadow-soft hover:border-rose-200'
+                      ? 'bg-white border-[#00a4d8] shadow-xl ring-2 ring-[#00a4d8]/20 -translate-y-2'
+                      : 'bg-white border-gray-200/90 shadow-card hover:shadow-soft hover:border-[#00a4d8]/30'
                   }`}
                 >
                   {model.isPopular && (
                     <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                      <span className="bg-rose-600 text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
+                      <span className="bg-gradient-to-r from-[#00a4d8] to-[#5d53a3] text-white text-[11px] font-bold uppercase tracking-wider px-3.5 py-1 rounded-full shadow-md">
                         Most Popular
                       </span>
                     </div>
@@ -777,7 +777,7 @@ export default function GoHighLevelAutomation() {
 
                   <div>
                     <div className="flex items-center justify-between mb-4">
-                      <span className="w-10 h-10 rounded-xl bg-rose-50 border border-rose-100 text-rose-600 font-extrabold text-lg flex items-center justify-center">
+                      <span className="w-10 h-10 rounded-xl bg-sky-50 border border-sky-100 text-[#00a4d8] font-extrabold text-lg flex items-center justify-center">
                         {model.number}
                       </span>
                     </div>
@@ -788,7 +788,7 @@ export default function GoHighLevelAutomation() {
                     <div className="pt-6 border-t border-gray-100 space-y-3 mb-8">
                       {model.features?.map((f, fIdx) => (
                         <div key={fIdx} className="flex items-center gap-2.5 text-xs sm:text-sm text-gray-700">
-                          <CheckCircle2 className="w-4 h-4 text-rose-600 shrink-0" />
+                          <CheckCircle2 className="w-4 h-4 text-[#00a4d8] shrink-0" />
                           <span>{f}</span>
                         </div>
                       ))}
@@ -800,8 +800,8 @@ export default function GoHighLevelAutomation() {
                     onClick={() => openModal({ service: `GoHighLevel: ${model.title}` })}
                     className={`w-full py-3.5 rounded-xl font-bold text-sm transition-all duration-200 cursor-pointer ${
                       model.isPopular
-                        ? 'bg-rose-600 text-white hover:bg-rose-700 shadow-md shadow-rose-600/25'
-                        : 'bg-gray-100 text-ink hover:bg-rose-50 hover:text-rose-700'
+                        ? 'bg-gradient-to-r from-[#00a4d8] to-[#5d53a3] text-white hover:from-[#0092c2] hover:to-[#4a4285] shadow-md shadow-[#00a4d8]/25'
+                        : 'bg-gray-100 text-ink hover:bg-sky-50 hover:text-[#00a4d8]'
                     }`}
                   >
                     {model.ctaText || 'Get Started'}
@@ -818,7 +818,7 @@ export default function GoHighLevelAutomation() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <Reveal direction="up" duration={0.6}>
-              <p className="text-xs font-bold tracking-widest uppercase text-rose-600 mb-3">{data.spectrumEyebrow}</p>
+              <p className="text-xs font-bold tracking-widest uppercase text-[#00a4d8] mb-3">{data.spectrumEyebrow}</p>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-ink leading-tight mb-4">
                 {data.spectrumTitle}
               </h2>
@@ -833,19 +833,19 @@ export default function GoHighLevelAutomation() {
               <StaggerItem key={idx}>
                 <motion.div
                   whileHover={{ y: -6, scale: 1.02, transition: { duration: 0.2 } }}
-                  className="bg-gradient-to-br from-white via-rose-50/30 to-white rounded-2xl p-6 border border-gray-200/80 shadow-sm hover:shadow-md hover:border-rose-300 transition-all duration-300 flex flex-col justify-between h-full group"
+                  className="bg-gradient-to-br from-white via-sky-50/20 to-white rounded-2xl p-6 border border-gray-200/80 shadow-sm hover:shadow-md hover:border-[#00a4d8]/40 transition-all duration-300 flex flex-col justify-between h-full group"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-4">
-                      <div className="w-12 h-12 rounded-xl bg-rose-50 border border-rose-100 flex items-center justify-center text-rose-600 group-hover:bg-rose-600 group-hover:text-white transition-colors duration-300">
+                      <div className="w-12 h-12 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-center text-[#00a4d8] group-hover:bg-gradient-to-r group-hover:from-[#00a4d8] group-hover:to-[#5d53a3] group-hover:text-white transition-colors duration-300">
                         <DynamicIcon name={item.icon || 'Zap'} className="w-6 h-6" />
                       </div>
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-rose-700 bg-rose-100/70 px-2 py-0.5 rounded">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#5d53a3] bg-indigo-50 border border-indigo-100 px-2 py-0.5 rounded">
                         {item.category}
                       </span>
                     </div>
 
-                    <h3 className="font-bold text-lg text-ink mb-2 group-hover:text-rose-600 transition-colors">
+                    <h3 className="font-bold text-lg text-ink mb-2 group-hover:text-[#00a4d8] transition-colors">
                       {item.name}
                     </h3>
                     <p className="text-xs text-gray-500 leading-relaxed">
@@ -853,7 +853,7 @@ export default function GoHighLevelAutomation() {
                     </p>
                   </div>
 
-                  <div className="mt-4 pt-3 border-t border-gray-100 flex items-center gap-1.5 text-xs font-semibold text-rose-600">
+                  <div className="mt-4 pt-3 border-t border-gray-100 flex items-center gap-1.5 text-xs font-semibold text-[#00a4d8]">
                     <Check className="w-3.5 h-3.5" />
                     <span>Native Sync & Webhook Ready</span>
                   </div>
@@ -869,7 +869,7 @@ export default function GoHighLevelAutomation() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <Reveal direction="up" duration={0.6}>
-              <p className="text-xs font-bold tracking-widest uppercase text-rose-600 mb-3">{data.outcomesEyebrow}</p>
+              <p className="text-xs font-bold tracking-widest uppercase text-[#00a4d8] mb-3">{data.outcomesEyebrow}</p>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-ink leading-tight mb-4">
                 {data.outcomesTitle}
               </h2>
@@ -884,7 +884,7 @@ export default function GoHighLevelAutomation() {
               <StaggerItem key={idx}>
                 <motion.div
                   whileHover={{ y: -8, transition: { duration: 0.25 } }}
-                  className="bg-white rounded-3xl overflow-hidden border border-gray-200/80 shadow-card hover:shadow-soft hover:border-rose-200 transition-all duration-300 flex flex-col h-full"
+                  className="bg-white rounded-3xl overflow-hidden border border-gray-200/80 shadow-card hover:shadow-soft hover:border-[#00a4d8]/30 transition-all duration-300 flex flex-col h-full"
                 >
                   <div className="h-48 relative overflow-hidden bg-slate-900">
                     <img
@@ -892,7 +892,7 @@ export default function GoHighLevelAutomation() {
                       alt={card.title}
                       className="w-full h-full object-cover opacity-85 hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute top-4 left-4 bg-rose-600 text-white text-xs font-bold px-3 py-1 rounded-lg shadow-sm">
+                    <div className="absolute top-4 left-4 bg-gradient-to-r from-[#00a4d8] to-[#5d53a3] text-white text-xs font-bold px-3 py-1 rounded-lg shadow-sm">
                       {card.client}
                     </div>
                   </div>
@@ -900,7 +900,7 @@ export default function GoHighLevelAutomation() {
                   <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between">
                     <div>
                       <div className="mb-4 flex items-baseline gap-2">
-                        <span className="text-3xl font-extrabold text-rose-600">{card.metric}</span>
+                        <span className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00a4d8] to-[#5d53a3]">{card.metric}</span>
                         <p className="text-xs font-semibold text-gray-500">{card.metricLabel}</p>
                       </div>
 
@@ -910,7 +910,7 @@ export default function GoHighLevelAutomation() {
                       <div className="space-y-2 pt-4 border-t border-gray-100">
                         {card.results?.map((res, rIdx) => (
                           <div key={rIdx} className="flex items-center gap-2 text-xs font-medium text-gray-700">
-                            <span className="w-1.5 h-1.5 rounded-full bg-rose-500 shrink-0" />
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#00a4d8] shrink-0" />
                             <span>{res}</span>
                           </div>
                         ))}
@@ -920,7 +920,7 @@ export default function GoHighLevelAutomation() {
                     <div className="mt-6 pt-4">
                       <button
                         onClick={() => openModal({ service: `Project Experience: ${card.client}` })}
-                        className="w-full py-2.5 rounded-xl border border-rose-200 text-rose-600 font-bold text-xs hover:bg-rose-50 transition cursor-pointer"
+                        className="w-full py-2.5 rounded-xl border border-[#00a4d8]/30 text-[#00a4d8] font-bold text-xs hover:bg-sky-50 hover:border-[#00a4d8] transition cursor-pointer"
                       >
                         {card.isCaseStudy ? '(Case study)' : 'Request Project Breakdown'}
                       </button>
@@ -938,7 +938,7 @@ export default function GoHighLevelAutomation() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <Reveal direction="up" duration={0.6}>
-              <p className="text-xs font-bold tracking-widest uppercase text-rose-600 mb-3">FAQ</p>
+              <p className="text-xs font-bold tracking-widest uppercase text-[#00a4d8] mb-3">FAQ</p>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-ink">Frequently Asked Questions</h2>
             </Reveal>
           </div>
@@ -955,7 +955,7 @@ export default function GoHighLevelAutomation() {
                     >
                       <span className="text-base sm:text-lg">{faq.q}</span>
                       <ChevronRight
-                        className={`w-5 h-5 text-rose-600 shrink-0 transition-transform duration-200 ${
+                        className={`w-5 h-5 text-[#00a4d8] shrink-0 transition-transform duration-200 ${
                           isOpen ? 'rotate-90' : ''
                         }`}
                       />

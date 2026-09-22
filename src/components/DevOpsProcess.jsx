@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Reveal, { Stagger, StaggerItem } from './Reveal';
-import { formatText, FormatRichText } from '../utils/formatText';
+import { formatText, FormatRichText, cleanImageUrl } from '../utils/formatText';
 
 const steps = [
   {
@@ -101,7 +101,7 @@ function StepRow({ step, index }) {
         <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-elev aspect-[4/3] bg-gray-100 border border-gray-100">
           {step.image ? (
             <img
-              src={step.image}
+              src={cleanImageUrl(step.image)}
               alt={step.title}
               className="w-full h-full object-cover"
               loading="lazy"

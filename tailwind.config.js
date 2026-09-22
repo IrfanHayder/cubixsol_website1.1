@@ -1,6 +1,21 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  safelist: [
+    'from-sky-500', 'to-blue-700',
+    'from-emerald-500', 'to-teal-700',
+    'from-indigo-600', 'to-purple-700',
+    'from-rose-500', 'to-pink-600',
+    'from-teal-500', 'to-emerald-600',
+    'from-blue-600', 'to-cyan-600',
+    'from-amber-500', 'to-orange-600',
+    'from-violet-600', 'to-indigo-800',
+    'from-emerald-700', 'to-stone-800', 'to-teal-900',
+    'from-cyan-600', 'to-blue-800',
+    'from-purple-600', 'to-pink-600',
+    'from-blue-700', 'to-indigo-900',
+    'from-primary-600', 'to-indigo-700',
+  ],
   theme: {
     extend: {
       maxWidth: {

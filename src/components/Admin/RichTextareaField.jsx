@@ -20,7 +20,7 @@ import {
   FolderOpen,
   X,
 } from 'lucide-react';
-import { FormatRichText } from '../../utils/formatText';
+import { FormatRichText, cleanImageUrl } from '../../utils/formatText';
 import MediaPickerModal from './MediaPickerModal';
 
 export default function RichTextareaField({
@@ -47,6 +47,7 @@ export default function RichTextareaField({
   // Image Modal state
   const [imageModalOpen, setImageModalOpen] = useState(false);
   const [mediaPickerOpen, setMediaPickerOpen] = useState(false);
+  const [directMediaPickerOpen, setDirectMediaPickerOpen] = useState(false);
   const [imageUrl, setImageUrl] = useState('');
   const [imageAlt, setImageAlt] = useState('');
   const [imageCursorPos, setImageCursorPos] = useState(0);
@@ -313,23 +314,82 @@ export default function RichTextareaField({
     const selectedText = currentVal.substring(start, end);
 
     setImageCursorPos(start);
+    setSelectionRange({ start, end });
     setImageUrl('');
     setImageAlt(selectedText || '');
     setImageModalOpen(true);
   };
 
-  // Confirm inserting Image
+  // Open Direct Media Picker from toolbar to insert/replace raw URL
+  const openDirectMediaPicker = () => {
+    const textarea = textareaRef.current;
+    const start = textarea?.selectionStart ?? (value ? value.length : 0);
+    const end = textarea?.selectionEnd ?? start;
+    setSelectionRange({ start, end });
+    setDirectMediaPickerOpen(true);
+  };
+
+  // Direct selection from Media Picker (inserts or replaces with clean URL)
+  const handleDirectMediaSelect = (url) => {
+    if (!url) return;
+    const currentVal = value || '';
+    const cleanUrl = cleanImageUrl(url);
+
+    const updated =
+      currentVal.substring(0, selectionRange.start) +
+      cleanUrl +
+      currentVal.substring(selectionRange.end);
+
+    onChange?.(updated);
+    setDirectMediaPickerOpen(false);
+
+    setTimeout(() => {
+      if (textareaRef.current) {
+        textareaRef.current.focus();
+        const newPos = selectionRange.start + cleanUrl.length;
+        textareaRef.current.setSelectionRange(newPos, newPos);
+      }
+    }, 0);
+  };
+
+  // Confirm inserting raw Image URL only (for pipe-separated rows or plain links)
+  const handleInsertRawUrl = (e) => {
+    e?.preventDefault();
+    if (!imageUrl.trim()) return;
+
+    const currentVal = value || '';
+    const cleanUrl = cleanImageUrl(imageUrl);
+
+    const start = selectionRange.start !== undefined ? selectionRange.start : imageCursorPos;
+    const end = selectionRange.end !== undefined ? selectionRange.end : imageCursorPos;
+
+    const updated = currentVal.substring(0, start) + cleanUrl + currentVal.substring(end);
+    onChange?.(updated);
+    setImageModalOpen(false);
+    setImageUrl('');
+    setImageAlt('');
+
+    setTimeout(() => {
+      if (textareaRef.current) {
+        textareaRef.current.focus();
+        const newPos = start + cleanUrl.length;
+        textareaRef.current.setSelectionRange(newPos, newPos);
+      }
+    }, 0);
+  };
+
+  // Confirm inserting Image as markdown
   const handleInsertImage = (e) => {
     e?.preventDefault();
     if (!imageUrl.trim()) return;
 
     const currentVal = value || '';
     const alt = imageAlt.trim() || 'Visual Illustration';
-    const url = imageUrl.trim();
+    const url = cleanImageUrl(imageUrl);
 
     // Smart newline formatting around image block
     const beforeText = currentVal.substring(0, imageCursorPos);
-    const afterText = currentVal.substring(imageCursorPos);
+    const afterText = currentVal.substring(selectionRange.end !== undefined && selectionRange.end > imageCursorPos ? selectionRange.end : imageCursorPos);
 
     const prefix = beforeText.length > 0 && !beforeText.endsWith('\n\n')
       ? (beforeText.endsWith('\n') ? '\n' : '\n\n')
@@ -599,6 +659,17 @@ export default function RichTextareaField({
           >
             <ImageIcon size={13} />
             <span>Image</span>
+          </button>
+
+          {/* Direct Media Library Button */}
+          <button
+            type="button"
+            onClick={openDirectMediaPicker}
+            title="Pick an image from Media Library and insert or replace the URL directly"
+            className="px-2 py-1 rounded-lg bg-emerald-50 text-emerald-700 hover:bg-emerald-600 hover:text-white border border-emerald-200/80 font-bold transition-all flex items-center gap-1 shadow-xs"
+          >
+            <FolderOpen size={13} />
+            <span>Media Library</span>
           </button>
 
           <span className="w-px h-4 bg-gray-300 mx-0.5" />
@@ -945,20 +1016,30 @@ export default function RichTextareaField({
                 </div>
               )}
 
-              <div className="flex items-center justify-end gap-2 pt-3 border-t border-gray-100">
+              <div className="flex flex-wrap items-center justify-end gap-2 pt-3 border-t border-gray-100">
                 <button
                   type="button"
                   onClick={() => setImageModalOpen(false)}
-                  className="px-3.5 py-1.5 rounded-xl border border-gray-200 text-gray-600 hover:bg-gray-100 font-semibold"
+                  className="px-3 py-1.5 rounded-xl border border-gray-200 text-gray-600 hover:bg-gray-100 font-semibold text-xs"
                 >
                   Cancel
                 </button>
                 <button
+                  type="button"
+                  disabled={!imageUrl.trim()}
+                  onClick={handleInsertRawUrl}
+                  title="Insert only the URL string (best for Process Steps or pipe-separated lists)"
+                  className="px-3.5 py-1.5 rounded-xl bg-sky-50 text-[#00a4d8] border border-sky-300 hover:bg-sky-100 font-bold transition text-xs disabled:opacity-40"
+                >
+                  Insert URL Only
+                </button>
+                <button
                   type="submit"
                   disabled={!imageUrl.trim()}
-                  className="px-4 py-1.5 rounded-xl bg-primary-gradient text-white font-bold transition shadow-soft disabled:opacity-40"
+                  title="Insert as embedded markdown image ![Alt](url)"
+                  className="px-4 py-1.5 rounded-xl bg-primary-gradient text-white font-bold transition shadow-soft text-xs disabled:opacity-40"
                 >
-                  Insert Image
+                  Insert as Markdown Image
                 </button>
               </div>
             </form>
@@ -966,7 +1047,7 @@ export default function RichTextareaField({
         </div>
       )}
 
-      {/* Media Picker Modal for selecting/uploading media */}
+      {/* Media Picker Modal for selecting/uploading media inside Image Modal */}
       <MediaPickerModal
         isOpen={mediaPickerOpen}
         onClose={() => setMediaPickerOpen(false)}
@@ -977,6 +1058,16 @@ export default function RichTextareaField({
             setImageAlt(item.title);
           }
           setMediaPickerOpen(false);
+        }}
+      />
+
+      {/* Direct Media Picker Modal for inserting URL directly into text/selection */}
+      <MediaPickerModal
+        isOpen={directMediaPickerOpen}
+        onClose={() => setDirectMediaPickerOpen(false)}
+        currentValue=""
+        onSelect={(url) => {
+          handleDirectMediaSelect(url);
         }}
       />
     </div>

@@ -93,6 +93,8 @@ export function StaggerItem({ children, className = '', direction = 'up', hover 
   return (
     <motion.div
       className={className}
+      initial="hidden"
+      animate="show"
       variants={{
         hidden: { opacity: 0, ...offset, scale: 0.98 },
         show: {

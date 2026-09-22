@@ -1,9 +1,19 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Menu, X, ChevronDown, ArrowRight } from 'lucide-react';
+import { Menu, X, ChevronDown, ChevronRight, ArrowRight } from 'lucide-react';
 import { solutionGroups, industries } from '../data/content';
 import { useServices } from '../context/ServicesContext';
+
+export const PMS_SUB_SLUGS = [
+  'guesty-integration',
+  'hostaway-integration',
+  'hostfully-integration',
+  'zeevou-integration',
+  'smoobu-integration',
+  'newbook-integration',
+  'jurny-integration',
+];
 
 const serviceMenuGroups = [
   {
@@ -135,6 +145,8 @@ export default function Navbar() {
 
   const dynamicMenuGroups = services.length > 0 ? (() => {
     const matchedSlugs = new Set();
+    PMS_SUB_SLUGS.forEach(slug => matchedSlugs.add(slug));
+
     const groups = serviceMenuGroups.map(group => {
       const list = [];
       group.slugs.forEach(slug => {
@@ -178,10 +190,82 @@ export default function Navbar() {
     servicesList: group.slugs.map(slug => serviceBySlug[slug]).filter(Boolean)
   }));
 
+  const pmsSubServices = PMS_SUB_SLUGS.map((slug) => {
+    return (
+      serviceBySlug[slug] || {
+        slug,
+        title:
+          slug === 'guesty-integration'
+            ? 'Guesty Integration'
+            : slug === 'hostaway-integration'
+              ? 'Hostaway Integration'
+              : slug === 'hostfully-integration'
+                ? 'Hostfully Integration'
+                : slug === 'zeevou-integration'
+                  ? 'Zeevou Integration'
+                  : slug === 'smoobu-integration'
+                    ? 'Smoobu Integration'
+                    : slug === 'newbook-integration'
+                      ? 'Newbook Integration'
+                      : 'Jurny Integration',
+        icon:
+          slug === 'guesty-integration'
+            ? 'Key'
+            : slug === 'hostaway-integration'
+              ? 'Building'
+              : slug === 'hostfully-integration'
+                ? 'BookOpen'
+                : slug === 'zeevou-integration'
+                  ? 'Building2'
+                  : slug === 'smoobu-integration'
+                    ? 'Calendar'
+                    : slug === 'jurny-integration'
+                      ? 'Zap'
+                      : 'Building2',
+        color:
+          slug === 'zeevou-integration'
+            ? 'text-[#5d53a3] bg-[#5d53a3]/10'
+            : 'text-[#00a4d8] bg-[#00a4d8]/10',
+      }
+    );
+  });
+
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const [industriesOpen, setIndustriesOpen] = useState(false);
+  const [mobilePmsOpen, setMobilePmsOpen] = useState(false);
+  const closeTimerRef = useRef(null);
+
+  const openDropdown = (type) => {
+    if (closeTimerRef.current) {
+      clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+    if (type === 'services') {
+      setServicesOpen(true);
+      setSolutionsOpen(false);
+      setIndustriesOpen(false);
+    } else if (type === 'solutions') {
+      setSolutionsOpen(true);
+      setServicesOpen(false);
+      setIndustriesOpen(false);
+    } else if (type === 'industries') {
+      setIndustriesOpen(true);
+      setServicesOpen(false);
+      setSolutionsOpen(false);
+    }
+  };
+
+  const closeDropdowns = () => {
+    if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+    closeTimerRef.current = setTimeout(() => {
+      setServicesOpen(false);
+      setSolutionsOpen(false);
+      setIndustriesOpen(false);
+    }, 180);
+  };
+
   const [navIndustries, setNavIndustries] = useState(() => {
     try {
       const cached = localStorage.getItem('cubixsol_industries_list_cache');
@@ -209,6 +293,7 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
+    if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
     setOpen(false);
     setServicesOpen(false);
     setSolutionsOpen(false);
@@ -242,7 +327,7 @@ export default function Navbar() {
             <img src={logo} alt="Cubixsol" className="h-8 sm:h-9 w-auto object-contain" />
           </NavLink>
 
-          <nav className="hidden lg:flex items-center gap-7 xl:gap-8">
+          <nav className="hidden lg:flex items-center gap-7 xl:gap-8 h-full">
             <NavLink to="/" className={linkClass} end>
               Home
             </NavLink>
@@ -252,21 +337,28 @@ export default function Navbar() {
 
             {/* Services */}
             <div
-              onMouseEnter={() => {
-                setServicesOpen(true);
-                setSolutionsOpen(false);
-                setIndustriesOpen(false);
-              }}
-              onMouseLeave={() => setServicesOpen(false)}
+              className="h-full flex items-center"
+              onMouseEnter={() => openDropdown('services')}
+              onMouseLeave={closeDropdowns}
             >
-              <NavLink to="/all-services" className={linkClass}>
-                <span className="flex items-center gap-1">
-                  Services <ChevronDown className="w-3.5 h-3.5" />
+              <NavLink
+                to="/all-services"
+                className={linkClass}
+                onClick={() => setServicesOpen(false)}
+              >
+                <span className="flex items-center gap-1 py-4">
+                  Services <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${servicesOpen ? 'rotate-180 text-primary-600' : ''}`} />
                 </span>
               </NavLink>
               {servicesOpen && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 w-[min(96vw,1200px)]">
-                  <div className="bg-white rounded-2xl shadow-soft border border-gray-100 p-5 sm:p-6">
+                <div
+                  className="absolute top-full left-1/2 -translate-x-1/2 pt-1 w-[min(96vw,1200px)] z-50"
+                  onMouseEnter={() => openDropdown('services')}
+                  onMouseLeave={closeDropdowns}
+                >
+                  {/* Invisible bridge to guarantee seamless hover cursor transition */}
+                  <div className="absolute -top-3 inset-x-0 h-4 bg-transparent pointer-events-auto" />
+                  <div className="bg-white rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] border border-gray-100 p-5 sm:p-6 animate-in fade-in slide-in-from-top-1 duration-150">
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6">
                       {dynamicMenuGroups.map((group) => (
                         <div key={group.title}>
@@ -277,10 +369,91 @@ export default function Navbar() {
                             {group.servicesList.map((s) => {
                               if (!s) return null;
                               const IconComponent = resolveIcon(s.icon);
+                              const isPms = s.slug === 'pms-integration';
+
+                              if (isPms) {
+                                return (
+                                  <li key={s.slug} className="relative group/pms">
+                                    <div className="flex items-center justify-between px-2 py-1.5 rounded-lg hover:bg-primary-50 transition cursor-pointer group">
+                                      <NavLink
+                                        to={`/${s.slug}`}
+                                        onClick={() => setServicesOpen(false)}
+                                        className="flex items-center gap-2 flex-1 min-w-0"
+                                      >
+                                        <span
+                                          className={`w-7 h-7 rounded-md flex items-center justify-center shrink-0 ${s.color || 'text-primary-600 bg-primary-50'}`}
+                                        >
+                                          <IconComponent className="w-4.5 h-4.5 object-contain" />
+                                        </span>
+                                        <span className="text-[12px] font-semibold text-ink group-hover:text-primary-700 leading-snug truncate">
+                                          {s.menuTitle || s.title}
+                                        </span>
+                                      </NavLink>
+                                      <span className="inline-flex items-center gap-0.5 text-[10px] font-bold text-primary-600 bg-primary-50 border border-primary-100/80 px-1.5 py-0.5 rounded-md shrink-0 ml-1 group-hover/pms:bg-primary-600 group-hover/pms:text-white transition-all">
+                                        {pmsSubServices.length}
+                                        <ChevronRight className="w-3 h-3 transition-transform group-hover/pms:translate-x-0.5" />
+                                      </span>
+                                    </div>
+
+                                    {/* Flyout Submenu on Hover */}
+                                    <div className="absolute left-full top-0 ml-1.5 w-64 bg-white rounded-2xl shadow-[0_20px_50px_-10px_rgba(0,0,0,0.22)] border border-gray-100 p-2.5 z-[70] opacity-0 invisible -translate-x-1 group-hover/pms:opacity-100 group-hover/pms:visible group-hover/pms:translate-x-0 transition-all duration-200 pointer-events-none group-hover/pms:pointer-events-auto">
+                                      {/* Bridge overlay to ensure hover cursor continuity */}
+                                      <div className="absolute -left-3 top-0 bottom-0 w-4 bg-transparent pointer-events-auto" />
+                                      
+                                      <div className="px-2.5 py-1.5 mb-1.5 border-b border-gray-100 flex items-center justify-between bg-slate-50/70 rounded-lg">
+                                        <span className="text-[10px] font-extrabold uppercase tracking-wider text-primary-600">
+                                          PMS Integrations
+                                        </span>
+                                        <span className="text-[10px] font-semibold text-gray-500">{pmsSubServices.length} Platforms</span>
+                                      </div>
+
+                                      <ul className="space-y-1">
+                                        {pmsSubServices.map((sub) => {
+                                          const SubIcon = resolveIcon(sub.icon);
+                                          return (
+                                            <li key={sub.slug}>
+                                              <NavLink
+                                                to={`/${sub.slug}`}
+                                                onClick={() => setServicesOpen(false)}
+                                                className="flex items-center gap-2.5 px-2.5 py-2 rounded-xl hover:bg-primary-50 transition group/sub"
+                                              >
+                                                <span
+                                                  className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 ${sub.color || 'text-primary-600 bg-primary-50'} group-hover/sub:scale-105 transition-transform`}
+                                                >
+                                                  <SubIcon className="w-4 h-4 object-contain" />
+                                                </span>
+                                                <div className="min-w-0 flex-1">
+                                                  <p className="text-[12px] font-semibold text-ink group-hover/sub:text-primary-700 leading-snug truncate">
+                                                    {sub.menuTitle || sub.title}
+                                                  </p>
+                                                </div>
+                                                <ChevronRight className="w-3.5 h-3.5 text-gray-400 group-hover/sub:text-primary-600 group-hover/sub:translate-x-0.5 transition-all shrink-0" />
+                                              </NavLink>
+                                            </li>
+                                          );
+                                        })}
+                                      </ul>
+
+                                      <div className="mt-2 pt-1.5 border-t border-gray-100 px-2">
+                                        <NavLink
+                                          to="/pms-integration"
+                                          onClick={() => setServicesOpen(false)}
+                                          className="text-[11px] font-bold text-primary-600 hover:text-primary-700 flex items-center justify-between py-1 group/all"
+                                        >
+                                          <span>All PMS Solutions</span>
+                                          <ArrowRight className="w-3 h-3 group-hover/all:translate-x-0.5 transition-transform" />
+                                        </NavLink>
+                                      </div>
+                                    </div>
+                                  </li>
+                                );
+                              }
+
                               return (
                                 <li key={s.slug}>
                                   <NavLink
                                     to={`/${s.slug}`}
+                                    onClick={() => setServicesOpen(false)}
                                     className="flex items-center gap-2 px-2 py-1.5 rounded-lg hover:bg-primary-50 transition group"
                                   >
                                     <span
@@ -291,7 +464,6 @@ export default function Navbar() {
                                     <span className="text-[12px] font-semibold text-ink group-hover:text-primary-700 leading-snug">
                                       {s.menuTitle || s.title}
                                     </span>
-
                                   </NavLink>
                                 </li>
                               );
@@ -303,6 +475,7 @@ export default function Navbar() {
                     <div className="mt-4 pt-3 border-t border-gray-100 flex justify-end">
                       <NavLink
                         to="/all-services"
+                        onClick={() => setServicesOpen(false)}
                         className="text-sm font-semibold text-primary-600 inline-flex items-center gap-1 hover:gap-2 transition-all"
                       >
                         View all services <ArrowRight className="w-4 h-4" />
@@ -315,22 +488,28 @@ export default function Navbar() {
 
             {/* Solutions mega menu */}
             <div
-              className="relative"
-              onMouseEnter={() => {
-                setSolutionsOpen(true);
-                setServicesOpen(false);
-                setIndustriesOpen(false);
-              }}
-              onMouseLeave={() => setSolutionsOpen(false)}
+              className="h-full flex items-center"
+              onMouseEnter={() => openDropdown('solutions')}
+              onMouseLeave={closeDropdowns}
             >
-              <NavLink to="/solutions" className={linkClass}>
-                <span className="flex items-center gap-1">
-                  Solutions <ChevronDown className="w-3.5 h-3.5" />
+              <NavLink
+                to="/solutions"
+                className={linkClass}
+                onClick={() => setSolutionsOpen(false)}
+              >
+                <span className="flex items-center gap-1 py-4">
+                  Solutions <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${solutionsOpen ? 'rotate-180 text-primary-600' : ''}`} />
                 </span>
               </NavLink>
               {solutionsOpen && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 w-[min(96vw,920px)]">
-                  <div className="bg-white rounded-2xl shadow-soft border border-gray-100 p-5 sm:p-6">
+                <div
+                  className="absolute top-full left-1/2 -translate-x-1/2 pt-1 w-[min(96vw,920px)] z-50"
+                  onMouseEnter={() => openDropdown('solutions')}
+                  onMouseLeave={closeDropdowns}
+                >
+                  {/* Invisible bridge to guarantee seamless hover cursor transition */}
+                  <div className="absolute -top-3 inset-x-0 h-4 bg-transparent pointer-events-auto" />
+                  <div className="bg-white rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] border border-gray-100 p-5 sm:p-6 animate-in fade-in slide-in-from-top-1 duration-150">
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
                       {solutionGroups.map((group) => (
                         <div key={group.title}>
@@ -346,6 +525,7 @@ export default function Navbar() {
                                       href={item.externalUrl}
                                       target="_blank"
                                       rel="noopener noreferrer"
+                                      onClick={() => setSolutionsOpen(false)}
                                       className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg px-2 py-1.5 transition"
                                     >
                                       {item.title}
@@ -353,6 +533,7 @@ export default function Navbar() {
                                   ) : (
                                     <NavLink
                                       to={item.externalUrl}
+                                      onClick={() => setSolutionsOpen(false)}
                                       className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg px-2 py-1.5 transition"
                                     >
                                       {item.title}
@@ -361,6 +542,7 @@ export default function Navbar() {
                                 ) : (
                                   <NavLink
                                     to={`/solutions/${item.slug}`}
+                                    onClick={() => setSolutionsOpen(false)}
                                     className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg px-2 py-1.5 transition"
                                   >
                                     {item.title}
@@ -375,6 +557,7 @@ export default function Navbar() {
                     <div className="mt-5 pt-4 border-t border-gray-100 flex justify-end">
                       <NavLink
                         to="/solutions"
+                        onClick={() => setSolutionsOpen(false)}
                         className="text-sm font-semibold text-primary-600 inline-flex items-center gap-1 hover:gap-2 transition-all"
                       >
                         View all solutions <ArrowRight className="w-4 h-4" />
@@ -387,22 +570,28 @@ export default function Navbar() {
 
             {/* Industries mega menu */}
             <div
-              className="relative"
-              onMouseEnter={() => {
-                setIndustriesOpen(true);
-                setServicesOpen(false);
-                setSolutionsOpen(false);
-              }}
-              onMouseLeave={() => setIndustriesOpen(false)}
+              className="h-full flex items-center"
+              onMouseEnter={() => openDropdown('industries')}
+              onMouseLeave={closeDropdowns}
             >
-              <NavLink to="/industries" className={linkClass}>
-                <span className="flex items-center gap-1">
-                  Industries <ChevronDown className="w-3.5 h-3.5" />
+              <NavLink
+                to="/industries"
+                className={linkClass}
+                onClick={() => setIndustriesOpen(false)}
+              >
+                <span className="flex items-center gap-1 py-4">
+                  Industries <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${industriesOpen ? 'rotate-180 text-primary-600' : ''}`} />
                 </span>
               </NavLink>
               {industriesOpen && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 w-[min(96vw,860px)]">
-                  <div className="bg-white rounded-2xl shadow-soft border border-gray-100 overflow-hidden grid md:grid-cols-[220px_1fr]">
+                <div
+                  className="absolute top-full left-1/2 -translate-x-1/2 pt-1 w-[min(96vw,860px)] z-50"
+                  onMouseEnter={() => openDropdown('industries')}
+                  onMouseLeave={closeDropdowns}
+                >
+                  {/* Invisible bridge to guarantee seamless hover cursor transition */}
+                  <div className="absolute -top-3 inset-x-0 h-4 bg-transparent pointer-events-auto" />
+                  <div className="bg-white rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] border border-gray-100 overflow-hidden grid md:grid-cols-[220px_1fr] animate-in fade-in slide-in-from-top-1 duration-150">
                     <div className="bg-gray-50/90 border-r border-gray-100 p-3">
                       <p className="text-[10px] font-bold tracking-widest uppercase text-gray-400 px-2 mb-2">
                         Industries
@@ -460,6 +649,7 @@ export default function Navbar() {
                             )}
                             <NavLink
                               to={`/industries/${ind.slug}`}
+                              onClick={() => setIndustriesOpen(false)}
                               className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-primary-600 hover:gap-2 transition-all"
                             >
                               Discover More <ArrowRight className="w-4 h-4" />
@@ -563,22 +753,82 @@ export default function Navbar() {
                   >
                     All services
                   </NavLink>
-                  {services.map((s) => {
-                    const IconComponent = resolveIcon(s.icon);
-                    return (
-                      <NavLink
-                        key={s.slug}
-                        to={`/${s.slug}`}
-                        onClick={() => setOpen(false)}
-                        className="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50/50 rounded-lg transition"
-                      >
-                        <span className={`w-6 h-6 rounded-md flex items-center justify-center shrink-0 ${s.color || 'text-primary-600 bg-primary-50'}`}>
-                          <IconComponent className="w-3.5 h-3.5 object-contain" />
-                        </span>
-                        <span>{s.menuTitle || s.title}</span>
-                      </NavLink>
-                    );
-                  })}
+                  {services
+                    .filter((s) => !PMS_SUB_SLUGS.includes(s.slug))
+                    .map((s) => {
+                      const IconComponent = resolveIcon(s.icon);
+                      const isPms = s.slug === 'pms-integration';
+
+                      if (isPms) {
+                        return (
+                          <div key={s.slug} className="rounded-xl border border-gray-100 bg-slate-50/50 overflow-hidden my-1">
+                            <div className="flex items-center justify-between pr-2">
+                              <NavLink
+                                to={`/${s.slug}`}
+                                onClick={() => setOpen(false)}
+                                className="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-700 hover:text-primary-600 flex-1 font-semibold"
+                              >
+                                <span
+                                  className={`w-6 h-6 rounded-md flex items-center justify-center shrink-0 ${s.color || 'text-primary-600 bg-primary-50'}`}
+                                >
+                                  <IconComponent className="w-3.5 h-3.5 object-contain" />
+                                </span>
+                                <span>{s.menuTitle || s.title}</span>
+                              </NavLink>
+                              <button
+                                type="button"
+                                onClick={() => setMobilePmsOpen((v) => !v)}
+                                className="px-2 py-1 text-primary-600 bg-primary-50 rounded-md hover:bg-primary-100 transition flex items-center gap-1 text-[11px] font-bold"
+                                aria-label="Toggle PMS integrations"
+                              >
+                                <span>{pmsSubServices.length}</span>
+                                <ChevronDown
+                                  className={`w-3.5 h-3.5 transition-transform duration-200 ${mobilePmsOpen ? 'rotate-180' : ''}`}
+                                />
+                              </button>
+                            </div>
+                            {mobilePmsOpen && (
+                              <div className="pl-6 pr-2 py-1.5 space-y-1 bg-white border-t border-gray-100">
+                                {pmsSubServices.map((sub) => {
+                                  const SubIcon = resolveIcon(sub.icon);
+                                  return (
+                                    <NavLink
+                                      key={sub.slug}
+                                      to={`/${sub.slug}`}
+                                      onClick={() => setOpen(false)}
+                                      className="flex items-center gap-2.5 px-2.5 py-1.5 text-xs font-semibold text-gray-600 hover:text-primary-600 hover:bg-primary-50/60 rounded-lg transition"
+                                    >
+                                      <span
+                                        className={`w-5 h-5 rounded flex items-center justify-center shrink-0 ${sub.color || 'text-primary-600 bg-primary-50'}`}
+                                      >
+                                        <SubIcon className="w-3 h-3 object-contain" />
+                                      </span>
+                                      <span className="truncate">{sub.menuTitle || sub.title}</span>
+                                    </NavLink>
+                                  );
+                                })}
+                              </div>
+                            )}
+                          </div>
+                        );
+                      }
+
+                      return (
+                        <NavLink
+                          key={s.slug}
+                          to={`/${s.slug}`}
+                          onClick={() => setOpen(false)}
+                          className="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50/50 rounded-lg transition"
+                        >
+                          <span
+                            className={`w-6 h-6 rounded-md flex items-center justify-center shrink-0 ${s.color || 'text-primary-600 bg-primary-50'}`}
+                          >
+                            <IconComponent className="w-3.5 h-3.5 object-contain" />
+                          </span>
+                          <span>{s.menuTitle || s.title}</span>
+                        </NavLink>
+                      );
+                    })}
 
                 </div>
               )}

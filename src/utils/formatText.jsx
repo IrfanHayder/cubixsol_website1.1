@@ -536,14 +536,33 @@ export function parseCustomListItems(input) {
 }
 
 /**
+ * Normalizes and cleans image URLs:
+ * - Trims whitespace
+ * - Strips accidental trailing slashes (e.g. /uploads/image.png/ -> /uploads/image.png)
+ */
+export function cleanImageUrl(url) {
+  if (!url || typeof url !== 'string') return '';
+  let cleaned = url.trim();
+  if (cleaned.length > 1 && cleaned.endsWith('/')) {
+    cleaned = cleaned.replace(/\/+$/, '');
+  }
+  return cleaned;
+}
+
+/**
  * Parses process steps from string or array
  */
 export function parseProcessSteps(input) {
   if (!input) return [];
   if (Array.isArray(input)) {
     if (input.length > 0 && typeof input[0] === 'object' && input[0] !== null) {
-      const valid = input.filter((item) => item.title && String(item.title).trim());
-      if (valid.length > 0) return valid;
+      const valid = input.filter((item) => item && item.title && String(item.title).trim());
+      if (valid.length > 0) {
+        return valid.map((item) => ({
+          ...item,
+          image: cleanImageUrl(item.image),
+        }));
+      }
     }
     input = input.join('\n');
   }
@@ -559,25 +578,35 @@ export function parseProcessSteps(input) {
 
     if (trimmed.includes('|')) {
       if (current && current.title) items.push(current);
-      const parts = trimmed.split('|').map((s) => s.trim());
+
+      let cleanLine = trimmed;
+      if (cleanLine.startsWith('|')) cleanLine = cleanLine.substring(1);
+      let parts = cleanLine.split('|').map((s) => s.trim());
+      while (parts.length > 3 && parts[parts.length - 1] === '') {
+        parts.pop();
+      }
+
       const idx = items.length;
       if (parts.length >= 5) {
-        const points = parts[4].split(';').map((p) => p.trim()).filter(Boolean);
+        const points = parts.slice(4).join(';').split(';').map((p) => p.trim()).filter(Boolean);
         current = {
           stepNumber: parts[0] || `0${idx + 1}`,
-          title: parts[1],
-          desc: parts[2],
-          image: parts[3],
+          title: parts[1] || '',
+          desc: parts[2] || '',
+          image: cleanImageUrl(parts[3]),
           points,
         };
       } else if (parts.length === 4) {
-        const isImg = parts[3].startsWith('http') || parts[3].startsWith('/uploads') || parts[3].includes('/');
+        const part4 = parts[3];
+        const isImg =
+          /^(https?:\/\/|\/uploads\/|\/|\.\/|data:image\/|blob:)/i.test(part4) ||
+          /\.(png|jpg|jpeg|webp|svg|gif|avif)(\?.*)?$/i.test(part4.replace(/\/+$/, ''));
         current = {
           stepNumber: parts[0] || `0${idx + 1}`,
-          title: parts[1],
-          desc: parts[2],
-          image: isImg ? parts[3] : '',
-          points: !isImg ? parts[3].split(';').map((p) => p.trim()).filter(Boolean) : [],
+          title: parts[1] || '',
+          desc: parts[2] || '',
+          image: isImg ? cleanImageUrl(part4) : '',
+          points: !isImg ? part4.split(';').map((p) => p.trim()).filter(Boolean) : [],
         };
       } else if (parts.length === 3) {
         current = { stepNumber: parts[0] || `0${idx + 1}`, title: parts[1], desc: parts[2], image: '', points: [] };

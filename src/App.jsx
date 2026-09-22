@@ -29,6 +29,15 @@ import ShopifyDevelopment from './pages/ShopifyDevelopment';
 import GoHighLevelAutomation from './pages/GoHighLevelAutomation';
 import HubSpotCrm from './pages/HubSpotCrm';
 import AiWorkflows from './pages/AiWorkflows';
+import AiChatbots from './pages/AiChatbots';
+import EmailLeadNurture from './pages/EmailLeadNurture';
+import GuestyIntegration from './pages/GuestyIntegration';
+import HostawayIntegration from './pages/HostawayIntegration';
+import HostfullyIntegration from './pages/HostfullyIntegration';
+import ZeevouIntegration from './pages/ZeevouIntegration';
+import SmoobuIntegration from './pages/SmoobuIntegration';
+import NewbookIntegration from './pages/NewbookIntegration';
+import JurnyIntegration from './pages/JurnyIntegration';
 import AdminDashboard from './pages/Admin/Dashboard';
 import AdminLogin from './pages/Admin/Login';
 
@@ -107,6 +116,28 @@ function AppRoutes() {
         <Route path="/ai-workflow-automation" element={<AiWorkflows />} />
         <Route path="/services/ai-workflows" element={<AiWorkflows />} />
         <Route path="/services/ai-workflow-automation" element={<AiWorkflows />} />
+        <Route path="/ai-chatbots" element={<AiChatbots />} />
+        <Route path="/ai-chatbot-development" element={<AiChatbots />} />
+        <Route path="/services/ai-chatbots" element={<AiChatbots />} />
+        <Route path="/services/ai-chatbot-development" element={<AiChatbots />} />
+        <Route path="/email-lead-nurture" element={<EmailLeadNurture />} />
+        <Route path="/email-marketing-automation" element={<EmailLeadNurture />} />
+        <Route path="/services/email-lead-nurture" element={<EmailLeadNurture />} />
+        <Route path="/services/email-marketing-automation" element={<EmailLeadNurture />} />
+        <Route path="/guesty-integration" element={<GuestyIntegration />} />
+        <Route path="/services/guesty-integration" element={<GuestyIntegration />} />
+        <Route path="/hostaway-integration" element={<HostawayIntegration />} />
+        <Route path="/services/hostaway-integration" element={<HostawayIntegration />} />
+        <Route path="/hostfully-integration" element={<HostfullyIntegration />} />
+        <Route path="/services/hostfully-integration" element={<HostfullyIntegration />} />
+        <Route path="/zeevou-integration" element={<ZeevouIntegration />} />
+        <Route path="/services/zeevou-integration" element={<ZeevouIntegration />} />
+        <Route path="/smoobu-integration" element={<SmoobuIntegration />} />
+        <Route path="/services/smoobu-integration" element={<SmoobuIntegration />} />
+        <Route path="/newbook-integration" element={<NewbookIntegration />} />
+        <Route path="/services/newbook-integration" element={<NewbookIntegration />} />
+        <Route path="/jurny-integration" element={<JurnyIntegration />} />
+        <Route path="/services/jurny-integration" element={<JurnyIntegration />} />
         <Route path="/services/:slug" element={<ServiceDetail />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/industries" element={<Industries />} />

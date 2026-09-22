@@ -25,7 +25,7 @@ import ContactPageEditor from '../../components/Admin/ContactPageEditor';
 import IndustriesPageEditor from '../../components/Admin/IndustriesPageEditor';
 import { useServices } from '../../context/ServicesContext';
 import { API_BASE, apiFetch } from '../../utils/api';
-import { parseCustomListItems, parseProcessSteps } from '../../utils/formatText';
+import { parseCustomListItems, parseProcessSteps, cleanImageUrl } from '../../utils/formatText';
 
 
 /* -------------------- Toast Notification -------------------- */
@@ -953,10 +953,14 @@ function DbSection({ sectionKey, showToast }) {
                 const stepNum = i.stepNumber || '01';
                 const title = i.title || '';
                 const desc = i.desc || '';
-                const image = i.image || '';
-                const points = Array.isArray(i.points) ? i.points.join('; ') : '';
-                if (image || points) {
+                const image = cleanImageUrl(i.image || '');
+                const points = Array.isArray(i.points) && i.points.length > 0 ? i.points.filter(Boolean).join('; ') : '';
+                if (image && points) {
                   return `${stepNum} | ${title} | ${desc} | ${image} | ${points}`;
+                } else if (image) {
+                  return `${stepNum} | ${title} | ${desc} | ${image}`;
+                } else if (points) {
+                  return `${stepNum} | ${title} | ${desc} | | ${points}`;
                 }
                 return `${stepNum} | ${title} | ${desc}`;
               })

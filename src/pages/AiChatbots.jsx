@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
-  Zap, Clock, Users, ArrowRight, CheckCircle2, ChevronRight,
-  TrendingUp, Sparkles, ShieldCheck, Database, Calendar,
-  MessageSquare, Mail, Layers, PhoneCall, ExternalLink,
-  Bot, RefreshCw, BarChart3, HelpCircle, Star, Sliders,
-  Workflow, Cpu, Settings, Smartphone, Award, Target, Rocket,
-  Globe, CreditCard, Share2, Terminal, Code2, Check, PieChart,
-  GitBranch, Server, CheckCircle
+  Bot, MessageSquare, Zap, Clock, Users, ArrowRight, CheckCircle2,
+  ChevronRight, TrendingUp, Sparkles, ShieldCheck, Database, Calendar,
+  Mail, Layers, PhoneCall, ExternalLink, RefreshCw, BarChart3,
+  HelpCircle, Star, Sliders, Workflow, Cpu, Settings, Smartphone,
+  Award, Target, Rocket, Globe, CreditCard, Share2, Terminal, Code2,
+  Check, PieChart, GitBranch, Server, BrainCircuit, FileText, Send,
+  ShieldAlert, MessagesSquare, CheckCircle, Briefcase, ChevronDown
 } from 'lucide-react';
 import { useEstimateModal } from '../context/EstimateModalContext';
 import { apiFetch } from '../utils/api';
@@ -18,322 +18,332 @@ import CtaBanner from '../components/CtaBanner';
 import DynamicIcon from '../components/DynamicIcon';
 import { useSEO } from '../utils/seo';
 
-// Default static data matching the exact high-converting HubSpot CRM design
+// Default static data matching the exact document content and design
 const DEFAULT_DATA = {
-  slug: 'hubspot-crm',
-  title: 'HubSpot CRM Automation Services to Connect Your Sales And Marketing Operations',
-  heroEyebrow: 'HUBSPOT CRM AUTOMATION SERVICES',
-  heroTitle: 'HubSpot CRM Automation Services to Connect Your Sales And Marketing Operations',
-  heroDesc: 'Our HubSpot CRM automation services create customised systems with automated workflows, sales pipelines, integrations, and reporting dashboards that organise leads and improve customer management.',
-  heroPrimaryBtnText: 'Book A Discovery Call',
-  heroSecondaryBtnText: 'View Our Work',
+  slug: 'ai-chatbots',
+  title: 'AI Chatbot Development Services for Smarter Customer Experiences',
+  heroEyebrow: 'AI CHATBOT DEVELOPMENT SERVICES',
+  heroTitle: 'AI Chatbot Development Services for Smarter Customer Experiences',
+  heroDesc: 'As an AI chatbot development company, we create intelligent chatbot solutions to automate conversations and improve customer support. Our team provides custom AI chatbot development services to connect websites, applications, customer service platforms, and business systems through advanced conversational technology.',
+  heroPrimaryBtnText: 'Book A Free Discovery Call',
+  heroSecondaryBtnText: 'Explore Our Work',
   heroBadges: [
-    'Automated Workflows & Deal Pipelines',
-    'Custom Integrations & Dashboards',
-    'Lead Capture & Marketing Automation',
-    'Lifecycle & Revenue Reporting'
+    'Instant 24/7 Customer Assistance',
+    'Multi-Channel Web, App & CRM Sync',
+    'Zero Hallucination Knowledge Base',
+    'Enterprise Automation & Scalability'
   ],
-  heroImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&h=800&q=80',
+  heroImage: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&w=1200&h=800&q=80',
 
-  // Section 1: Why Your CRM Needs Automation
-  problemEyebrow: 'WHY YOUR CRM NEEDS AUTOMATION',
-  problemTitle: 'Manual Sales Processes Create Gaps That Automation Can Solve',
-  problemDesc: 'Manual processes often create delays between lead generation, customer communication, and sales conversion. Teams may lose valuable opportunities, but businesses can manage leads more effectively through centralised data, automated communication, and clear sales processes. A properly configured CRM provides teams with better control over customer relationships and future opportunities.',
+  // Section 1: Why Businesses Invest in AI Chatbot Solutions
+  problemEyebrow: 'WHY BUSINESSES INVEST IN AI CHATBOT SOLUTIONS',
+  problemTitle: 'Customers Expect Faster And More Personal Support',
+  problemDesc: 'Traditional customer support systems often struggle with delayed responses, repetitive questions, and limited availability. An AI chatbot for customer service creates a faster communication channel that answers customer queries, collects information, and guides users through every interaction.',
   problemCards: [
     {
-      icon: 'Workflow',
-      title: 'Capture Every Opportunity Automatically',
-      desc: 'HubSpot CRM automation collects leads from different channels and organises customer information in one place. Automated forms, lifecycle stages, and lead assignment workflows help teams manage enquiries without missing important opportunities. A structured CRM system creates consistent processes for capturing, categorising, and moving prospects through the sales journey.',
+      icon: 'Clock',
+      title: 'Provide Instant Customer Assistance',
+      desc: 'AI chatbot services allow businesses to answer customer questions immediately through websites, applications, and messaging platforms. Customers receive quick responses without waiting for support teams.',
     },
     {
-      icon: 'MessageSquare',
-      title: 'Create Faster Customer Responses',
-      desc: 'HubSpot CRM workflow automation can trigger emails, notifications, reminders, and internal tasks based on customer actions. Automated responses allow sales teams to connect with prospects at the right moment while maintaining consistent communication.',
+      icon: 'Bot',
+      title: 'Automate Repetitive Support Tasks',
+      desc: 'A customer service AI chatbot manages common requests such as FAQs, product information, booking questions, and account support. Teams can focus on complex customer needs while automated systems manage routine conversations.',
     },
     {
-      icon: 'TrendingUp',
-      title: 'Build A Structured Sales Pipeline',
-      desc: 'HubSpot CRM sales automation features help businesses create deal stages, automate sales tasks, assign ownership, and track progress from initial contact to final conversion. Sales teams can follow consistent processes while managers gain clearer pipeline insights.',
+      icon: 'Target',
+      title: 'Improve Lead Qualification And Conversion',
+      desc: 'AI chatbots for business help companies capture visitor information, understand customer intent, and guide potential buyers toward the next step in their journey.',
     },
     {
-      icon: 'BarChart3',
-      title: 'Understand Performance With Better Data',
-      desc: 'HubSpot CRM marketing automation features provide dashboards that track campaign results, lead sources, customer engagement, conversion rates, and revenue opportunities. Data-driven insights allow teams to identify successful strategies and improve future decisions.',
+      icon: 'Users',
+      title: 'Create Consistent Customer Experiences',
+      desc: 'AI chatbot development solutions provide reliable communication across different channels. Businesses can maintain consistent responses, messaging, and support quality for every customer interaction.',
     },
   ],
 
-  // Section 2: Our HubSpot Automation Solutions (6 Cards)
-  capabilitiesEyebrow: 'OUR HUBSPOT AUTOMATION SOLUTIONS',
-  capabilitiesTitle: 'Customised HubSpot Automation Systems Built Around Your Business Workflow',
-  capabilitiesDesc: 'Our HubSpot CRM automation solutions focus on creating systems that match your operations instead of forcing your team into standard workflows. We configure HubSpot CRM, develop automated workflows, connect essential platforms, and create reporting systems that support long-term growth.',
+  // Section 2: Our AI Chatbot Development Services (6 Cards)
+  capabilitiesEyebrow: 'OUR AI CHATBOT DEVELOPMENT SERVICES',
+  capabilitiesTitle: 'Intelligent Chatbot Systems Built Around Your Business Needs',
+  capabilitiesDesc: 'Our AI chatbot development services combine conversational design, AI technology, integrations, and business workflows to create chatbot systems that support specific operational goals.',
   capabilitiesCards: [
     {
       image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=700&h=450&q=80',
-      tag: 'CRM Setup & Structure',
-      title: 'HubSpot CRM Setup And Custom Configuration',
-      desc: 'We configure HubSpot accounts, contacts, companies, custom properties, lifecycle stages, user permissions, and essential CRM settings. Our setup process creates a clean data structure that allows teams to manage customer information efficiently and prepare the platform for advanced automation.',
-      pills: ['Custom Properties', 'Lifecycle Stages', 'User Permissions'],
+      tag: 'CUSTOMER SERVICE',
+      title: 'AI Customer Service Chatbot Development',
+      desc: 'We build AI customer service chatbot solutions that handle customer enquiries, provide instant answers, and connect users with human agents when advanced assistance is required.',
+      pills: ['Instant Answers', 'Human Escalation', '24/7 Availability'],
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1577563908411-5077b6dc7624?auto=format&fit=crop&w=700&h=450&q=80',
+      tag: 'WEBSITE ENGAGEMENT',
+      title: 'Website AI Chatbot Development',
+      desc: 'We create customer support AI chatbot services for websites that engage visitors, answer questions, collect leads, and improve website communication.',
+      pills: ['Lead Capture', 'Visitor Engagement', 'Seamless Widget'],
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=700&h=450&q=80',
+      tag: 'CUSTOM ARCHITECTURE',
+      title: 'Custom AI Chatbot Development Services',
+      desc: 'We develop customised chatbot solutions based on your business processes, customer requirements, industry information, and communication goals.',
+      pills: ['Bespoke Workflows', 'Industry Logic', 'Private Knowledge'],
     },
     {
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&h=450&q=80',
-      tag: 'Sales Architecture',
-      title: 'Sales Pipeline Architecture',
-      desc: 'We build customised HubSpot deal pipelines with sales stages, automation triggers, task assignments, and ownership rules. The system creates a clear process for tracking deals, improving team coordination, and maintaining accurate sales forecasts.',
-      pills: ['Deal Pipelines', 'Sales Stages', 'Forecast Tracking'],
+      tag: 'MOBILE & APP',
+      title: 'AI Chatbot App Development Services',
+      desc: 'We create mobile chatbot applications that allow businesses to provide intelligent customer support through dedicated platforms and mobile experiences.',
+      pills: ['iOS & Android', 'Dedicated UI', 'Push Notifications'],
     },
     {
-      image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=700&h=450&q=80',
-      tag: 'Lead Gen & Nurture',
-      title: 'Lead Capture And Marketing Automation Setup',
-      desc: 'We create HubSpot forms, landing page connections, tracking systems, segmentation rules, and nurturing workflows. Our HubSpot CRM and marketing automation solutions help businesses capture leads, organise customer data, and create personalised communication journeys.',
-      pills: ['Smart Forms', 'Segmentation Rules', 'Nurturing Drips'],
+      image: 'https://images.unsplash.com/photo-1534536281715-e28d76689b4d?auto=format&fit=crop&w=700&h=450&q=80',
+      tag: 'ENTERPRISE SCALE',
+      title: 'Enterprise AI Chatbot Development Service',
+      desc: 'We design enterprise-level chatbot systems with advanced integrations, security requirements, business data connections, and scalable automation capabilities.',
+      pills: ['Enterprise Security', 'Data Pipelines', 'High Volume'],
     },
     {
       image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=700&h=450&q=80',
-      tag: 'Workflow Automation',
-      title: 'Advanced Workflow Automation',
-      desc: 'We develop HubSpot CRM workflow automation systems that manage email sequences, lifecycle updates, internal alerts, customer journeys, and re-engagement campaigns. Each workflow follows specific business rules to create consistent customer experiences.',
-      pills: ['Email Sequences', 'Internal Alerts', 'Re-engagement'],
-    },
-    {
-      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&h=450&q=80',
-      tag: 'Integrations & APIs',
-      title: 'HubSpot Integration And Data Connections',
-      desc: 'Businesses rely on multiple platforms to manage advertising, payments, scheduling, and customer communication. We connect HubSpot with tools such as Google Ads, Meta Ads, Zapier, Make, Calendly, Stripe, and custom APIs.',
-      pills: ['Google & Meta Ads', 'Stripe & Calendly', 'Zapier & Make'],
-    },
-    {
-      image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=700&h=450&q=80',
-      tag: 'BI & Reporting',
-      title: 'CRM Dashboards And Revenue Reporting',
-      desc: 'We create HubSpot dashboards that track pipeline value, campaign performance, conversion rates, sales activity, and customer engagement. Accurate reporting gives teams practical insights into business performance and future opportunities.',
-      pills: ['Pipeline Value', 'Conversion Rates', 'Revenue Attribution'],
+      tag: 'INTEGRATIONS & OPS',
+      title: 'AI Chatbot Integration And Optimisation',
+      desc: 'We connect AI chatbots with CRM systems, knowledge bases, websites, applications, and existing business tools to create a connected communication ecosystem.',
+      pills: ['CRM & Helpdesk Sync', 'API Pipelines', 'Continuous Tuning'],
     },
   ],
 
-  // Section 3: Find Your Right HubSpot Automation Path
-  fixFirstEyebrow: 'FIND YOUR RIGHT HUBSPOT AUTOMATION PATH',
-  fixFirstTitle: 'Which HubSpot Solution Matches Your Current Business Challenge?',
-  fixFirstDesc: 'Our HubSpot automation agency evaluates your current workflow, identifies areas for improvement, and builds automation solutions that support your business objectives. The right setup can improve lead management, sales visibility, team collaboration, and customer communication.',
+  // Section 3: Interactive Chatbot Problem Solver
+  fixFirstEyebrow: 'CHOOSE THE RIGHT AI CHATBOT APPROACH',
+  fixFirstTitle: 'Which Area Of Your Business Needs Intelligent Automation?',
+  fixFirstDesc: 'A successful chatbot project starts with understanding your business objectives and selecting the right AI solution for your customers, teams, and workflows.',
   fixFirstImage: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&h=600&q=80',
   fixFirstItems: [
     {
-      id: 'lead-management',
-      title: 'We Need Better Lead Management',
-      desc: 'HubSpot CRM marketing automation creates a structured system for capturing leads, segmenting contacts, and maintaining communication throughout the buying journey. Automated workflows help teams deliver timely follow-ups and guide prospects toward conversion.',
-      tag: 'Lead Capture',
-      solution: 'HubSpot Forms → Lead Workflow → Automated Follow-Up → Meeting Booking',
+      id: 'customer-support',
+      title: 'We Need Better Customer Support Operations',
+      desc: 'Businesses that receive repeated customer questions can use an AI customer service chatbot to automate responses and improve support availability.',
+      tag: 'Support Operations',
+      solution: 'Website Chatbot → Knowledge Base → Automated Responses → Human Support Connection',
     },
     {
-      id: 'sales-operations',
-      title: 'We Need More Control Over Sales Operations',
-      desc: 'HubSpot CRM sales automation features create organised deal stages, automated tasks, sales sequences, and reporting systems that support better sales management. A customised sales process allows teams to track opportunities and maintain consistent follow-up activities.',
-      tag: 'Sales Control',
-      solution: 'HubSpot Pipeline → Sales Automation → Reporting Dashboard',
+      id: 'lead-generation',
+      title: 'We Want To Generate And Qualify More Leads',
+      desc: 'Companies focused on growth can use AI chatbot development solutions to engage website visitors and collect valuable customer information.',
+      tag: 'Lead Qualification',
+      solution: 'AI Chatbot → Lead Qualification → CRM Integration → Sales Follow-Up',
     },
     {
-      id: 'setup-improvement',
-      title: 'Our Existing HubSpot Setup Needs Improvement',
-      desc: 'We review existing HubSpot accounts, identify automation issues, clean unnecessary data, and optimise workflows. Our optimisation process improves system performance and creates a more reliable CRM environment.',
-      tag: 'CRM Rebuild',
-      solution: 'HubSpot Audit → Automation Review → System Optimisation',
+      id: 'custom-assistant',
+      title: 'We Need A Custom Business Assistant',
+      desc: 'Organisations with unique workflows can use custom AI chatbot development services to create an assistant trained around their products, services, and internal information.',
+      tag: 'Custom Assistant',
+      solution: 'Business Data → AI Training → Custom Chatbot → Workflow Automation',
     },
     {
-      id: 'scalable-crm',
-      title: 'We Need A Scalable CRM For Our Team',
-      desc: 'We design HubSpot environments with structured workflows, user permissions, reporting dashboards, and automation rules. A scalable CRM setup allows departments to work together through a unified customer management system.',
-      tag: 'Team Scale',
-      solution: 'HubSpot Setup → Team Workflows → Advanced Reporting',
+      id: 'enterprise-automation',
+      title: 'We Require Enterprise-Level Communication Automation',
+      desc: 'Large organisations can use enterprise AI chatbot development services to manage customer interactions across multiple platforms.',
+      tag: 'Enterprise Automation',
+      solution: 'AI Platform → Business Systems Integration → Analytics → Continuous Improvement',
     },
   ],
 
   // Section 4: Implementation Process
-  processEyebrow: 'OUR IMPLEMENTATION PROCESS',
-  processTitle: 'From CRM Planning To Complete HubSpot Automation Deployment',
-  processDesc: 'Our implementation process connects business requirements with practical CRM solutions. We analyse existing operations, configure HubSpot features, build automation systems, and test every process before deployment.',
+  processEyebrow: 'OUR AI CHATBOT DEVELOPMENT PROCESS',
+  processTitle: 'From Planning To A Fully Functional AI Assistant',
+  processDesc: 'Our development approach creates reliable chatbot systems that match your business requirements and customer expectations.',
   processSteps: [
     {
       step: '01',
-      title: 'Business Process Analysis',
-      desc: 'We analyse sales processes, lead sources, customer journeys, existing platforms, and team responsibilities. Our analysis identifies automation opportunities and creates a roadmap for your HubSpot implementation.',
+      title: 'Business Requirement Analysis',
+      desc: 'We review your customer journey, communication challenges, business goals, and automation requirements before creating the chatbot strategy.',
     },
     {
       step: '02',
-      title: 'CRM Structure And Technical Setup',
-      desc: 'We configure HubSpot settings, user permissions, email systems, domains, integrations, and essential account features. Proper configuration creates a reliable environment for workflows, communication, and reporting.',
+      title: 'Conversation Design And Planning',
+      desc: 'We create chatbot conversations, user flows, response structures, and interaction paths that provide natural customer experiences.',
     },
     {
       step: '03',
-      title: 'Workflow And Automation Development',
-      desc: 'We build HubSpot workflows, sales sequences, pipeline automation, lead routing systems, and communication triggers based on your requirements. Each automation process follows your business rules and operational goals.',
+      title: 'AI Development And System Integration',
+      desc: 'We develop the chatbot, connect required platforms, integrate business data, and configure automation workflows.',
     },
     {
       step: '04',
-      title: 'Testing And Performance Review',
-      desc: 'We review automation triggers, email communication, integrations, data movement, and reporting accuracy. Testing identifies potential issues and confirms that every CRM process performs correctly.',
+      title: 'Testing Customer Interactions',
+      desc: 'We test chatbot responses, user journeys, integrations, and performance to identify improvements before deployment.',
     },
     {
       step: '05',
-      title: 'Training And Continuous Optimisation',
-      desc: 'We provide documentation, system guidance, and training support after implementation. Our team also supports future improvements by optimising workflows and adapting the system as your business grows.',
+      title: 'Deployment And Ongoing Enhancement',
+      desc: 'We launch the chatbot system and provide optimisation support to improve accuracy, performance, and customer engagement.',
     },
   ],
 
-  // Section 5: Ways To Work With Our Team (3 Models)
-  modelsEyebrow: 'WAYS TO WORK WITH OUR TEAM',
-  modelsTitle: 'Flexible HubSpot Automation Services For Different Business Needs',
-  modelsDesc: 'Businesses require different levels of CRM support depending on their goals, internal resources, and technical requirements. Our HubSpot automation services provide flexible options for complete implementations, team support, and ongoing improvements.',
+  // Section 5: Work With Our AI Chatbot Development Experts (4 Models)
+  modelsEyebrow: 'WORK WITH OUR AI CHATBOT DEVELOPMENT EXPERTS',
+  modelsTitle: 'Flexible Chatbot Solutions For Different Business Requirements',
+  modelsDesc: 'Businesses require different levels of automation support. Our AI chatbot development company provides solutions based on your goals, industry requirements, and technology needs.',
   models: [
     {
       number: '1',
-      title: 'Complete HubSpot CRM Implementation',
-      desc: 'A complete HubSpot CRM implementation provides businesses with a ready-to-use automation system. We handle CRM configuration, pipeline creation, workflow development, integrations, dashboards, and documentation.',
+      title: 'Complete AI Chatbot Development Project',
+      desc: 'We create complete chatbot systems with strategy, design, development, integrations, testing, and deployment support.',
       features: [
-        'Full Account & Properties Configuration',
-        'Custom Sales & Deal Pipelines',
-        'Multi-Branch Automated Workflows',
-        'Platform & Form Integrations',
-        'Executive Dashboards & Documentation',
+        'End-to-End Chatbot Strategy & Architecture',
+        'Custom Conversational UI & Widget Design',
+        'Knowledge Base & LLM System Prompting',
+        'Platform Testing & Complete Handover',
       ],
-      ctaText: 'Start Implementation',
+      ctaText: 'Start Chatbot Project',
     },
     {
       number: '2',
-      title: 'HubSpot Support For Growing Teams',
-      desc: 'We support businesses with workflow improvements, process optimisation, user configuration, and automation enhancements. Our implementation support helps teams maintain organised operations as customer volume increases.',
+      title: 'Customer Support Automation Solution',
+      desc: 'We build AI chatbots for customer service systems that reduce response times and improve customer communication.',
       features: [
-        'Workflow Optimization & Enhancements',
-        'Sales Process & User Configuration',
-        'Pipeline Stage Refinements',
-        'Team Operations Support',
-        'Scalable Workflow Architecture',
+        'Automated FAQ & Tier-1 Ticket Resolution',
+        'Multi-Channel Web & Helpdesk Integration',
+        'Seamless Human Agent Hand-off Protocols',
+        '24/7 Availability with Sub-Second Responses',
       ],
-      ctaText: 'Get Team Support',
+      ctaText: 'Build Support Chatbot',
       isPopular: true,
     },
     {
       number: '3',
-      title: 'Ongoing CRM Automation Management',
-      desc: 'Our ongoing support services include workflow adjustments, integration maintenance, reporting improvements, and automation optimisation. Continuous management keeps your HubSpot environment aligned with changing business needs.',
+      title: 'Business AI Assistant Development',
+      desc: 'We develop AI chatbot solutions that support internal operations, customer interactions, sales activities, and business workflows.',
       features: [
-        'Continuous Workflow Adjustments',
-        'Integration Maintenance & Monitoring',
-        'Advanced Reporting Improvements',
-        'Ongoing Automation Optimisation',
-        'Priority Technical Guidance',
+        'Internal Wiki & CRM Intelligence Connector',
+        'Automated Lead Capture & Meeting Booking',
+        'Custom Business Workflow Automations',
+        'Role-Based Access & Data Privacy Controls',
       ],
-      ctaText: 'Start CRM Management',
+      ctaText: 'Build Business Assistant',
+    },
+    {
+      number: '4',
+      title: 'Long-Term Chatbot Improvement Services',
+      desc: 'We optimise existing chatbot systems through updates, performance improvements, new integrations, and enhanced conversational capabilities.',
+      features: [
+        'Continuous Conversation & Sentiment Audits',
+        'Prompt Tuning & Knowledge Base Updates',
+        'New Channel & API Integrations',
+        'Dedicated AI Performance Engineering',
+      ],
+      ctaText: 'Get Chatbot Optimization',
     },
   ],
 
   // Section 6: Tools and Integrations
-  spectrumEyebrow: 'TOOLS AND INTEGRATIONS',
-  spectrumTitle: 'Connect HubSpot With The Tools Your Business Already Uses',
-  spectrumDesc: 'Modern businesses use multiple platforms to manage marketing, sales, payments, scheduling, and customer relationships. A connected technology ecosystem allows information to move efficiently between different systems. Our HubSpot CRM integration with marketing automation connects essential platforms to create a unified workflow.',
+  spectrumEyebrow: 'AI CHATBOT TECHNOLOGY ECOSYSTEM',
+  spectrumTitle: 'Chatbots Connected With Your Existing Business Platforms',
+  spectrumDesc: 'AI chatbots become more effective when they work alongside the tools your business already uses.',
   integrations: [
-    { name: 'Google Ads & Meta Ads', icon: 'Target', category: 'Ad Channels', desc: 'Sync offline conversions and inbound lead capture directly into HubSpot CRM.' },
-    { name: 'Google & Outlook Calendar', icon: 'Calendar', category: 'Scheduling', desc: 'Two-way calendar sync, automated meeting scheduling, and reminder triggers.' },
-    { name: 'Stripe & Payment Gateways', icon: 'CreditCard', category: 'Payments', desc: 'Connect billing platforms, invoices, customer subscriptions, and revenue tracking.' },
-    { name: 'Calendly & Booking Tools', icon: 'Clock', category: 'Appointments', desc: 'Automated round-robin meeting scheduling and instant rep notification.' },
-    { name: 'Zapier & Make', icon: 'Zap', category: 'Middleware', desc: 'Connect thousands of external cloud apps with multi-step logic and routers.' },
-    { name: 'Slack & Team Chat', icon: 'MessageSquare', category: 'Alerts', desc: 'Real-time deal stage notifications, lead alerts, and task updates.' },
-    { name: 'Custom REST APIs', icon: 'Code2', category: 'Custom Tech', desc: 'Private app integrations, webhook endpoints, and database synchronization.' },
-    { name: 'HubSpot CRM Platform', icon: 'Workflow', category: 'Core Hub', desc: 'Unified database for contacts, deals, tickets, and automated customer journeys.' },
+    { name: 'OpenAI GPT-4o & Claude 3.5', icon: 'Bot', category: 'Foundation Models', desc: 'High-speed reasoning and natural language conversational intelligence.' },
+    { name: 'WhatsApp Business API', icon: 'Smartphone', category: 'Messaging Platforms', desc: 'Engage billions of global customers on WhatsApp with verified business profile interactions.' },
+    { name: 'HubSpot & Salesforce CRM', icon: 'Workflow', category: 'CRM Systems', desc: 'Real-time contact enrichment, deal creation, and conversation history logging.' },
+    { name: 'Pinecone & Qdrant Vector DB', icon: 'Database', category: 'Knowledge & Vector Search', desc: 'Ultra-low latency semantic document search for accurate RAG knowledge retrieval.' },
+    { name: 'Zendesk & Freshdesk', icon: 'MessageSquare', category: 'Helpdesk & Support', desc: 'Automatic ticket creation, status queries, and smooth escalation to human reps.' },
+    { name: 'Shopify & WooCommerce', icon: 'CreditCard', category: 'E-Commerce Platforms', desc: 'Live product search, sizing assistant, cart recovery, and tracking updates.' },
+    { name: 'Google Calendar & Calendly', icon: 'Calendar', category: 'Scheduling & Booking', desc: 'Real-time availability lookup and instant in-chat meeting confirmation.' },
+    { name: 'Custom APIs & Webhooks', icon: 'Code2', category: 'Custom Business Systems', desc: 'Connect private databases, ERP software, and authentication services effortlessly.' },
   ],
 
-  // Section 7: Project Experience and Results
-  outcomesEyebrow: 'PROJECT EXPERIENCE AND RESULTS',
-  outcomesTitle: 'HubSpot Automation Projects Built For Real Business Challenges',
-  outcomesDesc: 'Successful CRM automation requires practical solutions based on real operational problems. Our projects focus on improving customer management, reducing manual work, and creating systems that support measurable business outcomes.',
+  // Section 7: Project Experience
+  outcomesEyebrow: 'PROJECT EXPERIENCE',
+  outcomesTitle: 'AI Communication Systems Designed For Real Business Challenges',
+  outcomesDesc: 'Our chatbot projects focus on creating practical solutions that improve customer service, lead management, and business communication.',
   outcomeCards: [
     {
-      image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=700&h=450&q=80',
-      client: 'HubSpot Automation Case Study',
-      metric: '+320%',
-      metricLabel: 'Faster Inbound Lead Processing',
-      title: 'Automated Lead Qualification & Multi-Channel Nurture',
-      desc: 'Engineered an end-to-end HubSpot workflow system capturing multi-channel inquiries and routing qualified leads to sales reps in under 60 seconds.',
+      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=700&h=450&q=80',
+      client: 'Customer Support Chatbot Project',
+      metric: '100+',
+      metricLabel: 'Digital Projects Completed',
+      title: 'AI Communication Systems Designed For Real Business Challenges',
+      desc: 'Our experience includes websites, automation systems, CRM platforms, AI solutions, and digital technology projects designed for modern businesses.',
       results: [
-        'Automated lead qualification & segmentation',
-        'Instant notifications and task triggers',
-        'Structured deal pipeline stage progression',
+        'Automated ticket deflection and faster response times',
+        'Seamless integration across CRM, web, and support desks',
+        'Zero hallucination accuracy with private business data',
       ],
       isCaseStudy: true,
     },
     {
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&h=450&q=80',
-      client: '100+ CRM Automation Projects Completed',
-      metric: '100+',
-      metricLabel: 'Projects Delivered',
-      title: 'Scalable CRM Environments & Automation Systems',
-      desc: 'We build HubSpot environments that support efficient operations, better customer relationships, and scalable growth.',
+      image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=700&h=450&q=80',
+      client: 'B2B SaaS Help Center Assistant',
+      metric: '70%',
+      metricLabel: 'Routine Inquiries Automated',
+      title: 'Knowledge Base Support & Triage Bot',
+      desc: 'Connected product documentation and internal wikis to resolve common user inquiries and route complex issues directly to specialists.',
       results: [
-        'Complete HubSpot CRM configurations',
-        'Custom workflow and trigger automations',
-        'Connected technology & API ecosystems',
+        '70% first-contact resolution for common inquiries',
+        '24/7 global support coverage across time zones',
+        'Context-preserved live agent escalation',
       ],
       isCaseStudy: false,
     },
     {
       image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=700&h=450&q=80',
-      client: 'Enterprise Sales Architecture',
-      metric: '4.8x',
-      metricLabel: 'Pipeline Visibility & Forecasting',
-      title: 'Custom Deal Governance & Revenue Dashboards',
-      desc: 'Designed multi-tier pipeline architectures with mandatory property governance and automated management reporting dashboards.',
+      client: 'Multi-Channel Sales & Qualification Bot',
+      metric: '3.5x',
+      metricLabel: 'Increase in Qualified Leads',
+      title: 'Inbound Qualification & Scheduling Bot',
+      desc: 'Engages inbound traffic on website and WhatsApp to qualify buyer requirements and schedule discovery calls directly into sales calendars.',
       results: [
-        'Standardized rep sales workflows',
-        'Accurate real-time revenue forecasts',
-        'Eliminated manual CRM data entry drag',
+        'Instant prospect qualification without human wait time',
+        'Automatic 2-way synchronization with CRM pipeline',
+        'Higher conversion rate on high-intent pages',
       ],
       isCaseStudy: false,
     },
   ],
 
-  // Section 8: Final CTA
-  ctaEyebrow: "LET'S AUTOMATE YOUR CRM",
-  ctaTitle: 'Ready To Build A Smarter HubSpot CRM Automation System?',
-  ctaDesc: "Ready to move forward? Share your project details and let's build the right plan for you.",
-  ctaButtonText: 'Book Your Consultation Today!',
-
-  // FAQs
+  // Section 8: FAQs
   faqs: [
     {
-      q: 'How does HubSpot CRM automation help my business?',
-      a: 'HubSpot CRM automation eliminates manual data entry, routes leads instantly to sales reps, triggers personalized follow-up sequences, and provides clear visibility across your sales pipeline and marketing campaigns.',
+      q: 'What is an AI chatbot and how does it help my business?',
+      a: 'An AI chatbot uses natural language processing and modern machine learning models to understand customer questions, provide instant answers, collect information, qualify leads, and automate routine support tasks 24/7 across your website, apps, and messaging channels.',
     },
     {
-      q: 'Can you configure custom properties, deal stages, and lifecycle stages?',
-      a: 'Yes. We customize your entire HubSpot data schema, including custom contact/company/deal properties, mandatory stage requirements, automated status transitions, and custom object architectures.',
+      q: 'How does the chatbot connect with our existing CRM and tools?',
+      a: 'We connect chatbots via REST APIs and secure webhooks to your existing systems such as HubSpot, Salesforce, Zendesk, WhatsApp Business, Slack, Google Calendar, and custom databases, ensuring real-time bi-directional data flow.',
     },
     {
-      q: 'Do you integrate HubSpot with external tools like Google Ads, Stripe, and Calendly?',
-      a: 'Yes. We connect HubSpot with advertising platforms, payment processors, scheduling tools, Zapier, Make, and proprietary web applications via webhooks and REST APIs.',
+      q: 'Can the chatbot transfer conversations to a human agent?',
+      a: 'Yes. When an inquiry requires human intervention or reaches complex criteria, the chatbot seamlessly transfers the conversation along with full context, transcripts, and customer details to your live support team or helpdesk.',
     },
     {
-      q: 'How long does a full HubSpot setup or optimization project take?',
-      a: 'A standard custom setup sprint typically takes between 1 to 2 weeks. For larger enterprise setups with complex integrations, delivery takes 2 to 3 weeks with full testing and documentation.',
+      q: 'Can we manage and update chatbot content from our Admin Dashboard?',
+      a: 'Yes! All chatbot copy, services, processes, packages, integrations, and FAQs can be viewed and updated directly from the Cubixsol Admin Dashboard, saving straight into MongoDB.',
     },
     {
-      q: 'Do you provide training and documentation for our team?',
-      a: 'Yes. Every project includes comprehensive SOP video walkthroughs, written guides, and live handover sessions to ensure your team operates HubSpot with complete confidence.',
+      q: 'How long does an AI chatbot project typically take?',
+      a: 'A standard custom chatbot implementation typically takes 1 to 2 weeks for planning, knowledge base connection, testing, and deployment. Enterprise multi-channel projects with deep custom integrations typically take 2 to 3 weeks.',
     },
   ],
 
+  // Section 9: CTA Banner
+  ctaEyebrow: 'START YOUR AI CHATBOT PROJECT',
+  ctaTitle: 'Ready To Build An Intelligent Customer Communication System?',
+  ctaDesc: 'Get expert guidance for your next AI chatbot development project. Share your requirements and discover how automation can improve your customer experience.',
+  ctaButtonText: 'Get Your Free Consultation',
+
+  // SEO Fields
   seo: {
-    metaTitle: 'HubSpot CRM Automation Services to Connect Sales & Marketing | Cubixsol',
-    metaDescription: 'Custom HubSpot CRM automation services. Workflows, sales pipeline architecture, lead capture, integrations, and revenue reporting dashboards.',
-    keywords: 'HubSpot CRM automation, HubSpot setup, sales pipeline architecture, marketing automation, HubSpot integrations, CRM consultant',
+    metaTitle: 'AI Chatbot Development Services for Smarter Customer Experiences | Cubixsol',
+    metaDescription: 'Custom AI chatbot development services. Intelligent chatbot solutions to automate conversations, improve customer support, qualify leads, and connect enterprise systems.',
+    keywords: 'AI chatbot development, customer service AI chatbot, website AI chatbot, intelligent conversational agents, AI chatbot company, Cubixsol',
   },
 };
 
-export default function HubSpotCrm() {
+export default function AiChatbots() {
   const { openModal } = useEstimateModal();
   const [data, setData] = useState(DEFAULT_DATA);
-  const [selectedFix, setSelectedFix] = useState('lead-management');
+  const [selectedFix, setSelectedFix] = useState('customer-support');
   const [openFaq, setOpenFaq] = useState(0);
 
-  // SEO Metadata
+  // SEO Metadata Hook
   useSEO(
     data.seo?.metaTitle || data.title,
     data.seo?.metaDescription || data.heroDesc,
@@ -342,27 +352,92 @@ export default function HubSpotCrm() {
   );
 
   useEffect(() => {
-    // Dynamic fetch from MongoDB
-    apiFetch('services/hubspot-crm')
+    // Dynamic fetch from MongoDB (Service or PageContent)
+    apiFetch('services/ai-chatbots')
       .then((res) => {
         if (res && (res.title || res.heroTitle)) {
+          // Normalize mapped fields from MongoDB Service schema if modified in Admin Dashboard
+          const mappedProblemCards = res.problemCards || (res.whyChooseItems && res.whyChooseItems.length > 0
+            ? res.whyChooseItems.map((item, idx) => ({
+                icon: ['Clock', 'Bot', 'Target', 'Users'][idx % 4],
+                title: item.title,
+                desc: item.desc
+              }))
+            : null);
+
+          const mappedCapabilitiesCards = res.capabilitiesCards || (res.subServicesItems && res.subServicesItems.length > 0
+            ? res.subServicesItems.map((item, idx) => ({
+                image: DEFAULT_DATA.capabilitiesCards[idx % DEFAULT_DATA.capabilitiesCards.length]?.image,
+                tag: ['CUSTOMER SERVICE', 'WEBSITE ENGAGEMENT', 'CUSTOM ARCHITECTURE', 'MOBILE & APP', 'ENTERPRISE SCALE', 'INTEGRATIONS & OPS'][idx % 6],
+                title: item.title,
+                desc: item.desc,
+                pills: DEFAULT_DATA.capabilitiesCards[idx % DEFAULT_DATA.capabilitiesCards.length]?.pills || ['AI Powered', 'Integrated', 'Automated']
+              }))
+            : null);
+
+          const mappedProcessSteps = res.processSteps || (res.serviceProcessSteps && res.serviceProcessSteps.length > 0
+            ? res.serviceProcessSteps.map((step) => ({
+                step: step.stepNumber || step.step || '01',
+                title: step.title,
+                desc: step.desc
+              }))
+            : null);
+
+          const mappedIntegrations = res.integrations || (res.supportedPlatforms && res.supportedPlatforms.length > 0
+            ? res.supportedPlatforms.map((p) => ({
+                name: p.name,
+                category: p.category || 'Integration',
+                icon: p.icon || 'Bot',
+                desc: `Seamless real-time integration with ${p.name}.`
+              }))
+            : null);
+
           setData((prev) => ({
             ...prev,
             ...res,
-            problemCards: res.problemCards || prev.problemCards,
-            capabilitiesCards: res.capabilitiesCards || prev.capabilitiesCards,
+            heroTitle: res.heroTitle || res.title || prev.heroTitle,
+            heroDesc: res.heroDesc || res.longDesc || res.desc || prev.heroDesc,
+            heroPrimaryBtnText: res.heroPrimaryBtnText || res.ctaPrimaryText || prev.heroPrimaryBtnText,
+            heroSecondaryBtnText: res.heroSecondaryBtnText || res.ctaSecondaryText || prev.heroSecondaryBtnText,
+            problemEyebrow: res.problemEyebrow || res.whyChooseEyebrow || prev.problemEyebrow,
+            problemTitle: res.problemTitle || res.whyChooseTitle || prev.problemTitle,
+            problemDesc: res.problemDesc || res.whyChooseIntro || prev.problemDesc,
+            problemCards: mappedProblemCards || prev.problemCards,
+            capabilitiesEyebrow: res.capabilitiesEyebrow || prev.capabilitiesEyebrow,
+            capabilitiesTitle: res.capabilitiesTitle || res.subServicesTitle || prev.capabilitiesTitle,
+            capabilitiesDesc: res.capabilitiesDesc || res.subServicesIntro || prev.capabilitiesDesc,
+            capabilitiesCards: mappedCapabilitiesCards || prev.capabilitiesCards,
+            fixFirstEyebrow: res.fixFirstEyebrow || prev.fixFirstEyebrow,
+            fixFirstTitle: res.fixFirstTitle || res.businessTypesTitle || prev.fixFirstTitle,
+            fixFirstDesc: res.fixFirstDesc || res.businessTypesIntro || prev.fixFirstDesc,
             fixFirstItems: res.fixFirstItems || prev.fixFirstItems,
-            processSteps: res.processSteps || prev.processSteps,
+            processEyebrow: res.processEyebrow || prev.processEyebrow,
+            processTitle: res.processTitle || res.serviceProcessTitle || prev.processTitle,
+            processDesc: res.processDesc || res.serviceProcessIntro || prev.processDesc,
+            processSteps: mappedProcessSteps || prev.processSteps,
+            modelsEyebrow: res.modelsEyebrow || prev.modelsEyebrow,
+            modelsTitle: res.modelsTitle || res.pricingSectionTitle || prev.modelsTitle,
+            modelsDesc: res.modelsDesc || res.pricingSectionText || prev.modelsDesc,
             models: res.models || prev.models,
-            integrations: res.integrations || prev.integrations,
+            spectrumEyebrow: res.spectrumEyebrow || prev.spectrumEyebrow,
+            spectrumTitle: res.spectrumTitle || res.techTitle || prev.spectrumTitle,
+            spectrumDesc: res.spectrumDesc || res.techDesc || prev.spectrumDesc,
+            integrations: mappedIntegrations || prev.integrations,
+            outcomesEyebrow: res.outcomesEyebrow || prev.outcomesEyebrow,
+            outcomesTitle: res.outcomesTitle || prev.outcomesTitle,
+            outcomesDesc: res.outcomesDesc || prev.outcomesDesc,
             outcomeCards: res.outcomeCards || prev.outcomeCards,
-            faqs: res.faqs || prev.faqs,
+            faqs: (res.faqs && res.faqs.length > 0) ? res.faqs : prev.faqs,
+            ctaEyebrow: res.ctaEyebrow || res.ctaBannerEyebrow || prev.ctaEyebrow,
+            ctaTitle: res.ctaTitle || res.ctaBannerTitle || prev.ctaTitle,
+            ctaDesc: res.ctaDesc || res.ctaBannerDesc || prev.ctaDesc,
+            ctaButtonText: res.ctaButtonText || res.ctaBannerButtonText || prev.ctaButtonText,
           }));
         }
       })
       .catch(() => {
-        // Fallback to pageContent if available
-        apiFetch('pages/hubspot-crm')
+        // Fallback to pages/ai-chatbots
+        apiFetch('pages/ai-chatbots')
           .then((pageRes) => {
             if (pageRes && pageRes.content) {
               setData((prev) => ({ ...prev, ...pageRes.content }));
@@ -382,7 +457,7 @@ export default function HubSpotCrm() {
             <div className="lg:col-span-7">
               <Reveal direction="down" duration={0.6}>
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00a4d8]/10 border border-[#00a4d8]/20 text-[#00a4d8] text-xs font-bold tracking-widest uppercase mb-6 shadow-sm">
-                  <Zap className="w-3.5 h-3.5 text-[#00a4d8] fill-[#00a4d8]/20 animate-pulse" />
+                  <Bot className="w-3.5 h-3.5 text-[#00a4d8] fill-[#00a4d8]/20 animate-pulse" />
                   <span>{data.heroEyebrow}</span>
                 </div>
               </Reveal>
@@ -405,7 +480,7 @@ export default function HubSpotCrm() {
                   <motion.button
                     whileHover={{ scale: 1.03, y: -2 }}
                     whileTap={{ scale: 0.98 }}
-                    onClick={() => openModal({ service: 'HubSpot CRM Automation' })}
+                    onClick={() => openModal({ service: 'AI Chatbot Development' })}
                     className="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl font-bold text-white bg-gradient-to-r from-[#00a4d8] via-blue-600 to-[#5d53a3] hover:from-[#0092c2] hover:to-[#4a4285] shadow-lg shadow-[#00a4d8]/25 hover:shadow-[#00a4d8]/35 transition-all duration-300 text-base cursor-pointer"
                   >
                     <span>{data.heroPrimaryBtnText}</span>
@@ -415,7 +490,7 @@ export default function HubSpotCrm() {
                   <motion.a
                     whileHover={{ scale: 1.02, y: -1 }}
                     whileTap={{ scale: 0.98 }}
-                    href="#solutions"
+                    href="#case-studies"
                     className="inline-flex items-center gap-2 px-6 py-4 rounded-xl font-semibold text-gray-700 bg-white border border-gray-200 hover:border-[#00a4d8]/40 hover:bg-sky-50/40 hover:text-[#00a4d8] shadow-sm transition-all duration-200 text-base"
                   >
                     <span>{data.heroSecondaryBtnText}</span>
@@ -437,26 +512,65 @@ export default function HubSpotCrm() {
               </Reveal>
             </div>
 
-            {/* Right Hero Visual / Isometric Platform Hub with Floating Badges */}
+            {/* Right Hero Visual / Interactive Mock Chatbot Hub */}
             <div className="lg:col-span-5 relative">
               <Reveal delay={0.2} direction="left" duration={0.7} scale>
                 <div className="relative rounded-3xl p-6 bg-gradient-to-br from-[#00a4d8]/10 via-indigo-50/40 to-sky-50/40 border border-[#00a4d8]/20 shadow-2xl shadow-[#00a4d8]/10 backdrop-blur-sm">
-                  <div className="relative rounded-2xl overflow-hidden shadow-inner bg-slate-900 border border-slate-800">
-                    <img
-                      src={data.heroImage}
-                      alt="HubSpot CRM Automation Platform Hub"
-                      className="w-full h-80 sm:h-96 object-cover opacity-90 hover:scale-105 transition-all duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex flex-col justify-end p-6">
-                      <div className="flex items-center justify-between">
-                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gradient-to-r from-[#00a4d8] to-[#5d53a3] text-white text-xs font-bold backdrop-blur-md shadow-md">
-                          <Workflow className="w-4 h-4" />
-                          <span>HubSpot Sales Hub Engine</span>
+                  {/* Chatbot Interface Preview Box */}
+                  <div className="rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 shadow-inner flex flex-col h-[380px]">
+                    {/* Header */}
+                    <div className="px-4 py-3 bg-slate-950 border-b border-slate-800 flex items-center justify-between">
+                      <div className="flex items-center gap-2.5">
+                        <div className="w-8 h-8 rounded-full bg-gradient-to-r from-[#00a4d8] to-[#5d53a3] flex items-center justify-center text-white text-xs font-bold shadow-md">
+                          <Bot className="w-4 h-4" />
                         </div>
-                        <span className="text-emerald-400 text-xs font-bold flex items-center gap-1 bg-emerald-950/60 px-2.5 py-1 rounded-full border border-emerald-500/30">
-                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
-                          Two-Way Sync Active
-                        </span>
+                        <div>
+                          <p className="text-xs font-bold text-white leading-tight">Cubix AI Chatbot</p>
+                          <p className="text-[10px] text-emerald-400 font-medium flex items-center gap-1">
+                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" /> Online • &lt;1s Speed
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-[10px] bg-slate-800 text-slate-300 font-semibold px-2 py-0.5 rounded border border-slate-700">
+                        Live Assistant
+                      </span>
+                    </div>
+
+                    {/* Messages Flow */}
+                    <div className="p-4 flex-1 space-y-3 overflow-hidden flex flex-col justify-end text-xs">
+                      {/* Bot Message */}
+                      <div className="flex items-start gap-2">
+                        <div className="w-6 h-6 rounded-full bg-[#00a4d8]/20 border border-[#00a4d8]/40 flex items-center justify-center text-cyan-300 shrink-0 mt-0.5">
+                          <Bot className="w-3.5 h-3.5" />
+                        </div>
+                        <div className="bg-slate-800 text-slate-200 p-2.5 rounded-2xl rounded-tl-sm max-w-[85%] border border-slate-700/60 leading-relaxed shadow-sm">
+                          Hello! 👋 Welcome to Cubixsol. How can we help automate your customer conversations today?
+                        </div>
+                      </div>
+
+                      {/* User Message */}
+                      <div className="flex items-start justify-end gap-2">
+                        <div className="bg-gradient-to-r from-[#00a4d8] to-blue-600 text-white p-2.5 rounded-2xl rounded-tr-sm max-w-[80%] leading-relaxed shadow-md font-medium">
+                          Can the chatbot answer FAQs, capture leads, and connect with our CRM?
+                        </div>
+                      </div>
+
+                      {/* Bot Response */}
+                      <div className="flex items-start gap-2">
+                        <div className="w-6 h-6 rounded-full bg-[#00a4d8]/20 border border-[#00a4d8]/40 flex items-center justify-center text-cyan-300 shrink-0 mt-0.5">
+                          <Bot className="w-3.5 h-3.5" />
+                        </div>
+                        <div className="bg-slate-800 text-slate-200 p-2.5 rounded-2xl rounded-tl-sm max-w-[85%] border border-slate-700/60 leading-relaxed shadow-sm">
+                          Absolutely! It delivers 24/7 instant answers, qualifies leads, and syncs directly with HubSpot, Salesforce & WhatsApp. 🚀
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Chat Input Bar */}
+                    <div className="p-2.5 bg-slate-950 border-t border-slate-800 flex items-center gap-2">
+                      <div className="flex-1 bg-slate-900 border border-slate-800 rounded-xl px-3 py-1.5 text-slate-400 text-xs flex items-center justify-between">
+                        <span>Type your message here...</span>
+                        <Send className="w-3.5 h-3.5 text-[#00a4d8]" />
                       </div>
                     </div>
                   </div>
@@ -468,11 +582,11 @@ export default function HubSpotCrm() {
                     className="absolute -top-4 -right-4 bg-white rounded-2xl p-3 shadow-xl border border-sky-100 hidden sm:flex items-center gap-2 text-xs font-bold text-ink"
                   >
                     <div className="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-extrabold text-sm">
-                      +320%
+                      100+
                     </div>
                     <div>
-                      <p className="leading-tight">Inbound Routing</p>
-                      <p className="text-[10px] text-gray-400 font-normal">&lt;60s Speed to Lead</p>
+                      <p className="leading-tight">Digital Projects</p>
+                      <p className="text-[10px] text-gray-400 font-normal">Completed Worldwide</p>
                     </div>
                   </motion.div>
 
@@ -485,8 +599,8 @@ export default function HubSpotCrm() {
                       <Zap className="w-4 h-4" />
                     </div>
                     <div>
-                      <p className="leading-tight">Multi-Pipeline</p>
-                      <p className="text-[10px] text-gray-400 font-normal">Deal Staging Sync</p>
+                      <p className="leading-tight">Instant Support</p>
+                      <p className="text-[10px] text-gray-400 font-normal">24/7 Availability</p>
                     </div>
                   </motion.div>
                 </div>
@@ -496,7 +610,7 @@ export default function HubSpotCrm() {
         </div>
       </section>
 
-      {/* ===================== SECTION 1: WHY YOUR CRM NEEDS AUTOMATION ===================== */}
+      {/* ===================== SECTION 1: WHY BUSINESSES INVEST IN AI CHATBOT SOLUTIONS ===================== */}
       <section className="py-20 bg-gray-50/70 border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -520,7 +634,7 @@ export default function HubSpotCrm() {
                 >
                   <div>
                     <div className="w-12 h-12 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-center text-[#00a4d8] mb-5">
-                      <DynamicIcon name={card.icon} className="w-6 h-6" />
+                      <DynamicIcon name={card.icon || 'Bot'} className="w-6 h-6" />
                     </div>
                     <h3 className="text-lg font-bold text-ink mb-2.5 leading-snug">{card.title}</h3>
                     <p className="text-sm text-gray-500 leading-relaxed">{card.desc}</p>
@@ -532,8 +646,8 @@ export default function HubSpotCrm() {
         </div>
       </section>
 
-      {/* ===================== SECTION 2: OUR HUBSPOT AUTOMATION SOLUTIONS (6 CARDS) ===================== */}
-      <section id="solutions" className="py-24 bg-white">
+      {/* ===================== SECTION 2: OUR AI CHATBOT DEVELOPMENT SERVICES (6 CARDS) ===================== */}
+      <section id="services" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <Reveal direction="up" duration={0.6}>
@@ -595,7 +709,7 @@ export default function HubSpotCrm() {
         </div>
       </section>
 
-      {/* ===================== SECTION 3: FIND YOUR RIGHT HUBSPOT AUTOMATION PATH ===================== */}
+      {/* ===================== SECTION 3: CHOOSE THE RIGHT AI CHATBOT APPROACH (INTERACTIVE SOLVER) ===================== */}
       <section className="py-20 bg-gradient-to-b from-gray-50/80 via-sky-50/30 to-gray-50/80 border-y border-gray-200/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-12 gap-12 items-center">
@@ -613,13 +727,13 @@ export default function HubSpotCrm() {
                 <div className="relative rounded-2xl overflow-hidden border border-sky-100 shadow-md bg-white p-3">
                   <img
                     src={data.fixFirstImage}
-                    alt="Solve Your Bottlenecks with HubSpot CRM"
+                    alt="AI Chatbot Solution Approach"
                     className="w-full h-64 object-cover rounded-xl"
                   />
                   <div className="p-4 bg-white">
-                    <p className="text-xs font-bold text-[#00a4d8] uppercase tracking-wide">Selected Blueprint</p>
+                    <p className="text-xs font-bold text-[#00a4d8] uppercase tracking-wide">Recommended Setup Flow</p>
                     <p className="text-sm font-bold text-ink mt-0.5">
-                      {data.fixFirstItems?.find((f) => f.id === selectedFix)?.solution || 'Custom Workflow Sprint'}
+                      {data.fixFirstItems?.find((f) => f.id === selectedFix)?.solution || 'Custom Chatbot Setup'}
                     </p>
                   </div>
                 </div>
@@ -631,7 +745,7 @@ export default function HubSpotCrm() {
               {data.fixFirstItems?.map((item, idx) => {
                 const isSelected = selectedFix === item.id;
                 return (
-                  <Reveal key={item.id} delay={idx * 0.08} duration={0.5}>
+                  <Reveal key={item.id || idx} delay={idx * 0.08} duration={0.5}>
                     <motion.div
                       whileHover={{ scale: 1.01, x: 4 }}
                       whileTap={{ scale: 0.99 }}
@@ -660,8 +774,8 @@ export default function HubSpotCrm() {
                             {item.desc}
                           </p>
                           <div className="flex items-center gap-1.5 text-xs font-semibold text-[#00a4d8]">
-                            <CheckCircle2 className="w-4 h-4" />
-                            <span>Recommended Setup: {item.solution}</span>
+                            <CheckCircle2 className="w-4 h-4 shrink-0" />
+                            <span>Recommended: {item.solution}</span>
                           </div>
                         </div>
 
@@ -684,7 +798,7 @@ export default function HubSpotCrm() {
         </div>
       </section>
 
-      {/* ===================== SECTION 4: OUR IMPLEMENTATION PROCESS ===================== */}
+      {/* ===================== SECTION 4: OUR AI CHATBOT DEVELOPMENT PROCESS ===================== */}
       <section className="py-24 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-12 gap-12 items-center">
@@ -709,10 +823,10 @@ export default function HubSpotCrm() {
                   <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    onClick={() => openModal({ service: 'HubSpot Implementation Sprint' })}
+                    onClick={() => openModal({ service: 'AI Chatbot Development Sprint' })}
                     className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-[#00a4d8] to-[#5d53a3] hover:from-[#0092c2] hover:to-[#4a4285] text-white font-bold text-sm inline-flex items-center justify-center gap-2 shadow-lg shadow-[#00a4d8]/25 transition-all duration-200 cursor-pointer"
                   >
-                    <span>Start Implementation Sprint</span>
+                    <span>Start Chatbot Sprint</span>
                     <ArrowRight className="w-4 h-4" />
                   </motion.button>
                 </div>
@@ -742,7 +856,7 @@ export default function HubSpotCrm() {
         </div>
       </section>
 
-      {/* ===================== SECTION 5: WAYS TO WORK WITH OUR TEAM (3 MODELS) ===================== */}
+      {/* ===================== SECTION 5: WORK WITH OUR AI CHATBOT EXPERTS (ENGAGEMENT MODELS) ===================== */}
       <section className="py-24 bg-gradient-to-b from-white via-sky-50/25 to-white border-y border-sky-100/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -757,12 +871,12 @@ export default function HubSpotCrm() {
             </Reveal>
           </div>
 
-          <Stagger className="grid md:grid-cols-3 gap-8" staggerDelay={0.1}>
+          <Stagger className="grid md:grid-cols-2 lg:grid-cols-4 gap-6" staggerDelay={0.08}>
             {data.models?.map((model, idx) => (
               <StaggerItem key={idx}>
                 <motion.div
                   whileHover={{ y: -8, transition: { duration: 0.25 } }}
-                  className={`rounded-3xl p-8 border flex flex-col justify-between h-full relative transition-all duration-300 ${
+                  className={`rounded-3xl p-6 sm:p-7 border flex flex-col justify-between h-full relative transition-all duration-300 ${
                     model.isPopular
                       ? 'bg-white border-[#00a4d8] shadow-xl ring-2 ring-[#00a4d8]/20 -translate-y-2'
                       : 'bg-white border-gray-200/90 shadow-card hover:shadow-soft hover:border-[#00a4d8]/30'
@@ -770,8 +884,8 @@ export default function HubSpotCrm() {
                 >
                   {model.isPopular && (
                     <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                      <span className="bg-gradient-to-r from-[#00a4d8] to-[#5d53a3] text-white text-[11px] font-bold uppercase tracking-wider px-3.5 py-1 rounded-full shadow-md">
-                        Most Popular
+                      <span className="bg-gradient-to-r from-[#00a4d8] to-[#5d53a3] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
+                        Popular Choice
                       </span>
                     </div>
                   )}
@@ -783,12 +897,12 @@ export default function HubSpotCrm() {
                       </span>
                     </div>
 
-                    <h3 className="text-2xl font-extrabold text-ink mb-3">{model.title}</h3>
-                    <p className="text-sm text-gray-500 leading-relaxed mb-6">{model.desc}</p>
+                    <h3 className="text-xl font-extrabold text-ink mb-3 leading-snug">{model.title}</h3>
+                    <p className="text-xs text-gray-500 leading-relaxed mb-6">{model.desc}</p>
 
-                    <div className="pt-6 border-t border-gray-100 space-y-3 mb-8">
+                    <div className="pt-5 border-t border-gray-100 space-y-2.5 mb-6">
                       {model.features?.map((f, fIdx) => (
-                        <div key={fIdx} className="flex items-center gap-2.5 text-xs sm:text-sm text-gray-700">
+                        <div key={fIdx} className="flex items-center gap-2 text-xs text-gray-700">
                           <CheckCircle2 className="w-4 h-4 text-[#00a4d8] shrink-0" />
                           <span>{f}</span>
                         </div>
@@ -798,8 +912,8 @@ export default function HubSpotCrm() {
 
                   <motion.button
                     whileTap={{ scale: 0.98 }}
-                    onClick={() => openModal({ service: `HubSpot: ${model.title}` })}
-                    className={`w-full py-3.5 rounded-xl font-bold text-sm transition-all duration-200 cursor-pointer ${
+                    onClick={() => openModal({ service: `AI Chatbot: ${model.title}` })}
+                    className={`w-full py-3 rounded-xl font-bold text-xs transition-all duration-200 cursor-pointer ${
                       model.isPopular
                         ? 'bg-gradient-to-r from-[#00a4d8] to-[#5d53a3] text-white hover:from-[#0092c2] hover:to-[#4a4285] shadow-md shadow-[#00a4d8]/25'
                         : 'bg-gray-100 text-ink hover:bg-sky-50 hover:text-[#00a4d8]'
@@ -814,7 +928,7 @@ export default function HubSpotCrm() {
         </div>
       </section>
 
-      {/* ===================== SECTION 6: TOOLS AND INTEGRATIONS ===================== */}
+      {/* ===================== SECTION 6: AI CHATBOT TECHNOLOGY ECOSYSTEM ===================== */}
       <section className="py-24 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -839,7 +953,7 @@ export default function HubSpotCrm() {
                   <div>
                     <div className="flex items-center justify-between mb-4">
                       <div className="w-12 h-12 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-center text-[#00a4d8] group-hover:bg-gradient-to-r group-hover:from-[#00a4d8] group-hover:to-[#5d53a3] group-hover:text-white transition-colors duration-300">
-                        <DynamicIcon name={item.icon || 'Zap'} className="w-6 h-6" />
+                        <DynamicIcon name={item.icon || 'Bot'} className="w-6 h-6" />
                       </div>
                       <span className="text-[10px] font-bold uppercase tracking-wider text-[#5d53a3] bg-indigo-50 border border-indigo-100 px-2 py-0.5 rounded">
                         {item.category}
@@ -856,7 +970,7 @@ export default function HubSpotCrm() {
 
                   <div className="mt-4 pt-3 border-t border-gray-100 flex items-center gap-1.5 text-xs font-semibold text-[#00a4d8]">
                     <Check className="w-3.5 h-3.5" />
-                    <span>Two-Way API & Webhook Sync</span>
+                    <span>Two-Way Platform Connection</span>
                   </div>
                 </motion.div>
               </StaggerItem>
@@ -865,7 +979,7 @@ export default function HubSpotCrm() {
         </div>
       </section>
 
-      {/* ===================== SECTION 7: PROJECT EXPERIENCE AND RESULTS ===================== */}
+      {/* ===================== SECTION 7: PROJECT EXPERIENCE & CASE STUDY ===================== */}
       <section id="case-studies" className="py-24 bg-gray-50/70 border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -920,7 +1034,7 @@ export default function HubSpotCrm() {
 
                     <div className="mt-6 pt-4">
                       <button
-                        onClick={() => openModal({ service: `Case Study: ${card.client}` })}
+                        onClick={() => openModal({ service: `Case Study / Project: ${card.client}` })}
                         className="w-full py-2.5 rounded-xl border border-[#00a4d8]/30 text-[#00a4d8] font-bold text-xs hover:bg-sky-50 hover:border-[#00a4d8] transition cursor-pointer"
                       >
                         {card.isCaseStudy ? '(Case Study)' : 'Request Project Breakdown'}
@@ -984,13 +1098,13 @@ export default function HubSpotCrm() {
 
       {/* ===================== SECTION 8: FINAL CTA BANNER ===================== */}
       <CtaBanner
-        eyebrow={data.ctaEyebrow || "LET'S AUTOMATE YOUR CRM"}
-        title={data.ctaTitle || "Ready To Build A Smarter HubSpot CRM Automation System?"}
-        desc={data.ctaDesc || "Ready to move forward? Share your project details and let's build the right plan for you."}
-        primaryButtonText={data.ctaButtonText || "Book Your Consultation Today!"}
-        primaryButtonAction={() => openModal({ service: 'HubSpot CRM Consultation' })}
-        secondaryButtonText="Explore Solutions"
-        secondaryButtonLink="#solutions"
+        eyebrow={data.ctaEyebrow || "START YOUR AI CHATBOT PROJECT"}
+        title={data.ctaTitle || "Ready To Build An Intelligent Customer Communication System?"}
+        desc={data.ctaDesc || "Get expert guidance for your next AI chatbot development project. Share your requirements and discover how automation can improve your customer experience."}
+        primaryButtonText={data.ctaButtonText || "Get Your Free Consultation"}
+        primaryButtonAction={() => openModal({ service: 'AI Chatbot Consultation' })}
+        secondaryButtonText="Explore Our Work"
+        secondaryButtonLink="#case-studies"
       />
     </div>
   );
