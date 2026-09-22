@@ -1,8 +1,9 @@
 const dns = require('dns');
 dns.setServers(['8.8.8.8', '1.1.1.1', '8.8.4.4']);
 const mongoose = require('mongoose');
+const path = require('path');
 const Project = require('./models/Project');
-require('dotenv').config({ path: './.env' });
+require('dotenv').config({ path: path.join(__dirname, '.env') });
 
 const projectsToAdd = [
   {
