@@ -13,6 +13,7 @@ export const PMS_SUB_SLUGS = [
   'smoobu-integration',
   'newbook-integration',
   'jurny-integration',
+  'lodgify-integration',
 ];
 
 const serviceMenuGroups = [
