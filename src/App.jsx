@@ -39,6 +39,7 @@ import SmoobuIntegration from './pages/SmoobuIntegration';
 import NewbookIntegration from './pages/NewbookIntegration';
 import JurnyIntegration from './pages/JurnyIntegration';
 import LodgifyIntegration from './pages/LodgifyIntegration';
+import RentalsUnitedIntegration from './pages/RentalsUnitedIntegration';
 import AdminDashboard from './pages/Admin/Dashboard';
 import AdminLogin from './pages/Admin/Login';
 
@@ -141,6 +142,8 @@ function AppRoutes() {
         <Route path="/services/jurny-integration" element={<JurnyIntegration />} />
         <Route path="/lodgify-integration" element={<LodgifyIntegration />} />
         <Route path="/services/lodgify-integration" element={<LodgifyIntegration />} />
+        <Route path="/rentals-united-integration" element={<RentalsUnitedIntegration />} />
+        <Route path="/services/rentals-united-integration" element={<RentalsUnitedIntegration />} />
         <Route path="/services/:slug" element={<ServiceDetail />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/industries" element={<Industries />} />
