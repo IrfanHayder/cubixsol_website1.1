@@ -16,6 +16,26 @@ export const PMS_SUB_SLUGS = [
   'lodgify-integration',
 ];
 
+export const isPmsSubSlug = (slug) => {
+  if (!slug) return false;
+  const s = String(slug).toLowerCase().trim();
+  if (s === 'pms-integration' || s === 'api-development-and-integration' || s === 'api-development' || s === 'api') {
+    return false;
+  }
+  return (
+    PMS_SUB_SLUGS.includes(s) ||
+    s.includes('guesty') ||
+    s.includes('hostaway') ||
+    s.includes('hostfully') ||
+    s.includes('zeevou') ||
+    s.includes('smoobu') ||
+    s.includes('newbook') ||
+    s.includes('jurny') ||
+    s.includes('lodgify') ||
+    s.endsWith('-integration')
+  );
+};
+
 const serviceMenuGroups = [
   {
     title: 'Build & Apps',
@@ -146,14 +166,15 @@ export default function Navbar() {
 
   const dynamicMenuGroups = services.length > 0 ? (() => {
     const matchedSlugs = new Set();
-    PMS_SUB_SLUGS.forEach(slug => matchedSlugs.add(slug));
+    // Exclude all PMS sub-services so they never pollute the top-level Engineering column
+    PMS_SUB_SLUGS.forEach(slug => matchedSlugs.add(slug.toLowerCase().trim()));
 
     const groups = serviceMenuGroups.map(group => {
       const list = [];
       group.slugs.forEach(slug => {
         const found = serviceBySlug[slug];
-        if (found && !matchedSlugs.has(found.slug)) {
-          matchedSlugs.add(found.slug);
+        if (found && !isPmsSubSlug(found.slug) && !matchedSlugs.has(found.slug.toLowerCase().trim())) {
+          matchedSlugs.add(found.slug.toLowerCase().trim());
           list.push(found);
         }
       });
@@ -163,10 +184,12 @@ export default function Navbar() {
       };
     });
 
-    const uncategorized = services.filter(s => s && s.slug && !matchedSlugs.has(s.slug));
+    const uncategorized = services.filter(s => s && s.slug && !isPmsSubSlug(s.slug) && !matchedSlugs.has(s.slug.toLowerCase().trim()));
     uncategorized.forEach((s) => {
-      const slug = (s.slug || '').toLowerCase();
+      const slug = (s.slug || '').toLowerCase().trim();
       const title = (s.title || '').toLowerCase();
+      if (isPmsSubSlug(slug)) return; // Safety check
+
       if (slug.includes('ghl') || slug.includes('hubspot') || slug.includes('workflow') || slug.includes('chatbot') || slug.includes('nurture') || slug.includes('automate') || title.includes('automate') || title.includes('ghl') || title.includes('hubspot') || title.includes('crm') || title.includes('nurture')) {
         const targetGroup = groups.find(g => g.title.toLowerCase().includes('automate')) || groups[1];
         targetGroup.servicesList.push(s);
@@ -188,7 +211,7 @@ export default function Navbar() {
     return groups;
   })() : serviceMenuGroups.map(group => ({
     ...group,
-    servicesList: group.slugs.map(slug => serviceBySlug[slug]).filter(Boolean)
+    servicesList: group.slugs.map(slug => serviceBySlug[slug]).filter(s => s && !isPmsSubSlug(s.slug))
   }));
 
   const pmsSubServices = PMS_SUB_SLUGS.map((slug) => {
@@ -208,7 +231,11 @@ export default function Navbar() {
                     ? 'Smoobu Integration'
                     : slug === 'newbook-integration'
                       ? 'Newbook Integration'
-                      : 'Jurny Integration',
+                      : slug === 'jurny-integration'
+                        ? 'Jurny Integration'
+                        : slug === 'lodgify-integration'
+                          ? 'Lodgify Integration'
+                          : 'PMS Integration',
         icon:
           slug === 'guesty-integration'
             ? 'Key'
@@ -222,11 +249,15 @@ export default function Navbar() {
                     ? 'Calendar'
                     : slug === 'jurny-integration'
                       ? 'Zap'
-                      : 'Building2',
+                      : slug === 'lodgify-integration'
+                        ? 'Globe'
+                        : 'Layers',
         color:
           slug === 'zeevou-integration'
             ? 'text-[#5d53a3] bg-[#5d53a3]/10'
-            : 'text-[#00a4d8] bg-[#00a4d8]/10',
+            : slug === 'lodgify-integration'
+              ? 'text-[#00a4d8] bg-[#00a4d8]/10'
+              : 'text-[#00a4d8] bg-[#00a4d8]/10',
       }
     );
   });
@@ -755,7 +786,7 @@ export default function Navbar() {
                     All services
                   </NavLink>
                   {services
-                    .filter((s) => !PMS_SUB_SLUGS.includes(s.slug))
+                    .filter((s) => s && s.slug && !isPmsSubSlug(s.slug))
                     .map((s) => {
                       const IconComponent = resolveIcon(s.icon);
                       const isPms = s.slug === 'pms-integration';
