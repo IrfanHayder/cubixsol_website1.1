@@ -1237,6 +1237,20 @@ app.post('/api/pages', async (req, res) => {
   }
 });
 
+// Serve Sitemap XML directly
+app.get('/sitemap.xml', (req, res) => {
+  const publicSitemap = path.join(__dirname, '../public/sitemap.xml');
+  const distSitemap = path.join(__dirname, '../dist/sitemap.xml');
+  if (fs.existsSync(publicSitemap)) {
+    res.header('Content-Type', 'application/xml');
+    return res.sendFile(publicSitemap);
+  } else if (fs.existsSync(distSitemap)) {
+    res.header('Content-Type', 'application/xml');
+    return res.sendFile(distSitemap);
+  }
+  res.status(404).send('Sitemap not found');
+});
+
 // Fallback 404 handler for any unhandled /api routes (guarantees JSON response, never HTML)
 app.use('/api', (req, res) => {
   res.status(404).json({ message: `API endpoint ${req.originalUrl} not found` });
