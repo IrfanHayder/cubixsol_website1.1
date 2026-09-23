@@ -26,11 +26,10 @@ function generateSitemap() {
     }
   };
 
-  // 1. Core Pages
+  // 1. Core Canonical Pages (Excluding redirected aliases like /services, /privacy-policy, etc.)
   addUrl(`${baseUrl}/`, '1.0', 'daily');
-  addUrl(`${baseUrl}/services`, '0.9', 'weekly');
-  addUrl(`${baseUrl}/all-services`, '0.8', 'weekly');
   addUrl(`${baseUrl}/about`, '0.8', 'monthly');
+  addUrl(`${baseUrl}/all-services`, '0.9', 'weekly');
   addUrl(`${baseUrl}/solutions`, '0.8', 'weekly');
   addUrl(`${baseUrl}/industries`, '0.8', 'weekly');
   addUrl(`${baseUrl}/products`, '0.8', 'weekly');
@@ -39,17 +38,27 @@ function generateSitemap() {
   addUrl(`${baseUrl}/careers`, '0.7', 'monthly');
   addUrl(`${baseUrl}/contact`, '0.8', 'monthly');
   addUrl(`${baseUrl}/privacy`, '0.3', 'yearly');
-  addUrl(`${baseUrl}/privacy-policy`, '0.3', 'yearly');
   addUrl(`${baseUrl}/terms`, '0.3', 'yearly');
-  addUrl(`${baseUrl}/terms-of-service`, '0.3', 'yearly');
   addUrl(`${baseUrl}/tools/ai-seo-auditor`, '0.8', 'weekly');
 
-  // 2. Services (both root and /services/ prefixes)
+  // Slugs that must NEVER be in the sitemap because they are 301 redirects to canonicals
+  const EXCLUDED_SLUGS = new Set([
+    'services',
+    'ai-document-intelligence',
+    'android-app-development',
+    'api-development-and-integration',
+    'data-migration',
+    'devops',
+    'ecommerce-marketplace-redesign',
+    'ecommerce-retail',
+    'ui-ux-designing',
+  ]);
+
+  // 2. Services (Canonical URLs)
   const services = seedData.initialServices || [];
   services.forEach((s) => {
-    if (s.slug) {
+    if (s.slug && !EXCLUDED_SLUGS.has(s.slug)) {
       addUrl(`${baseUrl}/${s.slug}`, '0.9', 'weekly');
-      addUrl(`${baseUrl}/services/${s.slug}`, '0.8', 'weekly');
     }
   });
 
@@ -106,7 +115,12 @@ function generateSitemap() {
   const sitemapPublicPath = path.join(__dirname, '..', 'public', 'sitemap.xml');
   fs.writeFileSync(sitemapPublicPath, xml, 'utf-8');
 
-  console.log(`✅ Successfully generated sitemap with ${urls.length} URLs at ${sitemapPublicPath}`);
+  const distDir = path.join(__dirname, '..', 'dist');
+  if (fs.existsSync(distDir)) {
+    fs.writeFileSync(path.join(distDir, 'sitemap.xml'), xml, 'utf-8');
+  }
+
+  console.log(`✅ Successfully generated sitemap with ${urls.length} canonical URLs at ${sitemapPublicPath}`);
 }
 
 generateSitemap();

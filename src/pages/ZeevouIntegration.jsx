@@ -463,7 +463,7 @@ export default function ZeevouIntegration() {
           {/* Breadcrumb */}
           <div className="mb-8">
             <Link
-              to="/services"
+              to="/all-services"
               className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-400 hover:text-white transition group"
             >
               <ArrowRight className="w-4 h-4 rotate-180 group-hover:-translate-x-1 transition-transform" /> Back to Services

@@ -35,6 +35,69 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
+// 301 Permanent Redirects for SEO and Duplicate URL resolution
+const REDIRECT_MAP = {
+  '/services': '/all-services',
+  '/services/': '/all-services',
+  '/ai-document-intelligence': '/ai-development',
+  '/ai-document-intelligence/': '/ai-development',
+  '/services/ai-document-intelligence': '/ai-development',
+  '/services/ai-document-intelligence/': '/ai-development',
+  '/android-app-development': '/android-development',
+  '/android-app-development/': '/android-development',
+  '/services/android-app-development': '/android-development',
+  '/services/android-app-development/': '/android-development',
+  '/api-development-and-integration': '/api-development',
+  '/api-development-and-integration/': '/api-development',
+  '/services/api-development-and-integration': '/api-development',
+  '/services/api-development-and-integration/': '/api-development',
+  '/data-migration': '/data-migration-services',
+  '/data-migration/': '/data-migration-services',
+  '/services/data-migration': '/data-migration-services',
+  '/services/data-migration/': '/data-migration-services',
+  '/services/data-migration-services': '/data-migration-services',
+  '/services/data-migration-services/': '/data-migration-services',
+  '/devops': '/devops-engineering',
+  '/devops/': '/devops-engineering',
+  '/services/devops': '/devops-engineering',
+  '/services/devops/': '/devops-engineering',
+  '/services/devops-engineering': '/devops-engineering',
+  '/services/devops-engineering/': '/devops-engineering',
+  '/ecommerce-marketplace-redesign': '/ecommerce-solutions',
+  '/ecommerce-marketplace-redesign/': '/ecommerce-solutions',
+  '/services/ecommerce-marketplace-redesign': '/ecommerce-solutions',
+  '/services/ecommerce-marketplace-redesign/': '/ecommerce-solutions',
+  '/ecommerce-retail': '/ecommerce-solutions',
+  '/ecommerce-retail/': '/ecommerce-solutions',
+  '/services/ecommerce-retail': '/ecommerce-solutions',
+  '/services/ecommerce-retail/': '/ecommerce-solutions',
+  '/ui-ux-designing': '/ui-ux-design',
+  '/ui-ux-designing/': '/ui-ux-design',
+  '/services/ui-ux-designing': '/ui-ux-design',
+  '/services/ui-ux-designing/': '/ui-ux-design',
+  '/services/ui-ux-design': '/ui-ux-design',
+  '/services/ui-ux-design/': '/ui-ux-design',
+  '/privacy-policy': '/privacy',
+  '/privacy-policy/': '/privacy',
+  '/terms-of-service': '/terms',
+  '/terms-of-service/': '/terms',
+};
+
+app.use((req, res, next) => {
+  if (req.path.startsWith('/api') || req.path.startsWith('/uploads')) {
+    return next();
+  }
+  const reqPath = req.path.toLowerCase();
+  if (REDIRECT_MAP[reqPath]) {
+    return res.redirect(301, REDIRECT_MAP[reqPath]);
+  }
+  const stripped = reqPath.endsWith('/') && reqPath.length > 1 ? reqPath.slice(0, -1) : reqPath;
+  if (REDIRECT_MAP[stripped]) {
+    return res.redirect(301, REDIRECT_MAP[stripped]);
+  }
+  next();
+});
+
 // Serve static uploaded files
 const uploadsDir = path.join(__dirname, 'uploads');
 if (!fs.existsSync(uploadsDir)) {
@@ -619,10 +682,31 @@ app.get('/api/services', async (req, res) => {
   }
 });
 
+// Service slug aliases map for backward-compatibility & canonicalization
+const SERVICE_SLUG_ALIASES = {
+  'android-development': ['android-development', 'android-app-development'],
+  'android-app-development': ['android-development', 'android-app-development'],
+  'api-development': ['api-development', 'api-development-and-integration'],
+  'api-development-and-integration': ['api-development', 'api-development-and-integration'],
+  'data-migration-services': ['data-migration-services', 'data-migration'],
+  'data-migration': ['data-migration-services', 'data-migration'],
+  'devops-engineering': ['devops-engineering', 'devops'],
+  'devops': ['devops-engineering', 'devops'],
+  'ui-ux-design': ['ui-ux-design', 'ui-ux-designing'],
+  'ui-ux-designing': ['ui-ux-design', 'ui-ux-designing'],
+  'ai-development': ['ai-development', 'ai-document-intelligence'],
+  'ai-document-intelligence': ['ai-development', 'ai-document-intelligence'],
+  'ecommerce-solutions': ['ecommerce-solutions', 'ecommerce-marketplace-redesign', 'ecommerce-retail'],
+  'ecommerce-marketplace-redesign': ['ecommerce-solutions', 'ecommerce-marketplace-redesign', 'ecommerce-retail'],
+  'ecommerce-retail': ['ecommerce-solutions', 'ecommerce-marketplace-redesign', 'ecommerce-retail'],
+};
+
 // GET single service
 app.get('/api/services/:slug', async (req, res) => {
   try {
-    const service = await Service.findOne({ slug: req.params.slug });
+    const slugParam = req.params.slug;
+    const aliases = SERVICE_SLUG_ALIASES[slugParam] || [slugParam];
+    const service = await Service.findOne({ slug: { $in: aliases } });
     if (!service) return res.status(404).json({ message: 'Service not found' });
     res.json(service);
   } catch (err) {

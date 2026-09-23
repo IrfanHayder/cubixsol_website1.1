@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { useEffect, Component } from 'react';
 import { AuthProvider } from './context/AuthContext';
 import { ServicesProvider } from './context/ServicesContext';
@@ -96,8 +96,49 @@ function AppRoutes() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
+        {/* 1. Services -> /all-services */}
+        <Route path="/services" element={<Navigate to="/all-services" replace />} />
         <Route path="/all-services" element={<Services />} />
+
+        {/* Audit 301 / Permanent Redirects */}
+        {/* 2. AI Document Intelligence -> /ai-development */}
+        <Route path="/ai-document-intelligence" element={<Navigate to="/ai-development" replace />} />
+        <Route path="/services/ai-document-intelligence" element={<Navigate to="/ai-development" replace />} />
+
+        {/* 3. Android App Development -> /android-development */}
+        <Route path="/android-app-development" element={<Navigate to="/android-development" replace />} />
+        <Route path="/services/android-app-development" element={<Navigate to="/android-development" replace />} />
+
+        {/* 4. API Development & Integration -> /api-development */}
+        <Route path="/api-development-and-integration" element={<Navigate to="/api-development" replace />} />
+        <Route path="/services/api-development-and-integration" element={<Navigate to="/api-development" replace />} />
+
+        {/* 5. Data Migration duplicate -> /data-migration-services */}
+        <Route path="/data-migration" element={<Navigate to="/data-migration-services" replace />} />
+        <Route path="/services/data-migration" element={<Navigate to="/data-migration-services" replace />} />
+        <Route path="/services/data-migration-services" element={<Navigate to="/data-migration-services" replace />} />
+
+        {/* 6. DevOps duplicate -> /devops-engineering */}
+        <Route path="/devops" element={<Navigate to="/devops-engineering" replace />} />
+        <Route path="/services/devops" element={<Navigate to="/devops-engineering" replace />} />
+        <Route path="/services/devops-engineering" element={<Navigate to="/devops-engineering" replace />} />
+
+        {/* 7. E-Commerce Marketplace Redesign -> /ecommerce-solutions */}
+        <Route path="/ecommerce-marketplace-redesign" element={<Navigate to="/ecommerce-solutions" replace />} />
+        <Route path="/services/ecommerce-marketplace-redesign" element={<Navigate to="/ecommerce-solutions" replace />} />
+
+        {/* 8. E-Commerce Retail -> /ecommerce-solutions */}
+        <Route path="/ecommerce-retail" element={<Navigate to="/ecommerce-solutions" replace />} />
+        <Route path="/services/ecommerce-retail" element={<Navigate to="/ecommerce-solutions" replace />} />
+
+        {/* 9. UI/UX Designing duplicate -> /ui-ux-design */}
+        <Route path="/ui-ux-designing" element={<Navigate to="/ui-ux-design" replace />} />
+        <Route path="/services/ui-ux-designing" element={<Navigate to="/ui-ux-design" replace />} />
+        <Route path="/services/ui-ux-design" element={<Navigate to="/ui-ux-design" replace />} />
+
+        {/* Additional clean redirects */}
+        <Route path="/privacy-policy" element={<Navigate to="/privacy" replace />} />
+        <Route path="/terms-of-service" element={<Navigate to="/terms" replace />} />
         <Route path="/products" element={<Products />} />
         <Route path="/products/:slug" element={<ProductDetail />} />
         <Route path="/tools/ai-seo-auditor" element={<AiSeoAuditor />} />
