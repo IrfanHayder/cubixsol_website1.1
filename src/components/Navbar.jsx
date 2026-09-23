@@ -15,6 +15,7 @@ export const PMS_SUB_SLUGS = [
   'jurny-integration',
   'lodgify-integration',
   'rentals-united-integration',
+  'ownerrez-integration',
 ];
 
 export const isPmsSubSlug = (slug) => {
@@ -35,6 +36,7 @@ export const isPmsSubSlug = (slug) => {
     s.includes('lodgify') ||
     s.includes('rentals-united') ||
     s.includes('rentalsunited') ||
+    s.includes('ownerrez') ||
     s.endsWith('-integration')
   );
 };
@@ -240,7 +242,9 @@ export default function Navbar() {
                           ? 'Lodgify Integration'
                           : slug === 'rentals-united-integration'
                             ? 'Rentals United Integration'
-                            : 'PMS Integration',
+                            : slug === 'ownerrez-integration'
+                              ? 'OwnerRez Integration'
+                              : 'PMS Integration',
         icon:
           slug === 'guesty-integration'
             ? 'Key'
@@ -258,13 +262,17 @@ export default function Navbar() {
                         ? 'Globe'
                         : slug === 'rentals-united-integration'
                           ? 'Network'
-                          : 'Layers',
+                          : slug === 'ownerrez-integration'
+                            ? 'KeyRound'
+                            : 'Layers',
         color:
           slug === 'zeevou-integration'
             ? 'text-[#5d53a3] bg-[#5d53a3]/10'
             : slug === 'rentals-united-integration'
               ? 'text-[#00a88f] bg-[#00a88f]/10'
-              : 'text-[#00a4d8] bg-[#00a4d8]/10',
+              : slug === 'ownerrez-integration'
+                ? 'text-[#0066cc] bg-[#0066cc]/10'
+                : 'text-[#00a4d8] bg-[#00a4d8]/10',
       }
     );
   });
