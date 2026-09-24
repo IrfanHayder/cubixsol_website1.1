@@ -344,9 +344,15 @@ export default function Services() {
                     className="group card h-full flex flex-col hover:shadow-elev hover:-translate-y-1.5 transition-all duration-300 !p-5 sm:!p-6"
                   >
                     <span
-                      className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-4 ${s.color} group-hover:scale-110 transition-transform duration-300 shadow-sm`}
+                      className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-4 ${s.color} group-hover:scale-110 transition-transform duration-300 shadow-sm p-2`}
                     >
-                      <IconComponent className="w-8 h-8 object-contain" />
+                      <DynamicIcon
+                        icon={s.icon}
+                        alt={s.title}
+                        title={s.title}
+                        className="w-8 h-8 object-contain"
+                        fallbackName="Building2"
+                      />
                     </span>
                     <h2 className="font-bold text-ink text-lg mb-2 group-hover:text-primary-600 transition-colors">
                       {s.title}

@@ -1189,7 +1189,7 @@
         "ogImage": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1000&h=750&q=70",
         "canonicalUrl": ""
       },
-      "icon": "Cloud",
+      "icon": "/uploads/media-1790256411370-956387268.svg",
       "slug": "cloud-solutions",
       "heroImage": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&h=800&q=75",
       "title": "Cloud Consulting & Solutions for Your Business",
@@ -1484,7 +1484,7 @@
       "heroSecondaryBtnText": "Explore Cloudbeds Solutions",
       "heroSubtitle": "Custom Cloudbeds Integration Solutions For Hospitality Businesses",
       "heroTitle": "Custom Cloudbeds Integration Solutions For Hospitality Businesses",
-      "icon": "Cloud",
+      "icon": "/uploads/media-1790253755532-273691715.svg",
       "longDesc": "Cubixsol enhances your capabilities through custom Cloudbeds integrations built around your business requirements. We provide professional Cloudbeds integration services to help hotels, hostels, resorts, and accommodation providers to improve reservation management, automate operational workflows, and simplify communication between multiple hospitality systems.",
       "menuTitle": "Cloudbeds Integration",
       "outcomes": [],
@@ -1705,7 +1705,7 @@
       ],
       "gradient": "from-sky-500 to-blue-600",
       "heroImage": "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&w=1000&h=750&q=70",
-      "icon": "Bot",
+      "icon": "/uploads/media-1790256411369-320262416.svg",
       "longDesc": "We develop and deploy custom AI chatbots that deliver human-grade conversations across your website, WhatsApp, Slack, and mobile apps. Powered by Retrieval-Augmented Generation (RAG) and connected to your CRM and booking systems, our chatbots answer complex queries, schedule meetings, and resolve support tickets instantly.",
       "menuTitle": "AI Chatbots",
       "outcomes": [
@@ -3231,7 +3231,7 @@
       ],
       "gradient": "from-emerald-500 to-teal-600",
       "heroImage": "/uploads/media-1789968245648-523034328.svg",
-      "icon": "/uploads/media-1789985455800-313831720.svg",
+      "icon": "/uploads/media-1790256411370-60012062.svg",
       "longDesc": "Cubixsol crafts data-driven email and lead nurture automation systems that engage leads at every stage of their buyer journey. From welcome series and re-engagement workflows to automated cart abandonment sequences and educational drip campaigns, we boost your conversions and maximize customer lifetime value.",
       "menuTitle": "Email & Lead Nurture",
       "outcomes": [
@@ -4236,7 +4236,7 @@
       "gradient": "from-[#00a4d8] to-[#5d53a3]",
       "heroImage": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&h=800&q=80",
       "heroSubtitle": "Custom Guesty Integration Solutions For Vacation Rental Businesses",
-      "icon": "KeyRound",
+      "icon": "/uploads/media-1790256411370-982399822.svg",
       "longDesc": "Cubixsol provides professional Guesty integration services that connect vacation rental platforms, business tools, and automation systems through secure API solutions. Our team builds custom connections that allow property managers to manage reservations, guest data, payments, communication tools, and smart property systems from one centralised workflow.",
       "menuTitle": "Guesty Integration",
       "outcomes": [
@@ -4429,7 +4429,7 @@
       "gradient": "from-[#00a4d8] to-[#5d53a3]",
       "heroImage": "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1200&h=800&q=80",
       "heroSubtitle": "Scalable Hostaway Integration Solutions for Vacation Rental Management",
-      "icon": "Building2",
+      "icon": "/uploads/media-1790253755539-455557641.svg",
       "longDesc": "Cubixsol provides advanced Hostaway integration services that help vacation rental companies connect their property management systems with essential business applications. Our developers create custom solutions that improve reservation management, automate daily operations, and simplify communication between multiple platforms.",
       "menuTitle": "Hostaway Integration",
       "outcomes": [
@@ -4626,7 +4626,7 @@
       "gradient": "from-[#00a4d8] to-[#5d53a3]",
       "heroImage": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&h=800&q=80",
       "heroSubtitle": "Hostfully API Integration Services for Vacation Rentals",
-      "icon": "BookOpen",
+      "icon": "/uploads/media-1790256411370-597845009.svg",
       "longDesc": "Cubixsol provides professional Hostfully integration services to help vacation rental companies connect their property management system with essential digital tools. Our developers create custom integrations that improve booking workflows, automate operations, and provide better control over guest management processes.",
       "menuTitle": "Hostfully Integration",
       "outcomes": [
@@ -4877,7 +4877,7 @@
       "heroSecondaryBtnText": "Explore Hostify Capabilities",
       "heroSubtitle": "Hostify Integration Services To Automate Vacation Rental Operations",
       "heroTitle": "Hostify Integration Services To Automate Vacation Rental Operations",
-      "icon": "Building2",
+      "icon": "/uploads/media-1790253755535-639038145.svg",
       "longDesc": "Cubixsol provides professional Hostify integration services to vacation rental businesses. We enhance Hostify functionality through custom integrations that connect your existing tools and support your specific business requirements. Our developers build customised integrations that improve reservation management, automate operational tasks, and create efficient workflows across different business applications.",
       "menuTitle": "Hostify Integration",
       "outcomes": [],
@@ -5558,7 +5558,7 @@
       "heroSecondaryBtnText": "Explore Solutions",
       "heroSubtitle": "Jurny Integration Services For Modern Property Management",
       "heroTitle": "Jurny Integration Services For Modern Property Management",
-      "icon": "Building2",
+      "icon": "/uploads/media-1790256411370-530380833.svg",
       "longDesc": "Cubixsol provides professional Jurny integration services to help property operators connect their rental management platform with advanced business applications. Our developers create custom integration solutions to improve automation, streamline guest management, and connect different systems into a unified operational workflow.",
       "menuTitle": "Jurny Integration",
       "outcomes": [],
@@ -5869,7 +5869,7 @@
       "heroSecondaryBtnText": "Explore Solutions",
       "heroSubtitle": "Lodgify Integration Solutions For Vacation Rental Automation",
       "heroTitle": "Lodgify Integration Solutions For Vacation Rental Automation",
-      "icon": "Globe",
+      "icon": "/uploads/media-1790256411370-821016169.svg",
       "longDesc": "Cubixsol extends Lodgify functionality through reliable integrations to meet your business requirements. Our professional Lodgify integration services connect your booking platform with powerful digital tools. Our developers create customised integrations to improve reservation management, automate workflows, and enhance the guest experience.",
       "menuTitle": "Lodgify Integration",
       "outcomes": [],
@@ -6191,7 +6191,7 @@
       "heroSecondaryBtnText": "Explore Mews Solutions",
       "heroSubtitle": "Custom Mews Integration Solutions For Modern Hospitality Operations",
       "heroTitle": "Custom Mews Integration Solutions For Modern Hospitality Operations",
-      "icon": "Building",
+      "icon": "/uploads/media-1790253755536-799955685.svg",
       "longDesc": "Cubixsol provides professional Mews integration services that help hotels, serviced apartments, and hospitality businesses connect their cloud property management system with advanced digital solutions. Our developers create customised integrations that improve automation, simplify operations, and enable seamless communication between different hospitality platforms.",
       "menuTitle": "Mews Integration",
       "outcomes": [],
@@ -6622,7 +6622,7 @@
       "heroSecondaryBtnText": "Explore Solutions",
       "heroSubtitle": "Custom Newbook Integration Solutions For Hospitality Businesses",
       "heroTitle": "Custom Newbook Integration Solutions For Hospitality Businesses",
-      "icon": "Building2",
+      "icon": "/uploads/media-1790256411370-446173925.svg",
       "menuTitle": "Newbook Integration",
       "outcomes": [],
       "points": [
@@ -6940,7 +6940,7 @@
       "heroSecondaryBtnText": "Explore Opera PMS Solutions",
       "heroSubtitle": "Custom Opera PMS Integration Solutions For Enterprise Hotels",
       "heroTitle": "Custom Opera PMS Integration Solutions For Enterprise Hotels",
-      "icon": "Building2",
+      "icon": "/uploads/media-1790253755536-767535089.svg",
       "longDesc": "Cubixsol provides professional Opera PMS integration services to help hotels and hospitality organisations connect their property management system with modern digital solutions. Opera PMS is a widely used hotel property management system. We develop Opera PMS capabilities through secure integrations to connect hotels with third-party platforms and business applications.",
       "menuTitle": "Opera PMS Integration",
       "outcomes": [],
@@ -7246,7 +7246,7 @@
       "heroSecondaryBtnText": "Explore Solutions",
       "heroSubtitle": "Custom OwnerRez Integration Solutions For Vacation Rental Businesses",
       "heroTitle": "Custom OwnerRez Integration Solutions For Vacation Rental Businesses",
-      "icon": "KeyRound",
+      "icon": "/uploads/media-1790253755537-457611832.svg",
       "longDesc": "Cubixsol provides professional OwnerRez integration services to help vacation rental companies connect their property management system with powerful business applications. Our developers create customised integrations that improve automation, simplify property operations, and allow different software platforms to communicate efficiently.",
       "menuTitle": "OwnerRez Integration",
       "outcomes": [],
@@ -8137,7 +8137,7 @@
       "heroSecondaryBtnText": "Explore Solutions",
       "heroSubtitle": "Custom Rentals United Integration Solutions For Vacation Rental Distribution",
       "heroTitle": "Custom Rentals United Integration Solutions For Vacation Rental Distribution",
-      "icon": "Network",
+      "icon": "/uploads/media-1790253755537-228555983.svg",
       "longDesc": "Cubixsol provides professional Rentals United integration services to help vacation rental businesses connect their distribution network with property management systems, booking platforms, and business applications. Our developers create customized integration solutions that improve listing management, automate reservation workflows, and simplify multi-channel operations.",
       "menuTitle": "Rentals United Integration",
       "outcomes": [],
@@ -8718,7 +8718,7 @@
       "heroSecondaryBtnText": "Explore Solutions",
       "heroSubtitle": "Smoobu Integration Solutions For Vacation Rental Automation",
       "heroTitle": "Smoobu Integration Solutions For Vacation Rental Automation",
-      "icon": "Calendar",
+      "icon": "/uploads/media-1790256411370-701515684.svg",
       "menuTitle": "Smoobu Integration",
       "outcomes": [],
       "points": [
@@ -9037,7 +9037,7 @@
       "heroSecondaryBtnText": "Explore Tokeet Solutions",
       "heroSubtitle": "Custom Tokeet Integration Solutions For Vacation Rental Management",
       "heroTitle": "Custom Tokeet Integration Solutions For Vacation Rental Management",
-      "icon": "Sliders",
+      "icon": "/uploads/media-1790253755539-480635918.svg",
       "longDesc": "Tokeet is a cloud-based property management system designed for vacation rental owners, hosts, and property managers. Our professional Tokeet integration services help vacation rental businesses connect their property management platform with advanced software solutions. We enhance Tokeet capabilities through custom integrations that connect essential business tools and create smoother operational workflows.",
       "menuTitle": "Tokeet Integration",
       "outcomes": [],
@@ -9511,7 +9511,7 @@
       "heroSecondaryBtnText": "Explore Uplisting Solutions",
       "heroSubtitle": "Custom Uplisting Integrations For Rental Business Automation",
       "heroTitle": "Custom Uplisting Integrations For Rental Business Automation",
-      "icon": "Activity",
+      "icon": "/uploads/media-1790253755539-463139177.svg",
       "longDesc": "Cubixsol provides professional Uplisting integration services. We extend Uplisting capabilities through custom integrations that match your business processes and technology requirements. Our developers create customised integrations to improve guest communication, automate operational workflows, and simplify the management of multiple rental properties.",
       "menuTitle": "Uplisting Integration",
       "outcomes": [],
@@ -9745,7 +9745,7 @@
       "gradient": "from-[#00a4d8] to-[#5d53a3]",
       "heroImage": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&h=800&q=80",
       "heroSubtitle": "Automate Property Management With Custom Zeevou Integrations",
-      "icon": "Building2",
+      "icon": "/uploads/media-1790256411370-963612701.svg",
       "longDesc": "Cubixsol provides reliable Zeevou integration services to vacation rental businesses. They connect their platform with essential software systems. Our developers build customised integration solutions to simplify operations, improve automation, and create seamless communication between different business tools.",
       "menuTitle": "Zeevou Integration",
       "outcomes": [
@@ -19779,6 +19779,86 @@
     }
   ],
   "initialMedia": [
+    {
+      "title": "Zeevou Integration 1",
+      "url": "/uploads/media-1790256411370-963612701.svg",
+      "type": "image",
+      "alt": "Zeevou Integration 1",
+      "size": 14053,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "Smoobu Integration 1",
+      "url": "/uploads/media-1790256411370-701515684.svg",
+      "type": "image",
+      "alt": "Smoobu Integration 1",
+      "size": 13712,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "Newbook Integration 1",
+      "url": "/uploads/media-1790256411370-446173925.svg",
+      "type": "image",
+      "alt": "Newbook Integration 1",
+      "size": 2192,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "Lodgify Integration 1",
+      "url": "/uploads/media-1790256411370-821016169.svg",
+      "type": "image",
+      "alt": "Lodgify Integration 1",
+      "size": 6350,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "Jurny Integration 1",
+      "url": "/uploads/media-1790256411370-530380833.svg",
+      "type": "image",
+      "alt": "Jurny Integration 1",
+      "size": 7592,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "Hostfully API 1",
+      "url": "/uploads/media-1790256411370-597845009.svg",
+      "type": "image",
+      "alt": "Hostfully API 1",
+      "size": 5861,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "Guesty Integratio 1",
+      "url": "/uploads/media-1790256411370-982399822.svg",
+      "type": "image",
+      "alt": "Guesty Integratio 1",
+      "size": 7357,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "Email & Lead Nurture 1",
+      "url": "/uploads/media-1790256411370-60012062.svg",
+      "type": "image",
+      "alt": "Email & Lead Nurture 1",
+      "size": 5453,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "Cloud Solutions 1",
+      "url": "/uploads/media-1790256411370-956387268.svg",
+      "type": "image",
+      "alt": "Cloud Solutions 1",
+      "size": 5879,
+      "mimetype": "image/svg+xml"
+    },
+    {
+      "title": "AI Chatbots 1",
+      "url": "/uploads/media-1790256411369-320262416.svg",
+      "type": "image",
+      "alt": "AI Chatbots 1",
+      "size": 8570,
+      "mimetype": "image/svg+xml"
+    },
     {
       "title": "Room Access _ Keyless Access Solution 1",
       "url": "/uploads/media-1790255189683-273829124.svg",
