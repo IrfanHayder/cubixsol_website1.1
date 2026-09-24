@@ -41,6 +41,7 @@ import JurnyIntegration from './pages/JurnyIntegration';
 import LodgifyIntegration from './pages/LodgifyIntegration';
 import RentalsUnitedIntegration from './pages/RentalsUnitedIntegration';
 import OwnerRezIntegration from './pages/OwnerRezIntegration';
+import HostifyIntegration from './pages/HostifyIntegration';
 import AdminDashboard from './pages/Admin/Dashboard';
 import AdminLogin from './pages/Admin/Login';
 
@@ -188,6 +189,8 @@ function AppRoutes() {
         <Route path="/services/rentals-united-integration" element={<RentalsUnitedIntegration />} />
         <Route path="/ownerrez-integration" element={<OwnerRezIntegration />} />
         <Route path="/services/ownerrez-integration" element={<OwnerRezIntegration />} />
+        <Route path="/hostify-integration" element={<HostifyIntegration />} />
+        <Route path="/services/hostify-integration" element={<HostifyIntegration />} />
         <Route path="/services/:slug" element={<ServiceDetail />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/industries" element={<Industries />} />
