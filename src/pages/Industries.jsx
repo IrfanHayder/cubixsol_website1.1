@@ -19,6 +19,8 @@ import Reveal, { Stagger, StaggerItem } from '../components/Reveal';
 import DynamicIcon from '../components/DynamicIcon';
 import { apiFetch } from '../utils/api';
 import { formatInline, FormatRichText } from '../utils/formatText';
+import { useSEO } from '../utils/seo';
+
 
 const defaultPageData = {
   heroEyebrow: 'Where we deliver',
@@ -144,6 +146,14 @@ export default function Industries() {
     return true;
   });
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
+
+  useSEO(pageData?.seo, {
+    title: pageData?.heroTitle ? `${pageData.heroTitle} | Cubixsol` : 'Industry-Specific Software Development Services | Cubixsol',
+    description: pageData?.heroDesc || 'We engineer custom digital platforms, portals, and cloud software for hospitality, healthcare, e-commerce, and enterprise verticals.',
+    keywords: 'industry software development, enterprise software solutions, healthcare software, hospitality tech, Cubixsol',
+    canonicalUrl: 'https://cubixsol.com/industries',
+  });
+
 
   useEffect(() => {
     let cancelled = false;

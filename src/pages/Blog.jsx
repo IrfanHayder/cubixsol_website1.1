@@ -5,9 +5,10 @@ import CtaBanner from '../components/CtaBanner';
 import { ArrowRight } from 'lucide-react';
 import Reveal, { Stagger, StaggerItem } from '../components/Reveal';
 import { apiFetch } from '../utils/api';
-
+import { useSEO } from '../utils/seo';
 
 export default function Blog() {
+  const [pageData, setPageData] = useState(null);
   const [posts, setPosts] = useState(() => {
     try {
       const cached = localStorage.getItem('cubixsol_blogs_cache');
@@ -28,6 +29,18 @@ export default function Blog() {
     } catch (_) {}
     return true;
   });
+
+  useSEO(pageData?.seo, {
+    title: 'Our Blog | Insights, Ideas & Tech Trends | Cubixsol',
+    description: 'Explore practical thinking, tech insights, software architecture guides, and digital engineering updates from the Cubixsol team.',
+    keywords: 'technology blog, software engineering insights, custom software development blog, tech news, Cubixsol',
+    canonicalUrl: 'https://cubixsol.com/blog',
+  });
+
+  useEffect(() => {
+    apiFetch('pages/blog').then(data => { if (data) setPageData(data); }).catch(() => {});
+  }, []);
+
 
   useEffect(() => {
     let cancelled = false;

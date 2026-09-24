@@ -309,12 +309,13 @@ export default function UplistingIntegration() {
   // Fetch dynamic content from Admin Dashboard API
   useEffect(() => {
     let isMounted = true;
-    apiFetch('/api/services/uplisting-integration')
+    apiFetch('services/uplisting-integration')
       .then((res) => {
         if (isMounted && res && res.slug) {
           setData((prev) => ({
             ...prev,
             ...res,
+            seo: res.seo || prev.seo,
             heroBadges: res.heroBadges?.length ? res.heroBadges : prev.heroBadges,
             subServicesItems: res.subServicesItems?.length ? res.subServicesItems : prev.subServicesItems,
             coreSolutions: res.coreSolutions?.length ? res.coreSolutions : prev.coreSolutions,
@@ -331,15 +332,8 @@ export default function UplistingIntegration() {
     };
   }, []);
 
-  useSEO({
-    title: data.seo?.metaTitle || DEFAULT_DATA.seo.metaTitle,
-    description: data.seo?.metaDescription || DEFAULT_DATA.seo.metaDescription,
-    keywords: data.seo?.keywords || DEFAULT_DATA.seo.keywords,
-    ogTitle: data.seo?.ogTitle || DEFAULT_DATA.seo.ogTitle,
-    ogDescription: data.seo?.ogDescription || DEFAULT_DATA.seo.ogDescription,
-    ogImage: data.seo?.ogImage || DEFAULT_DATA.seo.ogImage,
-    canonicalUrl: data.seo?.canonicalUrl || DEFAULT_DATA.seo.canonicalUrl,
-  });
+  useSEO(data?.seo, DEFAULT_DATA?.seo);
+
 
   const handleTriggerSync = (channel) => {
     setSimChannel(channel);

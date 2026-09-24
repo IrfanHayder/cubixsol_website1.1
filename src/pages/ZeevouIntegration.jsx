@@ -344,12 +344,12 @@ export default function ZeevouIntegration() {
   });
 
   // SEO Metadata Hook
-  useSEO(
-    data.seo?.metaTitle || data.title,
-    data.seo?.metaDescription || data.heroDesc,
-    data.seo?.keywords,
-    data.heroImage
-  );
+  useSEO(data?.seo, {
+    title: data.title ? `${data.title} | Cubixsol` : 'Zeevou PMS Integration Services | Cubixsol',
+    description: data.heroDesc || data.desc || 'Automate direct bookings, 3-D secure deposits, smart lock PINs, and automated accounting with Zeevou PMS integration.',
+    keywords: data.seo?.keywords || 'Zeevou integration, Zeevou PMS, direct booking engine, Cubixsol',
+    canonicalUrl: 'https://cubixsol.com/zeevou-integration',
+  });
 
   // Dynamic MongoDB Synchronization & Admin Dashboard Integration
   useEffect(() => {
@@ -359,10 +359,12 @@ export default function ZeevouIntegration() {
           setData((prev) => ({
             ...prev,
             ...res,
+            seo: res.seo || prev.seo,
             title: res.title || prev.title,
             heroTitle: res.heroSubtitle || res.title || prev.heroTitle,
             heroDesc: res.longDesc || res.desc || prev.heroDesc,
             subServicesTitle: res.subServicesTitle || prev.subServicesTitle,
+
             subServicesIntro: res.subServicesIntro || prev.subServicesIntro,
             subServicesItems: res.subServicesItems?.length > 0
               ? res.subServicesItems.map((item, idx) => ({

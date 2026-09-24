@@ -281,24 +281,31 @@ export default function JurnyIntegration() {
     isSyncing: false
   });
 
-  useSEO({
+  useSEO(data?.seo, {
     title: `${data.title || 'Jurny Integration Services'} | Cubixsol`,
-    description: data.heroDesc || 'Custom Jurny integration solutions for vacation rentals, smart lock automation, and multi-channel synchronization.',
+    description: data.heroDesc || data.desc || 'Custom Jurny integration solutions for vacation rentals, smart lock automation, and multi-channel synchronization.',
     keywords: 'Jurny integration, Jurny API, smart locks Jurny, PMS integration, vacation rental automation, Jurny Airbnb sync, hospitality technology',
-    canonical: '/services/jurny-integration'
+    canonicalUrl: 'https://cubixsol.com/jurny-integration'
   });
 
   useEffect(() => {
     let isMounted = true;
-    apiFetch(`/api/services/slug/jurny-integration`)
+    apiFetch('services/jurny-integration')
       .then(res => {
-        if (isMounted && res && res.data) {
-          setData(prev => ({ ...prev, ...res.data }));
+        if (!isMounted || !res) return;
+        const apiData = res.service || res.data || res;
+        if (apiData && (apiData.title || apiData.slug)) {
+          setData(prev => ({
+            ...prev,
+            ...apiData,
+            seo: apiData.seo || prev.seo,
+          }));
         }
       })
       .catch(() => {});
     return () => { isMounted = false; };
   }, []);
+
 
   const triggerSimSync = () => {
     setSimState(prev => ({ ...prev, isSyncing: true, status: 'Syncing payload...' }));

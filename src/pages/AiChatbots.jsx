@@ -344,12 +344,12 @@ export default function AiChatbots() {
   const [openFaq, setOpenFaq] = useState(0);
 
   // SEO Metadata Hook
-  useSEO(
-    data.seo?.metaTitle || data.title,
-    data.seo?.metaDescription || data.heroDesc,
-    data.seo?.keywords,
-    data.heroImage
-  );
+  useSEO(data?.seo, {
+    title: data.title ? `${data.title} | Cubixsol` : 'AI Chatbot Development Services | Cubixsol',
+    description: data.heroDesc || data.desc || 'Custom AI chatbot development services. Intelligent chatbot solutions to automate conversations, improve customer support, qualify leads, and connect enterprise systems.',
+    keywords: data.seo?.keywords || 'AI chatbot development, customer service AI chatbot, website AI chatbot, intelligent conversational agents, AI chatbot company, Cubixsol',
+    canonicalUrl: 'https://cubixsol.com/ai-chatbots',
+  });
 
   useEffect(() => {
     // Dynamic fetch from MongoDB (Service or PageContent)
@@ -395,7 +395,9 @@ export default function AiChatbots() {
           setData((prev) => ({
             ...prev,
             ...res,
+            seo: res.seo || prev.seo,
             heroTitle: res.heroTitle || res.title || prev.heroTitle,
+
             heroDesc: res.heroDesc || res.longDesc || res.desc || prev.heroDesc,
             heroPrimaryBtnText: res.heroPrimaryBtnText || res.ctaPrimaryText || prev.heroPrimaryBtnText,
             heroSecondaryBtnText: res.heroSecondaryBtnText || res.ctaSecondaryText || prev.heroSecondaryBtnText,

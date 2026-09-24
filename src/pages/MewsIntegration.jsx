@@ -284,15 +284,16 @@ export default function MewsIntegration() {
   const [openFaq, setOpenFaq] = useState(0);
 
   // SEO Hook
-  useSEO({
-    title: data?.seo?.metaTitle || 'Mews Integration Services | Custom PMS Solutions | Cubixsol',
-    description: data?.seo?.metaDescription || 'Professional Mews PMS integration services by Cubixsol. Connect Mews with open APIs, smart locks, payment gateways, booking channels, and CRMs.',
-    keywords: data?.seo?.keywords || 'Mews integration, Mews PMS API, hotel cloud PMS integration, Mews Commander, smart locks integration, Cubixsol',
-    ogTitle: data?.seo?.ogTitle || 'Mews Integration Services | Cubixsol',
-    ogDescription: data?.seo?.ogDescription || 'Custom Mews integration solutions for modern hospitality operations.',
-    ogImage: data?.seo?.ogImage || 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&h=800&q=80',
-    canonicalUrl: data?.seo?.canonicalUrl || 'https://cubixsol.com/mews-integration'
+  useSEO(data?.seo, {
+    title: 'Mews Integration Services | Custom PMS Solutions | Cubixsol',
+    description: 'Professional Mews PMS integration services by Cubixsol. Connect Mews with open APIs, smart locks, payment gateways, booking channels, and CRMs.',
+    keywords: 'Mews integration, Mews PMS API, hotel cloud PMS integration, Mews Commander, smart locks integration, Cubixsol',
+    ogTitle: 'Mews Integration Services | Cubixsol',
+    ogDescription: 'Custom Mews integration solutions for modern hospitality operations.',
+    ogImage: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&h=800&q=80',
+    canonicalUrl: 'https://cubixsol.com/mews-integration'
   });
+
 
   // Live Terminal interactive simulator state
   const [liveStreamIndex, setLiveStreamIndex] = useState(0);
@@ -349,12 +350,13 @@ export default function MewsIntegration() {
 
   useEffect(() => {
     let isMounted = true;
-    apiFetch('/api/services/mews-integration')
+    apiFetch('services/mews-integration')
       .then((res) => {
         if (isMounted && res && res.slug) {
           setData((prev) => ({
             ...prev,
-            ...res
+            ...res,
+            seo: res.seo || prev.seo
           }));
         }
       })
@@ -366,6 +368,7 @@ export default function MewsIntegration() {
       isMounted = false;
     };
   }, []);
+
 
   const currentEvent = terminalEvents[liveStreamIndex];
 

@@ -334,12 +334,12 @@ export default function HubSpotCrm() {
   const [openFaq, setOpenFaq] = useState(0);
 
   // SEO Metadata
-  useSEO(
-    data.seo?.metaTitle || data.title,
-    data.seo?.metaDescription || data.heroDesc,
-    data.seo?.keywords,
-    data.heroImage
-  );
+  useSEO(data?.seo, {
+    title: data.title ? `${data.title} | Cubixsol` : 'HubSpot CRM Automation & Setup Services | Cubixsol',
+    description: data.heroDesc || data.desc || 'HubSpot CRM onboarding, custom pipeline automation, marketing hub setups, and bi-directional API integrations.',
+    keywords: data.seo?.keywords || 'HubSpot CRM, HubSpot automation, HubSpot onboarding, CRM setup, Cubixsol',
+    canonicalUrl: 'https://cubixsol.com/hubspot-crm',
+  });
 
   useEffect(() => {
     // Dynamic fetch from MongoDB
@@ -349,6 +349,7 @@ export default function HubSpotCrm() {
           setData((prev) => ({
             ...prev,
             ...res,
+            seo: res.seo || prev.seo,
             problemCards: res.problemCards || prev.problemCards,
             capabilitiesCards: res.capabilitiesCards || prev.capabilitiesCards,
             fixFirstItems: res.fixFirstItems || prev.fixFirstItems,
@@ -360,6 +361,7 @@ export default function HubSpotCrm() {
           }));
         }
       })
+
       .catch(() => {
         // Fallback to pageContent if available
         apiFetch('pages/hubspot-crm')

@@ -334,12 +334,12 @@ export default function AiWorkflows() {
   const [openFaq, setOpenFaq] = useState(0);
 
   // SEO Metadata
-  useSEO(
-    data.seo?.metaTitle || data.title,
-    data.seo?.metaDescription || data.heroDesc,
-    data.seo?.keywords,
-    data.heroImage
-  );
+  useSEO(data?.seo, {
+    title: data.title ? `${data.title} | Cubixsol` : 'AI Workflow Automation Services | Cubixsol',
+    description: data.heroDesc || data.desc || 'Transform business operations with intelligent workflows, AI agents, automated marketing, and connected system integrations.',
+    keywords: data.seo?.keywords || 'AI workflow automation, AI agents, business process automation, agentic workflows, Cubixsol',
+    canonicalUrl: 'https://cubixsol.com/ai-workflows',
+  });
 
   useEffect(() => {
     // Dynamic fetch from MongoDB
@@ -349,6 +349,7 @@ export default function AiWorkflows() {
           setData((prev) => ({
             ...prev,
             ...res,
+            seo: res.seo || prev.seo,
             problemCards: res.problemCards || prev.problemCards,
             capabilitiesCards: res.capabilitiesCards || prev.capabilitiesCards,
             fixFirstItems: res.fixFirstItems || prev.fixFirstItems,
@@ -360,6 +361,7 @@ export default function AiWorkflows() {
           }));
         }
       })
+
       .catch(() => {
         // Fallback to pageContent if available
         apiFetch('pages/ai-workflows')

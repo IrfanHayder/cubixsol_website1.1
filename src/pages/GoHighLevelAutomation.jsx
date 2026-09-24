@@ -333,12 +333,12 @@ export default function GoHighLevelAutomation() {
   const [openFaq, setOpenFaq] = useState(0);
 
   // SEO Metadata
-  useSEO(
-    data.seo?.metaTitle || data.title,
-    data.seo?.metaDescription || data.heroDesc,
-    data.seo?.keywords,
-    data.heroImage
-  );
+  useSEO(data?.seo, {
+    title: data.title ? `${data.title} | Cubixsol` : 'GoHighLevel (GHL) Automation Services | Cubixsol',
+    description: data.heroDesc || data.desc || 'Scale your agency and enterprise with GoHighLevel CRM workflows, funnel automation, snapshots, and API integrations.',
+    keywords: data.seo?.keywords || 'GoHighLevel automation, GHL agency snapshot, CRM automation, Cubixsol',
+    canonicalUrl: 'https://cubixsol.com/gohighlevel-automation',
+  });
 
   useEffect(() => {
     // Dynamic fetch from MongoDB
@@ -348,6 +348,7 @@ export default function GoHighLevelAutomation() {
           setData((prev) => ({
             ...prev,
             ...res,
+            seo: res.seo || prev.seo,
             problemCards: res.problemCards || prev.problemCards,
             capabilitiesCards: res.capabilitiesCards || prev.capabilitiesCards,
             fixFirstItems: res.fixFirstItems || prev.fixFirstItems,
@@ -359,6 +360,7 @@ export default function GoHighLevelAutomation() {
           }));
         }
       })
+
       .catch(() => {
         // Fallback to pageContent if available
         apiFetch('pages/gohighlevel-automation')

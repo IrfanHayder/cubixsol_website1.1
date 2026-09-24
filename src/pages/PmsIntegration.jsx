@@ -14,11 +14,20 @@ import { formatInline } from '../utils/formatText';
 import Reveal, { Stagger, StaggerItem } from '../components/Reveal';
 import CtaBanner from '../components/CtaBanner';
 import DynamicIcon from '../components/DynamicIcon';
+import { useSEO } from '../utils/seo';
 
 export default function PmsIntegration() {
   const { openEstimateModal } = useEstimateModal();
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
+
+  useSEO(data?.seo, {
+    title: data?.title ? `${data.title} | Cubixsol` : 'Property Management System (PMS) Integration Services | Cubixsol',
+    description: data?.desc || data?.longDesc || 'Connect Opera, Cloudbeds, Guesty, Hostaway, Mews, Zeevou, Smoobu & more with 2-way OTAs, smart locks, payment gateways, and custom direct booking systems.',
+    keywords: 'PMS integration, hotel PMS API, vacation rental PMS, Guesty integration, Opera PMS integration, Cloudbeds integration, Cubixsol',
+    canonicalUrl: 'https://cubixsol.com/pms-integration',
+  });
+
   const [activePmsSimulator, setActivePmsSimulator] = useState(0);
   const [openFaq, setOpenFaq] = useState(0);
   const [isSyncing, setIsSyncing] = useState(false);

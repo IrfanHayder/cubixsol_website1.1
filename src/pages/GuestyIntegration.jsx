@@ -266,12 +266,12 @@ export default function GuestyIntegration() {
   });
 
   // SEO Metadata Hook
-  useSEO(
-    data.seo?.metaTitle || data.title,
-    data.seo?.metaDescription || data.heroDesc,
-    data.seo?.keywords,
-    data.heroImage
-  );
+  useSEO(data?.seo, {
+    title: data.title ? `${data.title} | Cubixsol` : 'Guesty PMS Integration Services | Cubixsol',
+    description: data.heroDesc || data.desc || 'Seamlessly connect Guesty with Airbnb, smart locks, payment gateways, cleaning dispatch, and custom direct booking platforms.',
+    keywords: data.seo?.keywords || 'Guesty integration, Guesty PMS, PMS API development, Cubixsol',
+    canonicalUrl: 'https://cubixsol.com/guesty-integration',
+  });
 
   // Dynamic MongoDB Synchronization & Admin Dashboard Integration
   useEffect(() => {
@@ -281,10 +281,12 @@ export default function GuestyIntegration() {
           setData((prev) => ({
             ...prev,
             ...res,
+            seo: res.seo || prev.seo,
             title: res.title || prev.title,
             heroTitle: res.heroSubtitle || res.title || prev.heroTitle,
             heroDesc: res.longDesc || res.desc || prev.heroDesc,
             subServicesTitle: res.subServicesTitle || prev.subServicesTitle,
+
             subServicesIntro: res.subServicesIntro || prev.subServicesIntro,
             subServicesItems: res.subServicesItems?.length > 0
               ? res.subServicesItems.map((item, idx) => ({

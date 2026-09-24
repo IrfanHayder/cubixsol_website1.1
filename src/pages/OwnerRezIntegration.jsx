@@ -289,17 +289,17 @@ export default function OwnerRezIntegration() {
   });
 
   // SEO Hook
-  useSEO({
+  useSEO(data?.seo, {
     title: 'OwnerRez Integration Services | Vacation Rental Automation | Cubixsol',
     description: 'Expert OwnerRez integration services by Cubixsol. Connect OwnerRez with Airbnb, Vrbo, smart locks, payment gateways, CRM, and custom APIs for automated rental management.',
     keywords: 'OwnerRez integration, OwnerRez API integration, OwnerRez channel manager, OwnerRez smart lock, PMS integration, vacation rental automation, Cubixsol',
-    canonical: 'https://cubixsol.com/ownerrez-integration'
+    canonicalUrl: 'https://cubixsol.com/ownerrez-integration'
   });
 
   // Dynamic fetch from backend so changes in Admin Dashboard automatically update the page
   useEffect(() => {
     let isMounted = true;
-    apiFetch('/api/services/slug/ownerrez-integration')
+    apiFetch('services/ownerrez-integration')
       .then((res) => {
         if (!isMounted || !res) return;
         const apiData = res.service || res;
@@ -307,7 +307,9 @@ export default function OwnerRezIntegration() {
           setData((prev) => ({
             ...prev,
             ...apiData,
+            seo: apiData.seo || prev.seo,
             heroBadges: apiData.features && apiData.features.length ? apiData.features : (apiData.heroBadges || prev.heroBadges),
+
             subServicesItems: (apiData.subServicesItems && apiData.subServicesItems.length > 0)
               ? apiData.subServicesItems.map((item, idx) => ({
                   ...item,

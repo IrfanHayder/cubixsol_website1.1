@@ -229,10 +229,11 @@ export default function ShopifyDevelopment() {
   const [auditScore, setAuditScore] = useState({ speed: 99, mobile: 98, seo: 100, status: 'Store Optimized & Fast' });
 
   // SEO
-  useSEO({
-    title: data?.seo?.metaTitle || 'Shopify Store Development Services | Cubixsol',
-    description: data?.seo?.metaDescription || data?.desc?.substring(0, 160),
-    keywords: data?.seo?.keywords || 'Shopify development, custom Shopify store, Shopify theme development, Shopify app integration',
+  useSEO(data?.seo, {
+    title: 'Shopify Store Development Services | Cubixsol',
+    description: data?.desc?.substring(0, 160) || 'Custom Shopify store development, theme customization, and apps integration by Cubixsol.',
+    keywords: 'Shopify development, custom Shopify store, Shopify theme development, Shopify app integration',
+    canonicalUrl: 'https://cubixsol.com/shopify-development',
   });
 
   const handleSimulateAudit = () => {
@@ -254,20 +255,29 @@ export default function ShopifyDevelopment() {
     apiFetch('services/shopify-development')
       .then((res) => {
         if (isMounted && res && (res.title || res.subServicesItems)) {
-          setData((prev) => ({ ...prev, ...res }));
+          setData((prev) => ({
+            ...prev,
+            ...res,
+            seo: res.seo || prev.seo,
+          }));
         }
       })
       .catch(() => {
         apiFetch('pages/shopify-development')
           .then((pageRes) => {
             if (isMounted && pageRes && pageRes.title) {
-              setData((prev) => ({ ...prev, ...pageRes }));
+              setData((prev) => ({
+                ...prev,
+                ...pageRes,
+                seo: pageRes.seo || prev.seo,
+              }));
             }
           })
           .catch(() => {});
       });
     return () => { isMounted = false; };
   }, []);
+
 
   const stats = [
     { value: '1K+', label: 'Clients around the world', icon: Globe, highlight: 'Global Footprint' },

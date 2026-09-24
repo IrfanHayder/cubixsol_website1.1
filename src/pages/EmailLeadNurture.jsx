@@ -343,12 +343,12 @@ export default function EmailLeadNurture() {
   const [openFaq, setOpenFaq] = useState(0);
 
   // SEO Metadata Hook
-  useSEO(
-    data.seo?.metaTitle || data.title,
-    data.seo?.metaDescription || data.heroDesc,
-    data.seo?.keywords,
-    data.heroImage
-  );
+  useSEO(data?.seo, {
+    title: data.title ? `${data.title} | Cubixsol` : 'Email Marketing Automation & Lead Nurturing Services | Cubixsol',
+    description: data.heroDesc || data.desc || 'Turn cold prospects into loyal customers with automated lead nurturing sequences, behavioral email triggers, and CRM integrations.',
+    keywords: data.seo?.keywords || 'email marketing automation, lead nurturing sequences, CRM email integration, Cubixsol',
+    canonicalUrl: 'https://cubixsol.com/email-lead-nurture',
+  });
 
   useEffect(() => {
     // Dynamic fetch from MongoDB (Service or PageContent)
@@ -394,7 +394,9 @@ export default function EmailLeadNurture() {
           setData((prev) => ({
             ...prev,
             ...res,
+            seo: res.seo || prev.seo,
             heroTitle: res.heroTitle || res.title || prev.heroTitle,
+
             heroDesc: res.heroDesc || res.longDesc || res.desc || prev.heroDesc,
             heroPrimaryBtnText: res.heroPrimaryBtnText || res.ctaPrimaryText || prev.heroPrimaryBtnText,
             heroSecondaryBtnText: res.heroSecondaryBtnText || res.ctaSecondaryText || prev.heroSecondaryBtnText,

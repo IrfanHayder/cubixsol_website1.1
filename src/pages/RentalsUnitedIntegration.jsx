@@ -298,17 +298,17 @@ export default function RentalsUnitedIntegration() {
   });
 
   // SEO Hook
-  useSEO({
+  useSEO(data?.seo, {
     title: 'Rentals United Integration Services | Vacation Rental Distribution | Cubixsol',
     description: 'Expert Rentals United integration services by Cubixsol. Connect Rentals United with PMS platforms, Airbnb, Vrbo, Booking.com, payment gateways, CRM, and custom APIs.',
     keywords: 'Rentals United integration, Rentals United API, channel manager integration, PMS Rentals United, vacation rental distribution, Cubixsol',
-    canonical: 'https://cubixsol.com/rentals-united-integration'
+    canonicalUrl: 'https://cubixsol.com/rentals-united-integration'
   });
 
   // Dynamic fetch from backend so changes in Admin Dashboard automatically update the page
   useEffect(() => {
     let isMounted = true;
-    apiFetch('/api/services/slug/rentals-united-integration')
+    apiFetch('services/rentals-united-integration')
       .then((res) => {
         if (!isMounted || !res) return;
         const apiData = res.service || res;
@@ -316,7 +316,9 @@ export default function RentalsUnitedIntegration() {
           setData((prev) => ({
             ...prev,
             ...apiData,
+            seo: apiData.seo || prev.seo,
             heroBadges: apiData.features && apiData.features.length ? apiData.features : (apiData.heroBadges || prev.heroBadges),
+
             subServicesItems: (apiData.subServicesItems && apiData.subServicesItems.length > 0)
               ? apiData.subServicesItems.map((item, idx) => ({
                   ...item,

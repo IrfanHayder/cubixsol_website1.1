@@ -276,10 +276,11 @@ export default function NewbookIntegration() {
   const [simGuestJourneyStep, setSimGuestJourneyStep] = useState('Pre-Arrival SMS Sent');
   const { openModal } = useEstimateModal();
 
-  useSEO({
+  useSEO(data?.seo, {
     title: data.seoTitle || 'Newbook Integration Services | Cubixsol',
     description: data.seoDescription || 'Custom Newbook PMS integration solutions.',
-    keywords: data.seoKeywords || 'Newbook integration, Newbook API, Cubixsol'
+    keywords: data.seoKeywords || 'Newbook integration, Newbook API, Cubixsol',
+    canonicalUrl: 'https://cubixsol.com/newbook-integration'
   });
 
   useEffect(() => {
@@ -287,7 +288,11 @@ export default function NewbookIntegration() {
     apiFetch('services/newbook-integration')
       .then((res) => {
         if (isMounted && res && res.title) {
-          setData((prev) => ({ ...prev, ...res }));
+          setData((prev) => ({
+            ...prev,
+            ...res,
+            seo: res.seo || prev.seo,
+          }));
         }
       })
       .catch((err) => {
@@ -297,6 +302,7 @@ export default function NewbookIntegration() {
       isMounted = false;
     };
   }, []);
+
 
   const toggleFaq = (index) => {
     setOpenFaq(openFaq === index ? null : index);

@@ -292,10 +292,11 @@ export default function SmoobuIntegration() {
   const [copiedCode, setCopiedCode] = useState(false);
   const { openModal } = useEstimateModal();
 
-  useSEO({
+  useSEO(data?.seo, {
     title: data.seoTitle || 'Smoobu Integration Services | Cubixsol',
     description: data.seoDescription || 'Expert Smoobu PMS integration services.',
-    keywords: data.seoKeywords || 'Smoobu integration, PMS integration, Cubixsol'
+    keywords: data.seoKeywords || 'Smoobu integration, PMS integration, Cubixsol',
+    canonicalUrl: 'https://cubixsol.com/smoobu-integration'
   });
 
   useEffect(() => {
@@ -303,7 +304,11 @@ export default function SmoobuIntegration() {
     apiFetch('services/smoobu-integration')
       .then((res) => {
         if (isMounted && res && res.title) {
-          setData((prev) => ({ ...prev, ...res }));
+          setData((prev) => ({
+            ...prev,
+            ...res,
+            seo: res.seo || prev.seo,
+          }));
         }
       })
       .catch((err) => {
@@ -313,6 +318,7 @@ export default function SmoobuIntegration() {
       isMounted = false;
     };
   }, []);
+
 
   const toggleFaq = (index) => {
     setOpenFaq(openFaq === index ? null : index);

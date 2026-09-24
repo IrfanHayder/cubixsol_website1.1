@@ -1,15 +1,17 @@
 import { Link, useParams, Navigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   ArrowLeft, ArrowRight, CheckCircle2, ChevronDown,
   Shield, Zap, Puzzle, BarChart3, Headphones, Lock,
 } from 'lucide-react';
-import { products } from '../data/content';
+import { products as staticProducts } from '../data/content';
 import CtaBanner from '../components/CtaBanner';
 import ServiceInquiryForm from '../components/ServiceInquiryForm';
 import Reveal, { Stagger, StaggerItem } from '../components/Reveal';
 import { useSEO } from '../utils/seo';
+import { apiFetch } from '../utils/api';
+
 
 const themes = {
   navy: 'bg-[#0b1f4a]',
@@ -530,7 +532,24 @@ function ChecklistBand({ product }) {
 
 export default function ProductDetail() {
   const { slug } = useParams();
-  const product = products.find((p) => p.slug === slug);
+  const staticItem = staticProducts.find((p) => p.slug === slug);
+  const [productData, setProductData] = useState(staticItem);
+
+  useEffect(() => {
+    let cancelled = false;
+    apiFetch(`products/${slug}`)
+      .then((res) => {
+        if (!cancelled && res && (res.name || res.title)) {
+          setProductData((prev) => ({ ...(prev || {}), ...res }));
+        }
+      })
+      .catch(() => {});
+    return () => {
+      cancelled = true;
+    };
+  }, [slug]);
+
+  const product = productData || staticItem;
 
   useSEO(product?.seo, {
     title: product?.title ? `${product.title} | Cubixsol Products` : (product?.name ? `${product.name} | Cubixsol` : 'Digital Products | Cubixsol'),
@@ -543,7 +562,8 @@ export default function ProductDetail() {
   if (!product) return <Navigate to="/products" replace />;
 
   const layout = product.layout || 'A';
-  const related = products.filter((p) => p.slug !== slug).slice(0, 3);
+  const related = staticProducts.filter((p) => p.slug !== slug).slice(0, 3);
+
 
   return (
     <div className="bg-white">

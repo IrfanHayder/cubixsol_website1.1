@@ -318,12 +318,12 @@ export default function HostawayIntegration() {
   });
 
   // SEO Metadata Hook
-  useSEO(
-    data.seo?.metaTitle || data.title,
-    data.seo?.metaDescription || data.heroDesc,
-    data.seo?.keywords,
-    data.heroImage
-  );
+  useSEO(data?.seo, {
+    title: data.title ? `${data.title} | Cubixsol` : 'Hostaway PMS Integration Services | Cubixsol',
+    description: data.heroDesc || data.desc || 'Connect Hostaway with Airbnb, Vrbo, smart locks, payment gateways, and unified messaging for vacation rentals.',
+    keywords: data.seo?.keywords || 'Hostaway integration, Hostaway PMS, vacation rental API, Cubixsol',
+    canonicalUrl: 'https://cubixsol.com/hostaway-integration',
+  });
 
   // Dynamic MongoDB Synchronization & Admin Dashboard Integration
   useEffect(() => {
@@ -333,10 +333,12 @@ export default function HostawayIntegration() {
           setData((prev) => ({
             ...prev,
             ...res,
+            seo: res.seo || prev.seo,
             title: res.title || prev.title,
             heroTitle: res.heroSubtitle || res.title || prev.heroTitle,
             heroDesc: res.longDesc || res.desc || prev.heroDesc,
             subServicesTitle: res.subServicesTitle || prev.subServicesTitle,
+
             subServicesIntro: res.subServicesIntro || prev.subServicesIntro,
             subServicesItems: res.subServicesItems?.length > 0
               ? res.subServicesItems.map((item, idx) => ({

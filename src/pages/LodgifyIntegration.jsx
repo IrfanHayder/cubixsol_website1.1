@@ -303,17 +303,17 @@ export default function LodgifyIntegration() {
   });
 
   // SEO Hook
-  useSEO({
+  useSEO(data?.seo, {
     title: 'Lodgify Integration Services | Vacation Rental Automation | Cubixsol',
     description: 'Expert Lodgify integration services by Cubixsol. Connect Lodgify with Airbnb, Vrbo, custom direct booking websites, smart locks, payment gateways, and CRM systems.',
     keywords: 'Lodgify integration, Lodgify API integration, Lodgify direct booking, vacation rental automation, Lodgify channel manager, smart lock Lodgify',
-    canonical: 'https://cubixsol.com/lodgify-integration'
+    canonicalUrl: 'https://cubixsol.com/lodgify-integration'
   });
 
   // Dynamic fetch from backend so changes in Admin Dashboard automatically update the page
   useEffect(() => {
     let isMounted = true;
-    apiFetch('/api/services/slug/lodgify-integration')
+    apiFetch('services/lodgify-integration')
       .then((res) => {
         if (!isMounted || !res) return;
         const apiData = res.service || res;
@@ -321,7 +321,9 @@ export default function LodgifyIntegration() {
           setData((prev) => ({
             ...prev,
             ...apiData,
+            seo: apiData.seo || prev.seo,
             heroBadges: apiData.features && apiData.features.length ? apiData.features : (apiData.heroBadges || prev.heroBadges),
+
             subServicesItems: (apiData.subServicesItems && apiData.subServicesItems.length > 0)
               ? apiData.subServicesItems.map((item, idx) => ({
                   ...item,
