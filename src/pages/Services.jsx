@@ -41,26 +41,31 @@ const defaultPageData = {
       step: '01',
       title: 'Discover',
       desc: 'We clarify your business goals, users, requirements, technical constraints, budget, and success criteria.',
+      icon: '/uploads/media-1790257307933-564950446.svg',
     },
     {
       step: '02',
       title: 'Plan',
       desc: 'Our team defines the scope, technology, architecture, priorities, milestones, and delivery roadmap.',
+      icon: '/uploads/media-1790257307933-360229398.svg',
     },
     {
       step: '03',
       title: 'Design and Develop',
       desc: 'Designers create the user experience while developers build, review, and integrate each product component.',
+      icon: '/uploads/media-1790257307933-25615094.svg',
     },
     {
       step: '04',
       title: 'Test and Launch',
       desc: 'We test functionality, usability, compatibility, security, and performance before managing a controlled deployment.',
+      icon: '/uploads/media-1790257307934-884499517.svg',
     },
     {
       step: '05',
       title: 'Support',
       desc: 'After launch, we monitor performance, resolve issues, deliver updates, and help your product evolve.',
+      icon: '/uploads/media-1790257307933-424705272.svg',
     },
   ],
 
@@ -399,12 +404,25 @@ export default function Services() {
             >
               {processSteps.map((p, idx) => (
                 <StaggerItem key={idx}>
-                  <div className="bg-white rounded-2xl border border-gray-100 p-5 sm:p-6 h-full shadow-card hover:shadow-elev hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+                  <div className="bg-white rounded-2xl border border-gray-100 p-5 sm:p-6 h-full shadow-card hover:shadow-elev hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
                     <div>
-                      <span className="inline-block text-2xl sm:text-3xl font-black bg-gradient-to-r from-primary-600 to-brand-cyan bg-clip-text text-transparent mb-3">
-                        {p.step || String(idx + 1).padStart(2, '0')}
-                      </span>
-                      <h3 className="font-extrabold text-ink text-base sm:text-lg mb-2">
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="inline-block text-2xl sm:text-3xl font-black bg-gradient-to-r from-primary-600 to-brand-cyan bg-clip-text text-transparent">
+                          {p.step || String(idx + 1).padStart(2, '0')}
+                        </span>
+                        {(p.icon || p.image) && (
+                          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-sky-50 to-blue-50 border border-sky-100 flex items-center justify-center p-2 group-hover:scale-110 group-hover:bg-white group-hover:border-sky-300 transition-all shadow-sm">
+                            <DynamicIcon
+                              icon={p.icon || p.image}
+                              alt={p.title}
+                              title={p.title}
+                              className="w-7 h-7 object-contain"
+                              fallbackName="Building2"
+                            />
+                          </div>
+                        )}
+                      </div>
+                      <h3 className="font-extrabold text-ink text-base sm:text-lg mb-2 group-hover:text-primary-600 transition-colors">
                         {p.title}
                       </h3>
                       <p className="text-xs sm:text-sm text-gray-500 leading-relaxed">

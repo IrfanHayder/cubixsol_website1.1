@@ -134,33 +134,47 @@ export default function PmsIntegration() {
   }, []);
 
   // Process Steps Data
-  const processSteps = [
+  const defaultProcessSteps = [
     {
       stepNumber: '01',
       title: 'Consultation',
       desc: 'This phase allows experts to define the optimum PMS integration solutions for your needs. For a smooth integration, our professionals will handle any technological or safety issues that may arise.',
+      icon: '/uploads/media-1790257307933-564950446.svg',
+      image: '/uploads/media-1790257307933-564950446.svg',
     },
     {
       stepNumber: '02',
       title: 'Planning',
       desc: "In the planning phase, we create a comprehensive integration plan based on your requirements. It entails defining the task's scope, selecting suitable PMSs rental, and developing timelines. We establish critical milestones to maintain consistency with your business operations and system development.",
+      icon: '/uploads/media-1790257307933-360229398.svg',
+      image: '/uploads/media-1790257307933-360229398.svg',
     },
     {
       stepNumber: '03',
       title: 'Implementation',
       desc: 'When the plan of action is approved, we start the integration process. Our expertise will integrate your present systems with the suitable PMS rentals, ensuring that data transfers safely and quickly. We manage all of the back work, allowing your business activities to continue uninterrupted.',
+      icon: '/uploads/media-1790257307933-25615094.svg',
+      image: '/uploads/media-1790257307933-25615094.svg',
     },
     {
       stepNumber: '04',
       title: 'Testing',
       desc: 'Before moving live, we thoroughly test the integration to ensure that everything functions properly. This includes tests for operation, optimization of performance, and safety inspections to guarantee that the PMS operates as intended.',
+      icon: '/uploads/media-1790257307934-884499517.svg',
+      image: '/uploads/media-1790257307934-884499517.svg',
     },
     {
       stepNumber: '05',
       title: 'Deployment',
       desc: 'After successful testing, we will begin integrating the PMS rental into your existing system. Once tested, we deploy the system into your live environment. Every module is fully functional, from the key management system for property management to payment and booking synchronization.',
+      icon: '/uploads/media-1790257307933-424705272.svg',
+      image: '/uploads/media-1790257307933-424705272.svg',
     },
   ];
+
+  const processSteps = (data?.serviceProcessSteps && data.serviceProcessSteps.length > 0)
+    ? data.serviceProcessSteps
+    : defaultProcessSteps;
 
   // Core PMS Services Data
   const defaultPmsServices = [
@@ -465,7 +479,7 @@ export default function PmsIntegration() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6 relative z-10">
             {processSteps.map((step, idx) => (
               <motion.div
-                key={step.stepNumber}
+                key={step.stepNumber || idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -474,12 +488,24 @@ export default function PmsIntegration() {
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="w-10 h-10 rounded-xl bg-gradient-to-br from-sky-50 to-blue-50 border border-sky-100 flex items-center justify-center font-mono font-extrabold text-sky-600 text-sm group-hover:scale-110 transition-transform">
-                      {step.stepNumber}
+                    <span className="w-10 h-10 rounded-xl bg-gradient-to-br from-sky-50 to-blue-50 border border-sky-100 flex items-center justify-center font-mono font-extrabold text-sky-600 text-sm group-hover:scale-110 transition-transform shadow-xs">
+                      {step.stepNumber || `0${idx + 1}`}
                     </span>
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-sky-600/70">
-                      Phase {idx + 1}
-                    </span>
+                    {(step.image || step.icon) ? (
+                      <div className="w-12 h-12 rounded-xl bg-sky-50/70 border border-sky-100 flex items-center justify-center p-2 group-hover:scale-110 group-hover:bg-white group-hover:border-sky-300 transition-all shadow-sm">
+                        <DynamicIcon
+                          icon={step.image || step.icon}
+                          alt={step.title}
+                          title={step.title}
+                          className="w-7 h-7 text-sky-600 object-contain"
+                          fallbackName="Building2"
+                        />
+                      </div>
+                    ) : (
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-sky-600/70">
+                        Phase {idx + 1}
+                      </span>
+                    )}
                   </div>
                   <h3 className="font-extrabold text-ink text-lg mb-2 group-hover:text-sky-600 transition-colors">
                     {step.title}

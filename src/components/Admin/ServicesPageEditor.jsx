@@ -593,6 +593,20 @@ export default function ServicesPageEditor({ showToast }) {
                     <Trash2 size={16} />
                   </button>
                 </div>
+                <div className="flex items-center gap-2">
+                  <input
+                    type="text"
+                    value={step.icon || step.image || ''}
+                    onChange={(e) => handleStepChange(idx, 'icon', e.target.value)}
+                    placeholder="Step Icon / Image URL (e.g. /uploads/media-xxx.svg)"
+                    className="flex-1 px-3 py-1.5 rounded-lg border border-gray-200 text-xs font-mono focus:border-primary-500 outline-none"
+                  />
+                  {(step.icon || step.image) && (
+                    <div className="w-8 h-8 rounded-lg bg-sky-50 border border-sky-100 flex items-center justify-center p-1 shrink-0">
+                      <DynamicIcon icon={step.icon || step.image} className="w-5 h-5 object-contain" />
+                    </div>
+                  )}
+                </div>
                 <textarea
                   rows={2}
                   value={step.desc || ''}
