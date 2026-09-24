@@ -42,6 +42,7 @@ import LodgifyIntegration from './pages/LodgifyIntegration';
 import RentalsUnitedIntegration from './pages/RentalsUnitedIntegration';
 import OwnerRezIntegration from './pages/OwnerRezIntegration';
 import HostifyIntegration from './pages/HostifyIntegration';
+import TokeetIntegration from './pages/TokeetIntegration';
 import AdminDashboard from './pages/Admin/Dashboard';
 import AdminLogin from './pages/Admin/Login';
 
@@ -191,6 +192,8 @@ function AppRoutes() {
         <Route path="/services/ownerrez-integration" element={<OwnerRezIntegration />} />
         <Route path="/hostify-integration" element={<HostifyIntegration />} />
         <Route path="/services/hostify-integration" element={<HostifyIntegration />} />
+        <Route path="/tokeet-integration" element={<TokeetIntegration />} />
+        <Route path="/services/tokeet-integration" element={<TokeetIntegration />} />
         <Route path="/services/:slug" element={<ServiceDetail />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/industries" element={<Industries />} />

@@ -17,6 +17,7 @@ export const PMS_SUB_SLUGS = [
   'rentals-united-integration',
   'ownerrez-integration',
   'hostify-integration',
+  'tokeet-integration',
 ];
 
 export const isPmsSubSlug = (slug) => {
@@ -38,6 +39,7 @@ export const isPmsSubSlug = (slug) => {
     s.includes('rentals-united') ||
     s.includes('rentalsunited') ||
     s.includes('ownerrez') ||
+    s.includes('tokeet') ||
     s.endsWith('-integration')
   );
 };
@@ -247,7 +249,9 @@ export default function Navbar() {
                               ? 'OwnerRez Integration'
                               : slug === 'hostify-integration'
                                 ? 'Hostify Integration'
-                                : 'PMS Integration',
+                                : slug === 'tokeet-integration'
+                                  ? 'Tokeet Integration'
+                                  : 'PMS Integration',
         icon:
           slug === 'guesty-integration'
             ? 'Key'
@@ -269,7 +273,9 @@ export default function Navbar() {
                             ? 'KeyRound'
                             : slug === 'hostify-integration'
                               ? 'Building2'
-                              : 'Layers',
+                              : slug === 'tokeet-integration'
+                                ? 'Sliders'
+                                : 'Layers',
         color:
           slug === 'zeevou-integration'
             ? 'text-[#5d53a3] bg-[#5d53a3]/10'
