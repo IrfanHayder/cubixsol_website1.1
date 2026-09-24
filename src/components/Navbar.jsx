@@ -443,18 +443,18 @@ export default function Navbar() {
                                     </div>
 
                                     {/* Flyout Submenu on Hover */}
-                                    <div className="absolute left-full top-0 ml-1.5 w-64 bg-white rounded-2xl shadow-[0_20px_50px_-10px_rgba(0,0,0,0.22)] border border-gray-100 p-2.5 z-[70] opacity-0 invisible -translate-x-1 group-hover/pms:opacity-100 group-hover/pms:visible group-hover/pms:translate-x-0 transition-all duration-200 pointer-events-none group-hover/pms:pointer-events-auto">
+                                    <div className="absolute left-full -top-3 ml-1.5 w-64 bg-white rounded-2xl shadow-[0_20px_50px_-10px_rgba(0,0,0,0.22)] border border-gray-100 p-2.5 z-[70] opacity-0 invisible -translate-x-1 group-hover/pms:opacity-100 group-hover/pms:visible group-hover/pms:translate-x-0 transition-all duration-200 pointer-events-none group-hover/pms:pointer-events-auto flex flex-col max-h-[min(380px,calc(100vh-200px))]">
                                       {/* Bridge overlay to ensure hover cursor continuity */}
                                       <div className="absolute -left-3 top-0 bottom-0 w-4 bg-transparent pointer-events-auto" />
                                       
-                                      <div className="px-2.5 py-1.5 mb-1.5 border-b border-gray-100 flex items-center justify-between bg-slate-50/70 rounded-lg">
+                                      <div className="px-2.5 py-1.5 mb-1.5 border-b border-gray-100 flex items-center justify-between bg-slate-50/70 rounded-lg shrink-0">
                                         <span className="text-[10px] font-extrabold uppercase tracking-wider text-primary-600">
                                           PMS Integrations
                                         </span>
                                         <span className="text-[10px] font-semibold text-gray-500">{pmsSubServices.length} Platforms</span>
                                       </div>
 
-                                      <ul className="space-y-1">
+                                      <ul className="space-y-1 overflow-y-auto flex-1 custom-scrollbar pr-1 max-h-[270px]">
                                         {pmsSubServices.map((sub) => {
                                           const SubIcon = resolveIcon(sub.icon);
                                           return (
@@ -481,7 +481,7 @@ export default function Navbar() {
                                         })}
                                       </ul>
 
-                                      <div className="mt-2 pt-1.5 border-t border-gray-100 px-2">
+                                      <div className="mt-2 pt-1.5 border-t border-gray-100 px-2 shrink-0">
                                         <NavLink
                                           to="/pms-integration"
                                           onClick={() => setServicesOpen(false)}
