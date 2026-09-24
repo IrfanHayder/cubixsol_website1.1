@@ -20,6 +20,7 @@ export const PMS_SUB_SLUGS = [
   'tokeet-integration',
   'uplisting-integration',
   'cloudbeds-integration',
+  'opera-pms-integration',
 ];
 
 export const isPmsSubSlug = (slug) => {
@@ -44,6 +45,7 @@ export const isPmsSubSlug = (slug) => {
     s.includes('tokeet') ||
     s.includes('uplisting') ||
     s.includes('cloudbeds') ||
+    s.includes('opera') ||
     s.endsWith('-integration')
   );
 };
@@ -259,7 +261,9 @@ export default function Navbar() {
                                     ? 'Uplisting Integration'
                                     : slug === 'cloudbeds-integration'
                                       ? 'Cloudbeds Integration'
-                                      : 'PMS Integration',
+                                      : slug === 'opera-pms-integration'
+                                        ? 'Opera PMS Integration'
+                                        : 'PMS Integration',
         icon:
           slug === 'guesty-integration'
             ? 'Key'
@@ -287,7 +291,9 @@ export default function Navbar() {
                                   ? 'Activity'
                                   : slug === 'cloudbeds-integration'
                                     ? 'Cloud'
-                                    : 'Layers',
+                                    : slug === 'opera-pms-integration'
+                                      ? 'Building2'
+                                      : 'Layers',
         color:
           slug === 'hostaway-integration' ||
           slug === 'zeevou-integration' ||

@@ -45,6 +45,7 @@ import HostifyIntegration from './pages/HostifyIntegration';
 import TokeetIntegration from './pages/TokeetIntegration';
 import UplistingIntegration from './pages/UplistingIntegration';
 import CloudbedsIntegration from './pages/CloudbedsIntegration';
+import OperaPmsIntegration from './pages/OperaPmsIntegration';
 import AdminDashboard from './pages/Admin/Dashboard';
 import AdminLogin from './pages/Admin/Login';
 
@@ -200,6 +201,8 @@ function AppRoutes() {
         <Route path="/services/uplisting-integration" element={<UplistingIntegration />} />
         <Route path="/cloudbeds-integration" element={<CloudbedsIntegration />} />
         <Route path="/services/cloudbeds-integration" element={<CloudbedsIntegration />} />
+        <Route path="/opera-pms-integration" element={<OperaPmsIntegration />} />
+        <Route path="/services/opera-pms-integration" element={<OperaPmsIntegration />} />
         <Route path="/services/:slug" element={<ServiceDetail />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/industries" element={<Industries />} />
