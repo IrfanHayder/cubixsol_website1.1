@@ -26,7 +26,7 @@ async function seedHostify() {
       menuTitle: 'Hostify Integration',
       icon: 'Building2',
       color: 'text-[#00a4d8] bg-[#00a4d8]/10',
-      gradient: 'from-[#00a4d8] to-[#0077b6]',
+      gradient: 'from-[#00a4d8] to-[#5d53a3]',
       heroEyebrow: 'HOSTIFY INTEGRATION SERVICES',
       heroSubtitle: 'Hostify Integration Services To Automate Vacation Rental Operations',
       heroTitle: 'Hostify Integration Services To Automate Vacation Rental Operations',

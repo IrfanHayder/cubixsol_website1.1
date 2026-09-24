@@ -277,13 +277,14 @@ export default function Navbar() {
                                 ? 'Sliders'
                                 : 'Layers',
         color:
-          slug === 'zeevou-integration'
+          slug === 'hostaway-integration' ||
+          slug === 'zeevou-integration' ||
+          slug === 'newbook-integration' ||
+          slug === 'lodgify-integration' ||
+          slug === 'ownerrez-integration' ||
+          slug === 'tokeet-integration'
             ? 'text-[#5d53a3] bg-[#5d53a3]/10'
-            : slug === 'rentals-united-integration'
-              ? 'text-[#00a88f] bg-[#00a88f]/10'
-              : slug === 'ownerrez-integration'
-                ? 'text-[#0066cc] bg-[#0066cc]/10'
-                : 'text-[#00a4d8] bg-[#00a4d8]/10',
+            : 'text-[#00a4d8] bg-[#00a4d8]/10',
       }
     );
   });

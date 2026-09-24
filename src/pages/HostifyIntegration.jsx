@@ -57,7 +57,7 @@ const DEFAULT_DATA = {
       title: 'Direct booking websites',
       desc: 'Seamlessly link custom direct booking engines with Hostify to bypass OTA commission fees while keeping availability 100% unified.',
       pills: ['Custom Booking Engine', 'Commission-Free Flow', 'Instant Confirmation'],
-      colorTheme: 'blue'
+      colorTheme: 'purple'
     },
     {
       icon: 'CreditCard',
@@ -73,7 +73,7 @@ const DEFAULT_DATA = {
       title: 'CRM platforms',
       desc: 'Consolidate guest profiles, stay histories, customer preferences, and lead nurturing pipelines with HubSpot, Salesforce, and modern CRMs.',
       pills: ['HubSpot / Salesforce', 'Guest History Consolidation', 'Loyalty Tracking'],
-      colorTheme: 'blue'
+      colorTheme: 'purple'
     },
     {
       icon: 'KeyRound',
@@ -89,7 +89,7 @@ const DEFAULT_DATA = {
       title: 'Accounting software',
       desc: 'Synchronise payouts, cleaning fees, owner disbursements, and local tax records directly with QuickBooks, Xero, or custom accounting systems.',
       pills: ['QuickBooks & Xero', 'Tax Split Automations', 'Owner Payout Reports'],
-      colorTheme: 'blue'
+      colorTheme: 'purple'
     },
     {
       icon: 'MessageSquare',
@@ -105,7 +105,7 @@ const DEFAULT_DATA = {
       title: 'Reporting applications',
       desc: 'Bridge Hostify data with business intelligence dashboards and reporting tools to track RevPAR, occupancy rates, and channel ROI in real-time.',
       pills: ['BI Dashboards', 'RevPAR & Occupancy', 'Multi-Unit Analytics'],
-      colorTheme: 'blue'
+      colorTheme: 'purple'
     }
   ],
 
@@ -268,7 +268,6 @@ export default function HostifyIntegration() {
   const { openEstimateModal } = useEstimateModal();
   const [data, setData] = useState(DEFAULT_DATA);
   const [activeTab, setActiveTab] = useState('channel-management');
-  const [activeProcessStep, setActiveProcessStep] = useState(0);
   const [openFaq, setOpenFaq] = useState(null);
 
   // Interactive Simulator States
@@ -277,7 +276,6 @@ export default function HostifyIntegration() {
   const [isSyncing, setIsSyncing] = useState(false);
   const [lockStatus, setLockStatus] = useState('locked');
   const [generatedPin, setGeneratedPin] = useState('849201');
-  const [paymentCaptured, setPaymentCaptured] = useState(false);
 
   // Fetch dynamic content from Admin Dashboard API
   useEffect(() => {
@@ -298,740 +296,697 @@ export default function HostifyIntegration() {
         }
       })
       .catch(() => {});
-    return () => { isMounted = false; };
+
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
-  useSEO(data.seo, {
-    title: data.title || 'Hostify Integration Services',
-    description: data.desc || DEFAULT_DATA.heroDesc,
-    keywords: data.seo?.keywords || 'Hostify integration, Hostify API, vacation rental PMS, Cubixsol',
-    heroImage: data.heroImage,
+  useSEO({
+    title: data.seo?.metaTitle || DEFAULT_DATA.seo.metaTitle,
+    description: data.seo?.metaDescription || DEFAULT_DATA.seo.metaDescription,
+    keywords: data.seo?.keywords || DEFAULT_DATA.seo.keywords,
+    ogTitle: data.seo?.ogTitle || DEFAULT_DATA.seo.ogTitle,
+    ogDescription: data.seo?.ogDescription || DEFAULT_DATA.seo.ogDescription,
+    ogImage: data.seo?.ogImage || DEFAULT_DATA.seo.ogImage,
+    canonicalUrl: data.seo?.canonicalUrl || DEFAULT_DATA.seo.canonicalUrl,
   });
 
-  const handleTriggerSync = (channelKey) => {
-    setSimChannel(channelKey);
+  const handleTriggerSync = (channel) => {
+    setSimChannel(channel);
     setIsSyncing(true);
     setTimeout(() => {
       setIsSyncing(false);
+      const newPin = Math.floor(100000 + Math.random() * 900000).toString();
+      setGeneratedPin(newPin);
       setSyncStatus({
         state: 'synced',
-        latency: `${Math.floor(Math.random() * 25) + 20}ms`,
+        latency: `${Math.floor(20 + Math.random() * 25)}ms`,
         lastUpdated: 'Just now'
       });
     }, 600);
   };
 
-  const handleGenerateNewPin = () => {
-    const randomPin = Math.floor(100000 + Math.random() * 900000).toString();
-    setGeneratedPin(randomPin);
-    setLockStatus('generating');
-    setTimeout(() => {
-      setLockStatus('ready');
-    }, 500);
-  };
-
+  const coreModules = data.coreSolutions || DEFAULT_DATA.coreSolutions;
+  const currentModule = coreModules.find((m) => m.id === activeTab) || coreModules[0];
   const subServicesItems = data.subServicesItems || DEFAULT_DATA.subServicesItems;
-  const coreSolutions = data.coreSolutions || DEFAULT_DATA.coreSolutions;
-  const currentSolution = coreSolutions.find((s) => s.id === activeTab) || coreSolutions[0];
   const processSteps = data.serviceProcessSteps || DEFAULT_DATA.serviceProcessSteps;
   const whyChooseItems = data.whyChooseItems || DEFAULT_DATA.whyChooseItems;
   const faqs = data.faqs || DEFAULT_DATA.faqs;
 
   return (
-    <div className="min-h-screen bg-slate-900 text-slate-100 selection:bg-[#00a4d8]/30 selection:text-white relative overflow-hidden">
+    <div className="min-h-screen bg-white text-ink selection:bg-[#00a4d8] selection:text-white overflow-x-hidden font-sans">
       
-      {/* Background Glows and Grids */}
-      <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-gradient-to-br from-[#00a4d8]/15 to-transparent rounded-full blur-[140px]" />
-        <div className="absolute top-1/3 right-10 w-[500px] h-[500px] bg-gradient-to-bl from-[#0077b6]/15 to-transparent rounded-full blur-[130px]" />
-        <div className="absolute bottom-10 left-1/3 w-[700px] h-[700px] bg-gradient-to-tr from-[#00a4d8]/10 to-transparent rounded-full blur-[160px]" />
-        <div className="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:24px_24px] opacity-40" />
-      </div>
-
-      <div className="relative z-10">
+      {/* ========================================================================= */}
+      {/* 1. HERO SECTION (LUXURY DARK MIDNIGHT WITH CUBIXSOL CYAN & PURPLE) */}
+      {/* ========================================================================= */}
+      <section className="relative overflow-hidden pt-12 pb-16 sm:pt-16 sm:pb-24 bg-gradient-to-br from-slate-950 via-[#071326] to-[#040e1c] text-white border-b border-slate-800/80">
         
-        {/* ========================================================================= */}
-        {/* 1. HERO SECTION */}
-        {/* ========================================================================= */}
-        <section className="relative pt-28 pb-20 lg:pt-36 lg:pb-28 overflow-hidden border-b border-slate-800/80">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Brand Glow Meshes (Cyan #00a4d8 & Purple #5d53a3) */}
+        <div className="absolute right-0 top-0 w-96 h-96 bg-[#00a4d8]/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute left-0 bottom-0 w-96 h-96 bg-[#5d53a3]/20 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b15_1px,transparent_1px),linear-gradient(to_bottom,#1e293b15_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+          
+          {/* Breadcrumb */}
+          <div className="mb-8">
+            <Link
+              to="/all-services"
+              className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-400 hover:text-cyan-300 transition group"
+            >
+              <ArrowRight className="w-4 h-4 rotate-180 group-hover:-translate-x-1 transition-transform text-[#00a4d8]" />
+              Back to Services
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
             
-            {/* Breadcrumb */}
-            <div className="mb-8">
-              <Link
-                to="/all-services"
-                className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-400 hover:text-[#00a4d8] transition group"
+            {/* Left Column: Hero Content */}
+            <div className="lg:col-span-7 space-y-6">
+              
+              {/* Eyebrow badge matching Logo Colors */}
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00a4d8]/15 border border-[#00a4d8]/30 text-cyan-300 text-xs font-bold uppercase tracking-wider shadow-sm backdrop-blur-sm"
               >
-                <ArrowRight className="w-4 h-4 rotate-180 group-hover:-translate-x-1 transition-transform" />
-                Back to All Services
-              </Link>
+                <Radio className="w-3.5 h-3.5 text-[#00a4d8] animate-pulse" />
+                <span>{data.heroEyebrow || 'HOSTIFY INTEGRATION SERVICES'}</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
+              </motion.div>
+
+              {/* Main Heading */}
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.18]"
+              >
+                Hostify Integration Services To <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00a4d8] via-cyan-300 to-[#5d53a3]">Automate Vacation Rental</span> Operations
+              </motion.h1>
+
+              {/* Description */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal max-w-2xl"
+              >
+                {data.heroDesc}
+              </motion.p>
+
+              {/* Feature Bullet Badges */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2"
+              >
+                {(data.heroBadges || DEFAULT_DATA.heroBadges).map((badge, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-center gap-2.5 p-3 rounded-xl bg-white/[0.04] border border-white/10 backdrop-blur-sm hover:border-[#00a4d8]/40 transition-colors"
+                  >
+                    <div className="w-6 h-6 rounded-lg bg-[#00a4d8]/15 border border-[#00a4d8]/30 flex items-center justify-center shrink-0">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-cyan-300" />
+                    </div>
+                    <span className="text-xs sm:text-sm font-medium text-slate-200">{badge}</span>
+                  </div>
+                ))}
+              </motion.div>
+
+              {/* CTA Action Buttons */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4"
+              >
+                <button
+                  onClick={() => openEstimateModal('Hostify Integration Services')}
+                  className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl bg-gradient-to-r from-[#00a4d8] to-[#5d53a3] text-white font-bold text-sm sm:text-base shadow-lg shadow-[#00a4d8]/25 hover:shadow-[#5d53a3]/40 hover:scale-[1.02] active:scale-[0.98] transition-all"
+                >
+                  <span>{data.heroPrimaryBtnText || 'Schedule A Hostify Consultation'}</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+                <a
+                  href="#core-capabilities"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-slate-800/90 hover:bg-slate-700/90 text-slate-200 hover:text-white font-semibold text-sm sm:text-base border border-slate-700 transition"
+                >
+                  <span>{data.heroSecondaryBtnText || 'Explore Hostify Capabilities'}</span>
+                  <ChevronRight className="w-4 h-4 text-slate-400" />
+                </a>
+              </motion.div>
+
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-              
-              {/* Left Column: Hero Text */}
-              <div className="lg:col-span-7 space-y-6">
+            {/* Right Column: Interactive Live Architecture & Data Flow Visualizer */}
+            <div className="lg:col-span-5">
+              <div className="relative rounded-2xl bg-gradient-to-b from-slate-900/95 to-slate-950/95 border border-slate-700/80 p-5 sm:p-6 shadow-2xl backdrop-blur-xl">
                 
-                {/* Eyebrow badge */}
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00a4d8]/10 border border-[#00a4d8]/30 shadow-sm backdrop-blur-sm">
-                  <span className="w-2 h-2 rounded-full bg-[#00a4d8] animate-pulse" />
-                  <span className="text-xs font-bold uppercase tracking-widest text-[#00a4d8]">
-                    {data.heroEyebrow || 'HOSTIFY INTEGRATION SERVICES'}
-                  </span>
-                </div>
-
-                {/* Main Heading */}
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.15]">
-                  Hostify Integration Services To <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00a4d8] via-[#38bdf8] to-[#0077b6]">Automate Vacation Rental</span> Operations
-                </h1>
-
-                {/* Description */}
-                <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
-                  {data.heroDesc}
-                </p>
-
-                {/* Feature Bullet Badges */}
-                <div className="pt-2 flex flex-wrap gap-2.5">
-                  {(data.heroBadges || DEFAULT_DATA.heroBadges).map((badge, idx) => (
-                    <div
-                      key={idx}
-                      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800/80 border border-slate-700/80 text-xs sm:text-sm font-medium text-slate-200 hover:border-[#00a4d8]/50 transition-colors"
-                    >
-                      <CheckCircle2 className="w-4 h-4 text-[#00a4d8] shrink-0" />
-                      <span>{badge}</span>
+                {/* Top Header Card */}
+                <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-800">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-[#00a4d8]/15 border border-[#00a4d8]/30 flex items-center justify-center">
+                      <Building2 className="w-5 h-5 text-[#00a4d8]" />
                     </div>
-                  ))}
-                </div>
-
-                {/* CTA Action Buttons */}
-                <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-                  <button
-                    onClick={() => openEstimateModal('Hostify Integration Services')}
-                    className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl bg-gradient-to-r from-[#00a4d8] to-[#0077b6] text-white font-bold text-sm sm:text-base shadow-lg shadow-[#00a4d8]/25 hover:shadow-[#00a4d8]/40 hover:scale-[1.02] active:scale-[0.98] transition-all"
-                  >
-                    <span>{data.heroPrimaryBtnText || 'Schedule A Hostify Consultation'}</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
-                  <a
-                    href="#core-capabilities"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-slate-800/90 hover:bg-slate-700/90 text-slate-200 hover:text-white font-semibold text-sm sm:text-base border border-slate-700 transition"
-                  >
-                    <span>{data.heroSecondaryBtnText || 'Explore Hostify Capabilities'}</span>
-                    <ChevronRight className="w-4 h-4 text-slate-400" />
-                  </a>
-                </div>
-
-              </div>
-
-              {/* Right Column: Interactive Live Architecture & Data Flow Visualizer */}
-              <div className="lg:col-span-5">
-                <div className="relative rounded-2xl bg-gradient-to-b from-slate-800/90 to-slate-900/90 border border-slate-700/80 p-5 sm:p-6 shadow-2xl backdrop-blur-xl">
-                  
-                  {/* Top Header Card */}
-                  <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-700/60">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-xl bg-[#00a4d8]/15 border border-[#00a4d8]/30 flex items-center justify-center">
-                        <Building2 className="w-5 h-5 text-[#00a4d8]" />
-                      </div>
-                      <div>
-                        <div className="text-sm font-bold text-white flex items-center gap-2">
-                          <span>Hostify Engine Hub</span>
-                          <span className="px-2 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
-                            LIVE
-                          </span>
-                        </div>
-                        <p className="text-xs text-slate-400">Bidirectional 2-Way PMS Bridge</p>
-                      </div>
-                    </div>
-                    <div className="text-right">
-                      <span className="text-[11px] font-mono text-slate-400">Latency: </span>
-                      <span className="text-[11px] font-mono font-bold text-emerald-400">{syncStatus.latency}</span>
-                    </div>
-                  </div>
-
-                  {/* Connected System Nodes Grid */}
-                  <div className="space-y-3">
-                    
-                    {/* Node 1: OTA Channels (Airbnb / Vrbo / Booking) */}
-                    <div
-                      onClick={() => handleTriggerSync('airbnb')}
-                      className={`p-3 rounded-xl border transition-all cursor-pointer ${
-                        simChannel === 'airbnb'
-                          ? 'bg-[#00a4d8]/10 border-[#00a4d8]/60 shadow-md shadow-[#00a4d8]/10'
-                          : 'bg-slate-800/60 border-slate-700 hover:border-slate-600'
-                      }`}
-                    >
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-2.5">
-                          <Share2 className="w-4 h-4 text-[#00a4d8]" />
-                          <span className="text-xs font-bold text-slate-200">OTA Channels (Airbnb, Booking.com, Vrbo)</span>
-                        </div>
-                        <span className="text-[10px] font-mono text-emerald-400 flex items-center gap-1">
-                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
-                          2-Way Sync
+                    <div>
+                      <div className="text-sm font-bold text-white flex items-center gap-2">
+                        <span>Hostify Engine Hub</span>
+                        <span className="px-2 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                          LIVE
                         </span>
                       </div>
-                      <p className="text-[11px] text-slate-400 mt-1 pl-6.5">
-                        Instant calendar, rate restrictions & reservation auto-transfer
-                      </p>
+                      <p className="text-xs text-slate-400">Bidirectional 2-Way PMS Bridge</p>
                     </div>
-
-                    {/* Node 2: Payment Gateway (Stripe) */}
-                    <div
-                      onClick={() => handleTriggerSync('stripe')}
-                      className={`p-3 rounded-xl border transition-all cursor-pointer ${
-                        simChannel === 'stripe'
-                          ? 'bg-[#00a4d8]/10 border-[#00a4d8]/60 shadow-md shadow-[#00a4d8]/10'
-                          : 'bg-slate-800/60 border-slate-700 hover:border-slate-600'
-                      }`}
-                    >
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-2.5">
-                          <CreditCard className="w-4 h-4 text-[#38bdf8]" />
-                          <span className="text-xs font-bold text-slate-200">Payment Gateway & Accounting</span>
-                        </div>
-                        <span className="text-[10px] font-mono text-cyan-400">Auto Captures</span>
-                      </div>
-                      <p className="text-[11px] text-slate-400 mt-1 pl-6.5">
-                        Stripe deposit holds, scheduled payments & QuickBooks ledger sync
-                      </p>
-                    </div>
-
-                    {/* Node 3: Smart Locks (Yale, RemoteLock) */}
-                    <div
-                      onClick={() => handleTriggerSync('smartlock')}
-                      className={`p-3 rounded-xl border transition-all cursor-pointer ${
-                        simChannel === 'smartlock'
-                          ? 'bg-[#00a4d8]/10 border-[#00a4d8]/60 shadow-md shadow-[#00a4d8]/10'
-                          : 'bg-slate-800/60 border-slate-700 hover:border-slate-600'
-                      }`}
-                    >
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-2.5">
-                          <KeyRound className="w-4 h-4 text-amber-400" />
-                          <span className="text-xs font-bold text-slate-200">Smart Lock Keyless Entry PINs</span>
-                        </div>
-                        <span className="text-[10px] font-mono text-amber-300">Time-Locked</span>
-                      </div>
-                      <p className="text-[11px] text-slate-400 mt-1 pl-6.5">
-                        Auto-generated door codes matching guest check-in / check-out times
-                      </p>
-                    </div>
-
-                    {/* Node 4: Guest CRM & Automations */}
-                    <div
-                      onClick={() => handleTriggerSync('crm')}
-                      className={`p-3 rounded-xl border transition-all cursor-pointer ${
-                        simChannel === 'crm'
-                          ? 'bg-[#00a4d8]/10 border-[#00a4d8]/60 shadow-md shadow-[#00a4d8]/10'
-                          : 'bg-slate-800/60 border-slate-700 hover:border-slate-600'
-                      }`}
-                    >
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-2.5">
-                          <Users className="w-4 h-4 text-purple-400" />
-                          <span className="text-xs font-bold text-slate-200">CRM & Automated Guest Messaging</span>
-                        </div>
-                        <span className="text-[10px] font-mono text-purple-300">HubSpot / SMS</span>
-                      </div>
-                      <p className="text-[11px] text-slate-400 mt-1 pl-6.5">
-                        Pre-arrival workflows, WhatsApp guidebooks & review requests
-                      </p>
-                    </div>
-
                   </div>
+                  <div className="text-right">
+                    <span className="text-[11px] font-mono text-slate-400">Latency: </span>
+                    <span className="text-[11px] font-mono font-bold text-emerald-400">{syncStatus.latency}</span>
+                  </div>
+                </div>
 
-                  {/* Visualizer Simulator Action Bar */}
-                  <div className="mt-4 pt-3.5 border-t border-slate-700/60 flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <span className={`w-2 h-2 rounded-full ${isSyncing ? 'bg-amber-400 animate-spin' : 'bg-emerald-400'}`} />
-                      <span className="text-xs text-slate-300">
-                        {isSyncing ? 'Simulating Hostify payload...' : 'All connected endpoints operational'}
+                {/* Connected System Nodes Grid */}
+                <div className="space-y-2.5">
+                  
+                  {/* Node 1: OTA Channels */}
+                  <div
+                    onClick={() => handleTriggerSync('airbnb')}
+                    className={`p-3 rounded-xl border transition-all cursor-pointer ${
+                      simChannel === 'airbnb'
+                        ? 'bg-[#00a4d8]/15 border-[#00a4d8]/60 shadow-md shadow-[#00a4d8]/10'
+                        : 'bg-slate-900/60 border-slate-800 hover:border-slate-700'
+                    }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2.5">
+                        <Share2 className="w-4 h-4 text-[#00a4d8]" />
+                        <span className="text-xs font-bold text-slate-200">OTA Channels (Airbnb, Booking.com, Vrbo)</span>
+                      </div>
+                      <span className="text-[10px] font-mono text-emerald-400 flex items-center gap-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
+                        2-Way Sync
                       </span>
                     </div>
-                    <button
-                      onClick={() => handleTriggerSync(simChannel)}
-                      disabled={isSyncing}
-                      className="px-3 py-1.5 rounded-lg bg-[#00a4d8]/20 hover:bg-[#00a4d8]/30 border border-[#00a4d8]/40 text-[#00a4d8] text-xs font-bold transition flex items-center gap-1.5"
-                    >
-                      <RefreshCw className={`w-3 h-3 ${isSyncing ? 'animate-spin' : ''}`} />
-                      <span>Test Sync</span>
-                    </button>
+                    <p className="text-[11px] text-slate-400 mt-1 pl-6.5">
+                      Instant calendar, rate restrictions & reservation auto-transfer
+                    </p>
+                  </div>
+
+                  {/* Node 2: Payment Gateway (Stripe) */}
+                  <div
+                    onClick={() => handleTriggerSync('stripe')}
+                    className={`p-3 rounded-xl border transition-all cursor-pointer ${
+                      simChannel === 'stripe'
+                        ? 'bg-[#5d53a3]/20 border-[#5d53a3]/60 shadow-md shadow-[#5d53a3]/10'
+                        : 'bg-slate-900/60 border-slate-800 hover:border-slate-700'
+                    }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2.5">
+                        <CreditCard className="w-4 h-4 text-[#5d53a3]" />
+                        <span className="text-xs font-bold text-slate-200">Payment Gateway & Accounting</span>
+                      </div>
+                      <span className="text-[10px] font-mono text-purple-300">Auto Captures</span>
+                    </div>
+                    <p className="text-[11px] text-slate-400 mt-1 pl-6.5">
+                      Stripe deposit holds, scheduled payments & QuickBooks ledger sync
+                    </p>
+                  </div>
+
+                  {/* Node 3: Smart Locks */}
+                  <div
+                    onClick={() => handleTriggerSync('smartlock')}
+                    className={`p-3 rounded-xl border transition-all cursor-pointer ${
+                      simChannel === 'smartlock'
+                        ? 'bg-[#00a4d8]/15 border-[#00a4d8]/60 shadow-md shadow-[#00a4d8]/10'
+                        : 'bg-slate-900/60 border-slate-800 hover:border-slate-700'
+                    }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2.5">
+                        <KeyRound className="w-4 h-4 text-cyan-400" />
+                        <span className="text-xs font-bold text-slate-200">Smart Lock Keyless Entry PIN: {generatedPin}</span>
+                      </div>
+                      <span className="text-[10px] font-mono text-cyan-300">Active</span>
+                    </div>
+                    <p className="text-[11px] text-slate-400 mt-1 pl-6.5">
+                      Auto-generated door codes matching guest check-in & check-out times
+                    </p>
+                  </div>
+
+                  {/* Node 4: Guest CRM & Automations */}
+                  <div
+                    onClick={() => handleTriggerSync('crm')}
+                    className={`p-3 rounded-xl border transition-all cursor-pointer ${
+                      simChannel === 'crm'
+                        ? 'bg-[#5d53a3]/20 border-[#5d53a3]/60 shadow-md shadow-[#5d53a3]/10'
+                        : 'bg-slate-900/60 border-slate-800 hover:border-slate-700'
+                    }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2.5">
+                        <Users className="w-4 h-4 text-[#5d53a3]" />
+                        <span className="text-xs font-bold text-slate-200">CRM & Automated Guest Messaging</span>
+                      </div>
+                      <span className="text-[10px] font-mono text-purple-300">HubSpot / SMS</span>
+                    </div>
+                    <p className="text-[11px] text-slate-400 mt-1 pl-6.5">
+                      Pre-arrival workflows, WhatsApp guidebooks & review requests
+                    </p>
                   </div>
 
                 </div>
-              </div>
 
+                {/* Visualizer Simulator Action Bar */}
+                <div className="mt-4 pt-3.5 border-t border-slate-800 flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <span className={`w-2 h-2 rounded-full ${isSyncing ? 'bg-amber-400 animate-spin' : 'bg-emerald-400'}`} />
+                    <span className="text-xs text-slate-300">
+                      {isSyncing ? 'Simulating Hostify payload...' : 'All connected endpoints operational'}
+                    </span>
+                  </div>
+                  <button
+                    onClick={() => handleTriggerSync(simChannel)}
+                    disabled={isSyncing}
+                    className="px-3 py-1.5 rounded-lg bg-gradient-to-r from-[#00a4d8] to-[#5d53a3] hover:opacity-95 text-white text-xs font-bold transition flex items-center gap-1.5 shadow-sm"
+                  >
+                    <RefreshCw className={`w-3 h-3 ${isSyncing ? 'animate-spin' : ''}`} />
+                    <span>Test Sync</span>
+                  </button>
+                </div>
+
+              </div>
             </div>
+
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* ========================================================================= */}
-        {/* 2. CONNECT HOSTIFY WITH YOUR BUSINESS APPLICATIONS (8 APPS GRID) */}
-        {/* ========================================================================= */}
-        <section className="py-20 lg:py-24 border-b border-slate-800/80 bg-slate-900/50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            {/* Section Header */}
-            <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00a4d8]/10 border border-[#00a4d8]/30 text-xs font-bold uppercase tracking-wider text-[#00a4d8]">
-                <span>ECOSYSTEM INTEGRATIONS</span>
-              </div>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
-                {data.subServicesTitle || 'Connect Hostify With Your Business Applications'}
-              </h2>
-              <p className="text-sm sm:text-base text-slate-400 leading-relaxed">
-                {data.subServicesIntro || DEFAULT_DATA.subServicesIntro}
-              </p>
+      {/* ========================================================================= */}
+      {/* 2. SECTION 1: CONNECT HOSTIFY WITH YOUR BUSINESS APPLICATIONS (8 APPS) */}
+      {/* ========================================================================= */}
+      <section className="py-20 md:py-24 bg-slate-50/70 border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* Section Header */}
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#00a4d8]/10 border border-[#00a4d8]/20 text-[#00a4d8] text-xs font-bold uppercase tracking-wider">
+              <Workflow className="w-3.5 h-3.5 text-[#00a4d8]" />
+              <span>ECOSYSTEM INTEGRATIONS</span>
             </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-ink tracking-tight">
+              {data.subServicesTitle || 'Connect Hostify With Your Business Applications'}
+            </h2>
+            <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+              {data.subServicesIntro || DEFAULT_DATA.subServicesIntro}
+            </p>
+          </div>
 
-            {/* 8 Business Application Cards Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {subServicesItems.map((item, idx) => (
-                <div
+          {/* 8 Business Application Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {subServicesItems.map((item, idx) => {
+              const isCyan = idx % 2 === 0;
+              return (
+                <motion.div
                   key={idx}
-                  className="group rounded-2xl bg-gradient-to-b from-slate-800/80 to-slate-900/90 border border-slate-700/70 p-6 flex flex-col justify-between hover:border-[#00a4d8]/50 hover:shadow-xl hover:shadow-[#00a4d8]/5 transition-all duration-300"
+                  whileHover={{ y: -6 }}
+                  transition={{ duration: 0.2 }}
+                  className="group rounded-2xl bg-white border border-gray-100 hover:border-[#00a4d8]/40 shadow-card hover:shadow-soft p-6 flex flex-col justify-between transition-all duration-300"
                 >
-                  <div>
-                    
+                  <div className="space-y-3.5">
                     {/* Top Tag & Icon */}
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-md bg-[#00a4d8]/10 text-[#00a4d8] border border-[#00a4d8]/20">
-                        {item.tag || `MODULE 0${idx + 1}`}
-                      </span>
-                      <div className="w-9 h-9 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-[#00a4d8] group-hover:scale-110 transition-transform">
-                        <DynamicIcon name={item.icon || 'Share2'} className="w-4.5 h-4.5" />
+                    <div className="flex items-center justify-between">
+                      <div className={`w-11 h-11 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110 ${
+                        isCyan ? 'bg-[#00a4d8]/10 text-[#00a4d8]' : 'bg-[#5d53a3]/10 text-[#5d53a3]'
+                      }`}>
+                        <DynamicIcon name={item.icon || 'Share2'} className="w-5 h-5" />
                       </div>
+                      <span className="text-[10px] font-bold tracking-wider px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 border border-slate-200 uppercase">
+                        {item.tag || `APP 0${idx + 1}`}
+                      </span>
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-base font-bold text-white group-hover:text-[#00a4d8] transition-colors leading-snug mb-2.5">
+                    <h3 className="text-base font-bold text-ink group-hover:text-[#00a4d8] transition-colors leading-snug">
                       {item.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-xs sm:text-sm text-slate-400 leading-relaxed mb-4">
+                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                       {item.desc}
                     </p>
                   </div>
 
                   {/* Pills */}
                   {item.pills && item.pills.length > 0 && (
-                    <div className="pt-3 border-t border-slate-800 flex flex-wrap gap-1.5">
+                    <div className="pt-4 mt-4 border-t border-gray-100 flex flex-wrap gap-1.5">
                       {item.pills.map((pill, pIdx) => (
                         <span
                           key={pIdx}
-                          className="text-[10px] font-medium px-2 py-0.5 rounded bg-slate-800/90 text-slate-300 border border-slate-700/60"
+                          className="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-50 border border-gray-200 text-slate-700"
                         >
                           {pill}
                         </span>
                       ))}
                     </div>
                   )}
-                </div>
-              ))}
-            </div>
-
+                </motion.div>
+              );
+            })}
           </div>
-        </section>
 
-        {/* ========================================================================= */}
-        {/* 3. SPECIALISED HOSTIFY INTEGRATION CAPABILITIES (CORE MODULES TABS) */}
-        {/* ========================================================================= */}
-        <section id="core-capabilities" className="py-20 lg:py-28 border-b border-slate-800/80">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div className="text-center max-w-3xl mx-auto mb-14 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00a4d8]/10 border border-[#00a4d8]/30 text-xs font-bold uppercase tracking-wider text-[#00a4d8]">
-                <span>CORE SPECIALIZATIONS</span>
-              </div>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
-                {data.coreSolutionsTitle || 'Specialised Hostify Integration Capabilities'}
-              </h2>
-              <p className="text-sm sm:text-base text-slate-400 leading-relaxed">
-                {data.coreSolutionsIntro || DEFAULT_DATA.coreSolutionsIntro}
-              </p>
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 3. SECTION 2: SPECIALISED HOSTIFY CAPABILITIES (INTERACTIVE TABS) */}
+      {/* ========================================================================= */}
+      <section id="core-capabilities" className="py-20 md:py-24 bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="text-center max-w-3xl mx-auto mb-14 space-y-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#5d53a3]/10 border border-[#5d53a3]/20 text-[#5d53a3] text-xs font-bold uppercase tracking-wider">
+              <Layers className="w-3.5 h-3.5 text-[#5d53a3]" />
+              <span>CORE SPECIALIZATIONS</span>
             </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-ink tracking-tight">
+              {data.coreSolutionsTitle || 'Specialised Hostify Integration Capabilities'}
+            </h2>
+            <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+              {data.coreSolutionsIntro || DEFAULT_DATA.coreSolutionsIntro}
+            </p>
+          </div>
 
-            {/* Tab Buttons */}
-            <div className="flex flex-wrap justify-center gap-2.5 mb-10">
-              {coreSolutions.map((sol) => (
+          {/* Module Selector Navigation Tabs */}
+          <div className="flex flex-wrap items-center justify-center gap-2.5 mb-10">
+            {coreModules.map((module) => {
+              const isActive = activeTab === module.id;
+              return (
                 <button
-                  key={sol.id}
-                  onClick={() => setActiveTab(sol.id)}
-                  className={`px-5 py-3 rounded-xl font-bold text-xs sm:text-sm transition-all duration-200 flex items-center gap-2.5 border ${
-                    activeTab === sol.id
-                      ? 'bg-gradient-to-r from-[#00a4d8] to-[#0077b6] text-white border-transparent shadow-lg shadow-[#00a4d8]/20 scale-105'
-                      : 'bg-slate-800/80 hover:bg-slate-800 text-slate-300 border-slate-700 hover:border-slate-600'
+                  key={module.id}
+                  onClick={() => setActiveTab(module.id)}
+                  className={`px-5 py-3 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-2 ${
+                    isActive
+                      ? 'bg-gradient-to-r from-[#00a4d8] to-[#5d53a3] text-white shadow-soft scale-105'
+                      : 'bg-slate-50 hover:bg-slate-100 text-slate-700 border border-gray-200'
                   }`}
                 >
-                  <DynamicIcon name={sol.icon || 'Share2'} className="w-4 h-4" />
-                  <span>{sol.title.replace('Hostify ', '')}</span>
+                  <DynamicIcon name={module.icon || 'Layers'} className="w-4 h-4" />
+                  <span>{module.title}</span>
                 </button>
-              ))}
-            </div>
-
-            {/* Active Tab Card Content */}
-            {currentSolution && (
-              <div className="rounded-3xl bg-gradient-to-b from-slate-800/90 to-slate-900 border border-slate-700 p-6 sm:p-10 shadow-2xl backdrop-blur-xl">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-                  
-                  {/* Left Column: Deep Dive Info */}
-                  <div className="lg:col-span-7 space-y-5">
-                    
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#00a4d8]/10 text-[#00a4d8] border border-[#00a4d8]/30 text-xs font-bold uppercase tracking-wider">
-                      <span>{currentSolution.badge || 'SPECIALIZED MODULE'}</span>
-                    </div>
-
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-white leading-tight">
-                      {currentSolution.title}
-                    </h3>
-
-                    <p className="text-sm sm:text-base font-semibold text-[#00a4d8]">
-                      {currentSolution.subtitle}
-                    </p>
-
-                    <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
-                      {currentSolution.desc}
-                    </p>
-
-                    {/* Features List */}
-                    <div className="pt-3 space-y-2.5">
-                      {currentSolution.features?.map((feat, fIdx) => (
-                        <div key={fIdx} className="flex items-start gap-3">
-                          <div className="w-5 h-5 rounded-full bg-[#00a4d8]/20 border border-[#00a4d8]/40 flex items-center justify-center shrink-0 mt-0.5">
-                            <Check className="w-3 h-3 text-[#00a4d8]" />
-                          </div>
-                          <span className="text-xs sm:text-sm text-slate-200 font-medium leading-normal">
-                            {feat}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-
-                    <div className="pt-4">
-                      <button
-                        onClick={() => openEstimateModal(currentSolution.title)}
-                        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#00a4d8] to-[#0077b6] text-white font-bold text-sm shadow-md shadow-[#00a4d8]/20 hover:scale-[1.02] transition-transform"
-                      >
-                        <span>Request Custom {currentSolution.title.replace('Hostify ', '')} Scope</span>
-                        <ArrowRight className="w-4 h-4" />
-                      </button>
-                    </div>
-
-                  </div>
-
-                  {/* Right Column: Live Interactive Sandbox / Demo for the Selected Module */}
-                  <div className="lg:col-span-5">
-                    <div className="rounded-2xl bg-slate-900/90 border border-slate-700/80 p-6 space-y-5">
-                      
-                      <div className="flex items-center justify-between pb-3 border-b border-slate-800">
-                        <span className="text-xs font-bold uppercase text-slate-400 tracking-wider">
-                          Interactive Live Demonstration
-                        </span>
-                        <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#00a4d8]/10 text-[#00a4d8] border border-[#00a4d8]/30">
-                          SANDBOX
-                        </span>
-                      </div>
-
-                      {/* Dynamic Interactive Widget Based on Active Tab */}
-                      {activeTab === 'channel-management' && (
-                        <div className="space-y-4">
-                          <p className="text-xs text-slate-300">
-                            Simulate real-time availability sync between Hostify and global OTAs:
-                          </p>
-                          <div className="space-y-2">
-                            {['Airbnb', 'Booking.com', 'Vrbo'].map((ota) => (
-                              <div key={ota} className="flex items-center justify-between p-3 rounded-xl bg-slate-800/80 border border-slate-700">
-                                <span className="text-xs font-bold text-white">{ota} Channel</span>
-                                <span className="text-[10px] font-mono font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">
-                                  ✓ Synced in 32ms
-                                </span>
-                              </div>
-                            ))}
-                          </div>
-                          <button
-                            onClick={() => handleTriggerSync('channel')}
-                            className="w-full py-2.5 rounded-xl bg-[#00a4d8]/20 hover:bg-[#00a4d8]/30 text-[#00a4d8] border border-[#00a4d8]/40 font-bold text-xs transition"
-                          >
-                            Trigger Mock Multi-Unit Reservation
-                          </button>
-                        </div>
-                      )}
-
-                      {activeTab === 'api-services' && (
-                        <div className="space-y-3 font-mono text-xs">
-                          <div className="p-3 rounded-xl bg-slate-950 border border-slate-800 text-slate-300">
-                            <span className="text-emerald-400">POST</span> /api/v1/hostify/webhook<br />
-                            <span className="text-slate-500">{"{"}</span><br />
-                            &nbsp;&nbsp;<span className="text-[#00a4d8]">"event"</span>: <span className="text-amber-300">"reservation.confirmed"</span>,<br />
-                            &nbsp;&nbsp;<span className="text-[#00a4d8]">"property_id"</span>: <span className="text-purple-300">"HST-9402"</span>,<br />
-                            &nbsp;&nbsp;<span className="text-[#00a4d8]">"guest_status"</span>: <span className="text-emerald-300">"verified_paid"</span><br />
-                            <span className="text-slate-500">{"}"}</span>
-                          </div>
-                          <div className="text-[11px] font-sans text-slate-400">
-                            High-frequency custom webhooks dispatched with guaranteed zero message drop.
-                          </div>
-                        </div>
-                      )}
-
-                      {activeTab === 'smart-locks' && (
-                        <div className="space-y-4">
-                          <div className="p-4 rounded-xl bg-slate-800/80 border border-slate-700 text-center space-y-2">
-                            <span className="text-[11px] text-slate-400 uppercase font-bold">Automated Keyless Door PIN</span>
-                            <div className="text-3xl font-mono font-extrabold text-[#00a4d8] tracking-widest">
-                              {generatedPin}
-                            </div>
-                            <span className="text-[10px] text-emerald-400">Valid: Check-in (3:00 PM) → Check-out (11:00 AM)</span>
-                          </div>
-                          <button
-                            onClick={handleGenerateNewPin}
-                            className="w-full py-2.5 rounded-xl bg-gradient-to-r from-[#00a4d8] to-[#0077b6] text-white font-bold text-xs transition shadow"
-                          >
-                            Generate New Smart Access Token
-                          </button>
-                        </div>
-                      )}
-
-                      {activeTab === 'payment-crm' && (
-                        <div className="space-y-3">
-                          <div className="p-3 rounded-xl bg-slate-800/80 border border-slate-700 space-y-1.5">
-                            <div className="flex items-center justify-between text-xs">
-                              <span className="text-slate-300">Stripe Payment Hold ($500 Deposit):</span>
-                              <span className="font-bold text-emerald-400 font-mono">AUTHORIZED</span>
-                            </div>
-                            <div className="flex items-center justify-between text-xs">
-                              <span className="text-slate-300">HubSpot Guest Contact:</span>
-                              <span className="font-bold text-purple-400 font-mono">TAGGED &amp; SYNCED</span>
-                            </div>
-                            <div className="flex items-center justify-between text-xs">
-                              <span className="text-slate-300">QuickBooks Auto Invoice:</span>
-                              <span className="font-bold text-[#00a4d8] font-mono">RECONCILED</span>
-                            </div>
-                          </div>
-                          <p className="text-[11px] text-slate-400">
-                            Complete end-to-end guest journey automation from payment capture to marketing segmentation.
-                          </p>
-                        </div>
-                      )}
-
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            )}
-
+              );
+            })}
           </div>
-        </section>
 
-        {/* ========================================================================= */}
-        {/* 4. OUR HOSTIFY INTEGRATION PROCESS (5 STRUCTURED STEPS) */}
-        {/* ========================================================================= */}
-        <section className="py-20 lg:py-28 border-b border-slate-800/80 bg-slate-900/40">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00a4d8]/10 border border-[#00a4d8]/30 text-xs font-bold uppercase tracking-wider text-[#00a4d8]">
-                <span>METHODOLOGY</span>
-              </div>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
-                {data.serviceProcessTitle || 'Our Hostify Integration Process'}
-              </h2>
-              <p className="text-sm sm:text-base text-slate-400 leading-relaxed">
-                {data.serviceProcessIntro || DEFAULT_DATA.serviceProcessIntro}
-              </p>
-            </div>
-
-            {/* Process 5-Step Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5">
-              {processSteps.map((step, idx) => (
-                <div
-                  key={idx}
-                  onClick={() => setActiveProcessStep(idx)}
-                  className={`rounded-2xl p-6 border transition-all duration-300 flex flex-col justify-between cursor-pointer ${
-                    activeProcessStep === idx
-                      ? 'bg-gradient-to-b from-slate-800 to-slate-900 border-[#00a4d8] shadow-xl shadow-[#00a4d8]/10 scale-[1.02]'
-                      : 'bg-slate-800/60 border-slate-700/70 hover:border-slate-600'
-                  }`}
-                >
-                  <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="text-2xl font-black font-mono text-[#00a4d8]">
-                        {step.stepNumber || `0${idx + 1}`}
-                      </span>
-                      <div className="w-8 h-8 rounded-lg bg-slate-700/60 flex items-center justify-center text-[#00a4d8]">
-                        <Workflow className="w-4 h-4" />
-                      </div>
-                    </div>
-                    <h3 className="text-base font-bold text-white mb-2 leading-snug">
-                      {step.title}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                      {step.desc}
-                    </p>
-                  </div>
-
-                  <div className="pt-4 mt-4 border-t border-slate-700/60 flex items-center gap-1.5 text-[11px] font-bold text-[#00a4d8]">
-                    <span>Phase 0{idx + 1} Deliverable</span>
-                    <ChevronRight className="w-3 h-3" />
-                  </div>
-                </div>
-              ))}
-            </div>
-
-          </div>
-        </section>
-
-        {/* ========================================================================= */}
-        {/* 5. WHY CHOOSE CUBIXSOL FOR HOSTIFY INTEGRATION */}
-        {/* ========================================================================= */}
-        <section className="py-20 lg:py-28 border-b border-slate-800/80">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          {/* Active Module Showcase Card */}
+          <div className="rounded-2xl bg-gradient-to-br from-slate-950 via-[#071326] to-[#040e1c] border border-slate-800 p-6 sm:p-10 text-white shadow-2xl">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
               
-              {/* Left Column: Why Choose Overview */}
-              <div className="lg:col-span-6 space-y-6">
-                
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00a4d8]/10 border border-[#00a4d8]/30 text-xs font-bold uppercase tracking-wider text-[#00a4d8]">
-                  <span>WHY CUBIXSOL</span>
+              {/* Left Column: Details & Feature Checklist */}
+              <div className="lg:col-span-7 space-y-6">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00a4d8]/15 border border-[#00a4d8]/30 text-cyan-300 text-xs font-bold uppercase tracking-wider">
+                  <span>{currentModule.badge || 'MODULE DETAIL'}</span>
                 </div>
 
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
-                  {data.whyChooseTitle || 'Why Choose Cubixsol For Hostify Integration?'}
-                </h2>
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+                  {currentModule.title}
+                </h3>
 
-                <div className="space-y-4 text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
-                  <p>
-                    Cubixsol helps vacation rental companies improve their operational efficiency through custom Hostify integrations designed around real business challenges. Our developers focus on creating connections that simplify multi-property management, automate repetitive processes, and improve system communication.
-                  </p>
-                  <p>
-                    We build Hostify solutions that support growing rental businesses by connecting booking channels, automation tools, payment systems, and customer management platforms. From API development, channel synchronisation and workflow automation, we create flexible integrations that match your business goals.
-                  </p>
+                <p className="text-xs sm:text-sm font-semibold text-cyan-300">
+                  {currentModule.subtitle}
+                </p>
+
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  {currentModule.desc}
+                </p>
+
+                {/* Features List */}
+                <div className="space-y-2.5 pt-2">
+                  {currentModule.features.map((feat, fIdx) => (
+                    <div key={fIdx} className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-md bg-[#00a4d8]/20 border border-[#00a4d8]/40 flex items-center justify-center shrink-0 mt-0.5">
+                        <Check className="w-3.5 h-3.5 text-cyan-300" />
+                      </div>
+                      <span className="text-xs sm:text-sm text-slate-200 font-medium leading-normal">{feat}</span>
+                    </div>
+                  ))}
                 </div>
 
                 <div className="pt-2">
                   <button
-                    onClick={() => openEstimateModal('Why Choose Cubixsol For Hostify Integration')}
-                    className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#00a4d8] to-[#0077b6] text-white font-bold text-sm sm:text-base shadow-lg shadow-[#00a4d8]/25 hover:scale-[1.02] transition"
+                    onClick={() => openEstimateModal(`Hostify - ${currentModule.title}`)}
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#00a4d8] to-[#5d53a3] text-white font-bold text-xs sm:text-sm hover:opacity-95 shadow-soft transition"
                   >
-                    <span>Partner With Cubixsol Today</span>
+                    <span>Integrate This Module</span>
                     <ArrowRight className="w-4 h-4" />
                   </button>
                 </div>
-
               </div>
 
-              {/* Right Column: 4 Value Pillars */}
-              <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-5">
-                {whyChooseItems.map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="rounded-2xl bg-gradient-to-b from-slate-800/80 to-slate-900/90 border border-slate-700/80 p-6 space-y-3 hover:border-[#00a4d8]/50 hover:shadow-xl hover:shadow-[#00a4d8]/5 transition duration-300"
-                  >
-                    <div className="w-10 h-10 rounded-xl bg-[#00a4d8]/15 border border-[#00a4d8]/30 flex items-center justify-center text-[#00a4d8]">
+              {/* Right Column: Live Terminal Visualizer */}
+              <div className="lg:col-span-5">
+                <div className="rounded-xl bg-slate-900/90 border border-slate-700/70 p-5 space-y-4 font-mono text-xs shadow-inner">
+                  <div className="flex items-center justify-between pb-3 border-b border-slate-800 text-[11px] text-slate-400">
+                    <span className="flex items-center gap-2 text-cyan-300">
+                      <Terminal className="w-3.5 h-3.5" />
+                      HOSTIFY_PIPELINE.json
+                    </span>
+                    <span className="text-emerald-400">200 OK</span>
+                  </div>
+
+                  <div className="space-y-1.5 text-slate-300 text-[11px]">
+                    <div className="text-slate-500">// Cubixsol Hostify API Bridge Event</div>
+                    <div><span className="text-purple-400">"service":</span> <span className="text-cyan-300">"Hostify Integration"</span>,</div>
+                    <div><span className="text-purple-400">"activeModule":</span> <span className="text-amber-300">"{currentModule.id}"</span>,</div>
+                    <div><span className="text-purple-400">"status":</span> <span className="text-emerald-400">"CONNECTED"</span>,</div>
+                    <div><span className="text-purple-400">"latency":</span> <span className="text-emerald-400">"28ms"</span>,</div>
+                    <div><span className="text-purple-400">"webhooks":</span> <span className="text-slate-300">["reservation.created", "calendar.sync", "doorlock.pin"]</span></div>
+                  </div>
+
+                  <div className="pt-3 border-t border-slate-800 flex items-center justify-between text-[10px] text-slate-400">
+                    <span>Target PMS: <strong className="text-white">Hostify Cloud</strong></span>
+                    <span>Security: <strong className="text-cyan-300">OAuth2.0 / SHA256</strong></span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 4. SECTION 3: OUR HOSTIFY INTEGRATION PROCESS (5 STEPS) */}
+      {/* ========================================================================= */}
+      <section className="py-20 md:py-24 bg-slate-50/70 border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#00a4d8]/10 border border-[#00a4d8]/20 text-[#00a4d8] text-xs font-bold uppercase tracking-wider">
+              <Compass className="w-3.5 h-3.5 text-[#00a4d8]" />
+              <span>DELIVERY ROADMAP</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-ink tracking-tight">
+              {data.serviceProcessTitle || 'Our Hostify Integration Process'}
+            </h2>
+            <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+              {data.serviceProcessIntro || DEFAULT_DATA.serviceProcessIntro}
+            </p>
+          </div>
+
+          {/* 5-Step Process Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5">
+            {processSteps.map((step, idx) => {
+              const isCyan = idx % 2 === 0;
+              return (
+                <motion.div
+                  key={idx}
+                  whileHover={{ y: -6 }}
+                  transition={{ duration: 0.2 }}
+                  className="rounded-2xl bg-white border border-gray-100 hover:border-[#00a4d8]/40 shadow-card hover:shadow-soft p-6 flex flex-col justify-between transition-all duration-300"
+                >
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <span className={`text-xs font-mono font-extrabold px-2.5 py-1 rounded-md ${
+                        isCyan ? 'bg-[#00a4d8]/10 text-[#00a4d8]' : 'bg-[#5d53a3]/10 text-[#5d53a3]'
+                      }`}>
+                        STEP {step.stepNumber || `0${idx + 1}`}
+                      </span>
+                    </div>
+
+                    <h3 className="text-base font-bold text-ink group-hover:text-[#00a4d8] transition-colors">
+                      {step.title}
+                    </h3>
+
+                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                      {step.desc}
+                    </p>
+                  </div>
+
+                  <div className="pt-4 mt-4 border-t border-gray-100 flex items-center gap-1.5 text-[11px] font-semibold text-slate-500">
+                    <CheckCircle className={`w-3.5 h-3.5 ${isCyan ? 'text-[#00a4d8]' : 'text-[#5d53a3]'}`} />
+                    <span>Verified Milestone</span>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 5. SECTION 4: WHY CHOOSE CUBIXSOL FOR HOSTIFY INTEGRATION */}
+      {/* ========================================================================= */}
+      <section className="py-20 md:py-24 bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#5d53a3]/10 border border-[#5d53a3]/20 text-[#5d53a3] text-xs font-bold uppercase tracking-wider">
+              <Award className="w-3.5 h-3.5 text-[#5d53a3]" />
+              <span>THE CUBIXSOL ADVANTAGE</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-ink tracking-tight">
+              {data.whyChooseTitle || 'Why Choose Cubixsol For Hostify Integration?'}
+            </h2>
+            <div className="text-sm sm:text-base text-gray-600 leading-relaxed space-y-3">
+              {(data.whyChooseIntro || DEFAULT_DATA.whyChooseIntro).split('\n\n').map((para, pIdx) => (
+                <p key={pIdx}>{para}</p>
+              ))}
+            </div>
+          </div>
+
+          {/* 4 Pillars Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {whyChooseItems.map((item, idx) => {
+              const isCyan = idx % 2 === 0;
+              return (
+                <motion.div
+                  key={idx}
+                  whileHover={{ y: -6 }}
+                  transition={{ duration: 0.2 }}
+                  className="rounded-2xl bg-white border border-gray-100 hover:border-[#00a4d8]/40 shadow-card hover:shadow-soft p-6 flex flex-col justify-between transition-all duration-300"
+                >
+                  <div className="space-y-3.5">
+                    <div className={`w-11 h-11 rounded-xl flex items-center justify-center ${
+                      isCyan ? 'bg-[#00a4d8]/10 text-[#00a4d8]' : 'bg-[#5d53a3]/10 text-[#5d53a3]'
+                    }`}>
                       {idx === 0 && <Sliders className="w-5 h-5" />}
                       {idx === 1 && <ShieldCheck className="w-5 h-5" />}
-                      {idx === 2 && <Zap className="w-5 h-5" />}
-                      {idx === 3 && <Award className="w-5 h-5" />}
+                      {idx === 2 && <Sparkles className="w-5 h-5" />}
+                      {idx === 3 && <HeadphonesIcon className="w-5 h-5" />}
                     </div>
-                    <h3 className="text-base font-bold text-white leading-snug">
+
+                    <h3 className="text-base font-bold text-ink leading-snug">
                       {item.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-slate-400 leading-relaxed font-normal">
+
+                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                       {item.desc}
                     </p>
                   </div>
-                ))}
-              </div>
 
-            </div>
-
-          </div>
-        </section>
-
-        {/* ========================================================================= */}
-        {/* 6. FREQUENTLY ASKED QUESTIONS (FAQ ACCORDION) */}
-        {/* ========================================================================= */}
-        <section className="py-20 lg:py-24 border-b border-slate-800/80 bg-slate-900/50">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div className="text-center mb-14 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00a4d8]/10 border border-[#00a4d8]/30 text-xs font-bold uppercase tracking-wider text-[#00a4d8]">
-                <span>GOT QUESTIONS?</span>
-              </div>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
-                Frequently Asked Questions
-              </h2>
-              <p className="text-sm sm:text-base text-slate-400">
-                Common questions about our Hostify PMS integration, custom API engineering, and automation solutions.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              {faqs.map((faq, idx) => {
-                const isOpen = openFaq === idx;
-                return (
-                  <div
-                    key={idx}
-                    className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
-                      isOpen
-                        ? 'bg-slate-800/90 border-[#00a4d8]/50 shadow-lg shadow-[#00a4d8]/5'
-                        : 'bg-slate-800/50 border-slate-700/70 hover:border-slate-600'
-                    }`}
-                  >
-                    <button
-                      type="button"
-                      onClick={() => setOpenFaq(isOpen ? null : idx)}
-                      className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-bold text-sm sm:text-base text-white"
-                    >
-                      <span className="flex items-center gap-3">
-                        <HelpCircle className={`w-5 h-5 shrink-0 ${isOpen ? 'text-[#00a4d8]' : 'text-slate-400'}`} />
-                        {faq.q}
-                      </span>
-                      <ChevronDown className={`w-5 h-5 text-slate-400 shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180 text-[#00a4d8]' : ''}`} />
-                    </button>
-
-                    <AnimatePresence>
-                      {isOpen && (
-                        <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: 'auto', opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.2 }}
-                        >
-                          <div className="px-6 pb-6 pt-1 text-xs sm:text-sm text-slate-300 leading-relaxed pl-14 font-normal border-t border-slate-700/40 mt-1">
-                            {faq.a}
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
+                  <div className="pt-4 mt-4 border-t border-gray-100 flex items-center justify-between text-[11px] font-semibold text-slate-500">
+                    <span>Performance Rating</span>
+                    <strong className={isCyan ? 'text-[#00a4d8]' : 'text-[#5d53a3]'}>Enterprise 99.9%</strong>
                   </div>
-                );
-              })}
+                </motion.div>
+              );
+            })}
+          </div>
+
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 6. SECTION 5: FREQUENTLY ASKED QUESTIONS */}
+      {/* ========================================================================= */}
+      <section className="py-20 md:py-24 bg-slate-50/70 border-b border-gray-100">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="text-center space-y-4 mb-14">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#00a4d8]/10 border border-[#00a4d8]/20 text-[#00a4d8] text-xs font-bold uppercase tracking-wider">
+              <HelpCircle className="w-3.5 h-3.5 text-[#00a4d8]" />
+              <span>FREQUENTLY ASKED QUESTIONS</span>
             </div>
-
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-ink tracking-tight">
+              Everything You Need To Know
+            </h2>
+            <p className="text-sm sm:text-base text-gray-600">
+              Clear answers to your Hostify vacation rental integration questions.
+            </p>
           </div>
-        </section>
 
-        {/* ========================================================================= */}
-        {/* 7. HIGH-CONVERTING CTA BANNER */}
-        {/* ========================================================================= */}
-        <section className="py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <CtaBanner
-              eyebrow="READY TO TRANSFORM YOUR VACATION RENTAL OPERATIONS?"
-              title="Automate Your Vacation Rental Business With Custom Hostify Integrations"
-              desc="Speak with Cubixsol's PMS integration engineers today. We build seamless, reliable connections between Hostify, OTAs, smart locks, payment gateways, and CRMs."
-              buttonText="Get Started With Hostify Integration"
-              serviceName="Hostify Integration Services"
-            />
+          {/* Accordion List */}
+          <div className="space-y-3.5">
+            {faqs.map((faq, idx) => {
+              const isOpen = openFaq === idx;
+              return (
+                <div
+                  key={idx}
+                  className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
+                    isOpen
+                      ? 'bg-white border-[#00a4d8]/40 shadow-soft'
+                      : 'bg-white border-gray-100 hover:border-gray-200 shadow-card'
+                  }`}
+                >
+                  <button
+                    onClick={() => setOpenFaq(isOpen ? null : idx)}
+                    className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4"
+                  >
+                    <span className={`text-sm sm:text-base font-bold transition-colors ${isOpen ? 'text-[#00a4d8]' : 'text-ink'}`}>
+                      {faq.q}
+                    </span>
+                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-transform duration-200 ${
+                      isOpen ? 'bg-[#00a4d8]/10 text-[#00a4d8] rotate-180' : 'bg-slate-100 text-slate-500'
+                    }`}>
+                      <ChevronDown className="w-4 h-4" />
+                    </div>
+                  </button>
+
+                  <AnimatePresence>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <div className="px-5 pb-5 sm:px-6 sm:pb-6 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
+                          {faq.a}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            })}
           </div>
-        </section>
 
-      </div>
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 7. CTA BANNER */}
+      {/* ========================================================================= */}
+      <CtaBanner
+        badge="HOSTIFY INTEGRATION EXPERTS"
+        title="Ready To Automate Your Vacation Rentals With Hostify?"
+        description="Let Cubixsol build custom bidirectional integrations for booking channels, smart locks, payment gateways, and CRMs."
+        primaryText="Schedule A Hostify Consultation"
+        secondaryText="Contact Our Engineering Team"
+      />
 
     </div>
   );
 }
+
+// Fallback icon helper
+function HeadphonesIcon(props) {
+  return <Headphones {...props} />;
+}
+import { Headphones } from 'lucide-react';
