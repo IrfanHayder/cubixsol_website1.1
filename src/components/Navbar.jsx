@@ -19,6 +19,7 @@ export const PMS_SUB_SLUGS = [
   'hostify-integration',
   'tokeet-integration',
   'uplisting-integration',
+  'cloudbeds-integration',
 ];
 
 export const isPmsSubSlug = (slug) => {
@@ -42,6 +43,7 @@ export const isPmsSubSlug = (slug) => {
     s.includes('ownerrez') ||
     s.includes('tokeet') ||
     s.includes('uplisting') ||
+    s.includes('cloudbeds') ||
     s.endsWith('-integration')
   );
 };
@@ -255,7 +257,9 @@ export default function Navbar() {
                                   ? 'Tokeet Integration'
                                   : slug === 'uplisting-integration'
                                     ? 'Uplisting Integration'
-                                    : 'PMS Integration',
+                                    : slug === 'cloudbeds-integration'
+                                      ? 'Cloudbeds Integration'
+                                      : 'PMS Integration',
         icon:
           slug === 'guesty-integration'
             ? 'Key'
@@ -281,14 +285,17 @@ export default function Navbar() {
                                 ? 'Sliders'
                                 : slug === 'uplisting-integration'
                                   ? 'Activity'
-                                  : 'Layers',
+                                  : slug === 'cloudbeds-integration'
+                                    ? 'Cloud'
+                                    : 'Layers',
         color:
           slug === 'hostaway-integration' ||
           slug === 'zeevou-integration' ||
           slug === 'newbook-integration' ||
           slug === 'lodgify-integration' ||
           slug === 'ownerrez-integration' ||
-          slug === 'tokeet-integration'
+          slug === 'tokeet-integration' ||
+          slug === 'cloudbeds-integration'
             ? 'text-[#5d53a3] bg-[#5d53a3]/10'
             : 'text-[#00a4d8] bg-[#00a4d8]/10',
       }

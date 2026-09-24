@@ -44,6 +44,7 @@ import OwnerRezIntegration from './pages/OwnerRezIntegration';
 import HostifyIntegration from './pages/HostifyIntegration';
 import TokeetIntegration from './pages/TokeetIntegration';
 import UplistingIntegration from './pages/UplistingIntegration';
+import CloudbedsIntegration from './pages/CloudbedsIntegration';
 import AdminDashboard from './pages/Admin/Dashboard';
 import AdminLogin from './pages/Admin/Login';
 
@@ -197,6 +198,8 @@ function AppRoutes() {
         <Route path="/services/tokeet-integration" element={<TokeetIntegration />} />
         <Route path="/uplisting-integration" element={<UplistingIntegration />} />
         <Route path="/services/uplisting-integration" element={<UplistingIntegration />} />
+        <Route path="/cloudbeds-integration" element={<CloudbedsIntegration />} />
+        <Route path="/services/cloudbeds-integration" element={<CloudbedsIntegration />} />
         <Route path="/services/:slug" element={<ServiceDetail />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/industries" element={<Industries />} />
