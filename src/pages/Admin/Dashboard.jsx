@@ -212,7 +212,15 @@ const SECTION_CONFIGS = {
       { name: 'features', label: 'Capabilities (one per line)', type: 'textarea', fullWidth: true, rows: 4, isArray: true },
       { name: 'subServicesTitle', label: 'Sub-Services Section Title', fullWidth: true },
       { name: 'subServicesIntro', label: 'Sub-Services Intro Text', type: 'textarea', fullWidth: true, rows: 2 },
-      { name: 'subServicesText', label: 'Sub-Services Items (Format: Title | Description, one per line)', type: 'textarea', fullWidth: true, rows: 6, isCustomArray: 'subServicesItems' },
+      {
+        name: 'subServicesText',
+        label: 'Sub-Services Items (Format: Title | Description | Icon URL or Lucide Name | Badge, one per line or separated by double line breaks)',
+        type: 'textarea',
+        fullWidth: true,
+        rows: 8,
+        hint: 'Example: Booking engine / Channel Manager | Complete multi-channel sync... | /uploads/media-xxx.svg | Multi-OTA Sync',
+        isCustomArray: 'subServicesItems',
+      },
       { name: 'whyChooseTitle', label: 'Why Choose Us Section Title', fullWidth: true },
       { name: 'whyChooseIntro', label: 'Why Choose Us Intro Text', type: 'textarea', fullWidth: true, rows: 2 },
       {
@@ -826,6 +834,22 @@ function DbSection({ sectionKey, showToast }) {
               };
             })
             .filter((p) => p.name);
+        } else if (f.isCustomArray === 'subServicesItems') {
+          const raw = parsed[f.name] || '';
+          const blocks = raw.includes('\n\n') ? raw.split(/\n\n+/) : raw.split(/\r?\n/);
+          parsed.subServicesItems = blocks
+            .map((b) => b.trim())
+            .filter(Boolean)
+            .map((block) => {
+              const parts = block.split('|').map((s) => s.trim());
+              return {
+                title: parts[0] || '',
+                desc: parts[1] || '',
+                icon: parts[2] || '',
+                badge: parts[3] || '',
+              };
+            })
+            .filter((item) => item.title);
         } else {
           parsed[f.isCustomArray] = parseCustomListItems(parsed[f.name]);
         }
@@ -949,6 +973,19 @@ function DbSection({ sectionKey, showToast }) {
             stringified[f.name] = arr
               .map((p) => `${p.name || ''} | ${p.category || ''} | ${p.icon || ''}`)
               .join('\n');
+          } else if (f.isCustomArray === 'subServicesItems') {
+            stringified[f.name] = arr
+              .map((item) => {
+                const title = item.title || '';
+                const desc = item.desc || '';
+                const icon = item.icon || '';
+                const badge = item.badge || item.tag || '';
+                if (icon || badge) {
+                  return `${title} | ${desc} | ${icon} | ${badge}`.replace(/\s*\|\s*$/, '');
+                }
+                return `${title} | ${desc}`;
+              })
+              .join('\n\n');
           } else if (f.isCustomArray === 'serviceProcessSteps') {
             stringified[f.name] = arr
               .map((i) => {

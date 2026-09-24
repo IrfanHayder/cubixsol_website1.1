@@ -41,7 +41,10 @@ const serviceSchema = new mongoose.Schema({
   subServicesIntro: { type: String },
   subServicesItems: [{
     title: { type: String },
-    desc: { type: String }
+    desc: { type: String },
+    icon: { type: String },
+    badge: { type: String },
+    tag: { type: String },
   }],
   businessTypesTitle: { type: String },
   businessTypesIntro: { type: String },
