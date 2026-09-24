@@ -46,6 +46,7 @@ import TokeetIntegration from './pages/TokeetIntegration';
 import UplistingIntegration from './pages/UplistingIntegration';
 import CloudbedsIntegration from './pages/CloudbedsIntegration';
 import OperaPmsIntegration from './pages/OperaPmsIntegration';
+import MewsIntegration from './pages/MewsIntegration';
 import AdminDashboard from './pages/Admin/Dashboard';
 import AdminLogin from './pages/Admin/Login';
 
@@ -203,6 +204,8 @@ function AppRoutes() {
         <Route path="/services/cloudbeds-integration" element={<CloudbedsIntegration />} />
         <Route path="/opera-pms-integration" element={<OperaPmsIntegration />} />
         <Route path="/services/opera-pms-integration" element={<OperaPmsIntegration />} />
+        <Route path="/mews-integration" element={<MewsIntegration />} />
+        <Route path="/services/mews-integration" element={<MewsIntegration />} />
         <Route path="/services/:slug" element={<ServiceDetail />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/industries" element={<Industries />} />

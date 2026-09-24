@@ -21,6 +21,7 @@ export const PMS_SUB_SLUGS = [
   'uplisting-integration',
   'cloudbeds-integration',
   'opera-pms-integration',
+  'mews-integration',
 ];
 
 export const isPmsSubSlug = (slug) => {
@@ -46,6 +47,7 @@ export const isPmsSubSlug = (slug) => {
     s.includes('uplisting') ||
     s.includes('cloudbeds') ||
     s.includes('opera') ||
+    s.includes('mews') ||
     s.endsWith('-integration')
   );
 };
@@ -262,8 +264,10 @@ export default function Navbar() {
                                     : slug === 'cloudbeds-integration'
                                       ? 'Cloudbeds Integration'
                                       : slug === 'opera-pms-integration'
-                                        ? 'Opera PMS Integration'
-                                        : 'PMS Integration',
+                                         ? 'Opera PMS Integration'
+                                         : slug === 'mews-integration'
+                                           ? 'Mews Integration'
+                                           : 'PMS Integration',
         icon:
           slug === 'guesty-integration'
             ? 'Key'
@@ -292,8 +296,10 @@ export default function Navbar() {
                                   : slug === 'cloudbeds-integration'
                                     ? 'Cloud'
                                     : slug === 'opera-pms-integration'
-                                      ? 'Building2'
-                                      : 'Layers',
+                                       ? 'Building2'
+                                       : slug === 'mews-integration'
+                                         ? 'Building'
+                                         : 'Layers',
         color:
           slug === 'hostaway-integration' ||
           slug === 'zeevou-integration' ||
@@ -301,7 +307,8 @@ export default function Navbar() {
           slug === 'lodgify-integration' ||
           slug === 'ownerrez-integration' ||
           slug === 'tokeet-integration' ||
-          slug === 'cloudbeds-integration'
+          slug === 'cloudbeds-integration' ||
+          slug === 'mews-integration'
             ? 'text-[#5d53a3] bg-[#5d53a3]/10'
             : 'text-[#00a4d8] bg-[#00a4d8]/10',
       }
