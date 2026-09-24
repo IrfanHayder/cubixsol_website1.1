@@ -21,6 +21,8 @@ const blogSchema = new mongoose.Schema({
     ogDescription:   { type: String },
     ogImage:         { type: String },
     canonicalUrl:    { type: String },
+    schema:          { type: String },
+    schemaMarkup:    { type: String },
   },
-}, { timestamps: true });
+}, { timestamps: true, strict: false });
 module.exports = mongoose.model('Blog', blogSchema);

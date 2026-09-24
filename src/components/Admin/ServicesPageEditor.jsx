@@ -1073,6 +1073,18 @@ export default function ServicesPageEditor({ showToast }) {
               className="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 text-sm focus:border-primary-500 outline-none"
             />
           </div>
+
+          <div>
+            <label className="block text-xs font-semibold text-ink/70 mb-1.5">Schema Markup (JSON-LD)</label>
+            <textarea
+              rows={5}
+              value={formData.seo?.schema || ''}
+              onChange={(e) => handleSeoChange('schema', e.target.value)}
+              placeholder='Paste JSON-LD structured data (e.g. { "@context": "https://schema.org", "@type": "Service", ... })'
+              className="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 text-xs font-mono focus:border-primary-500 outline-none"
+            />
+            <p className="text-[11px] text-gray-400 mt-1">Structured data for rich Google search snippets. Raw JSON or script tags supported.</p>
+          </div>
         </div>
       )}
     </div>

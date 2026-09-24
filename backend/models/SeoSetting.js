@@ -5,5 +5,7 @@ const seoSchema = new mongoose.Schema({
   description: { type: String },
   keywords: { type: String },
   ogImage: { type: String },
-}, { timestamps: true });
+  schema: { type: String },
+  schemaMarkup: { type: String },
+}, { timestamps: true, strict: false });
 module.exports = mongoose.model('SeoSetting', seoSchema);

@@ -16,6 +16,7 @@ import CtaBanner from '../components/CtaBanner';
 import ServiceInquiryForm from '../components/ServiceInquiryForm';
 import Reveal, { Stagger, StaggerItem } from '../components/Reveal';
 import DynamicIcon from '../components/DynamicIcon';
+import { useSEO } from '../utils/seo';
 
 // Specialized Bespoke Layouts
 import FintechLayout from '../components/industry/FintechLayout';
@@ -775,6 +776,14 @@ export default function IndustryDetail() {
   }, [slug]);
 
   const ind = industryData || getFallbackIndustry(slug);
+
+  useSEO(ind?.seo, {
+    title: ind?.seo?.metaTitle || (ind?.heroTitle ? `${ind.heroTitle} | Cubixsol` : `${ind?.title || 'Industry'} Software Development Services | Cubixsol`),
+    description: ind?.seo?.metaDescription || ind?.desc || ind?.short || '',
+    keywords: ind?.seo?.keywords || `${ind?.title || ''}, industry software development, enterprise digital solutions, Cubixsol`,
+    image: ind?.seo?.ogImage || '/assets/logo.svg',
+    canonicalUrl: ind?.seo?.canonicalUrl || `https://cubixsol.com/industries/${slug}`,
+  });
 
   if (!ind) return <Navigate to="/industries" replace />;
 

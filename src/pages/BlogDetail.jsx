@@ -7,6 +7,7 @@ import Reveal from '../components/Reveal';
 
 import { apiFetch } from '../utils/api';
 import { FormatRichText } from '../utils/formatText';
+import { useSEO } from '../utils/seo';
 
 export default function BlogDetail() {
   const { slug } = useParams();
@@ -67,6 +68,14 @@ export default function BlogDetail() {
       cancelled = true;
     };
   }, [slug]);
+
+  useSEO(post?.seo, {
+    title: post?.title ? `${post.title} | Cubixsol Blog` : 'Cubixsol Blog',
+    description: post?.excerpt || '',
+    keywords: post?.tag ? `${post.tag}, blog, tech, software development, Cubixsol` : 'blog, tech, software development, Cubixsol',
+    image: post?.coverImage || '/assets/logo.svg',
+    canonicalUrl: `https://cubixsol.com/blog/${slug}`,
+  });
 
   if (loading) {
     return (

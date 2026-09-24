@@ -24,7 +24,18 @@ const productSchema = new mongoose.Schema({
   steps: [{
     title: { type: String },
     body: { type: String }
-  }]
+  }],
+  seo: {
+    metaTitle: { type: String },
+    metaDescription: { type: String },
+    keywords: { type: String },
+    ogTitle: { type: String },
+    ogDescription: { type: String },
+    ogImage: { type: String },
+    canonicalUrl: { type: String },
+    schema: { type: String },
+    schemaMarkup: { type: String }
+  }
 }, { timestamps: true, strict: false });
 
 module.exports = mongoose.model('Product', productSchema);

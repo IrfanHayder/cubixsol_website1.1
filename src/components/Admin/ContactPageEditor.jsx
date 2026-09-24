@@ -457,6 +457,19 @@ export default function ContactPageEditor({ showToast }) {
                   className="w-full px-4 py-2.5 rounded-xl border border-gray-200 bg-gray-50/50 text-sm focus:bg-white focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/20 outline-none"
                 />
               </div>
+              <div>
+                <label className="block text-xs font-bold text-ink mb-1.5">
+                  Schema Markup (JSON-LD)
+                </label>
+                <textarea
+                  rows={5}
+                  value={formData.seo?.schema || ''}
+                  onChange={(e) => handleSeoChange('schema', e.target.value)}
+                  placeholder='Paste JSON-LD structured data (e.g. { "@context": "https://schema.org", "@type": "ContactPage", ... })'
+                  className="w-full px-4 py-2.5 rounded-xl border border-gray-200 bg-gray-50/50 text-xs font-mono focus:bg-white focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/20 outline-none"
+                />
+                <p className="text-[11px] text-gray-400 mt-1">Structured data for rich Google search snippets. Raw JSON or script tags supported.</p>
+              </div>
             </div>
           </div>
         )}

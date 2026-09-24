@@ -102,6 +102,7 @@ const commonSeoFields = [
   { name: 'seo.ogDescription', label: 'OG Description (Social Share Desc)', type: 'textarea', rows: 2, fullWidth: true },
   { name: 'seo.ogImage', label: 'OG Image (Social Share Image)', type: 'image', fullWidth: true, hint: 'Recommended: 1200x630px image.' },
   { name: 'seo.canonicalUrl', label: 'Canonical URL', fullWidth: true, hint: 'Optional. Leave blank to auto-use page URL.' },
+  { name: 'seo.schema', label: 'Schema Markup (JSON-LD)', type: 'textarea', rows: 6, fullWidth: true, hint: 'Paste structured data JSON-LD (e.g. { "@context": "https://schema.org", "@type": "Service", ... }). Works with raw JSON or <script> tags.' },
 ];
 
 /* ================== SECTION CONFIGS ================== */
@@ -684,6 +685,7 @@ const SECTION_CONFIGS = {
       { name: 'description', label: 'Meta Description', type: 'textarea', fullWidth: true, rows: 3 },
       { name: 'keywords', label: 'Keywords (comma separated)', fullWidth: true },
       { name: 'ogImage', label: 'OG Image', type: 'image', fullWidth: true },
+      { name: 'schema', label: 'Schema Markup (JSON-LD)', type: 'textarea', fullWidth: true, rows: 6, hint: 'Paste valid JSON-LD structured data (e.g. { "@context": "https://schema.org", ... })' },
     ],
   },
   'contact-info': {

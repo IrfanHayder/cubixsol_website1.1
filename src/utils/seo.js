@@ -1,5 +1,20 @@
 import { useEffect } from 'react';
 
+/**
+ * Strips any wrapping <script> and </script> tags if user pasted HTML tag
+ */
+function cleanSchemaString(raw) {
+  if (!raw || typeof raw !== 'string') return '';
+  return raw
+    .replace(/<script\b[^>]*>/gi, '')
+    .replace(/<\/script>/gi, '')
+    .trim();
+}
+
+/**
+ * Universal SEO & JSON-LD Schema Hook
+ * Sets document title, Open Graph, Twitter Cards, Canonical links, and injects Schema.org JSON-LD
+ */
 export function useSEO(seo = {}, fallback = {}) {
   useEffect(() => {
     const title =
@@ -10,7 +25,7 @@ export function useSEO(seo = {}, fallback = {}) {
     const ogTitle = seo?.ogTitle || title;
     const ogDesc = seo?.ogDescription || description;
     const ogImage = seo?.ogImage || fallback.image || fallback.heroImage || '/assets/logo.svg';
-    const canonical = seo?.canonicalUrl || window.location.href.split('?')[0];
+    const canonical = seo?.canonicalUrl || fallback.canonicalUrl || window.location.href.split('?')[0];
 
     document.title = title;
 
@@ -37,6 +52,7 @@ export function useSEO(seo = {}, fallback = {}) {
     setMeta('name', 'twitter:description', ogDesc);
     if (ogImage) setMeta('name', 'twitter:image', ogImage);
 
+    // Canonical link
     let linkEl = document.querySelector('link[rel="canonical"]');
     if (!linkEl) {
       linkEl = document.createElement('link');
@@ -44,5 +60,81 @@ export function useSEO(seo = {}, fallback = {}) {
       document.head.appendChild(linkEl);
     }
     linkEl.setAttribute('href', canonical);
+
+    // =========================================================================
+    // JSON-LD SCHEMA MARKUP INJECTION
+    // =========================================================================
+    const rawSchema = seo?.schema || seo?.schemaMarkup || fallback?.schema || fallback?.schemaMarkup;
+    let schemaScript = document.querySelector('script#cubixsol-schema-jsonld');
+
+    if (rawSchema) {
+      let finalJsonLd = '';
+
+      if (typeof rawSchema === 'object') {
+        try {
+          finalJsonLd = JSON.stringify(rawSchema, null, 2);
+        } catch (e) {
+          console.warn('Invalid JSON-LD schema object:', e);
+        }
+      } else if (typeof rawSchema === 'string') {
+        const cleaned = cleanSchemaString(rawSchema);
+        if (cleaned) {
+          try {
+            // Verify if valid JSON, format nicely
+            const parsed = JSON.parse(cleaned);
+            finalJsonLd = JSON.stringify(parsed, null, 2);
+          } catch (_) {
+            // If not strict JSON (e.g. multiple root schemas or custom block), inject cleaned string directly
+            finalJsonLd = cleaned;
+          }
+        }
+      }
+
+      if (finalJsonLd) {
+        if (!schemaScript) {
+          schemaScript = document.createElement('script');
+          schemaScript.setAttribute('type', 'application/ld+json');
+          schemaScript.setAttribute('id', 'cubixsol-schema-jsonld');
+          document.head.appendChild(schemaScript);
+        }
+        schemaScript.textContent = finalJsonLd;
+      } else if (schemaScript) {
+        schemaScript.remove();
+      }
+    } else {
+      // Default Organization / WebSite fallback schema if no custom schema provided
+      const defaultSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        name: title,
+        description: description,
+        url: canonical,
+        publisher: {
+          '@type': 'Organization',
+          name: 'Cubixsol',
+          url: 'https://cubixsol.com',
+          logo: {
+            '@type': 'ImageObject',
+            url: 'https://cubixsol.com/assets/logo.svg',
+          },
+        },
+      };
+
+      if (!schemaScript) {
+        schemaScript = document.createElement('script');
+        schemaScript.setAttribute('type', 'application/ld+json');
+        schemaScript.setAttribute('id', 'cubixsol-schema-jsonld');
+        document.head.appendChild(schemaScript);
+      }
+      schemaScript.textContent = JSON.stringify(defaultSchema, null, 2);
+    }
+
+    return () => {
+      // Cleanup on route change or unmount
+      const existingScript = document.querySelector('script#cubixsol-schema-jsonld');
+      if (existingScript) {
+        existingScript.remove();
+      }
+    };
   }, [seo, fallback]);
 }

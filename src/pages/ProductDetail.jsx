@@ -9,6 +9,7 @@ import { products } from '../data/content';
 import CtaBanner from '../components/CtaBanner';
 import ServiceInquiryForm from '../components/ServiceInquiryForm';
 import Reveal, { Stagger, StaggerItem } from '../components/Reveal';
+import { useSEO } from '../utils/seo';
 
 const themes = {
   navy: 'bg-[#0b1f4a]',
@@ -530,6 +531,15 @@ function ChecklistBand({ product }) {
 export default function ProductDetail() {
   const { slug } = useParams();
   const product = products.find((p) => p.slug === slug);
+
+  useSEO(product?.seo, {
+    title: product?.title ? `${product.title} | Cubixsol Products` : (product?.name ? `${product.name} | Cubixsol` : 'Digital Products | Cubixsol'),
+    description: product?.tagline || product?.desc || '',
+    keywords: `${product?.name || ''}, ${product?.category || ''}, digital tools, software products, Cubixsol`,
+    image: product?.image || '/assets/logo.svg',
+    canonicalUrl: `https://cubixsol.com/products/${slug}`,
+  });
+
   if (!product) return <Navigate to="/products" replace />;
 
   const layout = product.layout || 'A';

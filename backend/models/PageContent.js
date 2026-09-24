@@ -87,6 +87,8 @@ const pageContentSchema = new mongoose.Schema(
       ogDescription: { type: String },
       ogImage: { type: String },
       canonicalUrl: { type: String },
+      schema: { type: String },
+      schemaMarkup: { type: String },
     },
   },
   { timestamps: true, strict: false }
