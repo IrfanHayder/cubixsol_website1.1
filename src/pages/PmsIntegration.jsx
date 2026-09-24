@@ -204,22 +204,22 @@ export default function PmsIntegration() {
 
   // Supported Platforms Ecosystem
   const defaultPlatforms = [
-    { name: 'Guesty', category: 'Enterprise PMS', icon: 'Hotel' },
-    { name: 'Hostaway', category: 'Vacation Rental PMS', icon: 'Home' },
-    { name: 'Hostfully', category: 'Hospitality Platform', icon: 'Compass' },
-    { name: 'Zeevou', category: 'Direct Booking PMS', icon: 'Sparkles' },
-    { name: 'Smoobu', category: 'Channel Manager PMS', icon: 'RefreshCw' },
-    { name: 'Newbook', category: 'Hotel & Park PMS', icon: 'BookOpen' },
-    { name: 'Hostify', category: 'All-in-One PMS', icon: 'Server' },
-    { name: 'Jurny', category: 'AI Hospitality PMS', icon: 'Bot' },
-    { name: 'Lodgify', category: 'Short-Term Rental PMS', icon: 'Globe' },
-    { name: 'OwnerRez', category: 'Direct Channel PMS', icon: 'KeyRound' },
-    { name: 'Rentals United', category: 'Global OTA Hub', icon: 'Network' },
-    { name: 'Tokeet', category: 'Multi-Calendar PMS', icon: 'CalendarCheck' },
-    { name: 'Uplisting', category: 'Automated PMS', icon: 'TrendingUp' },
-    { name: 'Cloudbeds', category: 'Hotel Management System', icon: 'Cloud' },
-    { name: 'Opera PMS', category: 'Oracle Hospitality', icon: 'Database' },
-    { name: 'Mews', category: 'Cloud Hotel PMS', icon: 'Boxes' },
+    { name: 'Guesty', category: 'Enterprise PMS', icon: '/uploads/media-1790253755534-374481749.svg' },
+    { name: 'Hostaway', category: 'Vacation Rental PMS', icon: '/uploads/media-1790253755539-455557641.svg' },
+    { name: 'Hostfully', category: 'Hospitality Platform', icon: '/uploads/media-1790253755535-515170169.svg' },
+    { name: 'Zeevou', category: 'Direct Booking PMS', icon: '/uploads/media-1790253755551-838693003.svg' },
+    { name: 'Smoobu', category: 'Channel Manager PMS', icon: '/uploads/media-1790253755538-48144611.svg' },
+    { name: 'Newbook', category: 'Hotel & Park PMS', icon: '/uploads/media-1790253755536-955178959.svg' },
+    { name: 'Hostify', category: 'All-in-One PMS', icon: '/uploads/media-1790253755535-639038145.svg' },
+    { name: 'Jurny', category: 'AI Hospitality PMS', icon: '/uploads/media-1790253755535-527429420.svg' },
+    { name: 'Lodgify', category: 'Short-Term Rental PMS', icon: '/uploads/media-1790253755536-885217759.svg' },
+    { name: 'OwnerRez', category: 'Direct Channel PMS', icon: '/uploads/media-1790253755537-457611832.svg' },
+    { name: 'Rentals United', category: 'Global OTA Hub', icon: '/uploads/media-1790253755537-228555983.svg' },
+    { name: 'Tokeet', category: 'Multi-Calendar PMS', icon: '/uploads/media-1790253755539-480635918.svg' },
+    { name: 'Uplisting', category: 'Automated PMS', icon: '/uploads/media-1790253755539-463139177.svg' },
+    { name: 'Cloudbeds', category: 'Hotel Management System', icon: '/uploads/media-1790253755532-273691715.svg' },
+    { name: 'Opera PMS', category: 'Oracle Hospitality', icon: '/uploads/media-1790253755536-767535089.svg' },
+    { name: 'Mews', category: 'Cloud Hotel PMS', icon: '/uploads/media-1790253755536-799955685.svg' },
   ];
 
   const supportedPlatforms = (data?.supportedPlatforms && data.supportedPlatforms.length > 0)
@@ -565,12 +565,12 @@ export default function PmsIntegration() {
               transition={{ duration: 0.2 }}
               className="p-5 rounded-2xl bg-gradient-to-b from-white to-slate-50/80 border border-slate-200/80 hover:border-sky-400 hover:shadow-lg hover:shadow-sky-500/10 transition-all text-center flex flex-col justify-center items-center group relative overflow-hidden"
             >
-              <div className="w-12 h-12 rounded-xl bg-sky-50/80 border border-sky-100 flex items-center justify-center mb-3 group-hover:bg-gradient-to-br group-hover:from-sky-500 group-hover:to-blue-600 group-hover:border-transparent transition-all duration-300 shadow-sm">
+              <div className="w-14 h-14 rounded-2xl bg-sky-50/70 border border-sky-100 flex items-center justify-center mb-3 group-hover:scale-105 group-hover:bg-white group-hover:border-sky-300 group-hover:shadow-md transition-all duration-300 shadow-sm p-2.5">
                 <DynamicIcon
                   icon={p.icon || p.name}
                   alt={p.name}
                   title={p.name}
-                  className="w-6 h-6 text-sky-600 group-hover:text-white transition-colors duration-300 object-contain"
+                  className="w-8 h-8 text-sky-600 group-hover:text-sky-700 transition-colors duration-300 object-contain"
                   fallbackName="Building2"
                 />
               </div>
