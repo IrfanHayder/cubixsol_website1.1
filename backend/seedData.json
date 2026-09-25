@@ -1650,8 +1650,8 @@
     },
     {
       "seo": {
-        "metaTitle": "Custom AI Chatbot Development Services | Cubixsol sssssssss",
-        "metaDescription": "Deploy custom AI chatbots with RAG, vector search, WhatsApp and CRM integration for 24/7 customer engagement.ssssss",
+        "metaTitle": "Custom AI Chatbot Development Services | Cubixsol",
+        "metaDescription": "Deploy custom AI chatbots with RAG, vector search, WhatsApp and CRM integration for 24/7 customer engagement.",
         "keywords": "AI chatbots, custom chatbot, conversational AI, customer support bot, WhatsApp AI bot"
       },
       "slug": "ai-chatbots",
@@ -1754,38 +1754,38 @@
         {
           "title": "AI Customer Service Chatbot Development",
           "desc": "We build AI customer service chatbot solutions that handle customer enquiries, provide instant answers, and connect users with human agents when advanced assistance is required.",
-          "q": "AI Customer Service Chatbot Development",
-          "a": "We build AI customer service chatbot solutions that handle customer enquiries, provide instant answers, and connect users with human agents when advanced assistance is required."
+          "icon": "",
+          "badge": ""
         },
         {
           "title": "Website AI Chatbot Development",
           "desc": "We create customer support AI chatbot services for websites that engage visitors, answer questions, collect leads, and improve website communication.",
-          "q": "Website AI Chatbot Development",
-          "a": "We create customer support AI chatbot services for websites that engage visitors, answer questions, collect leads, and improve website communication."
+          "icon": "",
+          "badge": ""
         },
         {
           "title": "Custom AI Chatbot Development Services",
           "desc": "We develop customised chatbot solutions based on your business processes, customer requirements, industry information, and communication goals.",
-          "q": "Custom AI Chatbot Development Services",
-          "a": "We develop customised chatbot solutions based on your business processes, customer requirements, industry information, and communication goals."
+          "icon": "",
+          "badge": ""
         },
         {
           "title": "AI Chatbot App Development Services",
           "desc": "We create mobile chatbot applications that allow businesses to provide intelligent customer support through dedicated platforms and mobile experiences.",
-          "q": "AI Chatbot App Development Services",
-          "a": "We create mobile chatbot applications that allow businesses to provide intelligent customer support through dedicated platforms and mobile experiences."
+          "icon": "",
+          "badge": ""
         },
         {
           "title": "Enterprise AI Chatbot Development Service",
           "desc": "We design enterprise-level chatbot systems with advanced integrations, security requirements, business data connections, and scalable automation capabilities.",
-          "q": "Enterprise AI Chatbot Development Service",
-          "a": "We design enterprise-level chatbot systems with advanced integrations, security requirements, business data connections, and scalable automation capabilities."
+          "icon": "",
+          "badge": ""
         },
         {
           "title": "AI Chatbot Integration And Optimisation",
           "desc": "We connect AI chatbots with CRM systems, knowledge bases, websites, applications, and existing business tools to create a connected communication ecosystem.",
-          "q": "AI Chatbot Integration And Optimisation",
-          "a": "We connect AI chatbots with CRM systems, knowledge bases, websites, applications, and existing business tools to create a connected communication ecosystem."
+          "icon": "",
+          "badge": ""
         }
       ],
       "supportedPlatforms": [
@@ -6351,7 +6351,9 @@
           "desc": "Proactive API rate limit optimization, error-handling webhooks, and round-the-clock technical maintenance."
         }
       ],
-      "whyChooseTitle": "Why Choose Cubixsol For Mews Integration?"
+      "whyChooseTitle": "Why Choose Cubixsol For Mews Integration?",
+      "techDesc": "We select technologies according to the project’s functionality, performance requirements, integrations, and future roadmap.\n\nThe goal is not to use the newest technology for its own sake. It is to choose a dependable stack that fits your product, supports maintainability, and avoids unnecessary technical complexity.",
+      "techTitle": "Technologies We Use"
     },
     {
       "seo": {
@@ -7793,79 +7795,79 @@
           "title": "Consultation",
           "desc": "This phase allows experts to define the optimum PMS integration solutions for your needs. For a smooth integration, our professionals will handle any technological or safety issues that may arise.",
           "image": "/uploads/media-1790257307933-564950446.svg",
-          "icon": "/uploads/media-1790257307933-564950446.svg",
-          "points": []
+          "points": [],
+          "icon": "/uploads/media-1790257307933-564950446.svg"
         },
         {
           "stepNumber": "02",
           "title": "Planning",
           "desc": "In the planning phase, we create a comprehensive integration plan based on your requirements. It entails defining the task's scope, selecting suitable PMSs rental, and developing timelines. We establish critical milestones to maintain consistency with your business operations and system development.",
           "image": "/uploads/media-1790257307933-360229398.svg",
-          "icon": "/uploads/media-1790257307933-360229398.svg",
-          "points": []
+          "points": [],
+          "icon": "/uploads/media-1790257307933-360229398.svg"
         },
         {
           "stepNumber": "03",
           "title": "Implementation",
           "desc": "When the plan of action is approved, we start the integration process. Our expertise will integrate your present systems with the suitable PMS rentals, ensuring that data transfers safely and quickly. We manage all of the back work, allowing your business activities to continue uninterrupted.",
           "image": "/uploads/media-1790257307933-25615094.svg",
-          "icon": "/uploads/media-1790257307933-25615094.svg",
-          "points": []
+          "points": [],
+          "icon": "/uploads/media-1790257307933-25615094.svg"
         },
         {
           "stepNumber": "04",
           "title": "Testing",
           "desc": "Before moving live, we thoroughly test the integration to ensure that everything functions properly. This includes tests for operation, optimization of performance, and safety inspections to guarantee that the PMS operates as intended.",
           "image": "/uploads/media-1790257307934-884499517.svg",
-          "icon": "/uploads/media-1790257307934-884499517.svg",
-          "points": []
+          "points": [],
+          "icon": "/uploads/media-1790257307934-884499517.svg"
         },
         {
           "stepNumber": "05",
           "title": "Deployment",
           "desc": "After successful testing, we will begin integrating the PMS rental into your existing system. Once tested, we deploy the system into your live environment. Every module is fully functional, from the key management system for property management to payment and booking synchronization.",
           "image": "/uploads/media-1790257307933-424705272.svg",
-          "icon": "/uploads/media-1790257307933-424705272.svg",
-          "points": []
+          "points": [],
+          "icon": "/uploads/media-1790257307933-424705272.svg"
         }
       ],
       "serviceProcessTitle": "Organized Strategy For PMS Integration",
       "subServicesIntro": "Many options stand out if you're looking for complete property management software to help you optimize the vacation rental business. Industry leaders such as Guesty, Hostaway, Hostfully, Zeevou, Smoobu, Lodgify, OwnerRez, Rentals United, Tokeet, Uplisting, Cloudbeds, and Opera provide comprehensive solutions for booking, guest communication, payment processing, keyless access, and smooth multi-property monitoring.",
       "subServicesItems": [
         {
-          "icon": "/uploads/media-1790255189682-850620447.svg",
           "title": "Booking engine / Channel Manager",
           "desc": "Channel executives assist hotels in managing their online distribution by connecting them to various online platforms and their online booking sites. Hotels can use a channel manager to modify inventory and rates throughout the PMS integrations system. Connecting your PMS systems with channel manager and PMS integration solutions such as online travel agents (OTAs) or channel administrators saves valuable time by providing central control over stock, pricing, and bookings.",
+          "icon": "/uploads/media-1790255189682-850620447.svg",
           "badge": "Multi-OTA Sync"
         },
         {
-          "icon": "/uploads/media-1790255189683-273829124.svg",
           "title": "Room Access / Keyless Access Solution",
           "desc": "Keyless entry systems with our key management system for property management allow visitors to open their hotel entrances without using a genuine key. Rather, visitors enter an authorization code or mobile key from their smartphone. Connecting your PMS to access-to-space solutions like smart keycards simplifies check-in and access control significantly, eliminating manual front-desk keycard encoding.",
+          "icon": "/uploads/media-1790255189683-273829124.svg",
           "badge": "BLE & Smart Lock Sync"
         },
         {
-          "icon": "/uploads/media-1790255189683-793511854.svg",
           "title": "Revenue Management System",
           "desc": "A revenue management system forecasts traveler habits and demand by using previous information, market trends, and live indicators. With this information, hotels determine the best price for rooms to maximize profits. Two-way connectivity between your PMS and revenue management software enables precise forecasting, dynamic nightly rate adjustments, and real-time inventory pricing optimization.",
+          "icon": "/uploads/media-1790255189683-793511854.svg",
           "badge": "Dynamic Yield & Pricing"
         },
         {
-          "icon": "/uploads/media-1790255189683-537471180.svg",
           "title": "Payment Processing Network",
           "desc": "A payment processing network enables hotels and property managers to take credit card payments smoothly. Linking your PMS with a secure payment gateway makes bookings and departures at the reception desk seamless. After guests enter payment information, transactions are transmitted to the payment handling network and invoices in the PMS are promptly updated in real time.",
+          "icon": "/uploads/media-1790255189683-537471180.svg",
           "badge": "PCI-DSS Payment Rails"
         },
         {
-          "icon": "/uploads/media-1790255189683-626229220.svg",
           "title": "POS System Integration",
           "desc": "Point-of-sale (POS) systems allow hotel and resort staff to handle reservations for rooms or collect transactions for onsite amenities like restaurants, bars, and spas. By connecting your PMS and POS systems, amenity expenses can be charged to guest room folios automatically, decreasing human error and streamlining guest checkout.",
+          "icon": "/uploads/media-1790255189683-626229220.svg",
           "badge": "Front Desk & Amenities"
         },
         {
-          "icon": "/uploads/media-1790255189682-348056118.svg",
           "title": "Guest Review Plug-In",
           "desc": "Guest Review Plug-In services provide an easy way to collect, organize, and display feedback from guests directly on property management systems (PMS). The system enables hotel businesses to track and present guest experiences, improving online reputation and attracting new guests with real-time feedback synchronization across booking channels.",
+          "icon": "/uploads/media-1790255189682-348056118.svg",
           "badge": "Automated Guest Feedback"
         }
       ],
@@ -15553,8 +15555,8 @@
     {
       "title": "ADLIV",
       "category": "Web Development",
-      "desc": "ADLIV is a modern short-term accommodation website built to showcase serviced apartments and rental properties. It provides visitors with detailed property information, amenities, locations and a convenient booking experience through an integrated property management system.",
-      "tag": "SaaS",
+      "desc": "Modern short-term accommodation website showcasing serviced apartments and rental properties with detailed information, amenities, locations, and booking functionality.",
+      "tag": "Web Development",
       "color": "from-indigo-600 to-purple-700",
       "url": "https://adliv.co.uk",
       "client": "ADLIV UK",
@@ -15567,7 +15569,7 @@
       "category": "E-Commerce",
       "desc": "Global fashion and lifestyle e-commerce platform featuring heritage clothing, outerwear, footwear, and accessories.",
       "tag": "E-Commerce",
-      "color": "from-amber-700 via-yellow-800 to-stone-900",
+      "color": "from-amber-700 to-stone-900",
       "industry": "Global Fashion & Lifestyle Heritage",
       "url": "https://barbour.com",
       "client": "Barbour",
@@ -15575,11 +15577,23 @@
       "year": "2024"
     },
     {
+      "title": "BnB Made Easy",
+      "category": "SaaS",
+      "desc": "Short-term rental and property management services designed to simplify hosting and guest stays.",
+      "tag": "SaaS",
+      "color": "from-blue-600 to-indigo-800",
+      "url": "https://bnbmadeeasy.com.au",
+      "client": "BnB Made Easy",
+      "industry": "Property Management SaaS",
+      "year": "2024",
+      "description": "Short-term rental and property management services designed to simplify hosting and guest stays."
+    },
+    {
       "title": "Brighton Holiday Lets",
       "category": "Web Development",
-      "desc": "Brighton Holiday Lets offers holiday accommodation in Brighton, with property listings and online booking options for guests planning a stay.",
+      "desc": "Holiday accommodation in Brighton offering property listings and online booking options for travelers.",
       "tag": "Web Development",
-      "color": "from-amber-500 via-orange-600 to-rose-600",
+      "color": "from-amber-500 to-rose-600",
       "industry": "Holiday Accommodation & Direct Bookings",
       "url": "https://brightonholidaylets.com",
       "client": "Brighton Holiday Lets UK",
@@ -15587,10 +15601,34 @@
       "year": "2024"
     },
     {
+      "title": "Burj Al Arab Jumeirah",
+      "category": "Web Development",
+      "desc": "Iconic Dubai luxury hotel offering exceptional suites, fine dining, personalized service, and premium hospitality.",
+      "tag": "Web Development",
+      "color": "from-amber-600 to-yellow-800",
+      "url": "https://jumeirah.com",
+      "client": "Burj Al Arab Jumeirah",
+      "industry": "Iconic Luxury Hospitality",
+      "year": "2024",
+      "description": "Iconic Dubai luxury hotel offering exceptional suites, fine dining, personalized service, and premium hospitality."
+    },
+    {
+      "title": "Clark Anderson Properties",
+      "category": "Web Development",
+      "desc": "Professionally managed holiday homes and accommodation across the UK, with direct booking and property management services.",
+      "tag": "Web Development",
+      "color": "from-teal-500 to-emerald-600",
+      "url": "https://clarkandersonproperties.co.uk",
+      "client": "Clark Anderson Properties",
+      "industry": "Holiday Home Property Management",
+      "year": "2024",
+      "description": "Professionally managed holiday homes and accommodation across the UK, with direct booking and property management services."
+    },
+    {
       "title": "Cur8 Residences",
       "category": "Web Development",
-      "desc": "Cur8 Residences is a modern property rental platform designed to showcase premium accommodation and simplify the guest booking journey. The website combines property discovery, detailed listings and reservation functionality with integrated property management services.",
-      "tag": "SaaS",
+      "desc": "Modern property rental platform showcasing premium accommodation with detailed listings, property discovery, and reservation functionality.",
+      "tag": "Web Development",
       "color": "from-violet-600 to-indigo-800",
       "url": "https://cur8residences.com",
       "client": "Cur8 Residences",
@@ -15599,11 +15637,35 @@
       "description": "Cur8 Residences is a modern property rental platform designed to showcase premium accommodation and simplify the guest booking journey. The website combines property discovery, detailed listings and reservation functionality with integrated property management services."
     },
     {
+      "title": "EasyStay",
+      "category": "SaaS",
+      "desc": "Vacation rental solutions simplifying property management, bookings, and guest experiences.",
+      "tag": "SaaS",
+      "color": "from-emerald-600 to-teal-800",
+      "url": "https://easystay.io",
+      "client": "EasyStay",
+      "industry": "Vacation Rental Solutions & SaaS",
+      "year": "2024",
+      "description": "Vacation rental solutions simplifying property management, bookings, and guest experiences."
+    },
+    {
+      "title": "Elite Escapes",
+      "category": "Web Development",
+      "desc": "Luxury vacation rentals offering premium properties and professionally managed holiday experiences.",
+      "tag": "Web Development",
+      "color": "from-blue-600 to-cyan-600",
+      "url": "https://eliteescapes.travel",
+      "client": "Elite Escapes",
+      "industry": "Luxury Vacation Rentals",
+      "year": "2024",
+      "description": "Luxury vacation rentals offering premium properties and professionally managed holiday experiences."
+    },
+    {
       "title": "Fred Perry",
       "category": "E-Commerce",
       "desc": "International fashion e-commerce platform offering clothing, footwear, and accessories.",
       "tag": "E-Commerce",
-      "color": "from-slate-800 via-indigo-900 to-blue-950",
+      "color": "from-slate-800 to-blue-950",
       "industry": "International Apparel & Sportswear",
       "url": "https://fredperry.com",
       "client": "Fred Perry",
@@ -15613,9 +15675,9 @@
     {
       "title": "GoTo Poconos",
       "category": "Web Development",
-      "desc": "GoTo Poconos is a vacation rental platform focused on showcasing properties across the Poconos region. The website provides an intuitive property discovery experience with detailed listings and a streamlined direct-booking workflow integrated with property management technology.",
+      "desc": "Vacation rentals in the Pocono Mountains offering comfortable stays for families and groups.",
       "tag": "Web Development",
-      "color": "from-emerald-500 to-teal-700",
+      "color": "from-emerald-600 to-teal-800",
       "url": "https://gotopoconos.com",
       "client": "GoTo Poconos",
       "industry": "Vacation Rental & Travel",
@@ -15625,7 +15687,7 @@
     {
       "title": "Guest Cottage",
       "category": "Web Development",
-      "desc": "Guest Cottage is a vacation rental website featuring a collection of holiday properties for short and extended stays. Visitors can explore individual properties, review accommodation details and use the integrated booking experience to plan their stay.",
+      "desc": "Vacation rental website featuring holiday properties for short and extended stays, with detailed listings and integrated booking functionality.",
       "tag": "Web Development",
       "color": "from-amber-500 to-orange-600",
       "url": "https://guestcottage.com",
@@ -15635,11 +15697,71 @@
       "description": "Guest Cottage is a vacation rental website featuring a collection of holiday properties for short and extended stays. Visitors can explore individual properties, review accommodation details and use the integrated booking experience to plan their stay."
     },
     {
+      "title": "Hidden England Escapes",
+      "category": "Web Development",
+      "desc": "Unique holiday accommodation offering distinctive stays and relaxing escapes across England.",
+      "tag": "Web Development",
+      "color": "from-emerald-700 to-green-900",
+      "url": "https://hiddenenglandescapes.com",
+      "client": "Hidden England Escapes",
+      "industry": "Unique Stays & Escapes",
+      "year": "2024",
+      "description": "Unique holiday accommodation offering distinctive stays and relaxing escapes across England."
+    },
+    {
+      "title": "Holiday Lovers",
+      "category": "Web Development",
+      "desc": "Premium holiday rentals offering villas, townhouses, and apartments for memorable stays in Comporta and Tróia.",
+      "tag": "Web Development",
+      "color": "from-sky-500 to-blue-700",
+      "url": "https://holidaylovers.com",
+      "client": "Holiday Lovers",
+      "industry": "Vacation Rentals & Hospitality",
+      "year": "2024",
+      "description": "Premium holiday rentals offering villas, townhouses, and apartments for memorable stays in Comporta and Tróia."
+    },
+    {
+      "title": "Homestead Modern",
+      "category": "Web Development",
+      "desc": "Modern vacation homes combining distinctive design, comfort, and memorable guest experiences.",
+      "tag": "Web Development",
+      "color": "from-amber-700 to-stone-900",
+      "url": "https://homesteadmodern.com",
+      "client": "Homestead Modern",
+      "industry": "Distinctive Vacation Homes",
+      "year": "2024",
+      "description": "Modern vacation homes combining distinctive design, comfort, and memorable guest experiences."
+    },
+    {
+      "title": "Huntington Beach Vacation Home",
+      "category": "Web Development",
+      "desc": "Luxury vacation homes near Huntington Beach, offering spacious stays with premium amenities.",
+      "tag": "Web Development",
+      "color": "from-amber-500 to-orange-600",
+      "url": "https://huntingtonbeachvacationhome.com",
+      "client": "Huntington Beach Vacation Home",
+      "industry": "Coastal Luxury Vacation Homes",
+      "year": "2024",
+      "description": "Luxury vacation homes near Huntington Beach, offering spacious stays with premium amenities."
+    },
+    {
+      "title": "Hvar Away",
+      "category": "Web Development",
+      "desc": "Holiday accommodation in Hvar offering villas and properties for relaxing island stays.",
+      "tag": "Web Development",
+      "color": "from-teal-500 to-blue-700",
+      "url": "https://hvaraway.com",
+      "client": "Hvar Away",
+      "industry": "Island Villas & Holiday Stays",
+      "year": "2024",
+      "description": "Holiday accommodation in Hvar offering villas and properties for relaxing island stays."
+    },
+    {
       "title": "LORIS Parfum",
       "category": "E-Commerce",
       "desc": "Fragrance e-commerce platform offering perfumes, personal-care products, room fragrances, and gift sets.",
       "tag": "E-Commerce",
-      "color": "from-fuchsia-600 via-purple-700 to-pink-800",
+      "color": "from-fuchsia-600 to-pink-800",
       "industry": "Fragrances & Luxury Scents",
       "url": "https://lorisparfum.com",
       "client": "LORIS Parfum",
@@ -15647,11 +15769,23 @@
       "year": "2024"
     },
     {
+      "title": "Live Stay",
+      "category": "Web Development",
+      "desc": "Short-term and serviced accommodation providing comfortable stays for leisure and business travelers.",
+      "tag": "Web Development",
+      "color": "from-slate-700 to-zinc-900",
+      "url": "https://livestay.co.uk",
+      "client": "Live Stay",
+      "industry": "Serviced Accommodation",
+      "year": "2024",
+      "description": "Short-term and serviced accommodation providing comfortable stays for leisure and business travelers."
+    },
+    {
       "title": "Liverpool FC Store",
       "category": "E-Commerce",
       "desc": "Official Liverpool FC online store offering authentic club merchandise, kits, clothing, accessories, and fan products.",
       "tag": "E-Commerce",
-      "color": "from-red-600 via-rose-700 to-amber-700",
+      "color": "from-red-600 to-rose-700",
       "industry": "Sports Merchandise & Apparel",
       "url": "https://store.liverpoolfc.com",
       "client": "Liverpool FC",
@@ -15663,7 +15797,7 @@
       "category": "E-Commerce",
       "desc": "Sustainable fashion and lifestyle e-commerce platform offering contemporary clothing and curated collections.",
       "tag": "E-Commerce",
-      "color": "from-emerald-600 via-teal-600 to-green-700",
+      "color": "from-emerald-600 to-green-700",
       "industry": "Sustainable Fashion & Apparel",
       "url": "https://loragene.com",
       "client": "Lora Gene",
@@ -15671,11 +15805,47 @@
       "year": "2024"
     },
     {
+      "title": "Luxury Property",
+      "category": "Web Development",
+      "desc": "Global luxury real estate platform showcasing premium properties and exclusive destinations.",
+      "tag": "Web Development",
+      "color": "from-yellow-600 to-amber-800",
+      "url": "https://luxuryproperty.com",
+      "client": "Luxury Property",
+      "industry": "Global Luxury Real Estate",
+      "year": "2024",
+      "description": "Global luxury real estate platform showcasing premium properties and exclusive destinations."
+    },
+    {
+      "title": "Madame Soussou",
+      "category": "Web Development",
+      "desc": "Holiday accommodation offering carefully selected properties for comfortable short-term stays.",
+      "tag": "Web Development",
+      "color": "from-pink-500 to-rose-700",
+      "url": "https://madame-soussou.co.uk",
+      "client": "Madame Soussou",
+      "industry": "Short-Term Stays & Accommodation",
+      "year": "2024",
+      "description": "Holiday accommodation offering carefully selected properties for comfortable short-term stays."
+    },
+    {
+      "title": "Manzil",
+      "category": "Web Development",
+      "desc": "Curated hospitality and accommodation experiences offering comfortable stays in selected destinations.",
+      "tag": "Web Development",
+      "color": "from-orange-500 to-rose-700",
+      "url": "https://manzil.life",
+      "client": "Manzil",
+      "industry": "Curated Hospitality Experiences",
+      "year": "2024",
+      "description": "Curated hospitality and accommodation experiences offering comfortable stays in selected destinations."
+    },
+    {
       "title": "Minni Nest",
       "category": "E-Commerce",
       "desc": "Baby-products e-commerce brand offering baby nests, cots, baskets, and sleeping essentials.",
       "tag": "E-Commerce",
-      "color": "from-sky-500 via-teal-500 to-emerald-600",
+      "color": "from-sky-500 to-emerald-600",
       "industry": "Baby Products & Nursery Essentials",
       "url": "https://minninest.com",
       "client": "Minni Nest",
@@ -15683,9 +15853,21 @@
       "year": "2024"
     },
     {
+      "title": "Mod Retreats",
+      "category": "Web Development",
+      "desc": "Professionally managed vacation homes combining modern design, comfort, and convenient stays.",
+      "tag": "Web Development",
+      "color": "from-violet-600 to-indigo-800",
+      "url": "https://modretreats.com",
+      "client": "Mod Retreats",
+      "industry": "Modern Vacation Homes",
+      "year": "2024",
+      "description": "Professionally managed vacation homes combining modern design, comfort, and convenient stays."
+    },
+    {
       "title": "Mountain Cabins",
       "category": "Web Development",
-      "desc": "Mountain Cabins is a vacation rental website focused on showcasing cabin and holiday accommodation. The platform presents property information and booking options while integrating with a property management system to support reservations and guest services.",
+      "desc": "Vacation rental website focused on cabin and holiday accommodation, with property information and booking options.",
       "tag": "Web Development",
       "color": "from-emerald-700 to-stone-800",
       "url": "https://mountaincab.wpenginepowered.com",
@@ -15697,9 +15879,9 @@
     {
       "title": "Mt Buller Apartment Rentals",
       "category": "Web Development",
-      "desc": "Mt Buller Apartment Rentals provides information about holiday apartments in the Mt Buller alpine region, helping visitors explore accommodation options and plan their stay.",
+      "desc": "Holiday apartment accommodation in the Mt Buller alpine region, helping visitors explore lodging options and plan their stays.",
       "tag": "Web Development",
-      "color": "from-indigo-600 via-blue-600 to-cyan-700",
+      "color": "from-indigo-600 to-cyan-700",
       "industry": "Alpine Holiday & Apartment Accommodation",
       "url": "https://mtbuller.com.au",
       "client": "Mt Buller Apartment Rentals Australia",
@@ -15708,10 +15890,10 @@
     },
     {
       "title": "NuuTel",
-      "category": "Web Development",
+      "category": "Telecommunications",
       "desc": "Telecommunications platform providing residential, SME, and enterprise broadband connectivity solutions.",
-      "tag": "SaaS",
-      "color": "from-blue-600 via-indigo-600 to-cyan-700",
+      "tag": "Telecommunications",
+      "color": "from-blue-600 to-cyan-700",
       "industry": "Telecommunications & Broadband Solutions",
       "url": "https://nuutel.com",
       "client": "NuuTel Telecom",
@@ -15721,7 +15903,7 @@
     {
       "title": "Ocean City Retreats",
       "category": "Web Development",
-      "desc": "Ocean City Retreats is a UK-based holiday accommodation website featuring vacation properties for travelers. The platform allows visitors to explore available properties, view accommodation details and proceed through an integrated booking process.",
+      "desc": "UK-based holiday accommodation website featuring vacation properties with detailed listings and an integrated booking process.",
       "tag": "Web Development",
       "color": "from-cyan-600 to-blue-800",
       "url": "https://oceancityretreats.co.uk",
@@ -15733,7 +15915,7 @@
     {
       "title": "Open Air Homes",
       "category": "Web Development",
-      "desc": "Open Air Homes is a vacation rental and property management platform focused on professionally managed homes and direct bookings. The website provides property discovery and booking functionality while connecting with a centralized property management ecosystem.",
+      "desc": "Vacation rental and property management platform focused on professionally managed homes and direct bookings.",
       "tag": "Web Development",
       "color": "from-blue-600 to-cyan-600",
       "url": "https://openairhomes.com",
@@ -15747,7 +15929,7 @@
       "category": "E-Commerce",
       "desc": "Designer eyewear e-commerce platform offering sunglasses, eyeglasses, and premium frames.",
       "tag": "E-Commerce",
-      "color": "from-cyan-600 via-teal-600 to-blue-800",
+      "color": "from-cyan-600 to-blue-800",
       "industry": "Designer Eyewear & Optics",
       "url": "https://ossaframes.com",
       "client": "Ossa Frames",
@@ -15757,7 +15939,7 @@
     {
       "title": "Sage Vacations",
       "category": "Web Development",
-      "desc": "Sage Vacations is a professional vacation rental website designed to showcase holiday homes and accommodation options. The website presents property details, amenities and locations while providing guests with a simple and convenient reservation experience.",
+      "desc": "Professional vacation rental website showcasing holiday homes with property details, amenities, locations, and convenient reservation options.",
       "tag": "Web Development",
       "color": "from-teal-500 to-emerald-600",
       "url": "https://sagevacations.net",
@@ -15767,10 +15949,58 @@
       "description": "Sage Vacations is a professional vacation rental website designed to showcase holiday homes and accommodation options. The website presents property details, amenities and locations while providing guests with a simple and convenient reservation experience."
     },
     {
+      "title": "Simply Tarifa",
+      "category": "Web Development",
+      "desc": "Holiday accommodation in Tarifa offering comfortable stays near beaches, attractions, and local experiences.",
+      "tag": "Web Development",
+      "color": "from-cyan-500 to-blue-700",
+      "url": "https://simplytarifa.com",
+      "client": "Simply Tarifa",
+      "industry": "Beach & Holiday Rentals",
+      "year": "2024",
+      "description": "Holiday accommodation in Tarifa offering comfortable stays near beaches, attractions, and local experiences."
+    },
+    {
+      "title": "Skyvillion",
+      "category": "Web Development",
+      "desc": "Serviced apartments and short-term accommodation offering comfortable stays and convenient locations.",
+      "tag": "Web Development",
+      "color": "from-sky-600 to-blue-800",
+      "url": "https://skyvillion.com",
+      "client": "Skyvillion",
+      "industry": "Serviced Apartments & Stays",
+      "year": "2024",
+      "description": "Serviced apartments and short-term accommodation offering comfortable stays and convenient locations."
+    },
+    {
+      "title": "Stay Dunfermline",
+      "category": "Web Development",
+      "desc": "Luxury self-catering serviced apartments in Dunfermline for leisure, business, and extended stays.",
+      "tag": "Web Development",
+      "color": "from-indigo-700 to-purple-900",
+      "url": "https://staydunfermline.com",
+      "client": "Stay Dunfermline",
+      "industry": "Serviced Apartments & Leisure",
+      "year": "2024",
+      "description": "Luxury self-catering serviced apartments in Dunfermline for leisure, business, and extended stays."
+    },
+    {
+      "title": "Stay Gateway",
+      "category": "Web Development",
+      "desc": "Short-term accommodation and vacation rentals providing convenient and comfortable stays for travelers.",
+      "tag": "Web Development",
+      "color": "from-purple-600 to-pink-700",
+      "url": "https://staygateway.com",
+      "client": "Stay Gateway",
+      "industry": "Short-Term Vacation Rentals",
+      "year": "2024",
+      "description": "Short-term accommodation and vacation rentals providing convenient and comfortable stays for travelers."
+    },
+    {
       "title": "Stay Seekers",
       "category": "Web Development",
-      "desc": "Stay Seekers is a holiday rental website featuring a range of accommodation options for travelers. The platform focuses on easy property discovery, detailed accommodation pages, availability and a smooth booking journey for guests.",
-      "tag": "E-Commerce",
+      "desc": "Holiday rental website featuring accommodation options with easy property discovery, detailed listings, availability, and a smooth booking journey.",
+      "tag": "Web Development",
       "color": "from-rose-500 to-pink-600",
       "url": "https://stayseekers.co.uk",
       "client": "Stay Seekers UK",
@@ -15781,7 +16011,7 @@
     {
       "title": "Sydney Dreams",
       "category": "Web Development",
-      "desc": "Sydney Dreams is a professional vacation rental website designed to showcase holiday properties and provide guests with detailed accommodation information. The platform combines a user-friendly property browsing experience with an integrated booking solution for managing reservations and guest stays.",
+      "desc": "Professional vacation rental website showcasing holiday properties with detailed accommodation information and an integrated booking experience.",
       "tag": "Web Development",
       "color": "from-sky-500 to-blue-700",
       "url": "https://sydneydreams.com.au",
@@ -15791,11 +16021,35 @@
       "description": "Sydney Dreams is a professional vacation rental website designed to showcase holiday properties and provide guests with detailed accommodation information. The platform combines a user-friendly property browsing experience with an integrated booking solution for managing reservations and guest stays."
     },
     {
+      "title": "The Good Butler",
+      "category": "Web Development",
+      "desc": "Professionally managed holiday accommodation focused on quality stays and personalized guest service.",
+      "tag": "Web Development",
+      "color": "from-amber-500 to-yellow-700",
+      "url": "https://thegoodbutler.com",
+      "client": "The Good Butler",
+      "industry": "Hospitality & Guest Service",
+      "year": "2024",
+      "description": "Professionally managed holiday accommodation focused on quality stays and personalized guest service."
+    },
+    {
+      "title": "The Mitchell Bondi",
+      "category": "Web Development",
+      "desc": "Comfortable accommodation in Bondi, Sydney, offering convenient stays near the beach and local attractions.",
+      "tag": "Web Development",
+      "color": "from-blue-500 to-indigo-700",
+      "url": "https://themitchellbondi.com.au",
+      "client": "The Mitchell Bondi",
+      "industry": "Beachside Accommodation",
+      "year": "2024",
+      "description": "Comfortable accommodation in Bondi, Sydney, offering convenient stays near the beach and local attractions."
+    },
+    {
       "title": "TheGuideliner",
       "category": "E-Commerce",
       "desc": "Beauty e-commerce brand focused on innovative eyeliner products and direct-to-consumer shopping.",
       "tag": "E-Commerce",
-      "color": "from-pink-600 via-rose-600 to-purple-700",
+      "color": "from-pink-600 to-purple-700",
       "industry": "Beauty & Cosmetics D2C",
       "url": "https://theguideliner.com",
       "client": "TheGuideliner",
@@ -15803,11 +16057,59 @@
       "year": "2024"
     },
     {
-      "title": "YouStay",
+      "title": "Trawelltopia",
       "category": "Web Development",
-      "desc": "YouStay provides property management and guest accommodation services, helping property owners manage bookings, guest experiences, housekeeping, and property maintenance.",
+      "desc": "Premium villas in Croatia offering comfortable stays, direct booking, and personalized holiday support.",
       "tag": "Web Development",
-      "color": "from-sky-600 via-cyan-600 to-blue-700",
+      "color": "from-indigo-600 to-purple-700",
+      "url": "https://trawelltopia.com",
+      "client": "Trawelltopia",
+      "industry": "Luxury Villas & Stays",
+      "year": "2024",
+      "description": "Premium villas in Croatia offering comfortable stays, direct booking, and personalized holiday support."
+    },
+    {
+      "title": "Vargas Vacation Ventures",
+      "category": "Web Development",
+      "desc": "Family-focused vacation rentals offering spacious, comfortable homes and personalized guest experiences.",
+      "tag": "Web Development",
+      "color": "from-emerald-500 to-teal-700",
+      "url": "https://vargasvacationventures.com",
+      "client": "Vargas Vacation Ventures",
+      "industry": "Family Vacation Rentals",
+      "year": "2024",
+      "description": "Family-focused vacation rentals offering spacious, comfortable homes and personalized guest experiences."
+    },
+    {
+      "title": "Wellcome",
+      "category": "Web Development",
+      "desc": "Accommodation and hospitality services connecting travelers with professionally managed stays.",
+      "tag": "Web Development",
+      "color": "from-rose-500 to-pink-600",
+      "url": "https://wellcome.com.co",
+      "client": "Wellcome",
+      "industry": "Hospitality & Managed Stays",
+      "year": "2024",
+      "description": "Accommodation and hospitality services connecting travelers with professionally managed stays."
+    },
+    {
+      "title": "Yorkshire Coast Holiday Lets",
+      "category": "Web Development",
+      "desc": "Holiday rentals along the Yorkshire Coast offering comfortable stays for coastal breaks and family holidays.",
+      "tag": "Web Development",
+      "color": "from-teal-600 to-cyan-800",
+      "url": "https://yorkshirecoastholidaylets.co.uk",
+      "client": "Yorkshire Coast Holiday Lets",
+      "industry": "Coastal Holiday Accommodation",
+      "year": "2024",
+      "description": "Holiday rentals along the Yorkshire Coast offering comfortable stays for coastal breaks and family holidays."
+    },
+    {
+      "title": "YouStay",
+      "category": "SaaS",
+      "desc": "Property management and guest accommodation services helping property owners manage bookings, guest experiences, housekeeping, and property maintenance.",
+      "tag": "SaaS",
+      "color": "from-sky-600 to-cyan-800",
       "industry": "Property Management & Accommodation",
       "url": "https://youstay.co.za",
       "client": "YouStay South Africa",
@@ -15815,11 +16117,23 @@
       "year": "2024"
     },
     {
+      "title": "Your Family’s Place",
+      "category": "Web Development",
+      "desc": "Family-friendly vacation rentals in Ohio offering spacious homes designed for multi-generational stays.",
+      "tag": "Web Development",
+      "color": "from-amber-600 to-orange-700",
+      "url": "https://yourfamilysplace.com",
+      "client": "Your Family’s Place",
+      "industry": "Family Vacation Rentals",
+      "year": "2024",
+      "description": "Family-friendly vacation rentals in Ohio offering spacious homes designed for multi-generational stays."
+    },
+    {
       "title": "Zoe Boutique",
       "category": "E-Commerce",
       "desc": "Italian fashion boutique offering curated collections through a modern online shopping experience.",
       "tag": "E-Commerce",
-      "color": "from-violet-600 via-purple-700 to-indigo-900",
+      "color": "from-violet-600 to-indigo-900",
       "industry": "Italian Luxury & Boutique Fashion",
       "url": "https://zoeboutique.it",
       "client": "Zoe Boutique Italy",

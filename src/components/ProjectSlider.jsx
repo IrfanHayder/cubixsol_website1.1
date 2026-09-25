@@ -9,10 +9,11 @@ const filters = ['All', 'Web Development', 'Mobile Apps', 'E-Commerce', 'SaaS', 
 
 export default function ProjectSlider() {
   const [activeFilter, setActiveFilter] = useState('All');
+  const allProjectsList = Array.isArray(projects) ? projects : [];
   const filtered =
     activeFilter === 'All'
-      ? projects
-      : projects.filter((p) => p.tag === activeFilter || p.category === activeFilter);
+      ? allProjectsList
+      : allProjectsList.filter((p) => p.tag === activeFilter || p.category === activeFilter);
 
   const scrollRef = useRef(null);
 

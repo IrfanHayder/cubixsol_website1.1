@@ -5,8 +5,9 @@ import Breadcrumb from '../components/Breadcrumb';
 import CtaBanner from '../components/CtaBanner';
 import Reveal, { Stagger, StaggerItem } from '../components/Reveal';
 import { apiFetch } from '../utils/api';
+import { projects as fallbackProjects } from '../data/content';
 
-const filters = ['All Projects', 'Web Development', 'Mobile Apps', 'E-Commerce', 'SaaS', 'AI Solutions'];
+const filters = ['All Projects', 'Web Development', 'E-Commerce', 'SaaS', 'Telecommunications', 'Mobile Apps', 'AI Solutions'];
 const GRADIENT_STYLES = [
   'linear-gradient(135deg, #0284c7 0%, #1e40af 100%)',
   'linear-gradient(135deg, #5d53a3 0%, #312e81 100%)',
@@ -30,7 +31,7 @@ const techs = ['Laravel', 'PHP', 'React', 'Next.js', 'Vue.js', 'Node.js', 'Flutt
 
 export default function Projects() {
   const [filter, setFilter] = useState('All Projects');
-  const [visibleCount, setVisibleCount] = useState(8);
+  const [visibleCount, setVisibleCount] = useState(12);
   const [projects, setProjects] = useState(() => {
     try {
       const cached = localStorage.getItem('cubixsol_projects_cache');
@@ -39,18 +40,9 @@ export default function Projects() {
         if (Array.isArray(parsed) && parsed.length > 0) return parsed;
       }
     } catch (_) {}
-    return [];
+    return Array.isArray(fallbackProjects) ? fallbackProjects : [];
   });
-  const [loading, setLoading] = useState(() => {
-    try {
-      const cached = localStorage.getItem('cubixsol_projects_cache');
-      if (cached) {
-        const parsed = JSON.parse(cached);
-        if (Array.isArray(parsed) && parsed.length > 0) return false;
-      }
-    } catch (_) {}
-    return true;
-  });
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     apiFetch('projects')
@@ -188,7 +180,7 @@ export default function Projects() {
 
         {!loading && visibleCount < filtered.length && (
           <div className="text-center mt-12">
-            <button onClick={() => setVisibleCount((v) => v + 8)} className="btn-outline">
+            <button onClick={() => setVisibleCount((v) => v + 12)} className="btn-outline">
               Load More Projects <RefreshCw className="w-4 h-4" />
             </button>
           </div>
