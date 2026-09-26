@@ -1,8 +1,9 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowRight, ExternalLink } from 'lucide-react';
-import { projects } from '../data/content';
+import { projects as staticProjects } from '../data/content';
+import { apiFetch } from '../utils/api';
 import Reveal from './Reveal';
 
 /* Map service slug → project categories / keywords */
@@ -31,24 +32,40 @@ const fallbackImgs = [
 ];
 
 export default function SuccessStories({ serviceSlug, serviceTitle }) {
+  const [projectList, setProjectList] = useState(Array.isArray(staticProjects) ? staticProjects : []);
+
+  useEffect(() => {
+    let isMounted = true;
+    apiFetch('projects')
+      .then((data) => {
+        if (isMounted && Array.isArray(data) && data.length > 0) {
+          setProjectList(data);
+        }
+      })
+      .catch(() => {});
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
   const stories = useMemo(() => {
     try {
       const cats = serviceProjectMap[serviceSlug] || [];
-      const all = Array.isArray(projects) ? projects : [];
+      const all = Array.isArray(projectList) ? projectList : [];
       let list = all.filter((p) => cats.includes(p.category) || cats.includes(p.tag));
       if (list.length < 2) list = all.slice(0, 4);
       return list.map((p, i) => ({
         ...p,
-        img: fallbackImgs[i % fallbackImgs.length],
+        img: p.image || fallbackImgs[i % fallbackImgs.length],
         industry: p.tag || p.category,
         summary:
-          (p.desc || '') +
+          (p.desc || p.description || '') +
           ' Our team delivered design, engineering and launch support tailored to their goals.',
       }));
     } catch {
       return [];
     }
-  }, [serviceSlug]);
+  }, [serviceSlug, projectList]);
 
   const [active, setActive] = useState(0);
   const safeActive = stories.length ? Math.min(active, stories.length - 1) : 0;

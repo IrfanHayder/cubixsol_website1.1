@@ -775,6 +775,7 @@ const SECTION_CONFIGS = {
     label: 'Projects',
     endpoint: 'projects',
     columns: [
+      { key: 'image', label: 'Preview' },
       { key: 'title', label: 'Title' },
       { key: 'category', label: 'Category' },
       { key: 'tag', label: 'Tag' },

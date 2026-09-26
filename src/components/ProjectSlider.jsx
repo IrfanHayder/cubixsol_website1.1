@@ -1,15 +1,32 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
-import { projects } from '../data/content';
+import { projects as staticProjects } from '../data/content';
+import { apiFetch } from '../utils/api';
 import Reveal from './Reveal';
 
 const filters = ['All', 'Web Development', 'Mobile Apps', 'E-Commerce', 'SaaS', 'AI Solutions'];
 
 export default function ProjectSlider() {
   const [activeFilter, setActiveFilter] = useState('All');
-  const allProjectsList = Array.isArray(projects) ? projects : [];
+  const [projectList, setProjectList] = useState(Array.isArray(staticProjects) ? staticProjects : []);
+
+  useEffect(() => {
+    let isMounted = true;
+    apiFetch('projects')
+      .then((data) => {
+        if (isMounted && Array.isArray(data) && data.length > 0) {
+          setProjectList(data);
+        }
+      })
+      .catch(() => {});
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  const allProjectsList = Array.isArray(projectList) ? projectList : [];
   const filtered =
     activeFilter === 'All'
       ? allProjectsList
@@ -70,28 +87,46 @@ export default function ProjectSlider() {
           >
             {filtered.map((p, i) => (
               <motion.div
-                key={p.title}
+                key={p._id || p.slug || p.title || i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.06 }}
                 className="snap-start shrink-0 w-[280px] sm:w-[300px]"
               >
-                <div className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-card group hover:-translate-y-1.5 hover:shadow-soft transition-all duration-300 h-full">
+                <div className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-card group hover:-translate-y-1.5 hover:shadow-soft transition-all duration-300 h-full flex flex-col">
                   <div
-                    className={`h-40 bg-gradient-to-br ${p.color} flex items-end p-4 overflow-hidden relative`}
+                    className={`h-40 ${
+                      p.color && p.color.includes('from-') ? `bg-gradient-to-br ${p.color}` : 'bg-gradient-to-br from-indigo-700 via-purple-700 to-slate-900'
+                    } flex items-end p-4 overflow-hidden relative shrink-0`}
                   >
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
-                    <span className="text-white/90 text-xs font-bold bg-black/20 px-2 py-1 rounded relative z-10">
-                      {p.tag}
+                    {p.image && (
+                      <img
+                        src={p.image}
+                        alt={p.title}
+                        className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
+                      />
+                    )}
+                    <div
+                      className={`absolute inset-0 pointer-events-none ${
+                        p.image
+                          ? 'bg-gradient-to-t from-black/80 via-black/25 to-black/20'
+                          : 'bg-black/0 group-hover:bg-black/10 transition-colors duration-300'
+                      }`}
+                    />
+                    <span className="text-white/95 text-xs font-bold bg-black/40 backdrop-blur-md px-2.5 py-1 rounded relative z-10 border border-white/15">
+                      {p.tag || p.category || 'Project'}
                     </span>
                   </div>
-                  <div className="p-5">
-                    <h3 className="font-bold text-ink mb-1">{p.title}</h3>
-                    <p className="text-xs text-gray-500 leading-relaxed mb-3 line-clamp-2">{p.desc}</p>
+                  <div className="p-5 flex flex-col flex-1 justify-between">
+                    <div>
+                      <h3 className="font-bold text-ink mb-1 line-clamp-1">{p.title}</h3>
+                      <p className="text-xs text-gray-500 leading-relaxed mb-3 line-clamp-2">{p.desc || p.description}</p>
+                    </div>
                     <Link
                       to="/projects"
-                      className="text-sm font-semibold text-primary-600 inline-flex items-center gap-1 hover:gap-2 transition-all"
+                      className="text-sm font-semibold text-primary-600 inline-flex items-center gap-1 hover:gap-2 transition-all mt-2"
                     >
                       View Case Study <ArrowRight className="w-3.5 h-3.5" />
                     </Link>

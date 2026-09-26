@@ -122,27 +122,43 @@ export default function Projects() {
             {shown.map((p, idx) => (
               <StaggerItem key={p._id || p.slug || p.title || idx}>
                 <div className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-card hover:shadow-soft hover:-translate-y-1.5 transition-all duration-300 flex flex-col h-full group">
-                  {/* Card Header with Vibrant Gradient */}
+                  {/* Card Header with Image or Vibrant Gradient */}
                   <div
-                    style={getCardStyle(idx)}
-                    className="h-40 flex flex-col justify-between p-4 relative overflow-hidden shrink-0"
+                    style={!p.image ? getCardStyle(idx) : undefined}
+                    className="h-44 flex flex-col justify-between p-4 relative overflow-hidden shrink-0 bg-slate-900"
                   >
+                    {p.image && (
+                      <img
+                        src={p.image}
+                        alt={p.title}
+                        className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
+                      />
+                    )}
+                    {/* Contrast Gradient Overlay */}
+                    <div
+                      className={`absolute inset-0 pointer-events-none ${
+                        p.image
+                          ? 'bg-gradient-to-t from-black/85 via-black/35 to-black/40'
+                          : 'bg-gradient-to-t from-black/25 via-transparent to-transparent'
+                      }`}
+                    />
+
                     <div className="flex items-center justify-between gap-1.5 z-10">
-                      <span className="text-white text-[11px] font-extrabold bg-black/35 backdrop-blur-md px-2.5 py-0.5 rounded-md shadow-xs">
+                      <span className="text-white text-[11px] font-extrabold bg-black/45 backdrop-blur-md px-2.5 py-0.5 rounded-md shadow-xs border border-white/10">
                         {p.tag || p.category || 'Web Development'}
                       </span>
                       {p.industry && (
-                        <span className="text-white/90 text-[10px] font-semibold bg-white/20 backdrop-blur-md px-2 py-0.5 rounded line-clamp-1 max-w-[130px] text-right">
+                        <span className="text-white/95 text-[10px] font-semibold bg-white/20 backdrop-blur-md px-2 py-0.5 rounded line-clamp-1 max-w-[130px] text-right border border-white/10">
                           {p.industry}
                         </span>
                       )}
                     </div>
                     <div className="z-10">
-                      <h4 className="text-white text-lg sm:text-xl font-bold tracking-tight drop-shadow-sm line-clamp-1">
+                      <h4 className="text-white text-base sm:text-lg font-bold tracking-tight drop-shadow-md line-clamp-1">
                         {p.title}
                       </h4>
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none" />
                   </div>
 
                   {/* Card Body */}
