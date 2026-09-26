@@ -1272,11 +1272,40 @@ app.get('/api/stats', async (req, res) => {
   }
 });
 
+// Default Site Settings Fallback Map
+const DEFAULT_SITE_SETTINGS = {
+  whatsapp_widget: {
+    enabled: true,
+    phoneNumber: '+92 304 1100028',
+    displayName: 'Cubixsol Support',
+    agentTitle: 'Online | Typically replies in minutes',
+    avatar: '',
+    welcomeMessage: '👋 Hello! Welcome to Cubixsol.\nHow can we help you with your web, app, or custom software project today?',
+    defaultMessage: 'Hi Cubixsol team, I would like to discuss a project with you.',
+    position: 'bottom-right', // 'bottom-right' or 'bottom-left'
+    autoOpenDelay: 5, // in seconds (0 = disabled)
+    buttonText: 'Chat on WhatsApp',
+    quickStarters: [
+      '💼 Get a Quote for Web / App Development',
+      '🤖 Custom AI & Automation Solutions',
+      '🚀 Scale / Modernize Existing Platform',
+      '📅 Book a 1-on-1 Consultation Call',
+    ],
+  },
+};
+
 // Key-Value Site Settings Endpoints
 app.get('/api/site-settings/:key', async (req, res) => {
   try {
-    const setting = await SiteSetting.findOne({ key: req.params.key });
-    res.json(setting ? setting.value : null);
+    const key = req.params.key;
+    const setting = await SiteSetting.findOne({ key });
+    if (setting && setting.value !== undefined && setting.value !== null) {
+      return res.json(setting.value);
+    }
+    if (DEFAULT_SITE_SETTINGS[key]) {
+      return res.json(DEFAULT_SITE_SETTINGS[key]);
+    }
+    res.json(null);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
@@ -1286,10 +1315,10 @@ app.post('/api/site-settings/:key', async (req, res) => {
   try {
     const updated = await SiteSetting.findOneAndUpdate(
       { key: req.params.key },
-      { key: req.params.key, value: req.body.value },
+      { key: req.params.key, value: req.body.value !== undefined ? req.body.value : req.body },
       { upsert: true, returnDocument: 'after' }
     );
-    res.json(updated);
+    res.json(updated.value !== undefined ? updated.value : updated);
   } catch (err) {
     res.status(400).json({ message: err.message });
   }

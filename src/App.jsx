@@ -49,6 +49,7 @@ import OperaPmsIntegration from './pages/OperaPmsIntegration';
 import MewsIntegration from './pages/MewsIntegration';
 import AdminDashboard from './pages/Admin/Dashboard';
 import AdminLogin from './pages/Admin/Login';
+import WhatsAppWidget from './components/WhatsAppWidget';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -273,6 +274,7 @@ function AppShell() {
       <Navbar />
       <Main />
       <Footer />
+      <WhatsAppWidget />
     </div>
   );
 }

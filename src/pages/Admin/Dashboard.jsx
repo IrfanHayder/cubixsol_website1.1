@@ -24,6 +24,7 @@ import {
   Send,
   ExternalLink,
   Filter,
+  ChevronRight,
 } from 'lucide-react';
 import AdminSidebar from '../../components/Admin/AdminSidebar';
 import AdminStats from '../../components/Admin/AdminStats';
@@ -33,6 +34,7 @@ import MediaManager from '../../components/Admin/MediaManager';
 import ServicesPageEditor from '../../components/Admin/ServicesPageEditor';
 import ContactPageEditor from '../../components/Admin/ContactPageEditor';
 import IndustriesPageEditor from '../../components/Admin/IndustriesPageEditor';
+import WhatsAppWidgetEditor from '../../components/Admin/WhatsAppWidgetEditor';
 import { useServices } from '../../context/ServicesContext';
 import { API_BASE, apiFetch } from '../../utils/api';
 import { parseCustomListItems, parseProcessSteps, cleanImageUrl } from '../../utils/formatText';
@@ -2139,6 +2141,31 @@ function DashboardOverview({ showToast, onNavigate }) {
         </div>
       </div>
 
+      {/* WhatsApp Widget Quick Banner */}
+      <div className="bg-gradient-to-r from-[#075E54] to-[#128C7E] rounded-2xl p-4 sm:p-5 text-white shadow-card flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div className="flex items-center gap-3.5">
+          <div className="w-10 h-10 rounded-xl bg-white/20 backdrop-blur-xs flex items-center justify-center shrink-0">
+            <Sparkles size={20} className="text-emerald-300" />
+          </div>
+          <div>
+            <h3 className="font-bold text-sm sm:text-base leading-tight">
+              Live WhatsApp Chat Widget
+            </h3>
+            <p className="text-xs text-white/80 mt-0.5">
+              Manage your floating WhatsApp button, pre-filled messages, and quick reply chips.
+            </p>
+          </div>
+        </div>
+        <button
+          type="button"
+          onClick={() => onNavigate?.('whatsapp-widget')}
+          className="px-4 py-2 rounded-xl bg-white text-[#075E54] hover:bg-white/90 text-xs font-bold shadow-sm transition shrink-0 cursor-pointer self-start sm:self-auto flex items-center gap-1.5"
+        >
+          <span>Configure WhatsApp Widget</span>
+          <ChevronRight size={14} />
+        </button>
+      </div>
+
       {/* Quick links */}
       <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-5">
         <h3 className="font-bold text-ink mb-4">Quick Actions — Manage Website Content</h3>
@@ -2252,6 +2279,8 @@ export default function AdminDashboard() {
             <ServicesPageEditor showToast={showToast} />
           ) : active === 'contact-page' ? (
             <ContactPageEditor showToast={showToast} />
+          ) : active === 'whatsapp-widget' ? (
+            <WhatsAppWidgetEditor showToast={showToast} />
           ) : active === 'industries-page' ? (
             <IndustriesPageEditor
               showToast={showToast}
