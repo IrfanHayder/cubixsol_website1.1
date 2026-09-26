@@ -109,7 +109,7 @@ export const ESTIMATE_CATEGORIES = [
   },
 ];
 
-export default function FreeEstimateModal({ isOpen, onClose }) {
+export default function FreeEstimateModal({ isOpen, onClose, initialContext = null }) {
   const [step, setStep] = useState(1);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedOption, setSelectedOption] = useState('');
@@ -184,31 +184,69 @@ export default function FreeEstimateModal({ isOpen, onClose }) {
     setError('');
 
     const categoryTitle = selectedCategory?.title || 'Custom Solution';
+    const subOption = selectedOption || 'General Assessment';
+    const currentPath = typeof window !== 'undefined' ? (window.location.pathname + (window.location.search || '')) : '/';
+    let contextInfo = null;
+    if (initialContext && typeof initialContext === 'string') {
+      contextInfo = initialContext;
+    } else if (
+      initialContext &&
+      typeof initialContext === 'object' &&
+      !initialContext.nativeEvent &&
+      !initialContext._reactName &&
+      !initialContext.target
+    ) {
+      try {
+        contextInfo = JSON.stringify(initialContext);
+      } catch (_) {
+        contextInfo = null;
+      }
+    }
+
+    const formattedMessage = [
+      '📋 Free Estimate & Solution Assessment Request',
+      `• Primary Goal / Category: ${categoryTitle}`,
+      `• Specific Requirement: ${subOption}`,
+      `• Client Name: ${firstName.trim()}`,
+      `• Work Email: ${workEmail.trim()}`,
+      `• Phone Number: ${phone.trim()}`,
+      `• Source Page: ${currentPath}`,
+      contextInfo ? `• Related Page Context: ${contextInfo}` : null,
+    ].filter(Boolean).join('\n');
+
+    const payload = {
+      type: 'Free Estimate',
+      category: categoryTitle,
+      requirement: subOption,
+      source: currentPath,
+      name: firstName.trim(),
+      email: workEmail.trim(),
+      phone: phone.trim(),
+      subject: `Free Estimate Request: ${categoryTitle} (${subOption})`,
+      message: formattedMessage,
+      status: 'Unread',
+    };
 
     try {
-      await apiFetch('messages', {
+      await apiFetch('estimates', {
         method: 'POST',
-        body: JSON.stringify({
-          name: firstName.trim(),
-          email: workEmail.trim(),
-          phone: phone.trim(),
-          subject: `Free Estimate Request - ${categoryTitle} (${selectedOption || 'General'})`,
-          message: `Free Estimate Assessment Request:\n\n• Primary Goal: ${categoryTitle}\n• Specific Requirement: ${selectedOption || 'Not specified'}\n• Name: ${firstName.trim()}\n• Work Email: ${workEmail.trim()}\n• Phone Number: ${phone.trim()}`,
-          status: 'Unread',
-        }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
       });
 
       setSubmitted(true);
     } catch (err) {
       console.error('Error submitting free estimate request:', err);
-      // Even on temporary network error, show polite confirmation
-      setSubmitted(true);
+      setError(err.message || 'Failed to submit request. Please try again.');
     } finally {
       setLoading(false);
     }
   };
 
   const progressPercent = step === 1 ? '33.33%' : step === 2 ? '66.66%' : '100%';
+
 
   return (
     <AnimatePresence>

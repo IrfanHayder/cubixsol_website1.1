@@ -33,9 +33,17 @@ export async function apiFetch(endpoint, options = {}) {
       ? cleanEndpoint
       : `${API_BASE}${cleanEndpoint}`;
 
+  const fetchOptions = { ...options };
+  if (fetchOptions.body && !(fetchOptions.body instanceof FormData)) {
+    fetchOptions.headers = {
+      'Content-Type': 'application/json',
+      ...(fetchOptions.headers || {}),
+    };
+  }
+
   let res;
   try {
-    res = await fetch(url, options);
+    res = await fetch(url, fetchOptions);
   } catch (err) {
     throw new Error(`Cannot connect to backend server. Make sure the server is running on port 5000 (${err.message})`);
   }

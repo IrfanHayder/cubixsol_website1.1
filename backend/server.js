@@ -20,6 +20,7 @@ const Author = require('./models/Author');
 const Testimonial = require('./models/Testimonial');
 const Career = require('./models/Career');
 const ContactMessage = require('./models/ContactMessage');
+const EstimateRequest = require('./models/EstimateRequest');
 const Media = require('./models/Media');
 const SeoSetting = require('./models/SeoSetting');
 const Team = require('./models/Team');
@@ -1069,6 +1070,7 @@ app.get('/api/stats', async (req, res) => {
       projectsCount,
       solutionsCount,
       messagesCount,
+      estimatesCount,
       contactInfoCount,
     ] = await Promise.all([
       Blog.countDocuments(),
@@ -1078,6 +1080,7 @@ app.get('/api/stats', async (req, res) => {
       Project.countDocuments(),
       Solution.countDocuments(),
       ContactMessage.countDocuments(),
+      EstimateRequest.countDocuments(),
       ContactInfo.countDocuments(),
     ]);
     res.json({
@@ -1088,6 +1091,7 @@ app.get('/api/stats', async (req, res) => {
       projectsCount,
       solutionsCount,
       messagesCount,
+      estimatesCount,
       contactInfoCount,
     });
   } catch (err) {
@@ -1204,6 +1208,7 @@ registerCrud(app, 'authors', Author);
 registerCrud(app, 'testimonials', Testimonial);
 registerCrud(app, 'careers', Career);
 registerCrud(app, 'messages', ContactMessage);
+registerCrud(app, 'estimates', EstimateRequest);
 registerCrud(app, 'media', Media);
 registerCrud(app, 'seo', SeoSetting);
 registerCrud(app, 'services', Service);
@@ -1215,6 +1220,57 @@ registerCrud(app, 'teams', Team);
 registerCrud(app, 'faqs', Faq);
 registerCrud(app, 'settings', SiteSetting);
 registerCrud(app, 'contact-info', ContactInfo, 'order');
+
+// Global Stats Endpoint for Admin Dashboard
+app.get('/api/stats', async (req, res) => {
+  try {
+    const [
+      estimatesCount,
+      messagesCount,
+      blogsCount,
+      servicesCount,
+      productsCount,
+      solutionsCount,
+      projectsCount,
+      testimonialsCount,
+      careersCount,
+      teamsCount,
+      faqsCount,
+      mediaCount
+    ] = await Promise.all([
+      EstimateRequest.countDocuments(),
+      ContactMessage.countDocuments(),
+      Blog.countDocuments(),
+      Service.countDocuments(),
+      Product.countDocuments(),
+      Solution.countDocuments(),
+      Project.countDocuments(),
+      Testimonial.countDocuments(),
+      Career.countDocuments(),
+      Team.countDocuments(),
+      Faq.countDocuments(),
+      Media.countDocuments(),
+    ]);
+
+    res.json({
+      estimatesCount,
+      messagesCount,
+      blogsCount,
+      servicesCount,
+      productsCount,
+      solutionsCount,
+      projectsCount,
+      testimonialsCount,
+      careersCount,
+      teamsCount,
+      faqsCount,
+      mediaCount,
+    });
+  } catch (err) {
+    console.error('Error fetching stats:', err);
+    res.status(500).json({ message: err.message });
+  }
+});
 
 // Key-Value Site Settings Endpoints
 app.get('/api/site-settings/:key', async (req, res) => {

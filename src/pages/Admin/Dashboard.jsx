@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import {
   Menu,
   Bell,
@@ -14,6 +14,16 @@ import {
   XCircle,
   AlertCircle,
   RefreshCw,
+  Mail,
+  Phone,
+  Clock,
+  Globe,
+  Sparkles,
+  X,
+  Eye,
+  Send,
+  ExternalLink,
+  Filter,
 } from 'lucide-react';
 import AdminSidebar from '../../components/Admin/AdminSidebar';
 import AdminStats from '../../components/Admin/AdminStats';
@@ -26,6 +36,202 @@ import IndustriesPageEditor from '../../components/Admin/IndustriesPageEditor';
 import { useServices } from '../../context/ServicesContext';
 import { API_BASE, apiFetch } from '../../utils/api';
 import { parseCustomListItems, parseProcessSteps, cleanImageUrl } from '../../utils/formatText';
+
+/* -------------------- Lead / Message Detail Modal -------------------- */
+function MessageDetailModal({ lead, onClose, onStatusChange, onDelete }) {
+  if (!lead) return null;
+  const isEstimate =
+    lead.type === 'Free Estimate' ||
+    (lead.subject && lead.subject.toLowerCase().includes('free estimate'));
+  const date = lead.createdAt ? new Date(lead.createdAt) : null;
+  const formattedDate =
+    date && !isNaN(date.getTime())
+      ? `${date.toLocaleDateString('en-GB', {
+          day: 'numeric',
+          month: 'short',
+          year: 'numeric',
+        })} at ${date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`
+      : 'Recently';
+
+  const statuses = [
+    { key: 'Unread', label: '🔴 Unread', color: 'hover:bg-rose-50 text-rose-700 border-rose-200' },
+    { key: 'Read', label: '⚪ Mark Read', color: 'hover:bg-gray-100 text-gray-700 border-gray-200' },
+    { key: 'Contacted', label: '🟢 Contacted', color: 'hover:bg-emerald-50 text-emerald-700 border-emerald-200' },
+    { key: 'In Progress', label: '🟣 In Progress', color: 'hover:bg-violet-50 text-violet-700 border-violet-200' },
+    { key: 'Closed', label: '⚫ Closed', color: 'hover:bg-gray-100 text-gray-500 border-gray-200' },
+  ];
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-xs overflow-y-auto">
+      <div className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl border border-gray-100 p-5 sm:p-7 my-auto max-h-[92vh] flex flex-col justify-between overflow-hidden">
+        {/* Header */}
+        <div className="flex items-start justify-between pb-4 border-b border-gray-100">
+          <div>
+            <div className="flex items-center gap-2 mb-1.5 flex-wrap">
+              <span
+                className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold ${
+                  isEstimate
+                    ? 'bg-cyan-50 text-[#00a4d8] border border-cyan-200/80'
+                    : 'bg-indigo-50 text-indigo-700 border border-indigo-200/80'
+                }`}
+              >
+                {isEstimate ? '✨ Free Estimate Request' : '📩 Contact Form Message'}
+              </span>
+              <span className="text-xs text-gray-400 flex items-center gap-1">
+                <Clock size={13} /> {formattedDate}
+              </span>
+            </div>
+            <h3 className="text-lg sm:text-xl font-bold text-ink leading-tight">
+              {lead.subject || lead.name || 'Lead Details'}
+            </h3>
+          </div>
+          <button
+            type="button"
+            onClick={onClose}
+            className="p-2 rounded-xl text-gray-400 hover:text-ink hover:bg-gray-100 transition-colors cursor-pointer"
+          >
+            <X size={20} />
+          </button>
+        </div>
+
+        {/* Modal Scrollable Body */}
+        <div className="overflow-y-auto py-4 space-y-4 pr-1">
+          {/* Client Info Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 bg-gray-50/90 p-4 rounded-2xl border border-gray-100">
+            <div>
+              <p className="text-[11px] font-bold uppercase tracking-wider text-gray-400">Client Name</p>
+              <p className="text-sm font-bold text-ink mt-0.5">{lead.name}</p>
+            </div>
+            <div>
+              <p className="text-[11px] font-bold uppercase tracking-wider text-gray-400">Work Email</p>
+              <a
+                href={`mailto:${lead.email}`}
+                className="text-sm font-semibold text-[#00a4d8] hover:underline flex items-center gap-1.5 mt-0.5 break-all"
+              >
+                <Mail size={14} className="shrink-0" /> {lead.email}
+              </a>
+            </div>
+            {lead.phone && (
+              <div>
+                <p className="text-[11px] font-bold uppercase tracking-wider text-gray-400">Phone Number</p>
+                <a
+                  href={`tel:${lead.phone}`}
+                  className="text-sm font-semibold text-emerald-600 hover:underline flex items-center gap-1.5 mt-0.5"
+                >
+                  <Phone size={14} className="shrink-0" /> {lead.phone}
+                </a>
+              </div>
+            )}
+            {lead.source && (
+              <div>
+                <p className="text-[11px] font-bold uppercase tracking-wider text-gray-400">Source Page</p>
+                <span className="text-xs text-gray-600 font-mono flex items-center gap-1 mt-0.5 break-all">
+                  <Globe size={13} className="text-gray-400 shrink-0" /> {lead.source}
+                </span>
+              </div>
+            )}
+          </div>
+
+          {/* Estimate Assessment Details */}
+          {(lead.category || lead.requirement) && (
+            <div className="p-4 rounded-2xl bg-cyan-50/50 border border-cyan-100 space-y-2">
+              <p className="text-[11px] font-bold uppercase tracking-wider text-[#00a4d8] flex items-center gap-1.5">
+                <Sparkles size={13} /> Project Assessment Details
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                {lead.category && (
+                  <div>
+                    <span className="text-xs text-gray-500 block">Primary Goal / Category:</span>
+                    <span className="text-sm font-bold text-ink block">{lead.category}</span>
+                  </div>
+                )}
+                {lead.requirement && (
+                  <div>
+                    <span className="text-xs text-gray-500 block">Specific Requirement:</span>
+                    <span className="text-sm font-bold text-ink block">{lead.requirement}</span>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+
+          {/* Full Message Box */}
+          <div>
+            <p className="text-xs font-bold text-gray-500 mb-1.5">Message / Requirements Content:</p>
+            <div className="p-4 rounded-2xl bg-gray-50 border border-gray-200 text-sm text-ink whitespace-pre-wrap leading-relaxed font-sans select-text max-h-60 overflow-y-auto">
+              {lead.message}
+            </div>
+          </div>
+
+          {/* Status Changer Bar */}
+          <div className="p-4 rounded-2xl bg-white border border-gray-200 shadow-xs">
+            <p className="text-xs font-bold text-gray-500 mb-2">
+              Status (Current: <span className="font-extrabold text-ink">{lead.status || 'Unread'}</span>):
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {statuses.map((s) => (
+                <button
+                  key={s.key}
+                  type="button"
+                  onClick={() => onStatusChange?.(lead, s.key)}
+                  className={`px-3 py-1.5 rounded-xl border text-xs font-bold transition-all cursor-pointer ${
+                    (lead.status || 'Unread') === s.key
+                      ? 'bg-ink text-white border-ink shadow-xs ring-2 ring-ink/20'
+                      : `bg-white ${s.color}`
+                  }`}
+                >
+                  {s.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Footer Actions */}
+        <div className="pt-4 border-t border-gray-100 flex flex-wrap items-center justify-between gap-3">
+          <div className="flex items-center gap-2 flex-wrap">
+            <a
+              href={`mailto:${lead.email}?subject=Re: ${encodeURIComponent(lead.subject || 'Your inquiry at Cubixsol')}`}
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-primary-gradient text-white text-xs font-bold shadow-soft hover:opacity-95 transition"
+            >
+              <Mail size={14} /> Reply via Email
+            </a>
+            {lead.phone && (
+              <a
+                href={`tel:${lead.phone}`}
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-600 text-white text-xs font-bold hover:bg-emerald-700 transition"
+              >
+                <Phone size={14} /> Call Client
+              </a>
+            )}
+          </div>
+          <div className="flex items-center gap-2">
+            {onDelete && (
+              <button
+                type="button"
+                onClick={() => {
+                  onDelete(lead);
+                  onClose();
+                }}
+                className="px-3 py-2 rounded-xl text-xs font-semibold text-rose-600 hover:bg-rose-50 border border-rose-100 transition cursor-pointer"
+              >
+                Delete
+              </button>
+            )}
+            <button
+              type="button"
+              onClick={onClose}
+              className="px-4 py-2 rounded-xl bg-gray-100 text-ink text-xs font-semibold hover:bg-gray-200 transition cursor-pointer"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 
 
 /* -------------------- Toast Notification -------------------- */
@@ -633,27 +839,238 @@ const SECTION_CONFIGS = {
     ],
   },
 
+  estimates: {
+    label: 'Free Estimate Leads',
+    endpoint: 'estimates',
+    columns: [
+      {
+        key: 'name',
+        label: 'Client Info',
+        render: (row) => (
+          <div>
+            <div className="font-bold text-ink text-sm flex items-center gap-1.5">
+              {row.name}
+              {(row.status === 'Unread' || !row.status) && (
+                <span
+                  className="w-2 h-2 rounded-full bg-rose-500 inline-block animate-pulse shrink-0"
+                  title="Unread Lead"
+                />
+              )}
+            </div>
+            <div className="text-xs text-gray-500 font-mono select-all truncate max-w-[180px]">
+              {row.email}
+            </div>
+            {row.phone && (
+              <div className="text-xs text-[#00a4d8] font-mono select-all mt-0.5 font-semibold">
+                {row.phone}
+              </div>
+            )}
+          </div>
+        ),
+      },
+      {
+        key: 'category',
+        label: 'Goal & Requirement',
+        render: (row) => (
+          <div className="max-w-[220px]">
+            <span className="font-bold text-xs text-ink block truncate" title={row.category}>
+              {row.category || 'Custom Solution'}
+            </span>
+            {row.requirement && (
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-cyan-50 text-[#00a4d8] border border-cyan-100 mt-1 truncate max-w-full">
+                🎯 {row.requirement}
+              </span>
+            )}
+          </div>
+        ),
+      },
+      {
+        key: 'source',
+        label: 'Source Page',
+        render: (row) => (
+          <span className="text-xs text-gray-600 font-mono block max-w-[140px] truncate" title={row.source}>
+            {row.source || '/'}
+          </span>
+        ),
+      },
+      {
+        key: 'createdAt',
+        label: 'Received',
+        render: (row) => {
+          const date = row.createdAt ? new Date(row.createdAt) : null;
+          if (!date || isNaN(date.getTime()))
+            return <span className="text-xs text-gray-400">—</span>;
+          return (
+            <div className="text-xs text-gray-600 whitespace-nowrap">
+              <div className="font-medium">
+                {date.toLocaleDateString('en-GB', {
+                  day: 'numeric',
+                  month: 'short',
+                  year: 'numeric',
+                })}
+              </div>
+              <div className="text-[11px] text-gray-400">
+                {date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+              </div>
+            </div>
+          );
+        },
+      },
+      {
+        key: 'status',
+        label: 'Status',
+        render: (row) => {
+          const s = row.status || 'Unread';
+          const styles = {
+            Unread: 'bg-rose-50 text-rose-700 border border-rose-200 font-bold',
+            Read: 'bg-gray-100 text-gray-700 border border-gray-200',
+            Contacted: 'bg-emerald-50 text-emerald-700 border border-emerald-200 font-semibold',
+            'In Progress': 'bg-violet-50 text-violet-700 border border-violet-200 font-semibold',
+            Closed: 'bg-gray-100 text-gray-500 border border-gray-200',
+          };
+          return (
+            <span
+              className={`inline-flex px-2.5 py-1 rounded-full text-xs ${
+                styles[s] || styles.Unread
+              }`}
+            >
+              {s}
+            </span>
+          );
+        },
+      },
+    ],
+    fields: [
+      { name: 'name', label: 'Client Name', required: true },
+      { name: 'email', label: 'Email Address', required: true },
+      { name: 'phone', label: 'Phone Number', required: true },
+      { name: 'category', label: 'Primary Goal / Category', required: true },
+      { name: 'requirement', label: 'Specific Requirement' },
+      { name: 'source', label: 'Source Page' },
+      { name: 'subject', label: 'Subject', fullWidth: true },
+      {
+        name: 'status',
+        label: 'Lead Status',
+        type: 'select',
+        options: [
+          { value: 'Unread', label: '🔴 Unread' },
+          { value: 'Contacted', label: '🟢 Contacted' },
+          { value: 'In Progress', label: '🟣 In Progress' },
+          { value: 'Closed', label: '⚫ Closed' },
+        ],
+      },
+      {
+        name: 'message',
+        label: 'Full Message / Requirement Summary',
+        type: 'textarea',
+        fullWidth: true,
+        rows: 6,
+      },
+    ],
+  },
+
   messages: {
     label: 'Contact Messages',
     endpoint: 'messages',
     columns: [
-      { key: 'name', label: 'Name' },
-      { key: 'email', label: 'Email' },
-      { key: 'subject', label: 'Subject' },
-      { key: 'status', label: 'Status' },
+      {
+        key: 'name',
+        label: 'Sender',
+        render: (row) => (
+          <div>
+            <div className="font-bold text-ink text-sm flex items-center gap-1.5">
+              {row.name}
+              {(row.status === 'Unread' || !row.status) && (
+                <span
+                  className="w-2 h-2 rounded-full bg-rose-500 inline-block animate-pulse shrink-0"
+                  title="Unread Message"
+                />
+              )}
+            </div>
+            <div className="text-xs text-gray-500 font-mono select-all truncate max-w-[180px]">
+              {row.email}
+            </div>
+            {row.phone && (
+              <div className="text-xs text-primary-600 font-mono select-all mt-0.5">
+                {row.phone}
+              </div>
+            )}
+          </div>
+        ),
+      },
+      {
+        key: 'subject',
+        label: 'Subject',
+        render: (row) => (
+          <span className="font-medium text-xs text-ink block max-w-xs truncate" title={row.subject}>
+            {row.subject}
+          </span>
+        ),
+      },
+      {
+        key: 'createdAt',
+        label: 'Received',
+        render: (row) => {
+          const date = row.createdAt ? new Date(row.createdAt) : null;
+          if (!date || isNaN(date.getTime()))
+            return <span className="text-xs text-gray-400">—</span>;
+          return (
+            <div className="text-xs text-gray-600 whitespace-nowrap">
+              <div className="font-medium">
+                {date.toLocaleDateString('en-GB', {
+                  day: 'numeric',
+                  month: 'short',
+                  year: 'numeric',
+                })}
+              </div>
+              <div className="text-[11px] text-gray-400">
+                {date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+              </div>
+            </div>
+          );
+        },
+      },
+      {
+        key: 'status',
+        label: 'Status',
+        render: (row) => {
+          const s = row.status || 'Unread';
+          return (
+            <span
+              className={`inline-flex px-2.5 py-1 rounded-full text-xs font-semibold ${
+                s === 'Unread'
+                  ? 'bg-rose-50 text-rose-700 border border-rose-200'
+                  : 'bg-gray-100 text-gray-700'
+              }`}
+            >
+              {s}
+            </span>
+          );
+        },
+      },
     ],
     fields: [
       { name: 'name', label: 'Name', required: true },
       { name: 'email', label: 'Email', required: true },
       { name: 'phone', label: 'Phone' },
-      { name: 'subject', label: 'Subject' },
+      { name: 'subject', label: 'Subject', fullWidth: true },
       {
-        name: 'status', label: 'Status', type: 'select', options: [
-          { value: 'Unread', label: 'Unread' },
-          { value: 'Read', label: 'Read' },
-        ]
+        name: 'status',
+        label: 'Status',
+        type: 'select',
+        options: [
+          { value: 'Unread', label: '🔴 Unread' },
+          { value: 'Read', label: '⚪ Read' },
+        ],
       },
-      { name: 'message', label: 'Message', type: 'textarea', fullWidth: true, rows: 5, required: true },
+      {
+        name: 'message',
+        label: 'Message',
+        type: 'textarea',
+        fullWidth: true,
+        rows: 6,
+        required: true,
+      },
     ],
   },
   careers: {
@@ -766,6 +1183,9 @@ function DbSection({ sectionKey, showToast }) {
   const [editingId, setEditingId] = useState(null);
   const [saving, setSaving] = useState(false);
   const [confirmDelete, setConfirmDelete] = useState(null);
+  const [viewingMessage, setViewingMessage] = useState(null);
+  const [messageFilter, setMessageFilter] = useState('all'); // 'all', 'estimate', 'contact', 'unread'
+  const [searchQuery, setSearchQuery] = useState('');
   const [relatedOptions, setRelatedOptions] = useState({});
 
   // Convert array fields to/from newline format
@@ -1184,6 +1604,90 @@ function DbSection({ sectionKey, showToast }) {
     }
   };
 
+  // Count stats for estimates or messages tabs
+  const tabStats = useMemo(() => {
+    if (sectionKey === 'estimates') {
+      const all = data.length;
+      const unread = data.filter((m) => (m.status || 'Unread') === 'Unread').length;
+      const contacted = data.filter((m) => m.status === 'Contacted').length;
+      const inProgress = data.filter((m) => m.status === 'In Progress').length;
+      const closed = data.filter((m) => m.status === 'Closed').length;
+      return { all, unread, contacted, inProgress, closed };
+    }
+    if (sectionKey === 'messages') {
+      const all = data.length;
+      const unread = data.filter((m) => (m.status || 'Unread') === 'Unread').length;
+      const read = data.filter((m) => m.status === 'Read').length;
+      return { all, unread, read };
+    }
+    return null;
+  }, [data, sectionKey]);
+
+  // Filtered data based on filter tab and search query
+  const displayData = useMemo(() => {
+    let list = [...data];
+
+    if (sectionKey === 'estimates') {
+      if (messageFilter === 'unread') {
+        list = list.filter((m) => (m.status || 'Unread') === 'Unread');
+      } else if (messageFilter === 'contacted') {
+        list = list.filter((m) => m.status === 'Contacted');
+      } else if (messageFilter === 'inProgress') {
+        list = list.filter((m) => m.status === 'In Progress');
+      } else if (messageFilter === 'closed') {
+        list = list.filter((m) => m.status === 'Closed');
+      }
+    } else if (sectionKey === 'messages') {
+      if (messageFilter === 'unread') {
+        list = list.filter((m) => (m.status || 'Unread') === 'Unread');
+      } else if (messageFilter === 'read') {
+        list = list.filter((m) => m.status === 'Read');
+      }
+    }
+
+    if (searchQuery.trim()) {
+      const q = searchQuery.toLowerCase().trim();
+      list = list.filter((item) => {
+        const title = (item.title || item.name || '').toLowerCase();
+        const email = (item.email || '').toLowerCase();
+        const phone = (item.phone || '').toLowerCase();
+        const subject = (item.subject || '').toLowerCase();
+        const category = (item.category || '').toLowerCase();
+        const req = (item.requirement || '').toLowerCase();
+        const msg = (item.message || '').toLowerCase();
+        return (
+          title.includes(q) ||
+          email.includes(q) ||
+          phone.includes(q) ||
+          subject.includes(q) ||
+          category.includes(q) ||
+          req.includes(q) ||
+          msg.includes(q)
+        );
+      });
+    }
+
+    return list;
+  }, [data, sectionKey, messageFilter, searchQuery]);
+
+  const handleStatusChange = async (lead, newStatus) => {
+    try {
+      const res = await fetch(`${API_BASE}/${config.endpoint}/${lead._id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ status: newStatus }),
+      });
+      if (!res.ok) throw new Error('Failed to update status');
+      showToast(`Status updated to "${newStatus}"`, 'success');
+      setViewingMessage((prev) =>
+        prev && prev._id === lead._id ? { ...prev, status: newStatus } : prev
+      );
+      fetchData();
+    } catch (err) {
+      showToast(err.message || 'Error updating status', 'error');
+    }
+  };
+
   const handleDelete = (row) => {
     setConfirmDelete(row);
   };
@@ -1196,6 +1700,9 @@ function DbSection({ sectionKey, showToast }) {
       });
       if (!res.ok) throw new Error('Failed to delete');
       showToast(`${config.label.slice(0, -1)} deleted successfully.`, 'success');
+      if (viewingMessage && viewingMessage._id === confirmDelete._id) {
+        setViewingMessage(null);
+      }
       fetchData();
 
       // Invalidate frontend caches
@@ -1229,36 +1736,200 @@ function DbSection({ sectionKey, showToast }) {
     <div className="space-y-5">
       {confirmDelete && (
         <ConfirmDialog
-          message={`Are you sure you want to delete "${confirmDelete.title || confirmDelete.name}"? This will remove it from the website.`}
+          message={`Are you sure you want to delete "${confirmDelete.title || confirmDelete.name}"? This will remove it from the database.`}
           onConfirm={confirmDeleteAction}
           onCancel={() => setConfirmDelete(null)}
         />
       )}
 
+      {/* Message Details Modal */}
+      {viewingMessage && (
+        <MessageDetailModal
+          lead={viewingMessage}
+          onClose={() => setViewingMessage(null)}
+          onStatusChange={handleStatusChange}
+          onDelete={handleDelete}
+        />
+      )}
+
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
-          <h2 className="text-xl font-bold text-ink">{config.label}</h2>
+          <h2 className="text-xl font-bold text-ink flex items-center gap-2">
+            {config.label}
+            {(sectionKey === 'estimates' || sectionKey === 'messages') && tabStats?.unread > 0 && (
+              <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-rose-500 text-white">
+                {tabStats.unread} new
+              </span>
+            )}
+          </h2>
           <p className="text-sm text-gray-400 mt-0.5">
-            Changes here appear on the website instantly.
+            {sectionKey === 'estimates'
+              ? 'Leads received from the 3-step "Free Estimate / How can we help your business?" modal.'
+              : sectionKey === 'messages'
+              ? 'Inquiries and messages sent through the Contact Us page form.'
+              : 'Changes here appear on the website instantly.'}
           </p>
         </div>
         {!showForm && (
-          <button
-            onClick={openAddForm}
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-primary-gradient text-white text-sm font-semibold shadow-soft hover:opacity-95 transition-opacity"
-          >
-            <Plus size={16} />
-            Add New {config.label.slice(0, -1)}
-          </button>
+          <div className="flex items-center gap-2.5">
+            {(sectionKey === 'estimates' || sectionKey === 'messages') ? (
+              <button
+                type="button"
+                onClick={fetchData}
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white border border-gray-200 text-gray-700 text-xs font-semibold hover:bg-gray-50 transition cursor-pointer shadow-xs"
+              >
+                <RefreshCw size={14} className={loading ? 'animate-spin' : ''} />
+                Refresh {sectionKey === 'estimates' ? 'Leads' : 'Messages'}
+              </button>
+            ) : (
+              <button
+                onClick={openAddForm}
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-primary-gradient text-white text-sm font-semibold shadow-soft hover:opacity-95 transition-opacity cursor-pointer"
+              >
+                <Plus size={16} />
+                Add New {config.label.slice(0, -1)}
+              </button>
+            )}
+          </div>
         )}
       </div>
 
+      {/* Filter Tabs for Estimates */}
+      {sectionKey === 'estimates' && !showForm && (
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white p-2.5 sm:p-3 rounded-2xl border border-gray-100 shadow-card">
+          <div className="flex flex-wrap gap-1.5">
+            <button
+              type="button"
+              onClick={() => setMessageFilter('all')}
+              className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                messageFilter === 'all'
+                  ? 'bg-ink text-white shadow-xs'
+                  : 'text-gray-600 hover:bg-gray-100'
+              }`}
+            >
+              All Leads ({tabStats?.all || 0})
+            </button>
+            <button
+              type="button"
+              onClick={() => setMessageFilter('unread')}
+              className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
+                messageFilter === 'unread'
+                  ? 'bg-rose-600 text-white shadow-xs'
+                  : 'text-rose-700 bg-rose-50/70 hover:bg-rose-100/70'
+              }`}
+            >
+              🔴 Unread ({tabStats?.unread || 0})
+            </button>
+            <button
+              type="button"
+              onClick={() => setMessageFilter('contacted')}
+              className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
+                messageFilter === 'contacted'
+                  ? 'bg-emerald-600 text-white shadow-xs'
+                  : 'text-emerald-700 bg-emerald-50/70 hover:bg-emerald-100/70'
+              }`}
+            >
+              🟢 Contacted ({tabStats?.contacted || 0})
+            </button>
+            <button
+              type="button"
+              onClick={() => setMessageFilter('inProgress')}
+              className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
+                messageFilter === 'inProgress'
+                  ? 'bg-violet-600 text-white shadow-xs'
+                  : 'text-violet-700 bg-violet-50/70 hover:bg-violet-100/70'
+              }`}
+            >
+              🟣 In Progress ({tabStats?.inProgress || 0})
+            </button>
+            <button
+              type="button"
+              onClick={() => setMessageFilter('closed')}
+              className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
+                messageFilter === 'closed'
+                  ? 'bg-gray-800 text-white shadow-xs'
+                  : 'text-gray-700 bg-gray-100/70 hover:bg-gray-200/70'
+              }`}
+            >
+              ⚫ Closed ({tabStats?.closed || 0})
+            </button>
+          </div>
+
+          <div className="relative min-w-[220px]">
+            <Search size={14} className="text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Search estimate leads..."
+              className="w-full pl-8 pr-3 py-1.5 text-xs rounded-xl bg-gray-50 border border-gray-200 outline-none focus:bg-white focus:border-[#00a4d8]"
+            />
+          </div>
+        </div>
+      )}
+
+      {/* Filter Tabs for Contact Messages */}
+      {sectionKey === 'messages' && !showForm && (
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white p-2.5 sm:p-3 rounded-2xl border border-gray-100 shadow-card">
+          <div className="flex flex-wrap gap-1.5">
+            <button
+              type="button"
+              onClick={() => setMessageFilter('all')}
+              className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                messageFilter === 'all'
+                  ? 'bg-ink text-white shadow-xs'
+                  : 'text-gray-600 hover:bg-gray-100'
+              }`}
+            >
+              All Messages ({tabStats?.all || 0})
+            </button>
+            <button
+              type="button"
+              onClick={() => setMessageFilter('unread')}
+              className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
+                messageFilter === 'unread'
+                  ? 'bg-rose-600 text-white shadow-xs'
+                  : 'text-rose-700 bg-rose-50/70 hover:bg-rose-100/70'
+              }`}
+            >
+              🔴 Unread ({tabStats?.unread || 0})
+            </button>
+            <button
+              type="button"
+              onClick={() => setMessageFilter('read')}
+              className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
+                messageFilter === 'read'
+                  ? 'bg-gray-800 text-white shadow-xs'
+                  : 'text-gray-700 bg-gray-100/70 hover:bg-gray-200/70'
+              }`}
+            >
+              ⚪ Read ({tabStats?.read || 0})
+            </button>
+          </div>
+
+          <div className="relative min-w-[220px]">
+            <Search size={14} className="text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Search contact messages..."
+              className="w-full pl-8 pr-3 py-1.5 text-xs rounded-xl bg-gray-50 border border-gray-200 outline-none focus:bg-white focus:border-[#00a4d8]"
+            />
+          </div>
+        </div>
+      )}
+
       {showForm ? (
         <AdminForm
-          title={formMode === 'add' ? `Add New ${config.label.slice(0, -1)}` : `Edit ${config.label.slice(0, -1)}`}
+          title={
+            formMode === 'add'
+              ? `Add New ${config.label.slice(0, -1)}`
+              : `Edit ${config.label.slice(0, -1)}`
+          }
           fields={formFields}
           values={formValues}
-          onChange={(name, value) => setFormValues(prev => ({ ...prev, [name]: value }))}
+          onChange={(name, value) => setFormValues((prev) => ({ ...prev, [name]: value }))}
           onSubmit={handleSubmit}
           onCancel={closeForm}
           submitLabel={saving ? 'Saving...' : formMode === 'add' ? 'Save & Publish' : 'Update'}
@@ -1276,15 +1947,10 @@ function DbSection({ sectionKey, showToast }) {
               <div className="w-12 h-12 mx-auto mb-3 rounded-2xl bg-rose-100 flex items-center justify-center text-rose-600">
                 <AlertCircle size={24} />
               </div>
-              <h3 className="text-base font-bold text-rose-950">Failed to connect to backend server</h3>
+              <h3 className="text-base font-bold text-rose-950">
+                Failed to connect to backend server
+              </h3>
               <p className="text-rose-700 text-sm mt-1 max-w-md mx-auto">{fetchError}</p>
-              <div className="mt-4 p-3 bg-white/80 border border-rose-200 rounded-xl text-xs text-gray-600 max-w-md mx-auto text-left">
-                <p className="font-semibold text-gray-800 mb-1">💡 How to fix:</p>
-                <p>Run both frontend &amp; backend together using terminal command:</p>
-                <code className="block mt-1 bg-gray-900 text-emerald-400 p-2 rounded-lg font-mono">
-                  npm run dev
-                </code>
-              </div>
               <button
                 onClick={fetchData}
                 className="mt-4 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-sm font-semibold shadow-soft transition"
@@ -1292,20 +1958,27 @@ function DbSection({ sectionKey, showToast }) {
                 <RefreshCw size={15} /> Retry Loading Data
               </button>
             </div>
-          ) : data.length === 0 ? (
+          ) : displayData.length === 0 ? (
             <div className="text-center py-16 bg-white rounded-2xl border border-gray-100 shadow-card">
-              <p className="text-gray-400 text-sm">No {config.label.toLowerCase()} yet.</p>
-              <button
-                onClick={openAddForm}
-                className="mt-4 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-primary-gradient text-white text-sm font-semibold"
-              >
-                <Plus size={16} /> Add First {config.label.slice(0, -1)}
-              </button>
+              <p className="text-gray-400 text-sm">
+                {searchQuery
+                  ? 'No results matched your search.'
+                  : `No ${config.label.toLowerCase()} found.`}
+              </p>
+              {sectionKey !== 'messages' && sectionKey !== 'estimates' && !searchQuery && (
+                <button
+                  onClick={openAddForm}
+                  className="mt-4 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-primary-gradient text-white text-sm font-semibold"
+                >
+                  <Plus size={16} /> Add First {config.label.slice(0, -1)}
+                </button>
+              )}
             </div>
           ) : (
             <AdminTable
               columns={config.columns}
-              data={data}
+              data={displayData}
+              onView={(row) => setViewingMessage(row)}
               onEdit={openEditForm}
               onDelete={handleDelete}
             />
@@ -1317,65 +1990,151 @@ function DbSection({ sectionKey, showToast }) {
 }
 
 /* ================== DASHBOARD OVERVIEW ================== */
-const messages = [
-  { id: 1, name: 'Ahmed Hassan', email: 'ahmed@example.com', subject: 'Project Inquiry - Mobile App', date: '21 Aug 2026', status: 'Unread' },
-  { id: 2, name: 'Lisa Wong', email: 'lisa@techcorp.com', subject: 'Partnership Proposal', date: '20 Aug 2026', status: 'Read' },
-  { id: 3, name: 'Omar Farooq', email: 'omar@startup.io', subject: 'AI Solution Quote', date: '19 Aug 2026', status: 'Unread' },
-];
-
 function DashboardOverview({ showToast, onNavigate }) {
   const [stats, setStats] = useState(null);
+  const [recentEstimates, setRecentEstimates] = useState([]);
+  const [recentMessages, setRecentMessages] = useState([]);
+  const [loadingOverview, setLoadingOverview] = useState(true);
 
   useEffect(() => {
     apiFetch('stats')
       .then(setStats)
-      .catch(() => { });
+      .catch(() => {});
+
+    Promise.all([
+      apiFetch('estimates').catch(() => []),
+      apiFetch('messages').catch(() => []),
+    ]).then(([estimatesData, messagesData]) => {
+      if (Array.isArray(estimatesData)) {
+        setRecentEstimates(estimatesData.slice(0, 4));
+      }
+      if (Array.isArray(messagesData)) {
+        setRecentMessages(messagesData.slice(0, 4));
+      }
+      setLoadingOverview(false);
+    });
   }, []);
 
   return (
     <div className="space-y-6">
       <AdminStats liveStats={stats} onNavigate={onNavigate} />
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-        <div className="lg:col-span-2 bg-white rounded-2xl border border-gray-100 shadow-card p-5">
-          <div className="flex items-center justify-between mb-4">
-            <h3 className="font-bold text-ink flex items-center gap-2">
-              <TrendingUp size={18} className="text-brand-cyan" />
-              Engagement Overview
-            </h3>
-            <span className="text-xs text-ink/50">Last 6 months</span>
-          </div>
-          <div className="h-52 flex items-end gap-3 px-2">
-            {[30, 45, 70, 95, 60, 40].map((h, i) => (
-              <div key={i} className="flex-1 flex flex-col items-center gap-2">
-                <div
-                  className="w-full rounded-t-lg bg-gradient-to-t from-brand-purple to-brand-cyan opacity-80"
-                  style={{ height: `${h}%` }}
-                />
-                <span className="text-[10px] text-ink/40">{['Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'][i]}</span>
-              </div>
-            ))}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+        {/* Recent Free Estimate Leads Card */}
+        <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-5 flex flex-col justify-between">
+          <div>
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="font-bold text-ink flex items-center gap-2 text-base">
+                <Sparkles size={18} className="text-[#00a4d8]" />
+                Recent Free Estimate Leads
+              </h3>
+              <button
+                type="button"
+                onClick={() => onNavigate?.('estimates')}
+                className="text-xs font-bold text-[#00a4d8] hover:underline cursor-pointer"
+              >
+                View All Leads →
+              </button>
+            </div>
+            <div className="space-y-2.5">
+              {loadingOverview ? (
+                <div className="py-8 text-center text-xs text-gray-400">Loading estimate leads...</div>
+              ) : recentEstimates.length === 0 ? (
+                <div className="py-8 text-center text-xs text-gray-400">No estimate leads yet.</div>
+              ) : (
+                recentEstimates.map((m) => (
+                  <div
+                    key={m._id || m.id}
+                    onClick={() => onNavigate?.('estimates')}
+                    className="flex items-start gap-3 p-3 rounded-xl hover:bg-sky-50/50 transition-colors cursor-pointer group border border-gray-100"
+                  >
+                    <div className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold shrink-0 shadow-xs bg-cyan-50 text-[#00a4d8] border border-cyan-200/70">
+                      ✨
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center justify-between gap-1">
+                        <p className="text-sm font-bold text-ink truncate group-hover:text-[#00a4d8] transition-colors">
+                          {m.name}
+                        </p>
+                        <span className="text-[10px] text-gray-400 shrink-0">
+                          {m.createdAt
+                            ? new Date(m.createdAt).toLocaleDateString('en-GB', {
+                                day: 'numeric',
+                                month: 'short',
+                              })
+                            : ''}
+                        </span>
+                      </div>
+                      <p className="text-xs font-semibold text-ink/80 truncate mt-0.5">
+                        {m.category} {m.requirement ? `• ${m.requirement}` : ''}
+                      </p>
+                      <p className="text-[11px] text-gray-400 font-mono truncate">{m.email} {m.phone ? `• ${m.phone}` : ''}</p>
+                    </div>
+                    {(m.status || 'Unread') === 'Unread' && (
+                      <span className="w-2 h-2 rounded-full bg-rose-500 shrink-0 mt-2" title="Unread" />
+                    )}
+                  </div>
+                ))
+              )}
+            </div>
           </div>
         </div>
 
-        <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-5">
-          <h3 className="font-bold text-ink mb-4 flex items-center gap-2">
-            <MessageSquare size={18} className="text-brand-purple" />
-            Recent Messages
-          </h3>
-          <div className="space-y-3">
-            {messages.map(m => (
-              <div key={m.id} className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-gray-50 transition-colors">
-                <div className="w-8 h-8 rounded-full bg-primary-100 text-brand-purple flex items-center justify-center text-xs font-bold shrink-0">
-                  {m.name.charAt(0)}
-                </div>
-                <div className="min-w-0 flex-1">
-                  <p className="text-sm font-medium text-ink truncate">{m.name}</p>
-                  <p className="text-xs text-ink/50 truncate">{m.subject}</p>
-                </div>
-                {m.status === 'Unread' && <span className="w-2 h-2 rounded-full bg-rose-500 shrink-0 mt-1.5" />}
-              </div>
-            ))}
+        {/* Recent Contact Form Messages Card */}
+        <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-5 flex flex-col justify-between">
+          <div>
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="font-bold text-ink flex items-center gap-2 text-base">
+                <Mail size={18} className="text-indigo-600" />
+                Recent Contact Messages
+              </h3>
+              <button
+                type="button"
+                onClick={() => onNavigate?.('messages')}
+                className="text-xs font-bold text-indigo-600 hover:underline cursor-pointer"
+              >
+                View All Messages →
+              </button>
+            </div>
+            <div className="space-y-2.5">
+              {loadingOverview ? (
+                <div className="py-8 text-center text-xs text-gray-400">Loading messages...</div>
+              ) : recentMessages.length === 0 ? (
+                <div className="py-8 text-center text-xs text-gray-400">No contact messages yet.</div>
+              ) : (
+                recentMessages.map((m) => (
+                  <div
+                    key={m._id || m.id}
+                    onClick={() => onNavigate?.('messages')}
+                    className="flex items-start gap-3 p-3 rounded-xl hover:bg-indigo-50/50 transition-colors cursor-pointer group border border-gray-100"
+                  >
+                    <div className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold shrink-0 shadow-xs bg-indigo-50 text-indigo-700 border border-indigo-200/70">
+                      {m.name?.charAt(0) || 'M'}
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center justify-between gap-1">
+                        <p className="text-sm font-bold text-ink truncate group-hover:text-indigo-600 transition-colors">
+                          {m.name}
+                        </p>
+                        <span className="text-[10px] text-gray-400 shrink-0">
+                          {m.createdAt
+                            ? new Date(m.createdAt).toLocaleDateString('en-GB', {
+                                day: 'numeric',
+                                month: 'short',
+                              })
+                            : ''}
+                        </span>
+                      </div>
+                      <p className="text-xs text-gray-500 truncate mt-0.5">{m.subject || m.message}</p>
+                      <p className="text-[11px] text-gray-400 font-mono truncate">{m.email}</p>
+                    </div>
+                    {(m.status || 'Unread') === 'Unread' && (
+                      <span className="w-2 h-2 rounded-full bg-rose-500 shrink-0 mt-2" title="Unread" />
+                    )}
+                  </div>
+                ))
+              )}
+            </div>
           </div>
         </div>
       </div>
@@ -1391,13 +2150,16 @@ function DashboardOverview({ showToast, onNavigate }) {
               onClick={() => onNavigate?.(key)}
               className="flex flex-col items-center gap-2 p-3 rounded-xl border border-gray-100 bg-gray-50 hover:bg-primary-50 hover:border-primary-100 hover:shadow-sm transition cursor-pointer text-center group"
             >
-              <span className="text-2xl font-extrabold text-primary-600 group-hover:scale-110 transition-transform">+</span>
+              <span className="text-2xl font-extrabold text-primary-600 group-hover:scale-110 transition-transform">
+                +
+              </span>
               <span className="text-xs font-semibold text-ink">Add {cfg.label.slice(0, -1)}</span>
             </button>
           ))}
         </div>
         <p className="text-xs text-gray-400 mt-3">
-          💡 Tip: When you add or edit items here, they instantly appear on the live website from the database.
+          💡 Tip: When you add or edit items here, they instantly appear on the live website from the
+          database.
         </p>
       </div>
     </div>

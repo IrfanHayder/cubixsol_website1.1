@@ -14,6 +14,7 @@ import {
   FolderKanban,
   Star,
   Mail,
+  Sparkles,
   PhoneCall,
   MapPin,
   BriefcaseBusiness,
@@ -27,9 +28,10 @@ import {
 
 const navItems = [
   { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
+  { id: 'estimates', label: 'Free Estimate Leads', icon: Sparkles, live: true },
+  { id: 'messages', label: 'Contact Messages', icon: Mail, live: true },
   { id: 'contact-info', label: 'Contact Details', icon: PhoneCall, live: true },
   { id: 'contact-page', label: 'Contact Page Content', icon: LayoutTemplate, live: true },
-  { id: 'messages', label: 'Contact Messages', icon: Mail, live: true },
   { id: 'blogs', label: 'Blog Posts', icon: FileText, live: true },
   { id: 'categories', label: 'Categories', icon: FolderOpen, live: true },
   { id: 'tags', label: 'Tags', icon: Tags, live: true },

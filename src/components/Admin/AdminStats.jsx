@@ -1,4 +1,4 @@
-import { FileText, Briefcase, FolderKanban, Mail, Layers, Package } from 'lucide-react';
+import { FileText, Briefcase, FolderKanban, Mail, Layers, Package, Sparkles } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { apiFetch } from '../../utils/api';
 
@@ -17,12 +17,28 @@ export default function AdminStats({ liveStats, onNavigate }) {
 
   const cards = [
     {
+      key: 'estimates',
+      label: 'Free Estimate Leads',
+      value: stats?.estimatesCount ?? 0,
+      sub: `${stats?.estimatesCount ?? 0} in database`,
+      icon: Sparkles,
+      color: 'from-cyan-500 to-blue-600',
+    },
+    {
+      key: 'messages',
+      label: 'Contact Messages',
+      value: stats?.messagesCount ?? 0,
+      sub: `${stats?.messagesCount ?? 0} in database`,
+      icon: Mail,
+      color: 'from-rose-500 to-red-600',
+    },
+    {
       key: 'blogs',
       label: 'Blog Posts',
       value: stats?.blogsCount ?? 0,
       sub: `${stats?.blogsCount ?? 0} in database`,
       icon: FileText,
-      color: 'from-cyan-500 to-blue-600',
+      color: 'from-indigo-500 to-purple-600',
     },
     {
       key: 'services',
@@ -46,23 +62,7 @@ export default function AdminStats({ liveStats, onNavigate }) {
       value: stats?.solutionsCount ?? 0,
       sub: `${stats?.solutionsCount ?? 0} in database`,
       icon: Layers,
-      color: 'from-indigo-500 to-blue-600',
-    },
-    {
-      key: 'projects',
-      label: 'Projects',
-      value: stats?.projectsCount ?? 0,
-      sub: `${stats?.projectsCount ?? 0} in database`,
-      icon: FolderKanban,
-      color: 'from-amber-500 to-orange-600',
-    },
-    {
-      key: 'messages',
-      label: 'Contact Messages',
-      value: stats?.messagesCount ?? 0,
-      sub: `${stats?.messagesCount ?? 0} in database`,
-      icon: Mail,
-      color: 'from-rose-500 to-red-600',
+      color: 'from-blue-500 to-cyan-600',
     },
   ];
 
