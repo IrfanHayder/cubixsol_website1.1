@@ -151,20 +151,20 @@ export default function Projects() {
                     />
 
                     <div className="flex items-center justify-between gap-1.5 z-10">
-                      <span className="text-white text-[11px] font-extrabold bg-black/45 backdrop-blur-md px-2.5 py-0.5 rounded-md shadow-xs border border-white/10">
+                      <span className="text-white text-[11px] font-extrabold bg-black/50 backdrop-blur-md px-3 py-1 rounded-full shadow-xs border border-white/15">
                         {p.tag || p.category || 'Web Development'}
                       </span>
-                      {p.industry && (
-                        <span className="text-white/95 text-[10px] font-semibold bg-white/20 backdrop-blur-md px-2 py-0.5 rounded line-clamp-1 max-w-[130px] text-right border border-white/10">
-                          {p.industry}
-                        </span>
-                      )}
                     </div>
                   </div>
 
                   {/* Card Body */}
                   <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between">
                     <div>
+                      {p.industry && (
+                        <p className="text-[11px] font-bold tracking-wider text-primary-600 uppercase mb-1 line-clamp-1">
+                          {p.industry}
+                        </p>
+                      )}
                       <h3 className="font-bold text-ink text-base sm:text-lg mb-1.5 group-hover:text-primary-600 transition-colors line-clamp-1">
                         {p.title}
                       </h3>
