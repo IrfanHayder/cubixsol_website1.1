@@ -1,25 +1,53 @@
 /**
  * Converts any Google Maps link, iframe code, coordinates, or plain address string
- * into a valid, embeddable Google Maps iframe URL.
+ * into a valid, embeddable Google Maps iframe URL with appropriate zoom.
  */
-export function formatMapEmbedUrl(input) {
+export function formatMapEmbedUrl(input, customZoom) {
   if (!input || typeof input !== 'string') {
-    return 'https://maps.google.com/maps?q=United%20Kingdom&t=&z=13&ie=UTF8&iwloc=&output=embed';
+    return 'https://maps.google.com/maps?q=United%20Kingdom&t=&z=6&ie=UTF8&iwloc=&output=embed';
   }
 
   const raw = input.trim();
   if (!raw) {
-    return 'https://maps.google.com/maps?q=United%20Kingdom&t=&z=13&ie=UTF8&iwloc=&output=embed';
+    return 'https://maps.google.com/maps?q=United%20Kingdom&t=&z=6&ie=UTF8&iwloc=&output=embed';
   }
+
+  // Helper to determine optimal zoom level
+  const getOptimalZoom = (text) => {
+    if (customZoom) return customZoom;
+    const lower = (text || '').toLowerCase().trim();
+    if (
+      lower.includes('pakistan') ||
+      lower.includes('united kingdom') ||
+      lower === 'uk' ||
+      lower.includes('united arab emirates') ||
+      lower.includes('uae') ||
+      lower === 'emirates'
+    ) {
+      if (lower.includes('united arab emirates') || lower.includes('uae')) return '7';
+      return '6';
+    }
+    if (
+      lower.includes('london') ||
+      lower.includes('lahore') ||
+      lower.includes('karachi') ||
+      lower.includes('islamabad') ||
+      lower.includes('dubai') ||
+      lower.includes('abu dhabi')
+    ) {
+      return '11';
+    }
+    return '8';
+  };
 
   // 1. If user pasted an <iframe> tag, extract src="..."
   const iframeMatch = raw.match(/src=["']([^"']+)["']/i);
   if (iframeMatch && iframeMatch[1]) {
-    return formatMapEmbedUrl(iframeMatch[1]);
+    return formatMapEmbedUrl(iframeMatch[1], customZoom);
   }
 
   // 2. If it's already a valid Google embed URL with output=embed or /embed
-  if (raw.includes('/maps/embed') || (raw.includes('maps.google.com') && raw.includes('output=embed'))) {
+  if (raw.includes('/maps/embed')) {
     return raw;
   }
 
@@ -27,7 +55,8 @@ export function formatMapEmbedUrl(input) {
   const placeMatch = raw.match(/\/maps\/place\/([^/@?]+)/i);
   if (placeMatch && placeMatch[1]) {
     const placeName = decodeURIComponent(placeMatch[1].replace(/\+/g, ' '));
-    return `https://maps.google.com/maps?q=${encodeURIComponent(placeName)}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
+    const z = getOptimalZoom(placeName);
+    return `https://maps.google.com/maps?q=${encodeURIComponent(placeName)}&t=&z=${z}&ie=UTF8&iwloc=&output=embed`;
   }
 
   // 4. If it's a google.com/maps/@lat,lng,zoom
@@ -35,25 +64,27 @@ export function formatMapEmbedUrl(input) {
   if (coordsMatch) {
     const lat = coordsMatch[1];
     const lng = coordsMatch[2];
-    return `https://maps.google.com/maps?q=${lat},${lng}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
+    return `https://maps.google.com/maps?q=${lat},${lng}&t=&z=7&ie=UTF8&iwloc=&output=embed`;
   }
 
-  // 5. If it's a maps.google.com with ?q= parameter but missing output=embed
+  // 5. If it's a maps.google.com with ?q= parameter
   if (raw.includes('maps.google.com') && raw.includes('q=')) {
     try {
       const parsed = new URL(raw.startsWith('http') ? raw : `https://${raw}`);
       const q = parsed.searchParams.get('q');
       if (q) {
-        return `https://maps.google.com/maps?q=${encodeURIComponent(q)}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
+        const z = getOptimalZoom(q);
+        return `https://maps.google.com/maps?q=${encodeURIComponent(q)}&t=&z=${z}&ie=UTF8&iwloc=&output=embed`;
       }
     } catch {
       // ignore
     }
   }
 
-  // 6. If it's plain text address / location (e.g. "London, UK" or "United Kingdom" or "Pakistan")
+  // 6. If it's plain text address / location (e.g. "Pakistan", "United Kingdom", "United Arab Emirates")
   if (!raw.startsWith('http://') && !raw.startsWith('https://')) {
-    return `https://maps.google.com/maps?q=${encodeURIComponent(raw)}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
+    const z = getOptimalZoom(raw);
+    return `https://maps.google.com/maps?q=${encodeURIComponent(raw)}&t=&z=${z}&ie=UTF8&iwloc=&output=embed`;
   }
 
   // 7. Generic URL fallback
@@ -64,13 +95,15 @@ export function formatMapEmbedUrl(input) {
       parsed.searchParams.get('query') ||
       parsed.pathname.split('/').filter(Boolean).pop();
     if (q) {
-      return `https://maps.google.com/maps?q=${encodeURIComponent(q.replace(/\+/g, ' '))}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
+      const z = getOptimalZoom(q);
+      return `https://maps.google.com/maps?q=${encodeURIComponent(q.replace(/\+/g, ' '))}&t=&z=${z}&ie=UTF8&iwloc=&output=embed`;
     }
   } catch {
     // ignore
   }
 
-  return `https://maps.google.com/maps?q=${encodeURIComponent(raw)}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
+  const z = getOptimalZoom(raw);
+  return `https://maps.google.com/maps?q=${encodeURIComponent(raw)}&t=&z=${z}&ie=UTF8&iwloc=&output=embed`;
 }
 
 /**

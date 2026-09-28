@@ -418,44 +418,40 @@ export default function Contact() {
                                   : activeLocation.name.toLowerCase() === item.text.toLowerCase();
 
                               return (
-                                <a
+                                <button
                                   key={itemIdx}
-                                  href={item.link}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
+                                  type="button"
                                   onClick={() => {
                                     if (locIndex !== -1) setActiveLocIdx(locIndex);
                                   }}
-                                  onMouseEnter={() => {
-                                    if (locIndex !== -1) setActiveLocIdx(locIndex);
-                                  }}
-                                  className={`flex items-center justify-between gap-2.5 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all duration-200 group/loc cursor-pointer ${
+                                  className={`w-full flex items-center justify-between gap-2.5 px-3.5 py-3 rounded-xl text-xs font-semibold transition-all duration-300 cursor-pointer text-left ${
                                     isLocActive
-                                      ? 'bg-primary-gradient text-white shadow-soft ring-2 ring-primary-300/30 font-bold scale-[1.01]'
-                                      : 'bg-gray-50/80 hover:bg-primary-50/70 text-gray-700 hover:text-primary-700 border border-gray-200/80 hover:border-primary-200 shadow-2xs'
+                                      ? 'bg-primary-gradient text-white shadow-soft font-bold scale-[1.01]'
+                                      : 'bg-gray-50/90 hover:bg-primary-50/60 text-gray-700 hover:text-primary-700 border border-gray-200/80 hover:border-primary-200 shadow-2xs'
                                   }`}
-                                  title={`Open ${item.text} on Google Maps`}
+                                  title={`Show ${item.text} pin on map`}
                                 >
                                   <div className="flex items-center gap-2.5 flex-1 min-w-0">
                                     <MapPin
-                                      size={14}
+                                      size={15}
                                       className={
                                         isLocActive
                                           ? 'text-white shrink-0'
-                                          : 'text-primary-600 shrink-0 group-hover/loc:scale-110 transition-transform'
+                                          : 'text-primary-600 shrink-0'
                                       }
                                     />
-                                    <span className="truncate leading-tight">{item.text}</span>
+                                    <span className="truncate leading-tight text-[13px]">{item.text}</span>
                                   </div>
-                                  <ExternalLink
-                                    size={13}
-                                    className={
+                                  <span
+                                    className={`text-[10px] font-bold px-2 py-0.5 rounded-md transition-colors shrink-0 ${
                                       isLocActive
-                                        ? 'text-white/90 shrink-0'
-                                        : 'text-gray-400 group-hover/loc:text-primary-600 shrink-0'
-                                    }
-                                  />
-                                </a>
+                                        ? 'bg-white/25 text-white border border-white/20 shadow-xs'
+                                        : 'bg-gray-200/70 text-gray-500'
+                                    }`}
+                                  >
+                                    {isLocActive ? '📍 Active Pin' : 'Show Pin'}
+                                  </span>
+                                </button>
                               );
                             }
 
@@ -501,7 +497,7 @@ export default function Contact() {
           className="lg:col-span-7 rounded-3xl overflow-hidden border border-gray-100 shadow-card bg-white flex flex-col min-h-[440px] relative"
         >
           {/* Map Top Bar: Location Switcher Tabs */}
-          <div className="p-3.5 sm:p-4 bg-gradient-to-r from-gray-50 to-slate-50 border-b border-gray-100 flex flex-wrap items-center justify-between gap-3 z-10">
+          <div className="p-3.5 sm:p-4 bg-gradient-to-r from-gray-50 to-slate-50 border-b border-gray-100 flex items-center justify-between gap-3 z-10">
             <div className="flex items-center gap-1.5 overflow-x-auto py-0.5 max-w-full scrollbar-hide">
               <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wider mr-1 hidden sm:inline-block">
                 Offices:
@@ -525,18 +521,6 @@ export default function Contact() {
                 );
               })}
             </div>
-
-            {activeLocation.link && (
-              <a
-                href={activeLocation.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-[11px] font-bold text-primary-600 hover:text-primary-700 bg-white px-3 py-1.5 rounded-xl border border-gray-200/80 shadow-2xs hover:border-primary-300 transition shrink-0"
-              >
-                <span>Google Maps</span>
-                <ExternalLink size={12} />
-              </a>
-            )}
           </div>
 
           {/* Iframe Viewport */}
