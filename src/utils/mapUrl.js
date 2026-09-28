@@ -4,12 +4,12 @@
  */
 export function formatMapEmbedUrl(input) {
   if (!input || typeof input !== 'string') {
-    return 'https://maps.google.com/maps?q=New%20York%2C%20NY&t=&z=13&ie=UTF8&iwloc=&output=embed';
+    return 'https://maps.google.com/maps?q=United%20Kingdom&t=&z=13&ie=UTF8&iwloc=&output=embed';
   }
 
   const raw = input.trim();
   if (!raw) {
-    return 'https://maps.google.com/maps?q=New%20York%2C%20NY&t=&z=13&ie=UTF8&iwloc=&output=embed';
+    return 'https://maps.google.com/maps?q=United%20Kingdom&t=&z=13&ie=UTF8&iwloc=&output=embed';
   }
 
   // 1. If user pasted an <iframe> tag, extract src="..."
@@ -51,7 +51,7 @@ export function formatMapEmbedUrl(input) {
     }
   }
 
-  // 6. If it's plain text address / location (e.g. "London, UK" or "United Kingdom")
+  // 6. If it's plain text address / location (e.g. "London, UK" or "United Kingdom" or "Pakistan")
   if (!raw.startsWith('http://') && !raw.startsWith('https://')) {
     return `https://maps.google.com/maps?q=${encodeURIComponent(raw)}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
   }
@@ -72,3 +72,197 @@ export function formatMapEmbedUrl(input) {
 
   return `https://maps.google.com/maps?q=${encodeURIComponent(raw)}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
 }
+
+/**
+ * Generates a direct, clickable Google Maps link for opening in a new tab.
+ */
+export function getDirectMapLink(input, defaultName = '') {
+  if (!input && !defaultName) return 'https://maps.google.com';
+  const val = (input || '').trim();
+
+  // If already a valid URL
+  if (val.startsWith('http://') || val.startsWith('https://')) {
+    // If it's an embed URL, convert to search URL
+    if (val.includes('output=embed') || val.includes('/maps/embed')) {
+      try {
+        const parsed = new URL(val);
+        const q = parsed.searchParams.get('q');
+        if (q) return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
+      } catch {
+        // ignore
+      }
+    }
+    return val;
+  }
+
+  const query = val || defaultName;
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+}
+
+/**
+ * Parses multi-line content from a Contact Card (e.g. multiple phone numbers, locations, or emails)
+ * and returns structured items with their individual links.
+ */
+export function parseContactCardItems(card) {
+  if (!card) return [];
+  const lines = (card.desc || '')
+    .split('\n')
+    .map((s) => s.trim())
+    .filter(Boolean);
+
+  if (lines.length === 0) return [];
+
+  const rawLinks = (card.link || '')
+    .split('\n')
+    .map((s) => s.trim())
+    .filter(Boolean);
+
+  const isLocationCard =
+    (card.icon && ['MapPin', 'Globe', 'Building2', 'Navigation'].includes(card.icon)) ||
+    (card.title && card.title.toLowerCase().includes('location')) ||
+    (card.title && card.title.toLowerCase().includes('office'));
+
+  const isPhoneCard =
+    (card.icon && ['Phone', 'PhoneCall', 'Headphones'].includes(card.icon)) ||
+    (card.title && card.title.toLowerCase().includes('call')) ||
+    (card.title && card.title.toLowerCase().includes('phone'));
+
+  const isEmailCard =
+    (card.icon && ['Mail', 'MailPlus', 'MessageSquare'].includes(card.icon)) ||
+    (card.title && card.title.toLowerCase().includes('email'));
+
+  return lines.map((line, idx) => {
+    // Check if line itself has "Text | Link" format
+    let text = line;
+    let explicitLink = '';
+    if (line.includes('|')) {
+      const parts = line.split('|');
+      text = parts[0].trim();
+      explicitLink = parts.slice(1).join('|').trim();
+    }
+
+    // Determine link
+    let finalLink = explicitLink;
+    if (!finalLink && rawLinks[idx]) {
+      finalLink = rawLinks[idx];
+    } else if (!finalLink && rawLinks.length === 1 && !isLocationCard) {
+      finalLink = rawLinks[0];
+    }
+
+    // Smart link generation based on type if still empty or location
+    if (isLocationCard) {
+      if (!finalLink) {
+        // If single link was provided and matches this location or is general
+        if (rawLinks.length === 1 && rawLinks[0].toLowerCase().includes(text.toLowerCase().replace(/\s+/g, ''))) {
+          finalLink = rawLinks[0];
+        } else {
+          finalLink = getDirectMapLink(text);
+        }
+      }
+    } else if (isPhoneCard && !finalLink) {
+      const cleanPhone = text.replace(/[^0-9+]/g, '');
+      if (cleanPhone) finalLink = `tel:${cleanPhone}`;
+    } else if (isEmailCard && !finalLink) {
+      const emailMatch = text.match(/[\w.-]+@[\w.-]+\.\w+/);
+      if (emailMatch) finalLink = `mailto:${emailMatch[0]}`;
+    }
+
+    return {
+      text,
+      link: finalLink,
+      isLocation: isLocationCard,
+      mapQuery: text,
+    };
+  });
+}
+
+/**
+ * Extracts all locations for the interactive map switcher from pageData.locations or contactCards.
+ */
+export function extractLocations(contactCards = [], pageData = {}) {
+  // 1. If explicit locations are configured in pageData
+  if (Array.isArray(pageData.locations) && pageData.locations.length > 0) {
+    const valid = pageData.locations.filter((l) => l && (l.name || l.title || l.address));
+    if (valid.length > 0) {
+      return valid.map((loc, i) => {
+        const name = loc.name || loc.title || loc.address || `Location ${i + 1}`;
+        const address = loc.address || name;
+        const mapUrl = formatMapEmbedUrl(loc.mapUrl || loc.embedUrl || address || name);
+        const directLink = loc.link || getDirectMapLink(loc.mapUrl || address || name);
+        return {
+          id: loc._id || loc.id || `loc-${i}`,
+          name,
+          address,
+          mapUrl,
+          link: directLink,
+        };
+      });
+    }
+  }
+
+  // 2. Otherwise extract from the "Our Location" / MapPin card in contactCards
+  const locationCard = contactCards.find(
+    (c) =>
+      (c.icon && ['MapPin', 'Globe', 'Building2', 'Navigation'].includes(c.icon)) ||
+      (c.title && c.title.toLowerCase().includes('location')) ||
+      (c.title && c.title.toLowerCase().includes('office'))
+  );
+
+  if (locationCard && locationCard.desc) {
+    const lines = locationCard.desc
+      .split('\n')
+      .map((s) => s.trim())
+      .filter(Boolean);
+
+    const rawLinks = (locationCard.link || '')
+      .split('\n')
+      .map((s) => s.trim())
+      .filter(Boolean);
+
+    if (lines.length > 0) {
+      return lines.map((line, idx) => {
+        let name = line;
+        let explicitLink = '';
+        if (line.includes('|')) {
+          const parts = line.split('|');
+          name = parts[0].trim();
+          explicitLink = parts.slice(1).join('|').trim();
+        }
+
+        let locLink = explicitLink || rawLinks[idx];
+        if (!locLink) {
+          // If only 1 link was provided in locationCard, check if it matches
+          if (rawLinks.length === 1 && rawLinks[0].toLowerCase().includes(name.toLowerCase().replace(/\s+/g, ''))) {
+            locLink = rawLinks[0];
+          } else if (idx === 1 && rawLinks.length === 1 && rawLinks[0].toLowerCase().includes('united+kingdom')) {
+            // Match for UK if it's the single link provided
+            locLink = rawLinks[0];
+          } else {
+            locLink = getDirectMapLink(name);
+          }
+        }
+
+        return {
+          id: `loc-card-${idx}`,
+          name,
+          address: name,
+          mapUrl: formatMapEmbedUrl(locLink || name),
+          link: locLink || getDirectMapLink(name),
+        };
+      });
+    }
+  }
+
+  // 3. Fallback to default mapEmbedUrl in pageData
+  const defaultUrl = pageData.mapEmbedUrl || 'https://maps.google.com/maps?q=United%20Kingdom&t=&z=13&ie=UTF8&iwloc=&output=embed';
+  return [
+    {
+      id: 'loc-default',
+      name: 'United Kingdom',
+      address: 'United Kingdom',
+      mapUrl: formatMapEmbedUrl(defaultUrl),
+      link: getDirectMapLink(defaultUrl, 'United Kingdom'),
+    },
+  ];
+}
+

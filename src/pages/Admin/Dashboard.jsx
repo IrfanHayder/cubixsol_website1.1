@@ -1159,8 +1159,8 @@ const SECTION_CONFIGS = {
     fields: [
       { name: 'title', label: 'Card Title (e.g. Our Location, Email Us, Call Us, Working Hours)', required: true, fullWidth: true },
       { name: 'icon', label: 'Icon (Lucide Icon Name like MapPin, Mail, Phone, Clock or Media Image/SVG)', required: true, fullWidth: true, hint: 'Examples: MapPin, Mail, Phone, Clock, Headphones, MessageSquare, Globe, Building2 or select SVG from Media Library' },
-      { name: 'desc', label: 'Details / Content (one item or address per line)', type: 'textarea', rows: 4, required: true, fullWidth: true, hint: 'Multi-line text supported. E.g. 123 Innovation Drive\nNew York, NY 10001, USA' },
-      { name: 'link', label: 'Click Action Link (Optional)', fullWidth: true, hint: 'e.g. mailto:hello@cubixsol.com or tel:+12121234567 or https://maps.google.com/...' },
+      { name: 'desc', label: 'Details / Content (one item or address per line)', type: 'textarea', rows: 4, required: true, fullWidth: true, hint: 'Multi-line text supported. E.g.\nPakistan\nUnited Kingdom\nUnited Arab Emirates\n(or "+44..." and "+92..." for phone numbers)' },
+      { name: 'link', label: 'Click Action Link(s) (Optional)', type: 'textarea', rows: 3, fullWidth: true, hint: 'Enter link(s). You can enter multiple links (one per line matching each line above) or a single link. For locations, Google Maps links are auto-generated if left blank.' },
       { name: 'order', label: 'Display Order (1, 2, 3, 4...)', type: 'number' },
       {
         name: 'status', label: 'Status', type: 'select', options: [

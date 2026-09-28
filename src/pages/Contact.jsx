@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 import {
   Send,
@@ -15,13 +15,20 @@ import {
   MailPlus,
   Loader2,
   AlertCircle,
+  ExternalLink,
+  Navigation,
 } from 'lucide-react';
 import { faqs } from '../data/content';
 import Breadcrumb from '../components/Breadcrumb';
 import Reveal, { Stagger, StaggerItem } from '../components/Reveal';
 import DynamicIcon from '../components/DynamicIcon';
 import { API_BASE, apiFetch } from '../utils/api';
-import { formatMapEmbedUrl } from '../utils/mapUrl';
+import {
+  formatMapEmbedUrl,
+  getDirectMapLink,
+  parseContactCardItems,
+  extractLocations,
+} from '../utils/mapUrl';
 
 const initialForm = { name: '', email: '', phone: '', service: '', subject: '', message: '' };
 
@@ -40,21 +47,21 @@ const serviceOptions = [
 const fallbackContactCards = [
   {
     title: 'Our Location',
-    desc: '123 Innovation Drive, Suite 501\nNew York, NY 10001, USA',
+    desc: 'Pakistan\nUnited Kingdom\nUnited Arab Emirates',
     icon: 'MapPin',
-    link: 'https://maps.google.com/maps?q=New%20York%2C%20NY',
+    link: 'https://maps.google.com/maps?q=United%20Kingdom',
   },
   {
     title: 'Email Us',
-    desc: 'hello@cubixsol.com\ninfo@cubixsol.com',
+    desc: 'info@cubixsol.com',
     icon: 'Mail',
-    link: 'mailto:hello@cubixsol.com',
+    link: 'mailto:info@cubixsol.com',
   },
   {
     title: 'Call Us',
-    desc: '+1 (212) 123-4567\n+1 (212) 987-6543',
+    desc: '+44 7404 870865\n+92 304 1100028',
     icon: 'Phone',
-    link: 'tel:+12121234567',
+    link: 'tel:+923041100028',
   },
   {
     title: 'Working Hours',
@@ -73,7 +80,7 @@ const fallbackPageData = {
   contactSectionSubtitle:
     'Choose the best way to reach us. Our team is always ready to assist you.',
   mapEmbedUrl:
-    'https://maps.google.com/maps?q=New%20York%2C%20NY&t=&z=13&ie=UTF8&iwloc=&output=embed',
+    'https://maps.google.com/maps?q=United%20Kingdom&t=&z=13&ie=UTF8&iwloc=&output=embed',
   highlights: [
     { icon: 'Clock', title: 'Quick Response', desc: 'We reply within 24 hours' },
     { icon: 'Users2', title: 'Expert Support', desc: 'Get help from our experienced team' },
@@ -91,6 +98,7 @@ export default function Contact() {
 
   const [contactCards, setContactCards] = useState(fallbackContactCards);
   const [pageData, setPageData] = useState(fallbackPageData);
+  const [activeLocIdx, setActiveLocIdx] = useState(0);
 
   const location = useLocation();
 
@@ -131,6 +139,19 @@ export default function Contact() {
       cancelled = true;
     };
   }, []);
+
+  const locations = useMemo(() => {
+    return extractLocations(contactCards, pageData);
+  }, [contactCards, pageData]);
+
+  const activeLocation =
+    locations[activeLocIdx] ||
+    locations[0] || {
+      name: 'United Kingdom',
+      address: 'United Kingdom',
+      mapUrl: formatMapEmbedUrl(pageData.mapEmbedUrl),
+      link: getDirectMapLink(pageData.mapEmbedUrl, 'United Kingdom'),
+    };
 
   useEffect(() => {
     if (location.hash === '#contact-form') {
@@ -346,60 +367,191 @@ export default function Contact() {
         </Reveal>
       </section>
 
-      {/* CONTACT INFO + MAP */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 grid lg:grid-cols-2 gap-10">
-        <Reveal direction="right">
-          <h2 className="text-2xl font-extrabold text-ink mb-1">
-            {pageData.contactSectionTitle || "We're Here to Help"}
-          </h2>
-          <p className="text-gray-500 mb-6">
-            {pageData.contactSectionSubtitle ||
-              'Choose the best way to reach us. Our team is always ready to assist you.'}
-          </p>
-          <Stagger className="grid sm:grid-cols-2 gap-5" staggerDelay={0.08}>
+      {/* CONTACT INFO + MULTI-LOCATION INTERACTIVE MAP */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 grid lg:grid-cols-12 gap-8 items-stretch">
+        {/* Left Side: Contact Cards (5 cols) */}
+        <Reveal direction="right" className="lg:col-span-5 flex flex-col justify-between">
+          <div>
+            <h2 className="text-2xl font-extrabold text-ink mb-1">
+              {pageData.contactSectionTitle || "We're Here to Help"}
+            </h2>
+            <p className="text-gray-500 mb-6 text-sm">
+              {pageData.contactSectionSubtitle ||
+                'Choose the best way to reach us. Our team is always ready to assist you.'}
+            </p>
+          </div>
+
+          <Stagger className="grid sm:grid-cols-2 lg:grid-cols-1 gap-4" staggerDelay={0.06}>
             {contactCards.map((card, idx) => {
-              const CardInner = (
-                <div className="card !p-5 h-full hover:-translate-y-1 hover:shadow-soft transition-all duration-300">
-                  <span className="w-9 h-9 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center mb-3">
-                    <DynamicIcon icon={card.icon} className="w-4.5 h-4.5" />
-                  </span>
-                  <p className="font-bold text-sm text-ink mb-1">{card.title}</p>
-                  <p className="text-xs text-gray-500 whitespace-pre-line leading-relaxed">
-                    {card.desc}
-                  </p>
-                </div>
-              );
+              const items = parseContactCardItems(card);
+              const isLocationCard =
+                (card.icon && ['MapPin', 'Globe', 'Building2', 'Navigation'].includes(card.icon)) ||
+                (card.title && card.title.toLowerCase().includes('location')) ||
+                (card.title && card.title.toLowerCase().includes('office'));
 
               return (
                 <StaggerItem key={card._id || card.title || idx}>
-                  {card.link ? (
-                    <a
-                      href={card.link}
-                      target={card.link.startsWith('http') ? '_blank' : undefined}
-                      rel={card.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      className="block h-full"
-                    >
-                      {CardInner}
-                    </a>
-                  ) : (
-                    CardInner
-                  )}
+                  <div className="card !p-4.5 bg-white border border-gray-100/90 shadow-card hover:shadow-soft hover:border-primary-200 transition-all duration-300 rounded-2xl h-full flex flex-col justify-between">
+                    <div>
+                      {/* Header */}
+                      <div className="flex items-center gap-3 mb-2.5">
+                        <span className="w-8 h-8 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center shrink-0 border border-primary-100/50">
+                          <DynamicIcon icon={card.icon} className="w-4 h-4" />
+                        </span>
+                        <p className="font-bold text-sm text-ink">{card.title}</p>
+                      </div>
+
+                      {/* Items List */}
+                      {items.length > 0 ? (
+                        <div className="space-y-1.5 mt-2">
+                          {items.map((item, itemIdx) => {
+                            if (item.isLocation) {
+                              // Find matching index in locations
+                              const locIndex = locations.findIndex(
+                                (l) =>
+                                  l.name.toLowerCase() === item.text.toLowerCase() ||
+                                  l.address.toLowerCase().includes(item.text.toLowerCase())
+                              );
+                              const isLocActive =
+                                locIndex !== -1
+                                  ? activeLocIdx === locIndex
+                                  : activeLocation.name.toLowerCase() === item.text.toLowerCase();
+
+                              return (
+                                <div
+                                  key={itemIdx}
+                                  className={`flex items-center justify-between gap-2 p-2 rounded-xl text-xs transition-all ${
+                                    isLocActive
+                                      ? 'bg-primary-50/80 text-primary-700 font-bold border border-primary-200/80 shadow-xs'
+                                      : 'bg-gray-50/60 hover:bg-gray-100/80 text-gray-700 border border-gray-100'
+                                  }`}
+                                >
+                                  <button
+                                    type="button"
+                                    onClick={() => {
+                                      if (locIndex !== -1) setActiveLocIdx(locIndex);
+                                    }}
+                                    className="flex items-center gap-2 text-left flex-1 cursor-pointer font-medium"
+                                  >
+                                    <MapPin
+                                      size={13}
+                                      className={isLocActive ? 'text-primary-600' : 'text-gray-400'}
+                                    />
+                                    <span className="leading-snug">{item.text}</span>
+                                  </button>
+
+                                  {item.link && (
+                                    <a
+                                      href={item.link}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      title={`Open ${item.text} on Google Maps`}
+                                      className="p-1 rounded-lg text-gray-400 hover:text-primary-600 hover:bg-white transition shrink-0"
+                                    >
+                                      <ExternalLink size={12} />
+                                    </a>
+                                  )}
+                                </div>
+                              );
+                            }
+
+                            if (item.link) {
+                              return (
+                                <a
+                                  key={itemIdx}
+                                  href={item.link}
+                                  target={item.link.startsWith('http') ? '_blank' : undefined}
+                                  rel={item.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                  className="block p-1.5 rounded-lg text-xs font-semibold text-primary-600 hover:text-primary-700 hover:bg-primary-50/60 transition truncate"
+                                >
+                                  {item.text}
+                                </a>
+                              );
+                            }
+
+                            return (
+                              <p key={itemIdx} className="text-xs text-gray-600 leading-relaxed px-1">
+                                {item.text}
+                              </p>
+                            );
+                          })}
+                        </div>
+                      ) : (
+                        <p className="text-xs text-gray-500 whitespace-pre-line leading-relaxed">
+                          {card.desc}
+                        </p>
+                      )}
+                    </div>
+                  </div>
                 </StaggerItem>
               );
             })}
           </Stagger>
         </Reveal>
+
+        {/* Right Side: Interactive Multi-Location Map (7 cols) */}
         <Reveal
           direction="left"
           delay={0.1}
-          className="rounded-2xl overflow-hidden border border-gray-100 shadow-card h-full min-h-[320px] bg-gray-100 relative"
+          className="lg:col-span-7 rounded-3xl overflow-hidden border border-gray-100 shadow-card bg-white flex flex-col min-h-[440px] relative"
         >
-          <iframe
-            title="Cubixsol location map"
-            className="w-full h-full min-h-[320px] border-0"
-            loading="lazy"
-            src={formatMapEmbedUrl(pageData.mapEmbedUrl)}
-          />
+          {/* Map Top Bar: Location Switcher Tabs */}
+          <div className="p-3.5 sm:p-4 bg-gradient-to-r from-gray-50 to-slate-50 border-b border-gray-100 flex flex-wrap items-center justify-between gap-3 z-10">
+            <div className="flex items-center gap-1.5 overflow-x-auto py-0.5 max-w-full scrollbar-hide">
+              <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wider mr-1 hidden sm:inline-block">
+                Offices:
+              </span>
+              {locations.map((loc, i) => {
+                const isActive = activeLocIdx === i;
+                return (
+                  <button
+                    key={loc.id || loc.name || i}
+                    type="button"
+                    onClick={() => setActiveLocIdx(i)}
+                    className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap ${
+                      isActive
+                        ? 'bg-primary-gradient text-white shadow-soft ring-2 ring-primary-300/30 scale-[1.02]'
+                        : 'bg-white text-gray-600 hover:bg-gray-100 hover:text-ink border border-gray-200/80 shadow-2xs'
+                    }`}
+                  >
+                    <MapPin size={13} className={isActive ? 'text-white' : 'text-primary-600'} />
+                    <span>{loc.name}</span>
+                  </button>
+                );
+              })}
+            </div>
+
+            {activeLocation.link && (
+              <a
+                href={activeLocation.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-[11px] font-bold text-primary-600 hover:text-primary-700 bg-white px-3 py-1.5 rounded-xl border border-gray-200/80 shadow-2xs hover:border-primary-300 transition shrink-0"
+              >
+                <span>Google Maps</span>
+                <ExternalLink size={12} />
+              </a>
+            )}
+          </div>
+
+          {/* Iframe Viewport */}
+          <div className="relative flex-1 w-full min-h-[360px] bg-slate-100">
+            <iframe
+              key={activeLocation.mapUrl}
+              title={`Cubixsol location map - ${activeLocation.name}`}
+              className="w-full h-full min-h-[360px] border-0"
+              loading="lazy"
+              src={activeLocation.mapUrl}
+            />
+
+            {/* Floating Location Badge */}
+            <div className="absolute bottom-3 left-3 z-10 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-xl shadow-md border border-gray-200/80 flex items-center gap-2 max-w-[85%] truncate">
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse shrink-0" />
+              <span className="text-xs font-bold text-ink truncate">
+                📍 {activeLocation.address || activeLocation.name}
+              </span>
+            </div>
+          </div>
         </Reveal>
       </section>
 

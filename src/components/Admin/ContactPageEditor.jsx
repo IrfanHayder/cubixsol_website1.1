@@ -245,49 +245,204 @@ export default function ContactPageEditor({ showToast }) {
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6 space-y-5">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                <h3 className="text-base font-bold text-ink flex items-center gap-2">
-                  <MapPin className="text-primary-600" size={18} />
-                  Google Maps Location / Embed URL
-                </h3>
-                <span className="text-xs text-emerald-600 font-medium bg-emerald-50 px-2 py-0.5 rounded-md">
-                  ✨ Auto-converts any Maps link, iframe tag, or city name
-                </span>
+            {/* LOCATIONS & MAP MANAGEMENT */}
+            <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6 space-y-6">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-gray-100">
+                <div>
+                  <h3 className="text-base font-bold text-ink flex items-center gap-2">
+                    <MapPin className="text-primary-600" size={18} />
+                    Offices &amp; Map Locations
+                  </h3>
+                  <p className="text-xs text-gray-500 mt-0.5">
+                    Configure multiple office locations (pins). Each location can have its own name, map embed URL, and Google Maps link.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => {
+                    const list = [...(formData.locations || [])];
+                    list.push({
+                      name: `Office ${list.length + 1}`,
+                      address: '',
+                      mapUrl: '',
+                      link: '',
+                    });
+                    setFormData((prev) => ({ ...prev, locations: list }));
+                  }}
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-bold bg-primary-50 text-primary-700 hover:bg-primary-100 border border-primary-200 transition shrink-0 cursor-pointer"
+                >
+                  <Plus size={14} /> Add Location
+                </button>
               </div>
 
-              <div>
+              {/* Locations List */}
+              {Array.isArray(formData.locations) && formData.locations.length > 0 ? (
+                <div className="space-y-4">
+                  {formData.locations.map((loc, idx) => (
+                    <div
+                      key={idx}
+                      className="p-4 rounded-2xl bg-gray-50/70 border border-gray-200/80 space-y-3"
+                    >
+                      <div className="flex items-center justify-between gap-2">
+                        <div className="flex items-center gap-2">
+                          <span className="w-6 h-6 rounded-lg bg-primary-100 text-primary-700 text-xs font-bold flex items-center justify-center">
+                            {idx + 1}
+                          </span>
+                          <span className="text-xs font-bold text-ink">
+                            {loc.name || `Location ${idx + 1}`}
+                          </span>
+                        </div>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            const list = [...(formData.locations || [])];
+                            list.splice(idx, 1);
+                            setFormData((prev) => ({ ...prev, locations: list }));
+                          }}
+                          className="p-1.5 text-rose-500 hover:bg-rose-50 rounded-lg transition"
+                          title="Remove Location"
+                        >
+                          <Trash2 size={15} />
+                        </button>
+                      </div>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                          <label className="block text-[11px] font-bold text-ink mb-1">
+                            Location Name / Country (e.g. Pakistan, United Kingdom, United Arab Emirates)
+                          </label>
+                          <input
+                            type="text"
+                            value={loc.name || ''}
+                            onChange={(e) => {
+                              const list = [...formData.locations];
+                              list[idx] = { ...list[idx], name: e.target.value };
+                              setFormData((prev) => ({ ...prev, locations: list }));
+                            }}
+                            placeholder="e.g. United Kingdom"
+                            className="w-full px-3 py-2 rounded-xl border border-gray-200 bg-white text-xs focus:ring-2 focus:ring-primary-300 outline-none"
+                          />
+                        </div>
+
+                        <div>
+                          <label className="block text-[11px] font-bold text-ink mb-1">
+                            Subtitle / Office Address
+                          </label>
+                          <input
+                            type="text"
+                            value={loc.address || ''}
+                            onChange={(e) => {
+                              const list = [...formData.locations];
+                              list[idx] = { ...list[idx], address: e.target.value };
+                              setFormData((prev) => ({ ...prev, locations: list }));
+                            }}
+                            placeholder="e.g. London, UK Office"
+                            className="w-full px-3 py-2 rounded-xl border border-gray-200 bg-white text-xs focus:ring-2 focus:ring-primary-300 outline-none"
+                          />
+                        </div>
+
+                        <div>
+                          <label className="block text-[11px] font-bold text-ink mb-1">
+                            Google Maps Embed Link, Place Link, or City
+                          </label>
+                          <input
+                            type="text"
+                            value={loc.mapUrl || ''}
+                            onChange={(e) => {
+                              const list = [...formData.locations];
+                              list[idx] = { ...list[idx], mapUrl: e.target.value };
+                              setFormData((prev) => ({ ...prev, locations: list }));
+                            }}
+                            placeholder="e.g. https://www.google.com/maps/place/... or United Kingdom"
+                            className="w-full px-3 py-2 rounded-xl border border-gray-200 bg-white text-xs font-mono focus:ring-2 focus:ring-primary-300 outline-none"
+                          />
+                        </div>
+
+                        <div>
+                          <label className="block text-[11px] font-bold text-ink mb-1">
+                            Direct Google Maps Share Link (Optional)
+                          </label>
+                          <input
+                            type="text"
+                            value={loc.link || ''}
+                            onChange={(e) => {
+                              const list = [...formData.locations];
+                              list[idx] = { ...list[idx], link: e.target.value };
+                              setFormData((prev) => ({ ...prev, locations: list }));
+                            }}
+                            placeholder="Auto-generated if left blank"
+                            className="w-full px-3 py-2 rounded-xl border border-gray-200 bg-white text-xs font-mono focus:ring-2 focus:ring-primary-300 outline-none"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="p-4 rounded-xl bg-blue-50/60 border border-blue-100 text-xs text-blue-800 space-y-1">
+                  <p className="font-semibold">💡 Automatic Multi-Location Sync Active</p>
+                  <p className="text-blue-700/80">
+                    Locations are currently automatically extracted from your <strong>Contact Details &gt; Our Location</strong> card (e.g. Pakistan, United Kingdom, United Arab Emirates). You can also click <strong>"Add Location"</strong> above to define custom pins and coordinates here.
+                  </p>
+                </div>
+              )}
+
+              {/* Default Map URL input */}
+              <div className="pt-2">
                 <label className="block text-xs font-bold text-ink mb-1.5">
-                  Location, Maps Link, or Embed Code
+                  Default Fallback Map Link or City Name
                 </label>
                 <input
                   type="text"
                   value={formData.mapEmbedUrl || ''}
                   onChange={(e) => handleChange('mapEmbedUrl', e.target.value)}
-                  placeholder="e.g. United Kingdom OR London, UK OR https://www.google.com/maps/place/..."
+                  placeholder="e.g. United Kingdom OR https://www.google.com/maps/place/..."
                   className="w-full px-4 py-2.5 rounded-xl border border-gray-200 bg-gray-50/50 text-sm font-mono text-xs focus:bg-white focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/20 outline-none"
                 />
-                <p className="text-[11px] text-gray-400 mt-1">
-                  You can paste a full Google Maps share link, embed `&lt;iframe&gt;` code, or simply type a city/country name like <strong>United Kingdom</strong>, <strong>Dubai, UAE</strong>, or <strong>Lahore</strong>.
-                </p>
               </div>
 
-              {/* Live Map Preview */}
-              <div className="space-y-2">
-                <p className="text-xs font-semibold text-ink/70">Live Map Preview:</p>
-                <div className="w-full h-64 rounded-xl overflow-hidden border border-gray-200 bg-gray-100 relative">
-                  {formData.mapEmbedUrl ? (
+              {/* Live Map Preview with Tabs */}
+              <div className="space-y-2 pt-2">
+                <div className="flex items-center justify-between">
+                  <p className="text-xs font-bold text-ink">Live Interactive Map Preview:</p>
+                  <span className="text-[11px] text-emerald-600 font-medium">
+                    ✨ Test tabs switcher below
+                  </span>
+                </div>
+
+                <div className="rounded-2xl overflow-hidden border border-gray-200 bg-gray-100 flex flex-col min-h-[320px]">
+                  {Array.isArray(formData.locations) && formData.locations.length > 0 && (
+                    <div className="p-2.5 bg-white border-b border-gray-200 flex items-center gap-1.5 overflow-x-auto">
+                      {formData.locations.map((loc, i) => (
+                        <button
+                          key={i}
+                          type="button"
+                          onClick={() => handleChange('_previewLocIdx', i)}
+                          className={`px-3 py-1 rounded-lg text-xs font-bold transition ${
+                            (formData._previewLocIdx || 0) === i
+                              ? 'bg-primary-gradient text-white shadow-xs'
+                              : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                          }`}
+                        >
+                          📍 {loc.name || `Location ${i + 1}`}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+
+                  <div className="w-full h-72 relative">
                     <iframe
                       title="Contact location preview"
-                      src={formatMapEmbedUrl(formData.mapEmbedUrl)}
+                      src={formatMapEmbedUrl(
+                        (Array.isArray(formData.locations) &&
+                          formData.locations[formData._previewLocIdx || 0]?.mapUrl) ||
+                          formData.mapEmbedUrl ||
+                          'United Kingdom'
+                      )}
                       className="w-full h-full border-0"
                       loading="lazy"
                     />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center text-gray-400 text-xs">
-                      No map URL specified
-                    </div>
-                  )}
+                  </div>
                 </div>
               </div>
             </div>
