@@ -79,8 +79,8 @@ export default function Projects() {
             <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight text-ink mb-5">
               Real Projects. <span className="bg-clip-text text-transparent bg-primary-gradient">Real Results.</span>
             </h1>
-            <p className="text-gray-500 mb-6">
-              Explore our portfolio of successful digital solutions that help businesses grow, engage, and achieve their goals.
+            <p className="text-gray-500 mb-6 leading-relaxed">
+              Explore our diverse portfolio of enterprise web applications, custom software platforms, SaaS systems, and scalable mobile apps. At Cubixsol, our multidisciplinary team combines cutting-edge full-stack engineering, intuitive UI/UX design, and AI automation to deliver high-impact digital solutions that streamline complex workflows, accelerate user acquisition, and drive measurable revenue growth for fast-scaling startups and global enterprises.
             </p>
             <div className="flex flex-wrap gap-6 text-sm font-medium text-gray-500">
               <span className="flex items-center gap-1.5"><Sparkles className="w-4 h-4 text-primary-600" /> Innovative Solutions</span>
