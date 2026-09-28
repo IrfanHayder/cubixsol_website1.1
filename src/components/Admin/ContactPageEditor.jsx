@@ -24,18 +24,20 @@ export default function ContactPageEditor({ showToast }) {
   const [saving, setSaving] = useState(false);
   const [activeTab, setActiveTab] = useState('section');
 
+  const defaultHeroDesc =
+    "Have a vision for custom software development, high-performance web applications, or scalable mobile solutions? At Cubixsol, our dedicated team of senior software engineers, UI/UX designers, and technology consultants is ready to help you architect, build, and deploy enterprise-grade digital products. Connect with us today for a comprehensive technical consultation, detailed project roadmap, and transparent cost estimation — our specialists typically respond within 24 hours to accelerate your business growth.";
+
   const [formData, setFormData] = useState({
     slug: 'contact',
     title: 'Contact Us',
     heroEyebrow: 'Get In Touch',
     heroTitle: "Let's Build Something Amazing Together",
-    heroDesc:
-      "Have a project in mind or need expert advice? We'd love to hear from you. Fill out the form and our team will get back to you as soon as possible.",
+    heroDesc: defaultHeroDesc,
     contactSectionTitle: "We're Here to Help",
     contactSectionSubtitle:
       'Choose the best way to reach us. Our team is always ready to assist you.',
     mapEmbedUrl:
-      'https://maps.google.com/maps?q=New%20York%2C%20NY&t=&z=13&ie=UTF8&iwloc=&output=embed',
+      'https://maps.google.com/maps?q=United%20Kingdom&t=&z=6&ie=UTF8&iwloc=&output=embed',
     highlights: [
       { icon: 'Clock', title: 'Quick Response', desc: 'We reply within 24 hours' },
       { icon: 'Users2', title: 'Expert Support', desc: 'Get help from our experienced team' },
@@ -56,9 +58,15 @@ export default function ContactPageEditor({ showToast }) {
         setLoading(true);
         const data = await apiFetch('pages/contact');
         if (data && !cancelled) {
+          const isOldShortDesc =
+            !data.heroDesc ||
+            data.heroDesc.trim() ===
+              "Have a project in mind or need expert advice? We'd love to hear from you. Fill out the form and our team will get back to you as soon as possible.";
+
           setFormData((prev) => ({
             ...prev,
             ...data,
+            heroDesc: isOldShortDesc ? defaultHeroDesc : data.heroDesc,
             highlights: Array.isArray(data.highlights) && data.highlights.length > 0
               ? data.highlights
               : prev.highlights,
