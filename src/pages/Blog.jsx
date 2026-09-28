@@ -2,7 +2,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import Breadcrumb from '../components/Breadcrumb';
 import CtaBanner from '../components/CtaBanner';
-import { Search } from 'lucide-react';
+import { Search, X } from 'lucide-react';
 import Reveal, { Stagger, StaggerItem } from '../components/Reveal';
 import { apiFetch } from '../utils/api';
 import { useSEO } from '../utils/seo';
@@ -211,15 +211,25 @@ export default function Blog() {
           </div>
 
           {/* Search Bar */}
-          <div className="relative w-full sm:w-64">
-            <Search className="w-4 h-4 text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+          <div className="relative w-full sm:w-72 group">
+            <Search className="w-4 h-4 text-gray-400 group-focus-within:text-[#00a4d8] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none transition-colors duration-200" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search articles..."
-              className="w-full pl-9.5 pr-4 py-2 text-xs sm:text-sm rounded-xl border border-gray-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary-300 transition"
+              className="w-full pl-10 pr-9 py-2.5 text-xs sm:text-sm rounded-xl border border-gray-200 bg-white placeholder:text-gray-400 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#00a4d8]/30 focus:border-[#00a4d8] shadow-2xs hover:border-gray-300 transition-all duration-200"
             />
+            {searchQuery && (
+              <button
+                type="button"
+                onClick={() => setSearchQuery('')}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 p-0.5 rounded-full hover:bg-gray-100 transition-colors"
+                title="Clear search"
+              >
+                <X className="w-3.5 h-3.5" />
+              </button>
+            )}
           </div>
         </div>
 
