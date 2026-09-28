@@ -1,5 +1,7 @@
 import { Link, useParams, Navigate } from 'react-router-dom';
 import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+
 import {
   ArrowRight,
   ArrowLeft,
@@ -545,56 +547,71 @@ export default function ServiceDetail() {
 
           {/* Frequently Asked Questions (FAQs) Section */}
           {faqs.length > 0 && (
-            <section id="faqs" className="scroll-mt-28 py-12 lg:py-16 border-t border-gray-100">
-              <Reveal className="max-w-3xl mb-10">
-                <p className="eyebrow mb-2">Got Questions?</p>
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink tracking-tight mb-3">
-                  Frequently Asked Questions
-                </h2>
-                <p className="text-gray-500 text-sm sm:text-base leading-relaxed">
-                  Everything you need to know about our {service.title.toLowerCase()} process, pricing, and delivery.
-                </p>
-              </Reveal>
+            <section id="faqs" className="scroll-mt-28 py-14 lg:py-20 border-t border-gray-100">
+              <div className="max-w-4xl mx-auto">
+                <Reveal className="text-center mb-10">
+                  <p className="eyebrow mb-2">Got Questions?</p>
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink tracking-tight mb-3">
+                    Frequently Asked Questions
+                  </h2>
+                  <p className="text-gray-500 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
+                    Everything you need to know about our {service.title.toLowerCase()} process, pricing, and delivery.
+                  </p>
+                </Reveal>
 
-              <div className="space-y-3 max-w-4xl">
-                {faqs.map((faq, idx) => {
-                  const isOpen = openFaq === idx;
-                  return (
-                    <div
-                      key={faq.q || idx}
-                      className={`rounded-2xl border transition-all duration-200 overflow-hidden ${isOpen
-                          ? 'border-cyan-200 bg-sky-50/40 shadow-sm'
-                          : 'border-gray-100 bg-white hover:border-gray-200'
+                <div className="space-y-3.5">
+                  {faqs.map((faq, idx) => {
+                    const isOpen = openFaq === idx;
+                    return (
+                      <div
+                        key={faq.q || idx}
+                        className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
+                          isOpen
+                            ? 'border-cyan-200 bg-sky-50/40 shadow-sm'
+                            : 'border-gray-200/80 bg-white hover:border-cyan-200'
                         }`}
-                    >
-                      <button
-                        type="button"
-                        onClick={() => setOpenFaq(isOpen ? null : idx)}
-                        className="w-full text-left px-5 sm:px-6 py-4 sm:py-5 flex items-center justify-between gap-4 font-bold text-ink text-base sm:text-lg focus:outline-none"
                       >
-                        <span className="flex items-center gap-3">
-                          <span className="text-xs font-black text-[#00a4d8] bg-sky-100/80 px-2 py-1 rounded-lg">
-                            Q{idx + 1}
+                        <button
+                          type="button"
+                          onClick={() => setOpenFaq(isOpen ? null : idx)}
+                          className="w-full text-left px-5 sm:px-6 py-4 sm:py-5 flex items-center justify-between gap-4 font-bold text-ink text-base sm:text-lg focus:outline-none hover:text-[#00a4d8] transition-colors cursor-pointer"
+                        >
+                          <span className="flex items-center gap-3.5">
+                            <span className="text-xs font-black text-[#00a4d8] bg-sky-100/80 px-2.5 py-1 rounded-lg shrink-0">
+                              Q{idx + 1}
+                            </span>
+                            <span className="leading-snug">{faq.q}</span>
                           </span>
-                          {faq.q}
-                        </span>
-                        <ChevronDown
-                          className={`w-5 h-5 text-gray-400 shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180 text-[#00a4d8]' : ''
+                          <ChevronDown
+                            className={`w-5 h-5 text-gray-400 shrink-0 transition-transform duration-300 ${
+                              isOpen ? 'rotate-180 text-[#00a4d8]' : ''
                             }`}
-                        />
-                      </button>
+                          />
+                        </button>
 
-                      {isOpen && (
-                        <div className="px-5 sm:px-6 pb-5 pt-1 text-sm sm:text-base text-gray-600 leading-relaxed border-t border-gray-100/60">
-                          <FormatRichText text={faq.a} />
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
+                        <AnimatePresence>
+                          {isOpen && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: 'auto', opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.25 }}
+                              className="overflow-hidden"
+                            >
+                              <div className="px-5 sm:px-6 pb-5 pt-2 text-sm sm:text-base text-gray-600 leading-relaxed border-t border-gray-100/80 pl-14 sm:pl-16">
+                                <FormatRichText text={faq.a} />
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </section>
           )}
+
 
           {/* Success Stories */}
           <div className="-mx-4 sm:mx-0">
