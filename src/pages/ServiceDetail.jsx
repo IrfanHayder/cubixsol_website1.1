@@ -25,6 +25,7 @@ import IosHighlights from '../components/IosHighlights';
 import AndroidHighlights from '../components/AndroidHighlights';
 import AppJourneyWizard from '../components/AppJourneyWizard';
 import DevOpsProcess from '../components/DevOpsProcess';
+import ProcessRoadmapStepper from '../components/ProcessRoadmapStepper';
 import SuccessStories from '../components/SuccessStories';
 import DynamicIcon from '../components/DynamicIcon';
 import { useServices } from '../context/ServicesContext';
@@ -390,41 +391,12 @@ export default function ServiceDetail() {
                   intro={service.serviceProcessIntro}
                 />
               ) : (
-                <section className="py-12 lg:py-16 border-t border-gray-100">
-                  <Reveal className="max-w-3xl mb-10">
-                    <p className="eyebrow mb-2">Methodology</p>
-                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink tracking-tight mb-2">
-                      {service.serviceProcessTitle || 'Our Structured Process'}
-                    </h2>
-                    {service.serviceProcessIntro && (
-                      <div className="text-sm sm:text-base text-gray-500 leading-relaxed">
-                        <FormatRichText text={service.serviceProcessIntro} />
-                      </div>
-                    )}
-                  </Reveal>
-
-                  <Stagger className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4" staggerDelay={0.05}>
-                    {processSteps.map((step, idx) => (
-                      <StaggerItem key={step.title || idx}>
-                        <div className="relative bg-white rounded-3xl border border-gray-100 p-5 sm:p-6 shadow-card hover:shadow-elev hover:border-cyan-200 transition-all h-full flex flex-col justify-between">
-                          <div>
-                            <div className="flex items-center gap-2.5 mb-3">
-                              <span className="inline-block px-2.5 py-0.5 rounded-full bg-gradient-to-r from-sky-50 to-cyan-50 border border-cyan-100 text-[#00a4d8] font-black text-xs shrink-0">
-                                {step.stepNumber || `0${idx + 1}`}
-                              </span>
-                              <h3 className="font-extrabold text-ink text-sm sm:text-base leading-snug">
-                                {step.title}
-                              </h3>
-                            </div>
-                            <div className="text-xs text-gray-500 leading-relaxed">
-                              <FormatRichText text={step.desc} />
-                            </div>
-                          </div>
-                        </div>
-                      </StaggerItem>
-                    ))}
-                  </Stagger>
-                </section>
+                <ProcessRoadmapStepper
+                  steps={processSteps}
+                  title={service.serviceProcessTitle || 'Our Structured Process'}
+                  intro={service.serviceProcessIntro}
+                  eyebrow="Methodology"
+                />
               )}
             </div>
           )}
