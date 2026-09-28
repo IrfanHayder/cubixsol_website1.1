@@ -119,9 +119,15 @@ export default function Projects() {
           <p className="text-center text-gray-400 py-16">No projects found in this category yet.</p>
         ) : (
           <Stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 lg:gap-6" staggerDelay={0.04}>
-            {shown.map((p, idx) => (
-              <StaggerItem key={p._id || p.slug || p.title || idx}>
-                <div className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-card hover:shadow-soft hover:-translate-y-1.5 transition-all duration-300 flex flex-col h-full group">
+            {shown.map((p, idx) => {
+              const rawUrl = p.url || p.link || p.externalUrl || p.website || p.websiteUrl;
+              const isExternal = rawUrl && (rawUrl.startsWith('http://') || rawUrl.startsWith('https://') || rawUrl.includes('.'));
+              const targetUrl = isExternal
+                ? (rawUrl.startsWith('http') ? rawUrl : `https://${rawUrl}`)
+                : (rawUrl || '/contact');
+
+              const CardContent = (
+                <div className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-card hover:shadow-soft hover:-translate-y-1.5 transition-all duration-300 flex flex-col h-full group cursor-pointer">
                   {/* Card Header with Image or Vibrant Gradient */}
                   <div
                     style={!p.image ? getCardStyle(idx) : undefined}
@@ -171,26 +177,45 @@ export default function Projects() {
                         {p.desc || p.description}
                       </p>
                     </div>
-                    <div className="pt-3 border-t border-gray-100 mt-auto">
-                      {p.url ? (
-                        <a
-                          href={p.url.startsWith('http') ? p.url : `https://${p.url}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-xs sm:text-sm font-bold text-primary-600 hover:text-primary-700 inline-flex items-center gap-1.5 transition group-hover:underline"
-                        >
+                    <div className="pt-3 border-t border-gray-100 mt-auto flex items-center justify-between">
+                      {rawUrl ? (
+                        <span className="text-xs sm:text-sm font-bold text-primary-600 group-hover:text-primary-700 inline-flex items-center gap-1.5 transition group-hover:underline">
                           Visit Website <ExternalLink className="w-3.5 h-3.5" />
-                        </a>
+                        </span>
                       ) : (
-                        <Link to="/contact" className="text-xs sm:text-sm font-bold text-primary-600 inline-flex items-center gap-1">
+                        <span className="text-xs sm:text-sm font-bold text-primary-600 group-hover:text-primary-700 inline-flex items-center gap-1 transition group-hover:underline">
                           View Case Study <ArrowRight className="w-3.5 h-3.5" />
-                        </Link>
+                        </span>
                       )}
                     </div>
                   </div>
                 </div>
-              </StaggerItem>
-            ))}
+              );
+
+              return (
+                <StaggerItem key={p._id || p.slug || p.title || idx}>
+                  {isExternal ? (
+                    <a
+                      href={targetUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block h-full no-underline"
+                      title={`Open ${p.title} website`}
+                    >
+                      {CardContent}
+                    </a>
+                  ) : (
+                    <Link
+                      to={targetUrl}
+                      className="block h-full no-underline"
+                      title={`View ${p.title}`}
+                    >
+                      {CardContent}
+                    </Link>
+                  )}
+                </StaggerItem>
+              );
+            })}
           </Stagger>
         )}
 
