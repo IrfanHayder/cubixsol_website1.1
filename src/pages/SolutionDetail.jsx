@@ -8,8 +8,8 @@ import { solutionPractices } from '../data/solutionPractices';
 import Breadcrumb from '../components/Breadcrumb';
 import CtaBanner from '../components/CtaBanner';
 import ServiceInquiryForm from '../components/ServiceInquiryForm';
-import { AgenticAiImpact } from '../components/AgenticAiSections';
-import ProcessRoadmapStepper from '../components/ProcessRoadmapStepper';
+import { AgenticAiImpact, AgenticAiProcess } from '../components/AgenticAiSections';
+
 import SolutionBestPractices from '../components/SolutionBestPractices';
 import Reveal, { Stagger, StaggerItem } from '../components/Reveal';
 import { useEstimateModal } from '../context/EstimateModalContext';
@@ -422,17 +422,16 @@ export default function SolutionDetail() {
           </div>
         )}
 
-        {/* Process Roadmap Section */}
+        {/* Process Roadmap Section (Only if admin added process steps) */}
         {hasCustomProcess && (
-          <div className="mt-8 -mx-4 sm:mx-0">
-            <ProcessRoadmapStepper
-              steps={currentSolution.process.steps}
-              title={currentSolution.process.title || `How We Deliver ${currentSolution.title}`}
-              intro={currentSolution.process.subtitle || currentSolution.process.intro || ''}
-              eyebrow="Delivery Framework"
+          <div className="-mx-4 sm:mx-0">
+            <AgenticAiProcess
+              processData={currentSolution.process}
+              solutionTitle={currentSolution.title}
             />
           </div>
         )}
+
 
 
         {/* Why Choose Us Section (Only if admin added whyChooseItems) */}
