@@ -37,6 +37,14 @@ function parseBlogTags(post) {
     const split = post.tag.split(/[,|;]/).map((s) => s.trim().toLowerCase()).filter(Boolean);
     tags.push(...split);
   }
+  if (typeof post.tags === 'string' && post.tags.trim()) {
+    const split = post.tags.split(/[,|;]/).map((s) => s.trim().toLowerCase()).filter(Boolean);
+    tags.push(...split);
+  }
+  if (post.seo?.keywords && typeof post.seo.keywords === 'string') {
+    const split = post.seo.keywords.split(/[,|;]/).map((s) => s.trim().toLowerCase()).filter(Boolean);
+    tags.push(...split);
+  }
   if (
     typeof post.category === 'string' &&
     post.category.trim() &&
