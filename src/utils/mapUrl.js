@@ -100,6 +100,27 @@ export function getDirectMapLink(input, defaultName = '') {
 }
 
 /**
+ * Helper to test if a URL is related to a specific country/city name
+ */
+function matchesLocation(url, name) {
+  if (!url || !name) return false;
+  const cleanName = name.toLowerCase().replace(/[^a-z0-9]/g, '');
+  const cleanUrl = url.toLowerCase().replace(/[^a-z0-9]/g, '');
+  if (cleanUrl.includes(cleanName)) return true;
+
+  if (cleanName.includes('unitedkingdom') || cleanName === 'uk') {
+    return cleanUrl.includes('unitedkingdom') || cleanUrl.includes('uk') || cleanUrl.includes('london') || cleanUrl.includes('greatbritain');
+  }
+  if (cleanName.includes('pakistan') || cleanName === 'pk') {
+    return cleanUrl.includes('pakistan') || cleanUrl.includes('lahore') || cleanUrl.includes('karachi') || cleanUrl.includes('islamabad');
+  }
+  if (cleanName.includes('unitedarabemirates') || cleanName === 'uae' || cleanName.includes('emirates') || cleanName.includes('dubai')) {
+    return cleanUrl.includes('emirates') || cleanUrl.includes('dubai') || cleanUrl.includes('uae') || cleanUrl.includes('abudhabi');
+  }
+  return false;
+}
+
+/**
  * Parses multi-line content from a Contact Card (e.g. multiple phone numbers, locations, or emails)
  * and returns structured items with their individual links.
  */
@@ -143,21 +164,28 @@ export function parseContactCardItems(card) {
 
     // Determine link
     let finalLink = explicitLink;
-    if (!finalLink && rawLinks[idx]) {
-      finalLink = rawLinks[idx];
-    } else if (!finalLink && rawLinks.length === 1 && !isLocationCard) {
-      finalLink = rawLinks[0];
+
+    if (!finalLink) {
+      if (rawLinks.length > 1 && rawLinks[idx]) {
+        finalLink = rawLinks[idx];
+      } else if (rawLinks.length === 1) {
+        if (isLocationCard) {
+          // If only 1 link was provided, check if it actually matches this location
+          if (matchesLocation(rawLinks[0], text)) {
+            finalLink = rawLinks[0];
+          } else {
+            finalLink = getDirectMapLink(text);
+          }
+        } else if (!isLocationCard) {
+          finalLink = rawLinks[0];
+        }
+      }
     }
 
     // Smart link generation based on type if still empty or location
     if (isLocationCard) {
       if (!finalLink) {
-        // If single link was provided and matches this location or is general
-        if (rawLinks.length === 1 && rawLinks[0].toLowerCase().includes(text.toLowerCase().replace(/\s+/g, ''))) {
-          finalLink = rawLinks[0];
-        } else {
-          finalLink = getDirectMapLink(text);
-        }
+        finalLink = getDirectMapLink(text);
       }
     } else if (isPhoneCard && !finalLink) {
       const cleanPhone = text.replace(/[^0-9+]/g, '');
@@ -229,13 +257,11 @@ export function extractLocations(contactCards = [], pageData = {}) {
           explicitLink = parts.slice(1).join('|').trim();
         }
 
-        let locLink = explicitLink || rawLinks[idx];
+        let locLink = explicitLink;
         if (!locLink) {
-          // If only 1 link was provided in locationCard, check if it matches
-          if (rawLinks.length === 1 && rawLinks[0].toLowerCase().includes(name.toLowerCase().replace(/\s+/g, ''))) {
-            locLink = rawLinks[0];
-          } else if (idx === 1 && rawLinks.length === 1 && rawLinks[0].toLowerCase().includes('united+kingdom')) {
-            // Match for UK if it's the single link provided
+          if (rawLinks.length > 1 && rawLinks[idx]) {
+            locLink = rawLinks[idx];
+          } else if (rawLinks.length === 1 && matchesLocation(rawLinks[0], name)) {
             locLink = rawLinks[0];
           } else {
             locLink = getDirectMapLink(name);

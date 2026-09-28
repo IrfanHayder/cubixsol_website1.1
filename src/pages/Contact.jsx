@@ -403,7 +403,7 @@ export default function Contact() {
 
                       {/* Items List */}
                       {items.length > 0 ? (
-                        <div className="space-y-1.5 mt-2">
+                        <div className="space-y-2 mt-3">
                           {items.map((item, itemIdx) => {
                             if (item.isLocation) {
                               // Find matching index in locations
@@ -418,40 +418,44 @@ export default function Contact() {
                                   : activeLocation.name.toLowerCase() === item.text.toLowerCase();
 
                               return (
-                                <div
+                                <a
                                   key={itemIdx}
-                                  className={`flex items-center justify-between gap-2 p-2 rounded-xl text-xs transition-all ${
+                                  href={item.link}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  onClick={() => {
+                                    if (locIndex !== -1) setActiveLocIdx(locIndex);
+                                  }}
+                                  onMouseEnter={() => {
+                                    if (locIndex !== -1) setActiveLocIdx(locIndex);
+                                  }}
+                                  className={`flex items-center justify-between gap-2.5 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all duration-200 group/loc cursor-pointer ${
                                     isLocActive
-                                      ? 'bg-primary-50/80 text-primary-700 font-bold border border-primary-200/80 shadow-xs'
-                                      : 'bg-gray-50/60 hover:bg-gray-100/80 text-gray-700 border border-gray-100'
+                                      ? 'bg-primary-gradient text-white shadow-soft ring-2 ring-primary-300/30 font-bold scale-[1.01]'
+                                      : 'bg-gray-50/80 hover:bg-primary-50/70 text-gray-700 hover:text-primary-700 border border-gray-200/80 hover:border-primary-200 shadow-2xs'
                                   }`}
+                                  title={`Open ${item.text} on Google Maps`}
                                 >
-                                  <button
-                                    type="button"
-                                    onClick={() => {
-                                      if (locIndex !== -1) setActiveLocIdx(locIndex);
-                                    }}
-                                    className="flex items-center gap-2 text-left flex-1 cursor-pointer font-medium"
-                                  >
+                                  <div className="flex items-center gap-2.5 flex-1 min-w-0">
                                     <MapPin
-                                      size={13}
-                                      className={isLocActive ? 'text-primary-600' : 'text-gray-400'}
+                                      size={14}
+                                      className={
+                                        isLocActive
+                                          ? 'text-white shrink-0'
+                                          : 'text-primary-600 shrink-0 group-hover/loc:scale-110 transition-transform'
+                                      }
                                     />
-                                    <span className="leading-snug">{item.text}</span>
-                                  </button>
-
-                                  {item.link && (
-                                    <a
-                                      href={item.link}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                      title={`Open ${item.text} on Google Maps`}
-                                      className="p-1 rounded-lg text-gray-400 hover:text-primary-600 hover:bg-white transition shrink-0"
-                                    >
-                                      <ExternalLink size={12} />
-                                    </a>
-                                  )}
-                                </div>
+                                    <span className="truncate leading-tight">{item.text}</span>
+                                  </div>
+                                  <ExternalLink
+                                    size={13}
+                                    className={
+                                      isLocActive
+                                        ? 'text-white/90 shrink-0'
+                                        : 'text-gray-400 group-hover/loc:text-primary-600 shrink-0'
+                                    }
+                                  />
+                                </a>
                               );
                             }
 
@@ -462,9 +466,10 @@ export default function Contact() {
                                   href={item.link}
                                   target={item.link.startsWith('http') ? '_blank' : undefined}
                                   rel={item.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                                  className="block p-1.5 rounded-lg text-xs font-semibold text-primary-600 hover:text-primary-700 hover:bg-primary-50/60 transition truncate"
+                                  className="flex items-center justify-between gap-2 px-3 py-2 rounded-xl text-xs font-semibold text-primary-600 hover:text-primary-700 bg-primary-50/50 hover:bg-primary-50 border border-primary-100/60 hover:border-primary-200 transition-all duration-200 truncate group"
                                 >
-                                  {item.text}
+                                  <span className="truncate">{item.text}</span>
+                                  <ExternalLink size={12} className="text-primary-400 group-hover:text-primary-600 shrink-0" />
                                 </a>
                               );
                             }
