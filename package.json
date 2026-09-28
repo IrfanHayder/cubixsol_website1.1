@@ -9,7 +9,7 @@
     "dev:backend": "npm run start --prefix backend",
     "dev:all": "concurrently \"npm run start --prefix backend\" \"vite\" --names \"BACKEND,FRONTEND\" --prefix-colors \"cyan,green\"",
     "share": "npm run build && concurrently \"npm run start --prefix backend\" \"node tunnel-keeper.cjs\" --names \"SERVER,TUNNEL\" --prefix-colors \"cyan,magenta\"",
-    "build": "vite build",
+    "build": "node --max-old-space-size=8192 ./node_modules/vite/bin/vite.js build",
     "start": "npm run start --prefix backend",
     "db:export": "npm run seed:export --prefix backend",
     "db:seed": "npm run seed --prefix backend",

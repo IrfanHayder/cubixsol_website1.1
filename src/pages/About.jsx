@@ -219,12 +219,14 @@ export default function About() {
           <p className="eyebrow mb-3">How we work</p>
           <h2 className="text-3xl font-extrabold text-ink">A clear path from idea to launch</h2>
         </Reveal>
-        <Stagger className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4" staggerDelay={0.07}>
+        <Stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4" staggerDelay={0.07}>
           {safeProcess.map((step) => (
             <StaggerItem key={step.step} hover>
-              <div className="rounded-2xl border border-gray-100 bg-white p-5 h-full hover:border-primary-200 hover:shadow-card transition">
-                <span className="text-2xl font-extrabold text-primary-200">{step.step}</span>
-                <h3 className="font-bold text-ink mt-2 mb-1">{step.title}</h3>
+              <div className="rounded-2xl border border-gray-100 bg-white p-5 h-full hover:border-primary-200 hover:shadow-card transition flex flex-col">
+                <div className="flex items-baseline gap-2.5 mb-2.5">
+                  <span className="text-2xl font-extrabold text-primary-300 tracking-tight shrink-0">{step.step}</span>
+                  <h3 className="font-bold text-ink text-sm sm:text-base leading-snug">{step.title}</h3>
+                </div>
                 <p className="text-xs text-gray-500 leading-relaxed">{step.desc}</p>
               </div>
             </StaggerItem>
