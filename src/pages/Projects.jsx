@@ -160,11 +160,6 @@ export default function Projects() {
                         </span>
                       )}
                     </div>
-                    <div className="z-10">
-                      <h4 className="text-white text-base sm:text-lg font-bold tracking-tight drop-shadow-md line-clamp-1">
-                        {p.title}
-                      </h4>
-                    </div>
                   </div>
 
                   {/* Card Body */}
