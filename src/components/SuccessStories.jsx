@@ -94,10 +94,10 @@ export default function SuccessStories({ serviceSlug, serviceTitle }) {
                 key={s.title}
                 type="button"
                 onClick={() => setActive(i)}
-                className={`px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold transition-all ${
+                className={`px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
                   active === i
-                    ? 'bg-primary-gradient text-white shadow-soft'
-                    : 'bg-gray-100 text-gray-600 hover:bg-primary-50 hover:text-primary-700'
+                    ? 'bg-gradient-to-r from-[#00a4d8] to-[#0284c7] text-white shadow-md'
+                    : 'bg-gray-100 text-gray-600 hover:bg-sky-50 hover:text-[#00a4d8]'
                 }`}
               >
                 {s.title}
@@ -134,7 +134,7 @@ export default function SuccessStories({ serviceSlug, serviceTitle }) {
 
             {/* Content */}
             <div className="bg-ink text-white p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
-              <span className="inline-flex self-start text-[10px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-full bg-primary-500/30 text-primary-200 border border-primary-400/30 mb-4">
+              <span className="inline-flex self-start text-[10px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-full bg-[#00a4d8]/20 text-cyan-200 border border-[#00a4d8]/40 mb-4">
                 {current.category}
               </span>
               <h3 className="text-xl sm:text-2xl font-extrabold mb-2">What is {current.title}?</h3>
@@ -157,13 +157,14 @@ export default function SuccessStories({ serviceSlug, serviceTitle }) {
 
               <Link
                 to="/projects"
-                className="inline-flex items-center gap-2 self-start bg-primary-gradient text-white font-semibold text-sm px-5 py-2.5 rounded-lg hover:opacity-95 transition"
+                className="inline-flex items-center gap-2 self-start bg-gradient-to-r from-[#00a4d8] to-[#0284c7] text-white font-semibold text-sm px-5 py-2.5 rounded-xl hover:opacity-95 transition shadow-sm"
               >
                 View case study <ExternalLink className="w-3.5 h-3.5" />
               </Link>
             </div>
           </motion.div>
         </AnimatePresence>
+
       </div>
     </section>
   );

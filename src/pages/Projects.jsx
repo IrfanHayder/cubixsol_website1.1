@@ -83,12 +83,12 @@ export default function Projects() {
               Explore our diverse portfolio of enterprise web applications, custom software platforms, SaaS systems, and scalable mobile apps. At Cubixsol, our multidisciplinary team combines cutting-edge full-stack engineering, intuitive UI/UX design, and AI automation to deliver high-impact digital solutions that streamline complex workflows, accelerate user acquisition, and drive measurable revenue growth for fast-scaling startups and global enterprises.
             </p>
             <div className="flex flex-wrap gap-6 text-sm font-medium text-gray-500">
-              <span className="flex items-center gap-1.5"><Sparkles className="w-4 h-4 text-primary-600" /> Innovative Solutions</span>
-              <span className="flex items-center gap-1.5"><TrendingUp className="w-4 h-4 text-primary-600" /> Measurable Impact</span>
-              <span className="flex items-center gap-1.5"><Users2 className="w-4 h-4 text-primary-600" /> Client Satisfaction</span>
+              <span className="flex items-center gap-1.5"><Sparkles className="w-4 h-4 text-[#00a4d8]" /> Innovative Solutions</span>
+              <span className="flex items-center gap-1.5"><TrendingUp className="w-4 h-4 text-[#00a4d8]" /> Measurable Impact</span>
+              <span className="flex items-center gap-1.5"><Users2 className="w-4 h-4 text-[#00a4d8]" /> Client Satisfaction</span>
             </div>
           </Reveal>
-          <Reveal direction="left" delay={0.1} className="rounded-3xl overflow-hidden aspect-[4/3] bg-gradient-to-br from-slate-800 to-primary-900 hidden md:flex items-center justify-center shadow-md">
+          <Reveal direction="left" delay={0.1} className="rounded-3xl overflow-hidden aspect-[4/3] bg-gradient-to-br from-slate-800 to-sky-950 hidden md:flex items-center justify-center shadow-md">
             <span className="text-white/80 font-bold text-lg">Portfolio Showcase</span>
           </Reveal>
         </div>
@@ -101,8 +101,8 @@ export default function Projects() {
             <button
               key={f}
               onClick={() => { setFilter(f); setVisibleCount(8); }}
-              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition shadow-xs ${
-                filter === f ? 'bg-primary-gradient text-white shadow-sm' : 'bg-white text-gray-600 border border-gray-200/80 hover:border-primary-300 hover:text-primary-600'
+              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition shadow-xs cursor-pointer ${
+                filter === f ? 'bg-gradient-to-r from-[#00a4d8] to-[#0284c7] text-white shadow-sm' : 'bg-white text-gray-600 border border-gray-200/80 hover:border-[#00a4d8] hover:text-[#00a4d8]'
               }`}
             >
               {f}
@@ -110,6 +110,7 @@ export default function Projects() {
           ))}
         </div>
       </section>
+
 
       {/* GRID: 4 COLUMNS ON XL/2XL, 3 ON LG, 2 ON SM, 1 ON MOBILE */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
@@ -127,7 +128,7 @@ export default function Projects() {
                 : (rawUrl || '/contact');
 
               const CardContent = (
-                <div className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-card hover:shadow-soft hover:-translate-y-1.5 transition-all duration-300 flex flex-col h-full group cursor-pointer">
+                <div className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-card hover:shadow-[0_20px_40px_-10px_rgba(0,164,216,0.18)] hover:border-cyan-300 hover:-translate-y-1.5 transition-all duration-300 flex flex-col h-full group cursor-pointer">
                   {/* Card Header with Image or Vibrant Gradient */}
                   <div
                     style={!p.image ? getCardStyle(idx) : undefined}
@@ -161,11 +162,11 @@ export default function Projects() {
                   <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between">
                     <div>
                       {p.industry && (
-                        <p className="text-[11px] font-bold tracking-wider text-primary-600 uppercase mb-1 line-clamp-1">
+                        <p className="text-[11px] font-bold tracking-wider text-[#00a4d8] uppercase mb-1 line-clamp-1">
                           {p.industry}
                         </p>
                       )}
-                      <h3 className="font-bold text-ink text-base sm:text-lg mb-1.5 group-hover:text-primary-600 transition-colors line-clamp-1">
+                      <h3 className="font-bold text-ink text-base sm:text-lg mb-1.5 group-hover:text-[#00a4d8] transition-colors line-clamp-1">
                         {p.title}
                       </h3>
                       <p className="text-xs sm:text-sm text-gray-500 leading-relaxed mb-4 line-clamp-3">
@@ -174,11 +175,11 @@ export default function Projects() {
                     </div>
                     <div className="pt-3 border-t border-gray-100 mt-auto flex items-center justify-between">
                       {rawUrl ? (
-                        <span className="text-xs sm:text-sm font-bold text-primary-600 group-hover:text-primary-700 inline-flex items-center gap-1.5 transition group-hover:underline">
+                        <span className="text-xs sm:text-sm font-bold text-[#00a4d8] group-hover:text-[#0284c7] inline-flex items-center gap-1.5 transition group-hover:underline">
                           Visit Website <ExternalLink className="w-3.5 h-3.5" />
                         </span>
                       ) : (
-                        <span className="text-xs sm:text-sm font-bold text-primary-600 group-hover:text-primary-700 inline-flex items-center gap-1 transition group-hover:underline">
+                        <span className="text-xs sm:text-sm font-bold text-[#00a4d8] group-hover:text-[#0284c7] inline-flex items-center gap-1 transition group-hover:underline">
                           View Case Study <ArrowRight className="w-3.5 h-3.5" />
                         </span>
                       )}
@@ -186,6 +187,7 @@ export default function Projects() {
                   </div>
                 </div>
               );
+
 
               return (
                 <StaggerItem key={p._id || p.slug || p.title || idx}>
