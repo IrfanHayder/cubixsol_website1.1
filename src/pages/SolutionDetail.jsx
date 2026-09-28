@@ -3,10 +3,13 @@ import { Link, useParams, Navigate } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, CheckCircle2, ChevronDown, Sparkles, ShieldCheck } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { solutions as staticSolutions } from '../data/content';
+import { solutionsData } from '../data/solutionsData';
+import { solutionPractices } from '../data/solutionPractices';
 import Breadcrumb from '../components/Breadcrumb';
 import CtaBanner from '../components/CtaBanner';
 import ServiceInquiryForm from '../components/ServiceInquiryForm';
-import { AgenticAiImpact, AgenticAiProcess } from '../components/AgenticAiSections';
+import { AgenticAiImpact } from '../components/AgenticAiSections';
+import ProcessRoadmapStepper from '../components/ProcessRoadmapStepper';
 import SolutionBestPractices from '../components/SolutionBestPractices';
 import Reveal, { Stagger, StaggerItem } from '../components/Reveal';
 import { useEstimateModal } from '../context/EstimateModalContext';
@@ -76,26 +79,26 @@ function SolutionFaqSection({ faqs, solutionTitle }) {
 
 export default function SolutionDetail() {
   const { slug } = useParams();
-  const fallback = staticSolutions.find((s) => s.slug === slug);
+  const staticItem = (solutionsData && solutionsData[slug]) || staticSolutions.find((s) => s.slug === slug);
+
   const [solution, setSolution] = useState(() => {
     try {
       const cached = localStorage.getItem(`cubixsol_solution_${slug}`);
       if (cached) {
         const parsed = JSON.parse(cached);
-        if (parsed && parsed.slug === slug && parsed.title) return parsed;
+        if (parsed && parsed.slug === slug && parsed.title && (parsed.subServicesItems?.length || parsed.heroTitle)) {
+          return {
+            ...(staticItem || {}),
+            ...parsed,
+          };
+        }
       }
     } catch (_) {}
-    return null;
+    return staticItem || null;
   });
+
   const [loading, setLoading] = useState(() => {
-    try {
-      const cached = localStorage.getItem(`cubixsol_solution_${slug}`);
-      if (cached) {
-        const parsed = JSON.parse(cached);
-        if (parsed && parsed.slug === slug && parsed.title) return false;
-      }
-    } catch (_) {}
-    return true;
+    return !staticItem;
   });
   const [notFound, setNotFound] = useState(false);
 
@@ -107,13 +110,24 @@ export default function SolutionDetail() {
         const live = await apiFetch(`solutions/${slug}`);
         if (cancelled) return;
         if (live && live.slug) {
-          setSolution(live);
+          const merged = {
+            ...(staticItem || {}),
+            ...live,
+            subServicesItems: Array.isArray(live.subServicesItems) && live.subServicesItems.length > 0 ? live.subServicesItems : staticItem?.subServicesItems,
+            useCasesItems: Array.isArray(live.useCasesItems) && live.useCasesItems.length > 0 ? live.useCasesItems : staticItem?.useCasesItems,
+            tech: Array.isArray(live.tech) && live.tech.length > 0 ? live.tech : staticItem?.tech,
+            techDesc: live.techDesc || staticItem?.techDesc,
+            whyChooseItems: Array.isArray(live.whyChooseItems) && live.whyChooseItems.length > 0 ? live.whyChooseItems : staticItem?.whyChooseItems,
+            process: live.process?.steps?.length > 0 ? live.process : staticItem?.process,
+            faqs: Array.isArray(live.faqs) && live.faqs.length > 0 ? live.faqs : staticItem?.faqs,
+          };
+          setSolution(merged);
           try {
-            localStorage.setItem(`cubixsol_solution_${slug}`, JSON.stringify(live));
+            localStorage.setItem(`cubixsol_solution_${slug}`, JSON.stringify(merged));
           } catch (_) {}
           setLoading(false);
-        } else if (fallback) {
-          setSolution(fallback);
+        } else if (staticItem) {
+          setSolution(staticItem);
           setLoading(false);
         } else {
           setNotFound(true);
@@ -121,8 +135,8 @@ export default function SolutionDetail() {
         }
       } catch (_) {
         if (cancelled) return;
-        if (fallback) {
-          setSolution(fallback);
+        if (staticItem) {
+          setSolution(staticItem);
         } else {
           setNotFound(true);
         }
@@ -133,7 +147,7 @@ export default function SolutionDetail() {
     return () => {
       cancelled = true;
     };
-  }, [slug]);
+  }, [slug, staticItem]);
 
   useSEO(solution?.seo, {
     title: solution?.title ? `${solution.title} | Cubixsol Solutions` : undefined,
@@ -164,7 +178,6 @@ export default function SolutionDetail() {
     return <Navigate to="/tools/ai-seo-auditor" replace />;
   }
 
-
   const related = staticSolutions
     .filter((s) => s.group === currentSolution.group && s.slug !== slug)
     .slice(0, 3);
@@ -174,10 +187,14 @@ export default function SolutionDetail() {
   const hasUseCases = Array.isArray(currentSolution.useCasesItems) && currentSolution.useCasesItems.length > 0;
   const hasTech = Boolean(currentSolution.techDesc || (Array.isArray(currentSolution.tech) && currentSolution.tech.length > 0));
   const hasWhyChoose = Array.isArray(currentSolution.whyChooseItems) && currentSolution.whyChooseItems.length > 0;
-  const hasPractices = Array.isArray(currentSolution.practices?.items) && currentSolution.practices.items.length > 0;
+  const hasPractices = Boolean(
+    (Array.isArray(currentSolution.practices?.items) && currentSolution.practices.items.length > 0) ||
+    (slug && solutionPractices[slug])
+  );
   const hasCustomImpact = Array.isArray(currentSolution.impact?.rows) && currentSolution.impact.rows.length > 0;
   const hasCustomProcess = Array.isArray(currentSolution.process?.steps) && currentSolution.process.steps.length > 0;
   const hasCustomFaqs = Array.isArray(currentSolution.faqs) && currentSolution.faqs.length > 0;
+
 
   return (
     <div>
@@ -405,15 +422,18 @@ export default function SolutionDetail() {
           </div>
         )}
 
-        {/* Process Roadmap Section (Only if admin added process steps) */}
+        {/* Process Roadmap Section */}
         {hasCustomProcess && (
-          <div className="-mx-4 sm:mx-0">
-            <AgenticAiProcess
-              processData={currentSolution.process}
-              solutionTitle={currentSolution.title}
+          <div className="mt-8 -mx-4 sm:mx-0">
+            <ProcessRoadmapStepper
+              steps={currentSolution.process.steps}
+              title={currentSolution.process.title || `How We Deliver ${currentSolution.title}`}
+              intro={currentSolution.process.subtitle || currentSolution.process.intro || ''}
+              eyebrow="Delivery Framework"
             />
           </div>
         )}
+
 
         {/* Why Choose Us Section (Only if admin added whyChooseItems) */}
         {hasWhyChoose && (

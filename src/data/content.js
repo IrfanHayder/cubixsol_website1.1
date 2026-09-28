@@ -3,6 +3,8 @@ import {
   LineChart, PenTool, Zap, ShieldCheck, Clock, Users2, Webhook, LayoutTemplate, Database, Palette,
   FileCode, Tablet, AppWindow, ServerCog, Boxes, Bot, Mail, BarChart2,
 } from 'lucide-react';
+import { solutionsData } from './solutionsData';
+
 
 export const services = [
   {
@@ -1452,8 +1454,17 @@ export const solutionGroups = [
 ];
 
 export const solutions = solutionGroups.flatMap((g) =>
-  g.items.map((item) => ({ ...item, group: g.title }))
+  g.items.map((item) => {
+    const full = solutionsData && solutionsData[item.slug] ? solutionsData[item.slug] : {};
+    return {
+      ...item,
+      group: g.title,
+      category: g.title,
+      ...full,
+    };
+  })
 );
+
 
 
 export const products = [

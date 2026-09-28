@@ -436,4 +436,32 @@ export const solutionPractices = {
       },
     ],
   },
+  'oracle-aidp': {
+    title: 'Best Practices for Oracle AI Data Platform',
+    intro:
+      'Modernizing on Oracle AIDP requires careful schema planning, performance tuning, and secure data pipelines.',
+    items: [
+      {
+        title: 'Workload & Schema Assessment',
+        body: 'Audit on-premises or legacy Oracle databases, stored procedures, and integrations to establish clean migration paths to Autonomous Database.',
+      },
+      {
+        title: 'Autonomous Database Optimization',
+        body: 'Leverage auto-scaling, automatic indexing, and partitioning to maximize throughput while minimizing OCI compute costs.',
+      },
+      {
+        title: 'Unified OCI AI Services Integration',
+        body: 'Connect Oracle AIDP pipelines with OCI Generative AI, Language, and Vision services using native SQL-based AI interfaces.',
+      },
+      {
+        title: 'Zero-Downtime Data Sync',
+        body: 'Utilize Oracle GoldenGate and OCI Data Integration for bidirectional, near real-time replication with zero business interruption.',
+      },
+      {
+        title: 'Enterprise Security & Compliance',
+        body: 'Enforce Transparent Data Encryption (TDE), Oracle Data Safe auditing, and least-privilege IAM policies across cloud tenancies.',
+      },
+    ],
+  },
 };
+
