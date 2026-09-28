@@ -300,12 +300,14 @@ export default function ServiceDetail() {
                   <StaggerItem key={sub.title || idx} hover>
                     <div className="group relative bg-white rounded-3xl border border-gray-100 p-6 sm:p-7 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_-10px_rgba(0,164,216,0.12)] hover:border-cyan-200 hover:-translate-y-1 transition-all duration-300 h-full flex flex-col justify-between">
                       <div>
-                        <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-sky-50 to-cyan-50 border border-cyan-100/80 flex items-center justify-center text-[#00a4d8] font-black text-sm mb-5 group-hover:scale-105 group-hover:bg-gradient-to-br group-hover:from-[#00a4d8] group-hover:to-[#0284c7] group-hover:text-white transition-all duration-300">
-                          {String(idx + 1).padStart(2, '0')}
+                        <div className="flex items-center gap-3.5 mb-3.5">
+                          <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-br from-sky-50 to-cyan-50 border border-cyan-100/80 flex items-center justify-center text-[#00a4d8] font-black text-sm group-hover:scale-105 group-hover:bg-gradient-to-br group-hover:from-[#00a4d8] group-hover:to-[#0284c7] group-hover:text-white transition-all duration-300 shrink-0">
+                            {String(idx + 1).padStart(2, '0')}
+                          </div>
+                          <h3 className="font-extrabold text-ink text-base sm:text-lg leading-snug group-hover:text-[#00a4d8] transition-colors">
+                            {sub.title}
+                          </h3>
                         </div>
-                        <h3 className="font-extrabold text-ink text-lg sm:text-xl mb-2.5 group-hover:text-[#00a4d8] transition-colors">
-                          {sub.title}
-                        </h3>
                         <div className="text-sm text-gray-500 leading-relaxed">
                           <FormatRichText text={sub.desc} />
                         </div>
@@ -359,12 +361,14 @@ export default function ServiceDetail() {
                   {whyChooseItems.map((item, idx) => (
                     <StaggerItem key={item.title || idx} hover>
                       <div className="bg-white rounded-3xl border border-gray-100 p-6 sm:p-7 shadow-card hover:shadow-elev hover:border-cyan-200 transition-all h-full">
-                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-sky-50 to-cyan-50 text-[#00a4d8] flex items-center justify-center mb-4">
-                          <ShieldCheck className="w-5 h-5" />
+                        <div className="flex items-center gap-3.5 mb-3.5">
+                          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-sky-50 to-cyan-50 text-[#00a4d8] flex items-center justify-center shrink-0">
+                            <ShieldCheck className="w-5 h-5" />
+                          </div>
+                          <h3 className="text-base sm:text-lg font-extrabold text-ink leading-snug">
+                            {item.title}
+                          </h3>
                         </div>
-                        <h3 className="text-lg font-extrabold text-ink mb-2">
-                          {item.title}
-                        </h3>
                         <div className="text-sm text-gray-500 leading-relaxed">
                           <FormatRichText text={item.desc} />
                         </div>
@@ -404,12 +408,14 @@ export default function ServiceDetail() {
                       <StaggerItem key={step.title || idx}>
                         <div className="relative bg-white rounded-3xl border border-gray-100 p-5 sm:p-6 shadow-card hover:shadow-elev hover:border-cyan-200 transition-all h-full flex flex-col justify-between">
                           <div>
-                            <span className="inline-block px-3 py-1 rounded-full bg-gradient-to-r from-sky-50 to-cyan-50 border border-cyan-100 text-[#00a4d8] font-black text-xs mb-4">
-                              {step.stepNumber || `0${idx + 1}`}
-                            </span>
-                            <h3 className="font-extrabold text-ink text-base mb-2">
-                              {step.title}
-                            </h3>
+                            <div className="flex items-center gap-2.5 mb-3">
+                              <span className="inline-block px-2.5 py-0.5 rounded-full bg-gradient-to-r from-sky-50 to-cyan-50 border border-cyan-100 text-[#00a4d8] font-black text-xs shrink-0">
+                                {step.stepNumber || `0${idx + 1}`}
+                              </span>
+                              <h3 className="font-extrabold text-ink text-sm sm:text-base leading-snug">
+                                {step.title}
+                              </h3>
+                            </div>
                             <div className="text-xs text-gray-500 leading-relaxed">
                               <FormatRichText text={step.desc} />
                             </div>
@@ -443,12 +449,14 @@ export default function ServiceDetail() {
                 {businessTypes.map((item, idx) => (
                   <StaggerItem key={item.title || idx} hover>
                     <div className="bg-white rounded-3xl border border-gray-100 p-6 shadow-card hover:shadow-elev hover:border-cyan-200 transition-all h-full">
-                      <div className="w-10 h-10 rounded-xl bg-sky-50 text-[#00a4d8] flex items-center justify-center mb-4">
-                        <Briefcase className="w-5 h-5" />
+                      <div className="flex items-center gap-3.5 mb-3.5">
+                        <div className="w-10 h-10 rounded-xl bg-sky-50 text-[#00a4d8] flex items-center justify-center shrink-0">
+                          <Briefcase className="w-5 h-5" />
+                        </div>
+                        <h3 className="font-extrabold text-ink text-base sm:text-lg leading-snug">
+                          {item.title}
+                        </h3>
                       </div>
-                      <h3 className="font-extrabold text-ink text-lg mb-2">
-                        {item.title}
-                      </h3>
                       <div className="text-sm text-gray-500 leading-relaxed">
                         <FormatRichText text={item.desc} />
                       </div>

@@ -435,12 +435,14 @@ export default function SolutionDetail() {
                 <StaggerItem key={item.title || idx} hover>
                   <div className="group relative bg-white rounded-3xl border border-gray-100 p-6 sm:p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_-10px_rgba(0,164,216,0.12)] hover:border-cyan-200 hover:-translate-y-1 transition-all duration-300 h-full flex flex-col justify-between">
                     <div>
-                      <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-cyan-50 to-sky-50 border border-cyan-100/80 flex items-center justify-center text-[#00a4d8] font-black text-sm mb-5 group-hover:scale-105 group-hover:bg-gradient-to-br group-hover:from-[#00a4d8] group-hover:to-[#0284c7] group-hover:text-white transition-all duration-300">
-                        <ShieldCheck className="w-5 h-5" />
+                      <div className="flex items-center gap-3.5 mb-3.5">
+                        <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-br from-cyan-50 to-sky-50 border border-cyan-100/80 flex items-center justify-center text-[#00a4d8] font-black text-sm group-hover:scale-105 group-hover:bg-gradient-to-br group-hover:from-[#00a4d8] group-hover:to-[#0284c7] group-hover:text-white transition-all duration-300 shrink-0">
+                          <ShieldCheck className="w-5 h-5" />
+                        </div>
+                        <h3 className="font-extrabold text-ink text-base sm:text-lg leading-snug group-hover:text-[#00a4d8] transition-colors">
+                          {item.title}
+                        </h3>
                       </div>
-                      <h3 className="font-extrabold text-ink text-lg sm:text-xl mb-3 group-hover:text-[#00a4d8] transition-colors">
-                        {item.title}
-                      </h3>
                       <p className="text-sm text-gray-500 leading-relaxed">
                         {item.desc}
                       </p>
