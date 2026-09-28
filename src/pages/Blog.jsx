@@ -255,16 +255,16 @@ export default function Blog() {
                   className="bg-white rounded-3xl overflow-hidden border border-gray-200/80 shadow-card hover:shadow-soft hover:-translate-y-1.5 transition-all duration-300 h-full flex flex-col group cursor-pointer"
                 >
                   {/* Top Cover / Illustration Header */}
-                  <div className="h-48 sm:h-52 w-full relative overflow-hidden bg-slate-50 flex items-center justify-center p-3 border-b border-gray-100/90">
+                  <div className="h-48 sm:h-52 w-full relative overflow-hidden bg-slate-100 shrink-0 border-b border-gray-100">
                     {p.coverImage ? (
                       <img
                         src={p.coverImage}
                         alt={p.title}
-                        className="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         loading="lazy"
                       />
                     ) : (
-                      <div className="w-full h-full rounded-2xl bg-gradient-to-br from-[#00a4d8]/15 via-primary-500/10 to-indigo-500/15 flex items-center justify-center p-4 relative overflow-hidden border border-primary-100/40">
+                      <div className="w-full h-full bg-gradient-to-br from-[#00a4d8]/15 via-primary-500/10 to-indigo-500/15 flex items-center justify-center p-4 relative overflow-hidden">
                         {/* Decorative Grid Pattern */}
                         <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#00a4d8_1px,transparent_1px)] [background-size:16px_16px]" />
                         <span className="text-[#00a4d8] font-extrabold text-xs tracking-wider uppercase px-3.5 py-1.5 rounded-xl bg-white/90 backdrop-blur-xs shadow-2xs border border-cyan-100 z-10">
