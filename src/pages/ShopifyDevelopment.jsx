@@ -563,7 +563,7 @@ export default function ShopifyDevelopment() {
       {/* ================= 4. HOW WE WORK (PROCESS ROADMAP) ================= */}
       <section className="py-16 sm:py-24 bg-slate-50/80 border-y border-gray-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Reveal className="text-center max-w-3xl mx-auto mb-14">
+          <Reveal className="text-center w-full max-w-5xl mx-auto mb-14">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-50 text-[#00a4d8] border border-sky-200 text-xs font-bold uppercase tracking-wider mb-3 shadow-sm">
               <Layers className="w-3.5 h-3.5 text-[#00a4d8]" />
               <span>Step-by-Step Delivery</span>
@@ -571,10 +571,11 @@ export default function ShopifyDevelopment() {
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink tracking-tight mb-3">
               {data.serviceProcessTitle || DEFAULT_DATA.serviceProcessTitle}
             </h2>
-            <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+            <p className="text-gray-600 text-sm sm:text-base leading-relaxed max-w-4xl mx-auto">
               {data.serviceProcessIntro || DEFAULT_DATA.serviceProcessIntro}
             </p>
           </Reveal>
+
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {processSteps.map((step, idx) => (
@@ -626,18 +627,19 @@ export default function ShopifyDevelopment() {
 
       {/* ================= 5. OUR SHOPIFY SERVICES (SUB-SERVICES MATRIX) ================= */}
       <section id="services-matrix" className="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Reveal className="text-center max-w-3xl mx-auto mb-16">
+        <Reveal className="text-center w-full max-w-6xl mx-auto mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-50 text-[#00a4d8] border border-sky-200 text-xs font-bold uppercase tracking-wider mb-3 shadow-sm">
             <ShoppingBag className="w-3.5 h-3.5 text-[#00a4d8]" />
             <span>Full-Lifecycle Solutions</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink tracking-tight mb-3">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink tracking-tight mb-4">
             {data.subServicesTitle || DEFAULT_DATA.subServicesTitle}
           </h2>
-          <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+          <p className="text-gray-600 text-sm sm:text-base lg:text-lg leading-relaxed max-w-6xl mx-auto">
             {data.subServicesIntro || DEFAULT_DATA.subServicesIntro}
           </p>
         </Reveal>
+
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {subServices.map((srv, idx) => {
@@ -685,7 +687,7 @@ export default function ShopifyDevelopment() {
       {/* ================= 6. KEY FEATURES WE FOLLOW TO HELP YOU SUCCEED ================= */}
       <section className="py-16 sm:py-24 bg-slate-50/80 border-t border-gray-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Reveal className="text-center max-w-3xl mx-auto mb-16">
+          <Reveal className="text-center w-full max-w-5xl mx-auto mb-14 sm:mb-16">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-50 text-[#00a4d8] border border-sky-200 text-xs font-bold uppercase tracking-wider mb-3 shadow-sm">
               <Sparkles className="w-3.5 h-3.5 text-[#00a4d8]" />
               <span>Success Principles</span>
@@ -693,10 +695,11 @@ export default function ShopifyDevelopment() {
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink tracking-tight mb-3">
               {data.businessTypesTitle || DEFAULT_DATA.businessTypesTitle}
             </h2>
-            <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+            <p className="text-gray-600 text-sm sm:text-base leading-relaxed max-w-4xl mx-auto">
               {data.businessTypesIntro || DEFAULT_DATA.businessTypesIntro}
             </p>
           </Reveal>
+
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
             {keyFeatures.map((feat, idx) => {
