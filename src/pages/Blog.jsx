@@ -147,7 +147,16 @@ export default function Blog() {
     };
   }, []);
 
-  // Categories list
+  // Category counts and list
+  const categoryCounts = useMemo(() => {
+    const counts = { All: posts.length };
+    posts.forEach((p) => {
+      const cat = p.category || 'General';
+      counts[cat] = (counts[cat] || 0) + 1;
+    });
+    return counts;
+  }, [posts]);
+
   const categories = useMemo(() => {
     const set = new Set();
     posts.forEach((p) => {
@@ -190,155 +199,224 @@ export default function Blog() {
           </p>
         </Reveal>
 
-        {/* Filter Tabs & Search */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-10">
-          {/* Categories */}
-          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
-            {categories.map((c) => (
-              <button
-                key={c}
-                type="button"
-                onClick={() => setActiveCategory(c)}
-                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 cursor-pointer ${
-                  activeCategory === c
-                    ? 'bg-primary-gradient text-white shadow-soft scale-[1.02]'
-                    : 'bg-white text-gray-600 border border-gray-200 hover:border-primary-300 hover:text-primary-600 shadow-2xs'
-                }`}
-              >
-                {c}
-              </button>
-            ))}
-          </div>
-
-          {/* Search Bar */}
-          <div className="relative w-full sm:w-72 group">
-            <Search className="w-4 h-4 text-gray-400 group-focus-within:text-[#00a4d8] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none transition-colors duration-200" />
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search articles..."
-              className="w-full pl-10 pr-9 py-2.5 text-xs sm:text-sm rounded-xl border border-gray-200 bg-white placeholder:text-gray-400 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#00a4d8]/30 focus:border-[#00a4d8] shadow-2xs hover:border-gray-300 transition-all duration-200"
-            />
-            {searchQuery && (
-              <button
-                type="button"
-                onClick={() => setSearchQuery('')}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 p-0.5 rounded-full hover:bg-gray-100 transition-colors"
-                title="Clear search"
-              >
-                <X className="w-3.5 h-3.5" />
-              </button>
-            )}
-          </div>
+        {/* Top Search Bar (Matching Reference Layout) */}
+        <div className="mb-10">
+          <form
+            onSubmit={(e) => e.preventDefault()}
+            className="w-full bg-white rounded-2xl border border-gray-200/90 shadow-2xs hover:border-[#00a4d8]/50 focus-within:border-[#00a4d8] focus-within:ring-2 focus-within:ring-[#00a4d8]/20 transition-all duration-200 flex items-center p-2 gap-2"
+          >
+            <div className="relative flex-1 flex items-center">
+              <Search className="w-5 h-5 text-gray-400 absolute left-4 pointer-events-none transition-colors" />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="SEARCH POSTS"
+                className="w-full pl-12 pr-10 py-2.5 text-xs sm:text-sm font-semibold tracking-wider text-ink placeholder:text-gray-400 placeholder:font-normal bg-transparent focus:outline-none"
+              />
+              {searchQuery && (
+                <button
+                  type="button"
+                  onClick={() => setSearchQuery('')}
+                  className="absolute right-3 text-gray-400 hover:text-gray-600 p-1 rounded-full hover:bg-gray-100 transition-colors"
+                  title="Clear search"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              )}
+            </div>
+            <button
+              type="submit"
+              className="px-6 sm:px-8 py-2.5 rounded-xl bg-white border border-gray-200 text-xs sm:text-sm font-extrabold tracking-wider uppercase text-ink hover:text-[#00a4d8] hover:border-[#00a4d8] hover:shadow-2xs transition-all duration-200 shrink-0 cursor-pointer"
+            >
+              SEARCH
+            </button>
+          </form>
         </div>
 
-        {/* Blog Cards Grid */}
-        {loading ? (
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3].map((n) => (
-              <div
-                key={n}
-                className="bg-white rounded-3xl overflow-hidden border border-gray-150 shadow-card animate-pulse h-96 flex flex-col"
-              >
-                <div className="h-48 bg-gray-100" />
-                <div className="p-6 flex-1 flex flex-col gap-3">
-                  <div className="h-3 bg-gray-200 rounded w-1/3 mx-auto" />
-                  <div className="h-5 bg-gray-200 rounded w-4/5 mx-auto" />
-                  <div className="h-4 bg-gray-100 rounded w-full mt-2" />
-                  <div className="h-4 bg-gray-100 rounded w-2/3 mx-auto mt-auto" />
-                </div>
+        {/* Main 2-Column Section: Posts Grid on Left, Categories on Right */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          {/* Left Column: Blog Posts Grid */}
+          <div className="lg:col-span-8 xl:col-span-9 order-2 lg:order-1">
+            {loading ? (
+              <div className="grid sm:grid-cols-2 gap-6">
+                {[1, 2, 3, 4].map((n) => (
+                  <div
+                    key={n}
+                    className="bg-white rounded-3xl overflow-hidden border border-gray-150 shadow-card animate-pulse h-96 flex flex-col"
+                  >
+                    <div className="h-48 bg-gray-100" />
+                    <div className="p-6 flex-1 flex flex-col gap-3">
+                      <div className="h-3 bg-gray-200 rounded w-1/3 mx-auto" />
+                      <div className="h-5 bg-gray-200 rounded w-4/5 mx-auto" />
+                      <div className="h-4 bg-gray-100 rounded w-full mt-2" />
+                      <div className="h-4 bg-gray-100 rounded w-2/3 mx-auto mt-auto" />
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-        ) : filteredPosts.length === 0 ? (
-          <div className="text-center py-16 text-gray-500 bg-gray-50/50 rounded-3xl border border-gray-100 p-8">
-            <p className="text-lg font-bold text-ink mb-1">No blog posts found</p>
-            <p className="text-sm text-gray-400">Try selecting a different category or clearing your search.</p>
-          </div>
-        ) : (
-          <Stagger className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7" staggerDelay={0.06}>
-            {filteredPosts.map((p) => (
-              <StaggerItem key={p._id || p.slug || p.title}>
-                <Link
-                  to={p.slug ? `/blog/${p.slug}` : '/blog'}
-                  className="bg-white rounded-3xl overflow-hidden border border-gray-200/80 shadow-card hover:shadow-soft hover:-translate-y-1.5 transition-all duration-300 h-full flex flex-col group cursor-pointer"
-                >
-                  {/* Top Cover / Illustration Header */}
-                  <div className="h-48 sm:h-52 w-full relative overflow-hidden bg-slate-100 shrink-0 border-b border-gray-100">
-                    {p.coverImage ? (
-                      <img
-                        src={p.coverImage}
-                        alt={p.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        loading="lazy"
-                      />
-                    ) : (
-                      <div className="w-full h-full bg-gradient-to-br from-[#00a4d8]/15 via-primary-500/10 to-indigo-500/15 flex items-center justify-center p-4 relative overflow-hidden">
-                        {/* Decorative Grid Pattern */}
-                        <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#00a4d8_1px,transparent_1px)] [background-size:16px_16px]" />
-                        <span className="text-[#00a4d8] font-extrabold text-xs tracking-wider uppercase px-3.5 py-1.5 rounded-xl bg-white/90 backdrop-blur-xs shadow-2xs border border-cyan-100 z-10">
-                          {p.category || p.tag || 'Cubixsol Article'}
-                        </span>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Card Content */}
-                  <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between">
-                    <div>
-                      {/* Category Eyebrow in Cubixsol Cyan-Blue */}
-                      <p className="text-center text-[11px] font-extrabold uppercase tracking-widest text-[#00a4d8] mb-2">
-                        {p.category || p.tag || 'Technology'}
-                      </p>
-
-                      {/* Blog Title */}
-                      <h3 className="text-center font-bold text-ink text-base sm:text-lg mb-2.5 leading-snug group-hover:text-primary-600 transition-colors line-clamp-2">
-                        {p.title}
-                      </h3>
-
-                      {/* Excerpt */}
-                      {p.excerpt && (
-                        <p className="text-xs sm:text-sm text-gray-500 text-center leading-relaxed mb-4 line-clamp-3">
-                          {p.excerpt}
-                        </p>
-                      )}
-
-                      {/* Tags Pills List */}
-                      {Array.isArray(p.tags) && p.tags.length > 0 && (
-                        <div className="flex flex-wrap items-center justify-center gap-1.5 mb-4">
-                          {p.tags.map((tag, tIdx) => (
-                            <span
-                              key={tIdx}
-                              className="text-[11px] font-medium text-gray-600 bg-gray-100/90 px-2.5 py-0.5 rounded-md border border-gray-200/60 group-hover:border-primary-200 group-hover:text-primary-700 transition-colors"
-                            >
-                              {tag}
+            ) : filteredPosts.length === 0 ? (
+              <div className="text-center py-16 text-gray-500 bg-gray-50/50 rounded-3xl border border-gray-100 p-8">
+                <p className="text-lg font-bold text-ink mb-1">No blog posts found</p>
+                <p className="text-sm text-gray-400 mb-4">Try selecting a different category or clearing your search.</p>
+                {(activeCategory !== 'All' || searchQuery) && (
+                  <button
+                    onClick={() => {
+                      setActiveCategory('All');
+                      setSearchQuery('');
+                    }}
+                    className="px-4 py-2 rounded-xl text-xs font-bold text-white bg-[#00a4d8] hover:bg-[#0092c2] transition shadow-xs cursor-pointer"
+                  >
+                    Reset Filters
+                  </button>
+                )}
+              </div>
+            ) : (
+              <Stagger className="grid sm:grid-cols-2 gap-6 sm:gap-7" staggerDelay={0.06}>
+                {filteredPosts.map((p) => (
+                  <StaggerItem key={p._id || p.slug || p.title}>
+                    <Link
+                      to={p.slug ? `/blog/${p.slug}` : '/blog'}
+                      className="bg-white rounded-3xl overflow-hidden border border-gray-200/80 shadow-card hover:shadow-soft hover:-translate-y-1.5 transition-all duration-300 h-full flex flex-col group cursor-pointer"
+                    >
+                      {/* Top Cover / Illustration Header */}
+                      <div className="h-48 sm:h-52 w-full relative overflow-hidden bg-slate-100 shrink-0 border-b border-gray-100">
+                        {p.coverImage ? (
+                          <img
+                            src={p.coverImage}
+                            alt={p.title}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            loading="lazy"
+                          />
+                        ) : (
+                          <div className="w-full h-full bg-gradient-to-br from-[#00a4d8]/15 via-primary-500/10 to-indigo-500/15 flex items-center justify-center p-4 relative overflow-hidden">
+                            {/* Decorative Grid Pattern */}
+                            <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#00a4d8_1px,transparent_1px)] [background-size:16px_16px]" />
+                            <span className="text-[#00a4d8] font-extrabold text-xs tracking-wider uppercase px-3.5 py-1.5 rounded-xl bg-white/90 backdrop-blur-xs shadow-2xs border border-cyan-100 z-10">
+                              {p.category || p.tag || 'Cubixsol Article'}
                             </span>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-
-                    {/* Bottom Meta Row: Author, Read Time, Date */}
-                    <div className="pt-3.5 border-t border-gray-100 mt-auto flex items-center justify-between text-xs text-gray-500 font-medium">
-                      <span
-                        className="font-semibold text-ink truncate max-w-[130px]"
-                        title={p.author || 'Cubixsol Team'}
-                      >
-                        {p.author || 'Cubixsol Team'}
-                      </span>
-                      <div className="flex items-center gap-1.5 text-gray-400 shrink-0 text-[11px]">
-                        <span>{p.readTime || '4 min read'}</span>
-                        <span>·</span>
-                        <span>{p.date}</span>
+                          </div>
+                        )}
                       </div>
-                    </div>
-                  </div>
-                </Link>
-              </StaggerItem>
-            ))}
-          </Stagger>
-        )}
+
+                      {/* Card Content */}
+                      <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                          {/* Category Eyebrow in Cubixsol Cyan-Blue */}
+                          <p className="text-center text-[11px] font-extrabold uppercase tracking-widest text-[#00a4d8] mb-2">
+                            {p.category || p.tag || 'Technology'}
+                          </p>
+
+                          {/* Blog Title */}
+                          <h3 className="text-center font-bold text-ink text-base sm:text-lg mb-2.5 leading-snug group-hover:text-[#00a4d8] transition-colors line-clamp-2">
+                            {p.title}
+                          </h3>
+
+                          {/* Excerpt */}
+                          {p.excerpt && (
+                            <p className="text-xs sm:text-sm text-gray-500 text-center leading-relaxed mb-4 line-clamp-3">
+                              {p.excerpt}
+                            </p>
+                          )}
+
+                          {/* Tags Pills List */}
+                          {Array.isArray(p.tags) && p.tags.length > 0 && (
+                            <div className="flex flex-wrap items-center justify-center gap-1.5 mb-4">
+                              {p.tags.map((tag, tIdx) => (
+                                <span
+                                  key={tIdx}
+                                  className="text-[11px] font-medium text-gray-600 bg-gray-100/90 px-2.5 py-0.5 rounded-md border border-gray-200/60 group-hover:border-[#00a4d8]/30 group-hover:text-[#00a4d8] transition-colors"
+                                >
+                                  {tag}
+                                </span>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+
+                        {/* Bottom Meta Row: Author, Read Time, Date */}
+                        <div className="pt-3.5 border-t border-gray-100 mt-auto flex items-center justify-between text-xs text-gray-500 font-medium">
+                          <span
+                            className="font-semibold text-ink truncate max-w-[130px]"
+                            title={p.author || 'Cubixsol Team'}
+                          >
+                            {p.author || 'Cubixsol Team'}
+                          </span>
+                          <div className="flex items-center gap-1.5 text-gray-400 shrink-0 text-[11px]">
+                            <span>{p.readTime || '4 min read'}</span>
+                            <span>·</span>
+                            <span>{p.date}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  </StaggerItem>
+                ))}
+              </Stagger>
+            )}
+          </div>
+
+          {/* Right Column: Categories Sidebar */}
+          <div className="lg:col-span-4 xl:col-span-3 order-1 lg:order-2 lg:sticky lg:top-24">
+            <div className="bg-white rounded-3xl border border-gray-200/80 p-5 sm:p-6 shadow-card">
+              <h2 className="text-xs font-extrabold uppercase tracking-widest text-ink mb-4 pb-3 border-b border-gray-100">
+                Categories
+              </h2>
+
+              {/* Everything / All Category Button */}
+              <button
+                type="button"
+                onClick={() => setActiveCategory('All')}
+                className={`w-full text-left px-4 py-3 rounded-2xl font-bold text-sm transition-all duration-200 flex items-center justify-between cursor-pointer mb-3.5 ${
+                  activeCategory === 'All'
+                    ? 'bg-[#00a4d8] text-white shadow-soft'
+                    : 'bg-gray-50/90 text-gray-700 hover:bg-sky-50/60 hover:text-[#00a4d8]'
+                }`}
+              >
+                <span>Everything</span>
+                <span
+                  className={`text-xs px-2.5 py-0.5 rounded-full font-semibold ${
+                    activeCategory === 'All'
+                      ? 'bg-white/20 text-white'
+                      : 'bg-gray-200/70 text-gray-600'
+                  }`}
+                >
+                  {categoryCounts['All'] || 0}
+                </span>
+              </button>
+
+              {/* Dynamic Category List */}
+              <div className="space-y-1.5">
+                {categories
+                  .filter((c) => c !== 'All')
+                  .map((c) => {
+                    const isActive = activeCategory === c;
+                    return (
+                      <button
+                        key={c}
+                        type="button"
+                        onClick={() => setActiveCategory(c)}
+                        className={`w-full text-left px-3.5 py-2.5 rounded-xl text-sm transition-all duration-200 flex items-center justify-between cursor-pointer ${
+                          isActive
+                            ? 'bg-[#00a4d8] text-white font-bold shadow-2xs'
+                            : 'text-gray-600 hover:text-[#00a4d8] hover:bg-sky-50/60 font-medium'
+                        }`}
+                      >
+                        <span className="truncate pr-2">{c}</span>
+                        <span
+                          className={`text-xs font-semibold shrink-0 ${
+                            isActive ? 'text-white/90' : 'text-gray-400'
+                          }`}
+                        >
+                          {categoryCounts[c] || 0}
+                        </span>
+                      </button>
+                    );
+                  })}
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
       <CtaBanner />
     </div>
