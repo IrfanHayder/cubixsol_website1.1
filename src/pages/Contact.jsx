@@ -1,13 +1,7 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import {
   Send,
-  MapPin,
-  Mail,
-  Phone,
-  Clock,
-  Zap,
-  Users2,
   ShieldCheck,
   Plus,
   Minus,
@@ -15,8 +9,6 @@ import {
   MailPlus,
   Loader2,
   AlertCircle,
-  ExternalLink,
-  Navigation,
 } from 'lucide-react';
 import { faqs } from '../data/content';
 import Breadcrumb from '../components/Breadcrumb';
@@ -25,9 +17,7 @@ import DynamicIcon from '../components/DynamicIcon';
 import { API_BASE, apiFetch } from '../utils/api';
 import {
   formatMapEmbedUrl,
-  getDirectMapLink,
   parseContactCardItems,
-  extractLocations,
 } from '../utils/mapUrl';
 
 const initialForm = { name: '', email: '', phone: '', service: '', subject: '', message: '' };
@@ -46,10 +36,16 @@ const serviceOptions = [
 
 const fallbackContactCards = [
   {
-    title: 'Our Location',
-    desc: 'Pakistan\nUnited Kingdom\nUnited Arab Emirates',
-    icon: 'MapPin',
-    link: 'https://maps.google.com/maps?q=United%20Kingdom',
+    title: 'Working Hours',
+    desc: 'Mon - Sat: 9:00 AM - 6:00 PM\nSunday: Closed',
+    icon: 'Clock',
+    link: '',
+  },
+  {
+    title: 'Call Us',
+    desc: '+44 7404 870865\n+92 304 1100028',
+    icon: 'Phone',
+    link: 'tel:+447404870865\ntel:+923041100028',
   },
   {
     title: 'Email Us',
@@ -58,16 +54,10 @@ const fallbackContactCards = [
     link: 'mailto:info@cubixsol.com',
   },
   {
-    title: 'Call Us',
-    desc: '+44 7404 870865\n+92 304 1100028',
-    icon: 'Phone',
-    link: 'tel:+923041100028',
-  },
-  {
-    title: 'Working Hours',
-    desc: 'Mon - Fri: 9:00 AM - 6:00 PM\nSaturday - Sunday: Closed',
-    icon: 'Clock',
-    link: '',
+    title: 'Our Location',
+    desc: 'Pakistan\nUnited Kingdom\nUnited Arab Emirates',
+    icon: 'MapPin',
+    link: 'https://www.google.com/maps/place/Pakistan\nhttps://www.google.com/maps/place/United+Kingdom\nhttps://www.google.com/maps/place/United+Arab+Emirates',
   },
 ];
 
@@ -80,7 +70,7 @@ const fallbackPageData = {
   contactSectionSubtitle:
     'Choose the best way to reach us. Our team is always ready to assist you.',
   mapEmbedUrl:
-    'https://maps.google.com/maps?q=United%20Kingdom&t=&z=13&ie=UTF8&iwloc=&output=embed',
+    'https://maps.google.com/maps?q=United%20Kingdom&t=&z=6&ie=UTF8&iwloc=&output=embed',
   highlights: [
     { icon: 'Clock', title: 'Quick Response', desc: 'We reply within 24 hours' },
     { icon: 'Users2', title: 'Expert Support', desc: 'Get help from our experienced team' },
@@ -98,7 +88,6 @@ export default function Contact() {
 
   const [contactCards, setContactCards] = useState(fallbackContactCards);
   const [pageData, setPageData] = useState(fallbackPageData);
-  const [activeLocIdx, setActiveLocIdx] = useState(0);
 
   const location = useLocation();
 
@@ -139,19 +128,6 @@ export default function Contact() {
       cancelled = true;
     };
   }, []);
-
-  const locations = useMemo(() => {
-    return extractLocations(contactCards, pageData);
-  }, [contactCards, pageData]);
-
-  const activeLocation =
-    locations[activeLocIdx] ||
-    locations[0] || {
-      name: 'United Kingdom',
-      address: 'United Kingdom',
-      mapUrl: formatMapEmbedUrl(pageData.mapEmbedUrl),
-      link: getDirectMapLink(pageData.mapEmbedUrl, 'United Kingdom'),
-    };
 
   useEffect(() => {
     if (location.hash === '#contact-form') {
@@ -367,180 +343,72 @@ export default function Contact() {
         </Reveal>
       </section>
 
-      {/* CONTACT INFO + MULTI-LOCATION INTERACTIVE MAP */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 grid lg:grid-cols-12 gap-8 items-stretch">
-        {/* Left Side: Contact Cards (5 cols) */}
-        <Reveal direction="right" className="lg:col-span-5 flex flex-col justify-between">
-          <div>
-            <h2 className="text-2xl font-extrabold text-ink mb-1">
-              {pageData.contactSectionTitle || "We're Here to Help"}
-            </h2>
-            <p className="text-gray-500 mb-6 text-sm">
-              {pageData.contactSectionSubtitle ||
-                'Choose the best way to reach us. Our team is always ready to assist you.'}
-            </p>
-          </div>
-
-          <Stagger className="grid sm:grid-cols-2 lg:grid-cols-1 gap-4" staggerDelay={0.06}>
+      {/* CONTACT INFO + MAP */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 grid lg:grid-cols-2 gap-10">
+        <Reveal direction="right">
+          <h2 className="text-2xl font-extrabold text-ink mb-1">
+            {pageData.contactSectionTitle || "We're Here to Help"}
+          </h2>
+          <p className="text-gray-500 mb-6">
+            {pageData.contactSectionSubtitle ||
+              'Choose the best way to reach us. Our team is always ready to assist you.'}
+          </p>
+          <Stagger className="grid sm:grid-cols-2 gap-5" staggerDelay={0.08}>
             {contactCards.map((card, idx) => {
               const items = parseContactCardItems(card);
-              const isLocationCard =
-                (card.icon && ['MapPin', 'Globe', 'Building2', 'Navigation'].includes(card.icon)) ||
-                (card.title && card.title.toLowerCase().includes('location')) ||
-                (card.title && card.title.toLowerCase().includes('office'));
 
               return (
                 <StaggerItem key={card._id || card.title || idx}>
-                  <div className="card !p-4.5 bg-white border border-gray-100/90 shadow-card hover:shadow-soft hover:border-primary-200 transition-all duration-300 rounded-2xl h-full flex flex-col justify-between">
-                    <div>
-                      {/* Header */}
-                      <div className="flex items-center gap-3 mb-2.5">
-                        <span className="w-8 h-8 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center shrink-0 border border-primary-100/50">
-                          <DynamicIcon icon={card.icon} className="w-4 h-4" />
-                        </span>
-                        <p className="font-bold text-sm text-ink">{card.title}</p>
-                      </div>
-
-                      {/* Items List */}
-                      {items.length > 0 ? (
-                        <div className="space-y-2 mt-3">
-                          {items.map((item, itemIdx) => {
-                            if (item.isLocation) {
-                              // Find matching index in locations
-                              const locIndex = locations.findIndex(
-                                (l) =>
-                                  l.name.toLowerCase() === item.text.toLowerCase() ||
-                                  l.address.toLowerCase().includes(item.text.toLowerCase())
-                              );
-                              const isLocActive =
-                                locIndex !== -1
-                                  ? activeLocIdx === locIndex
-                                  : activeLocation.name.toLowerCase() === item.text.toLowerCase();
-
-                              return (
-                                <button
-                                  key={itemIdx}
-                                  type="button"
-                                  onClick={() => {
-                                    if (locIndex !== -1) setActiveLocIdx(locIndex);
-                                  }}
-                                  className={`w-full flex items-center justify-between gap-2.5 px-3.5 py-3 rounded-xl text-xs font-semibold transition-all duration-300 cursor-pointer text-left ${
-                                    isLocActive
-                                      ? 'bg-primary-gradient text-white shadow-soft font-bold scale-[1.01]'
-                                      : 'bg-gray-50/90 hover:bg-primary-50/60 text-gray-700 hover:text-primary-700 border border-gray-200/80 hover:border-primary-200 shadow-2xs'
-                                  }`}
-                                  title={`Show ${item.text} pin on map`}
-                                >
-                                  <div className="flex items-center gap-2.5 flex-1 min-w-0">
-                                    <MapPin
-                                      size={15}
-                                      className={
-                                        isLocActive
-                                          ? 'text-white shrink-0'
-                                          : 'text-primary-600 shrink-0'
-                                      }
-                                    />
-                                    <span className="truncate leading-tight text-[13px]">{item.text}</span>
-                                  </div>
-                                  <span
-                                    className={`text-[10px] font-bold px-2 py-0.5 rounded-md transition-colors shrink-0 ${
-                                      isLocActive
-                                        ? 'bg-white/25 text-white border border-white/20 shadow-xs'
-                                        : 'bg-gray-200/70 text-gray-500'
-                                    }`}
-                                  >
-                                    {isLocActive ? '📍 Active Pin' : 'Show Pin'}
-                                  </span>
-                                </button>
-                              );
-                            }
-
-                            if (item.link) {
-                              return (
-                                <a
-                                  key={itemIdx}
-                                  href={item.link}
-                                  target={item.link.startsWith('http') ? '_blank' : undefined}
-                                  rel={item.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                                  className="flex items-center justify-between gap-2 px-3 py-2 rounded-xl text-xs font-semibold text-primary-600 hover:text-primary-700 bg-primary-50/50 hover:bg-primary-50 border border-primary-100/60 hover:border-primary-200 transition-all duration-200 truncate group"
-                                >
-                                  <span className="truncate">{item.text}</span>
-                                  <ExternalLink size={12} className="text-primary-400 group-hover:text-primary-600 shrink-0" />
-                                </a>
-                              );
-                            }
-
+                  <div className="card !p-5 h-full hover:-translate-y-1 hover:shadow-soft transition-all duration-300 flex flex-col justify-start">
+                    <span className="w-9 h-9 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center mb-3 shrink-0">
+                      <DynamicIcon icon={card.icon} className="w-4.5 h-4.5" />
+                    </span>
+                    <p className="font-bold text-sm text-ink mb-1.5">{card.title}</p>
+                    {items.length > 0 ? (
+                      <div className="space-y-1 text-xs text-gray-500 leading-relaxed">
+                        {items.map((item, itemIdx) => {
+                          if (item.link) {
                             return (
-                              <p key={itemIdx} className="text-xs text-gray-600 leading-relaxed px-1">
+                              <a
+                                key={itemIdx}
+                                href={item.link}
+                                target={item.link.startsWith('http') ? '_blank' : undefined}
+                                rel={item.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                className="block text-xs text-gray-500 hover:text-primary-600 hover:underline transition-colors leading-relaxed"
+                              >
                                 {item.text}
-                              </p>
+                              </a>
                             );
-                          })}
-                        </div>
-                      ) : (
-                        <p className="text-xs text-gray-500 whitespace-pre-line leading-relaxed">
-                          {card.desc}
-                        </p>
-                      )}
-                    </div>
+                          }
+                          return (
+                            <p key={itemIdx} className="text-xs text-gray-500 leading-relaxed">
+                              {item.text}
+                            </p>
+                          );
+                        })}
+                      </div>
+                    ) : (
+                      <p className="text-xs text-gray-500 whitespace-pre-line leading-relaxed">
+                        {card.desc}
+                      </p>
+                    )}
                   </div>
                 </StaggerItem>
               );
             })}
           </Stagger>
         </Reveal>
-
-        {/* Right Side: Interactive Multi-Location Map (7 cols) */}
         <Reveal
           direction="left"
           delay={0.1}
-          className="lg:col-span-7 rounded-3xl overflow-hidden border border-gray-100 shadow-card bg-white flex flex-col min-h-[440px] relative"
+          className="rounded-2xl overflow-hidden border border-gray-100 shadow-card h-full min-h-[320px] bg-gray-100 relative"
         >
-          {/* Map Top Bar: Location Switcher Tabs */}
-          <div className="p-3.5 sm:p-4 bg-gradient-to-r from-gray-50 to-slate-50 border-b border-gray-100 flex items-center justify-between gap-3 z-10">
-            <div className="flex items-center gap-1.5 overflow-x-auto py-0.5 max-w-full scrollbar-hide">
-              <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wider mr-1 hidden sm:inline-block">
-                Offices:
-              </span>
-              {locations.map((loc, i) => {
-                const isActive = activeLocIdx === i;
-                return (
-                  <button
-                    key={loc.id || loc.name || i}
-                    type="button"
-                    onClick={() => setActiveLocIdx(i)}
-                    className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap ${
-                      isActive
-                        ? 'bg-primary-gradient text-white shadow-soft ring-2 ring-primary-300/30 scale-[1.02]'
-                        : 'bg-white text-gray-600 hover:bg-gray-100 hover:text-ink border border-gray-200/80 shadow-2xs'
-                    }`}
-                  >
-                    <MapPin size={13} className={isActive ? 'text-white' : 'text-primary-600'} />
-                    <span>{loc.name}</span>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Iframe Viewport */}
-          <div className="relative flex-1 w-full min-h-[360px] bg-slate-100">
-            <iframe
-              key={activeLocation.mapUrl}
-              title={`Cubixsol location map - ${activeLocation.name}`}
-              className="w-full h-full min-h-[360px] border-0"
-              loading="lazy"
-              src={activeLocation.mapUrl}
-            />
-
-            {/* Floating Location Badge */}
-            <div className="absolute bottom-3 left-3 z-10 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-xl shadow-md border border-gray-200/80 flex items-center gap-2 max-w-[85%] truncate">
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse shrink-0" />
-              <span className="text-xs font-bold text-ink truncate">
-                📍 {activeLocation.address || activeLocation.name}
-              </span>
-            </div>
-          </div>
+          <iframe
+            title="Cubixsol location map"
+            className="w-full h-full min-h-[320px] border-0"
+            loading="lazy"
+            src={formatMapEmbedUrl(pageData.mapEmbedUrl)}
+          />
         </Reveal>
       </section>
 

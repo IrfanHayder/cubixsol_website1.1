@@ -107,20 +107,40 @@ export function formatMapEmbedUrl(input, customZoom) {
 }
 
 /**
- * Generates a direct, clickable Google Maps link for opening in a new tab.
+ * Splits links string into individual URLs, even if glued together without newlines
+ * e.g. "https://maps.google.com/...Pakistanhttps://maps.google.com/...UK"
+ */
+export function extractIndividualUrls(input) {
+  if (!input || typeof input !== 'string') return [];
+  const raw = input.trim();
+  if (!raw) return [];
+
+  const rawLines = raw.split(/[\r\n]+/).map((s) => s.trim()).filter(Boolean);
+  const result = [];
+
+  for (const line of rawLines) {
+    const splitByHttp = line.split(/(?=https?:\/\/)/i).map((s) => s.trim()).filter(Boolean);
+    if (splitByHttp.length > 0) {
+      result.push(...splitByHttp);
+    } else {
+      result.push(line);
+    }
+  }
+
+  return result;
+}
+
+/**
+ * Generates a direct, clickable Google Maps link for opening the pin location in a new tab.
  */
 export function getDirectMapLink(input, defaultName = '') {
-  if (!input && !defaultName) return 'https://maps.google.com';
   const val = (input || '').trim();
-
-  // If already a valid URL
   if (val.startsWith('http://') || val.startsWith('https://')) {
-    // If it's an embed URL, convert to search URL
     if (val.includes('output=embed') || val.includes('/maps/embed')) {
       try {
         const parsed = new URL(val);
         const q = parsed.searchParams.get('q');
-        if (q) return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
+        if (q) return `https://www.google.com/maps/place/${encodeURIComponent(q.replace(/\+/g, ' '))}`;
       } catch {
         // ignore
       }
@@ -129,27 +149,83 @@ export function getDirectMapLink(input, defaultName = '') {
   }
 
   const query = val || defaultName;
-  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+  if (!query) return 'https://maps.google.com';
+  return `https://www.google.com/maps/place/${encodeURIComponent(query)}`;
 }
 
 /**
  * Helper to test if a URL is related to a specific country/city name
  */
-function matchesLocation(url, name) {
+export function matchesLocation(url, name) {
   if (!url || !name) return false;
   const cleanName = name.toLowerCase().replace(/[^a-z0-9]/g, '');
-  const cleanUrl = url.toLowerCase().replace(/[^a-z0-9]/g, '');
+  const cleanUrl = decodeURIComponent(url).toLowerCase().replace(/[^a-z0-9]/g, '');
+
+  if (!cleanName || !cleanUrl) return false;
   if (cleanUrl.includes(cleanName)) return true;
 
-  if (cleanName.includes('unitedkingdom') || cleanName === 'uk') {
-    return cleanUrl.includes('unitedkingdom') || cleanUrl.includes('uk') || cleanUrl.includes('london') || cleanUrl.includes('greatbritain');
-  }
   if (cleanName.includes('pakistan') || cleanName === 'pk') {
-    return cleanUrl.includes('pakistan') || cleanUrl.includes('lahore') || cleanUrl.includes('karachi') || cleanUrl.includes('islamabad');
+    return (
+      cleanUrl.includes('pakistan') ||
+      cleanUrl.includes('lahore') ||
+      cleanUrl.includes('karachi') ||
+      cleanUrl.includes('islamabad') ||
+      cleanUrl.includes('rawalpindi') ||
+      cleanUrl.includes('punjab')
+    );
   }
-  if (cleanName.includes('unitedarabemirates') || cleanName === 'uae' || cleanName.includes('emirates') || cleanName.includes('dubai')) {
-    return cleanUrl.includes('emirates') || cleanUrl.includes('dubai') || cleanUrl.includes('uae') || cleanUrl.includes('abudhabi');
+
+  if (
+    cleanName.includes('unitedkingdom') ||
+    cleanName === 'uk' ||
+    cleanName.includes('greatbritain') ||
+    cleanName.includes('england') ||
+    cleanName.includes('britain')
+  ) {
+    return (
+      cleanUrl.includes('unitedkingdom') ||
+      cleanUrl.includes('greatbritain') ||
+      cleanUrl.includes('england') ||
+      cleanUrl.includes('scotland') ||
+      cleanUrl.includes('wales') ||
+      cleanUrl.includes('london') ||
+      cleanUrl.includes('birmingham') ||
+      cleanUrl.includes('manchester')
+    );
   }
+
+  if (
+    cleanName.includes('unitedarabemirates') ||
+    cleanName === 'uae' ||
+    cleanName.includes('emirates') ||
+    cleanName.includes('dubai') ||
+    cleanName.includes('abudhabi')
+  ) {
+    return (
+      cleanUrl.includes('unitedarabemirates') ||
+      cleanUrl.includes('emirates') ||
+      cleanUrl.includes('uae') ||
+      cleanUrl.includes('dubai') ||
+      cleanUrl.includes('abudhabi') ||
+      cleanUrl.includes('sharjah')
+    );
+  }
+
+  if (
+    cleanName.includes('unitedstates') ||
+    cleanName === 'usa' ||
+    cleanName === 'us' ||
+    cleanName.includes('america')
+  ) {
+    return (
+      cleanUrl.includes('unitedstates') ||
+      cleanUrl.includes('usa') ||
+      cleanUrl.includes('newyork') ||
+      cleanUrl.includes('california') ||
+      cleanUrl.includes('texas')
+    );
+  }
+
   return false;
 }
 
@@ -160,21 +236,19 @@ function matchesLocation(url, name) {
 export function parseContactCardItems(card) {
   if (!card) return [];
   const lines = (card.desc || '')
-    .split('\n')
+    .split(/[\r\n]+/)
     .map((s) => s.trim())
     .filter(Boolean);
 
   if (lines.length === 0) return [];
 
-  const rawLinks = (card.link || '')
-    .split('\n')
-    .map((s) => s.trim())
-    .filter(Boolean);
+  const rawLinks = extractIndividualUrls(card.link || '');
 
   const isLocationCard =
     (card.icon && ['MapPin', 'Globe', 'Building2', 'Navigation'].includes(card.icon)) ||
     (card.title && card.title.toLowerCase().includes('location')) ||
-    (card.title && card.title.toLowerCase().includes('office'));
+    (card.title && card.title.toLowerCase().includes('office')) ||
+    (card.title && card.title.toLowerCase().includes('address'));
 
   const isPhoneCard =
     (card.icon && ['Phone', 'PhoneCall', 'Headphones'].includes(card.icon)) ||
@@ -186,7 +260,6 @@ export function parseContactCardItems(card) {
     (card.title && card.title.toLowerCase().includes('email'));
 
   return lines.map((line, idx) => {
-    // Check if line itself has "Text | Link" format
     let text = line;
     let explicitLink = '';
     if (line.includes('|')) {
@@ -195,32 +268,34 @@ export function parseContactCardItems(card) {
       explicitLink = parts.slice(1).join('|').trim();
     }
 
-    // Determine link
     let finalLink = explicitLink;
 
     if (!finalLink) {
-      if (rawLinks.length > 1 && rawLinks[idx]) {
+      if (isLocationCard) {
+        // Find if any of the extracted URLs matches this location name
+        const matchedUrl = rawLinks.find((url) => matchesLocation(url, text));
+        if (matchedUrl) {
+          finalLink = matchedUrl;
+        } else if (
+          rawLinks.length > idx &&
+          rawLinks[idx] &&
+          !lines.some((otherLine, otherIdx) => otherIdx !== idx && matchesLocation(rawLinks[idx], otherLine))
+        ) {
+          finalLink = rawLinks[idx];
+        } else if (rawLinks.length === 1 && matchesLocation(rawLinks[0], text)) {
+          finalLink = rawLinks[0];
+        } else {
+          finalLink = getDirectMapLink(text);
+        }
+      } else if (rawLinks.length > 1 && rawLinks[idx]) {
         finalLink = rawLinks[idx];
       } else if (rawLinks.length === 1) {
-        if (isLocationCard) {
-          // If only 1 link was provided, check if it actually matches this location
-          if (matchesLocation(rawLinks[0], text)) {
-            finalLink = rawLinks[0];
-          } else {
-            finalLink = getDirectMapLink(text);
-          }
-        } else if (!isLocationCard) {
-          finalLink = rawLinks[0];
-        }
+        finalLink = rawLinks[0];
       }
     }
 
-    // Smart link generation based on type if still empty or location
-    if (isLocationCard) {
-      if (!finalLink) {
-        finalLink = getDirectMapLink(text);
-      }
-    } else if (isPhoneCard && !finalLink) {
+    // Auto-generate phone / email links if missing
+    if (isPhoneCard && !finalLink) {
       const cleanPhone = text.replace(/[^0-9+]/g, '');
       if (cleanPhone) finalLink = `tel:${cleanPhone}`;
     } else if (isEmailCard && !finalLink) {
@@ -238,10 +313,9 @@ export function parseContactCardItems(card) {
 }
 
 /**
- * Extracts all locations for the interactive map switcher from pageData.locations or contactCards.
+ * Extracts all locations for fallback or maps from pageData.locations or contactCards.
  */
 export function extractLocations(contactCards = [], pageData = {}) {
-  // 1. If explicit locations are configured in pageData
   if (Array.isArray(pageData.locations) && pageData.locations.length > 0) {
     const valid = pageData.locations.filter((l) => l && (l.name || l.title || l.address));
     if (valid.length > 0) {
@@ -261,7 +335,6 @@ export function extractLocations(contactCards = [], pageData = {}) {
     }
   }
 
-  // 2. Otherwise extract from the "Our Location" / MapPin card in contactCards
   const locationCard = contactCards.find(
     (c) =>
       (c.icon && ['MapPin', 'Globe', 'Building2', 'Navigation'].includes(c.icon)) ||
@@ -271,14 +344,11 @@ export function extractLocations(contactCards = [], pageData = {}) {
 
   if (locationCard && locationCard.desc) {
     const lines = locationCard.desc
-      .split('\n')
+      .split(/[\r\n]+/)
       .map((s) => s.trim())
       .filter(Boolean);
 
-    const rawLinks = (locationCard.link || '')
-      .split('\n')
-      .map((s) => s.trim())
-      .filter(Boolean);
+    const rawLinks = extractIndividualUrls(locationCard.link || '');
 
     if (lines.length > 0) {
       return lines.map((line, idx) => {
@@ -292,10 +362,11 @@ export function extractLocations(contactCards = [], pageData = {}) {
 
         let locLink = explicitLink;
         if (!locLink) {
-          if (rawLinks.length > 1 && rawLinks[idx]) {
+          const matched = rawLinks.find((u) => matchesLocation(u, name));
+          if (matched) {
+            locLink = matched;
+          } else if (rawLinks.length > idx && rawLinks[idx]) {
             locLink = rawLinks[idx];
-          } else if (rawLinks.length === 1 && matchesLocation(rawLinks[0], name)) {
-            locLink = rawLinks[0];
           } else {
             locLink = getDirectMapLink(name);
           }
@@ -312,8 +383,7 @@ export function extractLocations(contactCards = [], pageData = {}) {
     }
   }
 
-  // 3. Fallback to default mapEmbedUrl in pageData
-  const defaultUrl = pageData.mapEmbedUrl || 'https://maps.google.com/maps?q=United%20Kingdom&t=&z=13&ie=UTF8&iwloc=&output=embed';
+  const defaultUrl = pageData.mapEmbedUrl || 'https://maps.google.com/maps?q=United%20Kingdom&t=&z=6&ie=UTF8&iwloc=&output=embed';
   return [
     {
       id: 'loc-default',
