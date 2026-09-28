@@ -485,16 +485,18 @@ export default function Services() {
                       key={idx}
                       className="group bg-white/95 backdrop-blur-sm rounded-2xl p-5 sm:p-6 border border-gray-100/90 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_-12px_rgba(0,164,216,0.16)] hover:border-cyan-200 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-start"
                     >
-                      <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-sky-50 via-cyan-50 to-blue-50/80 border border-cyan-100/90 flex items-center justify-center mb-4 group-hover:bg-gradient-to-br group-hover:from-[#00a4d8] group-hover:via-[#0284c7] group-hover:to-[#0369a1] group-hover:border-transparent group-hover:shadow-lg group-hover:shadow-[#00a4d8]/30 group-hover:scale-105 group-hover:-translate-y-0.5 transition-all duration-300 ease-out shrink-0 overflow-hidden">
-                        <DynamicIcon
-                          icon={iconSrc}
-                          title={item.title}
-                          className="w-7 h-7 sm:w-8 sm:h-8 object-contain text-[#00a4d8] group-hover:brightness-0 group-hover:invert transition-all duration-300"
-                        />
+                      <div className="flex items-center gap-3.5 mb-3.5">
+                        <div className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-sky-50 via-cyan-50 to-blue-50/80 border border-cyan-100/90 flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-[#00a4d8] group-hover:via-[#0284c7] group-hover:to-[#0369a1] group-hover:border-transparent group-hover:shadow-md group-hover:shadow-[#00a4d8]/30 group-hover:scale-105 transition-all duration-300 ease-out shrink-0 overflow-hidden">
+                          <DynamicIcon
+                            icon={iconSrc}
+                            title={item.title}
+                            className="w-6 h-6 sm:w-6.5 sm:h-6.5 object-contain text-[#00a4d8] group-hover:brightness-0 group-hover:invert transition-all duration-300"
+                          />
+                        </div>
+                        <h3 className="font-extrabold text-base sm:text-lg text-ink leading-snug group-hover:text-[#00a4d8] transition-colors">
+                          {item.title}
+                        </h3>
                       </div>
-                      <h3 className="font-extrabold text-base sm:text-lg text-ink mb-2 group-hover:text-[#00a4d8] transition-colors">
-                        {item.title}
-                      </h3>
                       <p className="text-xs sm:text-sm text-gray-500 leading-relaxed">
                         {formatInline(item.desc)}
                       </p>
