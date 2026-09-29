@@ -32,6 +32,7 @@ import SuccessStories from '../components/SuccessStories';
 import DynamicIcon from '../components/DynamicIcon';
 import { useServices } from '../context/ServicesContext';
 import { useEstimateModal } from '../context/EstimateModalContext';
+import { useSEO } from '../utils/seo';
 import { formatText, FormatRichText, formatInline } from '../utils/formatText';
 
 function cleanTitle(str) {
