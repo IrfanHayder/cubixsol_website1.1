@@ -231,7 +231,7 @@ export default function Industries() {
             </Reveal>
 
             <Reveal delay={0.05}>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-ink tracking-tight leading-[1.15] mb-6">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-ink tracking-tight leading-tight sm:leading-[1.25] lg:leading-[1.28] mb-6">
                 {pageData.heroTitle || 'Industry-Specific Software Development Services'}
               </h1>
             </Reveal>

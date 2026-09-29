@@ -68,7 +68,7 @@ export function OracleAidpHero() {
           <p className="text-primary-300 text-xs font-bold tracking-[0.2em] uppercase mb-4">
             Data Solutions · Oracle
           </p>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.12] mb-5">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-snug sm:leading-[1.22] lg:leading-[1.25] mb-5">
             Engineering success with{' '}
             <span className="text-primary-300">Oracle AI Data Platform</span>
           </h1>

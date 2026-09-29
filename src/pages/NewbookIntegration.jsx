@@ -353,7 +353,7 @@ export default function NewbookIntegration() {
               </div>
 
               {/* Title */}
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.15] text-white">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight sm:leading-[1.22] lg:leading-[1.28] text-white">
                 {data.heroTitle}
               </h1>
 

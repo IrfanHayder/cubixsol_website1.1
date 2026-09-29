@@ -854,7 +854,7 @@ export default function IndustryDetail() {
                 </div>
 
                 {/* Open, Readable Heading with generous line height and non-cramped typography */}
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-normal leading-[1.25] sm:leading-[1.2] lg:leading-[1.18] mb-6">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-normal leading-tight sm:leading-[1.25] lg:leading-[1.28] mb-6">
                   {ind.heroTitle ? formatInline(ind.heroTitle) : getHeroHeadline(ind.slug, ind.title, theme)}
                 </h1>
 

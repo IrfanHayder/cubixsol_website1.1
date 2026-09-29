@@ -262,7 +262,7 @@ export default function HeroSlider() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-                  className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.4rem] font-black text-ink leading-[0.92] tracking-tight drop-shadow-sm"
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.4rem] font-black text-ink leading-[1.08] sm:leading-[1.12] tracking-tight drop-shadow-sm"
                 >
                   DIGITAL
                   <br />

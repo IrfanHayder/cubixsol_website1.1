@@ -148,7 +148,7 @@ export default function ServiceDetail() {
               <p className="eyebrow !mb-0">{service.menuTitle || service.title}</p>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-[2.65rem] font-extrabold text-ink tracking-tight leading-[1.18] mb-4">
+            <h1 className="text-3xl sm:text-4xl lg:text-[2.65rem] font-extrabold text-ink tracking-tight leading-tight sm:leading-[1.25] lg:leading-[1.28] mb-4">
               {service.title}
             </h1>
 

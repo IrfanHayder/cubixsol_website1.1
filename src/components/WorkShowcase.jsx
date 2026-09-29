@@ -97,7 +97,7 @@ export default function WorkShowcase() {
     <section className="relative py-16 sm:py-20 lg:py-24 bg-white overflow-hidden">
       <div className="max-w-4xl mx-auto px-4 text-center mb-10 sm:mb-14">
         <Reveal scale>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-ink tracking-tight leading-[1.1] mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-ink tracking-tight leading-snug sm:leading-[1.25] lg:leading-[1.3] mb-4">
             Digital products
             <br className="hidden sm:block" />{' '}
             <span className="bg-clip-text text-transparent bg-primary-gradient">worth shipping</span>

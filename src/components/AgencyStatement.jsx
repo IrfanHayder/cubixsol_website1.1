@@ -6,7 +6,7 @@ export default function AgencyStatement() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <Reveal>
           <p className="eyebrow mb-6">What we do</p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-ink leading-[1.15] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-ink leading-snug sm:leading-[1.3] lg:leading-[1.35] tracking-tight">
             Websites, apps and digital experiences, crafted with{' '}
             <span className="bg-clip-text text-transparent bg-primary-gradient">
               brilliance, precision and style

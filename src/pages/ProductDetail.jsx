@@ -106,7 +106,7 @@ function HeroDark({ product }) {
           <p className="text-primary-300 text-xs font-bold tracking-[0.2em] uppercase mb-4">
             {product.name}
           </p>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.15] max-w-4xl mx-auto mb-5">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight sm:leading-[1.25] lg:leading-[1.3] max-w-4xl mx-auto mb-5">
             {product.title}
           </h1>
           <p className="text-white/70 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed mb-8">

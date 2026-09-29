@@ -352,7 +352,7 @@ export default function JurnyIntegration() {
               </Reveal>
 
               <Reveal delay={0.1}>
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.14]">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight sm:leading-[1.22] lg:leading-[1.28]">
                   {formatInline(data.heroTitle)}
                 </h1>
               </Reveal>

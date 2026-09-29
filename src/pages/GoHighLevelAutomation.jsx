@@ -389,7 +389,7 @@ export default function GoHighLevelAutomation() {
               </Reveal>
 
               <Reveal delay={0.1} duration={0.65}>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-ink leading-[1.12] mb-6">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-ink leading-tight sm:leading-[1.2] lg:leading-[1.25] mb-6">
                   {formatInline(data.heroTitle)}
                 </h1>
               </Reveal>

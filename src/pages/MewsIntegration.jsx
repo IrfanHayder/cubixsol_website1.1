@@ -399,7 +399,7 @@ export default function MewsIntegration() {
               </div>
 
               {/* Main Headline */}
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[2.9rem] font-extrabold tracking-tight text-white leading-[1.15]">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[2.9rem] font-extrabold tracking-tight text-white leading-tight sm:leading-[1.22] lg:leading-[1.28]">
                 Custom <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00a4d8] via-[#38bdf8] to-[#5d53a3]">Mews Integration Solutions</span> For Modern Hospitality Operations
               </h1>
 

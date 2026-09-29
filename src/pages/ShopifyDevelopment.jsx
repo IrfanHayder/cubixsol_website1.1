@@ -339,7 +339,7 @@ export default function ShopifyDevelopment() {
                   </div>
 
                   {/* Main Title */}
-                  <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.2]">
+                  <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight sm:leading-[1.22] lg:leading-[1.28]">
                     Shopify Store <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00a4d8] via-cyan-300 to-white">Development</span>
                   </h1>
 
