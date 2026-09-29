@@ -244,37 +244,21 @@ export default function ServiceDetail() {
             </div>
           </Reveal>
 
-          <Reveal direction="left" delay={0.1}>
-            <div className="relative">
-              <div
-                className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-cyan-400/20 via-sky-400/10 to-blue-500/15 opacity-50 blur-2xl pointer-events-none"
-              />
-              <div className="relative rounded-3xl overflow-hidden shadow-elev aspect-[4/3] bg-gray-100 border border-gray-100">
-                {service.heroImage ? (
-                  <img
-                    src={service.heroImage}
-                    alt={service.title}
-                    className="w-full h-full"
-                    loading="eager"
-                    decoding="async"
-                    width={1000}
-                    height={750}
-                  />
-                ) : (
-                  <div
-                    className="w-full h-full bg-gradient-to-br from-[#00a4d8] via-[#0284c7] to-[#0369a1] flex items-center justify-center"
-                  >
-                    <IconComponent className="w-28 h-28 text-white/90" strokeWidth={1.25} />
-                  </div>
-                )}
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/50 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute bottom-4 left-4">
-                  <span className="inline-flex items-center gap-2 bg-white/95 backdrop-blur text-ink text-xs font-bold px-3.5 py-1.5 rounded-full shadow-md">
-                    <IconComponent className="w-3.5 h-3.5 text-[#00a4d8]" />
-                    {service.title}
-                  </span>
+          <Reveal direction="left" delay={0.1} className="flex items-center justify-center">
+            <div className="relative w-full flex items-center justify-center">
+              {service.heroImage ? (
+                <img
+                  src={service.heroImage}
+                  alt={service.title}
+                  className="w-full h-auto max-h-[460px] object-contain select-none"
+                  loading="eager"
+                  decoding="async"
+                />
+              ) : (
+                <div className="w-full aspect-[4/3] rounded-3xl bg-gradient-to-br from-[#00a4d8] via-[#0284c7] to-[#0369a1] flex items-center justify-center shadow-lg">
+                  <IconComponent className="w-28 h-28 text-white/90" strokeWidth={1.25} />
                 </div>
-              </div>
+              )}
             </div>
           </Reveal>
         </div>
