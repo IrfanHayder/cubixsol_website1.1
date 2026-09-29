@@ -350,6 +350,8 @@ export default function Services() {
       gradient: s.gradient,
     }));
 
+  const [visibleCount, setVisibleCount] = useState(12);
+
   const processSteps = Array.isArray(pageData.processSteps) ? pageData.processSteps : [];
   const whyChooseItems = Array.isArray(pageData.whyChooseItems) ? pageData.whyChooseItems : [];
   const engagementItems = Array.isArray(pageData.engagementItems) ? pageData.engagementItems : [];
@@ -511,50 +513,69 @@ export default function Services() {
         ) : services.length === 0 ? (
           <div className="text-center py-10 text-gray-500">No services available.</div>
         ) : (
-          <Stagger
-            className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 lg:gap-6"
-            staggerDelay={0.05}
-          >
-            {services.map((s) => (
-              <StaggerItem key={s.slug} hover>
-                <Link
-                  to={`/${s.slug}`}
-                  className="group bg-white rounded-2xl p-5 sm:p-6 border border-gray-100/90 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_-12px_rgba(0,164,216,0.16)] hover:border-cyan-200 hover:-translate-y-1.5 transition-all duration-300 h-full flex flex-col justify-between"
-                >
-                  <div>
-                    {/* Icon and Title Side-by-Side (Name in Front of Icon) */}
-                    <div className="flex items-center gap-3.5 mb-3.5">
-                      <div className="relative w-12 h-12 rounded-xl bg-gradient-to-br from-sky-50 via-cyan-50 to-blue-50/80 border border-cyan-100/90 flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-[#00a4d8] group-hover:via-[#0284c7] group-hover:to-[#0369a1] group-hover:border-transparent group-hover:shadow-md group-hover:shadow-[#00a4d8]/30 group-hover:scale-105 transition-all duration-300 ease-out shrink-0 overflow-hidden p-2">
-                        <DynamicIcon
-                          icon={s.icon}
-                          alt={s.title}
-                          title={s.title}
-                          className="w-6 h-6 object-contain text-[#00a4d8] group-hover:brightness-0 group-hover:invert transition-all duration-300"
-                          fallbackName="Building2"
-                        />
+          <>
+            <Stagger
+              className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 lg:gap-6"
+              staggerDelay={0.04}
+            >
+              {services.slice(0, visibleCount).map((s) => (
+                <StaggerItem key={s.slug} hover>
+                  <Link
+                    to={`/${s.slug}`}
+                    className="group bg-white rounded-2xl p-5 sm:p-6 border border-gray-100/90 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_-12px_rgba(0,164,216,0.16)] hover:border-cyan-200 hover:-translate-y-1.5 transition-all duration-300 h-full flex flex-col justify-between"
+                  >
+                    <div>
+                      {/* Icon and Title Side-by-Side (Name in Front of Icon) */}
+                      <div className="flex items-center gap-3.5 mb-3.5">
+                        <div className="relative w-12 h-12 rounded-xl bg-gradient-to-br from-sky-50 via-cyan-50 to-blue-50/80 border border-cyan-100/90 flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-[#00a4d8] group-hover:via-[#0284c7] group-hover:to-[#0369a1] group-hover:border-transparent group-hover:shadow-md group-hover:shadow-[#00a4d8]/30 group-hover:scale-105 transition-all duration-300 ease-out shrink-0 overflow-hidden p-2">
+                          <DynamicIcon
+                            icon={s.icon}
+                            alt={s.title}
+                            title={s.title}
+                            className="w-6 h-6 object-contain text-[#00a4d8] group-hover:brightness-0 group-hover:invert transition-all duration-300"
+                            fallbackName="Building2"
+                          />
+                        </div>
+                        <h3 className="font-extrabold text-ink text-base leading-snug group-hover:text-[#00a4d8] transition-colors line-clamp-2">
+                          {formatInline(cleanTitle(s.cardTitle || s.menuTitle || s.title))}
+                        </h3>
                       </div>
-                      <h3 className="font-extrabold text-ink text-base leading-snug group-hover:text-[#00a4d8] transition-colors line-clamp-2">
-                        {formatInline(cleanTitle(s.cardTitle || s.menuTitle || s.title))}
-                      </h3>
+
+                      {/* Balanced, Clean 2-3 Line Short Description */}
+                      <p className="text-xs sm:text-sm text-gray-500 leading-relaxed mb-4 line-clamp-3 min-h-[3.6rem]">
+                        {formatInline(s.desc)}
+                      </p>
                     </div>
 
-                    {/* Balanced, Clean 2-3 Line Short Description */}
-                    <p className="text-xs sm:text-sm text-gray-500 leading-relaxed mb-4 line-clamp-3 min-h-[3.6rem]">
-                      {formatInline(s.desc)}
-                    </p>
-                  </div>
+                    {/* Clean Footer Link */}
+                    <div className="pt-3 border-t border-gray-50 flex items-center justify-between">
+                      <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#00a4d8] group-hover:text-[#1f62dd] transition-colors">
+                        Learn more
+                        <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+                      </span>
+                    </div>
+                  </Link>
+                </StaggerItem>
+              ))}
+            </Stagger>
 
-                  {/* Clean Footer Link */}
-                  <div className="pt-3 border-t border-gray-50 flex items-center justify-between">
-                    <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#00a4d8] group-hover:text-[#1f62dd] transition-colors">
-                      Learn more
-                      <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-                    </span>
-                  </div>
-                </Link>
-              </StaggerItem>
-            ))}
-          </Stagger>
+            {/* Load More Button — Shows when more than 3 rows (12 items) exist */}
+            {visibleCount < services.length && (
+              <div className="text-center mt-12 flex flex-col items-center justify-center gap-2.5">
+                <button
+                  type="button"
+                  onClick={() => setVisibleCount((prev) => Math.min(prev + 12, services.length))}
+                  className="group inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full border border-gray-200 bg-white text-ink text-sm sm:text-base font-bold shadow-xs hover:shadow-md hover:border-cyan-300 hover:text-[#00a4d8] transition-all duration-300 active:scale-95 cursor-pointer"
+                >
+                  <span>Load More Services</span>
+                  <ChevronDown className="w-4 h-4 text-[#00a4d8] group-hover:translate-y-0.5 transition-transform duration-300" />
+                </button>
+                <span className="text-xs text-gray-400">
+                  Showing {Math.min(visibleCount, services.length)} of {services.length} services
+                </span>
+              </div>
+            )}
+          </>
         )}
       </section>
 
