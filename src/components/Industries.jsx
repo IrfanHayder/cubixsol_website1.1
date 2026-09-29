@@ -116,23 +116,24 @@ export default function Industries() {
                   <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-cyan-400/20 via-sky-400/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                   <div>
-                    {/* Icon container with brand cyan-blue gradient, larger size and smooth animation */}
-                    <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-sky-50 via-cyan-50 to-blue-50/80 border border-cyan-100/90 flex items-center justify-center mb-5 group-hover:bg-gradient-to-br group-hover:from-[#00a4d8] group-hover:via-[#0284c7] group-hover:to-[#0369a1] group-hover:border-transparent group-hover:shadow-xl group-hover:shadow-[#00a4d8]/35 group-hover:ring-4 group-hover:ring-cyan-100/70 group-hover:scale-110 group-hover:-translate-y-1 group-hover:rotate-2 transition-all duration-300 ease-out shrink-0 overflow-hidden">
-                      {/* Ambient hover light reflection */}
-                      <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                    {/* Top row with Icon and Title aligned horizontally */}
+                    <div className="flex items-center gap-3.5 sm:gap-4 mb-4">
+                      <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-sky-50 via-cyan-50 to-blue-50/80 border border-cyan-100/90 flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-[#00a4d8] group-hover:via-[#0284c7] group-hover:to-[#0369a1] group-hover:border-transparent group-hover:shadow-lg group-hover:shadow-[#00a4d8]/30 group-hover:ring-4 group-hover:ring-cyan-100/70 group-hover:scale-105 transition-all duration-300 ease-out shrink-0 overflow-hidden">
+                        <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
-                      <DynamicIcon
-                        icon={ind.icon}
-                        title={ind.title}
-                        className="w-8 h-8 sm:w-9 sm:h-9 object-contain text-[#00a4d8] group-hover:text-white transition-all duration-300 ease-out group-hover:scale-115 group-hover:-rotate-2 group-hover:brightness-0 group-hover:invert group-hover:drop-shadow-[0_2px_8px_rgba(255,255,255,0.8)]"
-                      />
+                        <DynamicIcon
+                          icon={ind.icon}
+                          title={ind.title}
+                          className="w-6 h-6 sm:w-7 sm:h-7 object-contain text-[#00a4d8] group-hover:text-white transition-all duration-300 ease-out group-hover:brightness-0 group-hover:invert"
+                        />
+                      </div>
+
+                      <h3 className="font-extrabold text-ink text-base sm:text-lg lg:text-xl leading-snug group-hover:text-[#00a4d8] transition-colors duration-300">
+                        {ind.title}
+                      </h3>
                     </div>
 
-                    <h3 className="font-extrabold text-ink text-lg sm:text-xl mb-2 group-hover:text-[#00a4d8] transition-colors duration-300">
-                      {ind.title}
-                    </h3>
-
-                    <p className="text-sm text-gray-500 leading-relaxed line-clamp-3">
+                    <p className="text-xs sm:text-sm text-gray-500 leading-relaxed line-clamp-3">
                       {descText}
                     </p>
                   </div>
