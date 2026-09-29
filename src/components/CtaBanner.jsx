@@ -64,9 +64,9 @@ export default function CtaBanner({
                 {eyebrow}
               </p>
             )}
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-2 leading-tight">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-2 leading-tight">
               {title}
-            </h3>
+            </h2>
             {desc && (
               <p className="text-cyan-50 text-sm sm:text-base leading-relaxed">
                 {formatInline(desc, { strongClass: 'font-bold text-white' })}

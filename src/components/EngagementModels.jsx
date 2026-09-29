@@ -43,7 +43,7 @@ export default function EngagementModels() {
     <section className="bg-ink text-white py-14 lg:py-20 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <Reveal className="text-center max-w-2xl mx-auto mb-12">
-          <p className="text-xs font-bold tracking-widest uppercase text-primary-300 mb-3">
+          <p className="eyebrow !text-cyan-300 mb-3">
             Engagement Models
           </p>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight mb-4 text-white">
@@ -57,19 +57,21 @@ export default function EngagementModels() {
         <Stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" staggerDelay={0.08}>
           {models.map((m) => (
             <StaggerItem key={m.title}>
-              <div className="h-full rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-7 hover:bg-white/10 hover:border-primary-400/50 transition-all duration-300 flex flex-col justify-between group hover:shadow-xl hover:shadow-primary-500/5">
+              <div className="h-full rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-7 hover:bg-white/10 hover:border-cyan-400/50 transition-all duration-300 flex flex-col justify-between group hover:shadow-xl hover:shadow-cyan-500/5">
                 <div>
-                  <span className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white/[0.07] border border-white/10 flex items-center justify-center p-3 mb-5 group-hover:scale-105 group-hover:bg-white/10 group-hover:border-primary-400/40 transition-all duration-300 shadow-sm">
-                    <DynamicIcon
-                      icon={m.icon}
-                      title={m.title}
-                      className="w-full h-full object-contain"
-                      fallbackName="Briefcase"
-                    />
-                  </span>
-                  <h3 className="font-bold text-lg sm:text-xl text-white mb-2.5 group-hover:text-primary-300 transition-colors">
-                    {m.title}
-                  </h3>
+                  <div className="flex items-center gap-3.5 mb-4">
+                    <span className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-white/[0.07] border border-white/10 flex items-center justify-center p-2.5 group-hover:scale-105 group-hover:bg-white/10 group-hover:border-cyan-400/40 transition-all duration-300 shadow-sm shrink-0">
+                      <DynamicIcon
+                        icon={m.icon}
+                        title={m.title}
+                        className="w-full h-full object-contain"
+                        fallbackName="Briefcase"
+                      />
+                    </span>
+                    <h3 className="font-extrabold text-base sm:text-lg text-white group-hover:text-cyan-300 transition-colors">
+                      {m.title}
+                    </h3>
+                  </div>
                   <p className="text-sm text-white/65 leading-relaxed font-normal">
                     {m.desc}
                   </p>

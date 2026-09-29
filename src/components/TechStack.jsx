@@ -75,7 +75,8 @@ export default function TechStack() {
     <section className="py-12 lg:py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal className="text-center mb-8">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-ink tracking-tight">
+          <p className="eyebrow mb-2.5">Tech Stack</p>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-ink tracking-tight">
             We are working on these <span className="text-primary-600">Technologies</span>
           </h2>
         </Reveal>

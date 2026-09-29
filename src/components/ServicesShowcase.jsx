@@ -15,11 +15,11 @@ export default function ServicesShowcase() {
     <section className="bg-gray-50 py-16 lg:py-20 border-y border-gray-100/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal className="text-center max-w-3xl mx-auto mb-10">
-          <p className="text-sm font-medium text-gray-400 mb-3">Our services</p>
+          <p className="eyebrow mb-3">Our Services</p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-ink tracking-tight leading-tight">
             {/* We optimize high-impact areas */}
             Custom Software Development
-            <br className="hidden sm:block" />Company Services
+            <br className="hidden sm:block" /> Company Services
             {/* of your digital product. */}
           </h2>
           <motion.p
@@ -29,7 +29,6 @@ export default function ServicesShowcase() {
             className="text-gray-600 text-base sm:text-sm leading-relaxed mb-3 mt-3 mx-auto lg:mx-0"
           >
             Our <strong>custom software development services</strong> give businesses the strategy, design, engineering, and technical support required to launch reliable digital products. Each solution is planned around your operational needs instead of forcing your business into a standard template
-
           </motion.p>
         </Reveal>
 
@@ -52,9 +51,9 @@ export default function ServicesShowcase() {
                           className="w-8 h-8 sm:w-9 sm:h-9 object-contain text-[#00a4d8] group-hover:text-white group-hover:brightness-0 group-hover:invert group-hover:drop-shadow-[0_2px_8px_rgba(255,255,255,0.85)] transition-all duration-300"
                         />
                       </span>
-                      <span className="text-xs sm:text-[13px] font-extrabold uppercase tracking-wider text-[#00a4d8] leading-tight">
+                      <h3 className="font-extrabold text-ink text-base sm:text-lg leading-snug group-hover:text-[#00a4d8] transition-colors">
                         {s.menuTitle || s.title}
-                      </span>
+                      </h3>
                     </div>
 
                     <p className="text-sm text-gray-500 leading-relaxed mb-4 line-clamp-3">

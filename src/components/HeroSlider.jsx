@@ -114,25 +114,22 @@ export default function HeroSlider() {
               <span className="text-gray-500">Since 2014</span>
             </motion.div>
 
-            <motion.p
+            <motion.h1
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.05 }}
-              className="text-gray-600 text-base sm:text-lg leading-relaxed mb-3 font-bold max-w-sm mx-auto lg:mx-0"
+              className="text-2xl sm:text-3xl lg:text-[2.1rem] font-extrabold text-ink tracking-tight leading-snug mb-3 max-w-sm mx-auto lg:mx-0"
             >
-              {/* Designing digital products for human connection — that scale with your business. */}
-              Custom Software Development Company for Startups & Growing Businesses
-
-            </motion.p>
+              Custom Software Development Company for Startups &amp; Growing Businesses
+            </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.05 }}
-              className="text-gray-600 text-base sm:text-sm leading-relaxed mb-3 max-w-sm mx-auto lg:mx-0"
+              transition={{ duration: 0.5, delay: 0.08 }}
+              className="text-gray-600 text-sm sm:text-base leading-relaxed mb-4 max-w-sm mx-auto lg:mx-0"
             >
-              Cubixsol is a <strong>custom software development company for startups</strong>  and growing businesses ready to turn bold ideas into dependable digital products. From strategy and design to launch and continuous improvement, we create scalable web, mobile, cloud, and AI products shaped around your users, goals, and budget.
-
+              Cubixsol is a <strong>custom software development company for startups</strong> and growing businesses ready to turn bold ideas into dependable digital products. From strategy and design to launch and continuous improvement, we create scalable web, mobile, cloud, and AI products shaped around your users, goals, and budget.
             </motion.p>
 
             {/* rotating capability line */}
@@ -258,11 +255,12 @@ export default function HeroSlider() {
 
               {/* center title */}
               <div className="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none z-10 px-3">
-                <motion.h1
+                <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-                  className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.4rem] font-black text-ink leading-[1.08] sm:leading-[1.12] tracking-tight drop-shadow-sm"
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.4rem] font-black text-ink leading-[1.08] sm:leading-[1.12] tracking-tight drop-shadow-sm select-none"
+                  aria-hidden="true"
                 >
                   DIGITAL
                   <br />
@@ -271,7 +269,7 @@ export default function HeroSlider() {
                   <span className="bg-clip-text text-transparent bg-primary-gradient">
                     &amp; CODE
                   </span>
-                </motion.h1>
+                </motion.div>
                 <motion.div
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}

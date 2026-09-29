@@ -33,7 +33,7 @@ export default function SplitIntro() {
                   <Clock className="w-5 h-5" />
                 </span>
                 <div>
-                  <p className="font-bold text-ink">Open hours</p>
+                  <h3 className="font-bold text-ink text-base">Open Hours</h3>
                   <p className="text-xs text-gray-400">We are happy to help you</p>
                 </div>
               </div>
