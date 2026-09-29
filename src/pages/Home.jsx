@@ -88,15 +88,21 @@ export default function Home() {
               Let's Work Together <ArrowRight className="w-4 h-4" />
             </Link>
           </Reveal>
-          <Stagger className="grid sm:grid-cols-2 gap-5" staggerDelay={0.1}>
+          <Stagger className="grid sm:grid-cols-2 gap-4 sm:gap-5" staggerDelay={0.08}>
             {whyChoose.map((w) => (
               <StaggerItem key={w.title} direction="left">
-                <div className="bg-primary-50/70 rounded-2xl p-5 hover:bg-primary-50 hover:-translate-y-1 transition-all duration-300 border border-primary-100/50">
-                  <span className="w-10 h-10 rounded-lg bg-white text-primary-600 flex items-center justify-center mb-3 shadow-sm">
-                    <w.icon className="w-5 h-5" />
-                  </span>
-                  <h3 className="font-bold text-sm text-ink mb-1">{w.title}</h3>
-                  <p className="text-xs text-gray-500 leading-relaxed">{w.desc}</p>
+                <div className="group bg-white rounded-3xl p-5 sm:p-6 border border-gray-100/90 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_-10px_rgba(0,164,216,0.12)] hover:border-cyan-200 hover:-translate-y-1 transition-all duration-300 h-full flex flex-col justify-start">
+                  <div className="flex items-center gap-3.5 mb-3.5">
+                    <span className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-br from-sky-50 via-cyan-50 to-blue-50/80 border border-cyan-100/80 text-[#00a4d8] flex items-center justify-center shrink-0 shadow-xs group-hover:bg-gradient-to-br group-hover:from-[#00a4d8] group-hover:to-[#0284c7] group-hover:text-white group-hover:border-transparent group-hover:shadow-md group-hover:shadow-[#00a4d8]/20 group-hover:scale-105 transition-all duration-300 ease-out">
+                      <w.icon className="w-5 h-5 sm:w-5.5 sm:h-5.5" strokeWidth={2.2} />
+                    </span>
+                    <h3 className="font-extrabold text-ink text-sm sm:text-base leading-snug group-hover:text-[#00a4d8] transition-colors">
+                      {w.title}
+                    </h3>
+                  </div>
+                  <p className="text-xs sm:text-sm text-gray-500 leading-relaxed">
+                    {w.desc}
+                  </p>
                 </div>
               </StaggerItem>
             ))}
