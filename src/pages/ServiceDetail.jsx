@@ -642,12 +642,14 @@ export default function ServiceDetail() {
                       to={`/${s.slug}`}
                       className="group block bg-white rounded-3xl border border-gray-100 p-6 shadow-card hover:shadow-elev hover:border-cyan-200 hover:-translate-y-1 transition-all h-full"
                     >
-                      <span className="w-11 h-11 rounded-2xl bg-gradient-to-br from-sky-50 to-cyan-50 border border-cyan-100 text-[#00a4d8] flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
-                        <OtherIcon className="w-5 h-5 object-contain" />
-                      </span>
-                      <h3 className="font-extrabold text-ink mb-1.5 group-hover:text-[#00a4d8] transition-colors">
-                        {s.cardTitle || s.title}
-                      </h3>
+                      <div className="flex items-center gap-3.5 mb-3.5">
+                        <span className="w-11 h-11 rounded-2xl bg-gradient-to-br from-sky-50 to-cyan-50 border border-cyan-100 text-[#00a4d8] flex items-center justify-center group-hover:scale-105 group-hover:bg-gradient-to-br group-hover:from-[#00a4d8] group-hover:to-[#0284c7] group-hover:text-white transition-all duration-300 shrink-0">
+                          <OtherIcon className="w-5 h-5 object-contain" />
+                        </span>
+                        <h3 className="font-extrabold text-ink text-sm sm:text-base leading-snug group-hover:text-[#00a4d8] transition-colors">
+                          {s.cardTitle || s.title}
+                        </h3>
+                      </div>
                       <p className="text-xs text-gray-500 leading-relaxed line-clamp-2">
                         {s.desc}
                       </p>
