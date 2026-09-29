@@ -501,13 +501,13 @@ export default function HubSpotCrm() {
       {/* ===================== SECTION 1: WHY YOUR CRM NEEDS AUTOMATION ===================== */}
       <section className="py-20 bg-gray-50/70 border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-5xl mx-auto mb-16">
             <Reveal direction="up" duration={0.6}>
-              <p className="text-xs font-bold tracking-widest uppercase text-[#00a4d8] mb-3">{data.problemEyebrow}</p>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-ink leading-tight mb-4">
+              <p className="text-xs font-bold tracking-widest uppercase text-[#00a4d8] mb-4">{data.problemEyebrow}</p>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-ink leading-snug sm:leading-[1.28] lg:leading-[1.32] mb-5 max-w-4xl mx-auto">
                 {data.problemTitle}
               </h2>
-              <p className="text-base sm:text-lg text-gray-500 leading-relaxed">
+              <p className="text-base sm:text-lg text-gray-500 leading-relaxed max-w-4xl mx-auto">
                 {data.problemDesc}
               </p>
             </Reveal>
@@ -537,13 +537,13 @@ export default function HubSpotCrm() {
       {/* ===================== SECTION 2: OUR HUBSPOT AUTOMATION SOLUTIONS (6 CARDS) ===================== */}
       <section id="solutions" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-5xl mx-auto mb-16">
             <Reveal direction="up" duration={0.6}>
-              <p className="text-xs font-bold tracking-widest uppercase text-[#00a4d8] mb-3">{data.capabilitiesEyebrow}</p>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-ink leading-tight mb-4">
+              <p className="text-xs font-bold tracking-widest uppercase text-[#00a4d8] mb-4">{data.capabilitiesEyebrow}</p>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-ink leading-snug sm:leading-[1.28] lg:leading-[1.32] mb-5 max-w-4xl mx-auto">
                 {data.capabilitiesTitle}
               </h2>
-              <p className="text-base sm:text-lg text-gray-500 leading-relaxed">
+              <p className="text-base sm:text-lg text-gray-500 leading-relaxed max-w-4xl mx-auto">
                 {data.capabilitiesDesc}
               </p>
             </Reveal>
@@ -747,13 +747,13 @@ export default function HubSpotCrm() {
       {/* ===================== SECTION 5: WAYS TO WORK WITH OUR TEAM (3 MODELS) ===================== */}
       <section className="py-24 bg-gradient-to-b from-white via-sky-50/25 to-white border-y border-sky-100/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-5xl mx-auto mb-16">
             <Reveal direction="up" duration={0.6}>
-              <p className="text-xs font-bold tracking-widest uppercase text-[#00a4d8] mb-3">{data.modelsEyebrow}</p>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-ink leading-tight mb-4">
+              <p className="text-xs font-bold tracking-widest uppercase text-[#00a4d8] mb-4">{data.modelsEyebrow}</p>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-ink leading-snug sm:leading-[1.28] lg:leading-[1.32] mb-5 max-w-4xl mx-auto">
                 {data.modelsTitle}
               </h2>
-              <p className="text-base sm:text-lg text-gray-500 leading-relaxed">
+              <p className="text-base sm:text-lg text-gray-500 leading-relaxed max-w-4xl mx-auto">
                 {data.modelsDesc}
               </p>
             </Reveal>
@@ -819,13 +819,13 @@ export default function HubSpotCrm() {
       {/* ===================== SECTION 6: TOOLS AND INTEGRATIONS ===================== */}
       <section className="py-24 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-5xl mx-auto mb-16">
             <Reveal direction="up" duration={0.6}>
-              <p className="text-xs font-bold tracking-widest uppercase text-[#00a4d8] mb-3">{data.spectrumEyebrow}</p>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-ink leading-tight mb-4">
+              <p className="text-xs font-bold tracking-widest uppercase text-[#00a4d8] mb-4">{data.spectrumEyebrow}</p>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-ink leading-snug sm:leading-[1.28] lg:leading-[1.32] mb-5 max-w-4xl mx-auto">
                 {data.spectrumTitle}
               </h2>
-              <p className="text-base sm:text-lg text-gray-500 leading-relaxed">
+              <p className="text-base sm:text-lg text-gray-500 leading-relaxed max-w-4xl mx-auto">
                 {data.spectrumDesc}
               </p>
             </Reveal>

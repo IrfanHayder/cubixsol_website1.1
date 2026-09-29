@@ -670,13 +670,13 @@ export default function EmailLeadNurture() {
       {/* ===================== SECTION 2: OUR EMAIL MARKETING AUTOMATION SERVICES (6 CARDS) ===================== */}
       <section id="solutions" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-5xl mx-auto mb-16">
             <Reveal direction="up" duration={0.6}>
-              <p className="text-xs font-bold tracking-widest uppercase text-[#00a4d8] mb-3">{data.capabilitiesEyebrow}</p>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-ink leading-tight mb-4">
+              <p className="text-xs font-bold tracking-widest uppercase text-[#00a4d8] mb-4">{data.capabilitiesEyebrow}</p>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-ink leading-snug sm:leading-[1.28] lg:leading-[1.32] mb-5 max-w-4xl mx-auto">
                 {data.capabilitiesTitle}
               </h2>
-              <p className="text-base sm:text-lg text-gray-500 leading-relaxed">
+              <p className="text-base sm:text-lg text-gray-500 leading-relaxed max-w-4xl mx-auto">
                 {data.capabilitiesDesc}
               </p>
             </Reveal>
