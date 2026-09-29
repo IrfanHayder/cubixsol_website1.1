@@ -15,6 +15,9 @@ import Reveal, { Stagger, StaggerItem } from '../components/Reveal';
 import { useEstimateModal } from '../context/EstimateModalContext';
 import { apiFetch } from '../utils/api';
 import { useSEO } from '../utils/seo';
+import { formatInline } from '../utils/formatText';
+
+const cleanTitle = (str) => (!str || typeof str !== 'string' ? str : str.replace(/[:*\s]+$/, '').replace(/^[:*\s]+/, '').trim());
 
 function SolutionFaqSection({ faqs, solutionTitle }) {
   const [openFaq, setOpenFaq] = useState(null);
@@ -459,7 +462,7 @@ export default function SolutionDetail() {
                           <ShieldCheck className="w-5 h-5" />
                         </div>
                         <h3 className="font-extrabold text-ink text-base sm:text-lg leading-snug group-hover:text-[#00a4d8] transition-colors">
-                          {item.title}
+                          {formatInline(cleanTitle(item.title))}
                         </h3>
                       </div>
                       <p className="text-sm text-gray-500 leading-relaxed">

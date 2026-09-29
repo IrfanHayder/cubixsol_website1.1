@@ -32,8 +32,12 @@ import SuccessStories from '../components/SuccessStories';
 import DynamicIcon from '../components/DynamicIcon';
 import { useServices } from '../context/ServicesContext';
 import { useEstimateModal } from '../context/EstimateModalContext';
-import { useSEO } from '../utils/seo';
-import { formatText, FormatRichText } from '../utils/formatText';
+import { formatText, FormatRichText, formatInline } from '../utils/formatText';
+
+function cleanTitle(str) {
+  if (!str || typeof str !== 'string') return str;
+  return str.replace(/[:*\s]+$/, '').replace(/^[:*\s]+/, '').trim();
+}
 
 function normalizeServiceSlug(slug) {
   if (!slug) return '';
@@ -292,7 +296,7 @@ export default function ServiceDetail() {
                             {String(idx + 1).padStart(2, '0')}
                           </div>
                           <h3 className="font-extrabold text-ink text-base sm:text-lg leading-snug group-hover:text-[#00a4d8] transition-colors">
-                            {sub.title}
+                            {formatInline(cleanTitle(sub.title))}
                           </h3>
                         </div>
                         <div className="text-sm text-gray-500 leading-relaxed">
@@ -353,7 +357,7 @@ export default function ServiceDetail() {
                             <ShieldCheck className="w-5 h-5" />
                           </div>
                           <h3 className="text-base sm:text-lg font-extrabold text-ink leading-snug">
-                            {item.title}
+                            {formatInline(cleanTitle(item.title))}
                           </h3>
                         </div>
                         <div className="text-sm text-gray-500 leading-relaxed">
@@ -412,7 +416,7 @@ export default function ServiceDetail() {
                           <Briefcase className="w-5 h-5" />
                         </div>
                         <h3 className="font-extrabold text-ink text-base sm:text-lg leading-snug">
-                          {item.title}
+                          {formatInline(cleanTitle(item.title))}
                         </h3>
                       </div>
                       <div className="text-sm text-gray-500 leading-relaxed">
@@ -564,7 +568,7 @@ export default function ServiceDetail() {
                             <span className="text-xs font-black text-[#00a4d8] bg-sky-100/80 px-2.5 py-1 rounded-lg shrink-0">
                               Q{idx + 1}
                             </span>
-                            <span className="leading-snug">{faq.q}</span>
+                            <span className="leading-snug">{formatInline(cleanTitle(faq.q))}</span>
                           </span>
                           <ChevronDown
                             className={`w-5 h-5 text-gray-400 shrink-0 transition-transform duration-300 ${
@@ -634,7 +638,7 @@ export default function ServiceDetail() {
                         />
                       </span>
                       <h3 className="font-extrabold text-ink text-sm sm:text-base leading-snug group-hover:text-[#00a4d8] transition-colors">
-                        {s.cardTitle || s.title}
+                        {formatInline(cleanTitle(s.cardTitle || s.title))}
                       </h3>
                     </div>
                     <p className="text-xs text-gray-500 leading-relaxed line-clamp-2">

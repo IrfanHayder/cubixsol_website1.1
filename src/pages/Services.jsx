@@ -24,6 +24,8 @@ import { formatInline, FormatRichText } from '../utils/formatText';
 import { apiFetch } from '../utils/api';
 import { useSEO } from '../utils/seo';
 
+const cleanTitle = (str) => (!str || typeof str !== 'string' ? str : str.replace(/[:*\s]+$/, '').replace(/^[:*\s]+/, '').trim());
+
 const defaultPageData = {
   heroEyebrow: 'Our Services',
   heroTitle: 'Powerful digital solutions that drive real results',
@@ -494,7 +496,7 @@ export default function Services() {
                           />
                         </div>
                         <h3 className="font-extrabold text-base sm:text-lg text-ink leading-snug group-hover:text-[#00a4d8] transition-colors">
-                          {item.title}
+                          {formatInline(cleanTitle(item.title))}
                         </h3>
                       </div>
                       <p className="text-xs sm:text-sm text-gray-500 leading-relaxed">
