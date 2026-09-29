@@ -22,8 +22,8 @@ function SolutionFaqSection({ faqs, solutionTitle }) {
 
   return (
     <section className="py-14 lg:py-20 bg-white border-t border-gray-100">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Reveal className="text-center mb-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Reveal className="text-center max-w-3xl mx-auto mb-10">
           <p className="eyebrow mb-2">FAQ</p>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink tracking-tight mb-3">
             Frequently Asked Questions

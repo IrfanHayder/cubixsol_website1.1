@@ -548,8 +548,8 @@ export default function ServiceDetail() {
           {/* Frequently Asked Questions (FAQs) Section */}
           {faqs.length > 0 && (
             <section id="faqs" className="scroll-mt-28 py-14 lg:py-20 border-t border-gray-100">
-              <div className="max-w-4xl mx-auto">
-                <Reveal className="text-center mb-10">
+              <div className="w-full">
+                <Reveal className="text-center max-w-3xl mx-auto mb-10">
                   <p className="eyebrow mb-2">Got Questions?</p>
                   <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink tracking-tight mb-3">
                     Frequently Asked Questions
