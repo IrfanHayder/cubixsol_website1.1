@@ -14,12 +14,12 @@ export default function ProcessSlider() {
 
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-18">
-      <Reveal className="text-center max-w-2xl mx-auto mb-10">
+      <Reveal className="text-center max-w-4xl mx-auto mb-10">
         <p className="eyebrow mb-3">HOW WE WORK</p>
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-ink tracking-tight mb-3">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.65rem] font-extrabold text-ink tracking-tight mb-3">
           Our Proven Development Process
         </h2>
-        <p className="text-gray-500 text-base sm:text-lg leading-relaxed">
+        <p className="text-gray-500 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
           A clear, collaborative path from idea to launch — and beyond.
         </p>
       </Reveal>

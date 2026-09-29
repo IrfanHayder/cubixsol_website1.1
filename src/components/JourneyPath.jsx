@@ -4,25 +4,33 @@ import Reveal from './Reveal';
 
 const steps = [
   {
+    step: '01',
     label: 'Strategy',
+    desc: 'Discovery, user research, and technical feasibility roadmap.',
     icon: Lightbulb,
     img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=400&fit=crop&q=80',
     gradient: 'from-sky-400 to-primary-600',
   },
   {
+    step: '02',
     label: 'Planning',
+    desc: 'Sprint roadmaps, tech stack selection, and milestone delivery.',
     icon: ClipboardList,
     img: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=400&fit=crop&q=80',
     gradient: 'from-primary-400 to-primary-700',
   },
   {
+    step: '03',
     label: 'Build',
+    desc: 'Full-stack development, code reviews, and automated QA testing.',
     icon: Code2,
     img: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=400&fit=crop&q=80',
     gradient: 'from-cyan-500 to-primary-600',
   },
   {
+    step: '04',
     label: 'Our Work',
+    desc: 'Polished launch, live performance tracking, and product scaling.',
     icon: Rocket,
     img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=500&h=500&fit=crop&q=80',
     gradient: 'from-primary-500 to-primary-800',
@@ -65,7 +73,7 @@ export default function JourneyPath() {
       <div className="absolute top-24 right-1/3 w-10 h-6 rounded-full bg-sky-50/80 blur-sm pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Reveal className="text-center mb-10">
+        <Reveal className="text-center max-w-2xl mx-auto mb-10">
           <p className="eyebrow mb-3">How ideas become products</p>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-ink tracking-tight">
             From strategy to shipped work
@@ -112,33 +120,65 @@ export default function JourneyPath() {
           </div>
         </div>
 
-        {/* Mobile */}
-        <div className="md:hidden space-y-8">
-          {steps.map((step, i) => {
-            const Icon = step.icon;
-            return (
-              <Reveal key={step.label} delay={i * 0.08} className="flex items-center gap-4">
-                <div className="w-20 h-20 rounded-full border-2 border-dashed border-primary-200 p-1 shadow-card bg-white shrink-0">
-                  <div className={`w-full h-full rounded-full bg-gradient-to-br ${step.gradient} flex items-center justify-center`}>
-                    <Icon className="w-7 h-7 text-white" strokeWidth={1.5} />
+        {/* Mobile / Tablet View */}
+        <div className="md:hidden relative max-w-lg mx-auto">
+          {/* Vertical Connecting line */}
+          <div className="absolute left-[31px] sm:left-[35px] top-8 bottom-8 w-0.5 border-l-2 border-dashed border-cyan-200" />
+
+          <div className="space-y-5 sm:space-y-6 relative">
+            {steps.map((step, i) => {
+              const Icon = step.icon;
+              return (
+                <Reveal key={step.label} delay={i * 0.08}>
+                  <div className="flex items-start gap-3.5 sm:gap-4 group">
+                    {/* Circle Node */}
+                    <div className="relative shrink-0 z-10">
+                      <div className="w-16 h-16 sm:w-18 sm:h-18 rounded-2xl border-2 border-cyan-200/90 p-1 shadow-card bg-white group-hover:scale-105 group-hover:border-cyan-400 transition-all duration-300">
+                        <div className={`w-full h-full rounded-xl bg-gradient-to-br ${step.gradient} flex items-center justify-center relative overflow-hidden shadow-inner`}>
+                          <img
+                            src={step.img}
+                            alt=""
+                            className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-60"
+                            loading="lazy"
+                            onError={(e) => {
+                              e.currentTarget.style.display = 'none';
+                            }}
+                          />
+                          <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-white drop-shadow-sm relative z-10" strokeWidth={1.75} />
+                        </div>
+                      </div>
+                      <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-ink text-[10px] font-bold text-white flex items-center justify-center border-2 border-white shadow-xs">
+                        {i + 1}
+                      </span>
+                    </div>
+
+                    {/* Step Content Card */}
+                    <div className="flex-1 bg-gray-50/80 border border-gray-100/90 rounded-2xl p-4 sm:p-5 shadow-xs group-hover:bg-white group-hover:border-cyan-200 group-hover:shadow-card transition-all duration-300">
+                      <div className="flex items-center justify-between gap-2 mb-1">
+                        <h3 className="font-extrabold text-ink text-base sm:text-lg group-hover:text-[#00a4d8] transition-colors">
+                          {step.label}
+                        </h3>
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-cyan-600 bg-cyan-50 px-2.5 py-0.5 rounded-full border border-cyan-100">
+                          Step {step.step}
+                        </span>
+                      </div>
+                      <p className="text-xs sm:text-sm text-gray-500 leading-relaxed">
+                        {step.desc}
+                      </p>
+                      {step.link && (
+                        <Link
+                          to={step.link}
+                          className="mt-3 inline-flex items-center gap-1.5 text-xs font-bold text-[#00a4d8] hover:text-[#0284c7] transition-colors"
+                        >
+                          View Case Studies <ArrowRight className="w-3.5 h-3.5" />
+                        </Link>
+                      )}
+                    </div>
                   </div>
-                </div>
-                <div>
-                  {step.link ? (
-                    <Link
-                      to={step.link}
-                      className="font-bold text-ink hover:text-primary-600 inline-flex items-center gap-1"
-                    >
-                      {step.label} <ArrowRight className="w-4 h-4" />
-                    </Link>
-                  ) : (
-                    <p className="font-semibold text-gray-600">{step.label}</p>
-                  )}
-                  <p className="text-xs text-gray-400 mt-0.5">Step {i + 1}</p>
-                </div>
-              </Reveal>
-            );
-          })}
+                </Reveal>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
