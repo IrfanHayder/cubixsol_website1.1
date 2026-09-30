@@ -9,10 +9,10 @@ export default function FeatureSplit() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <Reveal direction="right">
             <div className="relative">
-              <div className="rounded-3xl overflow-hidden shadow-elev aspect-[4/3]">
+              <div className="rounded-3xl overflow-hidden shadow-elev aspect-[4/3] bg-slate-900">
                 <img
-                  src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=900&q=80"
-                  alt="Mobile app design"
+                  src="/uploads/media-1790748296744-659438992.png"
+                  alt="Our job is to create solid digital products"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />

@@ -236,10 +236,26 @@ export default function Contact() {
               </>
             )}
           </h1>
-          <p className="text-gray-500 mb-8">
-            {pageData.heroDesc ||
-              "Have a project in mind or need expert advice? We'd love to hear from you. Fill out the form and our team will get back to you as soon as possible."}
-          </p>
+          <div className="space-y-4 text-gray-500 mb-8 leading-relaxed text-sm sm:text-base">
+            {(() => {
+              const text = pageData.heroDesc || defaultHeroDesc;
+              if (text.includes('\n')) {
+                return text.split('\n').filter(Boolean).map((p, idx) => (
+                  <p key={idx}>{p}</p>
+                ));
+              }
+              if (text.includes('Connect with us today')) {
+                const parts = text.split('Connect with us today');
+                return (
+                  <>
+                    <p>{parts[0].trim()}</p>
+                    <p>Connect with us today {parts[1].trim()}</p>
+                  </>
+                );
+              }
+              return <p>{text}</p>;
+            })()}
+          </div>
           <div className="grid sm:grid-cols-3 gap-5">
             {(pageData.highlights || fallbackPageData.highlights).map((h, i) => (
               <div key={h.title || i} className="flex flex-col gap-2">

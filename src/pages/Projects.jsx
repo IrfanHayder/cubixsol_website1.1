@@ -79,17 +79,55 @@ export default function Projects() {
             <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight text-ink mb-5">
               Real Projects. <span className="bg-clip-text text-transparent bg-primary-gradient">Real Results.</span>
             </h1>
-            <p className="text-gray-500 mb-6 leading-relaxed">
-              Explore our diverse portfolio of enterprise web applications, custom software platforms, SaaS systems, and scalable mobile apps. At Cubixsol, our multidisciplinary team combines cutting-edge full-stack engineering, intuitive UI/UX design, and AI automation to deliver high-impact digital solutions that streamline complex workflows, accelerate user acquisition, and drive measurable revenue growth for fast-scaling startups and global enterprises.
-            </p>
+            <div className="space-y-4 text-gray-500 mb-6 leading-relaxed text-sm sm:text-base">
+              <p>
+                Explore our diverse portfolio of enterprise web applications, custom software platforms, SaaS systems, and scalable mobile apps.
+              </p>
+              <p>
+                At Cubixsol, our multidisciplinary team combines cutting-edge full-stack engineering, intuitive UI/UX design, and AI automation to deliver high-impact digital solutions that streamline complex workflows, accelerate user acquisition, and drive measurable revenue growth for fast-scaling startups and global enterprises.
+              </p>
+            </div>
             <div className="flex flex-wrap gap-6 text-sm font-medium text-gray-500">
               <span className="flex items-center gap-1.5"><Sparkles className="w-4 h-4 text-[#00a4d8]" /> Innovative Solutions</span>
               <span className="flex items-center gap-1.5"><TrendingUp className="w-4 h-4 text-[#00a4d8]" /> Measurable Impact</span>
               <span className="flex items-center gap-1.5"><Users2 className="w-4 h-4 text-[#00a4d8]" /> Client Satisfaction</span>
             </div>
           </Reveal>
-          <Reveal direction="left" delay={0.1} className="rounded-3xl overflow-hidden aspect-[4/3] bg-gradient-to-br from-slate-800 to-sky-950 hidden md:flex items-center justify-center shadow-md">
-            <span className="text-white/80 font-bold text-lg">Portfolio Showcase</span>
+          <Reveal direction="left" delay={0.1} className="rounded-3xl overflow-hidden aspect-[4/3] bg-gradient-to-br from-slate-900 via-slate-800 to-sky-950 p-6 sm:p-8 hidden md:flex flex-col justify-between shadow-soft border border-slate-700/50 relative">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#00a4d8]/10 rounded-full blur-3xl pointer-events-none" />
+            
+            <div className="flex items-center justify-between z-10">
+              <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#00a4d8] bg-[#00a4d8]/10 px-3 py-1 rounded-lg border border-[#00a4d8]/20">
+                Portfolio Showcase
+              </span>
+              <span className="text-xs text-slate-400 font-medium flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" /> Live Projects
+              </span>
+            </div>
+
+            <div className="my-auto z-10">
+              <h3 className="text-xl sm:text-2xl font-extrabold text-white mb-2">
+                Engineering Digital Excellence
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-md">
+                From scalable cloud architectures to intelligent web & mobile applications, discover how we build scalable digital products for forward-thinking businesses.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-3 gap-3 pt-4 border-t border-slate-700/60 z-10">
+              <div>
+                <p className="text-xl sm:text-2xl font-black text-white">49+</p>
+                <p className="text-[11px] text-slate-400 font-medium">Projects Done</p>
+              </div>
+              <div>
+                <p className="text-xl sm:text-2xl font-black text-[#00a4d8]">99%</p>
+                <p className="text-[11px] text-slate-400 font-medium">Satisfaction</p>
+              </div>
+              <div>
+                <p className="text-xl sm:text-2xl font-black text-emerald-400">15+</p>
+                <p className="text-[11px] text-slate-400 font-medium">Industries</p>
+              </div>
+            </div>
           </Reveal>
         </div>
       </section>
